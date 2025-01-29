@@ -5,13 +5,13 @@ const HouseholdTable = () => {
   return (
     <TableContainer 
         component={Paper} 
-        sx={{
-            overflowX: "auto",
-            minWidth: 320,
-            maxWidth: "100%", // Ensure it adapts within parent
-        }}
+        // sx={{
+        //     overflowX: "auto",
+        //     minWidth: 320,
+        //     maxWidth: "100%", // Ensure it adapts within parent
+        // }}
       >
-       <Table sx={{ width: "100%", minWidth: 320 }}>
+       <Table sx={{ width: "100%" }}>
         <TableHead sx={{ backgroundColor: "#d2d5cb" }}>
           <TableRow>
           <TableCell align="center" sx={{ fontWeight: "bold" }}>Haushaltstyp</TableCell>
@@ -22,10 +22,10 @@ const HouseholdTable = () => {
         </TableHead>
         <TableBody>
           {[
-            { type: "1-Personen", income: 1706, expenses: 1452, disposable: 254 },
-            { type: "2-Personen", income: 3056, expenses: 2533, disposable: 523 },
-            { type: "3-Personen", income: 3664, expenses: 3321, disposable: 343 },
-            { type: "4-Personen", income: 4122, expenses: 3943, disposable: 179 },
+            { type: "1-Personen", income: 1.706, expenses: 1.452, disposable: 254 },
+            { type: "2-Personen", income: 3.056, expenses: 2.533, disposable: 523 },
+            { type: "3-Personen", income: 3.664, expenses: 3.321, disposable: 343 },
+            { type: "4-Personen", income: 4.122, expenses: 3.943, disposable: 179 },
           ].map((row, index) => (
             <TableRow key={index}>
               <TableCell align="center">{row.type}</TableCell>

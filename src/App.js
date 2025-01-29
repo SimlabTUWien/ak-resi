@@ -19,6 +19,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import SocialInfrastructureTable from "./components/SocialInfrastructureTable";
 
 
 function App() {
@@ -31,96 +32,11 @@ function App() {
       setMode(newMode);
     }
   };
-
-  // const scrollContainerRef = useRef(null);
-
-  // const adjustHeight = () => {
-  //   const scrollContainer = scrollContainerRef.current;
-  //   const largeImage = scrollContainer.querySelector('.large-image img');
-  //   const smallImage = scrollContainer.querySelector('.small-image img');
-
-  //   if (!scrollContainer.classList.contains('scrolled')) {
-  //     scrollContainer.style.height = `${largeImage.clientHeight}px`;
-  //   } else {
-  //     scrollContainer.style.height = `${smallImage.clientHeight}px`;
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollContainer = scrollContainerRef.current;
-  //     const header = document.querySelector('.header');
-  //     const scrollY = window.scrollY;
-
-  //     if (scrollY > 100) {
-  //       scrollContainer.classList.add('scrolled');
-  //       scrollContainer.style.height = `${scrollContainer.querySelector('.small-image img').clientHeight}px`;
-  //       if (scrollY > 300) {
-  //         header.classList.add('header-only');
-  //       } else {
-  //         header.classList.remove('header-only');
-  //       }
-  //     } else {
-  //       scrollContainer.classList.remove('scrolled');
-  //       scrollContainer.style.height = `${scrollContainer.querySelector('.large-image img').clientHeight}px`;
-  //       header.classList.remove('header-only');
-  //     }
-  //   };
-
-  //   // Adjust height on load and attach scroll listener
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   // Cleanup event listener
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-
   return (
     <>
 
-      {/* <header className="header">
-        <div className="header-logo">
-          <img src="/Logo_Projekt_small.png" alt="Project logo" />
-        </div>
-        <h1>Re:sIZE</h1>
-      </header>
-
-      <div className="scroll-container" ref={scrollContainerRef}>
-        <div className="large-image">
-          <img
-            src="/HaeuserzeileHeader_spiegel.png"
-            alt="row of houses with reflections"
-          />
-        </div>
-        <div className="small-image">
-          <img src="/HaeuserzeileHeader.png" alt="row of houses" />
-        </div>
-      </div>
-
-
-      <div className='title-wrapper'>
-        <section className="title-section">
-
-          <div className='text-container'>
-            <h1 className="title">Perspektiven auf Ungleichhet in Österreich</h1>
-            <h3>Verfügbares Einkommen, soziale Infrastruktur und Zeitverwendung</h3>
-          </div>
-
-          <div className='image-container logo-large'>
-            <img src="/Logo_Projekt_icons.png" alt="showing the four core aspects of the project" />
-          </div>
-        </section>
-      </div> */}
-
-
-
-
-
       <header className="header">
 
-
-        
         <div className='header-logo'>
           <img src="/Logo_Projekt_small.png" alt="project's logo without icons" />
         </div>
@@ -294,7 +210,7 @@ function App() {
 
           <h2>Regionale Unterschiede beim verfügbaren Einkommen</h2>
 
-          {/* Karte 1*/}
+          {/* SVG Karte 1*/}
           {/* Inforbox*/}
           {/* Karte 2*/}
         </section>
@@ -302,16 +218,30 @@ function App() {
         <section id="infrastructure">
           <h2>Soziale Infrastruktur in Österreich</h2>
           <p className='paragraph'>
-          Soziale Infrastrukturen wie Kindergärten, Schulen, Gesundheits- und Pflegeeinrichtungen sind essenziell für eine funktionierende Gesellschaft. Sie ermöglichen Bildung, Gesundheit und soziale Teilhabe – unabhängig vom Einkommen. Doch ihr Zugang und ihre Qualität sind nicht überall gleich. Regionale Unterschiede und fehlende Angebote können Haushalte zusätzlich belasten und Ungleichheiten verstärken.
+            Soziale Infrastrukturen wie Kindergärten, Schulen, Gesundheits- und Pflegeeinrichtungen sind essenziell für eine funktionierende Gesellschaft. Sie ermöglichen Bildung, Gesundheit und soziale Teilhabe – unabhängig vom Einkommen. Doch ihr Zugang und ihre Qualität sind nicht überall gleich. Regionale Unterschiede und fehlende Angebote können Haushalte zusätzlich belasten und Ungleichheiten verstärken.
           </p>
 
           <p className='paragraph'>
-            Soziale Infrastrukturen in Österreich wurden aus unterschiedlichen Datenquellen erhoben. 
+            Die Karten zeigen die sozialen Infrastrukturen in Bezug auf den Bedarf in der Gemeinde. Während Ärzt:innen pro Einwohner:in berechnet werden, beziehen sich Kindergartengruppen auf Kinder im Alter von 3 bis 6 Jahren und Plätze in Pflegeheimen auf Menschen über 70. Neben der Verfügbarkeit von Infrastrukturen spielt auch ihre Zugänglichkeit eine Rolle: Kurze Öffnungszeiten oder hohe Kosten können die Nutzung einschränken. Da viele Menschen auch die Infrastrukturen in Nachbargemeinden nutzen, werden diese – mit geringerem Gewicht – in den Infrastrukturindikator einbezogen. In der Karte kann dieser Effekt ein- und ausgeblendet werden. Die obere Karte zeigt die Gesamtsumme aller Infrastrukturen, während in der unteren Karte die verschiedenen Infrastrukturarten einzeln betrachtet werden können. Genauere Informationen zu den einzelnen Infrastrukturen und der Berechnung der Indikatoren lassen sich unten ausklappen.
           </p>
+
+          {/* SI Karte 1*/}
+
+          {/* SI Karte 2*/}
+
+          <h2>Wie werden die einzelnen Infrastrukturindikatoren berechnet?</h2>
+
+          <p className='paragraph'>
+            Der Gesamtindikator für soziale Infrastrukturen setzt sich aus sechs gleich gewichteten Teilindikatoren zusammen: Kindergärten, Schulen, Krankenhäuser, Allgemeinmediziner:innen, Pflegeeinrichtungen und andere soziale Einrichtungen. Innerhalb der Teilindikatoren wird die Verfügbarkeit mit 50 %, die Zugänglichkeit mit 30 % und die Einflüsse von Nachbargemeinden (Spillover-Effekte) mit 20 % gewichtet, um die unterschiedlichen Aspekte der Infrastruktur umfassend zu berücksichtigen.
+          </p>
+
+          {/* SI Table*/}
+          <SocialInfrastructureTable/>
+
 
         </section>
 
-        <section className="austria-map">
+        {/* <section className="austria-map">
           <h1 className="title">Leaflet Map Section</h1>
           <AustriaMapComponent mapboxAccessToken={mapboxAccessToken} />
         </section>
@@ -319,7 +249,7 @@ function App() {
         <section>
           <h1 className="title">Lebensqualität</h1>
           <LivabilityChart/>
-        </section>
+        </section> */}
 
       </div>
 
@@ -331,235 +261,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-// const Header = styled.header`
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   height: 60px;
-//   background-color: #002366; /* Dark Blue */
-//   display: flex;
-//   justify-content: left;
-//   padding-left: 10px;
-//   align-items: center;
-//   color: white;
-//   z-index: 1000;
-// `;
-
-// const Section = styled.section`
-//   height: 100vh; /* 100% of viewport height */
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   text-align: center;
-//   font-size: 2rem;
-//   scroll-snap-align: start; /* For scroll snapping */
-//   background-color: ${(props) => props.bgColor || "#fff"};
-// `;
-
-// const Title = styled.h1`
-//   color: #333;
-//   font-size: 2.5rem;
-//   margin-bottom: 20px;
-// `;
-
-// const Paragraph = styled.p`
-//   font-size: 1.1rem;
-//   color: #555;
-// `;
-
-// const ContentWrapper = styled.div`
-//   scroll-snap-type: y mandatory; /* Enables scroll snapping for vertical scroll */
-//   height: 100vh; /* 100% of viewport height */
-//   overflow-y: scroll; /* Enables vertical scrolling */
-//   scroll-behavior: smooth; /* Smooth scrolling */
-// `;
-
-
-
-// function App() {
-
-//   const mapboxAccessToken = 'pk.eyJ1Ijoic2ltbGFidHV3aWVuIiwiYSI6ImNrbm5kM3MwejEwejEyc24wc3R4aGQ4amUifQ.M8BOCFCXVYi2bt0lINlIqw';
-
-//   const [geojsonData, setGeojsonData] = useState(null);
-
-//   useEffect(() => {
-//         fetch('./urban_rural_wgs84_dissgem.geojson')
-//           .then((response) => response.json())
-//           .then((data) => setGeojsonData(data))
-//           .catch((error) => console.error('Error loading GeoJSON data:', error));
-//       }, []);
-    
-//       const onEachFeature = (feature, layer) => {
-//         if (feature.properties) {
-//           layer.on({
-//             click: () => {
-//               layer.bindPopup(
-//                 `
-//                   ID: <b>${feature.properties.id2}</b><br>
-//                   Gemeinde: <b>${feature.properties._GEMNAME}</b><br>
-//                   Bundesland: <b>${feature.properties.BL}</b>
-//                 `
-//               ).openPopup();
-//             }
-//           });
-//         }
-//       };
-    
-//       const chartOptions = {
-//         tooltip: {
-//           trigger: 'axis',
-//           axisPointer: {
-//             type: 'cross',
-//             label: {
-//               backgroundColor: '#6a7985'
-//             }
-//           }
-//         },
-//         legend: {
-//           data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine'],
-//         },
-//         toolbox: {
-//           feature: {
-//             saveAsImage: {}
-//           }
-//         },
-//         grid: {
-//           left: '3%',
-//           right: '4%',
-//           bottom: '3%',
-//           containLabel: true
-//         },
-//         xAxis: [
-//           {
-//             type: 'category',
-//             boundaryGap: false,
-//             data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-//           }
-//         ],
-//         yAxis: [
-//           {
-//             type: 'value'
-//           }
-//         ],
-//         series: [
-//           {
-//             name: 'Email',
-//             type: 'line',
-//             stack: 'Total',
-//             areaStyle: {},
-//             emphasis: {
-//               focus: 'series'
-//             },
-//             data: [120, 132, 101, 134, 90, 230, 210]
-//           },
-//           {
-//             name: 'Union Ads',
-//             type: 'line',
-//             stack: 'Total',
-//             areaStyle: {},
-//             emphasis: {
-//               focus: 'series'
-//             },
-//             data: [220, 182, 191, 234, 290, 330, 310]
-//           },
-//           {
-//             name: 'Video Ads',
-//             type: 'line',
-//             stack: 'Total',
-//             areaStyle: {},
-//             emphasis: {
-//               focus: 'series'
-//             },
-//             data: [150, 232, 201, 154, 190, 330, 410]
-//           },
-//           {
-//             name: 'Direct',
-//             type: 'line',
-//             stack: 'Total',
-//             areaStyle: {},
-//             emphasis: {
-//               focus: 'series'
-//             },
-//             data: [320, 332, 301, 334, 390, 330, 320]
-//           },
-//           {
-//             name: 'Search Engine',
-//             type: 'line',
-//             stack: 'Total',
-//             label: {
-//               show: true,
-//               position: 'top'
-//             },
-//             areaStyle: {},
-//             emphasis: {
-//               focus: 'series'
-//             },
-//             data: [820, 932, 901, 934, 1290, 1330, 1320]
-//           }
-//         ]
-//       };
-
-//   return (
-//     <>
-//       {/* Fixed Header */}
-//       <Header>
-//         <h1>AK-Resi</h1>
-//       </Header>
-
-//       {/* Scrollable Content */}
-//       <ContentWrapper>
-//         <Section>
-//           <Title>Welcome!</Title>
-//           <Paragraph>This is a demo of the AK-Resi one-pager with ECharts and Leaflet maps.</Paragraph>
-//         </Section>
-
-//         {/* ECharts Section */}
-//         <Section>
-//           <Title>ECharts Section</Title>
-//           <EChartsReact option={chartOptions} style={{ height: 400 }} />
-//           <Paragraph>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</Paragraph>
-//         </Section>
-
-//         {/* Leaflet Map Section */}
-//         <Section>
-//           <Title>Leaflet Map Section</Title>
-//           <MapContainer 
-//             // bounds={[[46.372276, 9.530952], [49.021162, 17.160568]]}
-//             // zoom={14} 
-//             bounds={[[46.372276, 9.530952], [49.021162, 17.160568]]}  // Fits Austria
-//             zoom={8}  
-//             scrollWheelZoom={false}
-//             doubleClickZoom={false}
-//             touchZoom={false}             
-//             keyboard={false}                                          // Disable keyboard controls
-//             dragging={false}                                          // Disable dragging (panning)
-//             zoomControl={false}                                       // Disable zoom control UI on the map
-//             style={{ height: '800px', width: '100%' }}
-//           >
-//             <TileLayer
-//               url={`https://api.mapbox.com/styles/v1/simlabtuwien/cm2bx9u9w00rs01peeqrrakfo/tiles/{z}/{x}/{y}?access_token=${mapboxAccessToken}`}
-//               attribution='© <a href="https://www.mapbox.com/about/maps/" rel="noreferrer noopener nofollow" target="_blank">Mapbox</a>, <a href="http://www.openstreetmap.org/copyright" rel="noreferrer noopener nofollow" target="_blank">OpenStreetMap contributors</a>'
-//             />
-
-//             {geojsonData && (
-//               <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />
-//             )}
-//           </MapContainer>
-//         </Section>
-
-//         {/* Another text section */}
-//         <Section>
-//           <Title>More Content</Title>
-//           <Paragraph>More Content TBA!</Paragraph>
-//         </Section>
-//       </ContentWrapper>
-//     </>
-//   );
-// }
-
-// export default App;
