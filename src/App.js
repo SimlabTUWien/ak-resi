@@ -128,15 +128,7 @@ function App() {
         />
       </div>
 
-      {/* <nav className="nav-bar">
-        <ul>
-          <li><a href="#background">Hintergrund</a></li>
-          <li><a href="#income">Verfügbares Einkommen</a></li>
-          <li><a href="#infrastructure">Soziale Infrastruktur</a></li>
-        </ul>
-      </nav> */}
       <NavBar/>
-
 
       <div className='title-wrapper'>
         <section className="title-section">
@@ -174,7 +166,7 @@ function App() {
           <p className='paragraph'>
             Genau dieses Ziel hatte das <strong>XX</strong> Projekt. Auf dieser Website findet ihr die Ergebnisse der Untersuchung dieser Ebenen in Österreich.
           </p>
-          <p className='paragraph'>
+          <p className='paragraph click-information'>
             Klicke auf die Elemente um mehr zu erfahren: 
           </p>
 
