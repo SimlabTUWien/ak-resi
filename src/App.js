@@ -6,23 +6,24 @@ import LivabilityChart from './components/d3Chart';
 import BackgroundChart from './components/BackgroundChart';
 import NavBar from './components/NavigationBar';
 import ScrollProgressBar from './components/ScrollProgressBar';
-
-
+import ExpenditureCharts from './components/ExpenditureCharts';
 
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ExpenditureCharts from './components/ExpenditureCharts';
+import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 
 function App() {
   const mapboxAccessToken = 'your-mapbox-token-here';
 
-  const [mode, setMode] = useState("quantils"); // Default mode
+  const [mode, setMode] = useState("quantils");
 
-  const toggleMode = () => {
-    setMode((prevMode) => (prevMode === "quantils" ? "decils" : "quantils"));
+  const handleModeChange = (event, newMode) => {
+    if (newMode !== null) {
+      setMode(newMode);
+    }
   };
 
   // const scrollContainerRef = useRef(null);
@@ -221,20 +222,19 @@ function App() {
           </p>
 
 
+          <ToggleButtonGroup
+            className="expenditure-toggle"
+            value={mode}
+            exclusive
+            onChange={handleModeChange}
+            aria-label="mode selection"
+          >
+            <ToggleButton value="quantils">Quantil</ToggleButton>
+            <ToggleButton value="decils">Dezil</ToggleButton>
+          </ToggleButtonGroup>
 
-          {/* Expenditure Charts */}
-          {/* <div className="expenditure-charts">
-            <QuantilChartLeft></QuantilChartLeft>
-            <QuantilChartLeft></QuantilChartLeft>
-          </div> */}
-
-          {/* <label className="switch">
-            <input type="switch" onChange={toggleMode} />
-            <span className="slider"></span>
-          </label> */}
           <div className="expenditure-charts">
-            {/* <QuantilCharts/> */}
-            <ExpenditureCharts/>
+            <ExpenditureCharts mode={mode}/>
           </div>
 
 

@@ -285,6 +285,27 @@ section {
     margin: 0;
   }
 
+  .expenditure-toggle {
+    padding-top: 20px;
+    display: flex;
+    width: 180px;
+  }
+
+  .expenditure-toggle .MuiToggleButton-root {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #ccc;
+    color: black;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .expenditure-toggle .MuiToggleButton-root.Mui-selected {
+    background-color: #F0A898 !important;
+    color: white !important;
+    font-weight: 600;
+  }
+
   .expenditure-charts {
     width: 100%;
     display: flex;
@@ -294,27 +315,14 @@ section {
     padding-top: 20px;
   }
 
-  .expanditure-chart-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows wrapping when screen width is small */
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .expanditure-chart-container > div {
-    /* flex: 1 1 320px; Grow/shrink, with a base width of 320px */
-    flex: 1 1 calc(50% - 20px);
-    /* width: 500px; */
-    min-width: 320px;
-    max-width: 600px;
-    height: 400px;
-    box-sizing: border-box;
-  }
-
   .title {
     color: #333;
     font-size: 2.5rem;
     margin-bottom: 20px;
+  }
+
+  .title-section {
+    margin-top: 20px;
   }
   
   .paragraph {
@@ -324,10 +332,6 @@ section {
 
   .leaflet-control-attribution {
     background-color: #f4f4f4 !important;
-  }
-
-  .title-section {
-    margin-top: 20px;
   }
 
   .progressBar {
@@ -420,29 +424,3 @@ section {
     } 
   }
     */
-
-
-
-/* .App {
-  text-align: center;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  scroll-behavior: smooth;
-}
-
-#root {
-  height: 100vh;
-  overflow: auto;
-} */

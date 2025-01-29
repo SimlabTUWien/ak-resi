@@ -12,8 +12,8 @@ const ExpenditureCharts = ({ mode }) => {
         </>
       ) : (
         <>
-          <QuantilChart />
-          <QuantilChart />
+          {/* <QuantilChart />
+          <QuantilChart /> */}
         </>
       )}
     </div>

@@ -1,6 +1,6 @@
 /* global L */ // Fix for ESLint 'L is not defined' error
 import React, { useEffect, useState, useRef } from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import { MapContainer, GeoJSON } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-splitmap';
 import 'leaflet-defaulticon-compatibility';

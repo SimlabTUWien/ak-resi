@@ -20,12 +20,12 @@ const QuantilChart = () => {
 
   const option = {
     grid: chartWidth < 360 
-    ? { left: "15%", right: "2%" }
+    ? { left: "15%", right: "2%", top: "25%" }
     : chartWidth < 430 
-      ? { left: "12%", right: "2%" }
+      ? { left: "12%", right: "2%", top: "25%" }
       : chartWidth < 600
-        ? { left: "10%", right: "4%" }
-        : { left: "10%", right: "10%" },
+        ? { left: "10%", right: "4%", top: "23%" }
+        : { left: "10%", right: "10%", top: "20%" },
     title: {
       text: chartWidth < 450 
       ? "Mean monthly nethousehold \nincome in EUR"  // Add line break for small screens
@@ -37,6 +37,10 @@ const QuantilChart = () => {
       trigger: "axis",
       confine: true,
       axisPointer: { type: "shadow" },
+    },
+    legend: {
+      show: true,
+      top: chartWidth < 450 ? "10%" : "8%"
     },
     xAxis: {
       type: "category",
@@ -62,7 +66,7 @@ const QuantilChart = () => {
   };
 
   return (
-    <div ref={chartContainerRef} style={{ width: "100%", maxWidth: "600px", height: "400px", justifyContent: "center", margin: "auto" }}>
+    <div ref={chartContainerRef} style={{ width: "100%", maxWidth: "600px", height: "440px", justifyContent: "center", margin: "auto" }}>
       <ReactECharts option={option} style={{ width: "100%", height: "100%" }} />
     </div>
   );
