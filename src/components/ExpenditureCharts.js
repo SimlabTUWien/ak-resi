@@ -7,8 +7,8 @@ const ExpenditureCharts = ({ mode }) => {
     <div className="expenditure-charts">
       {mode === "quantils" ? (
         <>
-          <QuantilChart />
-          <QuantilChart />
+          <QuantilChart index={1}/>
+          <QuantilChart index={2}/>
         </>
       ) : (
         <>
