@@ -14,6 +14,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import ViolinChart from "./components/ViolinChart";
+import CounterAnimation from "./components/CounterAnimation";
 
 function App() {
   const mapboxAccessToken = 'your-mapbox-token-here';
@@ -221,7 +223,7 @@ function App() {
             onChange={handleModeChange}
             aria-label="mode selection"
           >
-            <ToggleButton value="quantils">Quantil</ToggleButton>
+            <ToggleButton value="quantils">Quintil</ToggleButton>
             <ToggleButton value="decils">Dezil</ToggleButton>
           </ToggleButtonGroup>
 
@@ -241,10 +243,40 @@ function App() {
 
           <h2>Einkommensungleichheit nach Gesamteinkommen und verfügbaren Einkommen</h2>
 
+          {/* GINI gegenüberstellen*/}
+          <div className="gini-container">
+            <div>
+              <CounterAnimation targetValue={32} />
+              <h3>Gini-Koeffizient (Gesamteinkommen)</h3>
+            </div>
+            <div>
+              <CounterAnimation targetValue={39} />
+              <h3>Gini-Koeffizient (Verfügbares Einkommen)</h3>
+            </div>
+          </div>
+
+          <div>
+            {/* accodring with additional info here */}
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography><strong>Wie wird der Gini berechnet?</strong></Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>TODO: Erläuterungstext hier einfügen</Typography>
+              </AccordionDetails>
+            </Accordion>
+          </div>
+
+          <h2>Fokus auf RESI und EK</h2>
+
           <h2>Verfügbare Einkommen nach Bildungsabschlüssen und Beschäftigung</h2>
           <p className='paragraph'>
             Da die Einkommen stark vom Bildungsniveau, dem Beschäftigungsgrad und der Art der Erwerbstätigkeit abhängen, die notwendigen Ausgaben aber von allen getätigt werden müssen, spiegeln sich diese wirtschaftlichen Unterschiede noch stärker im verfügbaren Einkommen wider. In der Grafik kann zwischen den Kategorien gewechselt werden: 
           </p>
+
+          {/* Violinchart*/}
+          {/* <ViolinChart/> */}
+
           {/* Barchart 1*/}
           {/* Barchart 2*/}
           <p className='paragraph'>
@@ -276,7 +308,7 @@ function App() {
         </section>
         
         <section>
-          <h1 className="title">D3 Section</h1>
+          <h1 className="title">Lebensqualität</h1>
           <LivabilityChart/>
         </section>
 
