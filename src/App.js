@@ -7,6 +7,11 @@ import BackgroundChart from './components/BackgroundChart';
 import NavBar from './components/NavigationBar';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import ExpenditureCharts from './components/ExpenditureCharts';
+import HouseholdTable from "./components/HouseholdTable";
+import CounterAnimation from "./components/CounterAnimation";
+
+import ViolinChart from "./components/ViolinChart";
+
 
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -14,8 +19,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-import ViolinChart from "./components/ViolinChart";
-import CounterAnimation from "./components/CounterAnimation";
+
 
 function App() {
   const mapboxAccessToken = 'your-mapbox-token-here';
@@ -202,6 +206,11 @@ function App() {
 
           <h2>Wieviel Einkommen haben die Haushalte?</h2>
 
+          <p className='paragraph'>
+            Das mittlere Haushaltseinkommen in Österreich ist XX 
+          </p>
+          
+
           {/* Histogramm */}
 
           <h2>Wofür geben Haushalte Geld aus?</h2>
@@ -210,6 +219,7 @@ function App() {
           </p>
 
           {/* Table oder Piktogramme */}
+          <HouseholdTable/>
 
           <p className='paragraph'>
             Haushalte lassen sich auch nach ihrem Einkommen einteilen, zum Beispiel in Quintile oder Dezile, fünf bzw. zehn Gruppen in der die gleiche Anzahl an Haushalten enthalten ist.
@@ -230,7 +240,6 @@ function App() {
           <div className="expenditure-charts">
             <ExpenditureCharts mode={mode}/>
           </div>
-
 
 
           <p className='paragraph'>

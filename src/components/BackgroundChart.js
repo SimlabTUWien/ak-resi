@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { shadows } from '@mui/system';
+import { Box } from "@mui/material";
 
 
 const svgUrl = `${process.env.PUBLIC_URL}/Abb1_4Kreise4Overlaps_DE.svg`;
@@ -73,46 +75,6 @@ const BackgroundChart = () => {
     setSelectedInfo(textMap[keys[newIndex]]);
   };
 
-  // const [selectedText, setSelectedText] = useState("");
-  //
-  // useEffect(() => {
-  //   d3.xml(svgUrl).then((data) => {
-  //     if (svgRef.current) {
-  //       svgRef.current.innerHTML = "";
-  //       svgRef.current.appendChild(data.documentElement);
-
-  //       const svg = d3.select(svgRef.current).select("svg");
-
-  //        // Ensure SVG scales properly
-  //        svg.attr("width", "100%").attr("height", "auto");
-
-  //        // Center the SVG in its container
-  //        svg.style("display", "block").style("margin", "auto");
-
-  //       // Select all <g> elements except those with the excluded IDs
-  //       svg.selectAll("g")
-  //         .filter(function() {
-  //           const id = d3.select(this).attr("id");
-  //           return id !== "basis" && id !== "schnittflaechen" && id !== "pfeile";
-  //         })
-  //         .style("cursor", "pointer")
-  //         .on("mouseover", function () {
-  //           d3.select(this).style("filter", "brightness(0.9)");
-  //         })
-  //         .on("mouseout", function () {
-  //           d3.select(this).style("filter", "");
-  //         })
-  //         .on("click", function (event) {
-  //           const id = d3.select(this).attr("id");
-  //           const info = textMap[id] || { title: "Unbekannt", text: "Keine Beschreibung verfügbar.", color: "#ccc" };
-          
-  //           setSelectedInfo(info);
-  //         });
-
-  //     }
-  //   });
-  // }, []);
-
   useEffect(() => {
     d3.xml(svgUrl).then((data) => {
       if (svgRef.current) {
@@ -159,7 +121,7 @@ const BackgroundChart = () => {
     <div style={{ textAlign: "center" }}>
       <div ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }}></div>
 
-      {selectedInfo && (
+      {/* {selectedInfo && (
         <div
           className="infotext-container"
           style={{
@@ -178,7 +140,28 @@ const BackgroundChart = () => {
           </div>
           <p style={{ margin: 0 }}>{selectedInfo.text}</p>
         </div>
-      )}
+      )} */}
+      <Box 
+        className="infotext-container"
+        sx={{
+          boxShadow: 2, // Use shadow from MUI's theme (0-24)
+          padding: 2,
+          borderRadius: 2,
+          backgroundColor: selectedInfo.color,
+          display: isVisible ? "block" : "none"
+        }}
+      >
+        <div className="info-navigation">
+          <button onClick={() => navigateText(-1)} className="nav-button">
+            <ArrowBackIosNewIcon />
+          </button>
+          <h4 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", paddingTop: "3px"}}>{selectedInfo.title}</h4>
+          <button onClick={() => navigateText(1)} className="nav-button">
+            <ArrowForwardIosIcon />
+          </button>
+        </div>
+        <p style={{ margin: 0 }}>{selectedInfo.text}</p>
+      </Box>
 
     </div>
   );

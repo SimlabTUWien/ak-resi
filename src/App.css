@@ -306,8 +306,8 @@ h2 {
   }
 
   .infotext-container {
-    border: 2px solid rgba(112, 112, 112, 0.2);
-    border-radius: 8px;
+    /* border: 1px solid rgba(112, 112, 112, 0.2); */
+    /* border-radius: 4px; */
     padding: 15px;
     margin-top: 24px;
     max-width: 100%;
@@ -376,8 +376,6 @@ h2 {
 
   .gini-container {
     display: flex;
-    /* justify-content: center; */
-    /* gap: 20%; */
     justify-content: space-between;
     margin: 40px 0;
 
