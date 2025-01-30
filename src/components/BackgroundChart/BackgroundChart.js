@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { shadows } from '@mui/system';
 import { Box } from "@mui/material";
+import "./BackgroundChart.css";
 
 
 const svgUrl = `${process.env.PUBLIC_URL}/Abb1_4Kreise4Overlaps_DE.svg`;
@@ -120,27 +120,6 @@ const BackgroundChart = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <div ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }}></div>
-
-      {/* {selectedInfo && (
-        <div
-          className="infotext-container"
-          style={{
-            backgroundColor: selectedInfo.color,
-            display: isVisible ? "block" : "none"
-          }}
-        >
-          <div className="info-navigation">
-            <button onClick={() => navigateText(-1)} className="nav-button">
-              <ArrowBackIosNewIcon />
-            </button>
-            <h4 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", paddingTop: "3px"}}>{selectedInfo.title}</h4>
-            <button onClick={() => navigateText(1)} className="nav-button">
-              <ArrowForwardIosIcon />
-            </button>
-          </div>
-          <p style={{ margin: 0 }}>{selectedInfo.text}</p>
-        </div>
-      )} */}
       <Box 
         className="infotext-container"
         sx={{

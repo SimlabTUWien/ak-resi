@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 
-import AustriaMapComponent from './components/AustriaMap';
-import LivabilityChart from './components/d3Chart';
-import BackgroundChart from './components/BackgroundChart';
-import NavBar from './components/NavigationBar';
+import HeroSection from "./components/HeroSection/HeroSection";
+import HeaderAppBar from "./components/HeaderAppBar/HeaderAppBar";
+import BackgroundChart from './components/BackgroundChart/BackgroundChart';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import ExpenditureCharts from './components/ExpenditureCharts';
 import HouseholdTable from "./components/HouseholdTable";
 import CounterAnimation from "./components/CounterAnimation";
+import SocialInfrastructureTable from "./components/SocialInfrastructureTable";
 
-import ViolinChart from "./components/ViolinChart";
+
+// import ViolinChart from "./components/ViolinChart";
+// import AustriaMapComponent from './components/AustriaMap';
+// import LivabilityChart from './components/d3Chart';
+// import NavBar from './components/NavigationBar';
 
 
 import Accordion from '@mui/material/Accordion';
@@ -19,11 +23,11 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-import SocialInfrastructureTable from "./components/SocialInfrastructureTable";
+
 
 
 function App() {
-  const mapboxAccessToken = 'your-mapbox-token-here';
+  // const mapboxAccessToken = 'your-mapbox-token-here';
 
   const [mode, setMode] = useState("quantils");
 
@@ -32,40 +36,36 @@ function App() {
       setMode(newMode);
     }
   };
+
+  const [showAppBar, setShowAppBar] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowAppBar(true);
+      } else {
+        setShowAppBar(false);
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
 
-      <header className="header">
+      <HeaderAppBar show={showAppBar} /> {/* Show AppBar on scroll */}
 
-        <div className='header-logo'>
-          <img src="/Logo_Projekt_small.png" alt="project's logo without icons" />
-        </div>
-        <h1>Re:sIZE</h1>
-      </header>
-      
-      <div className="header-image">
-        <img
-          src="/HaeuserzeileHeader_spiegel.png"
-          alt="showing houses in a row in cartoonish style"
-        />
-      </div>
-
-      <NavBar/>
+      <HeroSection></HeroSection>
 
       <div className='title-wrapper'>
         <section className="title-section">
-          <div className='text-container'>
-            <h1 className="title">Perspektiven auf Ungleichheit in Österreich</h1>
-            <h3>Verfügbares Einkommen, soziale Infrastruktur und Zeitverwendung</h3>
-          </div>
-
-          <div className='image-container logo-large'>
-            <img src="/Logo_Projekt_icons.png" alt="showing the four core aspects of the project" />
-          </div>
+          
+          <h1 className="title">Perspektiven auf Ungleichheit in Österreich</h1>
+          <h3>Verfügbares Einkommen, soziale Infrastruktur und Zeitverwendung</h3>
         </section>
       </div>
-
-      
 
 
       {/* Scrollable Content */}
@@ -99,7 +99,7 @@ function App() {
         </section>
 
         <section id="income">
-          <h2>Verfügbares Einkommen in Österreich</h2>
+          <h1>Verfügbares Einkommen in Österreich</h1>
           <p className='paragraph'>
             Wie man hier sehen kann, lässt sich das verfügbare Einkommen berechnen, indem man vom Einkommen der Haushalte, ihr notwendigen Ausgaben abzieht. Diese Ausgaben sind zur Deckung von Grundbedürfnissen wie Wohnen oder Ernährung. 
           </p>
@@ -215,8 +215,8 @@ function App() {
           {/* Karte 2*/}
         </section>
 
-        <section id="infrastructure">
-          <h2>Soziale Infrastruktur in Österreich</h2>
+        <section id="social-infrastructure">
+          <h1>Soziale Infrastruktur in Österreich</h1>
           <p className='paragraph'>
             Soziale Infrastrukturen wie Kindergärten, Schulen, Gesundheits- und Pflegeeinrichtungen sind essenziell für eine funktionierende Gesellschaft. Sie ermöglichen Bildung, Gesundheit und soziale Teilhabe – unabhängig vom Einkommen. Doch ihr Zugang und ihre Qualität sind nicht überall gleich. Regionale Unterschiede und fehlende Angebote können Haushalte zusätzlich belasten und Ungleichheiten verstärken.
           </p>
@@ -238,7 +238,15 @@ function App() {
           {/* SI Table*/}
           <SocialInfrastructureTable/>
 
+        </section>
 
+        <section id="time-usage">
+          <h1>Zeitverwendung in Österreich</h1>
+        
+          <p className='paragraph'>
+            Fokus Tageszeitnutzung nach Geschlecht und Alter
+          </p>
+        
         </section>
 
         {/* <section className="austria-map">
