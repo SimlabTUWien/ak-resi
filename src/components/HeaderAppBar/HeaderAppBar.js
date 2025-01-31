@@ -47,15 +47,16 @@ export default function HeaderAppBar({ show }) {
     setDrawerOpen(open);
   };
 
-  // Function to scroll to a section
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+        const yOffset = -40;
+        const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+
+        window.scrollTo({ top: y, behavior: "smooth" });
     }
     setDrawerOpen(false);
-  };
-
+};
 
 
   const handleOpenLanguageMenu = (event) => {
