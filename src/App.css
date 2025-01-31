@@ -9,6 +9,7 @@ body, html {
   font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif;
   background-color: #f4f4f4;
   /* background-color: #E7DCB1; */
+  /* background-color: #566060; */
   scroll-behavior: smooth;
 }
 
@@ -22,7 +23,7 @@ section {
 }
 
 h1 {
-  text-align: center;
+  /* text-align: center; */
   font-size: 2rem;
 }
 
@@ -63,7 +64,6 @@ h2 {
 
 img {
   max-width: 100%;
-  /* height: 100%; */ /* war auto */
   display: block;
 }
 
@@ -105,10 +105,18 @@ img {
   }
 }
 
+
+
+.toggle-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .expenditure-toggle {
   padding-top: 20px;
   display: flex;
-  width: 180px;
+  width: 200px;
 }
 
 .expenditure-toggle .MuiToggleButton-root {
@@ -132,7 +140,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 20px;
+  padding-top: 24px;
 }
 
 .gini-container {

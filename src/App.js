@@ -143,19 +143,21 @@ function App() {
             Haushalte lassen sich auch nach ihrem Einkommen einteilen, zum Beispiel in Quintile oder Dezile, fünf bzw. zehn Gruppen in der die gleiche Anzahl an Haushalten enthalten ist.
           </p>
 
+          <div className="toggle-container">
+            <ToggleButtonGroup
+              className="expenditure-toggle"
+              value={mode}
+              exclusive
+              onChange={handleModeChange}
+              aria-label="mode selection"
+            >
+              <ToggleButton value="quantils">Quintil</ToggleButton>
+              <ToggleButton value="decils">Dezil</ToggleButton>
+            </ToggleButtonGroup>
+          </div>
+          
 
-          <ToggleButtonGroup
-            className="expenditure-toggle"
-            value={mode}
-            exclusive
-            onChange={handleModeChange}
-            aria-label="mode selection"
-          >
-            <ToggleButton value="quantils">Quintil</ToggleButton>
-            <ToggleButton value="decils">Dezil</ToggleButton>
-          </ToggleButtonGroup>
-
-          <div className="expenditure-charts">
+          <div className="expenditure-charts-container">
             <ExpenditureCharts mode={mode}/>
           </div>
 
