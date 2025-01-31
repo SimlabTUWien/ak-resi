@@ -38,16 +38,18 @@ function App() {
   };
 
   const [showAppBar, setShowAppBar] = useState(false);
-
+  
   useEffect(() => {
+    setShowAppBar(window.scrollY > 50);
+  
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 50) {
         setShowAppBar(true);
       } else {
         setShowAppBar(false);
       }
     };
-    
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
