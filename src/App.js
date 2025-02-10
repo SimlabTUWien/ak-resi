@@ -23,11 +23,12 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import CommunitySizeChart from "./components/CommunitySizeClass";
 
 
 
 function App() {
-  // const mapboxAccessToken = 'your-mapbox-token-here';
+  const mapboxAccessToken = 'pk.eyJ1Ijoic2ltbGFidHV3aWVuIiwiYSI6ImNtNnl2OTB5MDAwOTUybHNlZ2FrenJkazUifQ.hZw0Uga4clOW7Ewz5NUrCg';
 
   const [mode, setMode] = useState("quantils");
 
@@ -215,8 +216,9 @@ function App() {
           <h2>Regionale Unterschiede beim verfügbaren Einkommen</h2>
 
           {/* SVG Karte 1*/}
-          {/* Inforbox*/}
-          {/* Karte 2*/}
+
+          {/* Infobox mit Karte 2*/}
+          <CommunitySizeChart mapboxAccessToken={mapboxAccessToken}/>
         </section>
 
         <section id="social-infrastructure">
