@@ -8,6 +8,8 @@ import ScrollProgressBar from './components/ScrollProgressBar';
 import ExpenditureCharts from './components/ExpenditureCharts';
 import HouseholdTable from "./components/HouseholdTable";
 import CounterAnimation from "./components/CounterAnimation";
+
+import CommunitySizeChart from "./components/CommunitySizeClass";
 import SocialInfrastructureTable from "./components/SocialInfrastructureTable";
 
 
@@ -23,7 +25,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-import CommunitySizeChart from "./components/CommunitySizeClass";
+import MeanMapChart from "./components/MeanMapChart";
 
 
 
@@ -216,7 +218,10 @@ function App() {
           <h2>Regionale Unterschiede beim verfügbaren Einkommen</h2>
 
           {/* SVG Karte 1*/}
-
+          <div className="mean-map-container">
+            <MeanMapChart/>
+          </div>
+          
           {/* Infobox mit Karte 2*/}
           <CommunitySizeChart mapboxAccessToken={mapboxAccessToken}/>
         </section>

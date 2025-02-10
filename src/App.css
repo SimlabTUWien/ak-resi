@@ -156,8 +156,8 @@ img {
   }
 }
 
-.leaflet-control-attribution {
-  background-color: #f4f4f4 !important;
+.mean-map-container {
+  margin-bottom: 32px;
 }
 
 .progressBar {
