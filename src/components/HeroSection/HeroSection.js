@@ -32,7 +32,8 @@ export default function HeroSection() {
         transition={{ duration: 1.5 }}
       >
         <div className="titles-container">
-          <img src="/Logo_minimal.svg" alt="Logo" className="logo" />
+          {/* <img src="/Logo_minimal.svg" alt="Logo" className="logo" /> */}
+          <img src="/Logo_project_small.png" alt="Logo" className="logo" />
 
           <h1 className="hero-title">Re:sIZE</h1>
           <p className="hero-subtitle">Perspektiven auf Ungleichheit in Österreich</p>
