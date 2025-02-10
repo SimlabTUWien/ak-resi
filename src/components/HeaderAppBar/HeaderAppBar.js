@@ -87,7 +87,7 @@ export default function HeaderAppBar({ show }) {
                 "&:hover": {
                   filter: "brightness(0.95)",
                 }
-                }} 
+              }} 
               />
             <Typography variant="h5" 
               sx={{

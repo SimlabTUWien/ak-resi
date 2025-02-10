@@ -29,11 +29,16 @@ export default function HeroSection() {
         className="hero-content"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.5 }}
       >
         <div className="titles-container">
+          <img src="/Logo_minimal.svg" alt="Logo" className="logo" />
+
           <h1 className="hero-title">Re:sIZE</h1>
           <p className="hero-subtitle">Perspektiven auf Ungleichheit in Österreich</p>
+          
+          {/* <h1 className="hero-title">Perspektiven auf Ungleichheit in Österreich</h1>
+          <p className="hero-subtitle">Verfügbares Einkommen, soziale Infrastruktur und Zeitverwendung</p> */}
         </div>
 
         <motion.div
