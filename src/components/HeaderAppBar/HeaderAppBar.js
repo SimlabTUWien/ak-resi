@@ -82,7 +82,11 @@ export default function HeaderAppBar({ show }) {
                 mr: 1, 
                 height: 36, 
                 marginRight: 1,
-                cursor: 'pointer'
+                cursor: 'pointer',
+                transition: "0.3s ease-in-out",
+                "&:hover": {
+                  filter: "brightness(0.95)",
+                }
                 }} 
               />
             <Typography variant="h5" 
