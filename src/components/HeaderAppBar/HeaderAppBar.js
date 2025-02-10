@@ -75,12 +75,14 @@ export default function HeaderAppBar({ show }) {
 
             {/* Dektop View */}
 
-            <Box component="img" src="/Logo_project_small.png" alt="Project Logo" 
+            <Box component="img" src="/Logo_project_small.png" alt="Project Logo"
+              onClick={() => scrollToSection("intro")}
               sx={{
                 display: { xs: 'none', md: 'flex' }, 
                 mr: 1, 
                 height: 36, 
-                marginRight: 1 
+                marginRight: 1,
+                cursor: 'pointer'
                 }} 
               />
             <Typography variant="h5" 
