@@ -76,7 +76,7 @@
 
       .cls-17, .cls-18 {
         fill: #1d1d1b;
-        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif;
       }
 
       .cls-19 {
