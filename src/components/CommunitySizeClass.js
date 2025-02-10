@@ -4,7 +4,6 @@ import { MapContainer, GeoJSON, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-splitmap';
 import 'leaflet-defaulticon-compatibility';
-import chroma from 'chroma-js';
 import L from 'leaflet';
 
 import { Box, Typography } from '@mui/material';
@@ -94,18 +93,6 @@ const CommunitySizeChart = ({ mapboxAccessToken }) => {
       })
       .catch((error) => console.error('Error loading GeoJSON:', error));
   }, []);
-
-  // // Function to colorize the map with gradient
-  // const getColor = (flValue) => {
-  //   if (minFL !== null && maxFL !== null) {
-  //     const scale = chroma
-  //       .scale(['#FFFFCC', '#660066']) // Gradient
-  //       .domain([Math.pow(minFL, 0.5), Math.pow(maxFL, 0.5)]) 
-  //       .mode('lab');
-  //     return scale(Math.pow(flValue, 0.5)).hex();
-  //   }
-  //   return '#ccc';
-  // };
 
   const getColor = (flValue) => {
     if (minFL !== null && maxFL !== null) {

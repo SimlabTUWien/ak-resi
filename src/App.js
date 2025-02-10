@@ -63,7 +63,7 @@ function App() {
       <HeroSection></HeroSection>
 
       <div className='title-wrapper'>
-        <section className="title-section">
+        <section className="title-section" id="intro">
           
           <h1 className="title">Perspektiven auf Ungleichheit in Österreich</h1>
           <h3>Verfügbares Einkommen, soziale Infrastruktur und Zeitverwendung</h3>
