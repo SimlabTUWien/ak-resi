@@ -8,57 +8,64 @@ import "./BackgroundChart.css";
 
 const svgUrl = `${process.env.PUBLIC_URL}/Abb1_4Kreise4Overlaps_DE.svg`;
 
-  const textMap = {
-    "einkommen": {
-      title: "Einkommen",
-      text: "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. In Österreich liegt das mittlere Haushaltseinkommen bei XXX €, was bedeutet, dass 50 % der Haushalte über und 50 % unter diesem Betrag zur Verfügung haben.",
-      color: "#e2e0e1"
-    },
-    "notwendige_ausgaben": {
-      title: "Notwendige Ausgaben",
-      text: "Zur Deckung der Grundbedürfnisse gehören Ausgaben, die sich kaum vermeiden lassen. Dazu zählen Wohnen, Heizen, Energie, Lebensmittel, Mobilität sowie Kosten für Bildung und Gesundheit. Diese notwendigen Ausgaben können jedoch stark variieren, etwa je nach Region, Wohnform oder dem Zugang zu öffentlicher Infrastruktur.",
-      color: "#f0ae9f"
-    },
-    "soziale_infrastrukturen": {
-      title: "Soziale Infrastrukturen",
-      text: "Soziale Infrastrukturen sind genauso essenziell wie technische Netze wie Straßen oder Telefonverbindungen. Zugang zu Kindergärten, Schulen, Ärzt:innen, Krankenhäusern, Pflegeheimen und ähnlichen sozialen Angeboten ist unverzichtbar für das Funktionieren unserer Gesellschaft. Dennoch diese Einrichtungen nicht überall in gleicher Qualität oder Dichte verfügbar, was regionale Unterschiede in der Lebensqualität verstärken kann.",
-      color: "#a5cdc8"
-    },
-    "zeit_verwendung": {
-      title: "Zeitverwendung",
-      text: "Jeder Mensch hat 24 Stunden pro Tag – doch wie diese Stunden genutzt werden, unterscheidet sich stark. Zeit für bezahlte Arbeit, unbezahlte Tätigkeiten wie Haushalt oder Kinderbetreuung, Freizeit, Wegzeiten und Schlaf ist nicht für alle gleich verteilt. Diese Unterschiede beeinflussen sowohl die Lebensqualität als auch die Möglichkeiten, Einkommen zu erzielen oder soziale Aktivitäten wahrzunehmen.",
-      color: "#fcd799"
-    },
-    "verfuegbares_einkommen": {
-      title: "Verfügbares Einkommen",
-      text: "Das verfügbare Einkommen, auch Residualeinkommen genannt, beschreibt das Einkommen, das nach Abzug der notwendigen Ausgaben übrig bleibt. Dieses Geld steht für unregelmäßige Ausgaben, Freizeitgestaltung oder zum Sparen zur Verfügung und spielt eine wichtige Rolle für die finanzielle Freiheit eines Haushalts.",
-      color: "#f0d1c7"
-    },
-    "zeit_ist_geld": {
-      title: "Zeit is Geld",
-      text: "Wer mehr Zeit in bezahlte Arbeit investiert, hat meist ein höheres Einkommen. Doch unbezahlte Tätigkeiten wie Hausarbeit, Kinderbetreuung oder ehrenamtliches Engagement bleiben dabei oft unberücksichtigt. Menschen mit höherem Einkommen können ihre Zeit anders nutzen – etwa, indem sie Dienstleistungen wie Haushaltshilfen oder Kinderbetreuung „einkaufen“, um Freiräume zu schaffen.",
-      color: "#f0e6d7"
-    },
-    "zeit_und_infrastruktur": {
-      title: "Zeit und Infrastruktur",
-      text: "Soziale Infrastrukturen haben großen Einfluss darauf, wie Menschen ihre Zeit verbringen können. Ein gut erreichbarer Kindergarten ermöglicht es Eltern, mehr Zeit für bezahlte Arbeit zu nutzen. Weite Wege zu Schulen oder Gesundheitseinrichtungen hingegen führen zu langen Fahrzeiten oder – im Notfall – zu erhöhten Risiken, wenn Hilfe zu spät eintrifft.",
-      color: "#e9dfbe"
-      
-    },
-    "geld_sparen_durch_SI": {
-      title: "Geld sparen durch SI",
-      text: "Öffentlich zugängliche und kostengünstige Bildungs- und Gesundheitseinrichtungen entlasten Haushalte finanziell, indem sie die notwendigen Ausgaben reduzieren. Sind solche Einrichtungen jedoch schwer erreichbar, steigen die Mobilitätskosten, oder Haushalte müssen auf teure private Angebote wie Ärzt:innen ohne Kassenvertrag ausweichen.",
-      color: "#d2d5cb"
-    }
-  };
+const textMap = {
+  "einkommen": {
+    title: "Einkommen",
+    text: "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. In Österreich liegt das mittlere Haushaltseinkommen bei XXX €, was bedeutet, dass 50 % der Haushalte über und 50 % unter diesem Betrag zur Verfügung haben.",
+    color: "#e2e0e1"
+  },
+  "notwendige_ausgaben": {
+    title: "Notwendige Ausgaben",
+    text: "Zur Deckung der Grundbedürfnisse gehören Ausgaben, die sich kaum vermeiden lassen. Dazu zählen Wohnen, Heizen, Energie, Lebensmittel, Mobilität sowie Kosten für Bildung und Gesundheit. Diese notwendigen Ausgaben können jedoch stark variieren, etwa je nach Region, Wohnform oder dem Zugang zu öffentlicher Infrastruktur.",
+    color: "#f0ae9f"
+  },
+  "soziale_infrastrukturen": {
+    title: "Soziale Infrastrukturen",
+    text: "Soziale Infrastrukturen sind genauso essenziell wie technische Netze wie Straßen oder Telefonverbindungen. Zugang zu Kindergärten, Schulen, Ärzt:innen, Krankenhäusern, Pflegeheimen und ähnlichen sozialen Angeboten ist unverzichtbar für das Funktionieren unserer Gesellschaft. Dennoch diese Einrichtungen nicht überall in gleicher Qualität oder Dichte verfügbar, was regionale Unterschiede in der Lebensqualität verstärken kann.",
+    color: "#a5cdc8"
+  },
+  "zeit_verwendung": {
+    title: "Zeitverwendung",
+    text: "Jeder Mensch hat 24 Stunden pro Tag – doch wie diese Stunden genutzt werden, unterscheidet sich stark. Zeit für bezahlte Arbeit, unbezahlte Tätigkeiten wie Haushalt oder Kinderbetreuung, Freizeit, Wegzeiten und Schlaf ist nicht für alle gleich verteilt. Diese Unterschiede beeinflussen sowohl die Lebensqualität als auch die Möglichkeiten, Einkommen zu erzielen oder soziale Aktivitäten wahrzunehmen.",
+    color: "#fcd799"
+  },
+  "verfuegbares_einkommen": {
+    title: "Verfügbares Einkommen",
+    text: "Das verfügbare Einkommen, auch Residualeinkommen genannt, beschreibt das Einkommen, das nach Abzug der notwendigen Ausgaben übrig bleibt. Dieses Geld steht für unregelmäßige Ausgaben, Freizeitgestaltung oder zum Sparen zur Verfügung und spielt eine wichtige Rolle für die finanzielle Freiheit eines Haushalts.",
+    color: "#f0d1c7"
+  },
+  "zeit_ist_geld": {
+    title: "Zeit is Geld",
+    text: "Wer mehr Zeit in bezahlte Arbeit investiert, hat meist ein höheres Einkommen. Doch unbezahlte Tätigkeiten wie Hausarbeit, Kinderbetreuung oder ehrenamtliches Engagement bleiben dabei oft unberücksichtigt. Menschen mit höherem Einkommen können ihre Zeit anders nutzen – etwa, indem sie Dienstleistungen wie Haushaltshilfen oder Kinderbetreuung „einkaufen“, um Freiräume zu schaffen.",
+    color: "#f0e6d7"
+  },
+  "zeit_und_infrastruktur": {
+    title: "Zeit und Infrastruktur",
+    text: "Soziale Infrastrukturen haben großen Einfluss darauf, wie Menschen ihre Zeit verbringen können. Ein gut erreichbarer Kindergarten ermöglicht es Eltern, mehr Zeit für bezahlte Arbeit zu nutzen. Weite Wege zu Schulen oder Gesundheitseinrichtungen hingegen führen zu langen Fahrzeiten oder – im Notfall – zu erhöhten Risiken, wenn Hilfe zu spät eintrifft.",
+    color: "#e9dfbe"
+  },
+  "geld_sparen_durch_SI": {
+    title: "Geld sparen durch SI",
+    text: "Öffentlich zugängliche und kostengünstige Bildungs- und Gesundheitseinrichtungen entlasten Haushalte finanziell, indem sie die notwendigen Ausgaben reduzieren. Sind solche Einrichtungen jedoch schwer erreichbar, steigen die Mobilitätskosten, oder Haushalte müssen auf teure private Angebote wie Ärzt:innen ohne Kassenvertrag ausweichen.",
+    color: "#d2d5cb"
+  }
+};
 
+const checkTouchDevice = () => {
+  return (
+    "ontouchstart" in window ||
+    (navigator.maxTouchPoints > 0 && !window.matchMedia("(any-hover: hover)").matches)
+  );
+};
 
 
 const BackgroundChart = () => {
   const svgRef = useRef(null);
   // const [selectedInfo, setSelectedInfo] = useState(null);
 
-  const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+  // const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+  const isTouchDevice = checkTouchDevice();
+
   const [isVisible, setIsVisible] = useState(isTouchDevice);
 
   const initialId = Object.keys(textMap)[0]; // Get first key from textMap

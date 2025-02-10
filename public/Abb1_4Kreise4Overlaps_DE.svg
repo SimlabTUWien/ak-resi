@@ -2,6 +2,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 381.23 381.28">
   <defs>
     <style>
+      #zeit_verwendung_text, #soziale_infrastrukturen_text {
+        pointer-events: none;
+      }
+
       .cls-1 {
         letter-spacing: -.01em;
       }
