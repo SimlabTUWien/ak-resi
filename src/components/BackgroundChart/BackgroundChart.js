@@ -51,7 +51,7 @@ const textMap = {
   }
 };
 
-const checkTouchDevice = () => {
+const isTouchDevice = () => {
   return (
     "ontouchstart" in window ||
     (navigator.maxTouchPoints > 0 && !window.matchMedia("(any-hover: hover)").matches)
@@ -61,10 +61,6 @@ const checkTouchDevice = () => {
 
 const BackgroundChart = () => {
   const svgRef = useRef(null);
-  // const [selectedInfo, setSelectedInfo] = useState(null);
-
-  // const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-  const isTouchDevice = checkTouchDevice();
 
   const [isVisible, setIsVisible] = useState(isTouchDevice);
 
@@ -93,9 +89,9 @@ const BackgroundChart = () => {
         svg.attr("width", "100%").attr("height", "auto");
         svg.style("display", "block").style("margin", "auto");
   
-        const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+        // const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
   
-        if (!isTouchDevice) {
+        if (!isTouchDevice()) {
           svg.selectAll("g")
             .filter(function () {
               const id = d3.select(this).attr("id");
