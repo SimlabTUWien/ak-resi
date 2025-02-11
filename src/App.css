@@ -160,6 +160,30 @@ img {
   margin-bottom: 32px;
 }
 
+p.implications {
+  margin-bottom: 8px;
+}
+
+ul.custom-list {
+  margin-top: 8px;
+}
+
+ul.custom-list li::marker {
+  font-size: 1.2em;
+}
+
+ul.expenditure li::marker {
+  color: #f0ae9f;
+}
+
+ul.social-infrastructure li::marker {
+  color: #a5cdc8;
+}
+
+ul.time-usage li::marker {
+  color: #fcd799;
+}
+
 .progressBar {
   position: fixed;
   bottom: 0;

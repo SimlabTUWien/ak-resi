@@ -127,6 +127,9 @@ function App() {
 
           <h2>Wieviel Einkommen haben die Haushalte?</h2>
 
+          <p>TODO: Histogramm mit Einkommen?</p>
+
+
           <p className='paragraph'>
             Das mittlere Haushaltseinkommen in Österreich ist XX 
           </p>
@@ -201,12 +204,15 @@ function App() {
 
           <h2>Fokus auf RESI und EK</h2>
 
+          <p>TODO: Punktwolke</p>
+
           <h2>Verfügbare Einkommen nach Bildungsabschlüssen und Beschäftigung</h2>
           <p className='paragraph'>
             Da die Einkommen stark vom Bildungsniveau, dem Beschäftigungsgrad und der Art der Erwerbstätigkeit abhängen, die notwendigen Ausgaben aber von allen getätigt werden müssen, spiegeln sich diese wirtschaftlichen Unterschiede noch stärker im verfügbaren Einkommen wider. In der Grafik kann zwischen den Kategorien gewechselt werden: 
           </p>
 
           {/* Violinchart*/}
+          <p>TODO: Boxplot</p>
           {/* <ViolinChart/> */}
 
           {/* Barchart 1*/}
@@ -257,15 +263,74 @@ function App() {
           <p className='paragraph'>
             Fokus Tageszeitnutzung nach Geschlecht und Alter
           </p>
+
+          <p>TODO: wie auflistungen darstellen? Kommen hier Absätze?</p>
         
         </section>
 
-        {/* <section className="austria-map">
-          <h1 className="title">Leaflet Map Section</h1>
-          <AustriaMapComponent mapboxAccessToken={mapboxAccessToken} />
+        <section id="what-now">
+          <h1>Was nun?</h1>
+
+          <p className='paragraph'>
+            Ungleichheit ist mehr als nur eine Frage des Einkommens. Wer wie viel verdient, bestimmt zwar den monetären Spielraum, doch erst im Zusammenspiel mit notwendigen Ausgaben, aufgewandter Zeit (vor allem für Erwerbsarbeit und unbezahlter Arbeit) und öffentlicher sozialer Infrastruktur entsteht ein breiteres Bild sozialer Ungleichheit. Unser Projekt zeigt: Diese Faktoren sind nicht isoliert zu betrachten. Sie verstärken sich gegenseitig und beeinflussen. Um nachhaltige Lösungen zu entwickeln, muss Politik diese Zusammenhänge anerkennen und gezielt eingreifen.
+          </p>
+
+          <h2>Einkommen: Mehr als nur Lohn – es geht um echte Verfügbarkeit</h2>
+          <p className='paragraph'>
+          Nominale Einkommen sagen wenig darüber aus, was Menschen sich tatsächlich leisten können. Hohe Wohnkosten, steigende Energiepreise und andere Fixkosten schränken das verfügbare Einkommen vieler Haushalte drastisch ein. Besonders betroffen sind Alleinerziehende, Erwerbslose und prekär Beschäftigte.
+          </p>
+          <div className='paragraph'>
+            <p className="implications">Politische Implikationen:</p>
+            <ul className="custom-list">
+              <li>Mindestlohn & Sozialtransfers an realen Lebenshaltungskosten ausrichten</li>
+              <li>Steuerliche Entlastung für niedrige Einkommen verstärken</li>
+              <li>Bessere Absicherung für atypische Beschäftigte und Menschen außerhalb des Arbeitsmarkts</li>
+            </ul>
+          </div>
+
+          <h2>Notwendige Ausgaben: Wer mehr ausgeben muss, hat weniger Spielraum</h2>
+          <p className='paragraph'>
+            Nicht alle Haushalte sind gleichermaßen von steigenden Preisen betroffen. Wer wenig verdient, gibt einen überproportional hohen Anteil seines Einkommens für Wohnen, Energie und Mobilität aus. Fehlende Alternativen – etwa leistbarer öffentlicher Wohnraum oder gut ausgebaute Öffis – verstärken diese finanzielle Belastung.
+          </p>
+          <div className='paragraph'>
+            <p className="implications">Politische Implikationen:</p>
+            <ul className="custom-list expenditure">
+              <li>Mietpreisbremse & leistbarer Wohnraum als zentrale Stellschrauben</li>
+              <li>Zielgerichtete Energie- und Mobilitätszuschüsse</li>
+              <li>Ausbau kostengünstiger Alternativen im öffentlichen Sektor</li>
+            </ul>
+          </div>
+
+          <h2>Soziale Infrastruktur: Wer auf eigene Mittel angewiesen ist, bleibt zurück</h2>
+          <p className='paragraph'>
+            Öffentliche Kinderbetreuung, Gesundheitsversorgung, Pflegeangebote oder Bildungszugang – soziale Infrastruktur entscheidet darüber, wie stark Menschen auf ihr eigenes Einkommen angewiesen sind. Ist sie schlecht ausgebaut, verstärken sich Ungleichheiten, da Haushalte oftmals auf Infrastruktur in benachbarten Gemeinden angewiesen und private Lösungen teuer sind.
+          </p>
+          <div className='paragraph'>
+            <p className="implications">Politische Implikationen:</p>
+            <ul className="custom-list social-infrastructure">
+              <li>Kostenfreie und flächendeckende Kinderbetreuung als Grundpfeiler</li>
+              <li>Investitionen in den öffentlichen Gesundheits- und Pflegesektor</li>
+              <li>Stärkung ländlicher Infrastruktur, um Stadt-Land-Ungleichheiten zu reduzieren</li>
+            </ul>
+          </div>
+
+          <h2>Zeitverwendung: Armut ist oft auch Zeitmangel</h2>
+          <p className='paragraph'>
+            Einkommensschwache Gruppen haben nicht nur weniger Geld, sondern oft auch weniger Zeit. Mehrfachbelastungen durch lange Arbeitszeiten, unbezahlte Sorgearbeit oder schlechte Arbeitsbedingungen lassen kaum Spielraum für Weiterbildung, politisches Engagement oder Erholung. Zeitarmut verstärkt soziale Ungleichheiten – und bleibt politisch oft unbeachtet.
+          </p>
+          <div className='paragraph'>
+            <p className="implications">Politische Implikationen:</p>
+            <ul className="custom-list time-usage">
+              <li>Arbeitszeitverkürzung bei vollem Lohnausgleich für untere Einkommensgruppen</li>
+              <li>Faire Verteilung unbezahlter Sorgearbeit durch bessere Anreize</li>
+              <li>Stärkung von Teilzeit- und Elternzeitmodellen ohne finanzielle Nachteile</li>
+            </ul>
+          </div>
+
         </section>
+
         
-        <section>
+        {/* <section>
           <h1 className="title">Lebensqualität</h1>
           <LivabilityChart/>
         </section> */}
