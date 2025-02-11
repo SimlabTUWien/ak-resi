@@ -28,7 +28,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 const languages= ['DE', 'EN'];
 
 const menuItems = [
-  { text: "Einkommen", section: "income", icon: <PaymentsIcon /> },
+  { text: "Residualeinkommen", section: "income", icon: <PaymentsIcon /> },
   { text: "Soziale Infrastruktur", section: "social-infrastructure", icon: <RoomIcon /> },
   { text: "Zeitverwendung", section: "time-usage", icon: <AccessTimeIcon /> },
 ];

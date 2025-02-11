@@ -10,7 +10,7 @@ const svgUrl = `${process.env.PUBLIC_URL}/Abb1_4Kreise4Overlaps_DE.svg`;
 
 const textMap = {
   "einkommen": {
-    title: "Einkommen",
+    title: "Residualeinkommen",
     text: "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. In Österreich liegt das mittlere Haushaltseinkommen bei XXX €, was bedeutet, dass 50 % der Haushalte über und 50 % unter diesem Betrag zur Verfügung haben.",
     color: "#e2e0e1"
   },
@@ -34,6 +34,11 @@ const textMap = {
     text: "Das verfügbare Einkommen, auch Residualeinkommen genannt, beschreibt das Einkommen, das nach Abzug der notwendigen Ausgaben übrig bleibt. Dieses Geld steht für unregelmäßige Ausgaben, Freizeitgestaltung oder zum Sparen zur Verfügung und spielt eine wichtige Rolle für die finanzielle Freiheit eines Haushalts.",
     color: "#f0d1c7"
   },
+  "geld_sparen_durch_SI": {
+    title: "Geld sparen durch SI",
+    text: "Öffentlich zugängliche und kostengünstige Bildungs- und Gesundheitseinrichtungen entlasten Haushalte finanziell, indem sie die notwendigen Ausgaben reduzieren. Sind solche Einrichtungen jedoch schwer erreichbar, steigen die Mobilitätskosten, oder Haushalte müssen auf teure private Angebote wie Ärzt:innen ohne Kassenvertrag ausweichen.",
+    color: "#d2d5cb"
+  },
   "zeit_ist_geld": {
     title: "Zeit is Geld",
     text: "Wer mehr Zeit in bezahlte Arbeit investiert, hat meist ein höheres Einkommen. Doch unbezahlte Tätigkeiten wie Hausarbeit, Kinderbetreuung oder ehrenamtliches Engagement bleiben dabei oft unberücksichtigt. Menschen mit höherem Einkommen können ihre Zeit anders nutzen – etwa, indem sie Dienstleistungen wie Haushaltshilfen oder Kinderbetreuung „einkaufen“, um Freiräume zu schaffen.",
@@ -43,11 +48,6 @@ const textMap = {
     title: "Zeit und Infrastruktur",
     text: "Soziale Infrastrukturen haben großen Einfluss darauf, wie Menschen ihre Zeit verbringen können. Ein gut erreichbarer Kindergarten ermöglicht es Eltern, mehr Zeit für bezahlte Arbeit zu nutzen. Weite Wege zu Schulen oder Gesundheitseinrichtungen hingegen führen zu langen Fahrzeiten oder – im Notfall – zu erhöhten Risiken, wenn Hilfe zu spät eintrifft.",
     color: "#e9dfbe"
-  },
-  "geld_sparen_durch_SI": {
-    title: "Geld sparen durch SI",
-    text: "Öffentlich zugängliche und kostengünstige Bildungs- und Gesundheitseinrichtungen entlasten Haushalte finanziell, indem sie die notwendigen Ausgaben reduzieren. Sind solche Einrichtungen jedoch schwer erreichbar, steigen die Mobilitätskosten, oder Haushalte müssen auf teure private Angebote wie Ärzt:innen ohne Kassenvertrag ausweichen.",
-    color: "#d2d5cb"
   }
 };
 
@@ -62,8 +62,7 @@ const isTouchDevice = () => {
 const BackgroundChart = () => {
   const svgRef = useRef(null);
 
-  // const [isVisible, setIsVisible] = useState(isTouchDevice);
-  const [isVisible, setIsVisible] = useState(isTouchDevice());
+  // const [isVisible, setIsVisible] = useState(isTouchDevice());
 
   const initialId = Object.keys(textMap)[0]; // Get first key from textMap
   const [selectedInfo, setSelectedInfo] = useState(textMap[initialId]);
@@ -114,7 +113,7 @@ const BackgroundChart = () => {
               // if (!isTouchDevice) {
               //   setIsVisible(true);
               // }
-              setIsVisible(true);
+              // setIsVisible(true);
             });
         }
       }
@@ -132,7 +131,7 @@ const BackgroundChart = () => {
           padding: 2,
           borderRadius: 2,
           backgroundColor: selectedInfo.color,
-          display: isVisible ? "block" : "none"
+          // display: isVisible ? "block" : "none"
         }}
       >
         <div className="info-navigation">

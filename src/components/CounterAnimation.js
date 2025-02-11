@@ -6,6 +6,17 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
   const observer = useRef(null);
   const started = useRef(false);
 
+  const getColor = (value) => {
+    switch (value) {
+      case 32:
+        return "#a4a4a4";
+      case 39:
+        return "#F0A898";
+      default:
+        return "black"; // Default color
+    }
+  };
+
   useEffect(() => {
     observer.current = new IntersectionObserver(
       ([entry]) => {
@@ -31,10 +42,12 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
   }, [targetValue, duration]);
 
   return (
-    <span ref={ref} style={{ fontSize: "5rem", fontWeight: "bold", color: "#a5cdc8" }}>
+    <span ref={ref} style={{ fontSize: "5rem", fontWeight: "bold", color: getColor(targetValue) }}>
       {count}
     </span>
   );
 };
 
 export default CounterAnimation;
+
+
