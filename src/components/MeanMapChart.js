@@ -51,12 +51,12 @@ const MeanMapChart = () => {
             const info = tooltipMap[id] || ["Keine Daten verfügbar", "Keine Daten verfügbar"];
             tooltip.html(`<strong>${info[0]}</strong><br/>${info[1]}`)
               .style("visibility", "visible")
-              .style("top", `${event.pageY + 5}px`)
-              .style("left", `${event.pageX + 5}px`);
+              .style("top", `${event.pageY - 30}px`)
+              .style("left", `${event.pageX + 15}px`);
           })
           .on("mousemove", function (event) {
-            tooltip.style("top", `${event.pageY + 5}px`)
-              .style("left", `${event.pageX + 5}px`);
+            tooltip.style("top", `${event.pageY - 30}px`)
+              .style("left", `${event.pageX + 15}px`);
           })
           .on("mouseout", function () {
             d3.select(this).style("filter", "");

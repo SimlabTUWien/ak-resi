@@ -66,6 +66,10 @@ function App() {
           
           <h1 className="title">Perspektiven auf Ungleichheit in Österreich</h1>
           <h3>Verfügbares Einkommen, soziale Infrastruktur und Zeitverwendung</h3>
+
+          {/* <div className='image-container logo-large'>
+            <img style={{width: '240px'}} src="/Logo_Projekt_icons.png" alt="showing the four core aspects of the project" />
+          </div> */}
         </section>
       </div>
 
