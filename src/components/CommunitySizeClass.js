@@ -30,8 +30,83 @@ const ChangeZoomPosition = () => {
   return null;
 };
 
-const Legend = () => {
-  const map = useMap();
+// const Legend = () => {
+//   const map = useMap();
+
+//   useEffect(() => {
+//     const legend = L.control({ position: 'topleft' });
+
+//     legend.onAdd = () => {
+//       const div = L.DomUtil.create('div', 'legend');
+//       div.innerHTML = `
+//         <div style="background: white; padding: 8px; border-radius: 6px; box-shadow: 0px 0px 4px rgba(0,0,0,0.3); font-size: 14px;">
+//           <strong>Gemeinden nach Gemeindegrößen</strong>
+//           <div style="display: flex; align-items: center; margin-top: 6px;">
+//             <div style="width: 18px; height: 18px; background: #cfe2c3; margin-right: 8px;"></div>
+//             <span>unter 2.500 Einwohner:innen</span>
+//           </div>
+//           <div style="display: flex; align-items: center; margin-top: 6px;">
+//             <div style="width: 18px; height: 18px; background: #b3b3d9; margin-right: 8px;"></div>
+//             <span>2.500 - 10.000 Einwohner:innen</span>
+//           </div>
+//           <div style="display: flex; align-items: center; margin-top: 6px;">
+//             <div style="width: 18px; height: 18px; background: #9674ab; margin-right: 8px;"></div>
+//             <span>10.000 - 100.000 Einwohner:innen</span>
+//           </div>
+//           <div style="display: flex; align-items: center; margin-top: 6px;">
+//             <div style="width: 18px; height: 18px; background: #3e223b; margin-right: 8px;"></div>
+//             <span>über 100.000 Einwohner:innen</span>
+//           </div>
+//         </div>
+//       `;
+//       return div;
+//     };
+
+//     legend.addTo(map);
+
+//     return () => {
+//       legend.remove();
+//     };
+//   }, [map]);
+
+//   return null;
+// };
+
+const MobileLegend = () => (
+  <Box
+    sx={{
+      background: 'white',
+      padding: 2,
+      borderRadius: 1,
+      boxShadow: 1,
+      fontSize: '14px',
+      marginTop: 2,
+    }}
+  >
+    <Typography variant="subtitle1" fontWeight="bold">
+      Gemeinden nach Gemeindegrößen
+    </Typography>
+    <Box display="flex" alignItems="center" mt={1}>
+      <Box sx={{ width: 18, height: 18, background: '#cfe2c3', mr: 1 }} />
+      <span>unter 2.500 Einwohner:innen</span>
+    </Box>
+    <Box display="flex" alignItems="center" mt={1}>
+      <Box sx={{ width: 18, height: 18, background: '#b3b3d9', mr: 1 }} />
+      <span>2.500 - 10.000 Einwohner:innen</span>
+    </Box>
+    <Box display="flex" alignItems="center" mt={1}>
+      <Box sx={{ width: 18, height: 18, background: '#9674ab', mr: 1 }} />
+      <span>10.000 - 100.000 Einwohner:innen</span>
+    </Box>
+    <Box display="flex" alignItems="center" mt={1}>
+      <Box sx={{ width: 18, height: 18, background: '#3e223b', mr: 1 }} />
+      <span>über 100.000 Einwohner:innen</span>
+    </Box>
+  </Box>
+);
+
+const DesktopLegend = () => {
+  const map = useMap(); // ✅ Always inside MapContainer
 
   useEffect(() => {
     const legend = L.control({ position: 'topleft' });
@@ -74,6 +149,17 @@ const Legend = () => {
 
 
 const CommunitySizeChart = ({ mapboxAccessToken }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 540);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 540);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // State for GeoJSON data
   const [geojsonData, setGeojsonData] = useState(null);
   const [minFL, setMinFL] = useState(null);
@@ -171,8 +257,9 @@ const CommunitySizeChart = ({ mapboxAccessToken }) => {
         >
           {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
           <ChangeZoomPosition />
-          <Legend />
+          {!isMobile && <DesktopLegend />}
         </MapContainer>
+        {isMobile && <MobileLegend />}
       </Box>
     </Box>
   );
