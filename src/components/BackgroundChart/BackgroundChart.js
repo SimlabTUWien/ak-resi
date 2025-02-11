@@ -62,7 +62,8 @@ const isTouchDevice = () => {
 const BackgroundChart = () => {
   const svgRef = useRef(null);
 
-  const [isVisible, setIsVisible] = useState(isTouchDevice);
+  // const [isVisible, setIsVisible] = useState(isTouchDevice);
+  const [isVisible, setIsVisible] = useState(isTouchDevice());
 
   const initialId = Object.keys(textMap)[0]; // Get first key from textMap
   const [selectedInfo, setSelectedInfo] = useState(textMap[initialId]);
@@ -104,15 +105,16 @@ const BackgroundChart = () => {
             .on("mouseout", function () {
               d3.select(this).style("filter", "");
             })
-            .on("click", function (event) {
+            .on("click", function () {
               const id = d3.select(this).attr("id");
               const info = textMap[id] || { title: "Unbekannt", text: "Keine Beschreibung verfügbar.", color: "#ccc" };
             
               setSelectedInfo(info);
               
-              if (!isTouchDevice) {
-                setIsVisible(true);
-              }
+              // if (!isTouchDevice) {
+              //   setIsVisible(true);
+              // }
+              setIsVisible(true);
             });
         }
       }
