@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { 
   AppBar, 
   Toolbar,
@@ -19,11 +20,15 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import Divider from '@mui/material/Divider';
 
 import LanguageIcon from '@mui/icons-material/Language';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import RoomIcon from '@mui/icons-material/Room';
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import ImportContactsIcon from '@mui/icons-material/ImportContacts';
+import LockPersonIcon from '@mui/icons-material/LockPerson';
 
 const languages= ['DE', 'EN'];
 
@@ -33,7 +38,16 @@ const menuItems = [
   { text: "Zeitverwendung", section: "time-usage", icon: <AccessTimeIcon /> },
 ];
 
+const linkItems = [
+  { text: "Glossar", link: "/glossar", icon: <ImportContactsIcon /> },
+  { text: "Impressum", link: "/impressum" },
+  { text: "Team", link: "/team", icon: <Diversity3Icon /> },
+  { text: "Datenschutzerklärung", link: "/dataprivacy", icon: <LockPersonIcon /> }
+];
+
 export default function HeaderAppBar({ show }) {
+
+  const navigate = useNavigate();
 
   const [anchorElLanguage, setAnchorElLanguage] = React.useState(null);
 
@@ -56,7 +70,12 @@ export default function HeaderAppBar({ show }) {
         window.scrollTo({ top: y, behavior: "smooth" });
     }
     setDrawerOpen(false);
-};
+  };
+
+  const navigateToLink = (link) => {
+    navigate(link);
+    setDrawerOpen(false);
+  };
 
 
   const handleOpenLanguageMenu = (event) => {
@@ -137,6 +156,41 @@ export default function HeaderAppBar({ show }) {
                 {/* <MenuIcon fontSize="inherit" /> */}
               </IconButton>
               <Drawer
+                anchor="top"
+                open={drawerOpen}
+                onClose={toggleDrawer(false)}
+                sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ececec" } }}
+              >
+                <List>
+                  {menuItems.map((item, index) => (
+                    <ListItem key={index} disablePadding>
+                      <ListItemButton onClick={() => scrollToSection(item.section)}>
+                        <ListItemIcon>{item.icon}</ListItemIcon>
+                        <ListItemText
+                          primary={item.text}
+                          sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
+                        />
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+
+                  <Divider sx={{ my: 1 }} />
+
+                  {linkItems.map((item, index) => (
+                    <ListItem key={index} disablePadding>
+                      <ListItemButton onClick={() => navigateToLink(item.link)}>
+                        <ListItemIcon>{item.icon}</ListItemIcon>
+                        <ListItemText
+                          primary={item.text}
+                          sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
+                        />
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
+              </Drawer>
+
+              {/* <Drawer
               anchor="top"
               open={drawerOpen}
               onClose={toggleDrawer(false)}
@@ -157,7 +211,7 @@ export default function HeaderAppBar({ show }) {
                     </ListItem>
                   ))}
                 </List>
-              </Drawer>
+              </Drawer> */}
             </Box>
 
             <Box component="img" src="/Logo_project_small.png" alt="Project Logo" 
