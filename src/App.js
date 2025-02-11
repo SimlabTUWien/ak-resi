@@ -22,6 +22,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import MeanMapChart from "./components/MeanMapChart";
+import SIOverallIndicatorMap from "./components/SocialInfrastructureMaps/SIOverallIndicatorMap";
 
 
 
@@ -243,6 +244,7 @@ function App() {
           </p>
 
           {/* SI map overall */}
+          <SIOverallIndicatorMap/>
 
           {/* SI Karte 2*/}
 

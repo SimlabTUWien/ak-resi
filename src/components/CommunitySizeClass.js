@@ -237,7 +237,7 @@ const CommunitySizeChart = ({ mapboxAccessToken }) => {
       <Typography >In vielen regionalen Statistiken werden die österreichischen Gemeinden in Gemeindegrößenklassen eingeteilt. Sechs österreichische Landeshauptstädte haben über 100.000 Einwohner:innen (Wien, Graz, Linz, Salzburg, Klagenfurt und Innsbruck). Insgesamt leben etwas mehr als 20% aller Bewohner:innen Österreichs in diesen Städten, ähnlich viele wie in den 1.366 Gemeinden mit weniger als 2.500 Einwohner:innen. Mehr als 30% der Österreicher:innen leben in den 641 Gemeinden mit 2.500-10.000 Einwohner:innen und 27% in Klein- und Mittelstädten.</Typography>
       
       {/* Leaflet Map */}
-      <Box sx={{ marginTop: 3 }}>
+      {/* <Box sx={{ marginTop: 3 }}>
         <MapContainer
           bounds={[[46.372276, 9.530952], [49.021162, 17.160568]]} 
           zoom={8}
@@ -260,7 +260,31 @@ const CommunitySizeChart = ({ mapboxAccessToken }) => {
           {!isMobile && <DesktopLegend />}
         </MapContainer>
         {isMobile && <MobileLegend />}
-      </Box>
+      </Box> */}
+      <Box sx={{ marginTop: 3 }}>
+          <MapContainer
+            center={isMobile ? [48.5, 13.5] : [48.5, 14.5]}
+            zoom={isMobile ? 6 : 7}
+            minZoom={5}
+            maxZoom={12}
+            scrollWheelZoom={false}
+            doubleClickZoom={false}
+            touchZoom={true}
+            keyboard={false}
+            dragging={true}
+            zoomControl={false}
+            maxBounds={[[45.5, 9.0], [49.5, 17.5]]}
+            maxBoundsViscosity={1.0}
+            attributionControl={false}
+            style={{ height: '480px', width: '100%', background: '#f4f4f4', borderRadius: '8px', overflow: 'hidden' }}
+            ref={mapRef}
+          >
+            {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
+            <ChangeZoomPosition />
+            {!isMobile && <DesktopLegend />}
+          </MapContainer>
+          {isMobile && <MobileLegend />}
+        </Box>
     </Box>
   );
 };
