@@ -59,6 +59,7 @@
     align-items: center;
     justify-content: center; 
     text-align: center;
+    padding: 0 8px;
   }
 
   .logo {
@@ -77,6 +78,18 @@
     font-weight: bold;
     color: #1b1b1b;
     margin-top: 18px;
+  }
+
+  @media (max-width: 500px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.8rem;
+    }
+
+
   }
   
   .scroll-indicator {
