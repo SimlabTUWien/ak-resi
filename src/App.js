@@ -8,15 +8,11 @@ import ScrollProgressBar from './components/ScrollProgressBar';
 import ExpenditureCharts from './components/ExpenditureCharts/ExpenditureCharts';
 import HouseholdTable from "./components/HouseholdTable";
 import CounterAnimation from "./components/CounterAnimation";
-
 import CommunitySizeChart from "./components/CommunitySizeClass";
 import SocialInfrastructureTable from "./components/SocialInfrastructureTable";
 
 
 // import ViolinChart from "./components/ViolinChart";
-// import AustriaMapComponent from './components/AustriaMap';
-// import LivabilityChart from './components/d3Chart';
-// import NavBar from './components/NavigationBar';
 
 
 import Accordion from '@mui/material/Accordion';
@@ -129,20 +125,22 @@ function App() {
 
           <p>TODO: Histogramm mit Einkommen?</p>
 
+          {/* Histogramm */}
 
           <p className='paragraph'>
             Das mittlere Haushaltseinkommen in Österreich ist XX 
           </p>
           
 
-          {/* Histogramm */}
-
           <h2>Wofür geben Haushalte Geld aus?</h2>
+
+          <p>TODO: Überblick über Ausgabenkategorien - evt Kreisdiagramm</p>
+
           <p className='paragraph'>
             Wieviel Haushalte einnehmen und ausgeben ist stark von der Haushaltsform abhängig. Mehr erwerbstätige Personen im Haushalt bringt ein höheres Einkommen, während weitere Haushaltsmitglieder auch höhere Konsumausgaben bedeuten. Hier sieht man die mittleren Einkommen, notwendigen Ausgaben und daraus ergebende verfügbare Einkommen für unterschiedliche Haushaltstypen: 
           </p>
 
-          {/* Table oder Piktogramme */}
+          {/* Table mit/ohne Piktogramme */}
           <HouseholdTable/>
 
           <p className='paragraph'>
@@ -217,18 +215,20 @@ function App() {
 
           {/* Barchart 1*/}
           {/* Barchart 2*/}
+          <p>TODO: Barcharts - Bildungsabschlüsse</p>
+
           <p className='paragraph'>
             Höhere Bildungsabschlüsse und Vollzeiterwerbstätigkeit geben den Haushalten deutlich mehr finanziellen Spielraum. Besonders belastet sind hingegen Arbeitslose, Haushalte ohne Vollzeitbeschäftigte - häufig z.B. Alleinerziehende - und Pensionist:innen mit niedrigen Bildungsabschlüssen. In diesen Haushalten reicht das Einkommen nach Deckung der Grundausgaben oft nicht aus, um weitere Ausgaben zu tätigen oder Rücklagen zu bilden.
           </p>
 
           <h2>Regionale Unterschiede beim verfügbaren Einkommen</h2>
 
-          {/* SVG Karte 1*/}
+          {/* MeanMap */}
           <div className="mean-map-container">
             <MeanMapChart/>
           </div>
           
-          {/* Infobox mit Karte 2*/}
+          {/* Infobox with CommunitySizeClass map */}
           <CommunitySizeChart mapboxAccessToken={mapboxAccessToken}/>
         </section>
 
@@ -242,7 +242,7 @@ function App() {
             Die Karten zeigen die sozialen Infrastrukturen in Bezug auf den Bedarf in der Gemeinde. Während Ärzt:innen pro Einwohner:in berechnet werden, beziehen sich Kindergartengruppen auf Kinder im Alter von 3 bis 6 Jahren und Plätze in Pflegeheimen auf Menschen über 70. Neben der Verfügbarkeit von Infrastrukturen spielt auch ihre Zugänglichkeit eine Rolle: Kurze Öffnungszeiten oder hohe Kosten können die Nutzung einschränken. Da viele Menschen auch die Infrastrukturen in Nachbargemeinden nutzen, werden diese – mit geringerem Gewicht – in den Infrastrukturindikator einbezogen. In der Karte kann dieser Effekt ein- und ausgeblendet werden. Die obere Karte zeigt die Gesamtsumme aller Infrastrukturen, während in der unteren Karte die verschiedenen Infrastrukturarten einzeln betrachtet werden können. Genauere Informationen zu den einzelnen Infrastrukturen und der Berechnung der Indikatoren lassen sich unten ausklappen.
           </p>
 
-          {/* SI Karte 1*/}
+          {/* SI map overall */}
 
           {/* SI Karte 2*/}
 
