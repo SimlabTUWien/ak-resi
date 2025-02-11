@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactECharts from "echarts-for-react";
 
-const QuantilChart = ({ index }) => {
+const QuantilChart = ({ index, parentWidth }) => {
   const chartContainerRef = useRef(null);
   const [chartWidth, setChartWidth] = useState(window.innerWidth);
-  
+
   useEffect(() => {
     const updateWidth = () => {
       if (chartContainerRef.current) {
@@ -18,13 +18,14 @@ const QuantilChart = ({ index }) => {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
+  const maxWidth = parentWidth < 1200 && parentWidth > 1000 ? "500px" : "600px";
 
   const setOptionsMonthlyNetHouseholdIncome  = {
     grid: chartWidth < 360 
     ? { left: "15%", right: "2%", top: "25%" }
     : chartWidth < 430 
       ? { left: "12%", right: "2%", top: "25%" }
-      : chartWidth < 600
+      : chartWidth < 500
         ? { left: "10%", right: "4%", top: "23%" }
         : { left: "10%", right: "10%", top: "20%" },
     title: {
@@ -71,7 +72,7 @@ const QuantilChart = ({ index }) => {
     ? { left: "15%", right: "2%", top: "25%" }
     : chartWidth < 430 
       ? { left: "12%", right: "2%", top: "25%" }
-      : chartWidth < 600
+      : chartWidth < 500
         ? { left: "10%", right: "4%", top: "23%" }
         : { left: "10%", right: "10%", top: "20%" },
     title: {
@@ -124,7 +125,7 @@ const QuantilChart = ({ index }) => {
 
 
   return (
-    <div ref={chartContainerRef} style={{ width: "100%", maxWidth: "600px", height: "440px", justifyContent: "center", margin: "auto" }}>
+    <div ref={chartContainerRef} style={{ width: "100%", maxWidth: maxWidth, height: "440px", justifyContent: "center", margin: "auto" }}>
       <ReactECharts option={option} style={{ width: "100%", height: "100%" }} />
     </div>
   );

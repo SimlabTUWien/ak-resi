@@ -5,7 +5,7 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import HeaderAppBar from "./components/HeaderAppBar/HeaderAppBar";
 import BackgroundChart from './components/BackgroundChart/BackgroundChart';
 import ScrollProgressBar from './components/ScrollProgressBar';
-import ExpenditureCharts from './components/ExpenditureCharts';
+import ExpenditureCharts from './components/ExpenditureCharts/ExpenditureCharts';
 import HouseholdTable from "./components/HouseholdTable";
 import CounterAnimation from "./components/CounterAnimation";
 
