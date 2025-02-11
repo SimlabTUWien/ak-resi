@@ -97,7 +97,7 @@ export default function HeaderAppBar({ show }) {
                 fontWeight: 500,  
               }}
             >
-              Re:sIZE
+              Re:sI:Ze
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

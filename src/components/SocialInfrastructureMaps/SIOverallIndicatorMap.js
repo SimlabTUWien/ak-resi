@@ -120,6 +120,45 @@ const DesktopLegend = () => {
 };
 
 
+const SplitMapControl = ({ geojsonData, getColor }) => {
+  const map = useMap();
+
+  useEffect(() => {
+    if (!geojsonData) return;
+
+    // Create two GeoJSON layers for the split map
+    const leftLayer = L.geoJSON(geojsonData, {
+      style: (feature) => ({
+        fillColor: getColor(feature.properties.FL), // Keep original styling
+        fillOpacity: 0.7,
+        color: "#333",
+        weight: 0.5,
+      }),
+    });
+
+    const rightLayer = L.geoJSON(geojsonData, {
+      style: (feature) => ({
+        fillColor: "#ccc", // Make the right side a different style (for comparison)
+        fillOpacity: 0.5,
+        color: "#999",
+        weight: 0.5,
+      }),
+    });
+
+    // Add SplitMap control
+    const splitMap = L.control.splitMap(leftLayer, rightLayer).addTo(map);
+
+    return () => {
+      map.removeControl(splitMap);
+      leftLayer.remove();
+      rightLayer.remove();
+    };
+  }, [map, geojsonData, getColor]);
+
+  return null;
+};
+
+
 const SIOverallIndicatorMap = ({ mapboxAccessToken }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 540);
 
@@ -196,22 +235,6 @@ const SIOverallIndicatorMap = ({ mapboxAccessToken }) => {
     }
   };
 
-//   const InitialZoomAnimation = ({ isMobile }) => {
-//     const map = useMap();
-  
-//     useEffect(() => {
-//       setTimeout(() => {
-//         map.flyTo([47.5, 13.5], isMobile ? 6 : 7, {
-//           duration: 1.5, // Duration of animation in seconds
-//         //   easeLinearity: 0.25,
-//         });
-//       }, 500); // Delay before starting zoom-in
-  
-//     }, [map, isMobile]);
-  
-//     return null;
-//   };
-
   return (
     <Box
       sx={{
@@ -223,34 +246,30 @@ const SIOverallIndicatorMap = ({ mapboxAccessToken }) => {
         boxShadow: 2,
       }}
     >
-    
-    <Box sx={{ marginTop: 3 }}>
-    <MapContainer
-        center={isMobile ? [48.5, 13.5] : [48.5, 14.5]}
-        zoom={isMobile ? 6 : 7}
-        minZoom={5}
-        maxZoom={12}
-        scrollWheelZoom={false}
-        doubleClickZoom={false}
-        touchZoom={true}
-        keyboard={false}
-        dragging={true}
-        zoomControl={false}
-        maxBounds={[[45.5, 9.0], [49.5, 17.5]]}
-        maxBoundsViscosity={1.0}
-        attributionControl={false}
-        style={{ height: '480px', width: '100%', background: '#f4f4f4', borderRadius: '8px', overflow: 'hidden' }}
-        ref={mapRef}
-    >
-        {/* <InitialZoomAnimation isMobile={isMobile} /> */}
-        {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
-        <ChangeZoomPosition />
-        {!isMobile && <DesktopLegend />}
-    </MapContainer>
-    {isMobile && <MobileLegend />}
-    </Box>
-
-
+      <Box sx={{ marginTop: 3 }}>
+        <MapContainer
+            center={isMobile ? [48.5, 13.5] : [48.5, 14.5]}
+            zoom={isMobile ? 6 : 7}
+            minZoom={5}
+            maxZoom={12}
+            scrollWheelZoom={false}
+            doubleClickZoom={false}
+            touchZoom={true}
+            keyboard={false}
+            dragging={true}
+            zoomControl={false}
+            maxBounds={[[45.5, 9.0], [49.5, 17.5]]}
+            maxBoundsViscosity={1.0}
+            attributionControl={false}
+            style={{ height: '480px', width: '100%', background: '#f4f4f4', borderRadius: '8px', overflow: 'hidden' }}
+            ref={mapRef}
+        >
+            {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
+            <ChangeZoomPosition />
+            {!isMobile && <DesktopLegend />}
+        </MapContainer>
+        {isMobile && <MobileLegend />}
+      </Box>
     </Box>
   );
 };

@@ -35,11 +35,11 @@ export default function HeroSection() {
           {/* <img src="/Logo_minimal.svg" alt="Logo" className="logo" /> */}
           <img src="/Logo_project_small.png" alt="Logo" className="logo" />
 
-          {/* <h1 className="hero-title">Re:sIZE</h1>
+          <h1 className="hero-title">Re:sI:Ze</h1>
           <p className="hero-subtitle">Perspektiven auf Ungleichheit in Österreich</p>
-           */}
-          <h1 className="hero-title">Perspektiven auf Ungleichheit in Österreich</h1>
-          <p className="hero-subtitle">Verfügbares Einkommen, soziale Infrastruktur und Zeitverwendung</p>
+          
+          {/* <h1 className="hero-title">Perspektiven auf Ungleichheit in Österreich</h1>
+          <p className="hero-subtitle">Verfügbares Einkommen, soziale Infrastruktur und Zeitverwendung</p> */}
         </div>
 
         <motion.div
