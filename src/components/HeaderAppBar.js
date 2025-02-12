@@ -157,17 +157,6 @@ export default function HeaderAppBar({ show }) {
               sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ececec", width: 280 } }} // Adjust width if necessary
             >
               <List>
-                {menuItems.map((item, index) => (
-                  <ListItem key={index} disablePadding>
-                    <ListItemButton onClick={() => scrollToSection(item.section)}>
-                      <ListItemIcon>{item.icon}</ListItemIcon>
-                      <ListItemText primary={item.text} />
-                    </ListItemButton>
-                  </ListItem>
-                ))}
-                
-                <Divider sx={{ my: 1 }} />
-                
                 {linkItems.map((item, index) => (
                   <ListItem key={index} disablePadding>
                     <ListItemButton onClick={() => navigateToLink(item.link)}>
