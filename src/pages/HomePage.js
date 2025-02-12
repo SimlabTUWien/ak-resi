@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import HeroSection from "../components/HeroSection/HeroSection";
 import BackgroundChart from '../components/BackgroundChart/BackgroundChart';
@@ -23,6 +23,18 @@ import FloatingButton from "../components/FloatingButton";
 
 export default function HomePage() {
     const mapboxAccessToken = 'pk.eyJ1Ijoic2ltbGFidHV3aWVuIiwiYSI6ImNtNnl2OTB5MDAwOTUybHNlZ2FrenJkazUifQ.hZw0Uga4clOW7Ewz5NUrCg';
+
+    const [showFloatingButton, setShowFloatingButton] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+          setShowFloatingButton(window.scrollY > 1400);
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
+
 
     const [mode, setMode] = useState("quantils");
 
@@ -320,7 +332,8 @@ export default function HomePage() {
         </div>
 
         <div className="floatingButton-container"> 
-            <FloatingButton/>
+            {/* {showFloatingButton && <FloatingButton />} */}
+            <FloatingButton show={showFloatingButton} />
         </div>
 
         <div className='progressBar'>

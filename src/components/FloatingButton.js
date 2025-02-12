@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import { motion } from "framer-motion";
 
-const FloatingButton = () => {
+const FloatingButton = ({ show }) => {
   const [isVisible, setIsVisible] = useState(window.innerWidth > 1300);
 
   useEffect(() => {
@@ -27,11 +28,14 @@ const FloatingButton = () => {
   if (!isVisible) return null;
 
   return (
-    <button className="floating-button"
-        onClick={scrollToIntro}
+    <motion.button className="floating-button" onClick={scrollToIntro}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: show ? 1 : 0, y: show ? 0 : 20 }}
+      transition={{ duration: 1.5, ease: "easeInOut" }} // Smooth transition
+      disabled={!show}
     >
       <ArrowUpwardIcon/>
-    </button>
+    </motion.button>
   );
 };
 
