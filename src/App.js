@@ -1,26 +1,56 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";  // Main page with scroll sections
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import HomePage from "./pages/HomePage";
 import Glossar from "./pages/Glossar";
+import Impressum from "./pages/Impressum";
+import Team from "./pages/Team";
 import Dataprivacy from "./pages/Dataprivacy";
 import HeaderAppBar from "./components/HeaderAppBar";
-import Impressum from "./pages/Impressum";
+
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <HeaderAppBar />  {/* Navigation Bar */}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/glossar" element={<Glossar />} />
-        <Route path="/impressum" element={<Impressum />} />
-        <Route path="/dataprivacy" element={<Dataprivacy />} />
-      </Routes>
+      <AppContent />
     </Router>
   );
 }
 
-export default App;
+function AppContent() {
+  const location = useLocation();
+  const [showAppBar, setShowAppBar] = useState(true);
 
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setShowAppBar(window.scrollY > 50);
+
+      const handleScroll = () => {
+        setShowAppBar(window.scrollY > 50);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    } else {
+      setShowAppBar(true);
+    }
+  }, [location.pathname]);
+
+  return (
+    <>
+      <HeaderAppBar show={showAppBar} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/glossar" element={<Glossar />} />
+        <Route path="/impressum" element={<Impressum />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/dataprivacy" element={<Dataprivacy />} />
+      </Routes>
+    </>
+  );
+}
+
+export default App;
 
 
 // import React, { useState, useEffect } from "react";

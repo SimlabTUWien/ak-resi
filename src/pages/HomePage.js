@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-import '../App.css';
+import React, { useState } from "react";
 
 import HeroSection from "../components/HeroSection/HeroSection";
-import HeaderAppBar from "../components/HeaderAppBar";
 import BackgroundChart from '../components/BackgroundChart/BackgroundChart';
 import ScrollProgressBar from '../components/ScrollProgressBar';
 import ExpenditureCharts from '../components/ExpenditureCharts/ExpenditureCharts';
@@ -33,27 +31,8 @@ export default function HomePage() {
         }
     };
 
-    const [showAppBar, setShowAppBar] = useState(false);
-    
-    useEffect(() => {
-        setShowAppBar(window.scrollY > 50);
-    
-        const handleScroll = () => {
-        if (window.scrollY > 50) {
-            setShowAppBar(true);
-        } else {
-            setShowAppBar(false);
-        }
-        };
-    
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
     return (
         <>
-
-        <HeaderAppBar show={showAppBar} /> {/* Show AppBar on scroll */}
 
         <HeroSection></HeroSection>
 
@@ -61,7 +40,7 @@ export default function HomePage() {
             <section className="title-section" id="intro">
             
             <h1 className="title">Perspektiven auf Ungleichheit in Österreich</h1>
-            <h3>Verfügbares Einkommen, soziale Infrastruktur und Zeitverwendung</h3>
+            <h3>Residualeinkommen, soziale Infrastruktur und Zeitverwendung</h3>
 
             <div className='image-container logo-large'>
                 <img style={{width: '240px'}} src="/Logo_Projekt_icons.png" alt="showing the four core aspects of the project" />
@@ -101,7 +80,7 @@ export default function HomePage() {
             </section>
 
             <section id="income">
-            <h1>Verfügbares Einkommen in Österreich</h1>
+            <h1>Residualeinkommen in Österreich</h1>
             <p className='paragraph'>
                 Wie man hier sehen kann, lässt sich das verfügbare Einkommen berechnen, indem man vom Einkommen der Haushalte, ihr notwendigen Ausgaben abzieht. Diese Ausgaben sind zur Deckung von Grundbedürfnissen wie Wohnen oder Ernährung. 
             </p>

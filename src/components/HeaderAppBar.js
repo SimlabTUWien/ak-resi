@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { 
   AppBar, 
   Toolbar,
@@ -28,7 +28,7 @@ import RoomIcon from '@mui/icons-material/Room';
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
-import LockPersonIcon from '@mui/icons-material/LockPerson';
+import DescriptionIcon from '@mui/icons-material/Description';
 
 const languages= ['DE', 'EN'];
 
@@ -40,34 +40,50 @@ const menuItems = [
 
 const linkItems = [
   { text: "Glossar", link: "/glossar", icon: <ImportContactsIcon /> },
-  { text: "Impressum", link: "/impressum" },
+  { text: "Impressum", link: "/impressum", icon: <DescriptionIcon /> },
   { text: "Team", link: "/team", icon: <Diversity3Icon /> },
-  { text: "Datenschutzerklärung", link: "/dataprivacy", icon: <LockPersonIcon /> }
+  { text: "Datenschutzerklärung", link: "/dataprivacy", icon: <span className="material-symbols-outlined">shield_locked</span> }
 ];
 
 export default function HeaderAppBar({ show }) {
 
+  const [pendingScrollTarget, setPendingScrollTarget] = useState(null);
+  const location = useLocation();
   const navigate = useNavigate();
 
-  const [anchorElLanguage, setAnchorElLanguage] = React.useState(null);
-
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
-  // Function to toggle the drawer
-  const toggleDrawer = (open) => (event) => {
-    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
-      return;
+  useEffect(() => {
+    if (pendingScrollTarget && location.pathname === "/") {
+      const scrollToTarget = () => {
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            const section = document.getElementById(pendingScrollTarget);
+            if (section) {
+              const yOffset = -40; // Adjust if needed
+              const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+              window.scrollTo({ top: y, behavior: "smooth" });
+              setPendingScrollTarget(null);
+            }
+          }, 300); // Small delay to ensure content is fully rendered
+        });
+      };
+  
+      scrollToTarget();
     }
-    setDrawerOpen(open);
-  };
+  }, [location.pathname, pendingScrollTarget]);
+  
+
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
+    if (location.pathname !== "/") {
+      setPendingScrollTarget(id); // Store the target section
+      navigate("/"); // Navigate to HomePage first
+    } else {
+      const section = document.getElementById(id);
+      if (section) {
         const yOffset = -40;
         const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
-
         window.scrollTo({ top: y, behavior: "smooth" });
+      }
     }
     setDrawerOpen(false);
   };
@@ -77,6 +93,18 @@ export default function HeaderAppBar({ show }) {
     setDrawerOpen(false);
   };
 
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+
+  const toggleMobileDrawer = (open) => (event) => {
+    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
+
+  const [anchorElLanguage, setAnchorElLanguage] = React.useState(null);
 
   const handleOpenLanguageMenu = (event) => {
     setAnchorElLanguage(event.currentTarget);
@@ -85,10 +113,11 @@ export default function HeaderAppBar({ show }) {
   const handleCloseLanguageMenu = () => {
     setAnchorElLanguage(null);
   };
-
+  
   return (
     <Slide direction="down" in={show} mountOnEnter unmountOnExit>
-      <AppBar position="fixed" sx={{ backgroundColor: "#d2d5cb", color: "black" }}>
+      {/* <AppBar position="fixed" sx={{ backgroundColor: "#d2d5cb", color: "black" }}> */}
+      <AppBar position="fixed" sx={{ backgroundColor: "#566060", color: "white" }}>
         <Container maxWidth="xl" sx={{ maxWidth: "1300px !important" }}>
           <Toolbar disableGutters>
 
@@ -113,7 +142,8 @@ export default function HeaderAppBar({ show }) {
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: 'monospace',
-                fontWeight: 500,  
+                fontWeight: 500,
+                fontSize: '2.5rem'
               }}
             >
               Re:sI:Ze
@@ -146,9 +176,9 @@ export default function HeaderAppBar({ show }) {
                 aria-label="menu button for toggel navigation items"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                onClick={toggleDrawer(true)}
-                // color="inherit"
-                color="#566060"
+                onClick={toggleMobileDrawer(true)}
+                color="inherit"
+                // color="#566060"
                 sx={{ p: 0 }}
                 // sx={{ p: 0, fontSize: "1.6rem" }}
               >
@@ -158,7 +188,7 @@ export default function HeaderAppBar({ show }) {
               <Drawer
                 anchor="top"
                 open={drawerOpen}
-                onClose={toggleDrawer(false)}
+                onClose={toggleMobileDrawer(false)}
                 sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ececec" } }}
               >
                 <List>
@@ -215,6 +245,7 @@ export default function HeaderAppBar({ show }) {
             </Box>
 
             <Box component="img" src="/Logo_project_small.png" alt="Project Logo" 
+              onClick={() => scrollToSection("intro")}
               sx={{
                 display: { xs: 'flex', md: 'none' },
                 mr: 1, 
@@ -228,10 +259,11 @@ export default function HeaderAppBar({ show }) {
                 display: { xs: 'flex', md: 'none' }, 
                 flexGrow: 1,
                 fontFamily: 'monospace',
-                fontWeight: 500
+                fontWeight: 500,
+                fontSize: '2rem'
               }}
             >
-              Re:sIZE
+              Re:sI:Ze
             </Typography>
             
             {/* Language button */}
