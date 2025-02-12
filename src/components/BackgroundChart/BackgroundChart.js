@@ -10,7 +10,7 @@ const svgUrl = `${process.env.PUBLIC_URL}/Abb1_4Kreise4Overlaps_DE.svg`;
 
 const textMap = {
   "einkommen": {
-    title: "Residualeinkommen",
+    title: "Einkommen",
     text: "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. In Österreich liegt das mittlere Haushaltseinkommen bei XXX €, was bedeutet, dass 50 % der Haushalte über und 50 % unter diesem Betrag zur Verfügung haben.",
     color: "#e2e0e1"
   },
@@ -30,7 +30,7 @@ const textMap = {
     color: "#fcd799"
   },
   "verfuegbares_einkommen": {
-    title: "Verfügbares Einkommen",
+    title: "Residualeinkommen",
     text: "Das verfügbare Einkommen, auch Residualeinkommen genannt, beschreibt das Einkommen, das nach Abzug der notwendigen Ausgaben übrig bleibt. Dieses Geld steht für unregelmäßige Ausgaben, Freizeitgestaltung oder zum Sparen zur Verfügung und spielt eine wichtige Rolle für die finanzielle Freiheit eines Haushalts.",
     color: "#f0d1c7"
   },
