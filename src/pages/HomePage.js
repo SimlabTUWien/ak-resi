@@ -19,6 +19,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import MeanMapChart from "../components/MeanMapChart";
 import SIOverallIndicatorMap from "../components/SocialInfrastructureMaps/SIOverallIndicatorMap";
+import FloatingButton from "../components/FloatingButton";
 
 export default function HomePage() {
     const mapboxAccessToken = 'pk.eyJ1Ijoic2ltbGFidHV3aWVuIiwiYSI6ImNtNnl2OTB5MDAwOTUybHNlZ2FrenJkazUifQ.hZw0Uga4clOW7Ewz5NUrCg';
@@ -316,6 +317,10 @@ export default function HomePage() {
             <LivabilityChart/>
             </section> */}
 
+        </div>
+
+        <div className="floatingButton-container"> 
+            <FloatingButton/>
         </div>
 
         <div className='progressBar'>

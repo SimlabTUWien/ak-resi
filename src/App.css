@@ -184,6 +184,24 @@ ul.time-usage li::marker {
   color: #fcd799;
 }
 
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white; 
+  color: #a5cdc8;
+  padding: 12px 13.5px;
+  border-radius: 2px;
+  border: 2px solid #a5cdc8;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.floating-button:hover {
+  background-color: rgb(240, 240, 240);
+}
+
 .progressBar {
   position: fixed;
   bottom: 0;

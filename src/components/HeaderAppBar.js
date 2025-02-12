@@ -85,22 +85,32 @@ export default function HeaderAppBar({ show }) {
         window.scrollTo({ top: y, behavior: "smooth" });
       }
     }
-    setDrawerOpen(false);
+    setMobileDrawerOpen(false);
+    setDesktopDrawerOpen(false);
   };
 
   const navigateToLink = (link) => {
     navigate(link);
-    setDrawerOpen(false);
+    setMobileDrawerOpen(false);
+    setDesktopDrawerOpen(false);
   };
 
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const [desktopDrawerOpen, setDesktopDrawerOpen] = useState(false);
 
 
   const toggleMobileDrawer = (open) => (event) => {
     if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
       return;
     }
-    setDrawerOpen(open);
+    setMobileDrawerOpen(open);
+  };
+
+  const toggleDesktopDrawer = (open) => (event) => {
+    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
+      return;
+    }
+    setDesktopDrawerOpen(open);
   };
 
 
@@ -122,11 +132,12 @@ export default function HeaderAppBar({ show }) {
           <Toolbar disableGutters>
 
             {/* Dektop View */}
-
             <Box component="img" src="/Logo_project_small.png" alt="Project Logo"
-              onClick={() => scrollToSection("intro")}
+              // onClick={() => scrollToSection("intro")}
+              onClick={toggleDesktopDrawer(true)}
               sx={{
-                display: { xs: 'none', md: 'flex' }, 
+                // display: { xs: 'none', md: 'flex' },  // changed from mid to large
+                display: { xs: 'none', lg: 'flex' }, 
                 mr: 1, 
                 height: 36, 
                 marginRight: 1,
@@ -136,11 +147,43 @@ export default function HeaderAppBar({ show }) {
                   filter: "brightness(0.95)",
                 }
               }} 
-              />
+            />
+
+            {/* Desktop Drawer */}
+            <Drawer
+              anchor="left"
+              open={desktopDrawerOpen}
+              onClose={toggleDesktopDrawer(false)}
+              sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ececec", width: 280 } }} // Adjust width if necessary
+            >
+              <List>
+                {menuItems.map((item, index) => (
+                  <ListItem key={index} disablePadding>
+                    <ListItemButton onClick={() => scrollToSection(item.section)}>
+                      <ListItemIcon>{item.icon}</ListItemIcon>
+                      <ListItemText primary={item.text} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+                
+                <Divider sx={{ my: 1 }} />
+                
+                {linkItems.map((item, index) => (
+                  <ListItem key={index} disablePadding>
+                    <ListItemButton onClick={() => navigateToLink(item.link)}>
+                      <ListItemIcon>{item.icon}</ListItemIcon>
+                      <ListItemText primary={item.text} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Drawer>
+
+
             <Typography variant="h5" 
               sx={{
                 mr: 2,
-                display: { xs: 'none', md: 'flex' },
+                display: { xs: 'none', lg: 'flex' },
                 fontFamily: 'monospace',
                 fontWeight: 500,
                 fontSize: '2.5rem'
@@ -149,7 +192,7 @@ export default function HeaderAppBar({ show }) {
               Re:sI:Ze
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', lg: 'flex' } }}>
               {menuItems.map((item, index) => (
                 <Button key={index}
                   onClick={() => scrollToSection(item.section)}
@@ -170,7 +213,7 @@ export default function HeaderAppBar({ show }) {
 
             {/* Mobile View */}
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', lg: 'none' } }}>
               <IconButton
                 size="large"
                 aria-label="menu button for toggel navigation items"
@@ -187,7 +230,7 @@ export default function HeaderAppBar({ show }) {
               </IconButton>
               <Drawer
                 anchor="top"
-                open={drawerOpen}
+                open={mobileDrawerOpen}
                 onClose={toggleMobileDrawer(false)}
                 sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ececec" } }}
               >
@@ -219,35 +262,12 @@ export default function HeaderAppBar({ show }) {
                   ))}
                 </List>
               </Drawer>
-
-              {/* <Drawer
-              anchor="top"
-              open={drawerOpen}
-              onClose={toggleDrawer(false)}
-              sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ececec" } }}
-              >
-                <List>
-                  {menuItems.map((item, index) => (
-                    <ListItem key={index} disablePadding>
-                      <ListItemButton
-                        onClick={() => scrollToSection(item.section)}
-                      >
-                        <ListItemIcon>{item.icon}</ListItemIcon>
-                        <ListItemText
-                          primary={item.text}
-                          sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
-                        />
-                      </ListItemButton>
-                    </ListItem>
-                  ))}
-                </List>
-              </Drawer> */}
             </Box>
 
             <Box component="img" src="/Logo_project_small.png" alt="Project Logo" 
               onClick={() => scrollToSection("intro")}
               sx={{
-                display: { xs: 'flex', md: 'none' },
+                display: { xs: 'flex', lg: 'none' },
                 mr: 1, 
                 height: 36, 
                 marginRight: 1 
@@ -256,7 +276,7 @@ export default function HeaderAppBar({ show }) {
             <Typography variant="h5" 
               sx={{
                 mr: 2, 
-                display: { xs: 'flex', md: 'none' }, 
+                display: { xs: 'flex', lg: 'none' }, 
                 flexGrow: 1,
                 fontFamily: 'monospace',
                 fontWeight: 500,
@@ -290,7 +310,7 @@ export default function HeaderAppBar({ show }) {
                 }}
                 open={Boolean(anchorElLanguage)}
                 onClose={handleCloseLanguageMenu}
-                disableScrollLock // 👈 This prevents the body padding issue!
+                disableScrollLock // prevents the body padding issue!
               >
                 {languages.map((language) => (
                   <MenuItem key={language} onClick={handleCloseLanguageMenu}>
