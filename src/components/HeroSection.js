@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import "./HeroSection.css";
+import "../styles/HeroSection.css";
 
 export default function HeroSection() {
   

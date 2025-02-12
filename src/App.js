@@ -7,7 +7,7 @@ import Team from "./pages/Team";
 import Dataprivacy from "./pages/Dataprivacy";
 import HeaderAppBar from "./components/HeaderAppBar";
 
-import './App.css';
+import './styles/App.css';
 
 function App() {
   return (

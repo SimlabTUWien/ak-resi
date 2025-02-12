@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import HeroSection from "../components/HeroSection/HeroSection";
-import BackgroundChart from '../components/BackgroundChart/BackgroundChart';
+import HeroSection from "../components/HeroSection";
+import BackgroundChart from '../components/BackgroundChart';
 import ScrollProgressBar from '../components/ScrollProgressBar';
 import ExpenditureCharts from '../components/ExpenditureCharts/ExpenditureCharts';
 import HouseholdTable from "../components/HouseholdTable";
 import CounterAnimation from "../components/CounterAnimation";
-import CommunitySizeChart from "../components/CommunitySizeClass";
 import SocialInfrastructureTable from "../components/SocialInfrastructureTable";
-
-// import ViolinChart from "./components/ViolinChart";
 
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -20,6 +17,8 @@ import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import MeanMapChart from "../components/MeanMapChart";
 import SIOverallIndicatorMap from "../components/SocialInfrastructureMaps/SIOverallIndicatorMap";
 import FloatingButton from "../components/FloatingButton";
+
+import "../styles/HomePage.css";
 
 export default function HomePage() {
     const mapboxAccessToken = 'pk.eyJ1Ijoic2ltbGFidHV3aWVuIiwiYSI6ImNtNnl2OTB5MDAwOTUybHNlZ2FrenJkazUifQ.hZw0Uga4clOW7Ewz5NUrCg';
@@ -182,7 +181,6 @@ export default function HomePage() {
             </div>
 
             <div>
-                {/* accodring with additional info here */}
                 <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography><strong>Wie wird der Gini berechnet?</strong></Typography>
@@ -202,12 +200,12 @@ export default function HomePage() {
                 Da die Einkommen stark vom Bildungsniveau, dem Beschäftigungsgrad und der Art der Erwerbstätigkeit abhängen, die notwendigen Ausgaben aber von allen getätigt werden müssen, spiegeln sich diese wirtschaftlichen Unterschiede noch stärker im verfügbaren Einkommen wider. In der Grafik kann zwischen den Kategorien gewechselt werden: 
             </p>
 
-            {/* Violinchart*/}
-            <p>TODO: Boxplot</p>
-            {/* <ViolinChart/> */}
+            {/* Barchart*/}
+            <p>TODO: Barchart</p>
 
-            {/* Barchart 1*/}
-            {/* Barchart 2*/}
+
+            {/* Barchart Bildung 1*/}
+            {/* Barchart Bildung 2*/}
             <p>TODO: Barcharts - Bildungsabschlüsse</p>
 
             <p className='paragraph'>
@@ -222,7 +220,23 @@ export default function HomePage() {
             </div>
             
             {/* Infobox with CommunitySizeClass map */}
-            <CommunitySizeChart mapboxAccessToken={mapboxAccessToken}/>
+            {/* <CommunitySizeChart mapboxAccessToken={mapboxAccessToken}/> */}
+            <div>
+                <Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography><strong>Wo wohnt Österreich: Gemeindegrößenklassenerklärung</strong></Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>
+                        In vielen regionalen Statistiken werden die österreichischen Gemeinden in Gemeindegrößenklassen eingeteilt. Sechs österreichische Landeshauptstädte haben über 100.000 Einwohner:innen (Wien, Graz, Linz, Salzburg, Klagenfurt und Innsbruck). Insgesamt leben etwas mehr als 20% aller Bewohner:innen Österreichs in diesen Städten, ähnlich viele wie in den 1.366 Gemeinden mit weniger als 2.500 Einwohner:innen. Mehr als 30% der Österreicher:innen leben in den 641 Gemeinden mit 2.500-10.000 Einwohner:innen und 27% in Klein- und Mittelstädten.
+                    </Typography>
+
+                    {/* <img src="/Abb_KarteGemeindegroeßen_DE.svg" alt="Gemeindegrößenklassen" width="100%" /> */}
+                    <img src="/Abb_KarteGemeindegroeßen_DE.png" alt="Gemeindegrößenklassen" width="100%" />
+                </AccordionDetails>
+                </Accordion>
+            </div>
+
             </section>
 
             <section id="social-infrastructure">
@@ -238,7 +252,7 @@ export default function HomePage() {
             {/* SI map overall */}
             <SIOverallIndicatorMap/>
 
-            {/* SI Karte 2*/}
+            {/* SI map indicators 2*/}
 
             <h2>Wie werden die einzelnen Infrastrukturindikatoren berechnet?</h2>
 
@@ -263,76 +277,68 @@ export default function HomePage() {
             </section>
 
             <section id="what-now">
-            <h1>Was nun?</h1>
+                <h1>Was nun?</h1>
 
-            <p className='paragraph'>
-                Ungleichheit ist mehr als nur eine Frage des Einkommens. Wer wie viel verdient, bestimmt zwar den monetären Spielraum, doch erst im Zusammenspiel mit notwendigen Ausgaben, aufgewandter Zeit (vor allem für Erwerbsarbeit und unbezahlter Arbeit) und öffentlicher sozialer Infrastruktur entsteht ein breiteres Bild sozialer Ungleichheit. Unser Projekt zeigt: Diese Faktoren sind nicht isoliert zu betrachten. Sie verstärken sich gegenseitig und beeinflussen. Um nachhaltige Lösungen zu entwickeln, muss Politik diese Zusammenhänge anerkennen und gezielt eingreifen.
-            </p>
+                <p className='paragraph'>
+                    Ungleichheit ist mehr als nur eine Frage des Einkommens. Wer wie viel verdient, bestimmt zwar den monetären Spielraum, doch erst im Zusammenspiel mit notwendigen Ausgaben, aufgewandter Zeit (vor allem für Erwerbsarbeit und unbezahlter Arbeit) und öffentlicher sozialer Infrastruktur entsteht ein breiteres Bild sozialer Ungleichheit. Unser Projekt zeigt: Diese Faktoren sind nicht isoliert zu betrachten. Sie verstärken sich gegenseitig und beeinflussen. Um nachhaltige Lösungen zu entwickeln, muss Politik diese Zusammenhänge anerkennen und gezielt eingreifen.
+                </p>
 
-            <h2>Einkommen: Mehr als nur Lohn – es geht um echte Verfügbarkeit</h2>
-            <p className='paragraph'>
-            Nominale Einkommen sagen wenig darüber aus, was Menschen sich tatsächlich leisten können. Hohe Wohnkosten, steigende Energiepreise und andere Fixkosten schränken das verfügbare Einkommen vieler Haushalte drastisch ein. Besonders betroffen sind Alleinerziehende, Erwerbslose und prekär Beschäftigte.
-            </p>
-            <div className='paragraph'>
-                <p className="implications">Politische Implikationen:</p>
-                <ul className="custom-list">
-                <li>Mindestlohn & Sozialtransfers an realen Lebenshaltungskosten ausrichten</li>
-                <li>Steuerliche Entlastung für niedrige Einkommen verstärken</li>
-                <li>Bessere Absicherung für atypische Beschäftigte und Menschen außerhalb des Arbeitsmarkts</li>
-                </ul>
-            </div>
+                <h2>Einkommen: Mehr als nur Lohn – es geht um echte Verfügbarkeit</h2>
+                <p className='paragraph'>
+                Nominale Einkommen sagen wenig darüber aus, was Menschen sich tatsächlich leisten können. Hohe Wohnkosten, steigende Energiepreise und andere Fixkosten schränken das verfügbare Einkommen vieler Haushalte drastisch ein. Besonders betroffen sind Alleinerziehende, Erwerbslose und prekär Beschäftigte.
+                </p>
+                <div className='paragraph'>
+                    <p className="implications">Politische Implikationen:</p>
+                    <ul className="custom-list">
+                    <li>Mindestlohn & Sozialtransfers an realen Lebenshaltungskosten ausrichten</li>
+                    <li>Steuerliche Entlastung für niedrige Einkommen verstärken</li>
+                    <li>Bessere Absicherung für atypische Beschäftigte und Menschen außerhalb des Arbeitsmarkts</li>
+                    </ul>
+                </div>
 
-            <h2>Notwendige Ausgaben: Wer mehr ausgeben muss, hat weniger Spielraum</h2>
-            <p className='paragraph'>
-                Nicht alle Haushalte sind gleichermaßen von steigenden Preisen betroffen. Wer wenig verdient, gibt einen überproportional hohen Anteil seines Einkommens für Wohnen, Energie und Mobilität aus. Fehlende Alternativen – etwa leistbarer öffentlicher Wohnraum oder gut ausgebaute Öffis – verstärken diese finanzielle Belastung.
-            </p>
-            <div className='paragraph'>
-                <p className="implications">Politische Implikationen:</p>
-                <ul className="custom-list expenditure">
-                <li>Mietpreisbremse & leistbarer Wohnraum als zentrale Stellschrauben</li>
-                <li>Zielgerichtete Energie- und Mobilitätszuschüsse</li>
-                <li>Ausbau kostengünstiger Alternativen im öffentlichen Sektor</li>
-                </ul>
-            </div>
+                <h2>Notwendige Ausgaben: Wer mehr ausgeben muss, hat weniger Spielraum</h2>
+                <p className='paragraph'>
+                    Nicht alle Haushalte sind gleichermaßen von steigenden Preisen betroffen. Wer wenig verdient, gibt einen überproportional hohen Anteil seines Einkommens für Wohnen, Energie und Mobilität aus. Fehlende Alternativen – etwa leistbarer öffentlicher Wohnraum oder gut ausgebaute Öffis – verstärken diese finanzielle Belastung.
+                </p>
+                <div className='paragraph'>
+                    <p className="implications">Politische Implikationen:</p>
+                    <ul className="custom-list expenditure">
+                    <li>Mietpreisbremse & leistbarer Wohnraum als zentrale Stellschrauben</li>
+                    <li>Zielgerichtete Energie- und Mobilitätszuschüsse</li>
+                    <li>Ausbau kostengünstiger Alternativen im öffentlichen Sektor</li>
+                    </ul>
+                </div>
 
-            <h2>Soziale Infrastruktur: Wer auf eigene Mittel angewiesen ist, bleibt zurück</h2>
-            <p className='paragraph'>
-                Öffentliche Kinderbetreuung, Gesundheitsversorgung, Pflegeangebote oder Bildungszugang – soziale Infrastruktur entscheidet darüber, wie stark Menschen auf ihr eigenes Einkommen angewiesen sind. Ist sie schlecht ausgebaut, verstärken sich Ungleichheiten, da Haushalte oftmals auf Infrastruktur in benachbarten Gemeinden angewiesen und private Lösungen teuer sind.
-            </p>
-            <div className='paragraph'>
-                <p className="implications">Politische Implikationen:</p>
-                <ul className="custom-list social-infrastructure">
-                <li>Kostenfreie und flächendeckende Kinderbetreuung als Grundpfeiler</li>
-                <li>Investitionen in den öffentlichen Gesundheits- und Pflegesektor</li>
-                <li>Stärkung ländlicher Infrastruktur, um Stadt-Land-Ungleichheiten zu reduzieren</li>
-                </ul>
-            </div>
+                <h2>Soziale Infrastruktur: Wer auf eigene Mittel angewiesen ist, bleibt zurück</h2>
+                <p className='paragraph'>
+                    Öffentliche Kinderbetreuung, Gesundheitsversorgung, Pflegeangebote oder Bildungszugang – soziale Infrastruktur entscheidet darüber, wie stark Menschen auf ihr eigenes Einkommen angewiesen sind. Ist sie schlecht ausgebaut, verstärken sich Ungleichheiten, da Haushalte oftmals auf Infrastruktur in benachbarten Gemeinden angewiesen und private Lösungen teuer sind.
+                </p>
+                <div className='paragraph'>
+                    <p className="implications">Politische Implikationen:</p>
+                    <ul className="custom-list social-infrastructure">
+                    <li>Kostenfreie und flächendeckende Kinderbetreuung als Grundpfeiler</li>
+                    <li>Investitionen in den öffentlichen Gesundheits- und Pflegesektor</li>
+                    <li>Stärkung ländlicher Infrastruktur, um Stadt-Land-Ungleichheiten zu reduzieren</li>
+                    </ul>
+                </div>
 
-            <h2>Zeitverwendung: Armut ist oft auch Zeitmangel</h2>
-            <p className='paragraph'>
-                Einkommensschwache Gruppen haben nicht nur weniger Geld, sondern oft auch weniger Zeit. Mehrfachbelastungen durch lange Arbeitszeiten, unbezahlte Sorgearbeit oder schlechte Arbeitsbedingungen lassen kaum Spielraum für Weiterbildung, politisches Engagement oder Erholung. Zeitarmut verstärkt soziale Ungleichheiten – und bleibt politisch oft unbeachtet.
-            </p>
-            <div className='paragraph'>
-                <p className="implications">Politische Implikationen:</p>
-                <ul className="custom-list time-usage">
-                <li>Arbeitszeitverkürzung bei vollem Lohnausgleich für untere Einkommensgruppen</li>
-                <li>Faire Verteilung unbezahlter Sorgearbeit durch bessere Anreize</li>
-                <li>Stärkung von Teilzeit- und Elternzeitmodellen ohne finanzielle Nachteile</li>
-                </ul>
-            </div>
-
+                <h2>Zeitverwendung: Armut ist oft auch Zeitmangel</h2>
+                <p className='paragraph'>
+                    Einkommensschwache Gruppen haben nicht nur weniger Geld, sondern oft auch weniger Zeit. Mehrfachbelastungen durch lange Arbeitszeiten, unbezahlte Sorgearbeit oder schlechte Arbeitsbedingungen lassen kaum Spielraum für Weiterbildung, politisches Engagement oder Erholung. Zeitarmut verstärkt soziale Ungleichheiten – und bleibt politisch oft unbeachtet.
+                </p>
+                <div className='paragraph'>
+                    <p className="implications">Politische Implikationen:</p>
+                    <ul className="custom-list time-usage">
+                    <li>Arbeitszeitverkürzung bei vollem Lohnausgleich für untere Einkommensgruppen</li>
+                    <li>Faire Verteilung unbezahlter Sorgearbeit durch bessere Anreize</li>
+                    <li>Stärkung von Teilzeit- und Elternzeitmodellen ohne finanzielle Nachteile</li>
+                    </ul>
+                </div>
             </section>
-
-            
-            {/* <section>
-            <h1 className="title">Lebensqualität</h1>
-            <LivabilityChart/>
-            </section> */}
 
         </div>
 
         <div className="floatingButton-container"> 
-            {/* {showFloatingButton && <FloatingButton />} */}
             <FloatingButton show={showFloatingButton} />
         </div>
 

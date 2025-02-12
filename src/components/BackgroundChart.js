@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
-import "./BackgroundChart.css";
+import "../styles/BackgroundChart.css";
 
 
 const svgUrl = `${process.env.PUBLIC_URL}/Abb1_4Kreise4Overlaps_DE.svg`;

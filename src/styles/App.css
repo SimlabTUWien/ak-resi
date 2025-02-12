@@ -1,0 +1,108 @@
+.App {
+  text-align: center;
+}
+
+body, html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif;
+  background-color: #f4f4f4;
+  /* background-color: #E7DCB1; */
+  /* background-color: #566060; */
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  padding: 40px 0;
+  text-align: left;
+}
+
+h1 {
+  /* text-align: center; */
+  font-size: 2rem;
+}
+
+h2 {
+  padding-top: 20px;
+}
+
+
+.title-wrapper {
+  /* padding-top: 85px ; equals to the header bar height */
+  padding: 85px 10px 0;
+  max-width: 100vw;
+}
+
+.title-section {
+  margin-top: 20px;
+  text-align: center;
+
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+.title {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+
+
+
+.image-container {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.image-container img {
+  margin: 0 auto;
+}
+
+.logo-large {
+  width: 30%;
+  max-width: 800px;
+  min-width: 300px;
+  margin: auto;
+}
+
+.content-wrapper {
+  overflow-y: auto;
+  width: 70%;
+  max-width: 1300px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+
+@media (max-width: 1300px) {
+  .content-wrapper {
+    width: calc(100% - 40px); /* Full width minus 20px margins on each side */
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    width: calc(100% - 20px);
+    padding: 0;
+    margin: 0 auto 20px;
+  }
+}
+
