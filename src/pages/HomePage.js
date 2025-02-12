@@ -102,7 +102,6 @@ export default function HomePage() {
             </div>
             
             <div>
-                {/* accodring with additional info here */}
                 <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography><strong>Wo kommen unsere Daten her und wie funktioniert die Berechnung genau?</strong></Typography>
@@ -232,7 +231,7 @@ export default function HomePage() {
                     </Typography>
 
                     {/* <img src="/Abb_KarteGemeindegroeßen_DE.svg" alt="Gemeindegrößenklassen" width="100%" /> */}
-                    <img src="/Abb_KarteGemeindegroeßen_DE.png" alt="Gemeindegrößenklassen" width="100%" />
+                    <img className="community-size-map" src="/Abb_KarteGemeindegroeßen_DE.png" alt="Gemeindegrößenklassen" />
                 </AccordionDetails>
                 </Accordion>
             </div>

@@ -55,80 +55,88 @@
   }
 
 .mean-map-container {
-    margin-bottom: 32px;
-  }
+  margin-bottom: 48px;
+}
+
+.community-size-map {
+  width: 100%;
+  padding: 0 40px 0 30px;
+}  
   
-  p.implications {
-    margin-bottom: 8px;
-  }
+p.implications {
+  margin-bottom: 8px;
+}
   
-  ul.custom-list {
-    margin-top: 8px;
-  }
+ul.custom-list {
+  margin-top: 8px;
+}
   
-  ul.custom-list li::marker {
-    font-size: 1.2em;
-  }
-  
-  ul.expenditure li::marker {
-    color: #f0ae9f;
-  }
-  
-  ul.social-infrastructure li::marker {
-    color: #a5cdc8;
-  }
-  
-  ul.time-usage li::marker {
-    color: #fcd799;
-  }
+ul.custom-list li::marker {
+  font-size: 1.2em;
+}
+
+ul.expenditure li::marker {
+  color: #f0ae9f;
+}
+
+ul.social-infrastructure li::marker {
+  color: #a5cdc8;
+}
+
+ul.time-usage li::marker {
+  color: #fcd799;
+}
 
 .floating-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: white; 
-    color: #a5cdc8;
-    padding: 12px 13.5px;
-    border-radius: 2px;
-    border: 2px solid #a5cdc8;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-  }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white; 
+  color: #a5cdc8;
+  padding: 12px 13.5px;
+  border-radius: 2px;
+  border: 2px solid #a5cdc8;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+.floating-button:hover {
+  background-color: rgb(240, 240, 240);
+}
   
-  .floating-button:hover {
-    background-color: rgb(240, 240, 240);
-  }
-  
-  .floating-button:disabled {
-    pointer-events: none;
-    opacity: 0; 
-    cursor: default;
-  }
+.floating-button:disabled {
+  pointer-events: none;
+  opacity: 0; 
+  cursor: default;
+}
 
 .progressBar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 5px;
-    width: 100%;
-    z-index: 1000;
-  }
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  z-index: 1000;
+}
 
-  @media (hover: none) {
-    .click-information {
-      display: none;
-    }
+@media (hover: none) {
+  .click-information {
+    display: none;
   }
+}
 
-  @media (max-width: 768px) {
-    .background-chart {
-      padding: 0 8px;
-    } 
+@media (max-width: 768px) {
+  .background-chart {
+    padding: 0 8px;
+  } 
+
+  .community-size-map {
+    padding: 0;
   }
+}
   
-  @media (max-width: 350px) {
-    
-    .background-chart {
-      padding: 0;
-    }
+@media (max-width: 350px) {
+  .background-chart {
+    padding: 0;
   }
+}
