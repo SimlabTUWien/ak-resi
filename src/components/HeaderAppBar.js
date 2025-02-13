@@ -29,6 +29,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import DescriptionIcon from '@mui/icons-material/Description';
+import LanguageToggle from "./LanguageToggle";
 
 const languages= ['DE', 'EN'];
 
@@ -46,6 +47,8 @@ const linkItems = [
 ];
 
 export default function HeaderAppBar({ show }) {
+
+  const [language, setLanguage] = useState("DE");
 
   const [pendingScrollTarget, setPendingScrollTarget] = useState(null);
   const location = useLocation();
@@ -113,16 +116,15 @@ export default function HeaderAppBar({ show }) {
     setDesktopDrawerOpen(open);
   };
 
+  // const [anchorElLanguage, setAnchorElLanguage] = React.useState(null);
 
-  const [anchorElLanguage, setAnchorElLanguage] = React.useState(null);
+  // const handleOpenLanguageMenu = (event) => {
+  //   setAnchorElLanguage(event.currentTarget);
+  // };
 
-  const handleOpenLanguageMenu = (event) => {
-    setAnchorElLanguage(event.currentTarget);
-  };
-
-  const handleCloseLanguageMenu = () => {
-    setAnchorElLanguage(null);
-  };
+  // const handleCloseLanguageMenu = () => {
+  //   setAnchorElLanguage(null);
+  // };
   
   return (
     <Slide direction="down" in={show} mountOnEnter unmountOnExit>
@@ -275,11 +277,15 @@ export default function HeaderAppBar({ show }) {
               Re:sI:Ze
             </Typography>
             
-            {/* Language button */}
+            {/* Language Toggle */}
             
             <Box sx={{ flexGrow: 0 }}>
+              <LanguageToggle currentLanguage={language} onChangeLanguage={setLanguage} />
+            </Box>
+
+
+            {/* <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Change language">
-                {/* < IconButton color="#566060" onClick={handleOpenLanguageMenu} sx={{ p: 0 }}> */}
                 < IconButton color="#566060" onClick={handleOpenLanguageMenu} sx={{ p: 0, fontSize: "1.6rem" }}>
                   <LanguageIcon fontSize="inherit"/>
                 </IconButton>
@@ -307,7 +313,7 @@ export default function HeaderAppBar({ show }) {
                   </MenuItem>
                 ))}
               </Menu>
-            </Box>
+            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
