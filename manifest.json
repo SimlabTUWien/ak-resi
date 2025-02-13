@@ -1,0 +1,20 @@
+{
+  "short_name": "Re:sI:Ze",
+  "name": "Perspektiven auf Ungleichheit in Österreich",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "32x32 24x24 16x16"
+    },
+    {
+      "src": "Logo_project_small.png",
+      "type": "image/png",
+      "sizes": "512x512 192x192 64x64"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
