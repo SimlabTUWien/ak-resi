@@ -7,7 +7,7 @@ const LanguageToggle = ({ currentLanguage, onChangeLanguage }) => {
       sx={{
         display: "flex",
         alignItems: "center",
-        backgroundColor: "#566060",
+        // backgroundColor: "#566060",
         padding: "5px 10px",
         cursor: "pointer",
       }}
@@ -21,6 +21,7 @@ const LanguageToggle = ({ currentLanguage, onChangeLanguage }) => {
           mr: 2,
           cursor: "pointer",
           position: "relative",
+          transition: "all 0.3s ease-in-out"
         }}
         onClick={() => onChangeLanguage("DE")}
       >
@@ -47,6 +48,7 @@ const LanguageToggle = ({ currentLanguage, onChangeLanguage }) => {
           fontWeight: currentLanguage === "EN" ? "bold" : "normal",
           cursor: "pointer",
           position: "relative",
+          transition: "all 0.3s ease-in-out"
         }}
         onClick={() => onChangeLanguage("EN")}
       >
