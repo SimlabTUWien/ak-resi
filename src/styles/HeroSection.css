@@ -97,6 +97,7 @@
     bottom: 0;
     font-size: 1.5rem;
     animation: bounce 2s infinite;
+    color: #000000;
   }
 
   .scroll-indicator svg {
