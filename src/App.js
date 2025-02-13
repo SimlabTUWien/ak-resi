@@ -19,7 +19,7 @@ function App() {
 
 function AppContent() {
   const location = useLocation();
-  const [showAppBar, setShowAppBar] = useState(true);
+  const [showAppBar, setShowAppBar] = useState(location.pathname !== "/");
 
   useEffect(() => {
     if (location.pathname === "/") {
