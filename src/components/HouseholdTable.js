@@ -3,15 +3,9 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 
 const HouseholdTable = () => {
   return (
-    <TableContainer 
-        component={Paper} 
-        // sx={{
-        //     overflowX: "auto",
-        //     minWidth: 320,
-        //     maxWidth: "100%", // Ensure it adapts within parent
-        // }}
-      >
-       <Table sx={{ width: "100%" }}>
+    <TableContainer component={Paper}>
+       {/* <Table sx={{ width: "100%"}}> */}
+       <Table sx={{ width: "100%", backgroundColor:"#f4f4f4"}}>
         <TableHead sx={{ backgroundColor: "#d2d5cb" }}>
           <TableRow>
           <TableCell align="center" sx={{ fontWeight: "bold" }}>Haushaltstyp</TableCell>

@@ -46,6 +46,7 @@ const SocialInfrastructureTable = () => {
     <TableContainer 
         component={Paper} 
         sx={{
+            background: "#f4f4f4",
             overflowX: "auto",
             minWidth: 320,
             maxWidth: "100%", // Ensure it adapts within parent

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import {Accordion, AccordionSummary, AccordionDetails, Box, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
+
 
 import HeroSection from "../components/HeroSection";
 import BackgroundChart from '../components/BackgroundChart';
@@ -7,16 +9,11 @@ import ExpenditureCharts from '../components/ExpenditureCharts/ExpenditureCharts
 import HouseholdTable from "../components/HouseholdTable";
 import CounterAnimation from "../components/CounterAnimation";
 import SocialInfrastructureTable from "../components/SocialInfrastructureTable";
-
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import MeanMapChart from "../components/MeanMapChart";
 import SIOverallIndicatorMap from "../components/SocialInfrastructureMaps/SIOverallIndicatorMap";
 import FloatingButton from "../components/FloatingButton";
+
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import "../styles/HomePage.css";
 
@@ -35,11 +32,17 @@ export default function HomePage() {
       }, []);
 
 
-    const [mode, setMode] = useState("quantils");
+    const [expenditureMode, setExpenditureMode] = useState("quantils");
+    const [siMode, setSiMode] = useState("so_cars");
 
-    const handleModeChange = (event, newMode) => {
-        if (newMode !== null) {
-        setMode(newMode);
+
+    const handleToggleModeChange = (type, newValue) => {
+        if (newValue !== null) {
+            if (type === "expenditure") {
+                setExpenditureMode(newValue);
+            } else if (type === "si") {
+                setSiMode(newValue);
+            }
         }
     };
 
@@ -102,7 +105,7 @@ export default function HomePage() {
             </div>
             
             <div>
-                <Accordion>
+                <Accordion sx={{background: "#f4f4f4"}}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography><strong>Wo kommen unsere Daten her und wie funktioniert die Berechnung genau?</strong></Typography>
                 </AccordionSummary>
@@ -137,26 +140,35 @@ export default function HomePage() {
             <p className='paragraph'>
                 Haushalte lassen sich auch nach ihrem Einkommen einteilen, zum Beispiel in Quintile oder Dezile, fünf bzw. zehn Gruppen in der die gleiche Anzahl an Haushalten enthalten ist.
             </p>
-
-            <div className="toggle-container">
-                <ToggleButtonGroup
-                className="expenditure-toggle"
-                value={mode}
-                exclusive
-                onChange={handleModeChange}
-                aria-label="mode selection"
-                >
-                <ToggleButton value="quantils">Quintil</ToggleButton>
-                <ToggleButton value="decils">Dezil</ToggleButton>
-                </ToggleButtonGroup>
-            </div>
             
-
-            <div className="expenditure-charts-container">
-                <ExpenditureCharts mode={mode}/>
-            </div>
-
-
+            <Box
+                sx={{
+                    background: "#f4f4f4",
+                    padding: 2,
+                    borderRadius: 1,
+                    boxShadow: 1,
+                    fontSize: '14px',
+                    marginTop: 2,
+                }}
+            >
+                <div className="toggle-container">
+                    <ToggleButtonGroup
+                        className="expenditure-toggle"
+                        value={expenditureMode}
+                        exclusive
+                        onChange={(_, newValue) => handleToggleModeChange("expenditure", newValue)}
+                        aria-label="expenditure chart mode selection"
+                    >
+                    <ToggleButton value="quantils">Quintil</ToggleButton>
+                    <ToggleButton value="decils">Dezil</ToggleButton>
+                    </ToggleButtonGroup>
+                </div>
+        
+                <div className="expenditure-charts-container">
+                    <ExpenditureCharts mode={expenditureMode}/>
+                </div>
+            </Box>
+            
             <p className='paragraph'>
                 Die Grafik zeigt, dass die Arten und die Gesamthöhe der Ausgaben bei Haushalten unterschiedlicher Einkommensgruppen auf den ersten Blick recht ähnlich erscheinen (linke Seite). Deutliche Unterschiede zeigen sich jedoch im Verhältnis der Ausgaben zum Einkommen (rechte Seite).
             </p>
@@ -180,7 +192,7 @@ export default function HomePage() {
             </div>
 
             <div>
-                <Accordion>
+                <Accordion sx={{background: "#f4f4f4"}}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography><strong>Wie wird der Gini berechnet?</strong></Typography>
                 </AccordionSummary>
@@ -214,14 +226,24 @@ export default function HomePage() {
             <h2>Regionale Unterschiede beim verfügbaren Einkommen</h2>
 
             {/* MeanMap */}
-            <div className="mean-map-container">
+            <Box 
+                className="mean-map-container"
+                sx={{
+                    background: "#f4f4f4",
+                    padding: 2,
+                    borderRadius: 1,
+                    boxShadow: 1,
+                    fontSize: '14px',
+                    marginTop: 2,
+                }}
+            >
                 <MeanMapChart/>
-            </div>
-            
+            </Box>
+
             {/* Infobox with CommunitySizeClass map */}
             {/* <CommunitySizeChart mapboxAccessToken={mapboxAccessToken}/> */}
             <div>
-                <Accordion>
+                <Accordion sx={{background: "#f4f4f4"}}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography><strong>Wo wohnt Österreich: Gemeindegrößenklassenerklärung</strong></Typography>
                 </AccordionSummary>
@@ -249,7 +271,35 @@ export default function HomePage() {
             </p>
 
             {/* SI map overall */}
-            <SIOverallIndicatorMap/>
+            <Box
+                sx={{
+                    background: "#f4f4f4",
+                    padding: 2,
+                    borderRadius: 1,
+                    boxShadow: 1,
+                    fontSize: '14px',
+                    marginTop: 2,
+                }}
+            >
+                <div className="toggle-container">
+                    <ToggleButtonGroup
+                        className="si-toggle"
+                        value={siMode}
+                        exclusive
+                        onChange={(_, newValue) => handleToggleModeChange("si", newValue)}
+                        aria-label="mode selection"
+                    >
+                    <ToggleButton value="so_cars">PKW</ToggleButton>
+                    <ToggleButton value="so_miv">MIV</ToggleButton>
+                    <ToggleButton value="no_so">No Spillover</ToggleButton>
+                    </ToggleButtonGroup>
+                </div>
+        
+                <div className="si-overall-container">
+                    <SIOverallIndicatorMap/>
+                </div>
+            </Box>
+            
 
             {/* SI map indicators 2*/}
 

@@ -9,7 +9,8 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
   const getColor = (value) => {
     switch (value) {
       case 32:
-        return "#a4a4a4";
+        // return "#a4a4a4";
+        return "#d1d1d1";
       case 39:
         return "#F0A898";
       default:

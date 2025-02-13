@@ -11,26 +11,50 @@
     justify-content: center;
   }
   
-  .expenditure-toggle {
+.expenditure-toggle {
     padding-top: 20px;
     display: flex;
     width: 200px;
-  }
+}
   
-  .expenditure-toggle .MuiToggleButton-root {
+.expenditure-toggle .MuiToggleButton-root {
     flex: 1;
     background-color: white;
     border: 1px solid #ccc;
     color: black;
     font-weight: 500;
     transition: background-color 0.3s, color 0.3s;
-  }
+}
   
-  .expenditure-toggle .MuiToggleButton-root.Mui-selected {
-    background-color: #F0A898 !important;
-    color: white !important;
-    font-weight: 600;
-  }
+.expenditure-toggle .MuiToggleButton-root.Mui-selected {
+  background-color: #F0A898 !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.si-toggle {
+  padding-top: 20px;
+  display: flex;
+  width: 400px;
+  max-width: 100%;
+}
+
+.si-toggle .MuiToggleButton-root {
+  flex: 1;
+  background-color: white;
+  border: 1px solid #ccc;
+  color: black;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.si-toggle .MuiToggleButton-root.Mui-selected {
+  background-color: #a5cdc8 !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+  
 
 .expenditure-charts {
     width: 100%;

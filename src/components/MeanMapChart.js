@@ -222,7 +222,7 @@ const MeanMapChart = () => {
           boxShadow: 2, // Use shadow from MUI's theme (0-24)
           padding: 2,
           borderRadius: 2,
-          backgroundColor: "white",
+          backgroundColor: "white"
         }}
       >
         <div className="info-navigation">

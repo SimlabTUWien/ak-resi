@@ -236,40 +236,29 @@ const SIOverallIndicatorMap = ({ mapboxAccessToken }) => {
   };
 
   return (
-    <Box
-      sx={{
-        width: '100%',
-        margin: 'auto',
-        padding: 2,
-        backgroundColor: '#f9f9f9',
-        borderRadius: 2,
-        boxShadow: 2,
-      }}
-    >
-      <Box sx={{ marginTop: 3 }}>
-        <MapContainer
-            center={isMobile ? [48.5, 13.5] : [48.5, 14.5]}
-            zoom={isMobile ? 6 : 7}
-            minZoom={5}
-            maxZoom={12}
-            scrollWheelZoom={false}
-            doubleClickZoom={false}
-            touchZoom={true}
-            keyboard={false}
-            dragging={true}
-            zoomControl={false}
-            maxBounds={[[45.5, 9.0], [49.5, 17.5]]}
-            maxBoundsViscosity={1.0}
-            attributionControl={false}
-            style={{ height: '480px', width: '100%', background: '#f4f4f4', borderRadius: '8px', overflow: 'hidden' }}
-            ref={mapRef}
-        >
-            {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
-            <ChangeZoomPosition />
-            {!isMobile && <DesktopLegend />}
-        </MapContainer>
-        {isMobile && <MobileLegend />}
-      </Box>
+    <Box sx={{ marginTop: 4 }}>
+      <MapContainer
+          center={isMobile ? [48.5, 13.5] : [48.5, 14.5]}
+          zoom={isMobile ? 6 : 7}
+          minZoom={5}
+          maxZoom={12}
+          scrollWheelZoom={false}
+          doubleClickZoom={false}
+          touchZoom={true}
+          keyboard={false}
+          dragging={true}
+          zoomControl={false}
+          maxBounds={[[45.5, 9.0], [49.5, 17.5]]}
+          maxBoundsViscosity={1.0}
+          attributionControl={false}
+          style={{ height: '480px', width: '100%', background: '#bfbfbf', borderRadius: '8px', overflow: 'hidden', color: 'black'}}
+          ref={mapRef}
+      >
+          {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
+          <ChangeZoomPosition />
+          {!isMobile && <DesktopLegend />}
+      </MapContainer>
+      {isMobile && <MobileLegend />}
     </Box>
   );
 };
