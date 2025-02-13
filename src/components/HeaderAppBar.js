@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { 
   AppBar, 
   Toolbar,
-  Slide, 
+  Slide,
+  Fade, 
   Typography, 
   Box, 
   IconButton, 
@@ -14,15 +15,11 @@ import {
   ListItemButton, 
   ListItemIcon 
 } from "@mui/material";
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
 
-import LanguageIcon from '@mui/icons-material/Language';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import RoomIcon from '@mui/icons-material/Room';
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
@@ -30,8 +27,6 @@ import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import DescriptionIcon from '@mui/icons-material/Description';
 import LanguageToggle from "./LanguageToggle";
-
-const languages= ['DE', 'EN'];
 
 const menuItems = [
   { text: "Residualeinkommen", section: "income", icon: <PaymentsIcon /> },
@@ -50,9 +45,29 @@ export default function HeaderAppBar({ show }) {
 
   const [language, setLanguage] = useState("DE");
 
+  const [scrollY, setScrollY] = useState(window.scrollY);
+  const viewHeight = window.innerHeight;
+
   const [pendingScrollTarget, setPendingScrollTarget] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const backgroundColor = location.pathname === "/" 
+    ?  scrollY < viewHeight
+      ? "rgba(0,0,0,.2)" 
+      : "rgba(0,0,0,.4)"
+    : "rgba(0,0,0,.4)";
 
   useEffect(() => {
     if (pendingScrollTarget && location.pathname === "/") {
@@ -74,8 +89,6 @@ export default function HeaderAppBar({ show }) {
     }
   }, [location.pathname, pendingScrollTarget]);
   
-
-
   const scrollToSection = (id) => {
     if (location.pathname !== "/") {
       setPendingScrollTarget(id); // Store the target section
@@ -129,13 +142,23 @@ export default function HeaderAppBar({ show }) {
   return (
     <Slide direction="down" in={show} mountOnEnter unmountOnExit>
       {/* <AppBar position="fixed" sx={{ backgroundColor: "#d2d5cb", color: "black" }}> */}
-      <AppBar position="fixed" sx={{ backgroundColor: "#566060", color: "white" }}>
+      {/* <AppBar position="fixed" sx={{ backgroundColor: "#566060", color: "white" }}> */}
+      <AppBar 
+        position="fixed" 
+        sx={{ 
+          // backgroundColor: "rgba(86, 96, 96, 0.6)",
+          backgroundColor: backgroundColor,
+          backdropFilter: "blur(10px)",
+          color: "white", 
+          // color: "black", 
+          // boxShadow: "none"
+        }}
+      >
         <Container maxWidth="xl" sx={{ maxWidth: "1300px !important" }}>
           <Toolbar disableGutters>
 
             {/* Dektop View */}
             <Box component="img" src="/Logo_project_small.png" alt="Project Logo"
-              // onClick={() => scrollToSection("intro")}
               onClick={toggleDesktopDrawer(true)}
               sx={{
                 // display: { xs: 'none', md: 'flex' },  // changed from mid to large
@@ -261,7 +284,8 @@ export default function HeaderAppBar({ show }) {
                 display: { xs: 'flex', lg: 'none' },
                 mr: 1, 
                 height: 36, 
-                marginRight: 1 
+                marginRight: 1,
+                marginLeft: 1
               }} 
             />
             <Typography variant="h5" 
@@ -271,49 +295,17 @@ export default function HeaderAppBar({ show }) {
                 flexGrow: 1,
                 fontFamily: 'monospace',
                 fontWeight: 500,
-                fontSize: '2rem'
+                fontSize: '2rem',
+                margin: 0
               }}
             >
               Re:sI:Ze
             </Typography>
             
             {/* Language Toggle */}
-            
             <Box sx={{ flexGrow: 0 }}>
               <LanguageToggle currentLanguage={language} onChangeLanguage={setLanguage} />
             </Box>
-
-
-            {/* <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Change language">
-                < IconButton color="#566060" onClick={handleOpenLanguageMenu} sx={{ p: 0, fontSize: "1.6rem" }}>
-                  <LanguageIcon fontSize="inherit"/>
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: '35px' }}
-                id="menu-appbar"
-                anchorEl={anchorElLanguage}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorElLanguage)}
-                onClose={handleCloseLanguageMenu}
-                disableScrollLock // prevents the body padding issue!
-              >
-                {languages.map((language) => (
-                  <MenuItem key={language} onClick={handleCloseLanguageMenu}>
-                    <Typography sx={{ textAlign: 'center' }}>{language}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
