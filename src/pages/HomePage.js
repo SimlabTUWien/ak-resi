@@ -101,7 +101,7 @@ export default function HomePage() {
             </p>
             
             <div className='image-container definition-image'>
-                <img src="/Abb2_ResiDefinition_DE.png" alt="illustration showing the definition of Resi project" />
+                <img src={`${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE.png`} alt="illustration showing the definition of Resi project" />
             </div>
             
             <div>
@@ -241,7 +241,6 @@ export default function HomePage() {
             </Box>
 
             {/* Infobox with CommunitySizeClass map */}
-            {/* <CommunitySizeChart mapboxAccessToken={mapboxAccessToken}/> */}
             <div>
                 <Accordion sx={{background: "#f4f4f4"}}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -253,7 +252,7 @@ export default function HomePage() {
                     </Typography>
 
                     {/* <img src="/Abb_KarteGemeindegroeßen_DE.svg" alt="Gemeindegrößenklassen" width="100%" /> */}
-                    <img className="community-size-map" src="/Abb_KarteGemeindegroeßen_DE.png" alt="Gemeindegrößenklassen" />
+                    <img className="community-size-map" src={`${process.env.PUBLIC_URL}/images/Abb_KarteGemeindegroeßen_DE.png`} alt="Gemeindegrößenklassen" />
                 </AccordionDetails>
                 </Accordion>
             </div>

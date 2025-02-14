@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 import "../styles/BackgroundChart.css";
 
 
-const svgUrl = `${process.env.PUBLIC_URL}/Abb1_4Kreise4Overlaps_DE.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_DE.svg`;
 
 const textMap = {
   "einkommen": {

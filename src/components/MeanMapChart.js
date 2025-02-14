@@ -5,7 +5,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
 
-const svgUrl = `${process.env.PUBLIC_URL}/Abb4_BL_MapMedian.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/Abb4_BL_MapMedian.svg`;
 
 const dataMap = {
   "v-2500": {
