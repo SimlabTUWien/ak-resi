@@ -177,9 +177,11 @@ const SIOverallIndicatorMap = () => {
   const [maxFL, setMaxFL] = useState(null);
   const mapRef = useRef(null);
 
+  const jsonDataPath = `${process.env.PUBLIC_URL}/data/urban_rural_wgs84_dissgem.geojson`;
+  
   // Fetch the GeoJSON data
   useEffect(() => {
-    fetch('./urban_rural_wgs84_dissgem.geojson')
+    fetch(jsonDataPath)
       .then((response) => response.json())
       .then((data) => {
         setGeojsonData(data);
@@ -189,7 +191,7 @@ const SIOverallIndicatorMap = () => {
         setMaxFL(Math.max(...allFLValues));
       })
       .catch((error) => console.error('Error loading GeoJSON:', error));
-  }, []);
+  }, [jsonDataPath]);
 
   const getColor = (flValue) => {
     if (minFL !== null && maxFL !== null) {

@@ -21,7 +21,7 @@ export default function HeroSection() {
     <section className="hero-section">
       <div className="hero-image-wrapper">
         {/* <img src="/hero_image.webp" alt="Perspectives on Inequality" className="hero-image" /> */}
-        <img src="/hero_image.png" alt="Perspectives on Inequality" className="hero-image" />
+        <img src={`${process.env.PUBLIC_URL}/images/hero_image.png`} alt="Perspectives on Inequality" className="hero-image" />
         <div className="overlay"></div>
       </div>
 
@@ -33,7 +33,7 @@ export default function HeroSection() {
       >
         <div className="titles-container">
           {/* <img src="/Logo_minimal.svg" alt="Logo" className="logo" /> */}
-          <img src="/Logo_project_small.png" alt="Logo" className="logo" />
+          <img src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Logo" className="logo" />
 
           <h1 className="hero-title">Re:sI:Ze</h1>
           <p className="hero-subtitle">Perspektiven auf Ungleichheit in Österreich</p>

@@ -157,7 +157,7 @@ export default function HeaderAppBar({ show }) {
           <Toolbar disableGutters>
 
             {/* Dektop View */}
-            <Box component="img" src="/Logo_project_small.png" alt="Project Logo"
+            <Box component="img" src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Project Logo"
               onClick={toggleDesktopDrawer(true)}
               sx={{
                 // display: { xs: 'none', md: 'flex' },  // changed from mid to large
@@ -277,7 +277,7 @@ export default function HeaderAppBar({ show }) {
               </Drawer>
             </Box>
 
-            <Box component="img" src="/Logo_project_small.png" alt="Project Logo" 
+            <Box component="img" src={`${process.env.PUBLIC_URL}/Logo_project_small.png`} alt="Project Logo" 
               onClick={() => scrollToSection("intro")}
               sx={{
                 display: { xs: 'flex', lg: 'none' },

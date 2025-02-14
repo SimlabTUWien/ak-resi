@@ -58,7 +58,7 @@ export default function HomePage() {
             <h3>Residualeinkommen, soziale Infrastruktur und Zeitverwendung</h3>
 
             <div className='image-container logo-large'>
-                <img style={{width: '240px'}} src="/Logo_Projekt_icons.png" alt="showing the four core aspects of the project" />
+                <img style={{width: '240px'}} src={`${process.env.PUBLIC_URL}/images/Logo_project_icons.png`} alt="showing the four core aspects of the project" />
             </div>
             </section>
         </div>
