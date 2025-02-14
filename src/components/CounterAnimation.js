@@ -34,11 +34,13 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
       },
       { threshold: 0.5 }
     );
+    
+    const element = ref.current;
 
-    if (ref.current) observer.current.observe(ref.current);
+    if (element) observer.current.observe(element);
 
     return () => {
-      if (ref.current) observer.current.unobserve(ref.current);
+      if (element) observer.current.unobserve(element);
     };
   }, [targetValue, duration]);
 

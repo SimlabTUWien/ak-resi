@@ -120,46 +120,46 @@ const DesktopLegend = () => {
 };
 
 
-const SplitMapControl = ({ geojsonData, getColor }) => {
-  const map = useMap();
+// const SplitMapControl = ({ geojsonData, getColor }) => {
+//   const map = useMap();
 
-  useEffect(() => {
-    if (!geojsonData) return;
+//   useEffect(() => {
+//     if (!geojsonData) return;
 
-    // Create two GeoJSON layers for the split map
-    const leftLayer = L.geoJSON(geojsonData, {
-      style: (feature) => ({
-        fillColor: getColor(feature.properties.FL), // Keep original styling
-        fillOpacity: 0.7,
-        color: "#333",
-        weight: 0.5,
-      }),
-    });
+//     // Create two GeoJSON layers for the split map
+//     const leftLayer = L.geoJSON(geojsonData, {
+//       style: (feature) => ({
+//         fillColor: getColor(feature.properties.FL), // Keep original styling
+//         fillOpacity: 0.7,
+//         color: "#333",
+//         weight: 0.5,
+//       }),
+//     });
 
-    const rightLayer = L.geoJSON(geojsonData, {
-      style: (feature) => ({
-        fillColor: "#ccc", // Make the right side a different style (for comparison)
-        fillOpacity: 0.5,
-        color: "#999",
-        weight: 0.5,
-      }),
-    });
+//     const rightLayer = L.geoJSON(geojsonData, {
+//       style: (feature) => ({
+//         fillColor: "#ccc", // Make the right side a different style (for comparison)
+//         fillOpacity: 0.5,
+//         color: "#999",
+//         weight: 0.5,
+//       }),
+//     });
 
-    // Add SplitMap control
-    const splitMap = L.control.splitMap(leftLayer, rightLayer).addTo(map);
+//     // Add SplitMap control
+//     const splitMap = L.control.splitMap(leftLayer, rightLayer).addTo(map);
 
-    return () => {
-      map.removeControl(splitMap);
-      leftLayer.remove();
-      rightLayer.remove();
-    };
-  }, [map, geojsonData, getColor]);
+//     return () => {
+//       map.removeControl(splitMap);
+//       leftLayer.remove();
+//       rightLayer.remove();
+//     };
+//   }, [map, geojsonData, getColor]);
 
-  return null;
-};
+//   return null;
+// };
 
 
-const SIOverallIndicatorMap = ({ mapboxAccessToken }) => {
+const SIOverallIndicatorMap = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 540);
 
   useEffect(() => {

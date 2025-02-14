@@ -11,7 +11,7 @@ import './styles/App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/ak-resi">
       <AppContent />
     </Router>
   );

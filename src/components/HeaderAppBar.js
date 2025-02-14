@@ -4,7 +4,6 @@ import {
   AppBar, 
   Toolbar,
   Slide,
-  Fade, 
   Typography, 
   Box, 
   IconButton, 
