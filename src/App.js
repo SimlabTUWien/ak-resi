@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
 import Glossar from "./pages/Glossar";
@@ -11,7 +12,8 @@ import './styles/App.css';
 
 function App() {
   return (
-    <Router basename="/ak-resi">
+    // <Router basename="/ak-resi">
+    <Router>
       <AppContent />
     </Router>
   );
