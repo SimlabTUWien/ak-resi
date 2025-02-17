@@ -21,7 +21,9 @@ const LanguageToggle = ({ currentLanguage, onChangeLanguage }) => {
           mr: 2,
           cursor: "pointer",
           position: "relative",
-          transition: "all 0.3s ease-in-out"
+          transition: "all 0.3s ease-in-out",
+          userSelect: "none",
+          WebkitTapHighlightColor: "transparent"
         }}
         onClick={() => onChangeLanguage("DE")}
       >
@@ -48,7 +50,9 @@ const LanguageToggle = ({ currentLanguage, onChangeLanguage }) => {
           fontWeight: currentLanguage === "EN" ? "bold" : "normal",
           cursor: "pointer",
           position: "relative",
-          transition: "all 0.3s ease-in-out"
+          transition: "all 0.3s ease-in-out",
+          userSelect: "none",
+          WebkitTapHighlightColor: "transparent"
         }}
         onClick={() => onChangeLanguage("EN")}
       >

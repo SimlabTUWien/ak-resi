@@ -199,7 +199,9 @@ export default function HeaderAppBar({ show }) {
                 display: { xs: 'none', lg: 'flex' },
                 fontFamily: 'monospace',
                 fontWeight: 500,
-                fontSize: '2.5rem'
+                fontSize: '2.5rem',
+                userSelect: "none",
+                WebkitTapHighlightColor: "transparent"
               }}
             >
               Re:sI:Ze
@@ -295,7 +297,9 @@ export default function HeaderAppBar({ show }) {
                 fontFamily: 'monospace',
                 fontWeight: 500,
                 fontSize: '2rem',
-                margin: 0
+                margin: 0,
+                userSelect: "none",
+                WebkitTapHighlightColor: "transparent"
               }}
             >
               Re:sI:Ze
