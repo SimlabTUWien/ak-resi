@@ -26,7 +26,7 @@
         clip-path: url(#clippath-4);
       }
 
-      .mm-cls-6, .mm-mm-cls-7, .mm-cls-8, .mm-cls-9, .mm-cls-10, .mm-cls-11, .mm-cls-12, .mm-cls-13 {
+      .mm-cls-6, .mm-cls-7, .mm-cls-8, .mm-cls-9, .mm-cls-10, .mm-cls-11, .mm-cls-12, .mm-cls-13 {
         fill: #1d1d1b;
       }
 
@@ -187,7 +187,7 @@
         letter-spacing: .06em;
       }
     </style>
-    <clipPath id="clippath-2">
+    <clipPath id="mm-clippath-2">
       <rect class="mm-cls-21" width="28.8" height="28.8"/>
     </clipPath>
     <pattern id="Unnamed_Pattern" data-name="Unnamed Pattern" x="0" y="0" width="28.8" height="28.8" patternTransform="translate(449 93.56) scale(1 -1)" patternUnits="userSpaceOnUse" viewBox="0 0 28.8 28.8">
@@ -210,7 +210,7 @@
         </g>
       </g>
     </pattern>
-    <clipPath id="clippath-3">
+    <clipPath id="mm-clippath-3">
       <rect class="mm-cls-21" width="28.8" height="28.8"/>
     </clipPath>
     <pattern id="Unnamed_Pattern_2" data-name="Unnamed Pattern 2" x="0" y="0" width="28.8" height="28.8" patternTransform="translate(449 93.56) scale(1 -1)" patternUnits="userSpaceOnUse" viewBox="0 0 28.8 28.8">
@@ -233,7 +233,7 @@
         </g>
       </g>
     </pattern>
-    <clipPath id="clippath-4">
+    <clipPath id="mm-clippath-4">
       <rect class="mm-cls-21" width="28.8" height="28.8"/>
     </clipPath>
     <pattern id="Unnamed_Pattern_3" data-name="Unnamed Pattern 3" x="0" y="0" width="28.8" height="28.8" patternTransform="translate(449 93.56) scale(1 -1)" patternUnits="userSpaceOnUse" viewBox="0 0 28.8 28.8">
@@ -256,7 +256,7 @@
         </g>
       </g>
     </pattern>
-    <clipPath id="clippath-5">
+    <clipPath id="mm-clippath-5">
       <rect class="mm-cls-21" width="1496" height="890.67"/>
     </clipPath>
   </defs>
