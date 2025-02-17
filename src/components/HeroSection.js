@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Box } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import "../styles/HeroSection.css";
@@ -18,34 +19,37 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="hero-section">
-      <div className="hero-image-wrapper">
-        <img src={`${process.env.PUBLIC_URL}/images/hero_image.png`} alt="Perspectives on Inequality" className="hero-image" />
-        <div className="overlay"></div>
-      </div>
-
-      <motion.div
-        className="hero-content"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5 }}
-      >
-        <div className="titles-container">
-          <img src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Logo" className="logo" />
-
-          <h1 className="hero-title">Re:sI:Ze</h1>
-          <p className="hero-subtitle">Perspektiven auf Ungleichheit in Österreich</p>
-          
+    <Box  sx={{ height: "calc(var(--vh, 1vh) * 100)" }}>
+      <section className="hero-section">
+        <div className="hero-image-wrapper">
+          <img src={`${process.env.PUBLIC_URL}/images/hero_image.png`} alt="Perspectives on Inequality" className="hero-image" />
+          <div className="overlay"></div>
         </div>
 
         <motion.div
-          className="scroll-indicator"
-          animate={{ opacity: hideIndicator ? 0 : 1, y: hideIndicator ? -20 : 0 }}
-          transition={{ duration: 0.5 }}
+          className="hero-content"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5 }}
         >
-          <ExpandMoreIcon style={{ fontSize: "75px" }} />
+          <div className="titles-container">
+            <img src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Logo" className="logo" />
+
+            <h1 className="hero-title">Re:sI:Ze</h1>
+            <p className="hero-subtitle">Perspektiven auf Ungleichheit in Österreich</p>
+            
+          </div>
+
+          <motion.div
+            className="scroll-indicator"
+            animate={{ opacity: hideIndicator ? 0 : 1, y: hideIndicator ? -20 : 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <ExpandMoreIcon style={{ fontSize: "75px" }} />
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </section>
+      </section>
+    </Box>
+    
   );
 }

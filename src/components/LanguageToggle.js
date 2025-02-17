@@ -10,6 +10,11 @@ const LanguageToggle = ({ currentLanguage, onChangeLanguage }) => {
         // backgroundColor: "#566060",
         padding: "5px 10px",
         cursor: "pointer",
+        WebkitTapHighlightColor: "transparent", // Removes blue highlight on mobile
+        outline: "none", // Removes focus outline
+        "&:focus, &:active": {
+        backgroundColor: "transparent", // Prevents background color change on click
+        }
       }}
     >
       {/* DE Language */}

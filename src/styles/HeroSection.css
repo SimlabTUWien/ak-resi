@@ -1,3 +1,13 @@
+html {
+  --vh: 1vh;
+}
+
+@media (max-width: 768px) {
+  html {
+    --vh: calc(100dvh / 100);
+  }
+}
+
 .hero-section {
     position: relative;
     width: 100%;
