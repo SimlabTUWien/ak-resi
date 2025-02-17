@@ -17,7 +17,7 @@ export default function HeroSection() {
     };
 
     updateVH(); // Call once on mount
-    window.addEventListener("resize", updateVH); // Update on resize
+    // window.addEventListener("resize", updateVH); // Update on resize
 
     return () => window.removeEventListener("resize", updateVH);
   }, []);
