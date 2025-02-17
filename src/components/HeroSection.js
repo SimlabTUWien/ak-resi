@@ -10,6 +10,19 @@ export default function HeroSection() {
   const [hideIndicator, setHideIndicator] = useState(false);
 
   useEffect(() => {
+    const updateVH = () => {
+      // Get the innerHeight and set it as --vh
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    updateVH(); // Call once on mount
+    window.addEventListener("resize", updateVH); // Update on resize
+
+    return () => window.removeEventListener("resize", updateVH);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setHideIndicator(window.scrollY > 50);
     };
@@ -19,7 +32,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <Box  sx={{ height: "calc(var(--vh, 1vh) * 100)" }}>
+    // <Box  sx={{ height: "calc(var(--vh, 1vh) * 100)" }}>
+    <Box sx={{ height: "calc(var(--vh) * 100)" }}>
       <section className="hero-section">
         <div className="hero-image-wrapper">
           <img src={`${process.env.PUBLIC_URL}/images/hero_image.png`} alt="Perspectives on Inequality" className="hero-image" />
