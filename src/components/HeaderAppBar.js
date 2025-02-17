@@ -19,6 +19,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 
+import HomeIcon from '@mui/icons-material/Home';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import RoomIcon from '@mui/icons-material/Room';
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
@@ -26,19 +27,6 @@ import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import DescriptionIcon from '@mui/icons-material/Description';
 import LanguageToggle from "./LanguageToggle";
-
-const menuItems = [
-  { text: "Residualeinkommen", section: "income", icon: <PaymentsIcon /> },
-  { text: "Soziale Infrastruktur", section: "social-infrastructure", icon: <RoomIcon /> },
-  { text: "Zeitverwendung", section: "time-usage", icon: <AccessTimeIcon /> },
-];
-
-const linkItems = [
-  { text: "Glossar", link: "/glossar", icon: <ImportContactsIcon /> },
-  { text: "Impressum", link: "/impressum", icon: <DescriptionIcon /> },
-  { text: "Team", link: "/team", icon: <Diversity3Icon /> },
-  { text: "Datenschutzerklärung", link: "/dataprivacy", icon: <span className="material-symbols-outlined">shield_locked</span> }
-];
 
 export default function HeaderAppBar({ show }) {
 
@@ -50,6 +38,20 @@ export default function HeaderAppBar({ show }) {
   const [pendingScrollTarget, setPendingScrollTarget] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const menuItems = [
+    ...(location.pathname !== "/" ? [{ text: "Einleitung", section: "intro", icon: <HomeIcon /> }] : []),
+    { text: "Residualeinkommen", section: "income", icon: <PaymentsIcon /> },
+    { text: "Soziale Infrastruktur", section: "social-infrastructure", icon: <RoomIcon /> },
+    { text: "Zeitverwendung", section: "time-usage", icon: <AccessTimeIcon /> },
+  ];
+  
+  const linkItems = [
+    { text: "Glossar", link: "/glossar", icon: <ImportContactsIcon /> },
+    { text: "Impressum", link: "/impressum", icon: <DescriptionIcon /> },
+    { text: "Team", link: "/team", icon: <Diversity3Icon /> },
+    { text: "Datenschutzerklärung", link: "/dataprivacy", icon: <span className="material-symbols-outlined">shield_locked</span> }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,8 +67,8 @@ export default function HeaderAppBar({ show }) {
   const backgroundColor = location.pathname === "/" 
     ?  scrollY < viewHeight
       ? "rgba(0,0,0,.2)" 
-      : "rgba(0,0,0,.4)"
-    : "rgba(0,0,0,.4)";
+      : "rgba(0,0,0,.45)"
+    : "rgba(0,0,0,.45)";
 
   useEffect(() => {
     if (pendingScrollTarget && location.pathname === "/") {
