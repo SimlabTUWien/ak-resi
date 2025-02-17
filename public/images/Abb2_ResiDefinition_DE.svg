@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 545.22 164.15">
+  <defs>
+    <style>
+      .rd-cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-2 {
+        clip-path: url(#clippath-6);
+      }
+
+      .rd-cls-3 {
+        clip-path: url(#clippath-4);
+      }
+
+      .rd-cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-5 {
+        letter-spacing: .03em;
+      }
+
+      .rd-cls-6 {
+        fill: none;
+      }
+
+      .rd-cls-7 {
+        clip-path: url(#clippath-1);
+      }
+
+      .rd-cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-10 {
+        clip-path: url(#clippath-5);
+      }
+
+      .rd-cls-11 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-12 {
+        font-size: 16px;
+      }
+
+      .rd-cls-12, .rd-cls-13, .rd-cls-14, .rd-cls-15 {
+        fill: #1d1d1b;
+        font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif;
+      }
+
+      .rd-cls-16 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-17 {
+        clip-path: url(#clippath-3);
+      }
+
+      .rd-cls-18 {
+        letter-spacing: .02em;
+      }
+
+      .rd-cls-19 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-20 {
+        fill: #e2e1e1;
+      }
+
+      .rd-cls-21 {
+        letter-spacing: -.01em;
+      }
+
+      .rd-cls-13 {
+        font-size: 12px;
+      }
+
+      .rd-cls-22 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-23 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-24 {
+        fill: #f0ae9f;
+      }
+
+      .rd-cls-25 {
+        letter-spacing: -.03em;
+      }
+
+      .rd-cls-14 {
+        font-size: 14px;
+      }
+
+      .rd-cls-26 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-27 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-28 {
+        opacity: .51;
+      }
+
+      .rd-cls-29 {
+        letter-spacing: -.01em;
+      }
+
+      .rd-cls-30 {
+        clip-path: url(#clippath-2);
+      }
+
+      .rd-cls-15 {
+        font-size: 27.8px;
+      }
+
+      .rd-cls-31 {
+        letter-spacing: -.03em;
+      }
+
+      .rd-cls-32 {
+        letter-spacing: 0em;
+      }
+
+      .rd-cls-33 {
+        clip-path: url(#clippath);
+      }
+
+      .rd-cls-34 {
+        opacity: .5;
+      }
+
+      .rd-cls-35 {
+        letter-spacing: -.02em;
+      }
+
+      .rd-cls-36 {
+        letter-spacing: -.03em;
+      }
+    </style>
+    <clipPath id="rd-clippath">
+      <rect class="rd-cls-6" width="545.22" height="164.15"/>
+    </clipPath>
+    <clipPath id="rd-clippath-1">
+      <rect class="rd-cls-6" width="545.22" height="164.15"/>
+    </clipPath>
+    <clipPath id="rd-clippath-2">
+      <rect class="rd-cls-6" x="17.67" y="55.33" width="175.38" height="27.56"/>
+    </clipPath>
+    <clipPath id="rd-clippath-3">
+      <rect class="rd-cls-6" x="17.67" y="55.33" width="175.38" height="27.56"/>
+    </clipPath>
+    <clipPath id="rd-clippath-4">
+      <rect class="rd-cls-6" x="227.44" y="55.33" width="97.78" height="27.56"/>
+    </clipPath>
+    <clipPath id="rd-clippath-5">
+      <rect class="rd-cls-6" x="207.44" y="14.21" width="130.21" height="37.05"/>
+    </clipPath>
+    <clipPath id="rd-clippath-6">
+      <rect class="rd-cls-6" x="205.22" y="86.95" width="130.21" height="64.75"/>
+    </clipPath>
+  </defs>
+  <g class="rd-cls-33">
+    <g class="rd-cls-7">
+      <g class="rd-cls-34">
+        <g class="rd-cls-30">
+          <rect class="rd-cls-24" x="17.67" y="55.33" width="175.38" height="27.56"/>
+        </g>
+      </g>
+      <g class="rd-cls-28">
+        <g class="rd-cls-17">
+          <rect class="rd-cls-20" x="17.67" y="55.33" width="175.38" height="27.56"/>
+        </g>
+      </g>
+      <g class="rd-cls-28">
+        <g class="rd-cls-3">
+          <rect class="rd-cls-20" x="227.44" y="55.33" width="97.78" height="27.56"/>
+        </g>
+      </g>
+      <g class="rd-cls-28">
+        <g class="rd-cls-10">
+          <rect id="income-upper-info" class="rd-cls-20" x="207.44" y="14.21" width="130.21" height="37.05"/>
+        </g>
+      </g>
+      <g class="rd-cls-28">
+        <g class="rd-cls-2">
+          <rect id="income-lower-info" class="rd-cls-20" x="205.22" y="86.95" width="130.21" height="64.75"/>
+        </g>
+      </g>
+    </g>
+    <rect class="rd-cls-24" x="357.64" y="55.33" width="164.91" height="27.56"/>
+    <rect class="rd-cls-24" x="345.86" y="88.45" width="61.8" height="27.56"/>
+    <text class="rd-cls-12" transform="translate(235.5 73.36)"><tspan x="0" y="0">Einkommen</tspan></text>
+    <text class="rd-cls-12" transform="translate(22.87 73.54)"><tspan class="rd-cls-36" x="0" y="0">V</tspan><tspan x="8.42" y="0">e</tspan><tspan class="rd-cls-5" x="16.43" y="0">r</tspan><tspan x="22.13" y="0">fügba</tspan><tspan class="rd-cls-11" x="61.38" y="0">r</tspan><tspan x="66.46" y="0">es Einkommen</tspan></text>
+    <text class="rd-cls-15" transform="translate(201.6 76.29)"><tspan x="0" y="0">=</tspan></text>
+    <text class="rd-cls-15" transform="translate(336.83 76.29)"><tspan x="0" y="0">-</tspan></text>
+    <text class="rd-cls-12" transform="translate(364.82 73.54)"><tspan x="0" y="0">no</tspan><tspan class="rd-cls-26" x="17.66" y="0">t</tspan><tspan class="rd-cls-4" x="23.1" y="0">w</tspan><tspan x="34.72" y="0">endige </tspan><tspan class="rd-cls-29" x="84.73" y="0">A</tspan><tspan x="94.35" y="0">usgaben</tspan></text>
+    <text class="rd-cls-14" transform="translate(350.76 108.3)"><tspan x="0" y="0">Nahrung</tspan></text>
+    <text class="rd-cls-14" transform="translate(211.63 27.99)"><tspan x="0" y="0">selbstständiges und </tspan></text>
+    <text class="rd-cls-14" transform="translate(218.54 44.79)"><tspan x="0" y="0">unselbstständiges</tspan></text>
+    <text class="rd-cls-13" transform="translate(214.89 102.23)"><tspan x="0" y="0">in</tspan><tspan class="rd-cls-18" x="9.47" y="0">k</tspan><tspan class="rd-cls-23" x="15.29" y="0">l</tspan><tspan x="18.01" y="0">. </tspan><tspan class="rd-cls-35" x="23.04" y="0">P</tspan><tspan x="29.12" y="0">ensionen, </tspan><tspan class="rd-cls-19" x="80.3" y="0">S</tspan><tspan class="rd-cls-27" x="86.29" y="0">o</tspan><tspan class="rd-cls-1" x="92.79" y="0">zial-</tspan></text>
+    <text class="rd-cls-13" transform="translate(216.6 116.62)"><tspan x="0" y="0">hil</tspan><tspan class="rd-cls-21" x="12.3" y="0">f</tspan><tspan x="15.66" y="0">e und Einkommen </tspan></text>
+    <text class="rd-cls-13" transform="translate(242.93 131.02)"><tspan x="0" y="0">aus </tspan><tspan class="rd-cls-18" x="19.69" y="0">K</tspan><tspan class="rd-cls-22" x="26.39" y="0">apital </tspan></text>
+    <text class="rd-cls-13" transform="translate(230.79 145.42)"><tspan x="0" y="0">und</tspan><tspan class="rd-cls-25" x="20.04" y="0"> </tspan><tspan class="rd-cls-36" x="22.16" y="0">V</tspan><tspan class="rd-cls-22" x="28.48" y="0">e</tspan><tspan class="rd-cls-16" x="34.49" y="0">r</tspan><tspan x="38.45" y="0">mietung</tspan></text>
+    <rect class="rd-cls-24" x="413.66" y="88.45" width="60.63" height="27.56"/>
+    <text class="rd-cls-14" transform="translate(418.51 108.3)"><tspan class="rd-cls-31" x="0" y="0">W</tspan><tspan x="11.38" y="0">ohnen</tspan></text>
+    <rect class="rd-cls-24" x="479.22" y="88.45" width="55.11" height="27.56"/>
+    <text class="rd-cls-14" transform="translate(485.05 108.3)"><tspan x="0" y="0">Ene</tspan><tspan class="rd-cls-9" x="21.67" y="0">r</tspan><tspan class="rd-cls-8" x="26.15" y="0">g</tspan><tspan x="33.91" y="0">ie</tspan></text>
+    <rect class="rd-cls-24" x="448.85" y="121.71" width="55.21" height="27.56"/>
+    <text class="rd-cls-14" transform="translate(454.26 138.71)"><tspan x="0" y="0">Bildung</tspan></text>
+    <rect class="rd-cls-24" x="363.81" y="121.71" width="79.99" height="27.56"/>
+    <text class="rd-cls-14" transform="translate(368.23 138.71)"><tspan class="rd-cls-32" x="0" y="0">G</tspan><tspan x="9.11" y="0">esundheit</tspan></text>
+  </g>
+</svg>
