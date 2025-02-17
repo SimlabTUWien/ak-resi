@@ -16,6 +16,7 @@ import FloatingButton from "../components/FloatingButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import "../styles/HomePage.css";
+import ResiDefinitionChart from "../components/ResiDefinitionChart";
 
 export default function HomePage() {
 
@@ -99,10 +100,25 @@ export default function HomePage() {
                 Wie man hier sehen kann, lässt sich das verfügbare Einkommen berechnen, indem man vom Einkommen der Haushalte, ihr notwendigen Ausgaben abzieht. Diese Ausgaben sind zur Deckung von Grundbedürfnissen wie Wohnen oder Ernährung. 
             </p>
             
-            <div className='image-container definition-image'>
+            {/* <div className='image-container definition-image'>
                 <img src={`${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE.png`} alt="illustration showing the definition of Resi project" />
-            </div>
-            
+            </div> */}
+
+            <Box 
+                className="definition-chart-container"
+                sx={{
+                    // background: "#f4f4f4",
+                    padding: 0,
+                    borderRadius: 1,
+                    // boxShadow: 1,
+                    fontSize: '14px',
+                    marginTop: 2
+                }}
+            >
+                <ResiDefinitionChart/>
+            </Box>
+
+
             <div>
                 <Accordion sx={{background: "#f4f4f4"}}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
