@@ -14,9 +14,13 @@ import SIOverallIndicatorMap from "../components/SocialInfrastructureMaps/SIOver
 import FloatingButton from "../components/FloatingButton";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import TrainIcon from '@mui/icons-material/Train';
 
 import "../styles/HomePage.css";
 import ResiDefinitionChart from "../components/ResiDefinitionChart";
+import SISubIndicatorMap from "../components/SocialInfrastructureMaps/SISubIndicatorMap";
+import IndicatorSelect from "../components/IndicatorSelect";
 
 export default function HomePage() {
 
@@ -100,17 +104,13 @@ export default function HomePage() {
                 Wie man hier sehen kann, lässt sich das verfügbare Einkommen berechnen, indem man vom Einkommen der Haushalte, ihr notwendigen Ausgaben abzieht. Diese Ausgaben sind zur Deckung von Grundbedürfnissen wie Wohnen oder Ernährung. 
             </p>
             
-            {/* <div className='image-container definition-image'>
-                <img src={`${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE.png`} alt="illustration showing the definition of Resi project" />
-            </div> */}
-
             <Box 
                 className="definition-chart-container"
                 sx={{
                     // background: "#f4f4f4",
+                    // boxShadow: 1,
                     padding: 0,
                     borderRadius: 1,
-                    // boxShadow: 1,
                     fontSize: '14px',
                     marginTop: 2
                 }}
@@ -303,8 +303,10 @@ export default function HomePage() {
                         onChange={(_, newValue) => handleToggleModeChange("si", newValue)}
                         aria-label="mode selection"
                     >
-                    <ToggleButton value="so_cars">PKW</ToggleButton>
-                    <ToggleButton value="so_miv">MIV</ToggleButton>
+                    {/* <ToggleButton value="so_cars">PKW</ToggleButton> */}
+                    {/* <ToggleButton value="so_miv">MIV</ToggleButton> */}
+                    <ToggleButton value="so_cars"><DirectionsCarIcon/></ToggleButton>
+                    <ToggleButton value="so_miv"><TrainIcon/></ToggleButton>
                     <ToggleButton value="no_so">No Spillover</ToggleButton>
                     </ToggleButtonGroup>
                 </div>
@@ -313,9 +315,26 @@ export default function HomePage() {
                     <SIOverallIndicatorMap/>
                 </div>
             </Box>
-            
 
-            {/* SI map indicators 2*/}
+            {/* SI map sub indicators */}
+            <Box
+                sx={{
+                    background: "#f4f4f4",
+                    padding: 2,
+                    borderRadius: 1,
+                    boxShadow: 1,
+                    fontSize: '14px',
+                    marginTop: '48px',
+                }}
+            >
+                <div className="select-component">
+                    <IndicatorSelect/>
+                </div>
+        
+                <div className="si-subindicator-container">
+                    <SISubIndicatorMap/>
+                </div>
+            </Box>
 
             <h2>Wie werden die einzelnen Infrastrukturindikatoren berechnet?</h2>
 

@@ -61,6 +61,12 @@
   font-weight: 600;
 }
 
+@media (max-width: 444px) {
+  .si-toggle .MuiToggleButton-root {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
   
 
 .expenditure-charts {
