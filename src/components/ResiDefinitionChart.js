@@ -32,20 +32,23 @@ const ResiDefinitionChart = () => {
       elements.each(function () {
         const el = this.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const lowerBound = windowHeight * 0.20;
+        const lowerBound = windowHeight * 0.6;
         const upperBound = windowHeight * 0.80;
+        // const upperBound = windowHeight * 1.0;
         
         if (el.top >= lowerBound && el.bottom <= upperBound) {
-          d3.select(this)
+          d3.selectAll(".income-info, .expenditure-info")
+          // d3.select(this)
             .transition()
             .duration(800)
             .style("opacity", 1);
-        } else {
-          d3.select(this)
-            .transition()
-            .duration(800)
-            .style("opacity", 0);
         }
+        // } else {
+        //   d3.select(this)
+        //     .transition()
+        //     .duration(800)
+        //     .style("opacity", 0);
+        // }
       });
     };
 
