@@ -48,6 +48,7 @@
 }
 
 .si-toggle .MuiToggleButton-root {
+  min-height: 48.5px;
   flex: 1;
   background-color: white;
   border: 1px solid #ccc;
