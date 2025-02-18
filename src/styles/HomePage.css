@@ -44,6 +44,7 @@
   display: flex;
   width: 400px;
   max-width: 100%;
+
 }
 
 .si-toggle .MuiToggleButton-root {
@@ -60,6 +61,37 @@
   color: white !important;
   font-weight: 600;
 }
+
+
+.control-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .select-component {
+    position: absolute;
+    left: 0;
+  }
+  
+  .toggle-container {
+    margin: 0 auto;
+  }
+}
+
+
+
+@media (max-width: 1030px) {
+  .control-container {
+    flex-wrap: wrap;
+
+    .select-component {
+      position: relative;
+    }
+  }
+}
+
 
 @media (max-width: 444px) {
   .si-toggle .MuiToggleButton-root {

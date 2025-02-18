@@ -39,6 +39,8 @@ export default function HomePage() {
 
     const [expenditureMode, setExpenditureMode] = useState("quantils");
     const [siMode, setSiMode] = useState("so_cars");
+    const [siSubMode, setSiSubMode] = useState("so_sub");
+
 
 
     const handleToggleModeChange = (type, newValue) => {
@@ -47,6 +49,8 @@ export default function HomePage() {
                 setExpenditureMode(newValue);
             } else if (type === "si") {
                 setSiMode(newValue);
+            } else if (type === "si-sub") {
+                setSiSubMode(newValue);
             }
         }
     };
@@ -327,10 +331,25 @@ export default function HomePage() {
                     marginTop: '48px',
                 }}
             >
-                <div className="select-component">
-                    <IndicatorSelect/>
+                <div className="control-container">
+                    <div className="select-component">
+                        <IndicatorSelect/>
+                    </div>
+
+                    <div className="toggle-container">
+                        <ToggleButtonGroup
+                            className="si-toggle"
+                            value={siSubMode}
+                            exclusive
+                            onChange={(_, newValue) => handleToggleModeChange("si-sub", newValue)}
+                            aria-label="mode selection"
+                        >
+                            <ToggleButton value="so_sub">Spillover</ToggleButton>
+                            <ToggleButton value="no_so_sub">No Spillover</ToggleButton>
+                        </ToggleButtonGroup>
+                    </div>
                 </div>
-        
+                
                 <div className="si-subindicator-container">
                     <SISubIndicatorMap/>
                 </div>
