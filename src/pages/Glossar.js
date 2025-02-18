@@ -6,17 +6,32 @@ export default function Glossar() {
 
   const location = useLocation();
 
+  // useEffect(() => {
+  //   const hash = location.hash.replace("#", ""); // Get the term ID
+  //   if (hash) {
+  //     const element = document.getElementById(hash);
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: "smooth", block: "start" });
+  //     }
+  //   }
+  // }, [location]);
+
   useEffect(() => {
     const hash = location.hash.replace("#", ""); // Get the term ID
     if (hash) {
-      const element = document.getElementById(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+      setTimeout(() => { // Delay scrolling
+        requestAnimationFrame(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            const yOffset = -40; // Adjust the offset if needed
+            const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        });
+      }, 200); // Delay to allow content to render
     }
   }, [location]);
-
-
+  
   return (
     <>
       <div className='title-wrapper'>

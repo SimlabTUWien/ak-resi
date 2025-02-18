@@ -50,8 +50,8 @@ const GlossaryTerm = ({ className, children, theme = "light" }) => {
     
     const handleClick = () => {
       if (!termId) return;
-      const glossaryUrl = `${window.location.origin}/#/glossar#${termId}`;
-      window.open(glossaryUrl, "_blank"); // Open in a new tab
+      const glossaryUrl = `${window.location.origin}/ak-resi#/glossar#${termId}`;
+      window.open(glossaryUrl, "_blank");
     };
 
     return tooltipContent ? (
