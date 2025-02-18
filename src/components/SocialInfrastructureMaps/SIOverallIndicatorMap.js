@@ -241,51 +241,29 @@ const SIOverallIndicatorMap = () => {
   return (
     <Box sx={{ marginTop: 4 }}>
       <MapContainer
-          center={isMobile ? [48.5, 13.5] : [48.5, 14.5]}
-          zoom={isMobile ? 6 : 7}
-          minZoom={5}
-          maxZoom={12}
-          scrollWheelZoom={false}
-          doubleClickZoom={false}
-          touchZoom={true}
-          keyboard={false}
-          dragging={true}
-          zoomControl={false}
-          maxBounds={[[45.5, 9.0], [49.5, 17.5]]}
-          maxBoundsViscosity={1.0}
-          attributionControl={false}
-          // style={{ height: '480px', width: '100%', borderRadius: '8px', overflow: 'hidden', color: 'black'}}
-          style={{ height: '480px', width: '100%', background: '#bfbfbf', borderRadius: '8px', overflow: 'hidden', color: 'black'}}
-          ref={mapRef}
+        center={isMobile ? [48.5, 13.5] : [48.5, 14.5]}
+        zoom={isMobile ? 6 : 7}
+        minZoom={5}
+        maxZoom={12}
+        scrollWheelZoom={false}
+        doubleClickZoom={false}
+        touchZoom={true}
+        keyboard={false}
+        dragging={true}
+        zoomControl={false}
+        maxBounds={[[45.5, 9.0], [49.5, 17.5]]}
+        maxBoundsViscosity={1.0}
+        attributionControl={false}
+        style={{ height: '480px', width: '100%', background: '#bfbfbf', borderRadius: '8px', overflow: 'hidden', color: 'black'}}
+        ref={mapRef}
       >   
-          {/* <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; OpenStreetMap contributors'
-        /> */}
-
-{/* <TileLayer
-  url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
-  attribution='Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ'
-/> */}
-
-<TileLayer
-  url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
-  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
-/>
-
-{/* <TileLayer
-  url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
-  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
-/> */}
-
-        {/* <TileLayer
-            url={`https://api.mapbox.com/styles/v1/simlabtuwien/cm2bx9u9w00rs01peeqrrakfo/tiles/{z}/{x}/{y}?access_token=${mapboxAccessToken}`}
-            attribution=''
-          /> */}
-
-          {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
-          <ChangeZoomPosition />
-          {!isMobile && <DesktopLegend />}
+        {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
+        <TileLayer
+          url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+        />
+        <ChangeZoomPosition />
+        {!isMobile && <DesktopLegend />}
       </MapContainer>
       {isMobile && <MobileLegend />}
     </Box>

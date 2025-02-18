@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { MapContainer, GeoJSON, useMap } from 'react-leaflet';
+import { MapContainer, GeoJSON, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-splitmap';
 import 'leaflet-defaulticon-compatibility';
@@ -217,6 +217,10 @@ const SISubIndicatorMap = () => {
           ref={mapRef}
       >
           {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
+          <TileLayer
+            url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+          />
           <ChangeZoomPosition />
           {!isMobile && <DesktopLegend />}
       </MapContainer>
