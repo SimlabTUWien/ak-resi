@@ -36,7 +36,7 @@ export default function HeroSection() {
     <Box sx={{ height: "calc(var(--vh) * 100)" }}>
       <section className="hero-section">
         <div className="hero-image-wrapper">
-          <img src={`${process.env.PUBLIC_URL}/images/hero_image.png`} alt="Perspectives on Inequality" className="hero-image" />
+          <img src={`${process.env.PUBLIC_URL}/images/hero_image.png`} alt="" className="hero-image" />
           <div className="overlay"></div>
         </div>
 
