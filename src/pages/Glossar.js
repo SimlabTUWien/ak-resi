@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/Glossar.css";
 
 export default function Glossar() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", ""); // Get the term ID
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
+
+
   return (
     <>
       <div className='title-wrapper'>
@@ -19,7 +34,7 @@ export default function Glossar() {
           </p>
         </div>
 
-        <div className="glossar-element" id="community">
+        <div className="glossar-element" id="communityClassSize">
           <h2>Gemeindegrößeklasse</h2>
           <p className="paragraph-glossar">
             Kategorisierung von Gemeinden nach Einwohnerzahl zur statistischen Analyse.
@@ -61,7 +76,7 @@ export default function Glossar() {
           </p>
         </div>
 
-        <div className="glossar-element" id="resi">
+        <div className="glossar-element" id="residualIncome">
           <h2>Residualeinkommen</h2>
           <p className="paragraph-glossar">
             Einkommen, das nach Abzug der notwendigen Ausgaben für anderen Konsum oder Ersparnisse übrig bleibt.

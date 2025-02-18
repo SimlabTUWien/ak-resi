@@ -11,7 +11,7 @@ const StyledGlossaryTerm = styled("span")(({ tooltipTheme }) => ({
     },
   }));
 
-const GlossaryTooltip = ({ className, children, theme = "light" }) => {
+const GlossaryTerm = ({ className, children, theme = "light" }) => {
 
     const tooltipStyles =
     theme === "light"
@@ -46,6 +46,14 @@ const GlossaryTooltip = ({ className, children, theme = "light" }) => {
     const termKey = className?.split(" ").find((cls) => glossaryTerms[cls]);
     const tooltipContent = termKey ? glossaryTerms[termKey] : null;
 
+    const termId = termKey || "";
+    
+    const handleClick = () => {
+      if (!termId) return;
+      const glossaryUrl = `${window.location.origin}/#/glossar#${termId}`;
+      window.open(glossaryUrl, "_blank"); // Open in a new tab
+    };
+
     return tooltipContent ? (
         <Tooltip 
             title={tooltipContent} 
@@ -62,7 +70,7 @@ const GlossaryTooltip = ({ className, children, theme = "light" }) => {
                 }
           }}
         > 
-            <StyledGlossaryTerm tooltipTheme={theme} className={className}>
+            <StyledGlossaryTerm tooltipTheme={theme} className={className} onClick={handleClick}>
                 {children}
             </StyledGlossaryTerm>
         </Tooltip>
@@ -73,5 +81,5 @@ const GlossaryTooltip = ({ className, children, theme = "light" }) => {
     );
 };
 
-export default GlossaryTooltip;
+export default GlossaryTerm;
 
