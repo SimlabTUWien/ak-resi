@@ -46,11 +46,12 @@ export default function HeaderAppBar({ show }) {
     { text: "Zeitverwendung", section: "time-usage", icon: <AccessTimeIcon /> },
   ];
   
+
   const linkItems = [
     { text: "Glossar", link: "/glossar", icon: <ImportContactsIcon /> },
     { text: "Impressum", link: "/impressum", icon: <DescriptionIcon /> },
     { text: "Team", link: "/team", icon: <Diversity3Icon /> },
-    { text: "Datenschutzerklärung", link: "/dataprivacy", icon: <span className="material-symbols-outlined">shield_locked</span> }
+    { text: "Datenschutzerklärung", link: "/dataprivacy", icon: <img src="assets/shield_locked_24dp.svg" alt="Shield Locked Icon" width="24" height="24"/> }
   ];
 
   useEffect(() => {
