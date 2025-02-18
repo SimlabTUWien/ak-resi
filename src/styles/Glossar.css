@@ -1,0 +1,17 @@
+.title-section {
+    padding-bottom: 6px;
+}
+
+.paragraph-glossar {
+    font-size: 1.2rem;
+    color: whitesmoke;
+}
+  
+.glossar-element {
+    padding-bottom: 6px;
+}
+
+.glossar-element h2, p {
+    margin: 6px 0;
+}
+  

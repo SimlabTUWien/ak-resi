@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { MapContainer, GeoJSON, useMap } from 'react-leaflet';
+import { Box, Typography } from '@mui/material';
+import { MapContainer, GeoJSON, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-splitmap';
 import 'leaflet-defaulticon-compatibility';
 import L from 'leaflet';
-
-import { Box, Typography } from '@mui/material';
 
 const ChangeZoomPosition = () => {
   const map = useMap();
@@ -160,6 +159,8 @@ const DesktopLegend = () => {
 
 
 const SIOverallIndicatorMap = () => {
+  // const mapboxAccessToken = "pk.eyJ1Ijoic2ltbGFidHV3aWVuIiwiYSI6ImNtNzhzMHJpNTFsdDEyaXF5dHNpMG5qaTYifQ.fbEwgE0QEL7zp2m_k_vSgw";
+
   const [isMobile, setIsMobile] = useState(window.innerWidth < 540);
 
   useEffect(() => {
@@ -253,9 +254,35 @@ const SIOverallIndicatorMap = () => {
           maxBounds={[[45.5, 9.0], [49.5, 17.5]]}
           maxBoundsViscosity={1.0}
           attributionControl={false}
+          // style={{ height: '480px', width: '100%', borderRadius: '8px', overflow: 'hidden', color: 'black'}}
           style={{ height: '480px', width: '100%', background: '#bfbfbf', borderRadius: '8px', overflow: 'hidden', color: 'black'}}
           ref={mapRef}
-      >
+      >   
+          {/* <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; OpenStreetMap contributors'
+        /> */}
+
+{/* <TileLayer
+  url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+  attribution='Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ'
+/> */}
+
+<TileLayer
+  url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
+  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+/>
+
+{/* <TileLayer
+  url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
+  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+/> */}
+
+        {/* <TileLayer
+            url={`https://api.mapbox.com/styles/v1/simlabtuwien/cm2bx9u9w00rs01peeqrrakfo/tiles/{z}/{x}/{y}?access_token=${mapboxAccessToken}`}
+            attribution=''
+          /> */}
+
           {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
           <ChangeZoomPosition />
           {!isMobile && <DesktopLegend />}
