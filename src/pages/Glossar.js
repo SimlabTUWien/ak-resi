@@ -23,7 +23,7 @@ export default function Glossar() {
         requestAnimationFrame(() => {
           const element = document.getElementById(hash);
           if (element) {
-            const yOffset = -40; // Adjust the offset if needed
+            const yOffset = -50; // Adjust the offset if needed
             const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
             window.scrollTo({ top: y, behavior: "smooth" });
           }
