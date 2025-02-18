@@ -34,7 +34,7 @@ const ResiDefinitionChart = () => {
         const windowHeight = window.innerHeight;
         const lowerBound = windowHeight * 0.20;
         const upperBound = windowHeight * 0.80;
-
+        
         if (el.top >= lowerBound && el.bottom <= upperBound) {
           d3.select(this)
             .transition()
