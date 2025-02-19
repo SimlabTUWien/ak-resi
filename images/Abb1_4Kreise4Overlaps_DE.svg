@@ -108,7 +108,9 @@
       }
 
       .bg-cls-26 {
-        fill: #e2e0e1;
+        <!-- fill: #e2e0e1; -->
+        fill: #BDBDBD;
+        <!-- fill:#b3b3b3;  -->
       }
 
       .bg-cls-27 {
