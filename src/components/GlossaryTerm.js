@@ -4,10 +4,13 @@ import { styled } from "@mui/material/styles";
 
 const StyledGlossaryTerm = styled("span")(({ tooltipTheme }) => ({
     cursor: "pointer",
-    // textDecoration: "underline",
-    color: tooltipTheme === "dark" ? "#568f88" : "#e9dfbe",
+    // color: tooltipTheme === "dark" ? "#568f88" : "#e9dfbe",
+    // "&:hover": {
+    //   color: tooltipTheme === "dark" ? "#89aba7" : "#f0e6d7",
+    // },
+    color: "#356962",
     "&:hover": {
-      color: tooltipTheme === "dark" ? "#89aba7" : "#f0e6d7",
+      color: "#508a82",
     },
   }));
 
@@ -16,10 +19,14 @@ const GlossaryTerm = ({ className, children, theme = "light" }) => {
     const tooltipStyles =
     theme === "light"
       ? {
-          backgroundColor: "#f4f4f4",
-          color: "black",
+          // backgroundColor: "#f4f4f4",
+          // color: "black",
+          // fontSize: "0.9rem",
+          // border: "1px solid rgb(233, 233, 233)",
+          backgroundColor: "#333", // very dark grey
+          color: "white",
           fontSize: "0.9rem",
-          border: "1px solid rgb(233, 233, 233)",
+          border: "1px solid #444", // slightly lighter dark grey
         }
       : {
           backgroundColor: "#333", // very dark grey
@@ -28,7 +35,8 @@ const GlossaryTerm = ({ className, children, theme = "light" }) => {
           border: "1px solid #444", // slightly lighter dark grey
         };
 
-    const arrowColor = theme === "light" ? "#f4f4f4" : "#333";
+    // const arrowColor = theme === "light" ? "#f4f4f4" : "#333";
+    const arrowColor = "#333";
 
     const glossaryTerms = useMemo(() => ({
         incomeInequality: "Maß für die ungleiche Verteilung von Einkommen innerhalb einer Gesellschaft.",
