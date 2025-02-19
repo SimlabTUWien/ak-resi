@@ -1,20 +1,10 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import "../styles/Glossar.css";
+import "../styles/SubPage.css";
 
 export default function Glossar() {
 
   const location = useLocation();
-
-  // useEffect(() => {
-  //   const hash = location.hash.replace("#", ""); // Get the term ID
-  //   if (hash) {
-  //     const element = document.getElementById(hash);
-  //     if (element) {
-  //       element.scrollIntoView({ behavior: "smooth", block: "start" });
-  //     }
-  //   }
-  // }, [location]);
 
   useEffect(() => {
     const hash = location.hash.replace("#", ""); // Get the term ID

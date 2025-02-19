@@ -7,13 +7,16 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif;
+
   /* background-color: #f4f4f4; */
-  /* background-color: #586F6B; */
-  
-  /* background-color: #393E41; */
-  background-color: #5f686d;
+
+  /* background-color: #5f686d; */
+  /* color: white; */
+
+  background-color: #EAE8E8;
+  color: black;
+
   scroll-behavior: smooth;
-  color: white;
 }
 
 * {
@@ -88,8 +91,9 @@ img {
 
 .paragraph {
   font-size: 1.1rem;
-  /* color: #555; */
-  color: whitesmoke;
+  color: #555;
+  
+  /* color: whitesmoke; */
 }
 
 
