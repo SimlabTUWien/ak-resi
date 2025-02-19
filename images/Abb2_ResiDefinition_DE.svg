@@ -50,19 +50,19 @@
         font-size: 16px;
       }
 
-      <!-- .rd-cls-12, .rd-cls-13, .rd-cls-14, .rd-cls-15 {
+      .rd-cls-12, .rd-cls-13, .rd-cls-14, .rd-cls-15 {
         fill: #1d1d1b;
         font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif;
-      } -->
+      }
 
-      .rd-cls-12, .rd-cls-13, .rd-cls-14, .rd-cls-15 {
+      <!-- .rd-cls-12, .rd-cls-13, .rd-cls-14 {
         fill: #1d1d1b;
         font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif;
       }
 
       .rd-cls-15 {
         fill:rgb(255, 255, 255);
-        font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif;
+        font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif; -->
       }
 
 
