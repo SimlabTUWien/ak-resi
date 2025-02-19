@@ -1,6 +1,9 @@
 // import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+
 import HomePage from "./pages/HomePage";
 import Glossar from "./pages/Glossar";
 import Impressum from "./pages/Impressum";
@@ -9,13 +12,18 @@ import Dataprivacy from "./pages/Dataprivacy";
 import HeaderAppBar from "./components/HeaderAppBar";
 
 import './styles/App.css';
+import theme from "./styles/theme.js";
+
 
 function App() {
   return (
     // <Router basename="/ak-resi">
-    <Router>
-      <AppContent />
-    </Router>
+    <ThemeProvider theme={theme}>
+      <CssBaseline /> {/* Ensures consistent MUI styling */}
+      <Router>
+        <AppContent />
+      </Router>
+    </ThemeProvider>
   );
 }
 
