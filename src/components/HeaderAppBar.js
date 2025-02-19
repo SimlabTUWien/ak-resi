@@ -216,7 +216,7 @@ export default function HeaderAppBar({ show }) {
                   sx={{ 
                     my: 2, 
                     color: 'inherit',
-                    fontSize: 'medium',
+                    fontSize: 'large',
                     // transform: "translateY(3px)",
                     "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.1)" }
                   }}

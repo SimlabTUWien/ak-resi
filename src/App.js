@@ -24,6 +24,16 @@ function AppContent() {
   const [showAppBar, setShowAppBar] = useState(location.pathname !== "/");
 
   useEffect(() => {
+    if (location.pathname !== "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location.pathname]);
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
+
+  useEffect(() => {
     if (location.pathname === "/") {
       setShowAppBar(window.scrollY > 50);
 
