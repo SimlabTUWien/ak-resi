@@ -10,7 +10,8 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
     switch (value) {
       case 32:
         // return "#a4a4a4";
-        return "#d1d1d1";
+        // return "#d1d1d1";
+        return "#9c9c9c";
       case 39:
         return "#F0A898";
       default:
@@ -45,7 +46,7 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
   }, [targetValue, duration]);
 
   return (
-    <span ref={ref} style={{ fontSize: "5rem", fontWeight: "bold", color: getColor(targetValue) }}>
+    <span ref={ref} style={{ fontSize: "5rem", fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500', color: getColor(targetValue) }}>
       {count}
     </span>
   );

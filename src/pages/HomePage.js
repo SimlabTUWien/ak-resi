@@ -116,7 +116,7 @@ export default function HomePage() {
                     // boxShadow: 1,
                     padding: 0,
                     borderRadius: 1,
-                    fontSize: '14px',
+                    // fontSize: '14px',
                     marginTop: 2
                 }}
             >
@@ -127,7 +127,7 @@ export default function HomePage() {
             <div>
                 <Accordion sx={{background: "#f4f4f4"}}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography><strong>Wo kommen unsere Daten her und wie funktioniert die Berechnung genau?</strong></Typography>
+                    <Typography variant="h4" sx={{ fontSize: '1.125rem'}}>Wo kommen unsere Daten her und wie funktioniert die Berechnung genau?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>Zur Berechnung der verfügbaren Einkommen werden die Abgestimmte Lohn- und Einkommensteuerstatistik 2019 und 2020 und die <GlossaryTerm className="glossary-term consumption" theme="dark">Konsumerhebung</GlossaryTerm> (2019-2020) verwendet. Die Informationen zu Personen können über eine ID zwischen den beiden Erhebungen verknüpft und Personen eindeutig Haushalten zugeordnet werden. Das an die OECD-Skala angepasste Haushaltseinkommen wird berechnet. Die <GlossaryTerm className="glossary-term consumption" theme="dark">Konsumerhebung</GlossaryTerm> liefert detaillierte Informationen über die Ausgaben der Haushalte, wobei die unter <GlossaryTerm className="glossary-term expenditure" theme="dark">notwendige Ausgaben</GlossaryTerm> zusammengefassten Kategorien identifiziert werden können. Während für alle Personen in Österreich mit steuerrelevantem Einkommen Informationen vorliegen, handelt es sich bei der <GlossaryTerm className="glossary-term consumption" theme="dark">Konsumerhebung</GlossaryTerm> um eine repräsentative Stichprobenerhebung, die 6.873 Haushalte umfasst. Das verfügbare Einkommen kann daher nur für diese Haushalte berechnet werden, weshalb die Ergebnisse auf der Ebene von Personengruppen, Regionen und Haushaltstypen ausgewertet werden.</Typography>
@@ -179,8 +179,8 @@ export default function HomePage() {
                         onChange={(_, newValue) => handleToggleModeChange("expenditure", newValue)}
                         aria-label="expenditure chart mode selection"
                     >
-                    <ToggleButton value="quantils">Quintil</ToggleButton>
-                    <ToggleButton value="decils">Dezil</ToggleButton>
+                        <ToggleButton sx={{ fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600'}} value="quantils"><label>Quintil</label></ToggleButton>
+                        <ToggleButton sx={{ fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600'}} value="decils"><label>Dezil</label></ToggleButton>
                     </ToggleButtonGroup>
                 </div>
         
@@ -214,7 +214,7 @@ export default function HomePage() {
             <div>
                 <Accordion sx={{background: "#f4f4f4"}}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography><strong>Wie wird der Gini berechnet?</strong></Typography>
+                    <Typography variant="h4" sx={{ fontSize: '1.125rem'}}>Wie wird der Gini berechnet?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>TODO: Erläuterungstext hier einfügen</Typography>
@@ -264,7 +264,7 @@ export default function HomePage() {
             <div>
                 <Accordion sx={{background: "#f4f4f4"}}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography><strong>Wo wohnt Österreich: Gemeindegrößeklassenerklärung</strong></Typography>
+                    <Typography variant="h4" sx={{ fontSize: '1.125rem'}}>Wo wohnt Österreich: Gemeindegrößeklassenerklärung</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
@@ -311,7 +311,7 @@ export default function HomePage() {
                     {/* <ToggleButton value="so_miv">MIV</ToggleButton> */}
                     <ToggleButton value="so_cars"><DirectionsCarIcon/></ToggleButton>
                     <ToggleButton value="so_miv"><TrainIcon/></ToggleButton>
-                    <ToggleButton value="no_so">No Spillover</ToggleButton>
+                    <ToggleButton value="no_so"><label>No Spillover</label></ToggleButton>
                     </ToggleButtonGroup>
                 </div>
         
@@ -344,8 +344,8 @@ export default function HomePage() {
                             onChange={(_, newValue) => handleToggleModeChange("si-sub", newValue)}
                             aria-label="mode selection"
                         >
-                            <ToggleButton value="so_sub">Spillover</ToggleButton>
-                            <ToggleButton value="no_so_sub">No Spillover</ToggleButton>
+                            <ToggleButton value="so_sub"><label>Spillover</label></ToggleButton>
+                            <ToggleButton value="no_so_sub"><label>No Spillover</label></ToggleButton>
                         </ToggleButtonGroup>
                     </div>
                 </div>

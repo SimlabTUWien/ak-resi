@@ -4,6 +4,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { transform } from 'framer-motion';
 
 const indicatorMap = {
   1: { de: "Allgemeinmediziner:innen", en: "General Practitioners" },
@@ -30,6 +31,7 @@ export default function IndicatorSelect() {
             color: '#5e5e5e',
             '&.Mui-focused': {
               color: '#76918e',
+              
             },
           }}
         >
@@ -43,7 +45,7 @@ export default function IndicatorSelect() {
           onChange={handleChange}
           sx={{
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-              borderColor: '#8fb0ac', // Focus state
+              borderColor: '#8fb0ac',
             },
           }}
         >
@@ -56,11 +58,12 @@ export default function IndicatorSelect() {
                     backgroundColor: '#daf2ef',
                     '&:hover': {
                       backgroundColor: '#a5cdc8', // Darker red on hover
+                      
                     },
                   },
                 }}
               >
-                {value.de} {/* Display the German text, switch to en for English */}
+                <span style={{transform: "translateY(2px)"}}>{value.de}</span> {/* Display the German text, switch to en for English */}
               </MenuItem>
             ))}
         </Select>

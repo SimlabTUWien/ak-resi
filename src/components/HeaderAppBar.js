@@ -167,7 +167,7 @@ export default function HeaderAppBar({ show }) {
                 // display: { xs: 'none', md: 'flex' },  // changed from mid to large
                 display: { xs: 'none', lg: 'flex' }, 
                 mr: 1, 
-                height: 36, 
+                height: 42, 
                 marginRight: 1,
                 cursor: 'pointer',
                 transition: "0.3s ease-in-out",
@@ -201,9 +201,10 @@ export default function HeaderAppBar({ show }) {
               sx={{
                 mr: 2,
                 display: { xs: 'none', lg: 'flex' },
-                fontFamily: 'monospace',
-                fontWeight: 500,
-                fontSize: '2.5rem',
+                // fontFamily: 'monospace',
+                // fontWeight: 500,
+                paddingTop: '10px',
+                fontSize: '2.6rem',
                 userSelect: "none",
                 WebkitTapHighlightColor: "transparent"
               }}
@@ -211,6 +212,7 @@ export default function HeaderAppBar({ show }) {
               Re:sI:Ze
             </Typography>
 
+            
             <Box sx={{ flexGrow: 1, display: { xs: 'none', lg: 'flex' } }}>
               {menuItems.map((item, index) => (
                 <Button key={index}
@@ -219,12 +221,10 @@ export default function HeaderAppBar({ show }) {
                     my: 2, 
                     color: 'inherit',
                     fontSize: 'large',
-                    // transform: "translateY(3px)",
                     "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.1)" }
                   }}
                 >
-                  {/* {item.text} */}
-                  <span style={{ display: "inline-block", transform: "translateY(1px)" }}>{item.text}</span>
+                  <label>{item.text}</label>
                 </Button>
               ))}
             </Box>
@@ -288,9 +288,9 @@ export default function HeaderAppBar({ show }) {
               sx={{
                 display: { xs: 'flex', lg: 'none' },
                 mr: 1, 
-                height: 36, 
+                height: 40, 
                 marginRight: 1,
-                marginLeft: 1
+                marginLeft: 1.2
               }} 
             />
             <Typography variant="h5" 
@@ -298,8 +298,9 @@ export default function HeaderAppBar({ show }) {
                 mr: 2, 
                 display: { xs: 'flex', lg: 'none' }, 
                 flexGrow: 1,
-                fontFamily: 'monospace',
-                fontWeight: 500,
+                // fontFamily: 'monospace',
+                // fontWeight: 500,
+                paddingTop: '8px',
                 fontSize: '2rem',
                 margin: 0,
                 userSelect: "none",

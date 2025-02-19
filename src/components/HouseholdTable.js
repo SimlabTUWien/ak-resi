@@ -8,10 +8,10 @@ const HouseholdTable = () => {
        <Table sx={{ width: "100%", backgroundColor:"#f4f4f4"}}>
         <TableHead sx={{ backgroundColor: "#d2d5cb" }}>
           <TableRow>
-          <TableCell align="center" sx={{ fontWeight: "bold" }}>Haushaltstyp</TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>Mittleres Einkommen</TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>Notwendige Ausgaben</TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>Verfügbares Einkommen</TableCell>
+          <TableCell align="center">Haushaltstyp</TableCell>
+            <TableCell align="center">Mittleres Einkommen</TableCell>
+            <TableCell align="center">Notwendige Ausgaben</TableCell>
+            <TableCell align="center">Verfügbares Einkommen</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

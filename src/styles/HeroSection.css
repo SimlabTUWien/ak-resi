@@ -80,16 +80,17 @@ html {
 
   .hero-title {
     font-size: 4rem;
-    font-weight: bold;
     color: #000000;
     margin-bottom: 0;
+    /* font-weight: bold; */
   }
   
   .hero-subtitle {
     font-size: 2rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #1b1b1b;
     margin-top: 18px;
+    font-variation-settings: "slnt" 0, "wdth" 100, "wght" 600;
   }
 
   @media (max-width: 500px) {

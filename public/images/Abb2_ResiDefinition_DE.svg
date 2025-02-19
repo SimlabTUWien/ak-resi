@@ -83,7 +83,8 @@
       }
 
       .rd-cls-20 {
-        fill: #e2e0e1;
+        <!-- fill: #e2e0e1; -->
+        fill: #BDBDBD;
       }
 
       .rd-cls-21 {

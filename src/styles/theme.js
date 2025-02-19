@@ -14,7 +14,7 @@ const theme = createTheme({
   typography: {
     fontFamily: "ivyepic-variable, sans-serif",
     allVariants: {
-      fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 200', // Default for all text
+      fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300', // Default for all text
     },
     h1: {
       fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
@@ -36,47 +36,57 @@ const theme = createTheme({
     },
   },
   components: {
-    MuiToggleButton: {
-      styleOverrides: {
-        root: {
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500', // Adjust weight if needed
-        },
-      },
-    },
-    MuiTableHead: {
-      styleOverrides: {
-        root: {
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500', // Set bold for table headers
-        },
-      },
-    },
     MuiTableCell: {
       styleOverrides: {
         head: {
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
+          // transform: "translateY(2px)",
         },
         body: {
           fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
+          // transform: "translateY(2px)",
         },
       },
     },
-    // MuiAppBar: {
-    //   styleOverrides: {
-    //     root: {
-    //       fontFamily: "ivyepic-variable, sans-serif",
-    //       fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
-    //     },
-    //     allVariants: {
-    //       fontFamily: "ivyepic-variable, sans-serif",
-    //       fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
-    //     },
-    //   },
-    // },
+    MuiBackdrop: {
+      styleOverrides: {
+        root: {
+          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+          root: {
+            fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
+            "& > svg": {
+            display: "inline-block",
+            transform: "translateY(1px)",
+          },
+          },
+        },
+    },
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          "& > label": {
+            display: "inline-block",
+            transform: "translateY(2px)",
+            fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
+          },
+        },
+      },
+    },
+    
     MuiButton: {
       styleOverrides: {
         root: {
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400', // Adjust weight if needed
-        }
+          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
+          "& > label": {
+            display: "inline-block",
+            transform: "translateY(3px)",
+          },
+        },
       },
     },
     MuiToolbar: {
@@ -92,16 +102,40 @@ const theme = createTheme({
         root: {
           fontFamily: "ivyepic-variable, sans-serif",
         },
+        body1: {
+          transform: "translateY(2px)",
+          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
+        },
         h4: {
           transform: "translateY(2px)"
         },
         h5: {
           fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
         },
-
       },
     },
   },
 });
+
+// import { createTheme } from '@mui/material/styles';
+
+// const theme = createTheme({
+//   components: {
+//     // 1) Override the label used in <Select>
+    
+//     // 2) Override the <MenuItem> used in <Select>
+//     MuiMenuItem: {
+//       styleOverrides: {
+//         root: {
+//           fontWeight: 600,             // Make menu items bolder
+//           transform: 'translateY(2px)', // Shift menu item text down
+//         },
+//       },
+//     },
+//   },
+// });
+
+// export default theme;
+
 
 export default theme;

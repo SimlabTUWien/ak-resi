@@ -55,10 +55,10 @@ const SocialInfrastructureTable = () => {
        <Table sx={{ width: "100%", minWidth: 320 }}>
         <TableHead sx={{ backgroundColor: "#d2d5cb" }}>
           <TableRow>
-          <TableCell align="center" sx={{ fontWeight: "bold" }}>Soziale Infrastrukturkategorie</TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>Verfügbarkeit (0,5)</TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>Zugänglichkeit (0,3)</TableCell>
-            <TableCell align="center" sx={{ fontWeight: "bold" }}>Datenquelle</TableCell>
+          <TableCell align="center">Soziale Infrastrukturkategorie</TableCell>
+            <TableCell align="center">Verfügbarkeit (0,5)</TableCell>
+            <TableCell align="center">Zugänglichkeit (0,3)</TableCell>
+            <TableCell align="center">Datenquelle</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

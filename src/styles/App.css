@@ -6,15 +6,13 @@ body, html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif;
+  /* font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif; */
+  font-family: ivyepic-variable, sans-serif;
 
   /* background-color: #f4f4f4; */
 
   /* background-color: #5f686d; */
   /* color: white; */
-
-  background-color: #EAE8E8;
-  color: black;
 
   scroll-behavior: smooth;
 }
@@ -26,6 +24,10 @@ body, html {
 section {
   padding: 40px 0;
   text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-variation-settings: "slnt" 0, "wdth" 100, "wght" 600;
 }
 
 h1 {
@@ -91,8 +93,8 @@ img {
 
 .paragraph {
   font-size: 1.1rem;
-  color: #555;
-  
+
+  /* color: #555; */
   /* color: whitesmoke; */
 }
 

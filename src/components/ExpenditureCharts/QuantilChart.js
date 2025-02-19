@@ -41,8 +41,34 @@ const QuantilChart = ({ index, parentWidth }) => {
       axisPointer: { type: "shadow" },
     },
     legend: {
+      // show: true,
+      // top: chartWidth < 450 ? "10%" : "8%",
       show: true,
-      top: chartWidth < 450 ? "10%" : "8%"
+      top: chartWidth < 450 ? "10%" : "8%",
+//       left: "center",
+//       orient: "horizontal",
+//       align: "left",  // Align text left within each row
+//       itemGap: 10,    // Adjust gap between items
+//       width: "100%",  // Ensure it takes full width for proper centering
+//       textStyle: {
+//         fontSize: 12,
+//       },
+//  // Spacing between legend items
+//       formatter: function (name) {
+//         // Custom wrapping logic based on chart width
+//         const itemsPerRow = chartWidth < 400 ? 2 : chartWidth < 600 ? 3 : 6;
+//         const index = [
+//           "Residual Income", 
+//           "Mobility", 
+//           "Education", 
+//           "Food", 
+//           "Health", 
+//           "Housing"
+//         ].indexOf(name);
+    
+//         // Insert a new line after the specified number of items
+//         return (index + 1) % itemsPerRow === 0 ? name + "\n" : name;
+//       },
     },
     xAxis: {
       type: "category",

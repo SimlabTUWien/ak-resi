@@ -189,6 +189,21 @@ ul.time-usage li::marker {
   z-index: 1000;
 }
 
+.click-information {
+  margin-top: 20px;
+}
+
+#indicator-select {
+  transform: translateY(2px);
+}
+
+.MuiMenuItem-root {
+  li, span, p {
+    transform: translateY(2px);
+  }
+}
+
+
 @media (hover: none) {
   .click-information {
     display: none;
