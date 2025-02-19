@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const sectionColors = {
 
-  intro: '#566060',
+  intro: '#b3b3b3',
   income: '#f0ae9f',
   'social-infrastructure': '#a5cdc8',
   'time-usage': '#fcd799',
@@ -11,7 +11,7 @@ const sectionColors = {
 
 function ScrollProgressBar() {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [barColor, setBarColor] = useState('#566060'); // Default color
+  const [barColor, setBarColor] = useState('#b3b3b3'); // Default color
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -20,7 +20,7 @@ function ScrollProgressBar() {
     setScrollProgress(progress);
 
     // Detect which section is currently at the top
-    let currentColor = '#566060'; // Default fallback
+    let currentColor = '#b3b3b3'; // Default fallback
     Object.keys(sectionColors).forEach((id) => {
       const section = document.getElementById(id);
       if (section) {
