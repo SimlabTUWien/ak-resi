@@ -288,7 +288,7 @@ const MeanMapChart = () => {
             <ArrowForwardIosIcon />
           </button>
         </div>
-        <p style={{ margin: 0 }}>{selectedInfo.text}</p>
+        <p style={{ margin: 0, textAlign:'justify'}}>{selectedInfo.text}</p>
       </Box>
   </div>
   )

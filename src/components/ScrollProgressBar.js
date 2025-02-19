@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const sectionColors = {
-
   intro: '#b3b3b3',
   income: '#f0ae9f',
   'social-infrastructure': '#a5cdc8',

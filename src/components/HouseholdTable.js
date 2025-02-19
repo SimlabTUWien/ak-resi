@@ -6,7 +6,8 @@ const HouseholdTable = () => {
     <TableContainer component={Paper} sx={{marginTop: 2, marginBottom: '48px'}}>
        {/* <Table sx={{ width: "100%"}}> */}
        <Table sx={{ width: "100%", backgroundColor:"#f4f4f4"}}>
-        <TableHead sx={{ backgroundColor: "#d2d5cb" }}>
+        {/* <TableHead sx={{ backgroundColor: "#d2d5cb" }}> */}
+        <TableHead sx={{ backgroundColor: "#f0ae9f", hyphens: 'none'}}>
           <TableRow>
           <TableCell align="center">Haushaltstyp</TableCell>
             <TableCell align="center">Mittleres Einkommen</TableCell>

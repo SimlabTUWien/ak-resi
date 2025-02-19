@@ -39,7 +39,8 @@ const theme = createTheme({
     MuiTableCell: {
       styleOverrides: {
         head: {
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
+          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+          //  color: "#fff"
           // transform: "translateY(2px)",
         },
         body: {
@@ -58,7 +59,7 @@ const theme = createTheme({
     MuiSelect: {
       styleOverrides: {
           root: {
-            fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
+            fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
             "& > svg": {
             display: "inline-block",
             transform: "translateY(1px)",

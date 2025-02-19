@@ -79,7 +79,7 @@ export default function HomePage() {
             <section className='background' id="background">
             <h2> Hintergrund / Einleitung</h2>
             <p className="paragraph">
-                Die Ressourcen in unserer Gesellschaft sind ungleich verteilt. Traditionelle Indikatoren zur Messung von Ungleichheit, wie das Bruttoinlandsprodukt oder der <GlossaryTerm className="glossary-term gini">Gini-Index</GlossaryTerm>, konzentrieren sich vor allem auf Einkommensunterschiede. Aber das Einkommen allein erzählt nicht die ganze Geschichte.
+                Die Ressourcen in unserer Gesellschaft sind ungleich verteilt. Traditionelle Indikatoren zur Messung von Ungleichheit, wie das Bruttoinlandsprodukt oder der <GlossaryTerm className="glossary-term gini" sectionId="intro">Gini-Index</GlossaryTerm>, konzentrieren sich vor allem auf Einkommensunterschiede. Aber das Einkommen allein erzählt nicht die ganze Geschichte.
             </p>
             <p className='paragraph'>
                 Unser Leben wird auch von anderen Faktoren beeinflusst: Wie hoch sind die Kosten für Grundbedürfnisse wie Wohnen, Energie oder Mobilität? Welche Infrastruktur steht uns zur Verfügung, etwa in den Bereichen Bildung oder Gesundheit? Und wie gehen wir mit der kostbaren Ressource Zeit um, die oft ungleich verteilt ist - sei es durch berufliche Verpflichtungen, unbezahlte Sorgearbeit oder andere Verantwortlichkeiten?
@@ -130,7 +130,7 @@ export default function HomePage() {
                     <Typography variant="h4" sx={{ fontSize: '1.125rem'}}>Wo kommen unsere Daten her und wie funktioniert die Berechnung genau?</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>Zur Berechnung der verfügbaren Einkommen werden die Abgestimmte Lohn- und Einkommensteuerstatistik 2019 und 2020 und die <GlossaryTerm className="glossary-term consumption" theme="dark">Konsumerhebung</GlossaryTerm> (2019-2020) verwendet. Die Informationen zu Personen können über eine ID zwischen den beiden Erhebungen verknüpft und Personen eindeutig Haushalten zugeordnet werden. Das an die OECD-Skala angepasste Haushaltseinkommen wird berechnet. Die <GlossaryTerm className="glossary-term consumption" theme="dark">Konsumerhebung</GlossaryTerm> liefert detaillierte Informationen über die Ausgaben der Haushalte, wobei die unter <GlossaryTerm className="glossary-term expenditure" theme="dark">notwendige Ausgaben</GlossaryTerm> zusammengefassten Kategorien identifiziert werden können. Während für alle Personen in Österreich mit steuerrelevantem Einkommen Informationen vorliegen, handelt es sich bei der <GlossaryTerm className="glossary-term consumption" theme="dark">Konsumerhebung</GlossaryTerm> um eine repräsentative Stichprobenerhebung, die 6.873 Haushalte umfasst. Das verfügbare Einkommen kann daher nur für diese Haushalte berechnet werden, weshalb die Ergebnisse auf der Ebene von Personengruppen, Regionen und Haushaltstypen ausgewertet werden.</Typography>
+                    <Typography>Zur Berechnung der verfügbaren Einkommen werden die Abgestimmte Lohn- und Einkommensteuerstatistik 2019 und 2020 und die <GlossaryTerm className="glossary-term consumption" sectionId="income">Konsumerhebung</GlossaryTerm> (2019-2020) verwendet. Die Informationen zu Personen können über eine ID zwischen den beiden Erhebungen verknüpft und Personen eindeutig Haushalten zugeordnet werden. Das an die OECD-Skala angepasste Haushaltseinkommen wird berechnet. Die <GlossaryTerm className="glossary-term consumption">Konsumerhebung</GlossaryTerm> liefert detaillierte Informationen über die Ausgaben der Haushalte, wobei die unter <GlossaryTerm className="glossary-term expenditure" sectionId="income">notwendige Ausgaben</GlossaryTerm> zusammengefassten Kategorien identifiziert werden können. Während für alle Personen in Österreich mit steuerrelevantem Einkommen Informationen vorliegen, handelt es sich bei der <GlossaryTerm className="glossary-term consumption" sectionId="income">Konsumerhebung</GlossaryTerm> um eine repräsentative Stichprobenerhebung, die 6.873 Haushalte umfasst. Das verfügbare Einkommen kann daher nur für diese Haushalte berechnet werden, weshalb die Ergebnisse auf der Ebene von Personengruppen, Regionen und Haushaltstypen ausgewertet werden.</Typography>
                 </AccordionDetails>
                 </Accordion>
             </div>
@@ -158,7 +158,7 @@ export default function HomePage() {
             <HouseholdTable/>
 
             <p className='paragraph'>
-                Haushalte lassen sich auch nach ihrem Einkommen einteilen, zum Beispiel in <GlossaryTerm className="glossary-term quintil">Quintile</GlossaryTerm> oder Dezile, fünf bzw. zehn Gruppen in der die gleiche Anzahl an Haushalten enthalten ist.
+                Haushalte lassen sich auch nach ihrem Einkommen einteilen, zum Beispiel in <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintile</GlossaryTerm> oder Dezile, fünf bzw. zehn Gruppen in der die gleiche Anzahl an Haushalten enthalten ist.
             </p>
             
             <Box
@@ -194,10 +194,10 @@ export default function HomePage() {
             </p>
 
             <p className='paragraph'>
-            Die ärmsten 20 % der Haushalte geben nahezu ihr gesamtes Einkommen für <GlossaryTerm className="glossary-term expenditure">notwendige Ausgaben</GlossaryTerm> wie Wohnen, Energie oder Lebensmittel aus. Dadurch bleibt ihnen kaum <GlossaryTerm className="glossary-term residualIncome">Residualeinkommen</GlossaryTerm> übrig, was bedeutet, dass sie kaum Spielraum für Notfälle – wie den Ausfall einer Waschmaschine – oder andere unvorhergesehene Ausgaben haben. Im Gegensatz dazu verwenden die reichsten 20 % der Haushalte nur etwa 30 % ihres Einkommens für <GlossaryTerm className="glossary-term expenditure">notwendige Ausgaben</GlossaryTerm>. Das resultiert in einem sehr hohen <GlossaryTerm className="glossary-term residualIncome">Residualeinkommen</GlossaryTerm>, das für Freizeit, Ersparnisse oder zusätzliche Investitionen genutzt werden kann. Bei Haushalten im mittleren Einkommensbereich verbleiben nach den notwendigen Ausgaben 40 bis 60 % ihres Einkommens, wodurch sie zwar mehr Spielraum als die ärmsten Haushalte, aber weniger finanzielle Freiheit als die reichsten haben.
+            Die ärmsten 20 % der Haushalte geben nahezu ihr gesamtes Einkommen für <GlossaryTerm className="glossary-term expenditure" sectionId="income">notwendige Ausgaben</GlossaryTerm> wie Wohnen, Energie oder Lebensmittel aus. Dadurch bleibt ihnen kaum <GlossaryTerm className="glossary-term residualIncome" sectionId="income">Residualeinkommen</GlossaryTerm> übrig, was bedeutet, dass sie kaum Spielraum für Notfälle – wie den Ausfall einer Waschmaschine – oder andere unvorhergesehene Ausgaben haben. Im Gegensatz dazu verwenden die reichsten 20 % der Haushalte nur etwa 30 % ihres Einkommens für <GlossaryTerm className="glossary-term expenditure" sectionId="income">notwendige Ausgaben</GlossaryTerm>. Das resultiert in einem sehr hohen <GlossaryTerm className="glossary-term residualIncome" sectionId="income">Residualeinkommen</GlossaryTerm>, das für Freizeit, Ersparnisse oder zusätzliche Investitionen genutzt werden kann. Bei Haushalten im mittleren Einkommensbereich verbleiben nach den notwendigen Ausgaben 40 bis 60 % ihres Einkommens, wodurch sie zwar mehr Spielraum als die ärmsten Haushalte, aber weniger finanzielle Freiheit als die reichsten haben.
             </p>
 
-            <h2><GlossaryTerm className="glossary-term incomeInequality">Einkommensungleichheit</GlossaryTerm> nach Gesamteinkommen und verfügbaren Einkommen</h2>
+            <h2>Einkommensungleichheit nach Gesamteinkommen und verfügbaren Einkommen</h2>
 
             {/* GINI gegenüberstellen*/}
             <div className="gini-container">
@@ -268,7 +268,7 @@ export default function HomePage() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        In vielen regionalen Statistiken werden die österreichischen Gemeinden in <GlossaryTerm className="glossary-term communitySizeClass" theme="dark">Gemeindegrößeklassen</GlossaryTerm> eingeteilt. Sechs österreichische Landeshauptstädte haben über 100.000 Einwohner:innen (Wien, Graz, Linz, Salzburg, Klagenfurt und Innsbruck). Insgesamt leben etwas mehr als 20% aller Bewohner:innen Österreichs in diesen Städten, ähnlich viele wie in den 1.366 Gemeinden mit weniger als 2.500 Einwohner:innen. Mehr als 30% der Österreicher:innen leben in den 641 Gemeinden mit 2.500-10.000 Einwohner:innen und 27% in Klein- und Mittelstädten.
+                        In vielen regionalen Statistiken werden die österreichischen Gemeinden in <GlossaryTerm className="glossary-term communitySizeClass" sectionId="income">Gemeindegrößeklassen</GlossaryTerm> eingeteilt. Sechs österreichische Landeshauptstädte haben über 100.000 Einwohner:innen (Wien, Graz, Linz, Salzburg, Klagenfurt und Innsbruck). Insgesamt leben etwas mehr als 20% aller Bewohner:innen Österreichs in diesen Städten, ähnlich viele wie in den 1.366 Gemeinden mit weniger als 2.500 Einwohner:innen. Mehr als 30% der Österreicher:innen leben in den 641 Gemeinden mit 2.500-10.000 Einwohner:innen und 27% in Klein- und Mittelstädten.
                     </Typography>
 
                     <img className="community-size-map" src={`${process.env.PUBLIC_URL}/images/Abb_KarteGemeindegroeßen_DE.png`} alt="Gemeindegrößeklassen" />
@@ -281,7 +281,7 @@ export default function HomePage() {
             <section id="social-infrastructure">
             <h1>Soziale Infrastruktur in Österreich</h1>
             <p className='paragraph'>
-            <GlossaryTerm className="glossary-term si">Soziale Infrastrukturen</GlossaryTerm> wie Kindergärten, Schulen, Gesundheits- und Pflegeeinrichtungen sind essenziell für eine funktionierende Gesellschaft. Sie ermöglichen Bildung, Gesundheit und soziale Teilhabe – unabhängig vom Einkommen. Doch ihr Zugang und ihre Qualität sind nicht überall gleich. Regionale Unterschiede und fehlende Angebote können Haushalte zusätzlich belasten und Ungleichheiten verstärken.
+            <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">Soziale Infrastrukturen</GlossaryTerm> wie Kindergärten, Schulen, Gesundheits- und Pflegeeinrichtungen sind essenziell für eine funktionierende Gesellschaft. Sie ermöglichen Bildung, Gesundheit und soziale Teilhabe – unabhängig vom Einkommen. Doch ihr Zugang und ihre Qualität sind nicht überall gleich. Regionale Unterschiede und fehlende Angebote können Haushalte zusätzlich belasten und Ungleichheiten verstärken.
             </p>
 
             <p className='paragraph'>
@@ -358,7 +358,7 @@ export default function HomePage() {
             <h2>Wie werden die einzelnen Infrastrukturindikatoren berechnet?</h2>
 
             <p className='paragraph'>
-                Der Gesamtindikator für <GlossaryTerm className="glossary-term si">soziale Infrastrukturen</GlossaryTerm> setzt sich aus sechs gleich gewichteten Teilindikatoren zusammen: Kindergärten, Schulen, Krankenhäuser, Allgemeinmediziner:innen, Pflegeeinrichtungen und andere soziale Einrichtungen. Innerhalb der Teilindikatoren wird die Verfügbarkeit mit 50 %, die Zugänglichkeit mit 30 % und die Einflüsse von Nachbargemeinden (Spillover-Effekte) mit 20 % gewichtet, um die unterschiedlichen Aspekte der Infrastruktur umfassend zu berücksichtigen.
+                Der Gesamtindikator für <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">soziale Infrastrukturen</GlossaryTerm> setzt sich aus sechs gleich gewichteten Teilindikatoren zusammen: Kindergärten, Schulen, Krankenhäuser, Allgemeinmediziner:innen, Pflegeeinrichtungen und andere soziale Einrichtungen. Innerhalb der Teilindikatoren wird die Verfügbarkeit mit 50 %, die Zugänglichkeit mit 30 % und die Einflüsse von Nachbargemeinden (Spillover-Effekte) mit 20 % gewichtet, um die unterschiedlichen Aspekte der Infrastruktur umfassend zu berücksichtigen.
             </p>
 
             {/* SI Table*/}
@@ -412,7 +412,7 @@ export default function HomePage() {
 
                 <h2>Soziale Infrastrukturen: Wer auf eigene Mittel angewiesen ist, bleibt zurück</h2>
                 <p className='paragraph'>
-                    Öffentliche Kinderbetreuung, Gesundheitsversorgung, Pflegeangebote oder Bildungszugang – <GlossaryTerm className="glossary-term si">soziale Infrastruktur</GlossaryTerm> entscheidet darüber, wie stark Menschen auf ihr eigenes Einkommen angewiesen sind. Ist sie schlecht ausgebaut, verstärken sich Ungleichheiten, da Haushalte oftmals auf Infrastruktur in benachbarten Gemeinden angewiesen und private Lösungen teuer sind.
+                    Öffentliche Kinderbetreuung, Gesundheitsversorgung, Pflegeangebote oder Bildungszugang – <GlossaryTerm className="glossary-term si" sectionId="what-now">soziale Infrastruktur</GlossaryTerm> entscheidet darüber, wie stark Menschen auf ihr eigenes Einkommen angewiesen sind. Ist sie schlecht ausgebaut, verstärken sich Ungleichheiten, da Haushalte oftmals auf Infrastruktur in benachbarten Gemeinden angewiesen und private Lösungen teuer sind.
                 </p>
                 <div className='paragraph'>
                     <p className="implications">Politische Implikationen:</p>

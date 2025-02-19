@@ -53,7 +53,8 @@ const SocialInfrastructureTable = () => {
         }}
       >
        <Table sx={{ width: "100%", minWidth: 320 }}>
-        <TableHead sx={{ backgroundColor: "#d2d5cb" }}>
+        {/* <TableHead sx={{ backgroundColor: "#d2d5cb" }}> */}
+        <TableHead sx={{ backgroundColor: "#a5cdc8",  hyphens: 'none' }}>
           <TableRow>
           <TableCell align="center">Soziale Infrastrukturkategorie</TableCell>
             <TableCell align="center">Verfügbarkeit (0,5)</TableCell>
