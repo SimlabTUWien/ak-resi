@@ -22,6 +22,7 @@ import ResiDefinitionChart from "../components/ResiDefinitionChart";
 import SISubIndicatorMap from "../components/SocialInfrastructureMaps/SISubIndicatorMap";
 import IndicatorSelect from "../components/IndicatorSelect";
 import GlossaryTerm from "../components/GlossaryTerm";
+import OutlookChart from "../components/OutlookChart";
 
 export default function HomePage() {
 
@@ -613,7 +614,7 @@ export default function HomePage() {
                     Ungleichheit ist mehr als nur eine Frage des Einkommens. Wer wie viel verdient, bestimmt zwar den monetären Spielraum, doch erst im Zusammenspiel mit notwendigen Ausgaben, aufgewandter Zeit (vor allem für Erwerbsarbeit und unbezahlter Arbeit) und öffentlicher sozialer Infrastruktur entsteht ein breiteres Bild sozialer Ungleichheit. Unser Projekt zeigt: Diese Faktoren sind nicht isoliert zu betrachten. Sie verstärken sich gegenseitig und beeinflussen. Um nachhaltige Lösungen zu entwickeln, muss Politik diese Zusammenhänge anerkennen und gezielt eingreifen.
                 </p>
 
-                <h2 className="content-header">Einkommen: Mehr als nur Lohn – es geht um echte Verfügbarkeit</h2>
+                {/* <h2 className="content-header">Einkommen: Mehr als nur Lohn – es geht um echte Verfügbarkeit</h2>
                 <p className='paragraph'>
                 Nominale Einkommen sagen wenig darüber aus, was Menschen sich tatsächlich leisten können. Hohe Wohnkosten, steigende Energiepreise und andere Fixkosten schränken das verfügbare Einkommen vieler Haushalte drastisch ein. Besonders betroffen sind Alleinerziehende, Erwerbslose und prekär Beschäftigte.
                 </p>
@@ -663,6 +664,10 @@ export default function HomePage() {
                     <li>Faire Verteilung unbezahlter Sorgearbeit durch bessere Anreize</li>
                     <li>Stärkung von Teilzeit- und Elternzeitmodellen ohne finanzielle Nachteile</li>
                     </ul>
+                </div> */}
+
+                <div className='outlook-chart'>
+                    <OutlookChart/>
                 </div>
             </section>
 
