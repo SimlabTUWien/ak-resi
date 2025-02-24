@@ -15,7 +15,7 @@ const StyledGlossaryTerm = styled("span")(({ color }) => ({
   cursor: "pointer",
   color: color || "inherit",
   fontStyle: "italic",
-  fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
+  fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
   "&:hover": {
     color: color ? `${color}CC` : "inherit", // Adding opacity via hex code (CC ~ 80% opacity)
   },

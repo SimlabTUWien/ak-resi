@@ -127,10 +127,6 @@ label {
     }
   }
 
-.mean-map-container {
-  margin-bottom: 48px;
-}
-
 .community-size-map {
   width: 100%;
   padding: 0 40px 0 30px;
@@ -158,6 +154,10 @@ ul.social-infrastructure li::marker {
 
 ul.time-usage li::marker {
   color: #fcd799;
+}
+
+.infobox-list li {
+  font-variation-settings: "slnt" 0, "wdth" 100, "wght" 400;
 }
 
 .floating-button {

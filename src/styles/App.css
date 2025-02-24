@@ -31,6 +31,7 @@ section {
 
 h1, h2, h3, h4, h5, h6 {
   font-variation-settings: "slnt" 0, "wdth" 100, "wght" 600;
+  
 }
 
 h1 {
@@ -40,6 +41,10 @@ h1 {
 
 h2 {
   padding-top: 20px;
+}
+
+.content-header {
+  text-align: left;
 }
 
 
