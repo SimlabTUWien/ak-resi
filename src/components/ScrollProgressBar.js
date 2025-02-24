@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 const sectionColors = {
   intro: '#b3b3b3',
-  income: '#f0ae9f',
+  income: '#b3b3b3',
+  residualIncome: '#f0ae9f',
   'social-infrastructure': '#a5cdc8',
   'time-usage': '#fcd799',
   'what-now': '#566060',
