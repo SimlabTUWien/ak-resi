@@ -44,7 +44,6 @@
   display: flex;
   width: 400px;
   max-width: 100%;
-
 }
 
 .si-toggle .MuiToggleButton-root {
@@ -61,6 +60,10 @@
   background-color: #a5cdc8 !important;
   color: white !important;
   font-weight: 600;
+}
+
+label {
+  cursor: inherit;
 }
 
 
