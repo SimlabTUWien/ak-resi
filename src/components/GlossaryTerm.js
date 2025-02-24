@@ -3,11 +3,12 @@ import Tooltip from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 
 const sectionColors = {
-  intro: "#b3b3b3",
-  income: "#f0ae9f",
-  "social-infrastructure": "#a5cdc8",
+  intro: "#808080", //"#b3b3b3",
+  income: "#808080",
+  residualIncome: "#d99484", //"#f0ae9f",
+  "social-infrastructure": "#72a69f",//"#a5cdc8",
   "time-usage": "#fcd799",
-  "what-now": "#b3b3b3",
+  "what-now": "#808080" //"#b3b3b3",
 };
 
 const StyledGlossaryTerm = styled("span")(({ color }) => ({
