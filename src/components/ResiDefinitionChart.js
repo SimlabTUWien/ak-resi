@@ -32,8 +32,8 @@ const ResiDefinitionChart = () => {
       elements.each(function () {
         const el = this.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const lowerBound = windowHeight * 0.6;
-        const upperBound = windowHeight * 0.80;
+        const lowerBound = windowHeight * 0.4;
+        const upperBound = windowHeight * 0.8;
         
         if (el.top >= lowerBound && el.bottom <= upperBound) {
           d3.selectAll(".income-info, .expenditure-info")
