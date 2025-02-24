@@ -50,6 +50,7 @@ const SocialInfrastructureTable = () => {
             overflowX: "auto",
             minWidth: 320,
             maxWidth: "100%", // Ensure it adapts within parent
+            marginTop: 3
         }}
       >
        <Table sx={{ width: "100%", minWidth: 320 }}>

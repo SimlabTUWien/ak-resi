@@ -3,7 +3,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 
 const HouseholdTable = () => {
   return (
-    <TableContainer component={Paper} sx={{marginTop: 2, marginBottom: '48px'}}>
+    <TableContainer component={Paper} sx={{marginTop: 3, marginBottom: 3}}>
        {/* <Table sx={{ width: "100%"}}> */}
        <Table sx={{ width: "100%", backgroundColor:"#f4f4f4"}}>
         {/* <TableHead sx={{ backgroundColor: "#d2d5cb" }}> */}
