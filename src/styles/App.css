@@ -101,6 +101,10 @@ img {
   /* color: whitesmoke; */
 }
 
+.boldText {
+  font-variation-settings: "slnt" 0, "wdth" 100, "wght" 500;
+}
+
 
 @media (max-width: 1200px) {
   .title-wrapper {
