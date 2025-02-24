@@ -41,7 +41,7 @@ export default function HeaderAppBar({ show }) {
 
   const menuItems = [
     ...(location.pathname !== "/" ? [{ text: "Einleitung", section: "intro", icon: <HomeIcon /> }] : []),
-    { text: "Residualeinkommen", section: "income", icon: <PaymentsIcon /> },
+    { text: "Residualeinkommen", section: "residualIncome", icon: <PaymentsIcon /> },
     { text: "Soziale Infrastruktur", section: "social-infrastructure", icon: <RoomIcon /> },
     { text: "Zeitverwendung", section: "time-usage", icon: <AccessTimeIcon /> },
   ];
