@@ -189,7 +189,13 @@ export default function HeaderAppBar({ show }) {
                   <ListItem key={index} disablePadding>
                     <ListItemButton onClick={() => navigateToLink(item.link)}>
                       <ListItemIcon>{item.icon}</ListItemIcon>
-                      <ListItemText primary={item.text} />
+                      <ListItemText 
+                        primary={item.text}
+                        sx={{
+                          textAlign: "left",
+                          hyphens: "none"
+                        }}
+                      />
                     </ListItemButton>
                   </ListItem>
                 ))}
