@@ -455,7 +455,7 @@ export default function HomePage() {
                 </div>
         
                 <div className="si-overall-container">
-                    <SIOverallIndicatorMap/>
+                    <SIOverallIndicatorMap siMode={siMode} key={siMode} />
                 </div>
             </Box>
 
