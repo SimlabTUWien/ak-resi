@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 381.23 381.28">
+  <defs>
+    <style>
+      #zeit_verwendung_text, #soziale_infrastrukturen_text {
+        pointer-events: none;
+      }
+
+      .ol-cls-1 {
+        letter-spacing: -.01em;
+      }
+
+      .ol-cls-2 {
+        letter-spacing: .01em;
+      }
+
+      .ol-cls-3 {
+        fill: #f7e4c5;
+      }
+
+      .ol-cls-4 {
+        fill: #a5cdc8;
+      }
+
+      .ol-cls-5 {
+        fill: #e4cdc0;
+      }
+
+      .ol-cls-6 {
+        letter-spacing: -.01em;
+      }
+
+      .ol-cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-10 {
+        letter-spacing: .02em;
+      }
+
+      .ol-cls-11 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-12 {
+        fill: #d2d5cb;
+      }
+
+      .ol-cls-13 {
+        letter-spacing: .03em;
+      }
+
+      .ol-cls-14 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-15 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-16 {
+        fill: #fcd799;
+      }
+
+      .ol-cls-17 {
+        font-size: 16px;
+      }
+
+      .ol-cls-17, .ol-cls-18 {
+        fill: #1d1d1b;
+        font-family: 'MyriadPro-Regular', 'Myriad Pro', sans-serif;
+      }
+
+      .ol-cls-19 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-20 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-21 {
+        fill: #e9dfbe;
+      }
+
+      .ol-cls-22 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-23 {
+        fill: #f0d1c7;
+      }
+
+      .ol-cls-24 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-25 {
+        letter-spacing: -.01em;
+      }
+
+      .ol-cls-26 {
+        <!-- fill: #e2e0e1; -->
+        fill: #BDBDBD;
+        <!-- fill:#b3b3b3;  -->
+      }
+
+      .ol-cls-27 {
+        fill: #f0e6d7;
+      }
+
+      .ol-cls-28 {
+        fill: #f0ae9f;
+      }
+
+      .ol-cls-18 {
+        font-size: 14px;
+      }
+
+      .ol-cls-29 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-30 {
+        fill: #b2a5a7;
+      }
+
+      .ol-cls-31 {
+        letter-spacing: -.01em;
+      }
+
+      .ol-cls-32 {
+        letter-spacing: -.01em;
+      }
+
+      .ol-cls-33 {
+        letter-spacing: 0em;
+      }
+
+      .ol-cls-34 {
+        letter-spacing: -.03em;
+      }
+
+      .ol-cls-35 {
+        fill: #eddcd7;
+      }
+    </style>
+  </defs>
+  <g id="zeit_verwendung">
+    <path class="ol-cls-16" d="M190.49,202.77c-1.75-2.26-3.64-4.44-5.71-6.52-2.29-2.29-4.7-4.36-7.21-6.26-24.15-18.2-57.68-18.14-81.76.2-2.41,1.84-4.74,3.84-6.94,6.04-26.49,26.48-26.5,69.42-.02,95.91,26.48,26.49,69.42,26.5,95.91.02,2.18-2.17,4.15-4.47,5.97-6.85,18.59-24.32,18.51-58.31-.24-82.55Z"/>
+  </g>
+  <g id="notwendige_ausgaben">
+    <path class="ol-cls-28" d="M292.46,88.61c-26.48-26.49-69.42-26.5-95.91-.02-2.11,2.11-4.03,4.33-5.8,6.63-18.59,24.11-18.74,57.85-.44,82.11,1.88,2.5,3.95,4.9,6.22,7.18,2.06,2.06,4.23,3.94,6.48,5.68,24.33,18.87,58.54,18.89,82.9.06,2.27-1.75,4.46-3.65,6.54-5.73,26.49-26.48,26.5-69.42.02-95.91Z"/>
+    <text class="ol-cls-17" transform="translate(208.03 130.04)"><tspan x="0" y="0">Notwendige</tspan><tspan class="ol-cls-6" x="6.97" y="19.2">Ausgaben</tspan></text>
+  </g>
+  <g id="soziale_infrastrukturen">
+    <path class="ol-cls-4" d="M292.38,195.94c-2.06-2.06-4.23-3.94-6.48-5.68-24.33-18.87-58.54-18.89-82.9-.06-2.27,1.75-4.46,3.65-6.54,5.73-2.18,2.17-4.15,4.47-5.97,6.85-18.59,24.32-18.51,58.31.24,82.55,1.75,2.26,3.64,4.44,5.71,6.52,26.48,26.49,69.42,26.5,95.91.02,26.49-26.48,26.5-69.42.02-95.91Z"/>
+  </g>
+  <g id="einkommen">
+    <path class="ol-cls-26" d="M190.75,95.22c-1.88-2.5-3.95-4.9-6.22-7.18-26.48-26.49-69.42-26.5-95.91-.02-26.49,26.48-26.5,69.42-.02,95.91,2.29,2.29,4.7,4.36,7.21,6.25,24.15,18.2,57.68,18.14,81.76-.2,2.41-1.84,4.74-3.84,6.94-6.04,2.11-2.11,4.03-4.33,5.8-6.63,18.59-24.11,18.74-57.85.44-82.11Z"/>
+    <text class="ol-cls-17" transform="translate(94.23 137.78)"><tspan x="0" y="0">Einkommen</tspan></text>
+    <!-- <text class="ol-cls-17" transform="translate(94.23 130.04)"><tspan x="9.97" y="0">Residual-</tspan><tspan class="ol-cls-6" x="0" y="19.2">einkommen</tspan></text> -->
+  </g>
+  <g id="schnittflaechen">
+    <path class="ol-cls-12" d="M203.01,190.19c24.33,18.87,58.54,18.89,82.9.06-24.33-18.87-58.54-18.89-82.9-.06Z"/>
+    <path class="ol-cls-3" d="M177.57,190c-24.15-18.2-57.68-18.14-81.76.2,24.15,18.2,57.68,18.14,81.76-.2Z"/>
+    <path class="ol-cls-21" d="M190.49,202.77c-18.59,24.32-18.51,58.31.24,82.55,18.59-24.32,18.51-58.31-.24-82.55Z"/>
+    <path class="ol-cls-35" d="M190.31,177.33c18.59-24.11,18.74-57.85.44-82.11-18.59,24.11-18.74,57.85-.44,82.11Z"/>
+  </g>
+  <g id="zeit_verwendung_text">
+    <text class="ol-cls-17" transform="translate(121.43 237.07)"><tspan class="ol-cls-31" x="0" y="0">Zeit-</tspan><tspan class="ol-cls-24" x="-29.41" y="19.2">verwendung</tspan></text>
+  </g>
+  <g id="soziale_infrastrukturen_text">
+    <text class="ol-cls-17" transform="translate(224.73 236.89)"><tspan class="ol-cls-19" x="0" y="0">Soziale</tspan><tspan class="ol-cls-2" x="-20.14" y="19.2">Infrastrukturen</tspan></text>
+  </g>
+</svg>
