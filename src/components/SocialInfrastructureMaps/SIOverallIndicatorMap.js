@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useMemo, useEffect, useState, useRef } from 'react';
 import { Box, Typography } from '@mui/material';
 import { MapContainer, GeoJSON, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -30,7 +30,10 @@ const ChangeZoomPosition = () => {
 
 
 
-const MobileLegend = () => (
+const MobileLegend = ({ selectedIndicator, }) => {
+
+  const subtitle = selectedIndicator?.spillover ? "inkl. Spillover Effekten" : "ohne Spillover Effekten";
+
   <Box
     sx={{
       background: 'white',
@@ -43,10 +46,10 @@ const MobileLegend = () => (
     }}
   >
     <Typography variant="subtitle1" fontWeight="bold">
-      Indikator Allgemeinmediziner:innen
+      {selectedIndicator?.indicatorLabel}
     </Typography>
     <Typography variant="body2" sx={{ color: 'gray' }}>
-      inkl. Spillover Effekten
+      {subtitle}
     </Typography>
     <Box display="flex" alignItems="center" mt={1}>
       <Box sx={{ width: 18, height: 18, background: '#fde7f3', mr: 1 }} />
@@ -69,20 +72,22 @@ const MobileLegend = () => (
       <span>&gt;7</span>
     </Box>
   </Box>
-);
+};
 
-const DesktopLegend = () => {
+const DesktopLegend = ({ selectedIndicator }) => {
   const map = useMap();
 
   useEffect(() => {
     const legend = L.control({ position: 'topleft' });
 
+    const subtitle = selectedIndicator?.spillover ? "inkl. Spillover Effekten" : "ohne Spillover Effekten";
+
     legend.onAdd = () => {
       const div = L.DomUtil.create('div', 'legend');
       div.innerHTML = `
-        <div style="background: white; color: black; padding: 8px; border-radius: 6px; box-shadow: 0px 0px 4px rgba(0,0,0,0.3); font-size: 14px;">
-          <strong>Indikator Allgemeinmediziner:innen</strong>
-          <div style="color: gray; font-size: 12px;">inkl. Spillover Effekten</div>
+        <div style="min-width:200px; background: white; color: black; padding: 8px; border-radius: 6px; box-shadow: 0px 0px 4px rgba(0,0,0,0.3); font-size: 14px;">
+          <strong>${selectedIndicator?.indicatorLabel}</strong>
+          <div style="color: gray; font-size: 12px;">${subtitle}</div>
           <div style="display: flex; align-items: center; margin-top: 6px;">
             <div style="width: 18px; height: 18px; background: #fde7f3; margin-right: 8px;"></div>
             <span>0</span>
@@ -157,8 +162,25 @@ const DesktopLegend = () => {
 //   return null;
 // };
 
+const indicatorMap = {
+  "so_cars": {
+      indicatorValue: "GI_Gesamtindikator mit Spillover",
+      indicatorLabel: "Gesamtindikator (PKW)",
+      spillover: true,
+  },
+  "so_miv": {
+      indicatorValue: "GI_Gesamtindikator mit Spillover",
+      indicatorLabel: "Gesamtindikator (MIV)",
+      spillover: true,
+  },
+  "no_so": {
+      indicatorValue: "GI_Gesamtindikator ohne Spillover",
+      indicatorLabel: "Gesamtindikator (ohne Spillover)",
+      spillover: false,
+  },
+}
 
-const SIOverallIndicatorMap = () => {
+const SIOverallIndicatorMap = ({ siMode }) => {
   // const mapboxAccessToken = "pk.eyJ1Ijoic2ltbGFidHV3aWVuIiwiYSI6ImNtNzhzMHJpNTFsdDEyaXF5dHNpMG5qaTYifQ.fbEwgE0QEL7zp2m_k_vSgw";
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 540);
@@ -174,11 +196,12 @@ const SIOverallIndicatorMap = () => {
 
   // State for GeoJSON data
   const [geojsonData, setGeojsonData] = useState(null);
-  const [minFL, setMinFL] = useState(null);
-  const [maxFL, setMaxFL] = useState(null);
   const mapRef = useRef(null);
 
-  const jsonDataPath = `${process.env.PUBLIC_URL}/data/urban_rural_wgs84_dissgem.geojson`;
+  const selectedIndicator = useMemo(() => indicatorMap[siMode], [siMode]);
+
+
+  const jsonDataPath = `${process.env.PUBLIC_URL}/data/pg_gen250_ak_resi_wgs84.geojson`;
   
   // Fetch the GeoJSON data
   useEffect(() => {
@@ -186,39 +209,28 @@ const SIOverallIndicatorMap = () => {
       .then((response) => response.json())
       .then((data) => {
         setGeojsonData(data);
-        
-        const allFLValues = data.features.map(feature => feature.properties.FL);
-        setMinFL(Math.min(...allFLValues));
-        setMaxFL(Math.max(...allFLValues));
       })
       .catch((error) => console.error('Error loading GeoJSON:', error));
   }, [jsonDataPath]);
 
-  const getColor = (flValue) => {
-    if (minFL !== null && maxFL !== null) {
-      const normalizedValue = (flValue - minFL) / (maxFL - minFL);
-  
-      if (normalizedValue <= 0.03) {
-        return '#fde7f3'; 
-      } else if (normalizedValue <= 0.2) {
-        return '#cfeee9';
-      } else if (normalizedValue <= 0.4) {
-        return '#64b6ac';
-      } else if (normalizedValue <= 0.65) {
-        return '#397290';
-      } else {
-        return '#002d40';
-      }
-    }
-    return '#ccc'; 
-};
-  
+  const getColor = (feature) => {
+    const value = feature.properties[selectedIndicator?.indicatorValue]; // Get value from GeoJSON feature
+    if (value === undefined) return "#ccc"; // Default color if no data
+
+    // Define your coloring logic (example: shades of blue based on value)
+    if (value === 0) return "#fde7f3";
+    if (value < 3) return "#cfeee9";
+    if (value < 5) return "#64b6ac";
+    if (value < 7) return "#397290";
+    return "#002d40";
+  };
+
 
   // Function to style each feature
   const onEachFeature = (feature, layer) => {
     if (feature.properties) {
       layer.setStyle({
-        fillColor: getColor(feature.properties.FL),
+        fillColor: getColor(feature),
         fillOpacity: 0.7,
         color: '#333',
         weight: 0.5
@@ -228,10 +240,9 @@ const SIOverallIndicatorMap = () => {
       layer.on({
         click: () => {
           layer.bindPopup(`
-            <b>ID:</b> ${feature.properties.id2}<br>
-            <b>Gemeinde:</b> ${feature.properties._GEMNAME}<br>
-            <b>Bundesland:</b> ${feature.properties.BL}<br>
-            <b>Fläche:</b> ${feature.properties.FL}
+            <b>Gemeindekennzahl:</b> ${feature.properties.GKZ_2}<br>
+            <b>Gemeinde:</b> ${feature.properties.PGName}<br>
+            <b>${selectedIndicator?.indicatorLabel}:</b> ${feature.properties[selectedIndicator?.indicatorValue]}<br>
           `).openPopup();
         }
       });
@@ -263,9 +274,9 @@ const SIOverallIndicatorMap = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
         />
         <ChangeZoomPosition />
-        {!isMobile && <DesktopLegend />}
+        {!isMobile && <DesktopLegend selectedIndicator={selectedIndicator} />}
       </MapContainer>
-      {isMobile && <MobileLegend />}
+      {isMobile && <MobileLegend selectedIndicator={selectedIndicator}/>}
     </Box>
   );
 };
