@@ -23,6 +23,7 @@ import SISubIndicatorMap from "../components/SocialInfrastructureMaps/SISubIndic
 import IndicatorSelect from "../components/IndicatorSelect";
 import GlossaryTerm from "../components/GlossaryTerm";
 import OutlookChart from "../components/OutlookChart";
+import HeroSphere from "../components/HeroSphere";
 
 export default function HomePage() {
 
@@ -56,8 +57,30 @@ export default function HomePage() {
         }
     };
 
+    // const [showFirst, setShowFirst] = useState(true);
+
+    // const HeroContainer = () => {
+        
+    
+    //     useEffect(() => {
+    //         const interval = setInterval(() => {
+    //             setShowFirst(prev => !prev); // Toggle between true and false
+    //         }, 10000); // Switch every 10 seconds
+    
+    //         return () => clearInterval(interval); // Cleanup interval on component unmount
+    //     }, []);
+    
+    //     return (
+    //         <>
+    //             {showFirst ? <HeroSection /> : <HeroSphere />}
+    //         </>
+    //     );
+    // };
+
     return (
         <>
+
+        {/* <HeroSphere></HeroSphere> */}
 
         <HeroSection></HeroSection>
 

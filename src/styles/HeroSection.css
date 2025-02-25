@@ -2,17 +2,9 @@ html {
   --vh: 1vh;
 }
 
-/* @media (max-width: 768px) {
-  html {
-    --vh: calc(100dvh / 100);
-  }
-} */
-
 .hero-section {
     position: relative;
     width: 100%;
-    /* height: 100vh; */
-    /* height: 100dvh; */
     height: calc(var(--vh) * 100);
     display: flex;
     flex-direction: column;
@@ -20,7 +12,7 @@ html {
     justify-content: space-between;
     overflow: hidden;
     padding-bottom: 0;
-    /* background-color: #e9dfbe; */
+    background-color: #5f686d;
   }
   
   .hero-image-wrapper {
@@ -28,7 +20,6 @@ html {
     inset: 0;
     width: 100%;
     height: 100%;
-    /* height: 92vh; */
     overflow: hidden;
   }
   
@@ -48,21 +39,23 @@ html {
   .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent, white);
-    opacity: 0.7;
+    background: linear-gradient(to bottom, transparent, #EAE8E8);
+    backdrop-filter: blur(2px);
+    opacity: 1;
   }
     
   .hero-content {
     position: relative;
     text-align: center;
     z-index: 2;
-    max-width: 800px;
     height: 100vh;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    /* max-width: 800px; */
   }
 
   .titles-container {
@@ -75,19 +68,19 @@ html {
   }
 
   .logo {
-    width: 220px;
+    width: 320px;
+    z-index: 2;
   }
 
   .hero-title {
     font-size: 4rem;
     color: #000000;
     margin-bottom: 0;
-    /* font-weight: bold; */
+    z-index: 1;
   }
   
   .hero-subtitle {
     font-size: 2rem;
-    /* font-weight: bold; */
     color: #1b1b1b;
     margin-top: 18px;
     font-variation-settings: "slnt" 0, "wdth" 100, "wght" 600;
@@ -101,8 +94,12 @@ html {
     .hero-subtitle {
       font-size: 1.8rem;
     }
+  }
 
-
+  @media (max-width: 320px) {
+    .logo {
+      width: 260px;
+    }
   }
   
   .scroll-indicator {
@@ -114,8 +111,6 @@ html {
   }
 
   .scroll-indicator svg {
-    /* position: relative;
-    top: 16px; */
     transform: translateY(16px);
 }
 
@@ -123,4 +118,135 @@ html {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(5px); }
   }
+
+  /* ========== EXPANDING CIRCLES ANIMATION ========== */
+
+.circle-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Ensure it sits behind content */
+  overflow: hidden;
+  pointer-events: none; /* Prevent interaction issues */
+}
+
+.circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+/* Define colors based on logo */
+.top-left {
+  background-color: #D9D9D9;
+  top: 30%;
+  left: 43%;
+}
+
+.top-right {
+  background-color: #E8B1A1;
+  top: 30%;
+  right: 43%;
+}
+
+.bottom-left {
+  background-color: #F9D491;
+  bottom: 43%;
+  left: 43%;
+}
+
+.bottom-right {
+  background-color: #A5C5C0;
+  bottom: 43%;
+  right: 43%;
+}
+
+
+/* 
+
+   .hero-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+  }
   
+  .hero-image-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .logo {
+    width: 120px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    margin: 10px 0;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: #666;
+  }
+  
+  .circle-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+  
+  .top-left {
+    background-color: #D9D9D9; 
+    top: 10%;
+    left: 10%;
+  }
+  
+  .top-right {
+    background-color: #E8B1A1; 
+    top: 10%;
+    right: 10%;
+  }
+  
+  .bottom-left {
+    background-color: #F9D491;
+    bottom: 10%;
+    left: 10%;
+  }
+  
+  .bottom-right {
+    background-color: #A5C5C0;
+    bottom: 10%;
+    right: 10%;
+  }
+   */
