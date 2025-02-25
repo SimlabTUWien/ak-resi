@@ -35,7 +35,7 @@ export default function HeroSphere() {
     // <Box  sx={{ height: "calc(var(--vh, 1vh) * 100)" }}>
     <Box sx={{ height: "calc(var(--vh) * 100)" }}>
       <section className="hero-section-sphere">
-        {/* <div className="background-layer"></div> */}
+        <div className="background-layer"></div>
         <div className="hero-image-wrapper-sphere">
           <img src={`${process.env.PUBLIC_URL}/images/spherical_houses2.png`} alt="" className="hero-image-sphere" />
         </div>
