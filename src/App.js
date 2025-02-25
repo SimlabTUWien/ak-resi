@@ -37,9 +37,9 @@ function AppContent() {
     }
   }, [location.pathname]);
   
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // }, [location.pathname]);
 
   useEffect(() => {
     if (location.pathname === "/") {

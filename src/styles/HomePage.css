@@ -77,7 +77,6 @@ label {
   cursor: inherit;
 }
 
-
 .control-container {
   width: 100%;
   display: flex;
@@ -143,7 +142,7 @@ label {
   padding: 0 40px 0 30px;
 }  
   
-p.implications {
+/* p.implications {
   margin-bottom: 8px;
 }
   
@@ -165,7 +164,7 @@ ul.social-infrastructure li::marker {
 
 ul.time-usage li::marker {
   color: #fcd799;
-}
+} */
 
 .infobox-list li {
   font-variation-settings: "slnt" 0, "wdth" 100, "wght" 400;
