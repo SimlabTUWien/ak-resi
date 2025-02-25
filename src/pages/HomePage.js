@@ -57,32 +57,35 @@ export default function HomePage() {
         }
     };
 
-    // const [showFirst, setShowFirst] = useState(true);
+    const [showFirst, setShowFirst] = useState(true);
 
-    // const HeroContainer = () => {
+    const HeroContainer = () => {
         
     
-    //     useEffect(() => {
-    //         const interval = setInterval(() => {
-    //             setShowFirst(prev => !prev); // Toggle between true and false
-    //         }, 10000); // Switch every 10 seconds
+        useEffect(() => {
+            const interval = setInterval(() => {
+                setShowFirst(prev => !prev); // Toggle between true and false
+            }, 10000); // Switch every 10 seconds
     
-    //         return () => clearInterval(interval); // Cleanup interval on component unmount
-    //     }, []);
+            return () => clearInterval(interval); // Cleanup interval on component unmount
+        }, []);
     
-    //     return (
-    //         <>
-    //             {showFirst ? <HeroSection /> : <HeroSphere />}
-    //         </>
-    //     );
-    // };
+        return (
+            <>
+                {showFirst ? <HeroSection /> : <HeroSphere />}
+            </>
+        );
+    };
 
     return (
         <>
 
         {/* <HeroSphere></HeroSphere> */}
 
-        <HeroSection></HeroSection>
+        {/* <HeroSection></HeroSection> */}
+
+        <HeroContainer></HeroContainer>
+
 
         <div className='title-wrapper'>
             <section className="title-section" id="intro">
