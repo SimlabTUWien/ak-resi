@@ -6,6 +6,25 @@ import 'leaflet-splitmap';
 import 'leaflet-defaulticon-compatibility';
 import L from 'leaflet';
 
+
+const modeMap = {
+  "so_cars": {
+      indicatorValue: "GI_Gesamtindikator mit Spillover",
+      indicatorLabel: "Gesamtindikator (PKW)",
+      spillover: true,
+  },
+  "so_miv": {
+      indicatorValue: "GI_Gesamtindikator mit Spillover",
+      indicatorLabel: "Gesamtindikator (MIV)",
+      spillover: true,
+  },
+  "no_so": {
+      indicatorValue: "GI_Gesamtindikator ohne Spillover",
+      indicatorLabel: "Gesamtindikator",
+      spillover: false,
+  },
+}
+
 const ChangeZoomPosition = () => {
   const map = useMap();
 
@@ -30,48 +49,50 @@ const ChangeZoomPosition = () => {
 
 
 
-const MobileLegend = ({ selectedIndicator, }) => {
+const MobileLegend = ({ selectedIndicator }) => {
 
   const subtitle = selectedIndicator?.spillover ? "inkl. Spillover Effekten" : "ohne Spillover Effekten";
 
-  <Box
-    sx={{
-      background: 'white',
-      padding: 2,
-      borderRadius: 1,
-      boxShadow: 1,
-      fontSize: '14px',
-      marginTop: 2,
-      color: 'black'
-    }}
-  >
-    <Typography variant="subtitle1" fontWeight="bold">
-      {selectedIndicator?.indicatorLabel}
-    </Typography>
-    <Typography variant="body2" sx={{ color: 'gray' }}>
-      {subtitle}
-    </Typography>
-    <Box display="flex" alignItems="center" mt={1}>
-      <Box sx={{ width: 18, height: 18, background: '#fde7f3', mr: 1 }} />
-      <span>0</span>
+  return (
+    <Box
+      sx={{
+        background: 'white',
+        padding: 2,
+        borderRadius: 1,
+        boxShadow: 1,
+        fontSize: '14px',
+        marginTop: 2,
+        color: 'black'
+      }}
+    >
+      <Typography variant="subtitle1" fontWeight="bold">
+        {selectedIndicator?.indicatorLabel}
+      </Typography>
+      <Typography variant="body2" sx={{ color: 'gray' }}>
+        {subtitle}
+      </Typography>
+      <Box display="flex" alignItems="center" mt={1}>
+        <Box sx={{ width: 18, height: 18, background: '#fde7f3', mr: 1 }} />
+        <span>0</span>
+      </Box>
+      <Box display="flex" alignItems="center" mt={1}>
+        <Box sx={{ width: 18, height: 18, background: '#cfeee9', mr: 1 }} />
+        <span>&lt;3</span>
+      </Box>
+      <Box display="flex" alignItems="center" mt={1}>
+        <Box sx={{ width: 18, height: 18, background: '#64b6ac', mr: 1 }} />
+        <span>3-5</span>
+      </Box>
+      <Box display="flex" alignItems="center" mt={1}>
+        <Box sx={{ width: 18, height: 18, background: '#397290', mr: 1 }} />
+        <span>5-7</span>
+      </Box>
+      <Box display="flex" alignItems="center" mt={1}>
+        <Box sx={{ width: 18, height: 18, background: '#002d40', mr: 1 }} />
+        <span>&gt;7</span>
+      </Box>
     </Box>
-    <Box display="flex" alignItems="center" mt={1}>
-      <Box sx={{ width: 18, height: 18, background: '#cfeee9', mr: 1 }} />
-      <span>&lt;3</span>
-    </Box>
-    <Box display="flex" alignItems="center" mt={1}>
-      <Box sx={{ width: 18, height: 18, background: '#64b6ac', mr: 1 }} />
-      <span>3-5</span>
-    </Box>
-    <Box display="flex" alignItems="center" mt={1}>
-      <Box sx={{ width: 18, height: 18, background: '#397290', mr: 1 }} />
-      <span>5-7</span>
-    </Box>
-    <Box display="flex" alignItems="center" mt={1}>
-      <Box sx={{ width: 18, height: 18, background: '#002d40', mr: 1 }} />
-      <span>&gt;7</span>
-    </Box>
-  </Box>
+  );
 };
 
 const DesktopLegend = ({ selectedIndicator }) => {
@@ -162,23 +183,7 @@ const DesktopLegend = ({ selectedIndicator }) => {
 //   return null;
 // };
 
-const indicatorMap = {
-  "so_cars": {
-      indicatorValue: "GI_Gesamtindikator mit Spillover",
-      indicatorLabel: "Gesamtindikator (PKW)",
-      spillover: true,
-  },
-  "so_miv": {
-      indicatorValue: "GI_Gesamtindikator mit Spillover",
-      indicatorLabel: "Gesamtindikator (MIV)",
-      spillover: true,
-  },
-  "no_so": {
-      indicatorValue: "GI_Gesamtindikator ohne Spillover",
-      indicatorLabel: "Gesamtindikator (ohne Spillover)",
-      spillover: false,
-  },
-}
+
 
 const SIOverallIndicatorMap = ({ siMode }) => {
   // const mapboxAccessToken = "pk.eyJ1Ijoic2ltbGFidHV3aWVuIiwiYSI6ImNtNzhzMHJpNTFsdDEyaXF5dHNpMG5qaTYifQ.fbEwgE0QEL7zp2m_k_vSgw";
@@ -198,7 +203,7 @@ const SIOverallIndicatorMap = ({ siMode }) => {
   const [geojsonData, setGeojsonData] = useState(null);
   const mapRef = useRef(null);
 
-  const selectedIndicator = useMemo(() => indicatorMap[siMode], [siMode]);
+  const selectedIndicator = useMemo(() => modeMap[siMode], [siMode]);
 
 
   const jsonDataPath = `${process.env.PUBLIC_URL}/data/pg_gen250_ak_resi_wgs84.geojson`;
