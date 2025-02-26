@@ -42,7 +42,6 @@ export default function HomePage() {
 
     const handleIndicatorChange = (newValue) => {
         setSelectedIndicator(newValue);
-        console.log("changed indicator state to: " + newValue );
     };
 
 
