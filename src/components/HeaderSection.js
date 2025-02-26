@@ -52,7 +52,7 @@ export default function HeaderSection() {
             <p className="header-subtitle">Perspektiven auf Ungleichheit in Österreich</p>
           </div>
 
-          <div className="header-image-wrapper">
+         <div className="header-image-wrapper">
             <img src={`${process.env.PUBLIC_URL}/images/spherical_houses.png`} alt="" className="header-image" />
           </div>
 

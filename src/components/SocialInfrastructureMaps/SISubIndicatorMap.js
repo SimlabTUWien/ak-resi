@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, GeoJSON, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-splitmap';
@@ -174,7 +174,7 @@ const DesktopLegend = ({ selectedValue }) => {
     return () => {
       legend.remove();
     };
-  }, [map]);
+  }, [map, selectedValue]);
 
   return null;
 };
@@ -264,7 +264,7 @@ if (!selectedValue) {
           maxBounds={[[45.5, 9.0], [49.5, 17.5]]}
           maxBoundsViscosity={1.0}
           attributionControl={false}
-          style={{ height: '480px', width: '100%', background: '#bfbfbf', borderRadius: '8px', overflow: 'hidden', color: 'black'}}
+          style={{ height: '480px', width: '100%', background: '#f2f0f0', borderRadius: '8px', overflow: 'hidden', color: 'black'}}
           ref={mapRef}
       >
           {geojsonData && <GeoJSON data={geojsonData} onEachFeature={onEachFeature} />}
