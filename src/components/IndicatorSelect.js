@@ -48,24 +48,24 @@ export default function IndicatorSelect({ value, onChange }) {
           }}
         >
           {Object.entries(indicatorMap).map(([key, value]) => (
-              <MenuItem
-                key={key}
-                value={key}
-                sx={{
-                  backgroundColor: selectedValue === key ? '#daf2ef !important' : 'transparent',
-                  '&.Mui-selected': {
-                    backgroundColor: '#daf2ef',
-                    '&:hover': {
-                      backgroundColor: '#a5cdc8',
-                    },
-                  },
+            <MenuItem
+              key={key}
+              value={key}
+              sx={{
+                backgroundColor: selectedValue === key ? '#daf2ef !important' : 'transparent',
+                '&.Mui-selected': {
+                  backgroundColor: '#daf2ef !important',
                   '&:hover': {
                     backgroundColor: '#a5cdc8 !important',
                   },
-                }}
-              >
-                <span style={{transform: "translateY(2px)"}}>{value.de}</span>
-              </MenuItem>
+                },
+                '&:hover': {
+                  backgroundColor: '#a5cdc8 !important',
+                },
+              }}
+            >
+              <span style={{ transform: "translateY(2px)" }}>{value.de}</span>
+            </MenuItem>
             ))}
         </Select>
       </FormControl>
