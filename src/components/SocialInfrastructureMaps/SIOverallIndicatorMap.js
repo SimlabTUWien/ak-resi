@@ -10,17 +10,20 @@ import L from 'leaflet';
 const modeMap = {
   "so_cars": {
       indicatorValue: "GI_Gesamtindikator mit Spillover",
-      indicatorLabel: "Gesamtindikator (PKW)",
+      indicatorLabel_de: "Gesamtindikator (MIV)",
+      indicatorLabel_en: "Overallindicator (MIV)",
       spillover: true,
   },
   "so_miv": {
       indicatorValue: "GI_Gesamtindikator mit Spillover",
-      indicatorLabel: "Gesamtindikator (MIV)",
+      indicatorLabel_de: "Gesamtindikator (ÖV)",
+      indicatorLabel_en: "Overallindicator (PT)",
       spillover: true,
   },
   "no_so": {
       indicatorValue: "GI_Gesamtindikator ohne Spillover",
-      indicatorLabel: "Gesamtindikator",
+      indicatorLabel_de: "Gesamtindikator",
+      indicatorLabel_en: "Overallindicator",
       spillover: false,
   },
 }
@@ -66,7 +69,7 @@ const MobileLegend = ({ selectedIndicator }) => {
       }}
     >
       <Typography variant="subtitle1" fontWeight="bold">
-        {selectedIndicator?.indicatorLabel}
+        {selectedIndicator?.indicatorLabel_de}
       </Typography>
       <Typography variant="body2" sx={{ color: 'gray' }}>
         {subtitle}
@@ -107,7 +110,7 @@ const DesktopLegend = ({ selectedIndicator }) => {
       const div = L.DomUtil.create('div', 'legend');
       div.innerHTML = `
         <div style="min-width:200px; background: white; color: black; padding: 8px; border-radius: 6px; box-shadow: 0px 0px 4px rgba(0,0,0,0.3); font-size: 14px;">
-          <strong>${selectedIndicator?.indicatorLabel}</strong>
+          <strong>${selectedIndicator?.indicatorLabel_de}</strong>
           <div style="color: gray; font-size: 12px;">${subtitle}</div>
           <div style="display: flex; align-items: center; margin-top: 6px;">
             <div style="width: 18px; height: 18px; background: #fde7f3; margin-right: 8px;"></div>
@@ -222,7 +225,6 @@ const SIOverallIndicatorMap = ({ siMode }) => {
     const value = feature.properties[selectedIndicator?.indicatorValue]; // Get value from GeoJSON feature
     if (value === undefined) return "#ccc"; // Default color if no data
 
-    // Define your coloring logic (example: shades of blue based on value)
     if (value === 0) return "#fde7f3";
     if (value < 3) return "#cfeee9";
     if (value < 5) return "#64b6ac";

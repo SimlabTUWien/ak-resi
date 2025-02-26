@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {Accordion, AccordionSummary, AccordionDetails, Box, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 
 
-import HeroSection from "../components/HeroSection";
+// import HeroSection from "../components/HeroSection";
 import BackgroundChart from '../components/BackgroundChart';
 import ScrollProgressBar from '../components/ScrollProgressBar';
 import ExpenditureCharts from '../components/ExpenditureCharts/ExpenditureCharts';
@@ -38,12 +38,17 @@ export default function HomePage() {
         return () => window.removeEventListener("scroll", handleScroll);
       }, []);
 
+    const [selectedIndicator, setSelectedIndicator] = useState(1);
+
+    const handleIndicatorChange = (newValue) => {
+        setSelectedIndicator(newValue);
+        console.log("changed indicator state to: " + newValue );
+    };
+
 
     const [expenditureMode, setExpenditureMode] = useState("quantils");
     const [siMode, setSiMode] = useState("so_cars");
     const [siSubMode, setSiSubMode] = useState("so_sub");
-
-
 
     const handleToggleModeChange = (type, newValue) => {
         if (newValue !== null) {
@@ -472,7 +477,10 @@ export default function HomePage() {
             >
                 <div className="control-container">
                     <div className="select-component">
-                        <IndicatorSelect/>
+                        <IndicatorSelect 
+                            value={selectedIndicator}
+                            onChange={handleIndicatorChange}
+                        />
                     </div>
 
                     <div className="toggle-container">
@@ -490,7 +498,7 @@ export default function HomePage() {
                 </div>
                 
                 <div className="si-subindicator-container">
-                    <SISubIndicatorMap/>
+                    <SISubIndicatorMap siMode={siSubMode} subIndicator={selectedIndicator} key={`${siSubMode}-${selectedIndicator}`} />
                 </div>
             </Box>
 

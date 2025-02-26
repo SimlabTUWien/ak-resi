@@ -4,7 +4,6 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { transform } from 'framer-motion';
 
 const indicatorMap = {
   1: { de: "Allgemeinmediziner:innen", en: "General Practitioners" },
@@ -15,12 +14,11 @@ const indicatorMap = {
   6: { de: "Andere Solzialeinrichtungen", en: "Other Social Institutions" },
 };
 
-export default function IndicatorSelect() {
-  const [indicator, setIndicator] = React.useState('');
 
-  const handleChange = (event) => {
-    setIndicator(event.target.value);
-  };
+export default function IndicatorSelect({ value, onChange }) {
+
+  const defaultValue = Object.keys(indicatorMap)[0];
+  const selectedValue = value ?? defaultValue; 
 
   return (
     <Box sx={{ minWidth: 140, marginTop: 2 }}>
@@ -29,9 +27,9 @@ export default function IndicatorSelect() {
           id="indicator-select-label"
           sx={{
             color: '#5e5e5e',
+            // paddingTop: '2px',
             '&.Mui-focused': {
               color: '#76918e',
-              
             },
           }}
         >
@@ -40,9 +38,9 @@ export default function IndicatorSelect() {
         <Select
           labelId="indicator-select-label"
           id="indicator-select"
-          value={indicator}
           label="Indikatoren"
-          onChange={handleChange}
+          value={selectedValue}
+          onChange={(event) => onChange(event.target.value)}
           sx={{
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
               borderColor: '#8fb0ac',
@@ -54,16 +52,19 @@ export default function IndicatorSelect() {
                 key={key}
                 value={key}
                 sx={{
+                  backgroundColor: selectedValue === key ? '#daf2ef !important' : 'transparent',
                   '&.Mui-selected': {
                     backgroundColor: '#daf2ef',
                     '&:hover': {
-                      backgroundColor: '#a5cdc8', // Darker red on hover
-                      
+                      backgroundColor: '#a5cdc8',
                     },
+                  },
+                  '&:hover': {
+                    backgroundColor: '#a5cdc8 !important',
                   },
                 }}
               >
-                <span style={{transform: "translateY(2px)"}}>{value.de}</span> {/* Display the German text, switch to en for English */}
+                <span style={{transform: "translateY(2px)"}}>{value.de}</span>
               </MenuItem>
             ))}
         </Select>
