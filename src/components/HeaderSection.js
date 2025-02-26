@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Box } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import "../styles/HeroSphere.css";
+import "../styles/HeaderSection.css";
 
-export default function HeroSphere() {
+export default function HeaderSection() {
   
   const [hideIndicator, setHideIndicator] = useState(false);
 
@@ -34,14 +34,14 @@ export default function HeroSphere() {
   return (
     // <Box  sx={{ height: "calc(var(--vh, 1vh) * 100)" }}>
     <Box sx={{ height: "calc(var(--vh) * 100)" }}>
-      <section className="hero-section-sphere">
+      <section className="header-section">
         <div className="background-layer"></div>
-        <div className="hero-image-wrapper-sphere">
-          <img src={`${process.env.PUBLIC_URL}/images/spherical_houses2.png`} alt="" className="hero-image-sphere" />
+        <div className="header-image-wrapper">
+          <img src={`${process.env.PUBLIC_URL}/images/spherical_houses.png`} alt="" className="header-image" />
         </div>
 
         <motion.div
-          className="hero-content-sphere"
+          className="header-content"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5 }}
@@ -49,13 +49,13 @@ export default function HeroSphere() {
           {/* <div className="titles-container">
             <img src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Logo" className="logo" />
 
-            <h1 className="hero-title">Re:sI:Ze</h1>
-            <p className="hero-subtitle">Perspektiven auf Ungleichheit in Österreich</p>
+            <h1 className="header-title">Re:sI:Ze</h1>
+            <p className="header-subtitle">Perspektiven auf Ungleichheit in Österreich</p>
             
           </div> */}
 
           <motion.div
-            className="scroll-indicator-sphere"
+            className="scroll-indicator"
             animate={{ opacity: hideIndicator ? 0 : 1, y: hideIndicator ? -20 : 0 }}
             transition={{ duration: 0.5 }}
           >

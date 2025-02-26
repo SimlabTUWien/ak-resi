@@ -23,7 +23,7 @@ import SISubIndicatorMap from "../components/SocialInfrastructureMaps/SISubIndic
 import IndicatorSelect from "../components/IndicatorSelect";
 import GlossaryTerm from "../components/GlossaryTerm";
 import OutlookChart from "../components/OutlookChart";
-import HeroSphere from "../components/HeroSphere";
+import HeaderSection from "../components/HeaderSection";
 
 export default function HomePage() {
 
@@ -84,7 +84,7 @@ export default function HomePage() {
     return (
         <>
 
-        <HeroSphere></HeroSphere>
+        <HeaderSection />
 
         {/* <HeroSection></HeroSection> */}
 

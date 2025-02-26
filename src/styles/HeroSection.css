@@ -12,7 +12,7 @@ html {
     justify-content: space-between;
     overflow: hidden;
     padding-bottom: 0;
-    background-color: #5f686d;
+    /* background-color: #5f686d; */
   }
   
   .hero-image-wrapper {
