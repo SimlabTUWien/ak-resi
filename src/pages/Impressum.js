@@ -5,14 +5,31 @@ export default function Impressum() {
     <>
       <div className='title-wrapper'>
           <section className="title-section">
-          
-          <h1 className="title">Impressum</h1>
-          <h3>Informationen zum Impressum</h3>
-
-          <div className='image-container logo-large'>
-              <img style={{width: '240px'}} src={`${process.env.PUBLIC_URL}/images/Logo_project_icons.png`} alt="showing the four core aspects of the project" />
-          </div>
+            <h1 className="title">Impressum</h1>
           </section>
+      </div>
+
+      <div className="content-wrapper">
+        <p className="paragraph-impressum boldText">
+          Tatjana Neuhuber
+        </p>
+
+        <p className="paragraph-impressum">
+          Forschungsbereich Finanzwissenschaft und Infrastrukturpolitik
+        </p>
+
+        <p className="paragraph-impressum">
+          Institut für Raumplanung
+        </p>
+
+        <p className="paragraph-impressum">
+          TU Wien
+        </p>
+
+        <p className="paragraph-impressum">
+          Karlsgasse 11, 1040 Wien, Österreich
+        </p>
+
       </div>
     </>
   );

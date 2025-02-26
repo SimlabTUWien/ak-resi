@@ -21,10 +21,12 @@
     padding: 20px 0;
     color: #363636;
     /* color: whitesmoke; */
+}
 
-
-    strong {
-        color: black;
-        /* color: white; */
-    }
+.paragraph-impressum {
+    font-size: 1.3rem;
+    padding: 4px 0;
+    color: #363636;
+    text-align: left;
+    /* color: whitesmoke; */
 }
