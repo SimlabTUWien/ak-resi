@@ -36,23 +36,25 @@ export default function HeaderSection() {
     <Box sx={{ height: "calc(var(--vh) * 100)" }}>
       <section className="header-section">
         <div className="background-layer"></div>
-        <div className="header-image-wrapper">
-          <img src={`${process.env.PUBLIC_URL}/images/spherical_houses.png`} alt="" className="header-image" />
-        </div>
+        
 
         <motion.div
           className="header-content"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1.5, delay: 1 }}
         >
-          {/* <div className="titles-container">
-            <img src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Logo" className="logo" />
+           
 
+          <div className="titles-container">
+            {/* <img src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Logo" className="logo" />  */}
             <h1 className="header-title">Re:sI:Ze</h1>
             <p className="header-subtitle">Perspektiven auf Ungleichheit in Österreich</p>
-            
-          </div> */}
+          </div>
+
+          <div className="header-image-wrapper">
+            <img src={`${process.env.PUBLIC_URL}/images/spherical_houses.png`} alt="" className="header-image" />
+          </div>
 
           <motion.div
             className="scroll-indicator"
