@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ak-resi/static/css/main.6fe2e4b2.css",
-    "main.js": "/ak-resi/static/js/main.85b549d9.js",
+    "main.css": "/ak-resi/static/css/main.0b1f4552.css",
+    "main.js": "/ak-resi/static/js/main.9b95add5.js",
     "static/js/453.b955378f.chunk.js": "/ak-resi/static/js/453.b955378f.chunk.js",
     "index.html": "/ak-resi/index.html",
-    "main.6fe2e4b2.css.map": "/ak-resi/static/css/main.6fe2e4b2.css.map",
-    "main.85b549d9.js.map": "/ak-resi/static/js/main.85b549d9.js.map",
+    "main.0b1f4552.css.map": "/ak-resi/static/css/main.0b1f4552.css.map",
+    "main.9b95add5.js.map": "/ak-resi/static/js/main.9b95add5.js.map",
     "453.b955378f.chunk.js.map": "/ak-resi/static/js/453.b955378f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6fe2e4b2.css",
-    "static/js/main.85b549d9.js"
+    "static/css/main.0b1f4552.css",
+    "static/js/main.9b95add5.js"
   ]
 }
