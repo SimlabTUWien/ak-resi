@@ -108,7 +108,7 @@ export default function HomePage() {
         <div className="content-wrapper">
 
             <section className='background' id="background">
-                <h2 className="content-header"> Hintergrund / Einleitung</h2>
+                <h2 className="section-header">Hintergrund </h2>
                 <p className="paragraph">
                     Die Ressourcen in unserer Gesellschaft sind ungleich verteilt. Traditionelle Indikatoren zur Messung von Ungleichheit, wie das Bruttoinlandsprodukt oder der <GlossaryTerm className="glossary-term gini" sectionId="intro">Gini-Index</GlossaryTerm>, konzentrieren sich vor allem auf Einkommensunterschiede. Aber das Einkommen allein erzählt nicht die ganze Geschichte.
                 </p>
@@ -169,7 +169,7 @@ export default function HomePage() {
             </section>
 
             <section id="residualIncome">
-                <h1 className="content-header">Residualeinkommen in Österreich</h1>
+                <h2 className="section-header">Residualeinkommen in Österreich</h2>
             <p className='paragraph'>
                 Während das Haushaltseinkommen ein wichtiger Indikator für wirtschaftliche Verhältnisse ist, stellt sich die Frage, wie viel davon nach den grundlegenden Lebenshaltungskosten im Monat übrigbleibt. Das sogenannte <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> – also das Einkommen nach den Ausgaben für Essen, Wohnen, Bildung, Gesundheit und Mobilität – gibt einen noch genaueren Einblick in die finanzielle Lage der Haushalte. Es zeigt, wie viel finanzieller Spielraum tatsächlich für individuelle Bedürfnisse, Ersparnisse oder Freizeitaktivitäten zur Verfügung steht. Wie man hier sehen kann, lässt sich das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> berechnen, indem man vom Einkommen der Haushalte, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendige Ausgaben</GlossaryTerm> abzieht. 
             </p>
@@ -422,7 +422,7 @@ export default function HomePage() {
             </section>
 
             <section id="social-infrastructure">
-            <h1 className="content-header">Soziale Infrastruktur in Österreich</h1>
+            <h2 className="section-header">Soziale Infrastruktur in Österreich</h2>
             <p className='paragraph'>
             <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">Soziale Infrastrukturen</GlossaryTerm> wie Kindergärten, Schulen, Gesundheits- und Pflegeeinrichtungen sind essenziell für eine funktionierende Gesellschaft. Sie ermöglichen Bildung, Gesundheit und soziale Teilhabe – unabhängig vom Einkommen. Doch ihr Zugang und ihre Qualität sind nicht überall gleich. Regionale Unterschiede und fehlende Angebote können Haushalte zusätzlich belasten und Ungleichheiten verstärken.
             </p>
@@ -525,7 +525,7 @@ export default function HomePage() {
             </section>
 
             <section id="time-usage">
-                <h1 className="content-header">Zeitverwendung in Österreich</h1>
+            <h2 className="section-header">Zeitverwendung in Österreich</h2>
                 
                 <p className='paragraph'>
                 In Österreich – wie in vielen anderen Ländern – übernehmen Frauen nach wie vor einen überproportional großen Anteil an unbezahlter Arbeit, darunter Haushaltsführung, Kinderbetreuung und die Pflege von Angehörigen. Dies hat weitreichende finanzielle und soziale Konsequenzen.
@@ -641,7 +641,7 @@ export default function HomePage() {
             </section>
 
             <section id="what-now">
-                <h1 className="content-header">Was nun?</h1>
+                <h2 className="section-header">Was nun?</h2>
 
                 <p className='paragraph'>
                     Ungleichheit ist mehr als nur eine Frage des Einkommens. Wer wie viel verdient, bestimmt zwar den monetären Spielraum, doch erst im Zusammenspiel mit notwendigen Ausgaben, aufgewandter Zeit (vor allem für Erwerbsarbeit und unbezahlter Arbeit) und öffentlicher sozialer Infrastruktur entsteht ein breiteres Bild sozialer Ungleichheit. Unser Projekt zeigt: Diese Faktoren sind nicht isoliert zu betrachten. Sie verstärken sich gegenseitig und beeinflussen. Um nachhaltige Lösungen zu entwickeln, muss Politik diese Zusammenhänge anerkennen und gezielt eingreifen.

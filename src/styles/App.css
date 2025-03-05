@@ -43,6 +43,13 @@ h2 {
   padding-top: 20px;
 }
 
+
+.section-header {
+  text-align: left;
+  font-size: 2rem;
+  padding: 0;
+}
+
 .content-header {
   text-align: left;
 }
