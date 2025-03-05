@@ -219,11 +219,17 @@ export default function HomePage() {
 
             <h2 className="content-header">Residualeinkommen nach Haushaltstyp</h2>
             <p className='paragraph'>
-            Wieviel Haushalte einnehmen und ausgeben ist stark von der Haushaltsform abhängig. Mehr erwerbstätige Personen im Haushalt bringt ein höheres Einkommen, während weitere Haushaltsmitglieder auch höhere Konsumausgaben bedeuten. Hier sieht man die mittleren Einkommen, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> und daraus ergebende verfügbare Einkommen für unterschiedliche Haushaltstypen:
+                Wieviel Haushalte einnehmen und ausgeben ist stark von der Haushaltsform abhängig. Mehr erwerbstätige Personen im Haushalt bringen ein höheres Einkommen, während weitere Haushaltsmitglieder tendenziell auch höhere Konsumausgaben bedeuten. Jedoch zeigt sich, dass insbesondere alleinlebende Personen sowie Erwachsene mit einem oder mehreren Kindern deutlich höhere Kosten tragen als andere Haushaltstypen. Gleichzeitig verfügen sie über ein erheblich geringeres Einkommen und ein entsprechend niedrigeres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>. Dies verdeutlicht, dass diese Haushaltsgruppen einem erhöhten finanziellen Belastungsrisiko ausgesetzt sind und potenziell größere Schwierigkeiten haben, ihre Lebenshaltungskosten zu decken. Deutliche Unterschiede ergeben sich auch, wenn man ausschließlich Mietshaushalte betrachtet. Insbesondere bei größeren Haushalten sinkt das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> erheblich, was darauf hinweist, dass die Wohnkosten einen maßgeblichen Einfluss auf die finanzielle Belastung dieser Haushalte haben. Dies zeigt, dass steigende Mietpreise vor allem größere Haushalte überproportional belasten und ihre finanzielle Spielräume erheblich einschränken können.
+            </p>
+            
+            <p className='paragraph'>
+                In der Tabelle sieht man die Medianeinkommen, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> und daraus ergebende verfügbare Einkommen für unterschiedliche Haushaltstypen: 
             </p>
 
             {/* Table mit/ohne Piktogramme */}
             <HouseholdTable/>
+
+            <p style={{margin: '32px 0 0'}}>TODO: 2_MEDIAN_INC_HHTYPE_all und 2_MEDIAN_INC_HHTYPE_onlyrenters</p>
 
             <h2 className="content-header">Einkommen und Residualeinkommen</h2>
             <p className='paragraph'>
@@ -242,8 +248,10 @@ export default function HomePage() {
                 Das bedeutet, dass wirtschaftliche Analysen und sozialpolitische Maßnahmen nicht nur auf das Haushaltseinkommen fokussiert sein sollten. Erst durch die Berücksichtigung des <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommens</GlossaryTerm> lassen sich tatsächliche finanzielle Ungleichheiten und die Notwendigkeit gezielter Unterstützung erkennen.
             </p>
 
-            <p style={{margin: '32px 0 0'}}>TODO: Scatterplot</p>
-            
+            <div className="image-container scatter-plot-container">
+                <img src={`${process.env.PUBLIC_URL}/images/3_SCATTER_PLOT_RESI_INCOME.png`} alt="scatter plot visualizing houshold and resiudal income" />
+            </div>
+
             <h2 className="content-header">Ausgaben nach Einkommensquintilen</h2>
             <Box
                 sx={{

@@ -16,8 +16,13 @@
   align-items: center;
 }
 
-.median-hh-income-container {
+.median-hh-income-container, .scatter-plot-container {
   margin: 24px 0;
+}
+
+.scatter-plot-container img {
+  width: 100%;
+  max-width: 460px;
 }
 
 .toggle-container {
