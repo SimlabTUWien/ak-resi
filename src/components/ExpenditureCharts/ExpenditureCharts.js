@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import QuantilChart from "./QuantilChart";
-import DecilChart from "./DecilChart";
-// import DecilChart from "./DecilChart";
 
 const ExpenditureCharts = ({ mode }) => {
   const containerRef = useRef(null);
@@ -21,7 +19,7 @@ const ExpenditureCharts = ({ mode }) => {
   }, []);
 
   return (
-    <div className="expenditure-charts" ref={containerRef}>
+    <div className="quintil-exp-charts" ref={containerRef}>
       {mode === "quantils" ? (
         <>
           <QuantilChart index={1} parentWidth={parentWidth} />
@@ -29,8 +27,8 @@ const ExpenditureCharts = ({ mode }) => {
         </>
       ) : (
         <>
-          <DecilChart index={1} parentWidth={parentWidth} />
-          <DecilChart index={2} parentWidth={parentWidth} />
+          {/* <DecilChart index={1} parentWidth={parentWidth} />
+          <DecilChart index={2} parentWidth={parentWidth} /> */}
         </>
       )}
     </div>

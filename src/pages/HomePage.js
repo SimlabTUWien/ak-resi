@@ -3,7 +3,6 @@ import {Accordion, AccordionSummary, AccordionDetails, Box, ToggleButton, Toggle
 
 import BackgroundChart from '../components/BackgroundChart';
 import ScrollProgressBar from '../components/ScrollProgressBar';
-import ExpenditureCharts from '../components/ExpenditureCharts/ExpenditureCharts';
 import HouseholdTable from "../components/HouseholdTable";
 import CounterAnimation from "../components/CounterAnimation";
 import SocialInfrastructureTable from "../components/SocialInfrastructureTable";
@@ -23,6 +22,7 @@ import GlossaryTerm from "../components/GlossaryTerm";
 import OutlookChart from "../components/OutlookChart";
 import HeaderSection from "../components/HeaderSection";
 import MedianExpenditureChart from "../components/MedianExpenditureChart";
+import QuintilExpenditureCharts from "../components/QuintilExpenditureCharts";
 
 export default function HomePage() {
 
@@ -44,18 +44,18 @@ export default function HomePage() {
     };
 
 
-    // const [expenditureMode, setExpenditureMode] = useState("quantils");
     const [medianExpenditureMode, setMedianExpenditureMode] = useState("all");
+    const [quintilExpenditureMode, setQuintilExpenditureMode] = useState("all");
+
     const [siMode, setSiMode] = useState("so_cars");
     const [siSubMode, setSiSubMode] = useState("so_sub");
 
     const handleToggleModeChange = (type, newValue) => {
         if (newValue !== null) {
-            // if (type === "expenditure") {
-            //     setExpenditureMode(newValue);
-            // }
             if (type === "median_exp") {
                 setMedianExpenditureMode(newValue);
+            } else if (type === "quintil_exp") {
+                setQuintilExpenditureMode(newValue);
             } else if (type === "si") {
                 setSiMode(newValue);
             } else if (type === "si-sub") {
@@ -219,7 +219,7 @@ export default function HomePage() {
 
             <h2 className="content-header">Residualeinkommen nach Haushaltstyp</h2>
             <p className='paragraph'>
-                Wieviel Haushalte einnehmen und ausgeben ist stark von der Haushaltsform abhängig. Mehr erwerbstätige Personen im Haushalt bringen ein höheres Einkommen, während weitere Haushaltsmitglieder tendenziell auch höhere Konsumausgaben bedeuten. Jedoch zeigt sich, dass insbesondere alleinlebende Personen sowie Erwachsene mit einem oder mehreren Kindern deutlich höhere Kosten tragen als andere Haushaltstypen. Gleichzeitig verfügen sie über ein erheblich geringeres Einkommen und ein entsprechend niedrigeres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>. Dies verdeutlicht, dass diese Haushaltsgruppen einem erhöhten finanziellen Belastungsrisiko ausgesetzt sind und potenziell größere Schwierigkeiten haben, ihre Lebenshaltungskosten zu decken. Deutliche Unterschiede ergeben sich auch, wenn man ausschließlich Mietshaushalte betrachtet. Insbesondere bei größeren Haushalten sinkt das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> erheblich, was darauf hinweist, dass die Wohnkosten einen maßgeblichen Einfluss auf die finanzielle Belastung dieser Haushalte haben. Dies zeigt, dass steigende Mietpreise vor allem größere Haushalte überproportional belasten und ihre finanzielle Spielräume erheblich einschränken können.
+                Wieviel Haushalte einnehmen und ausgeben ist stark von der Haushaltsform abhängig. Mehr erwerbstätige Personen im Haushalt bringen ein höheres Einkommen, während weitere Haushaltsmitglieder tendenziell auch höhere Konsumausgaben bedeuten. Jedoch zeigt sich, dass insbesondere alleinlebende Personen sowie Erwachsene mit einem oder mehreren Kindern deutlich höhere Kosten tragen als andere Haushaltstypen. Gleichzeitig verfügen sie über ein erheblich geringeres Einkommen und ein entsprechend niedrigeres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>. Dies verdeutlicht, dass diese Haushaltsgruppen einem erhöhten finanziellen Belastungsrisiko ausgesetzt sind und potenziell größere Schwierigkeiten haben, ihre Lebenshaltungskosten zu decken. Deutliche Unterschiede ergeben sich auch, wenn man ausschließlich Mietshaushalte betrachtet. Insbesondere bei größeren Haushalten sinkt das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> erheblich, was darauf hinweist, dass die Wohnkosten einen maßgeblichen Einfluss auf die finanzielle Belastung dieser Haushalte haben. Dies zeigt, dass steigende Mietpreise vor allem größere Haushalte überproportional belasten und ihre finanziellen Spielräume erheblich einschränken können.
             </p>
             
             <p className='paragraph'>
@@ -263,21 +263,21 @@ export default function HomePage() {
                     marginBottom: 3,
                 }}
             >
-                {/* <div className="toggle-container">
+                <div className="toggle-container">
                     <ToggleButtonGroup
-                        className="expenditure-toggle"
-                        value={expenditureMode}
+                        className="quintil-exp-toggle"
+                        value={quintilExpenditureMode}
                         exclusive
-                        onChange={(_, newValue) => handleToggleModeChange("expenditure", newValue)}
-                        aria-label="expenditure chart mode selection"
+                        onChange={(_, newValue) => handleToggleModeChange("quintil_exp", newValue)}
+                        aria-label="quintil expenditure chart mode selection"
                     >
-                        <ToggleButton sx={{ fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600'}} value="quantils"><label>Quintil</label></ToggleButton>
-                        <ToggleButton sx={{ fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600'}} value="decils"><label>Dezil</label></ToggleButton>
+                        <ToggleButton value="all"><label>Allen</label></ToggleButton>
+                        <ToggleButton value="renter"><label>Mieter:Innen</label></ToggleButton>
                     </ToggleButtonGroup>
-                </div> */}
+                </div>
         
-                <div className="expenditure-charts-container">
-                    <ExpenditureCharts/>
+                <div className="quibntil-exp-charts-container">
+                    <QuintilExpenditureCharts mode={quintilExpenditureMode}/>
                 </div>
             </Box>
             

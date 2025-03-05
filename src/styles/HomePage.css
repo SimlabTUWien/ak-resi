@@ -38,13 +38,13 @@
   margin-bottom: 32px;
 }
 
-.median-exp-toggle {
+.median-exp-toggle, .quintil-exp-toggle {
   padding-top: 20px;
   display: flex;
   width: 340px;
 }
 
-.median-exp-toggle .MuiToggleButton-root {
+.median-exp-toggle .MuiToggleButton-root, .quintil-exp-toggle .MuiToggleButton-root {
   flex: 1;
   background-color: white;
   border: 1px solid #ccc;
@@ -53,7 +53,7 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.median-exp-toggle .MuiToggleButton-root.Mui-selected {
+.median-exp-toggle .MuiToggleButton-root.Mui-selected, .quintil-exp-toggle .MuiToggleButton-root.Mui-selected {
   background-color: #F0A898 !important;
   color: white !important;
 }
@@ -63,27 +63,6 @@
   margin: 24px 0 0;
 }
   
-/* .expenditure-toggle {
-    padding-top: 20px;
-    display: flex;
-    width: 200px;
-} */
-
-/* .expenditure-toggle .MuiToggleButton-root {
-    flex: 1;
-    background-color: white;
-    border: 1px solid #ccc;
-    color: black;
-    font-weight: 500;
-    transition: background-color 0.3s, color 0.3s;
-}
-  
-.expenditure-toggle .MuiToggleButton-root.Mui-selected {
-  background-color: #F0A898 !important;
-  color: white !important;
-  font-weight: 600;
-} */
-
 .si-toggle {
   padding-top: 20px;
   display: flex;
@@ -149,15 +128,14 @@ label {
 }
   
 
-.expenditure-charts {
+.quintil-exp-charts {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding-top: 24px;
   }
-  
+
   .gini-container {
     display: flex;
     justify-content: space-between;

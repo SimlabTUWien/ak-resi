@@ -32,7 +32,6 @@ const MedianExpenditureChart = ({ mode }) => {
         const option = {
             tooltip: {
                 trigger: "item",
-                // formatter: "{b}: <b>{c}%</b>",
                 formatter: (params) => {
                     return `${params.marker} ${params.name}: <b>${params.value}%</b>`;
                 },
@@ -50,7 +49,7 @@ const MedianExpenditureChart = ({ mode }) => {
                     rich: {
                         customStyle: {
                             fontSize: 14,
-                            fontWeight: "bold",
+                            fontWeight: "normal",
                             padding: [3, 0, 0, 2], // Top, Right, Bottom, Left padding
                         }
                     }
@@ -95,7 +94,6 @@ const MedianExpenditureChart = ({ mode }) => {
 
         return () => {
             window.removeEventListener("resize", handleResize);
-
             chartInstance.dispose();
         };
     }, [mode, dataAll, dataRenter, parentWidth]);
