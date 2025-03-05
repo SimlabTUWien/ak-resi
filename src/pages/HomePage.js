@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {Accordion, AccordionSummary, AccordionDetails, Box, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 
-
-// import HeroSection from "../components/HeroSection";
 import BackgroundChart from '../components/BackgroundChart';
 import ScrollProgressBar from '../components/ScrollProgressBar';
 import ExpenditureCharts from '../components/ExpenditureCharts/ExpenditureCharts';
@@ -24,6 +22,7 @@ import IndicatorSelect from "../components/IndicatorSelect";
 import GlossaryTerm from "../components/GlossaryTerm";
 import OutlookChart from "../components/OutlookChart";
 import HeaderSection from "../components/HeaderSection";
+import MedianExpenditureChart from "../components/MedianExpenditureChart";
 
 export default function HomePage() {
 
@@ -45,14 +44,18 @@ export default function HomePage() {
     };
 
 
-    const [expenditureMode, setExpenditureMode] = useState("quantils");
+    // const [expenditureMode, setExpenditureMode] = useState("quantils");
+    const [medianExpenditureMode, setMedianExpenditureMode] = useState("all");
     const [siMode, setSiMode] = useState("so_cars");
     const [siSubMode, setSiSubMode] = useState("so_sub");
 
     const handleToggleModeChange = (type, newValue) => {
         if (newValue !== null) {
-            if (type === "expenditure") {
-                setExpenditureMode(newValue);
+            // if (type === "expenditure") {
+            //     setExpenditureMode(newValue);
+            // }
+            if (type === "median_exp") {
+                setMedianExpenditureMode(newValue);
             } else if (type === "si") {
                 setSiMode(newValue);
             } else if (type === "si-sub") {
@@ -61,35 +64,10 @@ export default function HomePage() {
         }
     };
 
-    // const [showFirst, setShowFirst] = useState(true);
-
-    // const HeroContainer = () => {
-        
-    
-    //     useEffect(() => {
-    //         const interval = setInterval(() => {
-    //             setShowFirst(prev => !prev); // Toggle between true and false
-    //         }, 10000); // Switch every 10 seconds
-    
-    //         return () => clearInterval(interval); // Cleanup interval on component unmount
-    //     }, []);
-    
-    //     return (
-    //         <>
-    //             {showFirst ? <HeroSection /> : <HeroSphere />}
-    //         </>
-    //     );
-    // };
-
     return (
         <>
 
         <HeaderSection />
-
-        {/* <HeroSection></HeroSection> */}
-
-        {/* <HeroContainer></HeroContainer> */}
-
 
         <div className='title-wrapper'>
             <section className="title-section" id="intro">
@@ -207,7 +185,37 @@ export default function HomePage() {
                 Betrachtet man alle Haushalte gemeinsam, zeigt sich, dass im Durchschnitt etwa 10% des Einkommens für Wohnen aufgewendet werden. Ein ähnlicher Anteil entfällt auf Ernährung. Doch ein genauerer Blick auf Mieter:innenhaushalte offenbart eine deutliche finanzielle Belastung: Hier steigt der Anteil der Wohnkosten drastisch auf über 23% des Einkommens. Diese Differenz wirkt sich auch stark auf das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> aus – also das Einkommen, das nach Grundausgaben für Wohnen, Ernährung, Bildung, Gesundheit und Mobilität verbleibt. Während der Median des <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommens</GlossaryTerm> über alle Haushalte hinweg bei etwa 70% des Haushaltseinkommens liegt, sinkt dieser Wert für Mieter:innenhaushalte auf nur noch ca. 58 %.Das bedeutet, dass Mieter:innen deutlich weniger finanziellen Spielraum für weitere Ausgaben oder Rücklagen haben.
             </p>
 
-            <p style={{margin: '32px 0 0'}}>TODO: Überblick über Ausgabenkategorien - Kreisdiagramm</p>
+            <Box
+                sx={{
+                    background: "#f4f4f4",
+                    padding: 2,
+                    borderRadius: 1,
+                    boxShadow: 1,
+                    marginTop: 3,
+                    marginBottom: 3,
+                }}
+            >
+                <div className="toggle-container">
+                    <ToggleButtonGroup
+                        className="median-exp-toggle"
+                        value={medianExpenditureMode}
+                        exclusive
+                        onChange={(_, newValue) => handleToggleModeChange("median_exp", newValue)}
+                        aria-label="median expenditure chart mode selection"
+                    >
+                        <ToggleButton value="all"><label>Allen</label></ToggleButton>
+                        <ToggleButton value="renter"><label>nur Mierter:innen</label></ToggleButton>
+                    </ToggleButtonGroup>
+                </div>
+
+                <h3 className="median-exp-chart-title">Ausgabenkategorien</h3> 
+        
+                <div className="median-exp-chart-container">
+                    <MedianExpenditureChart mode={medianExpenditureMode}/>
+                </div>
+            </Box>
+
+
 
             <h2 className="content-header">Residualeinkommen nach Haushaltstyp</h2>
             <p className='paragraph'>
@@ -261,7 +269,7 @@ export default function HomePage() {
                 </div> */}
         
                 <div className="expenditure-charts-container">
-                    <ExpenditureCharts mode={expenditureMode}/>
+                    <ExpenditureCharts/>
                 </div>
             </Box>
             
