@@ -298,14 +298,14 @@ export default function HomePage() {
                 Unsere Analyse zeigt, dass der <GlossaryTerm className="glossary-term gini" sectionId="residualIncome">Gini-Koeffizient</GlossaryTerm> für das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> deutlich höher ist als für das Haushaltseinkommen. Das liegt daran, dass fixe Grundkosten wie Miete, Lebensmittel oder Gesundheitsausgaben einen viel größeren Anteil des Einkommens in unteren Einkommensgruppen ausmachen. Dadurch bleibt in diesen Gruppen deutlich weniger finanzielle Flexibilität, während höhere Einkommensgruppen nach den Grundausgaben überproportional mehr Mittel zur Verfügung haben. Dies verstärkt die wirtschaftliche Ungleichheit und macht deutlich, dass das Haushaltseinkommen allein nicht ausreicht, um die (Un-)Gleichverteilung von Ressourcen abzubilden.
             </p>
 
-            {/* GINI gegenüberstellen*/}
+            {/* GINI counter animation*/}
             <div className="gini-container">
                 <div>
-                <CounterAnimation targetValue={32} />
+                <CounterAnimation targetValue={0.27} />
                 <h3>Gini-Koeffizient (Gesamteinkommen)</h3>
                 </div>
                 <div>
-                <CounterAnimation targetValue={39} />
+                <CounterAnimation targetValue={0.32} />
                 <h3>Gini-Koeffizient (Verfügbares Einkommen)</h3>
                 </div>
             </div>
@@ -340,7 +340,7 @@ export default function HomePage() {
             </p>
 
             {/* Barchart*/}
-            <p style={{margin: '32px 0 0'}}>TODO: Barchart</p>
+            <p style={{margin: '32px 0 0'}}>TODO: Barcharts 5_EDU, 5_EDU_EXTENT_EMPL, 5_EDU_MAIN_INC_SOURCE</p>
 
 
             {/* Barchart Bildung 1*/}
