@@ -75,6 +75,9 @@ const theme = createTheme({
             transform: "translateY(2px)",
             fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
           },
+          "&.Mui-selected > label": {
+            fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+          }
         },
       },
     },
