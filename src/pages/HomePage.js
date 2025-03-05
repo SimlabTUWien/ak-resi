@@ -204,7 +204,7 @@ export default function HomePage() {
                         aria-label="median expenditure chart mode selection"
                     >
                         <ToggleButton value="all"><label>Allen</label></ToggleButton>
-                        <ToggleButton value="renter"><label>nur Mierter:innen</label></ToggleButton>
+                        <ToggleButton value="renter"><label>Mieter:Innen</label></ToggleButton>
                     </ToggleButtonGroup>
                 </div>
 
