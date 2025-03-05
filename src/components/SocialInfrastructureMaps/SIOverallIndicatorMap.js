@@ -22,7 +22,7 @@ const modeMap = {
   },
   "no_so": {
       indicatorValue: "GI_Gesamtindikator ohne Spillover",
-      indicatorLabel_de: "Gesamtindikator",
+      indicatorLabel_de: "Gesamtindikator (ohne Spillover)",
       indicatorLabel_en: "Overallindicator",
       spillover: false,
   },
@@ -249,7 +249,7 @@ const SIOverallIndicatorMap = ({ siMode }) => {
           layer.bindPopup(`
             <b>Gemeindekennzahl:</b> ${feature.properties.GKZ_2}<br>
             <b>Gemeinde:</b> ${feature.properties.PGName}<br>
-            <b>${selectedIndicator?.indicatorLabel}:</b> ${feature.properties[selectedIndicator?.indicatorValue]}<br>
+            <b>${selectedIndicator?.indicatorLabel_de}:</b> ${feature.properties[selectedIndicator?.indicatorValue]}<br>
           `).openPopup();
         }
       });
