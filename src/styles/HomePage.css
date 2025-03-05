@@ -16,6 +16,10 @@
   align-items: center;
 }
 
+.median-hh-income-container {
+  margin: 24px 0;
+}
+
 .toggle-container {
   width: 100%;
   display: flex;

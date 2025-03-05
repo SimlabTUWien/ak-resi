@@ -162,9 +162,11 @@ export default function HomePage() {
                     Die Einteilung in <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintile</GlossaryTerm> hilft, die Einkommensverteilung und wirtschaftliche Ungleichheiten besser sichtbar zu machen. Während Durchschnittswerte oft verzerrt sein können (z. B. durch extreme Einkommen an der Spitze), zeigen <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintile</GlossaryTerm> deutlicher, wie Einkommen auf verschiedene gesellschaftliche Gruppen verteilt sind. 
                 </p>
 
-            <p style={{margin: '32px 0 0'}}>TODO: Grafik Quintils?</p>
-            <p>Das Medianhaushaltseinkommen in Österreich ist XX. Das erste Quintil XXX.</p>
+            <div className="image-container median-hh-income-container">
+                <img src={`${process.env.PUBLIC_URL}/images/00_median_HH_Income_Personen.svg`} alt="showing median household income" />
+            </div>
 
+            <p style={{margin: '32px 0 0'}}>TODO: wollt ihr hier die Werte nochmals in textueller Form?: Das Medianhaushaltseinkommen in Österreich ist XX. Das erste Quintil XXX.</p>
 
             </section>
 
