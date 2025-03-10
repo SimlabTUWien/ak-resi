@@ -1,3 +1,7 @@
+label {
+  cursor: inherit;
+}
+
 .background-chart {
     width: 100%;
     max-width: 620px;
@@ -86,9 +90,6 @@
   font-weight: 600;
 }
 
-label {
-  cursor: inherit;
-}
 
 .control-container {
   width: 100%;
@@ -106,7 +107,6 @@ label {
     margin: 0 auto;
   }
 }
-
 
 
 @media (max-width: 1030px) {
@@ -129,25 +129,27 @@ label {
   
 
 .quintil-exp-charts {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-  .gini-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 40px 0;
-  
-    div {
-      flex: 1;
-      text-align: center;
-      max-width: 50%;
-      flex-shrink: 1;
-    }
+.gini-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  gap: 15px;
+
+  div {
+    flex: 1;
+    text-align: center;
+    max-width: 50%;
+    flex-shrink: 1;
+    /* hyphens: none; */
   }
+}
 
 .community-size-map {
   width: 100%;

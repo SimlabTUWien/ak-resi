@@ -6,6 +6,8 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
   const observer = useRef(null);
   const started = useRef(false);
 
+  const [fontSize, setFontSize] = useState(window.innerWidth < 450 ? "4.5rem" : "5rem");
+
   const getColor = (value) => {
     switch (value) {
       case 0.27:
@@ -18,6 +20,17 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
         return "black";
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setFontSize(window.innerWidth < 450 ? "4.5rem" : "5rem");
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Set initial value
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // useEffect(() => {
   //   observer.current = new IntersectionObserver(
@@ -75,7 +88,7 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
   }, [targetValue, duration]);
 
   return (
-    <span ref={ref} style={{ fontSize: "5rem", fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500', color: getColor(targetValue) }}>
+    <span ref={ref} style={{ fontSize, fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500', color: getColor(targetValue) }}>
       {/* {count} */}
       {count.toFixed(2)}
     </span>

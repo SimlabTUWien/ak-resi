@@ -276,7 +276,7 @@ export default function HomePage() {
                     </ToggleButtonGroup>
                 </div>
         
-                <div className="quibntil-exp-charts-container">
+                <div className="quintil-exp-charts-container">
                     <QuintilExpenditureCharts mode={quintilExpenditureMode}/>
                 </div>
             </Box>
@@ -302,11 +302,11 @@ export default function HomePage() {
             <div className="gini-container">
                 <div>
                 <CounterAnimation targetValue={0.27} />
-                <h3>Gini-Koeffizient (Gesamteinkommen)</h3>
+                <h3>Gini-Koeffizient (Haushaltseinkommen)</h3>
                 </div>
                 <div>
                 <CounterAnimation targetValue={0.32} />
-                <h3>Gini-Koeffizient (Verfügbares Einkommen)</h3>
+                <h3>Gini-Koeffizient (Residualeinkommen)</h3>
                 </div>
             </div>
 
