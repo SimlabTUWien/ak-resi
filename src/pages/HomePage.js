@@ -22,6 +22,7 @@ import "../styles/HomePage.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import TrainIcon from '@mui/icons-material/Train';
+import EducationCharts from "../components/EducationCharts";
 
 export default function HomePage() {
 
@@ -347,13 +348,10 @@ export default function HomePage() {
                 Da die Einkommen stark vom Bildungsniveau, dem Beschäftigungsgrad und der Art der Erwerbstätigkeit abhängen, die <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendige Ausgaben</GlossaryTerm> aber von allen getätigt werden müssen, spiegeln sich diese wirtschaftlichen Unterschiede noch stärker im verfügbaren Einkommen wider. In der Grafik kann zwischen den Kategorien gewechselt werden: 
             </p>
 
-            {/* Barchart*/}
+            {/*Education Barcharts*/}
+            <EducationCharts/>
             <p style={{margin: '32px 0 0'}}>TODO: Barcharts 5_EDU, 5_EDU_EXTENT_EMPL, 5_EDU_MAIN_INC_SOURCE</p>
 
-
-            {/* Barchart Bildung 1*/}
-            {/* Barchart Bildung 2*/}
-            <p style={{margin: '32px 0 0'}}>TODO: Barchart - Bildungsabschlüsse</p>
 
             <p className='paragraph'>
                 Höhere Bildungsabschlüsse und Vollzeiterwerbstätigkeit geben den Haushalten deutlich mehr finanziellen Spielraum. Die Bedeutung von Bildung geht weit über den Abschluss einer Schule oder Universität hinaus – sie beeinflusst direkt die finanzielle Sicherheit eines Haushalts und die Höhe des <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommens</GlossaryTerm>.

@@ -56,7 +56,8 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
     const setQuintilAbsoluteChartOptions = useCallback((title, data) => ({
         title: { text: title, left: "center" },
         tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, confine: true, textStyle: {fontSize: 15 } },
-        legend: { 
+        legend: {
+            show: parentWidth >= 333 ? true : false,  
             top: "bottom",
             textStyle: {
                 rich: {
@@ -86,7 +87,8 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
     const setQuintilRelativeChartOptions = useCallback((title, data) => ({
         title: { text: title, left: "center" },
         tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, confine: true, textStyle: {fontSize: 15 } },
-        legend: { 
+        legend: {
+            show: parentWidth >= 333 ? true : false,   
             top: "bottom",
             textStyle: {
                 rich: {
