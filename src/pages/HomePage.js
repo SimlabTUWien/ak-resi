@@ -247,7 +247,7 @@ export default function HomePage() {
             <p className='paragraph'>
                 Das bedeutet, dass wirtschaftliche Analysen und sozialpolitische Maßnahmen nicht nur auf das Haushaltseinkommen fokussiert sein sollten. Erst durch die Berücksichtigung des <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommens</GlossaryTerm> lassen sich tatsächliche finanzielle Ungleichheiten und die Notwendigkeit gezielter Unterstützung erkennen.
             </p>
-
+            
             <div className="image-container scatter-plot-container">
                 <img src={`${process.env.PUBLIC_URL}/images/3_SCATTER_PLOT_RESI_INCOME.png`} alt="scatter plot visualizing houshold and resiudal income" />
             </div>
