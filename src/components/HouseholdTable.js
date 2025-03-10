@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, ToggleButton, ToggleButtonGroup, Box } from "@mui/material";
 
 const allData = [
@@ -39,7 +38,7 @@ const HouseholdTable = () => {
 
   return (
     <Box sx={{ marginTop: 3, marginBottom: 3 }}>
-      
+
       <div className="toggle-container">
         <ToggleButtonGroup
           className="residual-income-toggle househole-table-toggle"
@@ -69,22 +68,14 @@ const HouseholdTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            <AnimatePresence mode="wait">
               {tableData.map((row, index) => (
-                <motion.tr
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <TableRow key={index}>
                   <TableCell align="center">{row.type}</TableCell>
                   <TableCell align="center">{row.income} €</TableCell>
                   <TableCell align="center">{row.expenses} €</TableCell>
                   <TableCell align="center">{row.disposable} €</TableCell>
-                </motion.tr>
+                </TableRow>
               ))}
-            </AnimatePresence>
           </TableBody>
         </Table>
       </TableContainer>

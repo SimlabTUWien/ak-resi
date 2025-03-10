@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import * as echarts from "echarts";
 
-const QuintilExpenditureCharts = ({ mode }) => {
+const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
     const chartRef1 = useRef(null);
     const chartRef2 = useRef(null);
     const [parentWidth, setParentWidth] = useState(window.innerWidth);
 
     const parentRef = useRef(null);
-    const [isWrapped, setIsWrapped] = useState(false);
     
 
     const dataAllAbsolute = useMemo (() => [
@@ -162,7 +161,7 @@ const QuintilExpenditureCharts = ({ mode }) => {
             chartInstance1.dispose();
             chartInstance2.dispose();
         };
-    }, [mode, parentWidth, selectedDataAbsolute, selectedDataRelative, setQuintilAbsoluteChartOptions, setQuintilRelativeChartOptions]);
+    }, [mode, parentWidth, selectedDataAbsolute, selectedDataRelative, setQuintilAbsoluteChartOptions, setQuintilRelativeChartOptions, setIsWrapped]);
 
     return (
         <div ref={parentRef} className="quintil-exp-charts">

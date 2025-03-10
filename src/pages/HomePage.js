@@ -27,6 +27,9 @@ export default function HomePage() {
 
     const [showFloatingButton, setShowFloatingButton] = useState(false);
 
+    const [isWrapped, setIsWrapped] = useState(false);
+    
+
     useEffect(() => {
         const handleScroll = () => {
           setShowFloatingButton(window.scrollY > 1400);
@@ -276,12 +279,16 @@ export default function HomePage() {
                 </div>
         
                 <div className="quintil-exp-charts-container">
-                    <QuintilExpenditureCharts mode={quintilExpenditureMode}/>
+                    <QuintilExpenditureCharts 
+                        mode={quintilExpenditureMode} 
+                        isWrapped={isWrapped}
+                        setIsWrapped={setIsWrapped}
+                    />
                 </div>
             </Box>
             
             <p className='paragraph'>
-                Die Grafik zeigt, dass die Arten und die Gesamthöhe der Ausgaben bei Haushalten unterschiedlicher Einkommensgruppen auf den ersten Blick recht ähnlich erscheinen (linke Seite). Deutliche Unterschiede zeigen sich jedoch im Verhältnis der Ausgaben zum Einkommen (rechte Seite).
+                Die Grafik zeigt, dass die Arten und die Gesamthöhe der Ausgaben bei Haushalten unterschiedlicher Einkommensgruppen auf den ersten Blick recht ähnlich erscheinen ({isWrapped ? "oberes Diagramm" : "linke Seite"}). Deutliche Unterschiede zeigen sich jedoch im Verhältnis der Ausgaben zum Einkommen ({isWrapped ? "unteres Diagramm" : "rechte Seite"}).
             </p>
 
             <p className='paragraph'>
