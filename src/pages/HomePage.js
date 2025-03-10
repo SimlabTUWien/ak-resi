@@ -9,12 +9,6 @@ import SocialInfrastructureTable from "../components/SocialInfrastructureTable";
 import MeanMapChart from "../components/MeanMapChart";
 import SIOverallIndicatorMap from "../components/SocialInfrastructureMaps/SIOverallIndicatorMap";
 import FloatingButton from "../components/FloatingButton";
-
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import TrainIcon from '@mui/icons-material/Train';
-
-import "../styles/HomePage.css";
 import ResiDefinitionChart from "../components/ResiDefinitionChart";
 import SISubIndicatorMap from "../components/SocialInfrastructureMaps/SISubIndicatorMap";
 import IndicatorSelect from "../components/IndicatorSelect";
@@ -23,6 +17,11 @@ import OutlookChart from "../components/OutlookChart";
 import HeaderSection from "../components/HeaderSection";
 import MedianExpenditureChart from "../components/MedianExpenditureChart";
 import QuintilExpenditureCharts from "../components/QuintilExpenditureCharts";
+
+import "../styles/HomePage.css";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import TrainIcon from '@mui/icons-material/Train';
 
 export default function HomePage() {
 
@@ -197,7 +196,7 @@ export default function HomePage() {
             >
                 <div className="toggle-container">
                     <ToggleButtonGroup
-                        className="median-exp-toggle"
+                        className="residual-income-toggle median-exp-toggle"
                         value={medianExpenditureMode}
                         exclusive
                         onChange={(_, newValue) => handleToggleModeChange("median_exp", newValue)}
@@ -226,10 +225,10 @@ export default function HomePage() {
                 In der Tabelle sieht man die Medianeinkommen, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> und daraus ergebende verfügbare Einkommen für unterschiedliche Haushaltstypen: 
             </p>
 
-            {/* Table mit/ohne Piktogramme */}
-            <HouseholdTable/>
-
-            <p style={{margin: '32px 0 0'}}>TODO: 2_MEDIAN_INC_HHTYPE_all und 2_MEDIAN_INC_HHTYPE_onlyrenters</p>
+            {/* Houshold income table */}
+            <div className="houshold-table-container">
+                <HouseholdTable/>
+            </div>
 
             <h2 className="content-header">Einkommen und Residualeinkommen</h2>
             <p className='paragraph'>
@@ -265,7 +264,7 @@ export default function HomePage() {
             >
                 <div className="toggle-container">
                     <ToggleButtonGroup
-                        className="quintil-exp-toggle"
+                        className="residual-income-toggle quintil-exp-toggle"
                         value={quintilExpenditureMode}
                         exclusive
                         onChange={(_, newValue) => handleToggleModeChange("quintil_exp", newValue)}

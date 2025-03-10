@@ -40,12 +40,11 @@ const theme = createTheme({
       styleOverrides: {
         head: {
           fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
-          //  color: "#fff"
-          // transform: "translateY(2px)",
+          paddingTop: "18px",
         },
         body: {
           fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
-          // transform: "translateY(2px)",
+          paddingTop: "18px",
         },
       },
     },
