@@ -328,7 +328,9 @@ export default function HomePage() {
                         </li>
                     </ul>
                     
-                    <p style={{margin: '32px 0 0'}}>TODO: Lorenzkurve</p>
+                    <div className="image-container lorenz-curve--container">
+                        <img className="lorenz-curve" src={`${process.env.PUBLIC_URL}/images/Lorenz_Kurven_Gini_AT.png`} alt="Lorenz curve of Gini Index in AT" />
+                    </div>
 
                 </AccordionDetails>
                 </Accordion>
