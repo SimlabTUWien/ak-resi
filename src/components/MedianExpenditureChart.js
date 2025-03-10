@@ -69,9 +69,7 @@ const MedianExpenditureChart = ({ mode }) => {
                     })),
                     label: {
                         show: parentWidth > 600,
-                        textStyle: {
-                            fontSize: 15
-                        },
+                        fontSize: 15
                     },
                     emphasis: {
                         itemStyle: {
