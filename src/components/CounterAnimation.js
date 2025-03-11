@@ -14,7 +14,7 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
         // return "#a4a4a4";
         // return "#d1d1d1";
         return "#9c9c9c";
-      case 0.32:
+      case 0.38:
         return "#F0A898";
       default:
         return "black";

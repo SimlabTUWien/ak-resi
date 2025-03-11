@@ -312,7 +312,7 @@ export default function HomePage() {
                 <h3>Gini-Koeffizient (Haushaltseinkommen)</h3>
                 </div>
                 <div>
-                <CounterAnimation targetValue={0.32} />
+                <CounterAnimation targetValue={0.38} />
                 <h3>Gini-Koeffizient (Residualeinkommen)</h3>
                 </div>
             </div>
