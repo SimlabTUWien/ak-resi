@@ -350,8 +350,6 @@ export default function HomePage() {
 
             {/*Education Barcharts*/}
             <EducationCharts/>
-            <p style={{margin: '32px 0 0'}}>TODO: Barcharts 5_EDU, 5_EDU_EXTENT_EMPL, 5_EDU_MAIN_INC_SOURCE</p>
-
 
             <p className='paragraph'>
                 Höhere Bildungsabschlüsse und Vollzeiterwerbstätigkeit geben den Haushalten deutlich mehr finanziellen Spielraum. Die Bedeutung von Bildung geht weit über den Abschluss einer Schule oder Universität hinaus – sie beeinflusst direkt die finanzielle Sicherheit eines Haushalts und die Höhe des <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommens</GlossaryTerm>.

@@ -92,25 +92,24 @@ const EducationCharts = () => {
             name: "Ausbildung",
             nameLocation: "middle",
             nameGap: 20,
-            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
+            nameTextStyle: { fontSize: 15, fontWeight: "bold" },
             axisLabel: { 
                 show: false,
             }
         },
         yAxis: parentWidth >= 500 ? {
             type: "value",
-            name: "Einkommen",
+            name: "Residualeinkommen (Median)",
             nameLocation: "center", 
             nameGap: 50, 
             nameTextStyle: { fontSize: 16, fontWeight: "bold" },
             axisLabel: { fontSize: 14 },
-          } :
-          {
+        } : {
             type: "value",
-            name: "Einkommen",
-            nameTextStyle: { fontSize: 16, fontWeight: "bold", padding: [0, 0, 0, 0] },
+            name: parentWidth >= 350 ? "Residualeinkommen (Median)" : "Residualeinkommen\n(Median)",
+            nameTextStyle: { fontSize: 15, fontWeight: "bold", padding: parentWidth >= 350 ? [0, 0, 0, 130] : [0, 0, 0, 60] },
             axisLabel: { fontSize: 14 },
-          },
+        },
         series: defaultData.map((item, index) => ({
             name: item.education, 
             type: 'bar',
@@ -142,28 +141,164 @@ const EducationCharts = () => {
                 return `${params.marker} ${params.name}: <b>${params.value}€</b>`;
             },
             confine: true,
+            extraCssText: "max-width: 100vw; text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;",
             textStyle: {
                 fontSize: 15
             },
         },
-        grid: parentWidth >= 535 ? { left: "14%", bottom: "29%", right: "5%" } : parentWidth >= 490 ? { left: "16%", bottom: "29%", right: "5%" } : parentWidth >= 450 ? { left: "15%", bottom: "28%", right: "5%" } : { top: "15%", left: "16%", bottom: "30%", right: "5%" },
+        grid: parentWidth >= 535 ? { left: "14%", bottom: "29%", right: "5%" } : parentWidth >= 490 ? { left: "16%", bottom: "29%", right: "5%" } : parentWidth >= 350 ? { left: "15%", bottom: "28%", right: "5%" } : { top: "20%", left: "16%", bottom: "29%", right: "5%" },
 
     }), [defaultData, colors, parentWidth]);
-    
+
+
     
     const setExtentEmploymentChartOptions = useCallback(() => ({
-        title: { text: "Beschäftigungsausmaß", left: "center" },
-        xAxis: { type: "category", data: extentEmploymentData.map(d => `${d.education} - ${d.employment}`) },
-        yAxis: { type: "value" },
-        series: [{ type: "bar", data: extentEmploymentData.map(d => d.income), color: "#4DB6AC" }]
-    }), [extentEmploymentData]);
+        title: { 
+            text: "Beschäftigungsausmaß", 
+            left: "center" 
+        },
+        xAxis: {
+            type: "category",
+            data: ["Voll- und Teilzeit", "Nur Vollzeit", "Nur Teilzeit"],
+            name: "Beschäftigung",
+            nameLocation: "middle",
+            nameGap: parentWidth >= 450 ? 32 : 20,
+            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
+            axisLabel: { fontSize: 14, interval: 0, show: parentWidth >= 450 ? true : false },
+        },
+        yAxis: parentWidth >= 500 ? {
+            type: "value",
+            name: "Residualeinkommen (Median)",
+            nameLocation: "center", 
+            nameGap: 50, 
+            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
+            axisLabel: { fontSize: 14 },
+        } : {
+            type: "value",
+            name: parentWidth >= 350 ? "Residualeinkommen (Median)" : "Residualeinkommen\n(Median)",
+            nameTextStyle: { fontSize: 15, fontWeight: "bold", padding: parentWidth >= 350 ? [0, 0, 0, 130] : [0, 0, 0, 60] },
+            axisLabel: { fontSize: 14 },
+        },
+        series: ["Pflichtschule", "Sekundarstufe I (ohne Matura)", "Sekundarstufe II (mit Matura)", "Postsekundäre oder tertiäre Ausbildung"].map((education, index) => ({
+            name: education,
+            type: 'bar',
+            data: [
+                extentEmploymentData.find(d => d.education === education && d.employment === "Voll- und Teilzeit")?.income || 0,
+                extentEmploymentData.find(d => d.education === education && d.employment === "Nur Vollzeit")?.income || 0,
+                extentEmploymentData.find(d => d.education === education && d.employment === "Nur Teilzeit")?.income || 0
+            ],
+            itemStyle: { color: colors[index] }
+        })),
+        legend: {
+            show: true,
+            top: "bottom",
+            left: "center",
+            data: ["Pflichtschule", "Sekundarstufe I (ohne Matura)", "Sekundarstufe II (mit Matura)", "Postsekundäre oder tertiäre Ausbildung"],
+            textStyle: {
+                rich: {
+                    customStyle: {
+                        fontSize: 14,
+                        fontWeight: "normal",
+                        padding: [3, 0, 0, 2],
+                    }
+                }
+            },
+            formatter: (name) => `{customStyle|${name}}`, 
+        },
+        tooltip: {
+            trigger: "axis",
+            axisPointer: { type: "shadow" },
+            formatter: (params) => {
+                const title = `<b>${params[0].name}</b><br/>`;
+                const details = params.map(p => `${p.marker} ${p.seriesName}: <b>${p.value}€</b>`).join('<br/>');
+                return title + details;
+            },
+            confine: true,
+            extraCssText: "max-width: 100vw; text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;",
+            textStyle: { fontSize: 15 }
+        },
+        grid: parentWidth >= 535 ? { left: "14%", bottom: "29%", right: "5%" } 
+            : parentWidth >= 490 ? { left: "16%", bottom: "29%", right: "5%" } 
+            : parentWidth >= 450 ? { left: "15%", bottom: "28%", right: "5%" } 
+            : { top: "15%", left: "16%", bottom: "30%", right: "5%" },
+    }), [extentEmploymentData, colors, parentWidth]);
+    
+
+    
 
     const setIncomeSourceChartOptions = useCallback(() => ({
-        title: { text: "Haupteinnahmensquelle", left: "center" },
-        xAxis: { type: "category", data: incomeSourceData.map(d => `${d.education} - ${d.source}`) },
-        yAxis: { type: "value" },
-        series: [{ type: "bar", data: incomeSourceData.map(d => d.income), color: "#f8756c" }]
-    }), [incomeSourceData]);
+        title: { 
+            text: "Haupteinkommenssquelle", 
+            left: "center" 
+        },
+        xAxis: {
+            type: "category",
+            data: ["Erwerbsarbeit", "Pension", "Selbstständigkeit", "Arbeitslos"],
+            name: "Einkommensquelle",
+            nameLocation: "middle",
+            nameGap: parentWidth >= 500 ? 32 : 20,
+            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
+            axisLabel: { fontSize: 13, interval: 0, show: parentWidth >= 500 ? true : false },
+        },
+        yAxis: parentWidth >= 500 ? {
+            type: "value",
+            name: "Residualeinkommen (Median)",
+            nameLocation: "center", 
+            nameGap: 50, 
+            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
+            axisLabel: { fontSize: 14 },
+        } : {
+            type: "value",
+            name: parentWidth >= 350 ? "Residualeinkommen (Median)" : "Residualeinkommen\n(Median)",
+            nameTextStyle: { fontSize: 15, fontWeight: "bold", padding: parentWidth >= 350 ? [0, 0, 0, 130] : [0, 0, 0, 60] },
+            axisLabel: { fontSize: 14 },
+        },
+        series: ["Pflichtschule", "Sekundarstufe I (ohne Matura)", "Sekundarstufe II (mit Matura)", "Postsekundäre oder tertiäre Ausbildung"].map((education, index) => ({
+            name: education,
+            type: 'bar',
+            data: [
+                incomeSourceData.find(d => d.education === education && d.source === "Erwerbsarbeit (Angestellt)")?.income || 0,
+                incomeSourceData.find(d => d.education === education && d.source === "Pension")?.income || 0,
+                incomeSourceData.find(d => d.education === education && d.source === "Selbstständigkeit")?.income || 0,
+                incomeSourceData.find(d => d.education === education && d.source === "Arbeitslos")?.income || 0,
+            ],
+            itemStyle: { color: colors[index] }
+        })),
+        legend: {
+            show: true,
+            top: "bottom",
+            left: "center",
+            data: ["Pflichtschule", "Sekundarstufe I (ohne Matura)", "Sekundarstufe II (mit Matura)", "Postsekundäre oder tertiäre Ausbildung"],
+            textStyle: {
+                rich: {
+                    customStyle: {
+                        fontSize: 14,
+                        fontWeight: "normal",
+                        padding: [3, 0, 0, 2],
+                    }
+                }
+            },
+            formatter: (name) => `{customStyle|${name}}`, 
+        },
+        tooltip: {
+            trigger: "axis",
+            axisPointer: { type: "shadow" },
+            formatter: (params) => {
+                const title = `<b>${params[0].name}</b><br/>`;
+                const details = params.map(p => `${p.marker} ${p.seriesName}: <b>${p.value}€</b>`).join('<br/>');
+                return title + details;
+            },
+            confine: true,
+            extraCssText: "max-width: 100vw; text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;",
+            textStyle: { fontSize: 15 }
+        },
+        grid: parentWidth >= 535 ? { left: "14%", bottom: "29%", right: "5%" } 
+            : parentWidth >= 490 ? { left: "16%", bottom: "29%", right: "5%" } 
+            : parentWidth >= 450 ? { left: "15%", bottom: "28%", right: "5%" } 
+            : { top: "15%", left: "16%", bottom: "30%", right: "5%" },
+    }), [incomeSourceData, colors, parentWidth]);
+
+    
 
     useEffect(() => {
         const chartInstance1 = echarts.init(chartRef1.current);
