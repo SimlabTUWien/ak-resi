@@ -80,11 +80,15 @@ const EducationCharts = () => {
             name: "Ausbildung",
             nameLocation: "middle",
             nameGap: 30,
-            nameTextStyle: { fontSize: 16, fontWeight: "bold", padding: [0, 0, 0, 298] },
+            // nameTextStyle: { fontSize: 16, fontWeight: "bold", padding: [0, 0, 0, 298] },
+            nameTextStyle: { fontSize: 16, fontWeight: "bold"},
+            // axisLabel: { 
+            //     fontSize: 12,
+            //     rotate: 12,
+            //     interval: 0
+            // }
             axisLabel: { 
-                fontSize: 12,
-                rotate: 12,
-                interval: 0
+                show: false,
             }
         } : {
             type: 'category',
@@ -124,6 +128,7 @@ const EducationCharts = () => {
             top: "bottom",
             left: "center",
             data: defaultData.map(item => item.education),
+            orient: "vertical",
             textStyle: {
                 rich: {
                     customStyle: {
@@ -146,7 +151,7 @@ const EducationCharts = () => {
                 fontSize: 15
             },
         },
-        grid: parentWidth >= 535 ? { left: "14%", bottom: "29%", right: "5%" } : parentWidth >= 490 ? { left: "16%", bottom: "29%", right: "5%" } : parentWidth >= 350 ? { left: "15%", bottom: "28%", right: "5%" } : { top: "20%", left: "16%", bottom: "29%", right: "5%" },
+        grid: parentWidth >= 535 ? { left: "14%", bottom: "30%", right: "5%" } : parentWidth >= 490 ? { left: "16%", bottom: "30%", right: "5%" } : parentWidth >= 350 ? { left: "15%", bottom: "30%", right: "5%" } : { top: "20%", left: "16%", bottom: "30%", right: "5%" },
 
     }), [defaultData, colors, parentWidth]);
 
@@ -162,7 +167,7 @@ const EducationCharts = () => {
             data: ["Voll- und Teilzeit", "Nur Vollzeit", "Nur Teilzeit"],
             name: "Beschäftigung",
             nameLocation: "middle",
-            nameGap: parentWidth >= 450 ? 32 : 20,
+            nameGap: parentWidth >= 450 ? 30 : 20,
             nameTextStyle: { fontSize: 16, fontWeight: "bold" },
             axisLabel: { fontSize: 14, interval: 0, show: parentWidth >= 450 ? true : false },
         },
@@ -194,6 +199,7 @@ const EducationCharts = () => {
             top: "bottom",
             left: "center",
             data: ["Pflichtschule", "Sekundarstufe I (ohne Matura)", "Sekundarstufe II (mit Matura)", "Postsekundäre oder tertiäre Ausbildung"],
+            orient: "vertical",
             textStyle: {
                 rich: {
                     customStyle: {
@@ -217,9 +223,9 @@ const EducationCharts = () => {
             extraCssText: "max-width: 100vw; text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;",
             textStyle: { fontSize: 15 }
         },
-        grid: parentWidth >= 535 ? { left: "14%", bottom: "29%", right: "5%" } 
-            : parentWidth >= 490 ? { left: "16%", bottom: "29%", right: "5%" } 
-            : parentWidth >= 450 ? { left: "15%", bottom: "28%", right: "5%" } 
+        grid: parentWidth >= 535 ? { left: "14%", bottom: "30%", right: "5%" } 
+            : parentWidth >= 490 ? { left: "16%", bottom: "30%", right: "5%" } 
+            : parentWidth >= 450 ? { left: "15%", bottom: "30%", right: "5%" } 
             : { top: "15%", left: "16%", bottom: "30%", right: "5%" },
     }), [extentEmploymentData, colors, parentWidth]);
     
@@ -236,7 +242,7 @@ const EducationCharts = () => {
             data: ["Erwerbsarbeit", "Pension", "Selbstständigkeit", "Arbeitslos"],
             name: "Einkommensquelle",
             nameLocation: "middle",
-            nameGap: parentWidth >= 500 ? 32 : 20,
+            nameGap: parentWidth >= 500 ? 30 : 20,
             nameTextStyle: { fontSize: 16, fontWeight: "bold" },
             axisLabel: { fontSize: 13, interval: 0, show: parentWidth >= 500 ? true : false },
         },
@@ -269,6 +275,7 @@ const EducationCharts = () => {
             top: "bottom",
             left: "center",
             data: ["Pflichtschule", "Sekundarstufe I (ohne Matura)", "Sekundarstufe II (mit Matura)", "Postsekundäre oder tertiäre Ausbildung"],
+            orient: "vertical",
             textStyle: {
                 rich: {
                     customStyle: {
@@ -292,9 +299,9 @@ const EducationCharts = () => {
             extraCssText: "max-width: 100vw; text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;",
             textStyle: { fontSize: 15 }
         },
-        grid: parentWidth >= 535 ? { left: "14%", bottom: "29%", right: "5%" } 
-            : parentWidth >= 490 ? { left: "16%", bottom: "29%", right: "5%" } 
-            : parentWidth >= 450 ? { left: "15%", bottom: "28%", right: "5%" } 
+        grid: parentWidth >= 535 ? { left: "14%", bottom: "30%", right: "5%" } 
+            : parentWidth >= 490 ? { left: "16%", bottom: "30%", right: "5%" } 
+            : parentWidth >= 450 ? { left: "15%", bottom: "30%", right: "5%" } 
             : { top: "15%", left: "16%", bottom: "30%", right: "5%" },
     }), [incomeSourceData, colors, parentWidth]);
 
@@ -372,9 +379,9 @@ const EducationCharts = () => {
         </div>
     
         <div ref={parentRef} className="education-charts" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-            <div ref={chartRef1} style={{ width: "100%", maxWidth: maxWidth, height: "520px", justifyContent: "center", margin: "auto", paddingTop: "24px" }}></div>
+            <div ref={chartRef1} style={{ width: "100%", maxWidth: maxWidth, height: "540px", justifyContent: "center", margin: "auto", paddingTop: "24px" }}></div>
             {educationChartMode !== "default" && 
-                <div ref={chartRef2} style={{ width: "100%", maxWidth: maxWidth, height: "520px", justifyContent: "center", margin: "auto", paddingTop: isWrapped ? "40px" : "24px" }}></div>
+                <div ref={chartRef2} style={{ width: "100%", maxWidth: maxWidth, height: "540px", justifyContent: "center", margin: "auto", paddingTop: isWrapped ? "40px" : "24px" }}></div>
             }
         </div>
     </Box>
