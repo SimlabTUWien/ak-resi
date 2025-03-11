@@ -54,7 +54,7 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
     const maxWidth = "500px";
 
     const setQuintilAbsoluteChartOptions = useCallback((title, data) => ({
-        title: { text: title, left: "center" },
+        title: { text: title, left: "center", top: parentWidth >= 500 ? 0 : -5 },
         tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, confine: true, textStyle: {fontSize: 15 } },
         legend: {
             show: parentWidth >= 333 ? true : false,  
@@ -85,7 +85,7 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
     }), [parentWidth, colors, quintiles, categories]);
 
     const setQuintilRelativeChartOptions = useCallback((title, data) => ({
-        title: { text: title, left: "center" },
+        title: { text: title, left: "center", top: parentWidth >= 500 ? 0 : -5 },
         tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, confine: true, textStyle: {fontSize: 15 } },
         legend: {
             show: parentWidth >= 333 ? true : false,   
