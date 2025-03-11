@@ -306,14 +306,15 @@ export default function HomePage() {
             </p>
 
             {/* GINI counter animation*/}
+            <h3 className="gini-header">Gini-Koeffizienten</h3>
             <div className="gini-container">
                 <div>
-                <CounterAnimation targetValue={0.27} />
-                <h3>Gini-Koeffizient (Haushaltseinkommen)</h3>
+                    <CounterAnimation targetValue={0.27} />
+                    <h3 className="gini-subheader">Haushaltseinkommen</h3>
                 </div>
-                <div>
-                <CounterAnimation targetValue={0.38} />
-                <h3>Gini-Koeffizient (Residualeinkommen)</h3>
+                    <div>
+                    <CounterAnimation targetValue={0.38} />
+                    <h3 className="gini-subheader">Residualeinkommen</h3>
                 </div>
             </div>
 

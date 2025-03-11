@@ -136,11 +136,17 @@ label {
   flex-wrap: wrap;
 }
 
+.gini-header {
+  margin: 40px 0 8px;
+  text-align: center;
+  font-size: 1.45rem;
+}
+
 .gini-container {
   display: flex;
   justify-content: space-between;
-  margin: 40px 0;
   gap: 15px;
+  margin: 0 0 40px;
 
   div {
     flex: 1;
@@ -148,6 +154,11 @@ label {
     max-width: 50%;
     flex-shrink: 1;
     /* hyphens: none; */
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.35rem;    
   }
 }
 
