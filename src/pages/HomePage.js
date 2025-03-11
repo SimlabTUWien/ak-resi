@@ -23,6 +23,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import TrainIcon from '@mui/icons-material/Train';
 import EducationCharts from "../components/EducationCharts";
+import ExpenditureBundTable from "../components/ExpenditureBundTable";
 
 export default function HomePage() {
 
@@ -380,7 +381,19 @@ export default function HomePage() {
             Selbst bei Teilzeitbeschäftigung zeigt sich ein ähnlicher Trend. In Haushalten mit tertiärer oder postsekundärer Ausbildung haben die Familien im <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm> etwa 400 Euro mehr <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> als Haushalte, deren höchster Bildungsabschluss die Pflichtschule ist. Obwohl Teilzeitarbeit in vielen Fällen geringere Arbeitszeiten und damit auch geringere Einnahmen bedeutet, bleibt der Unterschied zwischen den Haushalten mit unterschiedlichen Bildungsabschlüssen bestehen. Auch hier wird die Bedeutung der Ausbildung deutlich: Höhere Bildungsabschlüsse ermöglichen Zugang zu besser bezahlten Teilzeitstellen, die sich positiv auf das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> auswirken.
             </p>
             
-            <h2 className="content-header">Regionale Unterschiede beim Residualeinkommen</h2>
+            <h2 className="content-header">Regionale Unterschiede</h2>
+
+            <p className='paragraph'>
+                Die Tabelle veranschaulicht die Unterschiede in den Kosten für <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendige Ausgaben</GlossaryTerm> sowie im Haushalts- und <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> auf Bundeslandebene. Dabei zeigt sich, dass Haushalte in Wien die mit Abstand höchsten Ausgaben haben, was hauptsächlich auf die hohen Wohnkosten zurückzuführen ist. Im Vergleich zu anderen Bundesländern ist der Anteil an Personen, die in Wohneigentum leben, in Wien deutlich geringer. Zudem weisen Wiener Haushalte gemeinsam mit Kärnten das niedrigste Haushalts- und <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> auf. Das höchste <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> hingegen findet sich in Oberösterreich und Niederösterreich.
+            </p>
+
+            <p className='paragraph'>
+                Betrachtet man ausschließlich Mietshaushalte, ergibt sich ein anderes Bild: Haushalte in Wien zahlen im Durchschnitt nicht die höchsten Wohnkosten. Stattdessen liegen die Mietausgaben in Vorarlberg am höchsten, gefolgt von Salzburg. Dies spiegelt sich auch im <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> wider, denn Mieter:innen in Wien verfügen über ein höheres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> als jene in Vorarlberg und Salzburg. Die niedrigsten Mietkosten tragen hingegen Haushalte im Burgenland und in Kärnten.
+            </p>
+
+            {/* Exp_Bund Table */}
+            <ExpenditureBundTable/>
+
 
             {/* MeanMap */}
             <Box 
@@ -398,9 +411,15 @@ export default function HomePage() {
                 <MeanMapChart/>
             </Box>
 
+            <p style={{margin: '32px 0 0'}}>TODO: Neuer Text hier + vergleich alte</p>
+            
             <p className='paragraph'>
-                Die regionalen Unterschiede im <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> sind erheblich und verdeutlichen, wie stark die Einkommensmöglichkeiten und Lebensbedingungen in verschiedenen Teilen des Landes variieren. Besonders bemerkenswert ist, dass diese Unterschiede nicht nur auf der Höhe des Einkommens beruhen, sondern auch durch lokale Gegebenheiten wie Lebenshaltungskosten und Immobilienpreise beeinflusst werden.
+
             </p>
+
+            {/* <p className='paragraph'>
+                Die regionalen Unterschiede im <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> sind erheblich und verdeutlichen, wie stark die Einkommensmöglichkeiten und Lebensbedingungen in verschiedenen Teilen des Landes variieren. Besonders bemerkenswert ist, dass diese Unterschiede nicht nur auf der Höhe des Einkommens beruhen, sondern auch durch lokale Gegebenheiten wie Lebenshaltungskosten und Immobilienpreise beeinflusst werden.
+            </p> */}
 
             <p className='paragraph'>
                 In Wien, der größten Stadt des Landes, liegt das <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm><span style={{fontStyle: 'italic'}}>-</span><GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> mit rund 1500 Euro am niedrigsten. Dies mag auf den ersten Blick überraschen, da man in einer Großstadt höhere Einkommensmöglichkeiten vermuten würde. Allerdings spielen die hohen Lebenshaltungskosten in der Hauptstadt, insbesondere die Immobilienpreise und Mieten im privaten Mietmarkt, eine entscheidende Rolle.
