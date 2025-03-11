@@ -55,7 +55,17 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
 
     const setQuintilAbsoluteChartOptions = useCallback((title, data) => ({
         title: { text: title, left: "center", top: parentWidth >= 500 ? 0 : -5 },
-        tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, confine: true, textStyle: {fontSize: 15 } },
+        tooltip: {
+            trigger: "axis",
+            axisPointer: { type: "shadow" },
+            formatter: (params) => {
+                const title = `<b>${params[0].name}</b><br/>`;
+                const details = params.map(p => `${p.marker} ${p.seriesName}: <b>${p.value}€</b>`).join('<br/>');
+                return title + details;
+            },
+            confine: true,
+            textStyle: { fontSize: 15 }
+        },
         legend: {
             show: parentWidth >= 333 ? true : false,  
             top: "bottom",
@@ -86,7 +96,17 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
 
     const setQuintilRelativeChartOptions = useCallback((title, data) => ({
         title: { text: title, left: "center", top: parentWidth >= 500 ? 0 : -5 },
-        tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, confine: true, textStyle: {fontSize: 15 } },
+        tooltip: {
+            trigger: "axis",
+            axisPointer: { type: "shadow" },
+            formatter: (params) => {
+                const title = `<b>${params[0].name}</b><br/>`;
+                const details = params.map(p => `${p.marker} ${p.seriesName}: <b>${p.value}%</b>`).join('<br/>');
+                return title + details;
+            },
+            confine: true,
+            textStyle: { fontSize: 15 }
+        },
         legend: {
             show: parentWidth >= 333 ? true : false,   
             top: "bottom",
