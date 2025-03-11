@@ -20,11 +20,13 @@ const EducationCharts = () => {
         }
     };
 
+    const colors = ['#FF7F7F', '#4CAF50', '#00BCD4', '#BA68C8'];
+
     const defaultData = useMemo(() => [
         { education: "Pflichtschule", shortLabel: "Pflichtschule", income: 927 },
         { education: "Sekundarstufe I (ohne Matura)", shortLabel: "Sekundarstufe I", income: 1623 },
         { education: "Sekundarstufe II (mit Matura)", shortLabel: "Sekundarstufe II", income: 2056 },
-        { education: "Postsekundäre oder tertiäre Ausbildung", shortLabel: "Postsekundäre/Tertiär", income: 2453 }
+        { education: "Postsekundäre oder tertiäre Ausbildung", shortLabel: "Postsekundär/Tertiär", income: 2453 }
     ], []);
 
     const extentEmploymentData = useMemo(() => [
@@ -64,36 +66,37 @@ const EducationCharts = () => {
     const maxWidth = "500px";
 
     const setDefaultChartOptions = useCallback(() => ({
-        // title: { text: "Höchste abgeschlossene Bildung", left: "center" },
-        tooltip: {
-            trigger: "item",
-            formatter: (params) => {
-                return `${params.marker} ${params.name}: <b>${params.value}€</b>`;
-            },
-            confine: true,
-            textStyle: {
-                fontSize: 15
-            },
+        responsive: true,
+        title: { 
+            text: parentWidth >= 350 
+            ? "Höchste abgeschlossene Bildung" 
+            : "Höchste\nabgeschlossene Bildung",
+            left: "center", 
+            top: parentWidth >= 500 ? 0 : -5 
         },
-        legend: {
-            show: true,
-            top: "top",
-            left: "center",
-        },
-        xAxis: {
-            type: "category",
-            data: defaultData.map(d => d.shortLabel),
+        xAxis: parentWidth >= 500 ? {
+            type: 'category',
+            data: defaultData.map(item => item.education),
             name: "Ausbildung",
             nameLocation: "middle",
-            nameGap: 70,
-            nameTextStyle: { fontSize: 15, fontWeight: "bold" },
+            nameGap: 30,
+            nameTextStyle: { fontSize: 16, fontWeight: "bold", padding: [0, 0, 0, 298] },
             axisLabel: { 
                 fontSize: 12,
-                rotate: 24,  // Rotate labels for better spacing
-                interval: 0  // Show all labels
+                rotate: 12,
+                interval: 0
+            }
+        } : {
+            type: 'category',
+            data: defaultData.map(item => item.education),
+            name: "Ausbildung",
+            nameLocation: "middle",
+            nameGap: 20,
+            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
+            axisLabel: { 
+                show: false,
             }
         },
-        grid: parentWidth >= 535 ? { left: "14%", bottom: "20%", right: "5%" } : parentWidth >= 490 ? { left: "16%", bottom: "20%", right: "5%" } : parentWidth >= 450 ? { left: "15%", bottom: "20%", right: "5%" } : { left: "16%", bottom: "20%", right: "5%" },
         yAxis: parentWidth >= 500 ? {
             type: "value",
             name: "Einkommen",
@@ -108,22 +111,46 @@ const EducationCharts = () => {
             nameTextStyle: { fontSize: 16, fontWeight: "bold", padding: [0, 0, 0, 0] },
             axisLabel: { fontSize: 14 },
           },
-          series: [{
-            type: "bar",
-            data: defaultData.map(d => ({
-                value: d.income,
-                name: d.education,
-                itemStyle: {
-                    color: d.education === "Pflichtschule" ? "#FF7F7F" :
-                           d.education === "Sekundarstufe I (ohne Matura)" ? "#4CAF50" :
-                           d.education === "Sekundarstufe II (mit Matura)" ? "#00BCD4" :
-                           "#BA68C8"
+        series: defaultData.map((item, index) => ({
+            name: item.education, 
+            type: 'bar',
+            stack: item,
+            data: defaultData.map((dataItem, dataIndex) =>
+                dataIndex === index ? dataItem.income : 0
+            ),
+            itemStyle: { color: colors[index] }
+        })),
+        legend: {
+            show: parentWidth >= 270 ? true : false,   
+            top: "bottom",
+            left: "center",
+            data: defaultData.map(item => item.education),
+            textStyle: {
+                rich: {
+                    customStyle: {
+                        fontSize: 14,
+                        fontWeight: "normal",
+                        padding: [3, 0, 0, 2],
+                    }
                 }
-            }))
-        }]
-    }), [defaultData]);
-    
+            },
+            formatter: (name) => `{customStyle|${name}}`, 
+        },
+        tooltip: {
+            trigger: "item",
+            formatter: (params) => {
+                return `${params.marker} ${params.name}: <b>${params.value}€</b>`;
+            },
+            confine: true,
+            textStyle: {
+                fontSize: 15
+            },
+        },
+        grid: parentWidth >= 535 ? { left: "14%", bottom: "29%", right: "5%" } : parentWidth >= 490 ? { left: "16%", bottom: "29%", right: "5%" } : parentWidth >= 450 ? { left: "15%", bottom: "28%", right: "5%" } : { top: "15%", left: "16%", bottom: "30%", right: "5%" },
 
+    }), [defaultData, colors, parentWidth]);
+    
+    
     const setExtentEmploymentChartOptions = useCallback(() => ({
         title: { text: "Beschäftigungsausmaß", left: "center" },
         xAxis: { type: "category", data: extentEmploymentData.map(d => `${d.education} - ${d.employment}`) },
@@ -148,7 +175,29 @@ const EducationCharts = () => {
             chartInstance2.setOption(options);
         }
 
+        const checkFlexWrap = () => {
+            if (parentRef.current) {
+                const firstChild = parentRef.current.children[0];
+                const secondChild = parentRef.current.children[1];
+
+                if (firstChild && secondChild) {
+                    const wrapped = secondChild.offsetTop > firstChild.offsetTop;
+                    setIsWrapped(wrapped);
+                }
+            }
+        };
+
+        const handleResize = () => {
+            setParentWidth(window.innerWidth);
+            chartInstance1.resize();
+            if (chartInstance2) chartInstance2.resize();
+            checkFlexWrap();
+        };
+
+        checkFlexWrap();
+        window.addEventListener("resize", handleResize);
         return () => {
+            window.removeEventListener("resize", handleResize);
             chartInstance1.dispose();
             if (chartInstance2) chartInstance2.dispose();
         };
@@ -188,9 +237,9 @@ const EducationCharts = () => {
         </div>
     
         <div ref={parentRef} className="education-charts" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-            <div ref={chartRef1} style={{ width: "100%", maxWidth: maxWidth, height: "500px", justifyContent: "center", margin: "auto", paddingTop: "24px" }}></div>
+            <div ref={chartRef1} style={{ width: "100%", maxWidth: maxWidth, height: "520px", justifyContent: "center", margin: "auto", paddingTop: "24px" }}></div>
             {educationChartMode !== "default" && 
-                <div ref={chartRef2} style={{ width: "100%", maxWidth: maxWidth, height: "500px", justifyContent: "center", margin: "auto", paddingTop: isWrapped ? "40px" : "24px" }}></div>
+                <div ref={chartRef2} style={{ width: "100%", maxWidth: maxWidth, height: "520px", justifyContent: "center", margin: "auto", paddingTop: isWrapped ? "40px" : "24px" }}></div>
             }
         </div>
     </Box>
