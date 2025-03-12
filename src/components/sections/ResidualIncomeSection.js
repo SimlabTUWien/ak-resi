@@ -49,7 +49,7 @@ const ResidualIncomeSection = () => {
                     marginTop: 2
                 }}
             >
-                <ResiDefinitionChart/>
+                <ResiDefinitionChart />
             </Box>
 
             <div style={{margin: '24px 0 24px'}}>
@@ -94,7 +94,7 @@ const ResidualIncomeSection = () => {
                 <h3 className="median-exp-chart-title">Ausgabenkategorien</h3> 
         
                 <div className="median-exp-chart-container">
-                    <MedianExpenditureChart mode={medianExpenditureMode}/>
+                    <MedianExpenditureChart mode={medianExpenditureMode} />
                 </div>
             </Box>
 
@@ -111,7 +111,7 @@ const ResidualIncomeSection = () => {
 
             {/* Houshold income table */}
             <div className="houshold-table-container">
-                <HouseholdTable/>
+                <HouseholdTable />
             </div>
 
             <h2 className="content-header">Einkommen und Residualeinkommen</h2>
@@ -230,7 +230,7 @@ const ResidualIncomeSection = () => {
             </p>
 
             {/*Education Barcharts*/}
-            <EducationCharts/>
+            <EducationCharts />
 
             <p className='paragraph'>
                 Höhere Bildungsabschlüsse und Vollzeiterwerbstätigkeit geben den Haushalten deutlich mehr finanziellen Spielraum. Die Bedeutung von Bildung geht weit über den Abschluss einer Schule oder Universität hinaus – sie beeinflusst direkt die finanzielle Sicherheit eines Haushalts und die Höhe des <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommens</GlossaryTerm>.
@@ -271,7 +271,7 @@ const ResidualIncomeSection = () => {
             </p>
 
             {/* Exp_Bund Table */}
-            <ExpenditureBundTable/>
+            <ExpenditureBundTable />
 
 
             {/* MeanMap */}
@@ -287,7 +287,7 @@ const ResidualIncomeSection = () => {
                     marginBottom: 3,
                 }}
             >
-                <MeanMapChart/>
+                <MeanMapChart />
             </Box>
 
             <p className='paragraph'>

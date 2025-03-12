@@ -14,7 +14,7 @@ const ResiDefinitionChart = () => {
         svgRef.current.appendChild(data.documentElement);
 
         const svg = d3.select(svgRef.current).select("svg");
-        svg.attr("width", "100%").attr("height", "auto");
+        svg.attr("width", "100%").attr("height", "100%");
         svg.style("display", "block").style("margin", "auto");
 
         // Initially hide all elements

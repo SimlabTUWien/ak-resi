@@ -48,31 +48,27 @@ export default function HomePage() {
         <div className="content-wrapper">
 
             <section className='background' id="background">
-                <BackgroundSection/>
+                <BackgroundSection />
             </section>
 
-            <p className='paragraph content-information'>
-                In den weiteren Teilen dieser Website werden nun Einblicke in diese Bereiche gegeben: 
-            </p>
-
             <section id="income">
-                <IncomeSection/>
+                <IncomeSection />
             </section>
 
             <section id="residualIncome">
-                <ResidualIncomeSection/>
+                <ResidualIncomeSection />
             </section>
 
             <section id="social-infrastructure">
-                <SocialInfrastructureSection/>
+                <SocialInfrastructureSection />
             </section>
 
             <section id="time-usage">
-                <TimeUsageSection/>
+                <TimeUsageSection />
             </section>
 
             <section id="what-now">
-                <OutlookSection/>
+                <OutlookSection />
             </section>
 
         </div>
@@ -82,7 +78,7 @@ export default function HomePage() {
         </div>
 
         <div className='progressBar'>
-            <ScrollProgressBar/>
+            <ScrollProgressBar />
         </div>
         </>
     );

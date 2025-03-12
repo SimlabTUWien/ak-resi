@@ -29,6 +29,10 @@ const BackgroundSection = () => {
             <div className='background-chart'>
                 <BackgroundChart/>
             </div>
+
+            <p className='paragraph content-information'>
+                In den weiteren Teilen dieser Website werden nun Einblicke in diese Bereiche gegeben: 
+            </p>
         </div>
     );
 };

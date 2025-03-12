@@ -105,7 +105,7 @@ const MeanMapChart = () => {
         container.node().appendChild(svgNode);
 
         const svg = d3.select(svgRefMeanMap.current).select("svg");
-        svg.attr("width", "100%").attr("height", "auto");
+        svg.attr("width", "100%").attr("height", "100%");
         svg.style("display", "block").style("margin", "auto");
 
         if (!isTouchDevice()) {
