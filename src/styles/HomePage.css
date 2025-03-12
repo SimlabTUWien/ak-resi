@@ -20,13 +20,18 @@ label {
   align-items: center;
 }
 
-.median-hh-income-container, .scatter-plot-container {
+.median-hh-income-container, .scatter-plot-container, .box-plot-container, .ftpt-box-plot-container {
   margin: 24px 0;
 }
 
-.scatter-plot-container img {
+.scatter-plot-container img, .box-plot-container img {
   width: 100%;
   max-width: 1000px;
+}
+
+.ftpt-box-plot-container img {
+  width: 100%;
+  max-width: 768px;
 }
 
 .definition-chart-container {

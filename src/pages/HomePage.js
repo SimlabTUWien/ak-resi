@@ -569,7 +569,7 @@ export default function HomePage() {
             </section>
 
             <section id="time-usage">
-            <h2 className="section-header">Zeitverwendung in Österreich</h2>
+            <h2 className="section-header">Zeitverwendung</h2>
                 
                 <p className='paragraph'>
                 In Österreich – wie in vielen anderen Ländern – übernehmen Frauen nach wie vor einen überproportional großen Anteil an unbezahlter Arbeit, darunter Haushaltsführung, Kinderbetreuung und die Pflege von Angehörigen. Dies hat weitreichende finanzielle und soziale Konsequenzen.
@@ -616,6 +616,9 @@ export default function HomePage() {
                     Diese Dynamik zeigt, dass die ungleiche Verteilung von Zeit für Erwerbs- und unbezahlte Arbeit ein zentraler Faktor für wirtschaftliche Ungleichheit ist. In den nächsten Analysen konzentrieren wir uns daher gezielt auf die Altersgruppe 21 bis 64 Jahre, um die Auswirkungen dieser Verteilung noch genauer zu untersuchen.
                 </p>
 
+                <p style={{margin: '32px 0 0'}}>TODO: Plot Zeitverwendung nach Altersgruppe</p>
+
+
                 <h2 className="content-header">Zeitverwendung von Männern und Frauen (21-64 Jahre) für Erwerbsarbeit und unbezahlter Arbeit</h2>
                 <h3 className="content-header">Bildung: Bildung verändert viel – aber nicht alles</h3>
                 <p className='paragraph'>
@@ -631,6 +634,12 @@ export default function HomePage() {
                 Trotz dieser Unterschiede bleibt die Grundtendenz bestehen: Auch hochgebildete Frauen übernehmen mehr unbezahlte Arbeit als Männer mit gleichem Bildungsniveau. Dies zeigt, dass traditionelle Rollenverteilungen weiterhin Einfluss darauf haben, wie Erwerbs- und Care-Arbeit innerhalb von Haushalten verteilt wird – unabhängig vom Bildungsgrad.
                 </p>
 
+                <p style={{margin: '32px 0 0'}}>TODO: 9_INC_SEX_EDU_TU hover effects</p>
+                
+                <div className="image-container box-plot-container">
+                    <img src={`${process.env.PUBLIC_URL}/images/9_INC_SEX_EDU_TU.png`} alt="box plot visualizing income based on sex and education" />
+                </div>
+
                 <h3 className="content-header">Vollzeit-/Teilzeitarbeit: Teilzeit ist nicht gleich Teilzeit – die doppelte Belastung von Frauen</h3>
                 <p className='paragraph'>
                 Frauen, die Teilzeit arbeiten, übernehmen fast doppelt so viel Care-Arbeit wie Frauen, die Vollzeit arbeiten. Dies könnte darauf zurückzuführen sein, dass viele Frauen ihre Arbeitszeit bewusst reduzieren, um Haushalt, Kinderbetreuung oder die Pflege von Angehörigen zu übernehmen. Teilzeit ist in diesem Fall oft kein freiwilliges Modell für mehr Freizeit, sondern eine Notwendigkeit, um unbezahlte Arbeit im Haushalt zu bewältigen.
@@ -641,7 +650,12 @@ export default function HomePage() {
                 <p className='paragraph'>
                 Das hat weitreichende Folgen: Teilzeit verringert das Erwerbseinkommen, die Karrierechancen und langfristig auch die Pensionsansprüche. Gleichzeitig bleibt der Großteil der unbezahlten Arbeit an Frauen hängen, was die finanzielle Abhängigkeit innerhalb von Haushalten verstärken kann. Diese Verteilung zeigt, dass Teilzeitarbeit für Frauen oft nicht nur eine berufliche Entscheidung ist, sondern direkt mit ungleicher Care-Arbeit verknüpft ist – mit langfristigen Konsequenzen für Einkommen, soziale Absicherung und wirtschaftliche Unabhängigkeit.
                 </p>
-
+                
+                <p style={{margin: '32px 0 0'}}>TODO: 10_INC_SEX_FTPT_TU hover effects</p>
+                
+                <div className="image-container ftpt-box-plot-container">
+                    <img src={`${process.env.PUBLIC_URL}/images/10_INC_SEX_FTPT_TU.png`} alt="box plot visualizing income based on sex and extent employment" />
+                </div>
 
 
                 <h3 className="content-header">Haushaltstyp: Wenn aus einem Haushalt eine Familie wird – wie sich Arbeitsteilung verändert</h3>
@@ -658,6 +672,12 @@ export default function HomePage() {
                 Um diese Ungleichheiten zu reduzieren, sind gezielte Maßnahmen erforderlich: Der Ausbau von Kinderbetreuung, Pflegeangeboten und flexibleren Arbeitsmodellen kann Frauen und Männern mehr Spielraum bei der Vereinbarkeit von Beruf und Familie geben. Zudem sind gerechtere Verteilungen von Erwerbs- und Care-Arbeit nicht nur eine Frage individueller Entscheidungen, sondern auch von gesellschaftlichen Strukturen und politischen Rahmenbedingungen.
                 </p>
 
+                <p style={{margin: '32px 0 0'}}>TODO: 11_INC_SEX_HHTYPE_TU hover effects</p>
+                
+                <div className="image-container box-plot-container">
+                    <img src={`${process.env.PUBLIC_URL}/images/11_INC_SEX_HHTYPE_TU.png`} alt="box plot visualizing income based on sex and household type" />
+                </div>
+
                 {/* Check if h2 or h3 */}
                 <h3 className="content-header">Gemeindegrößeklasse: Stadt oder Land? Wie der Wohnort die Arbeitsteilung beeinflusst</h3>
                 <p className='paragraph'>
@@ -670,6 +690,12 @@ export default function HomePage() {
                 <p className='paragraph'>
                 Dies zeigt, dass ländliche Regionen weniger Infrastruktur für unterstützende Dienstleistungen bieten, wodurch mehr Care-Arbeit privat organisiert werden muss. Weniger verfügbare Kinderbetreuungsplätze, längere Wege zu Ärzt:innen oder soziale Erwartungen in kleinen Gemeinden können dazu führen, dass Frauen auf dem Land mehr unbezahlte Arbeit übernehmen und dadurch oft weniger Erwerbsarbeit leisten können.
                 </p>
+
+                <p style={{margin: '32px 0 0'}}>TODO: 12_INC_SEX_GEMGRO_TU hover effects</p>
+                
+                <div className="image-container box-plot-container">
+                    <img src={`${process.env.PUBLIC_URL}/images/12_INC_SEX_GEMGRO_TU.png`} alt="box plot visualizing income based on sex and community size" />
+                </div>
 
                 <div className='paragraph' style={{margin: '32px 0 0'}}>
                     <p>
