@@ -8,7 +8,8 @@ import './styles/App.css';
 import theme from "./styles/theme.js";
 
 import HeaderAppBar from "./components/HeaderAppBar";
-import HomePage from "./pages/HomePage"; 
+// import HomePage from "./pages/HomePage"; 
+const HomePage = lazy(() => import("./pages/HomePage"));
 const Glossar = lazy(() => import("./pages/Glossar"));
 const Impressum = lazy(() => import("./pages/Impressum"));
 const Team = lazy(() => import("./pages/Team"));

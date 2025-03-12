@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Box } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import "../styles/HeaderSection.css";
+import "../../styles/HeaderSection.css";
 
 export default function HeaderSection() {
   
