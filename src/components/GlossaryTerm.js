@@ -78,7 +78,12 @@ const GlossaryTerm = ({ className, sectionId, children }) => {
   const handleClick = () => {
     if (!termKey) return;
     const glossaryUrl = `${window.location.origin}/ak-resi#/glossar#${termKey}`;
-    window.open(glossaryUrl, "_blank");
+    
+    if (isMobile) {
+      window.open(glossaryUrl, "_blank");
+    } else {
+      window.location.href = glossaryUrl;
+    }
   };
 
   return tooltipContent ? (
