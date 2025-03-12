@@ -27,7 +27,8 @@ const MedianExpenditureChart = ({ mode }) => {
     useEffect(() => {
         const chartInstance = echarts.init(chartRef.current);
 
-        const colors = ["#d175c6", "#619dfe", "#4DB6AC", "#81C784", "#b79f01", "#f8756c"];
+        // const colors = ["#d175c6", "#619dfe", "#4DB6AC", "#81C784", "#b79f01", "#f8756c"];
+        const colors = ["#C855B9", "#3A7BFA", "#1D9A8C","#66B35A", "#C29B00", "#E45A50"];
 
         const option = {
             tooltip: {

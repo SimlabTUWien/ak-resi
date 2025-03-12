@@ -44,7 +44,8 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
 
     const quintiles = useMemo (() => ["Q1", "Q2", "Q3", "Q4", "Q5"], []);
     const categories = useMemo (() => ["Residualeinkommen","Mobilität", "Wohnen", "Gesundheit", "Lebensmittel", "Bildung"], []);
-    const colors = useMemo (() => ["#d175c6", "#619dfe", "#4DB6AC", "#81C784", "#b79f01", "#f8756c"], []);
+    // const colors = useMemo (() => ["#d175c6", "#619dfe", "#4DB6AC", "#81C784", "#b79f01", "#f8756c"], []);
+    const colors =  useMemo (() =>["#C855B9", "#3A7BFA", "#1D9A8C","#66B35A", "#C29B00", "#E45A50"], []);
 
 
     const selectedDataAbsolute = mode === "all" ? dataAllAbsolute : dataRenterAbsolute;
