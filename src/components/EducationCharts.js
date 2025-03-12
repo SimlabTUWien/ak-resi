@@ -22,7 +22,7 @@ const EducationCharts = () => {
 
     // const colors = ['#FF7F7F', '#4CAF50', '#00BCD4', '#BA68C8'];
     // const colors = ["#E45A50", "#66B35A", "#3A7BFA", "#C855B9"];
-    const colors = ['#FF7F7F', "#66B35A", '#00BCD4', "#C855B9"];
+    const colors = useMemo(() => ['#FF7F7F', "#66B35A", '#00BCD4', "#C855B9"], []);
 
     
 
