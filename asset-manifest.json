@@ -1,31 +1,33 @@
 {
   "files": {
-    "main.css": "/ak-resi/static/css/main.2d1a402f.css",
-    "main.js": "/ak-resi/static/js/main.5d5add8d.js",
+    "main.css": "/ak-resi/static/css/main.e701a1b4.css",
+    "main.js": "/ak-resi/static/js/main.1666bb66.js",
+    "static/css/644.a9d71f66.chunk.css": "/ak-resi/static/css/644.a9d71f66.chunk.css",
+    "static/js/644.ae433f3d.chunk.js": "/ak-resi/static/js/644.ae433f3d.chunk.js",
     "static/css/262.02205fa9.chunk.css": "/ak-resi/static/css/262.02205fa9.chunk.css",
     "static/js/262.689a0ba0.chunk.js": "/ak-resi/static/js/262.689a0ba0.chunk.js",
     "static/js/348.5fd76fbc.chunk.js": "/ak-resi/static/js/348.5fd76fbc.chunk.js",
     "static/css/414.02205fa9.chunk.css": "/ak-resi/static/css/414.02205fa9.chunk.css",
     "static/js/414.5088b4c9.chunk.js": "/ak-resi/static/js/414.5088b4c9.chunk.js",
     "static/js/411.e4b9be09.chunk.js": "/ak-resi/static/js/411.e4b9be09.chunk.js",
-    "static/js/434.68d1a7a8.chunk.js": "/ak-resi/static/js/434.68d1a7a8.chunk.js",
     "static/js/453.61756ef0.chunk.js": "/ak-resi/static/js/453.61756ef0.chunk.js",
-    "static/js/836.bc2afe3d.chunk.js": "/ak-resi/static/js/836.bc2afe3d.chunk.js",
+    "static/js/562.e6862c1a.chunk.js": "/ak-resi/static/js/562.e6862c1a.chunk.js",
     "index.html": "/ak-resi/index.html",
-    "main.2d1a402f.css.map": "/ak-resi/static/css/main.2d1a402f.css.map",
-    "main.5d5add8d.js.map": "/ak-resi/static/js/main.5d5add8d.js.map",
+    "main.e701a1b4.css.map": "/ak-resi/static/css/main.e701a1b4.css.map",
+    "main.1666bb66.js.map": "/ak-resi/static/js/main.1666bb66.js.map",
+    "644.a9d71f66.chunk.css.map": "/ak-resi/static/css/644.a9d71f66.chunk.css.map",
+    "644.ae433f3d.chunk.js.map": "/ak-resi/static/js/644.ae433f3d.chunk.js.map",
     "262.02205fa9.chunk.css.map": "/ak-resi/static/css/262.02205fa9.chunk.css.map",
     "262.689a0ba0.chunk.js.map": "/ak-resi/static/js/262.689a0ba0.chunk.js.map",
     "348.5fd76fbc.chunk.js.map": "/ak-resi/static/js/348.5fd76fbc.chunk.js.map",
     "414.02205fa9.chunk.css.map": "/ak-resi/static/css/414.02205fa9.chunk.css.map",
     "414.5088b4c9.chunk.js.map": "/ak-resi/static/js/414.5088b4c9.chunk.js.map",
     "411.e4b9be09.chunk.js.map": "/ak-resi/static/js/411.e4b9be09.chunk.js.map",
-    "434.68d1a7a8.chunk.js.map": "/ak-resi/static/js/434.68d1a7a8.chunk.js.map",
     "453.61756ef0.chunk.js.map": "/ak-resi/static/js/453.61756ef0.chunk.js.map",
-    "836.bc2afe3d.chunk.js.map": "/ak-resi/static/js/836.bc2afe3d.chunk.js.map"
+    "562.e6862c1a.chunk.js.map": "/ak-resi/static/js/562.e6862c1a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d1a402f.css",
-    "static/js/main.5d5add8d.js"
+    "static/css/main.e701a1b4.css",
+    "static/js/main.1666bb66.js"
   ]
 }
