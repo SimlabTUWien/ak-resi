@@ -32,8 +32,8 @@ export default function HeaderAppBar({ show }) {
 
   const [language, setLanguage] = useState("DE");
 
-  const [scrollY, setScrollY] = useState(window.scrollY);
-  const viewHeight = window.innerHeight;
+  // const [scrollY, setScrollY] = useState(window.scrollY);
+  // const viewHeight = window.innerHeight;
 
   const [pendingScrollTarget, setPendingScrollTarget] = useState(null);
   const location = useLocation();
@@ -53,16 +53,16 @@ export default function HeaderAppBar({ show }) {
     { text: "Datenschutzerklärung", link: "/dataprivacy", icon: <span className="material-symbols-outlined">shield_locked</span> }
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollY(window.scrollY);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const backgroundColor = "rgba(0,0,0,.3)"
 
@@ -134,16 +134,6 @@ export default function HeaderAppBar({ show }) {
     setDesktopDrawerOpen(open);
   };
 
-  // const [anchorElLanguage, setAnchorElLanguage] = React.useState(null);
-
-  // const handleOpenLanguageMenu = (event) => {
-  //   setAnchorElLanguage(event.currentTarget);
-  // };
-
-  // const handleCloseLanguageMenu = () => {
-  //   setAnchorElLanguage(null);
-  // };
-  
   return (
     <Slide direction="down" in={show} mountOnEnter unmountOnExit>
       {/* <AppBar position="fixed" sx={{ backgroundColor: "#d2d5cb", color: "black" }}> */}
