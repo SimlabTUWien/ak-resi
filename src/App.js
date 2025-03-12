@@ -1,23 +1,22 @@
 // import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { ThemeProvider } from "@mui/material/styles";
+import CircularProgress from "@mui/material/CircularProgress";
 import CssBaseline from "@mui/material/CssBaseline";
-
-import HomePage from "./pages/HomePage";
-import Glossar from "./pages/Glossar";
-import Impressum from "./pages/Impressum";
-import Team from "./pages/Team";
-import Dataprivacy from "./pages/Dataprivacy";
-import HeaderAppBar from "./components/HeaderAppBar";
-
 import './styles/App.css';
 import theme from "./styles/theme.js";
+
+import HeaderAppBar from "./components/HeaderAppBar";
+import HomePage from "./pages/HomePage"; 
+const Glossar = lazy(() => import("./pages/Glossar"));
+const Impressum = lazy(() => import("./pages/Impressum"));
+const Team = lazy(() => import("./pages/Team"));
+const Dataprivacy = lazy(() => import("./pages/Dataprivacy"));
 
 
 function App() {
   return (
-    // <Router basename="/ak-resi">
     <ThemeProvider theme={theme}>
       <CssBaseline /> {/* Ensures consistent MUI styling */}
       <Router>
@@ -37,9 +36,6 @@ function AppContent() {
     }
   }, [location.pathname]);
   
-  // useEffect(() => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // }, [location.pathname]);
 
   useEffect(() => {
     if (location.pathname === "/") {
@@ -59,13 +55,25 @@ function AppContent() {
   return (
     <>
       <HeaderAppBar show={showAppBar} />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/glossar" element={<Glossar />} />
-        <Route path="/impressum" element={<Impressum />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/dataprivacy" element={<Dataprivacy />} />
-      </Routes>
+      <Suspense fallback={
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}>
+            <CircularProgress size={120} style={{ color: "#f0ae9f" }} />
+          </div>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/glossar" element={<Glossar />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/dataprivacy" element={<Dataprivacy />} />
+        </Routes>
+      </Suspense>
     </>
   );
 }
