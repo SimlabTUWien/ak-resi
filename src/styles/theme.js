@@ -36,13 +36,6 @@ const theme = createTheme({
     },
   },
   components: {
-    // MuiModal: {
-    //   styleOverrides: {
-    //     root: {
-    //       paddingRight: "0px !important",
-    //     },
-    //   },
-    // },
     MuiTableCell: {
       styleOverrides: {
         head: {
