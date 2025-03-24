@@ -36,6 +36,10 @@ function AppContent() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [location.pathname]);
+
+  // useEffect(() => {
+  //   window.history.scrollRestoration = "manual";
+  // }, []);
   
 
   useEffect(() => {

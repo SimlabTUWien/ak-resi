@@ -13,13 +13,13 @@ export default function Glossar() {
         requestAnimationFrame(() => {
           const element = document.getElementById(hash);
           if (element) {
-            const yOffset = -80; // Adjust the offset if needed
+            const yOffset = -80;
             const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
             window.scrollTo({ top: y, behavior: "smooth" });
           }
         });
       }, 200); // Delay to allow content to render
-    }
+    } 
   }, [location]);
   
   return (
