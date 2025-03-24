@@ -22,7 +22,7 @@ const modeMap = {
   },
   "no_so": {
       indicatorValue: "GI_Gesamtindikator ohne Spillover",
-      indicatorLabel_de: "Gesamtindikator (ohne Spillover)",
+      indicatorLabel_de: "Gesamtindikator",
       indicatorLabel_en: "Overallindicator",
       spillover: false,
   },

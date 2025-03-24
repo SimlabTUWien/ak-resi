@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -18,7 +18,30 @@ const indicatorMap = {
 export default function IndicatorSelect({ value, onChange }) {
 
   const defaultValue = Object.keys(indicatorMap)[0];
-  const selectedValue = value ?? defaultValue; 
+  const selectedValue = value ?? defaultValue;
+
+  const [open, setOpen] = useState(false);
+  const selectRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (open && selectRef.current) {
+        const rect = selectRef.current.getBoundingClientRect();
+        if (rect.top < 75 || rect.bottom > window.innerHeight - 100) {
+          setOpen(false);
+        }
+      }
+    };
+
+    if (open) {
+      window.addEventListener("scroll", handleScroll);
+    } else {
+      window.removeEventListener("scroll", handleScroll);
+    }
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [open]);
+
 
   return (
     <Box sx={{ minWidth: 140, marginTop: 2 }}>
@@ -36,15 +59,22 @@ export default function IndicatorSelect({ value, onChange }) {
           Indikatoren
         </InputLabel>
         <Select
+          ref={selectRef}
           labelId="indicator-select-label"
           id="indicator-select"
           label="Indikatoren"
           value={selectedValue}
           onChange={(event) => onChange(event.target.value)}
+          open={open}
+          onOpen={() => setOpen(true)}
+          onClose={() => setOpen(false)}
           sx={{
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
               borderColor: '#8fb0ac',
-            },
+            }
+          }}
+          MenuProps={{
+            disableScrollLock: true,
           }}
         >
           {Object.entries(indicatorMap).map(([key, value]) => (

@@ -36,6 +36,13 @@ const theme = createTheme({
     },
   },
   components: {
+    // MuiModal: {
+    //   styleOverrides: {
+    //     root: {
+    //       paddingRight: "0px !important",
+    //     },
+    //   },
+    // },
     MuiTableCell: {
       styleOverrides: {
         head: {
@@ -119,26 +126,5 @@ const theme = createTheme({
     },
   },
 });
-
-// import { createTheme } from '@mui/material/styles';
-
-// const theme = createTheme({
-//   components: {
-//     // 1) Override the label used in <Select>
-    
-//     // 2) Override the <MenuItem> used in <Select>
-//     MuiMenuItem: {
-//       styleOverrides: {
-//         root: {
-//           fontWeight: 600,             // Make menu items bolder
-//           transform: 'translateY(2px)', // Shift menu item text down
-//         },
-//       },
-//     },
-//   },
-// });
-
-// export default theme;
-
 
 export default theme;
