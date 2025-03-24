@@ -12,6 +12,10 @@
     padding-bottom: 6px;
 }
 
+.glossar-element:last-of-type {
+    margin-bottom: 32px;
+}
+
 .glossar-element h2, p {
     margin: 6px 0;
 }
