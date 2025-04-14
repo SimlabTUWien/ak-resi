@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 const sectionColors = {
-  intro: '#b3b3b3',
-  income: '#b3b3b3',
+  intro: '#bdbdbd',
+  income: '#bdbdbd',
   residualIncome: '#f0ae9f',
   'social-infrastructure': '#a5cdc8',
   'time-usage': '#fcd799',
-  'what-now': '#566060',
+  'what-now': '#bdbdbd',
 };
 
 function ScrollProgressBar() {
