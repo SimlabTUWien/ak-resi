@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 614.5 168.3">
+  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-size: 27.8px;
+      }
+
+      .st0, .st1, .st2 {
+        fill: #1d1d1b;
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+
+      .st3 {
+        opacity: .5;
+      }
+
+      .st3, .st4 {
+        fill: #f0ae9f;
+      }
+
+      .st1 {
+        font-size: 16px;
+      }
+
+      .st2 {
+        font-size: 12px;
+      }
+
+      .st5 {
+        fill: #f5c7bc;
+      }
+
+      .st6 {
+        fill: #bdbdbd;
+        <!-- fill: #e1e1e1e1; -->
+      }
+
+      .st7 {
+        fill:rgb(206, 206, 206);
+        <!-- fill: #ebebec; -->
+      }
+    </style>
+  </defs>
+  <g id="notwendigeausgaben">
+    <g id="gesundheit" class="expenditure-info">
+      <rect class="st5" x="503" y="94.1" width="87.7" height="27.6"/>
+      <text class="st2" transform="translate(517.9 111.8)"><tspan x="0" y="0">Gesundheit</tspan></text>
+    </g>
+    <g id="bildung" class="expenditure-info">
+      <rect class="st5" x="415.3" y="94.1" width="83" height="27.6"/>
+      <text class="st2" transform="translate(435 111.8)"><tspan x="0" y="0">Bildung</tspan></text>
+    </g>
+    <g id="energie" class="expenditure-info">
+      <rect class="st5" x="539.2" y="61.3" width="51.2" height="27.6"/>
+      <text class="st2" transform="translate(546.1 79)"><tspan x="0" y="0">Energie</tspan></text>
+    </g>
+    <g id="wohnen" class="expenditure-info">
+      <rect class="st5" x="477.6" y="61.8" width="55.4" height="27.6"/>
+      <text class="st2" transform="translate(483.9 79.5)"><tspan x="0" y="0">Wohnen</tspan></text>
+    </g>
+    <g id="nahrung" class="expenditure-info">
+      <rect class="st5" x="415.3" y="61.3" width="56.1" height="27.6"/>
+      <text class="st2" transform="translate(421.7 79)"><tspan x="0" y="0">Nahrung</tspan></text>
+    </g>
+    <g id="notwendigeausgaben1" data-name="notwendigeausgaben">
+      <rect class="st4" x="415.3" y="24" width="175.4" height="27.6"/>
+      <text class="st1" transform="translate(429.3 41.7)"><tspan x="0" y="0">notwendige Ausgaben</tspan></text>
+    </g>
+  </g>
+  <g id="Einkommen">
+    <g id="vermietung" class="income-info">
+      <rect class="st7" x="304.1" y="126.9" width="86.8" height="27.6"/>
+      <text class="st2" transform="translate(316.8 144.6)"><tspan x="0" y="0">Vermietung</tspan></text>
+    </g>
+    <g id="pensionen" class="income-info">
+      <rect class="st7" x="328.3" y="94.1" width="62.7" height="27.6"/>
+      <text class="st2" transform="translate(333.4 111.8)"><tspan x="0" y="0">Pensionen</tspan></text>
+    </g>
+    <g id="sozialhilfe" class="income-info">
+      <rect class="st7" x="336.4" y="61.3" width="55.4" height="27.6"/>
+      <text class="st2" transform="translate(338.7 79.1)"><tspan x="0" y="0">Sozialhilfe </tspan></text>
+    </g>
+    <g id="kapital" class="income-info">
+      <rect class="st7" x="216.5" y="126.9" width="83.4" height="27.6"/>
+      <text class="st2" transform="translate(223.4 144.6)"><tspan x="0" y="0">Kapitalerträge</tspan></text>
+    </g>
+    <g id="selbstaendigesEK" class="income-info">
+      <rect class="st7" x="216.5" y="94.1" width="105.9" height="27.6"/>
+      <text class="st2" transform="translate(223.2 111.8)"><tspan x="0" y="0">selbstständiges EK</tspan></text>
+    </g>
+    <g id="unselbstaendigesEK" class="income-info">
+      <rect class="st7" x="216.5" y="61.3" width="113.6" height="27.6"/>
+      <text class="st2" transform="translate(221.2 78.9)"><tspan x="0" y="0">unselbstständiges EK</tspan></text>
+    </g>
+    <g id="Einkommen1" data-name="Einkommen">
+      <rect class="st6" x="216.5" y="24" width="175.4" height="27.6"/>
+      <text class="st1" transform="translate(269.8 42.1)"><tspan x="0" y="0">Einkommen</tspan></text>
+    </g>
+  </g>
+  <g id="verfuegbaresEK">
+    <rect class="st3" x="12.6" y="24" width="175.4" height="27.6"/>
+    <text class="st1" transform="translate(17.8 42.2)"><tspan x="0" y="0">Verfügbares Einkommen</tspan></text>
+  </g>
+  <g id="rechenzeichen">
+    <text class="st0" transform="translate(194.2 45.6)"><tspan x="0" y="0">=</tspan></text>
+    <text class="st0" transform="translate(398.7 45.6)"><tspan x="0" y="0">-</tspan></text>
+  </g>
+</svg>
