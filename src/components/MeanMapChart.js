@@ -113,12 +113,12 @@ const MeanMapChart = () => {
           const tooltip = d3.select("body")
           .append("div")
           .style("position", "absolute")
-          .style("background", "rgba(0, 0, 0, 0.75)")
+          .style("background", "rgba(0, 0, 0, 0.80)")
           .style("color", "white")
           .style("padding", "5px 10px")
           .style("border-radius", "5px")
           .style("visibility", "hidden")
-          .style("font-size", "12px");
+          .style("font-size", "14px");
       
 
           // Mouseover circle behavior
