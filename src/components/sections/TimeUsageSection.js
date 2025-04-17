@@ -1,4 +1,5 @@
 import React from 'react';
+import SexEducationBoxplot from '../SexEducationBoxplot';
 
 const TimeUsageSection = () => {
     return (
@@ -67,12 +68,12 @@ const TimeUsageSection = () => {
                 <p className='paragraph'>
                 Trotz dieser Unterschiede bleibt die Grundtendenz bestehen: Auch hochgebildete Frauen übernehmen mehr unbezahlte Arbeit als Männer mit gleichem Bildungsniveau. Dies zeigt, dass traditionelle Rollenverteilungen weiterhin Einfluss darauf haben, wie Erwerbs- und Care-Arbeit innerhalb von Haushalten verteilt wird – unabhängig vom Bildungsgrad.
                 </p>
-
-                <p style={{margin: '32px 0 0'}}>TODO: 9_INC_SEX_EDU_TU hover effects</p>
                 
-                <div className="image-container box-plot-container">
+                {/* <div className="image-container box-plot-container">
                     <img src={`${process.env.PUBLIC_URL}/images/9_INC_SEX_EDU_TU.png`} alt="box plot visualizing income based on sex and education" />
-                </div>
+                </div> */}
+
+                <SexEducationBoxplot alt="box plot visualizing income based on sex and education"/>
 
                 <h3 className="content-header">Vollzeit-/Teilzeitarbeit: Teilzeit ist nicht gleich Teilzeit – die doppelte Belastung von Frauen</h3>
                 <p className='paragraph'>
