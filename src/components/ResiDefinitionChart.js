@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-// const svgUrl = `${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE.svg`;
-const svgUrl = `${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE_v3.svg`;
+// const svgUrl = `${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE_v3.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE_V4.svg`;
 
 const ResiDefinitionChart = () => {
   const svgRef = useRef(null);
