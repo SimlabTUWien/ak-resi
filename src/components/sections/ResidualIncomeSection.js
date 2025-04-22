@@ -45,8 +45,8 @@ const ResidualIncomeSection = () => {
                     // boxShadow: 1,
                     padding: 0,
                     borderRadius: 1,
-                    // fontSize: '14px',
-                    marginTop: 2
+                    marginTop: 3,
+                    marginBottom: 3
                 }}
             >
                 <ResiDefinitionChart />
