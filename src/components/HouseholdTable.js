@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, ToggleButton, ToggleButtonGroup, Box } from "@mui/material";
+import "../styles/HouseholdTable.css";
+
 
 const allData = [
   { type: "Alleinlebend", income: 2070, expenses: 555, disposable: 1313 },
@@ -58,7 +60,8 @@ const HouseholdTable = () => {
 
       {/* Table with Animation */}
       <TableContainer component={Paper} sx={{ marginTop: 2 }}>
-        <Table sx={{ width: "100%", backgroundColor: "#f4f4f4" }}>
+        {/* <Table sx={{ width: "100%", backgroundColor: "#f4f4f4" }}> */}
+        <Table className="responsive-table" sx={{ width: "100%", backgroundColor: "#f4f4f4" }}>
           <TableHead sx={{ backgroundColor: "#f0ae9f", hyphens: "none" }}>
             <TableRow>
               <TableCell align="center">Haushaltstyp</TableCell>
@@ -67,7 +70,7 @@ const HouseholdTable = () => {
               <TableCell align="center">Verfügbares Einkommen</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          {/* <TableBody>
               {tableData.map((row, index) => (
                 <TableRow key={index}>
                   <TableCell align="center">{row.type}</TableCell>
@@ -76,6 +79,16 @@ const HouseholdTable = () => {
                   <TableCell align="center">{row.disposable} €</TableCell>
                 </TableRow>
               ))}
+          </TableBody> */}
+          <TableBody>
+            {tableData.map((row, index) => (
+              <TableRow key={index}>
+                <TableCell align="center" data-label="Haushaltstyp">{row.type}</TableCell>
+                <TableCell align="center" data-label="Mittleres Einkommen">{row.income} €</TableCell>
+                <TableCell align="center" data-label="Notwendige Ausgaben">{row.expenses} €</TableCell>
+                <TableCell align="center" data-label="Verfügbares Einkommen">{row.disposable} €</TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
