@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
 import { 
   AppBar, 
   Toolbar,
@@ -30,7 +31,7 @@ import LanguageToggle from "./LanguageToggle";
 
 export default function HeaderAppBar({ show }) {
 
-  const [language, setLanguage] = useState("DE");
+  const { language } = useLanguage();
 
   // const [scrollY, setScrollY] = useState(window.scrollY);
   // const viewHeight = window.innerHeight;
@@ -39,18 +40,43 @@ export default function HeaderAppBar({ show }) {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const translations = {
+    DE: {
+      intro: "Einleitung",
+      residualIncome: "Residualeinkommen",
+      socialInfrastructure: "Soziale Infrastruktur",
+      timeUsage: "Zeitverwendung",
+      glossary: "Glossar",
+      imprint: "Impressum",
+      team: "Team",
+      privacy: "Datenschutzerklärung",
+    },
+    EN: {
+      intro: "Introduction",
+      residualIncome: "Residual Income",
+      socialInfrastructure: "Social Infrastructure",
+      timeUsage: "Time Usage",
+      glossary: "Glossary",
+      imprint: "Imprint",
+      team: "Team",
+      privacy: "Privacy Policy",
+    }
+  };
+
+  const t = translations[language];
+
   const menuItems = [
-    ...(location.pathname !== "/" ? [{ text: "Einleitung", section: "intro", icon: <HomeIcon /> }] : []),
-    { text: "Residualeinkommen", section: "residualIncome", icon: <PaymentsIcon /> },
-    { text: "Soziale Infrastruktur", section: "social-infrastructure", icon: <RoomIcon /> },
-    { text: "Zeitverwendung", section: "time-usage", icon: <AccessTimeIcon /> },
+    ...(location.pathname !== "/" ? [{ text: t.intro, section: "intro", icon: <HomeIcon /> }] : []),
+    { text: t.residualIncome, section: "residualIncome", icon: <PaymentsIcon /> },
+    { text: t.socialInfrastructure, section: "social-infrastructure", icon: <RoomIcon /> },
+    { text: t.timeUsage, section: "time-usage", icon: <AccessTimeIcon /> },
   ];
   
   const linkItems = [
-    { text: "Glossar", link: "/glossar", icon: <ImportContactsIcon /> },
-    { text: "Impressum", link: "/impressum", icon: <DescriptionIcon /> },
-    { text: "Team", link: "/team", icon: <Diversity3Icon /> },
-    { text: "Datenschutzerklärung", link: "/dataprivacy", icon: <span className="material-symbols-outlined">shield_locked</span> }
+    { text: t.glossary, link: "/glossar", icon: <ImportContactsIcon /> },
+    { text: t.imprint, link: "/impressum", icon: <DescriptionIcon /> },
+    { text: t.team, link: "/team", icon: <Diversity3Icon /> },
+    { text: t.privacy, link: "/dataprivacy", icon: <span className="material-symbols-outlined">shield_locked</span> }
   ];
 
   // useEffect(() => {
@@ -310,7 +336,7 @@ export default function HeaderAppBar({ show }) {
             
             {/* Language Toggle */}
             <Box sx={{ flexGrow: 0 }}>
-              <LanguageToggle currentLanguage={language} onChangeLanguage={setLanguage} />
+              <LanguageToggle />
             </Box>
           </Toolbar>
         </Container>

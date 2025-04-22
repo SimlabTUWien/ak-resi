@@ -7,6 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import './styles/App.css';
 import theme from "./styles/theme.js";
 
+import { LanguageProvider } from "./context/LanguageContext.js";
 import HeaderAppBar from "./components/HeaderAppBar";
 // import HomePage from "./pages/HomePage"; 
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -20,9 +21,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline /> {/* Ensures consistent MUI styling */}
-      <Router>
-        <AppContent />
-      </Router>
+      <LanguageProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

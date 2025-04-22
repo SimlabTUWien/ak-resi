@@ -1,7 +1,12 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-const LanguageToggle = ({ currentLanguage, onChangeLanguage }) => {
+import { useLanguage } from "../context/LanguageContext";
+
+const LanguageToggle = () => {
+
+  const { language, setLanguage } = useLanguage();
+
   return (
     <Box
       sx={{
@@ -19,10 +24,11 @@ const LanguageToggle = ({ currentLanguage, onChangeLanguage }) => {
     >
       {/* DE Language */}
       <Typography
-        component="span" 
+        component="span"
+        aria-label="German" 
         sx={{
-          color: currentLanguage === "DE" ? "#fff" : "#d6d6d6",
-          fontWeight: currentLanguage === "DE" ? "bold" : "normal",
+          color: language === "DE" ? "#fff" : "#d6d6d6",
+          fontWeight: language === "DE" ? "bold" : "normal",
           mr: 2,
           cursor: "pointer",
           position: "relative",
@@ -30,10 +36,10 @@ const LanguageToggle = ({ currentLanguage, onChangeLanguage }) => {
           userSelect: "none",
           WebkitTapHighlightColor: "transparent"
         }}
-        onClick={() => onChangeLanguage("DE")}
+        onClick={() => setLanguage("DE")}
       >
         DE
-        {currentLanguage === "DE" && (
+        {language  === "DE" && (
           <Box
             sx={{
               position: "absolute",
@@ -49,20 +55,21 @@ const LanguageToggle = ({ currentLanguage, onChangeLanguage }) => {
 
       {/* EN Language */}
       <Typography
-        component="span" 
+        component="span"
+        aria-label="English" 
         sx={{
-          color: currentLanguage === "EN" ? "#fff" : "#d6d6d6",
-          fontWeight: currentLanguage === "EN" ? "bold" : "normal",
+          color: language === "EN" ? "#fff" : "#d6d6d6",
+          fontWeight: language === "EN" ? "bold" : "normal",
           cursor: "pointer",
           position: "relative",
           transition: "all 0.3s ease-in-out",
           userSelect: "none",
           WebkitTapHighlightColor: "transparent"
         }}
-        onClick={() => onChangeLanguage("EN")}
+        onClick={() => setLanguage("EN")}
       >
         EN
-        {currentLanguage === "EN" && (
+        {language === "EN" && (
           <Box
             sx={{
               position: "absolute",
