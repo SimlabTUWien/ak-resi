@@ -6,7 +6,10 @@ import { Box } from "@mui/material";
 import "../styles/BackgroundChart.css";
 
 
-const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_DE.svg`;
+// const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_DE.svg`;
+// const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_DE_teilflaechen_vereinfacht_ohne_transparenz_layer_neu_ohnebasis.svg`;
+
+const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_DE_V2.svg`;
 
 const textMap = {
   "einkommen": {
@@ -96,7 +99,8 @@ const BackgroundChart = () => {
           svg.selectAll("g")
             .filter(function () {
               const id = d3.select(this).attr("id");
-              return id !== "basis" && id !== "schnittflaechen" && id !== "pfeile";
+              // return id !== "basis" && id !== "schnittflaechen" && id !== "pfeile";
+              return Object.keys(textMap).includes(id);
             })
             .style("cursor", "pointer")
             .on("mouseover", function () {
