@@ -13,7 +13,7 @@ const textMap = {
     title: "Einkommen",
     text: "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. In Österreich liegt das mittlere Haushaltseinkommen bei XXX €, was bedeutet, dass 50 % der Haushalte über und 50 % unter diesem Betrag zur Verfügung haben.",
     // color: "#e2e0e1"
-    color: "#BDBDBD" //"#b3b3b3"
+    color: "#BDBDBD"
   },
   "notwendige_ausgaben": {
     title: "Notwendige Ausgaben",

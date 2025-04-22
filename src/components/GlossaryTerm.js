@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useState, useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext";
 import Tooltip from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 
@@ -27,6 +28,8 @@ const getStyledGlossaryTerm = (isMobile) => styled("span")(({ color }) => ({
 
 const GlossaryTerm = ({ className, sectionId, children }) => {
 
+  const { language } = useLanguage();
+
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
   const StyledGlossaryTerm = getStyledGlossaryTerm(isMobile);
   const wordRef = useRef(null);
@@ -49,31 +52,38 @@ const GlossaryTerm = ({ className, sectionId, children }) => {
 
   const glossaryTerms = useMemo(
     () => ({
-      incomeInequality:
-        "Maß für die ungleiche Verteilung von Einkommen innerhalb einer Gesellschaft.",
-      communitySizeClass:
-        "Kategorisierung von Gemeinden nach Einwohnerzahl zur statistischen Analyse.",
-      gini: "Kennzahl zur Messung der Einkommensungleichheit; Werte zwischen 0 (völlige Gleichheit) und 1 (maximale Ungleichheit).",
-      consumption:
-        "Statistische Erhebung zu den Ausgaben und dem Konsumverhalten von Haushalten.",
-      median:
-        "Der mittlere Wert einer geordneten Datenreihe, bei dem 50 % der Werte darüber und 50 % darunter liegen.",
-      expenditure:
-        "Unvermeidbare Kosten für Grundbedürfnisse wie Wohnen, Energie, Ernährung, Bildung, Mobilität und Gesundheitsversorgung.",
-      quintil:
-        "Ein Fünftel einer geordneten Datenreihe, oft genutzt zur Analyse von Einkommensgruppen.",
-      residualIncome:
-        "Einkommen, das nach Abzug der notwendigen Ausgaben für anderen Konsum oder Ersparnisse übrig bleibt.",
-      si: "Einrichtungen und Dienstleistungen, die das gesellschaftliche Leben unterstützen, z. B. Bildung, Gesundheit, Pflegeeinrichtungen und andere soziale Einrichtungen.",
-      timeUsage:
-        "Studie zur Analyse, wie Menschen ihre Zeit für Erwerbsarbeit, Kinderbetreuung, Haushalt, Freizeit und andere Aktivitäten nutzen.",
-    }),
-    []
+      DE: {
+        incomeInequality: "Maß für die ungleiche Verteilung von Einkommen innerhalb einer Gesellschaft.",
+        communitySizeClass: "Kategorisierung von Gemeinden nach Einwohnerzahl zur statistischen Analyse.",
+        gini: "Kennzahl zur Messung der Einkommensungleichheit; Werte zwischen 0 (völlige Gleichheit) und 1 (maximale Ungleichheit).",
+        consumption: "Statistische Erhebung zu den Ausgaben und dem Konsumverhalten von Haushalten.",
+        median: "Der mittlere Wert einer geordneten Datenreihe, bei dem 50 % der Werte darüber und 50 % darunter liegen.",
+        expenditure: "Unvermeidbare Kosten für Grundbedürfnisse wie Wohnen, Energie, Ernährung, Bildung, Mobilität und Gesundheitsversorgung.",
+        quintil: "Ein Fünftel einer geordneten Datenreihe, oft genutzt zur Analyse von Einkommensgruppen.",
+        residualIncome: "Einkommen, das nach Abzug der notwendigen Ausgaben für anderen Konsum oder Ersparnisse übrig bleibt.",
+        si: "Einrichtungen und Dienstleistungen, die das gesellschaftliche Leben unterstützen, z. B. Bildung, Gesundheit, Pflegeeinrichtungen und andere soziale Einrichtungen.",
+        timeUsage: "Studie zur Analyse, wie Menschen ihre Zeit für Erwerbsarbeit, Kinderbetreuung, Haushalt, Freizeit und andere Aktivitäten nutzen.",
+      },
+      EN: {
+        incomeInequality: "Measure of the unequal distribution of income within a society.",
+        communitySizeClass: "Categorization of municipalities by population size for statistical analysis.",
+        gini: "Indicator of income inequality; values range from 0 (perfect equality) to 1 (maximum inequality).",
+        consumption: "Statistical survey of household spending and consumption behavior.",
+        median: "The middle value of a sorted data set, with 50% of values above and 50% below.",
+        expenditure: "Essential costs for basic needs such as housing, energy, food, education, transport, and healthcare.",
+        quintil: "One fifth of a sorted data set, often used to analyze income groups.",
+        residualIncome: "Income remaining after necessary expenses, available for other consumption or savings.",
+        si: "Facilities and services that support social life, such as education, healthcare, and care institutions.",
+        timeUsage: "Study analyzing how people spend their time on work, childcare, household, leisure, and other activities.",
+      },
+    }),[]
   );
 
   // Extract term key from className
-  const termKey = className?.split(" ").find((cls) => glossaryTerms[cls]);
-  const tooltipContent = termKey ? glossaryTerms[termKey] : null;
+  const selectedLanguage = glossaryTerms[language] ? language : "DE";
+
+  const termKey = className?.split(" ").find((cls) => glossaryTerms[selectedLanguage][cls]);
+  const tooltipContent = termKey ? glossaryTerms[selectedLanguage][termKey] : null;
 
   const handleClick = () => {
     if (!termKey) return;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLanguage } from "../../context/LanguageContext";
 import { motion } from "framer-motion";
 import { Box } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -6,6 +7,19 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import "../../styles/HeaderSection.css";
 
 export default function HeaderSection() {
+
+  const { language } = useLanguage();
+
+  const translations = {
+    DE: {
+        title: "Perspektiven auf Ungleichheit in Österreich",
+    },
+    EN: {
+        title: "Perspectives on Inequality in Austria",
+    }
+  };
+
+  const t = translations[language];
   
   const [hideIndicator, setHideIndicator] = useState(false);
 
@@ -49,7 +63,7 @@ export default function HeaderSection() {
           <div className="titles-container">
             {/* <img src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Logo" className="logo" />  */}
             <h1 className="header-title">Re:sI:Ze</h1>
-            <p className="header-subtitle">Perspektiven auf Ungleichheit in Österreich</p>
+            <p className="header-subtitle"> {t.title} </p>
           </div>
 
          <div className="header-image-wrapper">

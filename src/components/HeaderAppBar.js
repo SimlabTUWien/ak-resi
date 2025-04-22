@@ -63,7 +63,7 @@ export default function HeaderAppBar({ show }) {
     }
   };
 
-  const t = translations[language];
+  const t = translations[language] || translations.DE;
 
   const menuItems = [
     ...(location.pathname !== "/" ? [{ text: t.intro, section: "intro", icon: <HomeIcon /> }] : []),
