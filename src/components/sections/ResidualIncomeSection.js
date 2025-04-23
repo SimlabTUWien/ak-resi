@@ -19,7 +19,7 @@ const ResidualIncomeSection = () => {
     const [isWrapped, setIsWrapped] = useState(false);
 
     const [medianExpenditureMode, setMedianExpenditureMode] = useState("all");
-    // const [quintilExpenditureMode, setQuintilExpenditureMode] = useState("all");
+    const [meanMapMode, setMeanMapMode] = useState("all");
     const [quintilExpenditureMode, setQuintilExpenditureMode] = useState("absolute");
     
     const handleToggleModeChange = (type, newValue) => {
@@ -28,7 +28,9 @@ const ResidualIncomeSection = () => {
                 setMedianExpenditureMode(newValue);
             } else if (type === "quintil_exp") {
                 setQuintilExpenditureMode(newValue);
-            }
+            } else if (type === "mean_map") {
+                setMeanMapMode(newValue);
+            } 
         }
     };
 
@@ -291,7 +293,19 @@ const ResidualIncomeSection = () => {
                     marginBottom: 3,
                 }}
             >
-                <MeanMapChart />
+                <div className="toggle-container">
+                    <ToggleButtonGroup
+                        className="residual-income-toggle mean-map-toggle"
+                        value={meanMapMode}
+                        exclusive
+                        onChange={(_, newValue) => handleToggleModeChange("mean_map", newValue)}
+                        aria-label="mean map mode selection"
+                    >   
+                        <ToggleButton value="all"><label>Allen</label></ToggleButton>
+                        <ToggleButton value="renter"><label>Mieter:Innen</label></ToggleButton>
+                    </ToggleButtonGroup>
+                </div>
+                <MeanMapChart mode={meanMapMode} />
             </Box>
 
             <p className='paragraph'>

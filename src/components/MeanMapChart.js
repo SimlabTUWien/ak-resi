@@ -75,7 +75,7 @@ const isTouchDevice = () => {
   );
 };
 
-const MeanMapChart = () => {
+const MeanMapChart = ( mode ) => {
   const svgRefMeanMap = useRef(null);
 
   const initialId = Object.keys(textinfoMap)[0]; // Get first key from textMap
