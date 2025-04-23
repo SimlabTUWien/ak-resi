@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
 
 
-const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_Outlook_DE.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_Outlook_DE_V2.svg`;
 
 const textMap = {
     "einkommen": {
@@ -99,7 +99,7 @@ const OutlookChart = () => {
           svg.selectAll("g")
             .filter(function () {
               const id = d3.select(this).attr("id");
-              return id !== "basis" && id !== "schnittflaechen" && id !== "pfeile";
+              return Object.keys(textMap).includes(id);
             })
             .style("cursor", "pointer")
             .on("mouseover", function () {
