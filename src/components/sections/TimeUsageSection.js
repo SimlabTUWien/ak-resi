@@ -1,6 +1,5 @@
 import React from 'react';
 import IncSexEduBoxplot from '../BoxplotCharts/IncSexEduBoxplot';
-// import IncSexEduBoxplot from '../../BoxplotCharts/IncSexEduBoxplot';
 // import IncSexFtptBoxplot from '../BoxplotCharts/IncSexFtptBoxplot';
 
 

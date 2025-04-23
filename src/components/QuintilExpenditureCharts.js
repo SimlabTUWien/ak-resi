@@ -47,11 +47,13 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
     // const colors = useMemo (() => ["#d175c6", "#619dfe", "#4DB6AC", "#81C784", "#b79f01", "#f8756c"], []);
     const colors =  useMemo (() => ["#C855B9", "#3A7BFA", "#1D9A8C","#66B35A", "#C29B00", "#E45A50"], []);
 
+    // Old approach
+    // const selectedDataAbsolute = mode === "all" ? dataAllAbsolute : dataRenterAbsolute;
+    // const selectedDataRelative = mode === "all" ? dataAllRelative : dataRenterRelative;
 
-    const selectedDataAbsolute = mode === "all" ? dataAllAbsolute : dataRenterAbsolute;
-    const selectedDataRelative = mode === "all" ? dataAllRelative : dataRenterRelative;
+    const selectedDataAll = mode === "absolute" ? dataAllAbsolute : dataAllRelative;
+    const selectedDataRenter = mode === "absolute" ? dataRenterAbsolute : dataRenterRelative;
 
-    // const maxWidth = parentWidth < 1300 && parentWidth > 1000 ? "500px" : "600px";
     const maxWidth = "500px";
 
     const setQuintilAbsoluteChartOptions = useCallback((title, data) => ({
@@ -155,8 +157,14 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
         const chartInstance1 = echarts.init(chartRef1.current);
         const chartInstance2 = echarts.init(chartRef2.current);
 
-        chartInstance1.setOption(setQuintilAbsoluteChartOptions("Absolut", selectedDataAbsolute));
-        chartInstance2.setOption(setQuintilRelativeChartOptions("Relativ", selectedDataRelative));
+        // Old approach
+        // chartInstance1.setOption(setQuintilAbsoluteChartOptions("Absolut", selectedDataAbsolute));
+        // chartInstance2.setOption(setQuintilRelativeChartOptions("Relativ", selectedDataRelative));
+
+        const setChartOptions = mode === "absolute" ? setQuintilAbsoluteChartOptions : setQuintilRelativeChartOptions;
+
+        chartInstance1.setOption(setChartOptions("Alle Haushalte", selectedDataAll));
+        chartInstance2.setOption(setChartOptions("Nur Mieter:innen", selectedDataRenter));
 
         const checkFlexWrap = () => {
             if (parentRef.current) {
@@ -184,7 +192,8 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
             chartInstance1.dispose();
             chartInstance2.dispose();
         };
-    }, [mode, parentWidth, selectedDataAbsolute, selectedDataRelative, setQuintilAbsoluteChartOptions, setQuintilRelativeChartOptions, setIsWrapped]);
+    }, [mode, parentWidth, selectedDataAll, selectedDataRenter, setQuintilAbsoluteChartOptions, setQuintilRelativeChartOptions, setIsWrapped]);
+    // }, [mode, parentWidth, selectedDataAbsolute, selectedDataRelative, setQuintilAbsoluteChartOptions, setQuintilRelativeChartOptions, setIsWrapped]);
 
     return (
         <div ref={parentRef} className="quintil-exp-charts">

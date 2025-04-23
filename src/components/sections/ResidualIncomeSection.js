@@ -19,7 +19,8 @@ const ResidualIncomeSection = () => {
     const [isWrapped, setIsWrapped] = useState(false);
 
     const [medianExpenditureMode, setMedianExpenditureMode] = useState("all");
-    const [quintilExpenditureMode, setQuintilExpenditureMode] = useState("all");
+    // const [quintilExpenditureMode, setQuintilExpenditureMode] = useState("all");
+    const [quintilExpenditureMode, setQuintilExpenditureMode] = useState("absolute");
     
     const handleToggleModeChange = (type, newValue) => {
         if (newValue !== null) {
@@ -153,9 +154,12 @@ const ResidualIncomeSection = () => {
                         exclusive
                         onChange={(_, newValue) => handleToggleModeChange("quintil_exp", newValue)}
                         aria-label="quintil expenditure chart mode selection"
-                    >
+                    >   
+                        { /* Old approach
                         <ToggleButton value="all"><label>Allen</label></ToggleButton>
-                        <ToggleButton value="renter"><label>Mieter:Innen</label></ToggleButton>
+                        <ToggleButton value="renter"><label>Mieter:Innen</label></ToggleButton> */}
+                        <ToggleButton value="absolute"><label>Absolut</label></ToggleButton>
+                        <ToggleButton value="relative"><label>Relativ</label></ToggleButton>
                     </ToggleButtonGroup>
                 </div>
         
