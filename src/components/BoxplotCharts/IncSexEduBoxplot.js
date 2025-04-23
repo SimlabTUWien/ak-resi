@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import { Box } from "@mui/material";
 
 
-const svgUrl = `${process.env.PUBLIC_URL}/images/9_INC_SEX_EDU_TU_formatted_2_vereinfacht_sb_textkontur-01.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/9_INC_SEX_EDU_TU.svg`;
 
 
 const dataMap = {
@@ -48,7 +48,7 @@ const isTouchDevice = () => {
     );
   };
   
-const SexEducationBoxplot = () => {
+const IncSexEduBoxplot = () => {
     const svgRef = useRef(null);
   
     useEffect(() => {
@@ -137,4 +137,4 @@ const SexEducationBoxplot = () => {
     );
   };
   
-  export default SexEducationBoxplot;
+  export default IncSexEduBoxplot;

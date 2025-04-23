@@ -1,5 +1,8 @@
 import React from 'react';
-import SexEducationBoxplot from '../SexEducationBoxplot';
+import IncSexEduBoxplot from '../BoxplotCharts/IncSexEduBoxplot';
+// import IncSexEduBoxplot from '../../BoxplotCharts/IncSexEduBoxplot';
+// import IncSexFtptBoxplot from '../BoxplotCharts/IncSexFtptBoxplot';
+
 
 const TimeUsageSection = () => {
     return (
@@ -72,8 +75,8 @@ const TimeUsageSection = () => {
                 {/* <div className="image-container box-plot-container">
                     <img src={`${process.env.PUBLIC_URL}/images/9_INC_SEX_EDU_TU.png`} alt="box plot visualizing income based on sex and education" />
                 </div> */}
-
-                <SexEducationBoxplot alt="box plot visualizing income based on sex and education"/>
+                
+                <IncSexEduBoxplot alt="box plot visualizing income based on sex and education"/>
 
                 <h3 className="content-header">Vollzeit-/Teilzeitarbeit: Teilzeit ist nicht gleich Teilzeit – die doppelte Belastung von Frauen</h3>
                 <p className='paragraph'>
@@ -86,11 +89,14 @@ const TimeUsageSection = () => {
                 Das hat weitreichende Folgen: Teilzeit verringert das Erwerbseinkommen, die Karrierechancen und langfristig auch die Pensionsansprüche. Gleichzeitig bleibt der Großteil der unbezahlten Arbeit an Frauen hängen, was die finanzielle Abhängigkeit innerhalb von Haushalten verstärken kann. Diese Verteilung zeigt, dass Teilzeitarbeit für Frauen oft nicht nur eine berufliche Entscheidung ist, sondern direkt mit ungleicher Care-Arbeit verknüpft ist – mit langfristigen Konsequenzen für Einkommen, soziale Absicherung und wirtschaftliche Unabhängigkeit.
                 </p>
                 
+
                 <p style={{margin: '32px 0 0'}}>TODO: 10_INC_SEX_FTPT_TU hover effects</p>
                 
                 <div className="image-container ftpt-box-plot-container">
                     <img src={`${process.env.PUBLIC_URL}/images/10_INC_SEX_FTPT_TU.png`} alt="box plot visualizing income based on sex and extent employment" />
                 </div>
+
+                {/* <IncSexFtptBoxplot alt="box plot visualizing income based on sex and extend of employment"/> */}
 
 
                 <h3 className="content-header">Haushaltstyp: Wenn aus einem Haushalt eine Familie wird – wie sich Arbeitsteilung verändert</h3>
