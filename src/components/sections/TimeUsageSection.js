@@ -1,5 +1,6 @@
 import React from 'react';
 import IncSexEduBoxplot from '../BoxplotCharts/IncSexEduBoxplot';
+import IncSexFtptBoxplot from '../BoxplotCharts/IncSexFtptBoxplot';
 // import IncSexFtptBoxplot from '../BoxplotCharts/IncSexFtptBoxplot';
 
 
@@ -89,13 +90,11 @@ const TimeUsageSection = () => {
                 </p>
                 
 
-                <p style={{margin: '32px 0 0'}}>TODO: 10_INC_SEX_FTPT_TU hover effects</p>
-                
-                <div className="image-container ftpt-box-plot-container">
+                {/* <div className="image-container ftpt-box-plot-container">
                     <img src={`${process.env.PUBLIC_URL}/images/10_INC_SEX_FTPT_TU.png`} alt="box plot visualizing income based on sex and extent employment" />
-                </div>
+                </div> */}
 
-                {/* <IncSexFtptBoxplot alt="box plot visualizing income based on sex and extend of employment"/> */}
+                <IncSexFtptBoxplot alt="box plot visualizing income based on sex and extend of employment"/>
 
 
                 <h3 className="content-header">Haushaltstyp: Wenn aus einem Haushalt eine Familie wird – wie sich Arbeitsteilung verändert</h3>
