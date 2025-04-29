@@ -93,11 +93,11 @@ const IncSexFtptBoxplot = () => {
           svg.style("display", "block").style("margin", "auto");
   
           if (!isTouchDevice()) {
-            d3.select("body").selectAll("div.d3-tooltip").remove();
+            d3.select("body").selectAll("div.d3-tooltip-ftpt").remove();
             const tooltip = d3
               .select("body")
               .append("div")
-              .attr("class", "d3-tooltip")
+              .attr("class", "d3-tooltip-ftpt")
               .style("position", "absolute")
               .style("background", "rgba(0, 0, 0, 0.8)")
               .style("color", "white")
