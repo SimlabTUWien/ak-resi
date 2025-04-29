@@ -135,7 +135,7 @@ const ResidualIncomeSection = () => {
             </p>
             
             <div className="image-container scatter-plot-container">
-                <img src={`${process.env.PUBLIC_URL}/images/3_SCATTER_PLOT_RESI_INCOME.png`} alt="scatter plot visualizing houshold and resiudal income" />
+                <img src={`${process.env.PUBLIC_URL}/images/3_SCATTER_PLOT_RESI_INCOME_DE.png`} alt="scatter plot visualizing houshold and resiudal income" />
             </div>
 
             <h2 className="content-header">Ausgaben nach Einkommensquintilen</h2>

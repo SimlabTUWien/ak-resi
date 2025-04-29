@@ -27,7 +27,7 @@ const IncomeSection = () => {
             </p>
 
             <div className="image-container median-hh-income-container">
-                <img src={`${process.env.PUBLIC_URL}/images/00_Median_HH_Income_Personen.svg`} alt="showing median household income" />
+                <img src={`${process.env.PUBLIC_URL}/images/00_Median_HH_Income_Personen_DE.svg`} alt="showing median household income" />
             </div>
 
             <p style={{margin: '32px 0 0'}}>TODO: wollt ihr hier die Werte nochmals in textueller Form?: Das Medianhaushaltseinkommen in Österreich ist XX. Das erste Quintil XXX.</p>

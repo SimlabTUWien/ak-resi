@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import { Box } from "@mui/material";
 
 
-const svgUrl = `${process.env.PUBLIC_URL}/images/10_INC_SEX_FTPT_TU.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/10_INC_SEX_FTPT_TU_DE.svg`;
 
 
 const dataMap = {
