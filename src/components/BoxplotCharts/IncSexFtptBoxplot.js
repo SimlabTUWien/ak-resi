@@ -121,7 +121,6 @@ const IncSexFtptBoxplot = () => {
                 const outerGroup = this.parentNode;
                 const outerId = d3.select(outerGroup).attr("id");
                 const dataName = box.attr("data-name");
-
                 const l = labels[language.toUpperCase()];
     
                 if (localizedDataMap[outerId] && localizedDataMap[outerId][dataName]) {
