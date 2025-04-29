@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
 import "../styles/BackgroundChart.css";
 
-const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_DE_V2.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_DE_V3.svg`;
 
 const textMap = {
   "einkommen": {
@@ -39,10 +39,10 @@ const textMap = {
     text: "Öffentlich zugängliche und kostengünstige Bildungs- und Gesundheitseinrichtungen entlasten Haushalte finanziell, indem sie die notwendigen Ausgaben reduzieren. Sind solche Einrichtungen jedoch schwer erreichbar, steigen die Mobilitätskosten, oder Haushalte müssen auf teure private Angebote wie Ärzt:innen ohne Kassenvertrag ausweichen.",
     color: "#d2d5cb"
   },
-  "zeit_ist_geld": {
-    title: "Zeit is Geld",
+  "zeit_als_ressource": {
+    title: "Zeit als Ressource",
     text: "Wer mehr Zeit in bezahlte Arbeit investiert, hat meist ein höheres Einkommen. Doch unbezahlte Tätigkeiten wie Hausarbeit, Kinderbetreuung oder ehrenamtliches Engagement bleiben dabei oft unberücksichtigt. Menschen mit höherem Einkommen können ihre Zeit anders nutzen – etwa, indem sie Dienstleistungen wie Haushaltshilfen oder Kinderbetreuung „einkaufen“, um Freiräume zu schaffen.",
-    color: "#f0e6d7"
+    color: "rgb(247, 227, 196)" // "#f0e6d7"
   },
   "zeit_und_infrastruktur": {
     title: "Zeit und Infrastruktur",

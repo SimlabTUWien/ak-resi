@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
 
 
-const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_Outlook_DE_V2.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_Outlook_DE_V3.svg`;
 
 const textMap = {
     "einkommen": {
