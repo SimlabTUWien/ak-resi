@@ -50,7 +50,7 @@ const HouseholdTable = () => {
           aria-label="household table mode selection"
         >
           <ToggleButton value="all">
-            <label>Allen</label>
+            <label>Alle</label>
           </ToggleButton>
           <ToggleButton value="renter">
             <label>Mieter:Innen</label>
