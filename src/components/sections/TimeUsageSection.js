@@ -3,6 +3,7 @@ import IncSexEduBoxplot from '../BoxplotCharts/IncSexEduBoxplot';
 import IncSexFtptBoxplot from '../BoxplotCharts/IncSexFtptBoxplot';
 import IncSexHhtypeBoxplot from '../BoxplotCharts/IncSexHhtypeBoxplot';
 import IncSexGemgroBoxplot from '../BoxplotCharts/IncSexGemgroBoxplot';
+import IncSexSiBoxplot from '../BoxplotCharts/IncSexSiBoxplot';
 
 
 const TimeUsageSection = () => {
@@ -11,7 +12,9 @@ const TimeUsageSection = () => {
             <h2 className="section-header">Zeitverwendung</h2>
                 
                 <p className='paragraph'>
-                In Österreich – wie in vielen anderen Ländern – übernehmen Frauen nach wie vor einen überproportional großen Anteil an unbezahlter Arbeit, darunter Haushaltsführung, Kinderbetreuung und die Pflege von Angehörigen. Dies hat weitreichende finanzielle und soziale Konsequenzen.
+                    In Österreich – wie in vielen anderen Ländern – übernehmen Frauen nach wie vor einen überproportional großen Anteil an unbezahlter Arbeit, 
+                    darunter Haushaltsführung, Kinderbetreuung und die Pflege von Angehörigen. 
+                    Dies hat weitreichende finanzielle und soziale Konsequenzen.
                 </p>
 
                 <div className='paragraph'>
@@ -19,40 +22,52 @@ const TimeUsageSection = () => {
                     Da Frauen mehr Zeit für unbezahlte Arbeit aufwenden, haben sie oft geringere Erwerbsarbeitszeiten, was zu einem niedrigeren Haushaltseinkommen führt. Gleichzeitig beeinflusst dies das Residualeinkommen, denn:
                     </p>
                     <ul className="custom-list">
-                        <li>Frauen in Teilzeit oder mit unterbrochenen Erwerbsbiografien haben oft niedrigere Löhne und Sozialleistungen (z. B. Pensionen).</li>
                         <li>Wenn günstige Kinderbetreuung oder Pflegeeinrichtungen fehlen, sind Haushalte gezwungen, private Lösungen zu finanzieren oder eine Person (oft Frauen) bleibt zu Hause – was das verfügbare Einkommen weiter reduziert.</li>
                         <li>Zeitintensive Care-Arbeit kann dazu führen, dass Frauen weniger in Weiterbildungen oder Karrierechancen investieren können, was langfristig Einkommens- und Vermögensunterschiede verfestigt.</li>
+                        <li>Frauen in Teilzeit oder mit unterbrochenen Erwerbsbiografien haben oft niedrigere Löhne und Sozialleistungen (z. B. Pensionen).</li>
                     </ul>
                 </div>
 
                 <p className='paragraph'>
-                    Die Verfügbarkeit sozialer Infrastruktur wie Kinderbetreuungseinrichtungen, Ganztagsschulen und Pflegeangebote hat einen direkten Einfluss darauf, wie Erwerbs- und Care-Arbeit innerhalb von Haushalten aufgeteilt wird. In Regionen mit gut ausgebauter Infrastruktur können Frauen häufiger Vollzeit oder in besser bezahlten Positionen arbeiten, da die Betreuung von Kindern oder Angehörigen nicht vollständig auf private Ressourcen angewiesen ist.
+                    Die Verfügbarkeit sozialer Infrastruktur wie Kinderbetreuungseinrichtungen, Ganztagsschulen und Pflegeangebote hat einen direkten Einfluss darauf, 
+                    wie Erwerbs- und Care-Arbeit innerhalb von Haushalten aufgeteilt wird. 
+                    In Regionen mit gut ausgebauter Infrastruktur können Frauen häufiger Vollzeit oder in besser bezahlten Positionen arbeiten, 
+                    da die Betreuung von Kindern oder Angehörigen nicht vollständig auf private Ressourcen angewiesen ist.
                 </p>
 
                 <p className='paragraph'>
-                    Fehlt diese Infrastruktur, werden Haushalte nicht nur durch direkte Kosten (z. B. private Betreuung), sondern auch durch indirekte Einbußen belastet – etwa durch entgangenes Einkommen oder verringerte Karrieremöglichkeiten. Dies wirkt sich langfristig auf das Residualeinkommen und die wirtschaftliche Absicherung von Frauen aus.
+                    Fehlt diese Infrastruktur, werden Haushalte nicht nur durch direkte Kosten (z. B. private Betreuung), 
+                    sondern auch durch indirekte Einbußen belastet – etwa durch entgangenes Einkommen oder verringerte Karrieremöglichkeiten. 
+                    Dies wirkt sich langfristig auf das Residualeinkommen und die wirtschaftliche Absicherung von Frauen aus.
                 </p>
                 
                 <h2 className="content-header">Fokus Tageszeitnutzung nach Geschlecht und Alter</h2>
 
                 <p className='paragraph'>
-                    Schaut man sich die Zeitverwendung unterschiedlicher Altersklassen an, wird deutlich, dass sich Ungleichheiten bei bezahlter und unbezahlter Arbeit schon früh abzeichnen. Bereits bei den unter 20-Jährigen verrichten Mädchen und junge Frauen täglich rund 30 Minuten mehr unbezahlte Arbeit als Burschen und junge Männer. Diese Unterschiede verstärken sich mit zunehmendem Alter.
+                    Schaut man sich die Zeitverwendung unterschiedlicher Altersklassen an, wird deutlich, dass sich Ungleichheiten bei bezahlter und unbezahlter Arbeit schon früh abzeichnen. 
+                    Bereits bei den unter 20-Jährigen verrichten Mädchen und junge Frauen täglich rund 30 Minuten mehr unbezahlte Arbeit als Burschen und junge Männer. 
+                    Diese Unterschiede verstärken sich mit zunehmendem Alter.
                 </p>
 
                 <p className='paragraph'>
-                    In der Altersgruppe 21 bis 64 Jahre wird der Unterschied besonders deutlich: Frauen investieren täglich 3,75 Stunden in unbezahlte Arbeit, während Männer dafür im Schnitt nur 2 Stunden aufwenden. Dazu zählen Haushaltsaufgaben, Kinderbetreuung und die Pflege von Angehörigen – Tätigkeiten, die essenziell für die Gesellschaft sind, aber in klassischen Wirtschaftsstatistiken oft nicht sichtbar werden.
+                    In der Altersgruppe 21 bis 64 Jahre wird der Unterschied besonders deutlich: Frauen investieren täglich 3,75 Stunden in unbezahlte Arbeit, während Männer dafür im Schnitt nur 2 Stunden aufwenden. 
+                    Dazu zählen Haushaltsaufgaben, Kinderbetreuung und die Pflege von Angehörigen – Tätigkeiten, die essenziell für die Gesellschaft sind, aber in klassischen Wirtschaftsstatistiken oft nicht sichtbar werden.
                 </p>
 
                 <p className='paragraph'>
-                    Auch bei den über 65-Jährigen bleibt dieser Unterschied bestehen. Während Männer in dieser Altersgruppe ihre unbezahlte Arbeit leicht erhöhen, tragen Frauen weiterhin die Hauptlast der hauswirtschaftlichen und pflegerischen Tätigkeiten.
+                    Auch bei den über 65-Jährigen bleibt dieser Unterschied bestehen. 
+                    Während Männer in dieser Altersgruppe ihre unbezahlte Arbeit leicht erhöhen, tragen Frauen weiterhin die Hauptlast der hauswirtschaftlichen und pflegerischen Tätigkeiten.
                 </p>
 
                 <p className='paragraph'>
-                    Wie bereits erwähnt, zeigt sich bei der Erwerbsarbeit das umgekehrte Bild: Männer arbeiten im Durchschnitt länger und verdienen dadurch mehr. Das hat weitreichende Konsequenzen wie niedrigere Einkommen von Frauen, was ihr Residualeinkommen und ihre finanzielle Sicherheit langfristig beeinträchtigt. Langfristig wirken sich diese Unterschiede auf Pensionen und Altersarmut aus, da Frauen aufgrund ihrer Erwerbshistorie oft geringere Ansprüche haben.
+                    Wie bereits erwähnt, zeigt sich bei der Erwerbsarbeit das umgekehrte Bild: Männer arbeiten im Durchschnitt länger und verdienen dadurch mehr. 
+                    Das hat weitreichende Konsequenzen wie niedrigere Einkommen von Frauen, was ihr Residualeinkommen und ihre finanzielle Sicherheit auch später im Leben beeinträchtigt. 
+                    Langfristig wirken sich diese Unterschiede auf Pensionen und Altersarmut aus, da Frauen aufgrund ihrer Erwerbshistorie oft geringere Ansprüche haben.
                 </p>
 
                 <p className='paragraph'>
-                    Diese Dynamik zeigt, dass die ungleiche Verteilung von Zeit für Erwerbs- und unbezahlte Arbeit ein zentraler Faktor für wirtschaftliche Ungleichheit ist. In den nächsten Analysen konzentrieren wir uns daher gezielt auf die Altersgruppe 21 bis 64 Jahre, um die Auswirkungen dieser Verteilung noch genauer zu untersuchen.
+                    Diese Dynamik zeigt, dass die ungleiche Verteilung von Zeit für Erwerbs- und unbezahlte Arbeit ein zentraler Faktor für wirtschaftliche Ungleichheit ist. 
+                    In den nächsten Analysen konzentrieren wir uns daher gezielt auf die Altersgruppe 21 bis 64 Jahre, um die Auswirkungen dieser Verteilung noch genauer zu untersuchen.
                 </p>
 
                 <p style={{margin: '32px 0 0'}}>TODO: Plot Zeitverwendung nach Altersgruppe</p>
@@ -106,29 +121,34 @@ const TimeUsageSection = () => {
                 <IncSexHhtypeBoxplot alt="box plot visualizing income based on sex and household type"/>
                 
                 {/* Check if h2 or h3 */}
-                <h3 className="content-header">Gemeindegrößeklasse: Stadt oder Land? Wie der Wohnort die Arbeitsteilung beeinflusst</h3>
+                <h3 className="content-header">Gemeindegrößenklasse: Stadt oder Land? Wie der Wohnort die Arbeitsteilung beeinflusst</h3>
                 <p className='paragraph'>
                 Schaut man sich die Zeitverwendung in unterschiedlichen Gemeindegrößen an, zeigt sich ein klares Muster: Frauen in den ländlichsten Gemeinden leisten täglich mehr als eine Stunde mehr Care-Arbeit als Frauen in Wien. Je größer die Gemeinde, desto geringer wird der Anteil an unbezahlter Arbeit, den Frauen übernehmen.
                 </p>
                 <p className='paragraph'>
                 Bei Männern hingegen bleibt die Verteilung nahezu unverändert – egal, ob sie in einer kleinen Landgemeinde oder in einer Großstadt leben. Während Frauen auf dem Land also mehr Zeit für Haushalt, Kinderbetreuung und Pflege aufwenden, verändert sich der Anteil der männlichen Care-Arbeit kaum.
                 </p>
-
                 <p className='paragraph'>
                 Dies zeigt, dass ländliche Regionen weniger Infrastruktur für unterstützende Dienstleistungen bieten, wodurch mehr Care-Arbeit privat organisiert werden muss. Weniger verfügbare Kinderbetreuungsplätze, längere Wege zu Ärzt:innen oder soziale Erwartungen in kleinen Gemeinden können dazu führen, dass Frauen auf dem Land mehr unbezahlte Arbeit übernehmen und dadurch oft weniger Erwerbsarbeit leisten können.
                 </p>
 
                 <IncSexGemgroBoxplot alt="box plot visualizing income based on sex and community size"/>
 
-                <div className='paragraph' style={{margin: '32px 0 0'}}>
-                    <p>
-                    Zusammenhang zwischen der Erreichbarkeit sozialer Infrastruktur (z. B. Kinderbetreuung, Gesundheitsversorgung) und Zeitverwendung.
-                    </p>
-                    <ul className="custom-list">
-                        <li>Wie beeinflussen lange Pendelzeiten oder weite Wege zur Infrastruktur die tägliche Zeitaufteilung?</li>
-                        <li>Haben Regionen mit besser ausgebauter Infrastruktur geringere Zeitbelastungen für Hausarbeit und Mobilität?</li>
-                    </ul>
-                </div>
+                <h3 className="content-header">Erreichbarkeit von sozialer Infrastruktur: So beeinflusst sie die unbezahlte Arbeit</h3>
+                <p className='paragraph'>
+                    Wie stark die Verfügbarkeit und Erreichbarkeit sozialer Infrastruktur die Verteilung unbezahlter Arbeit beeinflusst, wird besonders deutlich beim Blick auf die Zeitverwendung: 
+                    In Gemeinden mit schlechter Infrastruktur zeigen sich kaum Unterschiede bei Männern – ihr Anteil an unbezahlter Arbeit bleibt relativ konstant. 
+                    Bei Frauen hingegen ist der Effekt deutlich spürbar: In unterversorgten Gemeinden leisten sie im Durchschnitt über 1,5 Stunden mehr unbezahlte Arbeit pro Tag als Frauen in gut ausgestatteten Regionen.
+                </p>
+                <p className='paragraph'>
+                    Diese Zahlen verdeutlichen, dass in ländlichen oder infrastrukturschwachen Gemeinden viele Betreuungs- und Versorgungsaufgaben – etwa Kinderbetreuung, Pflege oder Haushalt – 
+                    im privaten Rahmen organisiert werden müssen, da öffentliche Angebote fehlen oder schwer erreichbar sind. 
+                    Das führt nicht nur zu einer ungleichen Verteilung von Sorgearbeit zwischen den Geschlechtern, sondern auch zu einer Mehrbelastung von Frauen, 
+                    die ihren Alltag stärker um fehlende Dienstleistungen herum strukturieren müssen.
+                </p>
+
+                <IncSexSiBoxplot alt="box plot visualizing income based on sex and social infrastructure supply"/>
+
             </div>
     );
 };

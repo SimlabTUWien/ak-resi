@@ -2,13 +2,7 @@ import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import { Box } from "@mui/material";
 
-
 const svgUrl = `${process.env.PUBLIC_URL}/images/14_INC_SEX_SI_TU_DE.svg`;
-
-
-
-
-
 
 const dataMap = {
   fua: {
