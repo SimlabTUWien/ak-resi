@@ -1,18 +1,130 @@
 import React from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import OutlookChart from '../OutlookChart';
 
 const OutlookSection = () => {
+
+    const { language } = useLanguage();
+
+    const translations = {
+        DE: {
+            header: 'Was nun?',
+            content: [
+                {
+                    id: 1,
+                    text: (
+                    <>
+                        Soziale Ungleichheit lässt sich nicht allein durch Einkommensunterschiede erklären. 
+                        Zwar ist das Einkommen ein zentraler Faktor, der den finanziellen Handlungsspielraum bestimmt – doch ein vollständigeres Bild entsteht erst, 
+                        wenn man weitere Aspekte wie notwendige Ausgaben, den Zugang zu öffentlicher Infrastruktur und die zeitlichen Ressourcen von Menschen berücksichtigt.
+                    </>
+                    ),
+                },
+                {
+                    id: 2,
+                    text: (
+                    <>
+                        Diese Dimensionen wirken nicht isoliert, sondern sind eng miteinander verknüpft: 
+                        Wer wenig verdient, aber zusätzlich hohe Fixkosten trägt oder keinen Zugang zu unterstützenden Angeboten hat, ist stärker belastet – sowohl finanziell als auch organisatorisch. 
+                        Gleichzeitig kann ein eingeschränkter Zugang zu öffentlicher Infrastruktur die Notwendigkeit erhöhen, Zeit und Geld in private Lösungen zu investieren. 
+                        Auch die Verteilung der verfügbaren Zeit – etwa zwischen Erwerbsarbeit, unbezahlter Sorgearbeit und Erholung – ist ungleich verteilt und beeinflusst soziale Teilhabe.
+
+                    </>
+                    ),
+                },
+                {
+                    id: 3,
+                    text: (
+                    <>
+                       Das Zusammenspiel dieser Faktoren macht deutlich: Ungleichheit ist mehrdimensional. 
+                       Sie zeigt sich im Geld, das Menschen zur Verfügung haben, aber auch in ihrer Zeit, in ihrer Belastung durch Alltagsorganisation und in der Frage, wie stark sie auf eigene Ressourcen angewiesen sind. 
+                       Erst durch das Zusammendenken dieser Bereiche wird sichtbar, wie vielfältig Benachteiligungen sein können – und wie sie sich gegenseitig verstärken können.
+                    </>
+                    ),
+                },
+                {
+                    id: 4,
+                    text: (
+                    <>
+                        Ein vertieftes Verständnis sozialer Ungleichheit erfordert daher einen ganzheitlichen Blick auf Lebensrealitäten. 
+                        Nur wenn man diese Zusammenhänge ernst nimmt, können gerechte und wirksame Antworten auf soziale Herausforderungen gefunden werden.
+                    </>
+                    ),
+                },
+                {
+                    id: 5,
+                    isChart: true,
+                }
+            ]
+        },
+        EN: {
+            header: 'Was nun?',
+            content: [
+                {
+                    id: 1,
+                    text: (
+                    <>
+                        Soziale Ungleichheit lässt sich nicht allein durch Einkommensunterschiede erklären. 
+                        Zwar ist das Einkommen ein zentraler Faktor, der den finanziellen Handlungsspielraum bestimmt – doch ein vollständigeres Bild entsteht erst, 
+                        wenn man weitere Aspekte wie notwendige Ausgaben, den Zugang zu öffentlicher Infrastruktur und die zeitlichen Ressourcen von Menschen berücksichtigt.
+                    </>
+                    ),
+                },
+                {
+                    id: 2,
+                    text: (
+                    <>
+                        Diese Dimensionen wirken nicht isoliert, sondern sind eng miteinander verknüpft: 
+                        Wer wenig verdient, aber zusätzlich hohe Fixkosten trägt oder keinen Zugang zu unterstützenden Angeboten hat, ist stärker belastet – sowohl finanziell als auch organisatorisch. 
+                        Gleichzeitig kann ein eingeschränkter Zugang zu öffentlicher Infrastruktur die Notwendigkeit erhöhen, Zeit und Geld in private Lösungen zu investieren. 
+                        Auch die Verteilung der verfügbaren Zeit – etwa zwischen Erwerbsarbeit, unbezahlter Sorgearbeit und Erholung – ist ungleich verteilt und beeinflusst soziale Teilhabe.
+
+                    </>
+                    ),
+                },
+                {
+                    id: 3,
+                    text: (
+                    <>
+                       Das Zusammenspiel dieser Faktoren macht deutlich: Ungleichheit ist mehrdimensional. 
+                       Sie zeigt sich im Geld, das Menschen zur Verfügung haben, aber auch in ihrer Zeit, in ihrer Belastung durch Alltagsorganisation und in der Frage, wie stark sie auf eigene Ressourcen angewiesen sind. 
+                       Erst durch das Zusammendenken dieser Bereiche wird sichtbar, wie vielfältig Benachteiligungen sein können – und wie sie sich gegenseitig verstärken können.
+                    </>
+                    ),
+                },
+                {
+                    id: 4,
+                    text: (
+                    <>
+                        Ein vertieftes Verständnis sozialer Ungleichheit erfordert daher einen ganzheitlichen Blick auf Lebensrealitäten. 
+                        Nur wenn man diese Zusammenhänge ernst nimmt, können gerechte und wirksame Antworten auf soziale Herausforderungen gefunden werden.
+                    </>
+                    ),
+                },
+                {
+                    id: 5,
+                    isChart: true,
+                }
+            ]
+        }
+    };
+
+    const section = translations[language] || translations.DE;
+
     return (
         <div>
-            <h2 className="section-header">Was nun?</h2>
-
-            <p className='paragraph'>
-                Ungleichheit ist mehr als nur eine Frage des Einkommens. Wer wie viel verdient, bestimmt zwar den monetären Spielraum, doch erst im Zusammenspiel mit notwendigen Ausgaben, aufgewandter Zeit (vor allem für Erwerbsarbeit und unbezahlter Arbeit) und öffentlicher sozialer Infrastruktur entsteht ein breiteres Bild sozialer Ungleichheit. Unser Projekt zeigt: Diese Faktoren sind nicht isoliert zu betrachten. Sie verstärken sich gegenseitig und beeinflussen. Um nachhaltige Lösungen zu entwickeln, muss Politik diese Zusammenhänge anerkennen und gezielt eingreifen.
-            </p>
-
-            <div className='outlook-chart'>
-                <OutlookChart />
-            </div>
+            <h2 className="section-header">{section.header}</h2>
+            {section.content.map((item) =>
+                item.isChart ? (
+                    <div className='outlook-chart' key={item.id}>
+                    <OutlookChart />
+                </div>
+                ) : (
+                <p key={item.id} className={`paragraph ${item.className || ''}`}>
+                    {item.text}
+                </p>
+                )
+            )}
         </div>
     );
 };
