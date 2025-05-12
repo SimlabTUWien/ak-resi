@@ -29,6 +29,11 @@ label {
   max-width: 1000px;
 }
 
+.si-scatter-plot-container img {
+  width: 100%;
+  max-width: 868px;
+}
+
 .ftpt-box-plot-container img {
   width: 100%;
   max-width: 768px;
