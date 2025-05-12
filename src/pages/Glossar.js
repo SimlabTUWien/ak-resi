@@ -40,14 +40,14 @@ export default function Glossar() {
         </div>
 
         <div className="glossar-element" id="communityClassSize">
-          <h2>Gemeindegrößeklasse</h2>
+          <h2>Gemeindegrößenklasse</h2>
           <p className="paragraph-glossar">
             Kategorisierung von Gemeinden nach Einwohnerzahl zur statistischen Analyse.
           </p>
         </div>
 
         <div className="glossar-element" id="gini">
-          <h2>Gini-Index</h2>
+          <h2>Gini-Index (Koeffizient)</h2>
           <p className="paragraph-glossar">
             Kennzahl zur Messung der Einkommensungleichheit; Werte zwischen 0 (völlige Gleichheit) und 1 (maximale Ungleichheit).
           </p>
