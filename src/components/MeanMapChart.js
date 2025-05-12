@@ -24,47 +24,47 @@ const dataMap = {
 
 
 const tooltipMap = {
-    "v-2500": ["Mittleres Residualeinkommen >2700", "Gemeindegrößenklasse nach Einwohner:innenzahl <2500"],
-    "v-2501": ["Mittleres Residualeinkommen >2700", "Gemeindegrößenklasse nach Einwohner:innenzahl 2501 - 10.000"],
-    "v-10001": ["Mittleres Residualeinkommen 2500 - 2699", "Gemeindegrößenklasse nach Einwohner:innenzahl 10.001 - 100.000"],
+    "v-2500": ["Resiualeinkommen (Median) >2700", "Gemeindegrößenklasse <2500"],
+    "v-2501": ["Resiualeinkommen (Median) >2700", "Gemeindegrößenklasse 2501 - 10.000"],
+    "v-10001": ["Resiualeinkommen (Median) 2500 - 2699", "Gemeindegrößenklasse 10.001 - 100.000"],
 };
 
 const textinfoMap = {
   "b": {
     title: "Burgenland",
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+    text: "Im Burgenland liegt das mediane Residualeinkommen der Haushalte bei 1.777 €. In Eisenstadt überschreitet es mit knapp über 1.900 € den Landesdurchschnitt. Am niedrigsten ist das Einkommen in Gemeinden mit 2.500 bis 10.000 Einwohner:innen – dort beträgt der Median etwas über 1.600 €. In den kleinsten Gemeinden (unter 2.500 Einwohner:innen) liegt es mit 1.821 € leicht unter dem Wert von Eisenstadt."
   },
   "k": {
     title: "Kärnten",
-    text: "Informationen über Kärnten"
+    text: "In Klagenfurt beträgt das mittlere Residualeinkommen rund 1.670 €. Den höchsten Medianwert verzeichnen Gemeinden mit 10.000 bis 100.000 Einwohner:innen mit rund 1.820 €. Die niedrigsten Einkommen finden sich in den kleinsten Gemeinden unter 2.500 Einwohner:innen."
   },
   "n": {
     title: "Niederösterreich",
-    text: "Informationen über Niederösterreich"
+    text: "Die höchsten Residualeinkommen in Niederösterreich, inklusive St. Pölten, werden in größeren Gemeinden erzielt – mit etwas über 2.100 €. Knapp darunter liegen die kleinsten Gemeinden, während mittlere Gemeinden rund 1.940 € erreichen. Insgesamt zeigen sich hier nur geringe Unterschiede zwischen den Gemeindetypen."
   },
   "o": {
     title: "Oberösterreich",
-    text: "Informationen über Oberösterreich"
+    text: "In Linz ist das mittlere Residualeinkommen mit etwa 1.460 € das niedrigste im Bundesland. Deutlich höhere Werte erreichen hingegen kleinere Gemeinden und solche mit 2.501 bis 10.000 Einwohner:innen – jeweils mit über 2.000 €."
   },
   "s": {
     title: "Salzburg",
-    text: "Informationen über Salzburg"
+    text: "Das höchste Residualeinkommen in Salzburg wird sowohl in Salzburg-Stadt als auch in mittelgroßen Gemeinden (2.501–10.000 Einwohner:innen) mit über 1.800 € erzielt. Demgegenüber weisen größere Gemeinden (über 10.000 bis 100.000 Einwohner:innen) mit knapp unter 1.530 € die niedrigsten Werte auf."
   },
   "st": {
     title: "Steiermark",
-    text: "Informationen über Steiermark"
+    text: "In Graz liegt das mittlere Residualeinkommen unter 1.580 € und damit am niedrigsten im Bundesland. Die übrigen Gemeindetypen unterscheiden sich nur geringfügig – mit Werten zwischen 1.738 € (in den kleinsten Gemeinden) und etwa 1.770 € (in kleinen und mittelgroßen Gemeinden)."
   },
   "t": {
     title: "Tirol",
-    text: "Informationen über Tirol"
+    text: "In Innsbruck sowie in den kleineren und kleinsten Gemeinden sind die mittleren Residualeinkommen weitgehend vergleichbar. Nur in mittelgroßen Gemeinden (10.000 bis 100.000 Einwohner:innen) weicht der Wert deutlich ab und liegt bei rund 1.470 €."
   },
   "v": {
     title: "Vorarlberg",
-    text: "Informationen über Vorarlberg"
+    text: "Die höchsten Residualeinkommen in Vorarlberg finden sich in kleinen und kleinsten Gemeinden – zwischen 2.050 € und 2.140 €. In größeren Gemeinden, einschließlich Bregenz, sinkt der Median deutlich und liegt unter 1.750 €."
   },
   "w": {
     title: "Wien",
-    text: "Informationen über Wien"
+    text: "Wien verzeichnet das niedrigste mediane Residualeinkommen aller Bundesländer – es liegt bei knapp 1.550 €."
   }
 }
 
