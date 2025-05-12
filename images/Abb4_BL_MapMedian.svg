@@ -379,9 +379,9 @@
   <text class="mm-cls-12" transform="translate(429.7 182.9)"><tspan x="0" y="0">&lt; 2500</tspan></text>
   <text class="mm-cls-12" transform="translate(612.32 166.58)"><tspan x="0" y="0">2501 -</tspan></text>
   <text class="mm-cls-12" transform="translate(609.54 197.78)"><tspan x="0" y="0">10.000</tspan></text>
-  <text class="mm-cls-11" transform="translate(459.23 79.57)"><tspan x="0" y="0">Gemeindegrößeklassen</tspan></text>
-  <text class="mm-cls-11" transform="translate(439.3 109.57)"><tspan x="0" y="0">nach Einwohner:innenzahl</tspan></text>
-  <text class="mm-cls-7" transform="translate(59.17 76.94)"><tspan x="0" y="0">Mittle</tspan><tspan class="mm-cls-1" x="61.91" y="0">r</tspan><tspan x="69.73" y="0">es </tspan><tspan class="mm-cls-31" x="97.9" y="0">R</tspan><tspan x="111.34" y="0">esidualeinkommen</tspan></text>
+  <text class="mm-cls-11" transform="translate(459.23 76.57)"><tspan x="0" y="0">Gemeindegrößenklassen</tspan></text>
+  <text class="mm-cls-11" transform="translate(453 106.57)"><tspan x="0" y="0">nach Einwohner:innenzahl</tspan></text>
+  <text class="mm-cls-7" transform="translate(59.17 76.94)"><tspan x="0" y="0">Residualeinkommen (Median)</tspan></text>
   <text id="1700" class="mm-cls-10" transform="translate(180.8 128.46)"><tspan x="0" y="0">&lt;1.700 EUR</tspan></text>
   <text id="1899" class="mm-cls-10" transform="translate(180.8 166.46)"><tspan x="0" y="0">1.700 - 1.899</tspan></text>
   <text id="2099" class="mm-cls-10" transform="translate(180.8 204.46)"><tspan x="0" y="0">1.900 - 2.099</tspan></text>
