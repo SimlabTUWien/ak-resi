@@ -59,7 +59,7 @@ const BackgroundSection = () => {
                     id: 5,
                     text: (
                     <>
-                        Genau dieses Ziel hatte das <span className="boldText">Re:Si:Ze</span> Projekt,
+                        Genau dieses Ziel hatte das <span className="boldText">Re:sI:Ze</span> Projekt,
                         das im Auftrag der Arbeiterkammer Wien an der TU Wien am Institut für Raumplanung durchgeführt wurde.
                         Auf dieser Website findet ihr die Ergebnisse der Untersuchung dieser Ebenen in Österreich.
                     </>
@@ -127,7 +127,7 @@ const BackgroundSection = () => {
                 id: 5,
                 text: (
                 <>
-                    This is exactly the aim of the <span className="boldText">Re:Si:Ze</span> project,
+                    This is exactly the aim of the <span className="boldText">Re:sI:Ze</span> project,
                     which was carried out on behalf of the Vienna Chamber of Labour at the TU Wien’s Institute of Spatial Planning.
                     On this website, you’ll find the results of the investigation into these dimensions in Austria.
                 </>
