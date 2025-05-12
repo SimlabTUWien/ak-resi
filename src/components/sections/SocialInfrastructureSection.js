@@ -131,6 +131,29 @@ const SocialInfrastructureSection = () => {
 
             {/* SI Table*/}
             <SocialInfrastructureTable/>
+
+            <h2 className="content-header">Verknüpfung zwischen Einkommen, Residualeinkommen und sozialer Infrastruktur:</h2>
+
+            <p className='paragraph'>
+                Die nachstehende Grafik vergleicht Haushalte entlang dreier Dimensionen: dem verfügbaren Einkommen (linke Achse), dem Residualeinkommen (rechte Achse) – also dem Einkommen nach Abzug fixer Ausgaben wie Wohnen – sowie der Erreichbarkeit sozialer Infrastruktur. Die roten Linien markieren jeweils den Medianwert jeder Dimension und dienen als Schwelle zwischen „überdurchschnittlich“ und „unterdurchschnittlich“.
+            </p>
+
+            <p className='paragraph'>
+                Auf den ersten Blick scheinen die Verteilungen ähnlich, doch ein genauerer Blick offenbart signifikante Verschiebungen, sobald man Residualeinkommen und Infrastrukturzugang gemeinsam betrachtet:
+            </p>
+
+            <p className='paragraph'>
+                Über 100 Haushalte, die beim reinen Einkommen über dem Median liegen, rutschen unter den Median, wenn man das Residualeinkommen berücksichtigt. Das bedeutet: Obwohl diese Haushalte relativ gut verdienen, bleiben ihnen – nach Abzug fixer Ausgaben – unterdurchschnittlich geringe Mittel zur freien Verfügung. Diese finanzielle Enge kann durch mangelnden Zugang zu unterstützender Infrastruktur noch verstärkt werden.
+            </p>
+            
+            <p className='paragraph'>
+                Umgekehrt zeigt sich bei rund 130 Haushalten, dass sie trotz unterdurchschnittlichem Einkommen ein überdurchschnittliches Residualeinkommen aufweisen – sie verfügen also über vergleichsweise geringe Fixkosten. Gleichzeitig haben sie guten Zugang zu sozialer Infrastruktur. Diese Kombination kann etwa durch leistbaren Wohnraum und gut erreichbare öffentliche Dienstleistungen ermöglicht werden.
+            </p>
+
+            <div className="image-container si-scatter-plot-container">
+                <img src={`${process.env.PUBLIC_URL}/images/15_INC_RESI_SOCIAL_INFR_DE.png`} alt="side-by-side scatter plot displaying a relationship between Infrastructure Provision and income related variables" />
+            </div>
+
         </div>
     );
 };
