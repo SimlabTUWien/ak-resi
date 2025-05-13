@@ -49,14 +49,14 @@ const labels = {
     q1: "1. Quintil",
     median: "Median",
     q3: "3. Quintil",
-    participants: "Gruppengröße"
+    n: "Gruppengröße"
   },
   EN: {
     extent: "Extent of Employment",
     q1: "1st Quintile",
     median: "Median",
     q3: "3rd Quintile",
-    participants: "Participants"
+    n: "Group Size"
   }
 };
 
@@ -135,7 +135,7 @@ const IncSexFtptBoxplot = () => {
                       <div>${l.q1}: ${data.q1}</div>
                       <div>${l.median}: ${data.median}</div>
                       <div>${l.q3}: ${data.q3}</div>
-                      <div>${l.participants}: ${data.n}</div>
+                      <div>${l.n}: ${data.n}</div>
                     `)
                     .style("visibility", "visible")
                     .style("top", `${event.pageY - 40}px`)
