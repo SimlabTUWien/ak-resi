@@ -34,7 +34,7 @@ const SocialInfrastructureSection = () => {
 
     return (
         <div>
-            <h2 className="section-header">Soziale Infrastruktur in Österreich</h2>
+            <h2 className="section-header">Soziale Infrastruktur</h2>
             <p className='paragraph'>
             <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">Soziale Infrastrukturen</GlossaryTerm> wie Kindergärten, Schulen, Gesundheits- und Pflegeeinrichtungen sind essenziell für eine funktionierende Gesellschaft. Sie ermöglichen Bildung, Gesundheit und soziale Teilhabe – unabhängig vom Einkommen. Doch ihr Zugang und ihre Qualität sind nicht überall gleich. Regionale Unterschiede und fehlende Angebote können Haushalte zusätzlich belasten und Ungleichheiten verstärken.
             </p>

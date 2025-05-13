@@ -71,6 +71,7 @@ const theme = createTheme({
         root: {
           "& > label": {
             display: "inline-block",
+            hyphens: "manual",
             transform: "translateY(2px)",
             fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
           },
