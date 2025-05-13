@@ -69,25 +69,34 @@ html {
   text-align: center;
   padding: 0 8px;
   z-index: 3;
-  margin-top: 50vh;
+  margin-top: 55vh;
 }
   
 .logo {
   width: 320px;
   z-index: 2;
 }
+
+h1, h2, h3 {
+  padding: 0;
+}
   
-.header-title {
+.header-acronym  {
   font-size: 4rem;
   color: #000000;
   margin-bottom: 0;
 }
-    
-.header-subtitle {
+
+.header-title {
   font-size: 2rem;
   color: #1b1b1b;
   margin-top: 8px;
   font-variation-settings: "slnt" 0, "wdth" 100, "wght" 600;
+}
+    
+.header-subtitle {
+  color: #1b1b1b;
+  font-size: 1.8rem;
 }
 
 @media (max-width: 1460px) { 
@@ -114,29 +123,72 @@ html {
     margin-bottom: -8vh;
   }
 
-  .header-title {
+  .header-acronym {
     font-size: 3rem;
   }
 
-  .header-subtitle {
+  .header-title {
     font-size: 1.8rem;
   }
+/* 
+  .header-subtitle {
+    font-size: 1.8rem;
+  } */
 }
-    
+
 @media (max-width: 680px) {
   
   /* .titles-container {
     margin-bottom: -15vh;
   } */
   
+  .header-title {
+    /* display: none; */
+    font-size: 1.3rem;
+    margin-top: 0;
+  }
+
   .header-subtitle {
     display: none;
   }
 }
+
+@media (max-width: 340px) { 
+  .header-title {
+    font-size: 1.15rem;
+  }
+}
+
   
 @media (max-width: 320px) {
   .logo {
     width: 260px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1200px) {
+  .header-image {
+        width: 90%;
+        height: 90%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 900px) {
+  .header-image {
+        width: 70%;
+        height: 80%;
+        object-fit: cover;
+        object-position: center center;
+  }
+
+  .header-title {
+    display: none;
+  }
+
+  .scroll-indicator {
+    display: none;
   }
 }
     

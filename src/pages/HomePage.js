@@ -53,11 +53,11 @@ export default function HomePage () {
             <section className="title-section" id="intro">
 
             <h1 className="title"> {t.title} </h1>
-            <h3> {t.subTitle} </h3>
+            {/* <h3> {t.subTitle} </h3>
 
             <div className='image-container logo-large'>
                 <img style={{width: '240px'}} src={`${process.env.PUBLIC_URL}/images/Logo_project_icons.png`} alt="showing the four core aspects of the project" />
-            </div>
+            </div> */}
             </section>
         </div>
 

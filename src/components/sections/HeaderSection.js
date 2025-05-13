@@ -13,9 +13,11 @@ export default function HeaderSection() {
   const translations = {
     DE: {
         title: "Perspektiven auf Ungleichheit in Österreich",
+        subTitle: "Residualeinkommen, soziale Infrastruktur und Zeitverwendung",
     },
     EN: {
         title: "Perspectives on Inequality in Austria",
+        subTitle: "Residual Income, Social Infrastructure and Time Usage",
     }
   };
 
@@ -61,9 +63,12 @@ export default function HeaderSection() {
            
 
           <div className="titles-container">
-            {/* <img src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Logo" className="logo" />  */}
-            <h1 className="header-title">Re:sI:Ze</h1>
-            <p className="header-subtitle"> {t.title} </p>
+            <h1 className="header-acronym">Re:sI:Ze</h1>
+
+            <h2 className="header-title"> {t.subTitle} </h2>
+            
+            {/* <h2 className="header-title"> {t.title} </h2> */}
+            {/* <h3 className="header-subtitle"> {t.subTitle} </h3> */}
           </div>
 
          <div className="header-image-wrapper">
