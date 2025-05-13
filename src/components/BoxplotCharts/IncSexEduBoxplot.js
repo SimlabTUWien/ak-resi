@@ -105,7 +105,7 @@ const IncSexEduBoxplot = () => {
                       <div>1. Quintil: ${data.q1}</div>
                       <div>Median: ${data.median}</div>
                       <div>3. Quintil: ${data.q3}</div>
-                      <div>Teilnehmende: ${data.n}</div>
+                      <div>Gruppengröße: ${data.n}</div>
                     `)
                     .style("visibility", "visible")
                     .style("top", `${event.pageY - 40}px`)

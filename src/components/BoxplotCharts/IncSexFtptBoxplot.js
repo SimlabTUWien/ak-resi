@@ -49,7 +49,7 @@ const labels = {
     q1: "1. Quintil",
     median: "Median",
     q3: "3. Quintil",
-    participants: "Teilnehmende"
+    participants: "Gruppengröße"
   },
   EN: {
     extent: "Extent of Employment",
