@@ -89,14 +89,13 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
         const chartInstance2 = echarts.init(chartRef2.current);
         const legendInstance = echarts.init(legendChartRef.current);
 
-        const visibleCategories = new Set(categories); // all visible initially
+        const visibleCategories = new Set(categories);
 
         const updateCharts = () => {
             chartInstance1.setOption(getChartOptions("Alle Haushalte", selectedDataAll, visibleCategories));
             chartInstance2.setOption(getChartOptions("Nur Mieter:innen", selectedDataRenter, visibleCategories));
         };
 
-        // Initialize main charts
         updateCharts();
 
         // Legend chart setup
@@ -135,7 +134,6 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
             }))
         });
 
-        // Legend click handler
         legendInstance.on("legendselectchanged", (event) => {
             const category = event.name;
             if (event.selected[category]) {
