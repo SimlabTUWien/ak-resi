@@ -21,6 +21,8 @@ const ResidualIncomeSection = () => {
     const [medianExpenditureMode, setMedianExpenditureMode] = useState("all");
     const [meanMapMode, setMeanMapMode] = useState("all");
     const [quintilExpenditureMode, setQuintilExpenditureMode] = useState("absolute");
+    const [educationChartMode, setEducationChartMode] = useState("extent_empl");
+
     
     const handleToggleModeChange = (type, newValue) => {
         if (newValue !== null) {
@@ -28,6 +30,8 @@ const ResidualIncomeSection = () => {
                 setMedianExpenditureMode(newValue);
             } else if (type === "quintil_exp") {
                 setQuintilExpenditureMode(newValue);
+            } else if (type === "education") {
+                setEducationChartMode(newValue);
             } else if (type === "mean_map") {
                 setMeanMapMode(newValue);
             } 
@@ -236,7 +240,38 @@ const ResidualIncomeSection = () => {
             </p>
 
             {/*Education Barcharts*/}
-            <EducationCharts />
+            <Box
+                sx={{
+                    background: "#f4f4f4",
+                    padding: 2,
+                    borderRadius: 1,
+                    boxShadow: 1,
+                    marginTop: 3,
+                    marginBottom: 3,
+                }}
+            >   
+                <div className="toggle-container">
+                    <ToggleButtonGroup
+                    className="residual-income-toggle education-chart-toggle"
+                    value={educationChartMode}
+                    exclusive
+                    onChange={(_, newValue) => handleToggleModeChange("education", newValue)}
+                    aria-label="education charts mode selection"
+                    >
+                        <ToggleButton value="extent_empl"><label>Beschäftigungs&shy;art</label></ToggleButton>
+                        <ToggleButton value="income_source"><label>Einkommens&shy;quelle</label></ToggleButton>
+                    </ToggleButtonGroup>
+                </div>
+
+                <div className="education-charts-container">
+                    <EducationCharts
+                        mode={educationChartMode} 
+                        isWrapped={isWrapped}
+                        setIsWrapped={setIsWrapped}
+                    />
+                </div>
+            </Box>
+            
 
             <p className='paragraph'>
                 Höhere Bildungsabschlüsse und Vollzeiterwerbstätigkeit geben den Haushalten deutlich mehr finanziellen Spielraum. Die Bedeutung von Bildung geht weit über den Abschluss einer Schule oder Universität hinaus – sie beeinflusst direkt die finanzielle Sicherheit eines Haushalts und die Höhe des <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommens</GlossaryTerm>.

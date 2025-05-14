@@ -1,39 +1,28 @@
-import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
-import { ToggleButton, ToggleButtonGroup, Box } from "@mui/material";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import * as echarts from "echarts";
 
-
-const EducationCharts = () => {
-    const [educationChartMode, setChartMode] = useState("default");
-
-    const [isWrapped, setIsWrapped] = useState(false);
-
+const EducationCharts = ({ mode, isWrapped, setIsWrapped }) => {
     const chartRef1 = useRef(null);
     const chartRef2 = useRef(null);
+    const legendChartRef = useRef(null);
+    const [parentWidth, setParentWidth] = useState(window.innerWidth);
     const parentRef = useRef(null);
 
-    const [parentWidth, setParentWidth] = useState(window.innerWidth);
-
-    const handleToggleModeChange = (_, newValue) => {
-        if (newValue !== null) {
-            setChartMode(newValue);
-        }
-    };
-
-    // const colors = ['#FF7F7F', '#4CAF50', '#00BCD4', '#BA68C8'];
-    // const colors = ["#E45A50", "#66B35A", "#3A7BFA", "#C855B9"];
-    const colors = useMemo(() => ['#FF7F7F', "#66B35A", '#00BCD4', "#C855B9"], []);
-
-    
-
-    const defaultData = useMemo(() => [
-        { education: "Pflichtschule", shortLabel: "Pflichtschule", income: 927 },
-        { education: "Sekundarstufe I (ohne Matura)", shortLabel: "Sekundarstufe I", income: 1623 },
-        { education: "Sekundarstufe II (mit Matura)", shortLabel: "Sekundarstufe II", income: 2056 },
-        { education: "Postsekundäre oder tertiäre Ausbildung", shortLabel: "Postsekundär/Tertiär", income: 2453 }
+    const educationLevels = useMemo(() => [
+        "Pflichtschule",
+        "Sekundarstufe I (ohne Matura)",
+        "Sekundarstufe II (mit Matura)",
+        "Postsekundäre oder tertiäre Ausbildung"
     ], []);
 
-    const extentEmploymentData = useMemo(() => [
+    const educationData = useMemo(() => [
+        { education: "Pflichtschule", income: 927 },
+        { education: "Sekundarstufe I (ohne Matura)", income: 1623 },
+        { education: "Sekundarstufe II (mit Matura)", income: 2056 },
+        { education: "Postsekundäre oder tertiäre Ausbildung", income: 2453 }
+    ], []);
+
+    const employmentExtentData = useMemo(() => [
         { education: "Pflichtschule", employment: "Voll- und Teilzeit", income: 1219 },
         { education: "Pflichtschule", employment: "Nur Vollzeit", income: 1101 },
         { education: "Pflichtschule", employment: "Nur Teilzeit", income: 784 },
@@ -52,280 +41,285 @@ const EducationCharts = () => {
         { education: "Pflichtschule", source: "Erwerbsarbeit (Angestellt)", income: 1190 },
         { education: "Pflichtschule", source: "Pension", income: 966 },
         { education: "Pflichtschule", source: "Selbstständigkeit", income: 1853 },
-        { education: "Pflichtschule", source: "Arbeitslos", income: 238 },
+        { education: "Pflichtschule", source: "Transferleistungen", income: 238 },
         { education: "Sekundarstufe I (ohne Matura)", source: "Erwerbsarbeit (Angestellt)", income: 1913 },
         { education: "Sekundarstufe I (ohne Matura)", source: "Pension", income: 1442 },
         { education: "Sekundarstufe I (ohne Matura)", source: "Selbstständigkeit", income: 2391 },
-        { education: "Sekundarstufe I (ohne Matura)", source: "Arbeitslos", income: 276 },
+        { education: "Sekundarstufe I (ohne Matura)", source: "Transferleistungen", income: 276 },
         { education: "Sekundarstufe II (mit Matura)", source: "Erwerbsarbeit (Angestellt)", income: 2203 },
         { education: "Sekundarstufe II (mit Matura)", source: "Pension", income: 1954 },
         { education: "Sekundarstufe II (mit Matura)", source: "Selbstständigkeit", income: 2400 },
-        { education: "Sekundarstufe II (mit Matura)", source: "Arbeitslos", income: 358 },
+        { education: "Sekundarstufe II (mit Matura)", source: "Transferleistungen", income: 358 },
         { education: "Postsekundäre oder tertiäre Ausbildung", source: "Erwerbsarbeit (Angestellt)", income: 2638 },
         { education: "Postsekundäre oder tertiäre Ausbildung", source: "Pension", income: 2302 },
         { education: "Postsekundäre oder tertiäre Ausbildung", source: "Selbstständigkeit", income: 2224 },
-        { education: "Postsekundäre oder tertiäre Ausbildung", source: "Arbeitslos", income: 442 }
+        { education: "Postsekundäre oder tertiäre Ausbildung", source: "Transferleistungen", income: 442 }
     ], []);
 
+
+    const colors = useMemo(() => ['#FF7F7F', "#66B35A", '#00BCD4', "#C855B9"], []);
     const maxWidth = "500px";
 
-    const setDefaultChartOptions = useCallback(() => ({
-        responsive: true,
-        title: { 
-            text: parentWidth >= 350 
-            ? "Höchste abgeschlossene Bildung" 
-            : "Höchste\nabgeschlossene Bildung",
-            left: "center", 
-            top: parentWidth >= 500 ? 0 : -5 
-        },
-        xAxis: parentWidth >= 500 ? {
-            type: 'category',
-            data: defaultData.map(item => item.education),
-            name: "Ausbildung",
-            nameLocation: "middle",
-            nameGap: 30,
-            // nameTextStyle: { fontSize: 16, fontWeight: "bold", padding: [0, 0, 0, 298] },
-            nameTextStyle: { fontSize: 16, fontWeight: "bold"},
-            // axisLabel: { 
-            //     fontSize: 12,
-            //     rotate: 12,
-            //     interval: 0
-            // }
-            axisLabel: { 
-                show: false,
-            }
-        } : {
-            type: 'category',
-            data: defaultData.map(item => item.education),
-            name: "Ausbildung",
-            nameLocation: "middle",
-            nameGap: 20,
-            nameTextStyle: { fontSize: 15, fontWeight: "bold" },
-            axisLabel: { 
-                show: false,
-            }
-        },
-        yAxis: parentWidth >= 500 ? {
-            type: "value",
-            name: "Residualeinkommen (Median)",
-            nameLocation: "center", 
-            nameGap: 50, 
-            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
-            axisLabel: { fontSize: 14 },
-        } : {
-            type: "value",
-            name: parentWidth >= 350 ? "Residualeinkommen (Median)" : "Residualeinkommen\n(Median)",
-            nameTextStyle: { fontSize: 15, fontWeight: "bold", padding: parentWidth >= 350 ? [0, 0, 0, 130] : [0, 0, 0, 60] },
-            axisLabel: { fontSize: 14 },
-        },
-        series: defaultData.map((item, index) => ({
-            name: item.education, 
-            type: 'bar',
-            stack: item,
-            data: defaultData.map((dataItem, dataIndex) =>
-                dataIndex === index ? dataItem.income : 0
-            ),
-            itemStyle: { color: colors[index] }
-        })),
-        legend: {
-            show: parentWidth >= 270 ? true : false,   
-            top: "bottom",
-            left: "center",
-            data: defaultData.map(item => item.education),
-            orient: "vertical",
-            textStyle: {
-                rich: {
-                    customStyle: {
-                        fontSize: 14,
-                        fontWeight: "normal",
-                        padding: [3, 0, 0, 2],
+    const getEducationChartOptions = useCallback((visibleEducationLevels) => {
+        const filteredEducationData = educationData.filter(item => visibleEducationLevels.has(item.education));
+
+        return {
+            responsive: true,
+            title: { 
+                text: parentWidth >= 350 
+                    ? "Höchste abgeschlossene Bildung" 
+                    : "Höchste\nabgeschlossene Bildung",
+                left: "center", 
+                top: parentWidth >= 500 ? 0 : -5 
+            },
+            tooltip: {
+                trigger: "item",
+                formatter: (params) => {
+                    return `${params.marker} ${params.name}: <b>${params.value}€</b>`;
+                },
+                confine: true,
+                extraCssText: "max-width: 100vw; text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;",
+                textStyle: {
+                    fontSize: 15
+                },
+            },
+            legend: { show: false },
+            grid: parentWidth >= 535
+                ? { left: "14%", bottom: "15%", right: "5%" }
+                : parentWidth >= 490
+                ? { left: "16%", bottom: "15%", right: "5%" }
+                : parentWidth >= 450
+                ? { left: "15%", bottom: "15%", right: "5%" }
+                : parentWidth >= 350
+                ? { left: "16%", bottom: "15%", right: "5%" }
+                : { top: "20%", left: "16%", bottom: "15%", right: "5%" },
+             xAxis: {
+                type: 'category',
+                data: filteredEducationData.map(item => item.education),
+                name: "Bildungsniveau",
+                nameLocation: "middle",
+                nameGap: parentWidth >= 500 ? 30 : 20,
+                nameTextStyle: {
+                    fontSize: parentWidth >= 500 ? 16 : 15,
+                    fontWeight: "bold"
+                },
+                axisLabel: { show: false },
+                axisTick: {show: false }
+            },    
+            yAxis: parentWidth >= 500 ? {
+                type: "value",
+                name: "Residualeinkommen (Median)",
+                nameLocation: "center", 
+                nameGap: 50, 
+                nameTextStyle: { fontSize: 16, fontWeight: "bold" },
+                axisLabel: { fontSize: 14 },
+            } : {
+                type: "value",
+                name: parentWidth >= 350 ? "Residualeinkommen (Median)" : "Residualeinkommen\n(Median)",
+                nameTextStyle: { fontSize: 15, fontWeight: "bold", padding: parentWidth >= 350 ? [0, 0, 0, 130] : [0, 0, 0, 60] },
+                axisLabel: { fontSize: 14 },
+            },
+            series: [{
+                type: "bar",
+                data: filteredEducationData.map(item => item.income),
+                itemStyle: {
+                    color: (params) => {
+                        const index = educationLevels.indexOf(filteredEducationData[params.dataIndex].education);
+                        return colors[index];
                     }
                 }
-            },
-            formatter: (name) => `{customStyle|${name}}`, 
-        },
-        tooltip: {
-            trigger: "item",
-            formatter: (params) => {
-                return `${params.marker} ${params.name}: <b>${params.value}€</b>`;
-            },
-            confine: true,
-            extraCssText: "max-width: 100vw; text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;",
-            textStyle: {
-                fontSize: 15
-            },
-        },
-        grid: parentWidth >= 535 ? { left: "14%", bottom: "30%", right: "5%" } : parentWidth >= 490 ? { left: "16%", bottom: "30%", right: "5%" } : parentWidth >= 350 ? { left: "15%", bottom: "30%", right: "5%" } : { top: "20%", left: "16%", bottom: "30%", right: "5%" },
-
-    }), [defaultData, colors, parentWidth]);
+            }]
+        };
+    }, [parentWidth, educationLevels, educationData, colors]);
 
 
     
-    const setExtentEmploymentChartOptions = useCallback(() => ({
-        title: { 
-            text: "Beschäftigungsausmaß", 
-            left: "center" 
-        },
-        xAxis: {
-            type: "category",
-            data: ["Voll- und Teilzeit", "Nur Vollzeit", "Nur Teilzeit"],
-            name: "Beschäftigung",
-            nameLocation: "middle",
-            nameGap: parentWidth >= 450 ? 30 : 20,
-            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
-            axisLabel: { fontSize: 14, interval: 0, show: parentWidth >= 450 ? true : false },
-        },
-        yAxis: parentWidth >= 500 ? {
-            type: "value",
-            name: "Residualeinkommen (Median)",
-            nameLocation: "center", 
-            nameGap: 50, 
-            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
-            axisLabel: { fontSize: 14 },
-        } : {
-            type: "value",
-            name: parentWidth >= 350 ? "Residualeinkommen (Median)" : "Residualeinkommen\n(Median)",
-            nameTextStyle: { fontSize: 15, fontWeight: "bold", padding: parentWidth >= 350 ? [0, 0, 0, 130] : [0, 0, 0, 60] },
-            axisLabel: { fontSize: 14 },
-        },
-        series: ["Pflichtschule", "Sekundarstufe I (ohne Matura)", "Sekundarstufe II (mit Matura)", "Postsekundäre oder tertiäre Ausbildung"].map((education, index) => ({
-            name: education,
-            type: 'bar',
-            data: [
-                extentEmploymentData.find(d => d.education === education && d.employment === "Voll- und Teilzeit")?.income || 0,
-                extentEmploymentData.find(d => d.education === education && d.employment === "Nur Vollzeit")?.income || 0,
-                extentEmploymentData.find(d => d.education === education && d.employment === "Nur Teilzeit")?.income || 0
-            ],
-            itemStyle: { color: colors[index] }
-        })),
-        legend: {
-            show: true,
-            top: "bottom",
-            left: "center",
-            data: ["Pflichtschule", "Sekundarstufe I (ohne Matura)", "Sekundarstufe II (mit Matura)", "Postsekundäre oder tertiäre Ausbildung"],
-            orient: "vertical",
-            textStyle: {
-                rich: {
-                    customStyle: {
-                        fontSize: 14,
-                        fontWeight: "normal",
-                        padding: [3, 0, 0, 2],
+    const getGroupedBarChartOptions = useCallback(
+        ({ titleText, groupKey, groupName, rawData }, visibleEducationLevels) => {
+            const groups = [...new Set(rawData.map(d => d[groupKey]))];
+
+            const educationIndexMap = Object.fromEntries(educationLevels.map((edu, i) => [edu, i]));
+            
+            const groupData = groups.map(group => {
+                const entries = rawData.filter(d => d[groupKey] === group);
+                const row = Array(educationLevels.length).fill(0);
+                entries.forEach(entry => {
+                    const eduIdx = educationIndexMap[entry.education];
+                    if (eduIdx !== undefined) row[eduIdx] = entry.income;
+                });
+                return row;
+            });
+
+            return {
+            title: { text: titleText, left: "center" },
+            xAxis: {
+                type: "category",
+                data: groups,
+                name: groupName,
+                nameLocation: "middle",
+                nameGap: parentWidth >= 450 ? 42 : 20,
+                nameTextStyle: { fontSize: 16, fontWeight: "bold" },
+                axisLabel: {
+                    fontSize: 13,
+                    interval: 0,
+                    show: parentWidth >= 450,
+                    formatter: function (value) {
+                        if (mode === "extent_empl") return value;
+
+                        if (value === "Erwerbsarbeit (Angestellt)") {
+                            return "Erwerbsarbeit\n(Angestellt)";
+                        } else if (value === "Selbstständigkeit") {
+                            return "Selbst-\nständigkeit";
+                        } else if (value === "Transferleistungen") {
+                            return "Transfer-\nleistungen";
+                        } else {
+                            return value;
+                        }
                     }
                 }
             },
-            formatter: (name) => `{customStyle|${name}}`, 
-        },
-        tooltip: {
-            trigger: "axis",
-            axisPointer: { type: "shadow" },
-            formatter: (params) => {
+            yAxis: parentWidth >= 500 ? {
+                type: "value",
+                name: "Residualeinkommen (Median)",
+                nameLocation: "center", 
+                nameGap: 50, 
+                nameTextStyle: { fontSize: 16, fontWeight: "bold" },
+                axisLabel: { fontSize: 14 },
+            } : {
+                type: "value",
+                name: parentWidth >= 350 ? "Residualeinkommen (Median)" : "Residualeinkommen\n(Median)",
+                nameTextStyle: { fontSize: 15, fontWeight: "bold", padding: parentWidth >= 350 ? [0, 0, 0, 130] : [0, 0, 0, 60] },
+                axisLabel: { fontSize: 14 },
+            },
+            grid: parentWidth >= 535
+                ? { left: "14%", bottom: "15%", right: "5%" }
+                : parentWidth >= 490
+                ? { left: "16%", bottom: "15%", right: "5%" }
+                : parentWidth >= 450
+                ? { left: "15%", bottom: "15%", right: "5%" }
+                : { top: "15%", left: "16%", bottom: "15%", right: "5%" },
+            tooltip: {
+                trigger: "axis",
+                axisPointer: { type: "shadow" },
+                formatter: (params) => {
                 const title = `<b>${params[0].name}</b><br/>`;
-                const details = params.map(p => `${p.marker} ${p.seriesName}: <b>${p.value}€</b>`).join('<br/>');
+                const details = params
+                    .filter(p => visibleEducationLevels.has(p.seriesName))
+                    .map(p => `${p.marker} ${p.seriesName}: <b>${p.value}€</b>`)
+                    .join('<br/>');
                 return title + details;
+                },
+                confine: true,
+                extraCssText: "max-width: 100vw; text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;",
+                textStyle: { fontSize: 15 }
             },
-            confine: true,
-            extraCssText: "max-width: 100vw; text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;",
-            textStyle: { fontSize: 15 }
+            legend: { show: false },
+            series: educationLevels.map((edu, index) => ({
+                name: edu,
+                type: "bar",
+                data: visibleEducationLevels.has(edu)
+                ? groupData.map(row => row[index])
+                : groupData.map(() => 0),
+                itemStyle: { color: colors[index] }
+            }))
+            };
         },
-        grid: parentWidth >= 535 ? { left: "14%", bottom: "30%", right: "5%" } 
-            : parentWidth >= 490 ? { left: "16%", bottom: "30%", right: "5%" } 
-            : parentWidth >= 450 ? { left: "15%", bottom: "30%", right: "5%" } 
-            : { top: "15%", left: "16%", bottom: "30%", right: "5%" },
-    }), [extentEmploymentData, colors, parentWidth]);
-    
-
-    
-
-    const setIncomeSourceChartOptions = useCallback(() => ({
-        title: { 
-            text: "Haupteinkommenssquelle", 
-            left: "center" 
-        },
-        xAxis: {
-            type: "category",
-            data: ["Erwerbsarbeit", "Pension", "Selbstständigkeit", "Arbeitslos"],
-            name: "Einkommensquelle",
-            nameLocation: "middle",
-            nameGap: parentWidth >= 500 ? 30 : 20,
-            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
-            axisLabel: { fontSize: 13, interval: 0, show: parentWidth >= 500 ? true : false },
-        },
-        yAxis: parentWidth >= 500 ? {
-            type: "value",
-            name: "Residualeinkommen (Median)",
-            nameLocation: "center", 
-            nameGap: 50, 
-            nameTextStyle: { fontSize: 16, fontWeight: "bold" },
-            axisLabel: { fontSize: 14 },
-        } : {
-            type: "value",
-            name: parentWidth >= 350 ? "Residualeinkommen (Median)" : "Residualeinkommen\n(Median)",
-            nameTextStyle: { fontSize: 15, fontWeight: "bold", padding: parentWidth >= 350 ? [0, 0, 0, 130] : [0, 0, 0, 60] },
-            axisLabel: { fontSize: 14 },
-        },
-        series: ["Pflichtschule", "Sekundarstufe I (ohne Matura)", "Sekundarstufe II (mit Matura)", "Postsekundäre oder tertiäre Ausbildung"].map((education, index) => ({
-            name: education,
-            type: 'bar',
-            data: [
-                incomeSourceData.find(d => d.education === education && d.source === "Erwerbsarbeit (Angestellt)")?.income || 0,
-                incomeSourceData.find(d => d.education === education && d.source === "Pension")?.income || 0,
-                incomeSourceData.find(d => d.education === education && d.source === "Selbstständigkeit")?.income || 0,
-                incomeSourceData.find(d => d.education === education && d.source === "Arbeitslos")?.income || 0,
-            ],
-            itemStyle: { color: colors[index] }
-        })),
-        legend: {
-            show: true,
-            top: "bottom",
-            left: "center",
-            data: ["Pflichtschule", "Sekundarstufe I (ohne Matura)", "Sekundarstufe II (mit Matura)", "Postsekundäre oder tertiäre Ausbildung"],
-            orient: "vertical",
-            textStyle: {
-                rich: {
-                    customStyle: {
-                        fontSize: 14,
-                        fontWeight: "normal",
-                        padding: [3, 0, 0, 2],
-                    }
-                }
-            },
-            formatter: (name) => `{customStyle|${name}}`, 
-        },
-        tooltip: {
-            trigger: "axis",
-            axisPointer: { type: "shadow" },
-            formatter: (params) => {
-                const title = `<b>${params[0].name}</b><br/>`;
-                const details = params.map(p => `${p.marker} ${p.seriesName}: <b>${p.value}€</b>`).join('<br/>');
-                return title + details;
-            },
-            confine: true,
-            extraCssText: "max-width: 100vw; text-align: left; white-space: normal; word-wrap: break-word; overflow-wrap: break-word;",
-            textStyle: { fontSize: 15 }
-        },
-        grid: parentWidth >= 535 ? { left: "14%", bottom: "30%", right: "5%" } 
-            : parentWidth >= 490 ? { left: "16%", bottom: "30%", right: "5%" } 
-            : parentWidth >= 450 ? { left: "15%", bottom: "30%", right: "5%" } 
-            : { top: "15%", left: "16%", bottom: "30%", right: "5%" },
-    }), [incomeSourceData, colors, parentWidth]);
-
-    
+        [parentWidth, mode, educationLevels, colors]
+    );
 
     useEffect(() => {
         const chartInstance1 = echarts.init(chartRef1.current);
-        const chartInstance2 = educationChartMode !== "default" ? echarts.init(chartRef2.current) : null;
+        const chartInstance2 = echarts.init(chartRef2.current);
+        const legendInstance = echarts.init(legendChartRef.current);
 
-        chartInstance1.setOption(setDefaultChartOptions());
-        if (chartInstance2) {
-            const options = educationChartMode === "extent_empl" ? setExtentEmploymentChartOptions() : setIncomeSourceChartOptions();
-            chartInstance2.setOption(options);
-        }
+        const visibleEducationLevels = new Set(educationLevels);
+
+        const updateCharts = () => {
+            chartInstance1.setOption(getEducationChartOptions(visibleEducationLevels));
+            
+            if (mode === "extent_empl") {
+                chartInstance2.setOption(
+                    getGroupedBarChartOptions(
+                    {
+                        titleText: "Beschäftigungsart",
+                        groupKey: "employment",
+                        groupName: "Beschäftigungsgrad",
+                        rawData: employmentExtentData
+                    },
+                    visibleEducationLevels
+                    )
+                );
+                } else if (mode === "income_source") {
+                chartInstance2.setOption(
+                    getGroupedBarChartOptions(
+                    {
+                        titleText: "Einkommensquelle",
+                        groupKey: "source",
+                        groupName: "Art der Erwerbstätigkeit",
+                        rawData: incomeSourceData
+                    },
+                    visibleEducationLevels
+                    )
+                );
+            }
+        };
+
+        updateCharts();
+
+        legendInstance.setOption({
+            legend: {
+                data: educationLevels,
+                type: "plain",
+                orient: "vertical",
+                top: 0,
+                textStyle: {
+                    fontSize: 14,
+                    rich: {
+                        customStyle: {
+                            fontSize: 14,
+                            fontWeight: "normal",
+                            padding: [3, 0, 0, 2],
+                        }
+                    }
+                },
+                formatter: function (name) {
+                    const maxLength = parentWidth < 330 ? 33 : parentWidth < 350 ? 35 : 999;
+                    const truncatedName = name.length > maxLength
+                        ? name.slice(0, maxLength - 1) + '…'
+                        : name;
+                    return `{customStyle|${truncatedName}}`;
+                },
+                selected: educationLevels.reduce((acc, name) => {
+                    acc[name] = visibleEducationLevels.has(name);
+                    return acc;
+                }, {})
+            },
+            tooltip: { show: false },
+            xAxis: { show: false },
+            yAxis: { show: false },
+            series: educationLevels.map((name, i) => ({
+                name,
+                type: "bar",
+                data: [],
+                itemStyle: { color: colors[i] }
+            }))
+        });
+
+
+        legendInstance.on("legendselectchanged", (event) => {
+            const educationLevel = event.name;
+            if (event.selected[educationLevel]) {
+                visibleEducationLevels.add(educationLevel);
+            } else {
+                visibleEducationLevels.delete(educationLevel);
+            }
+            updateCharts();
+        });
 
         const checkFlexWrap = () => {
             if (parentRef.current) {
                 const firstChild = parentRef.current.children[0];
                 const secondChild = parentRef.current.children[1];
-
                 if (firstChild && secondChild) {
                     const wrapped = secondChild.offsetTop > firstChild.offsetTop;
                     setIsWrapped(wrapped);
@@ -336,7 +330,8 @@ const EducationCharts = () => {
         const handleResize = () => {
             setParentWidth(window.innerWidth);
             chartInstance1.resize();
-            if (chartInstance2) chartInstance2.resize();
+            chartInstance2.resize();
+            legendInstance.resize();
             checkFlexWrap();
         };
 
@@ -345,53 +340,19 @@ const EducationCharts = () => {
         return () => {
             window.removeEventListener("resize", handleResize);
             chartInstance1.dispose();
-            if (chartInstance2) chartInstance2.dispose();
+            chartInstance2.dispose();
+            legendInstance.dispose();
         };
-    }, [educationChartMode, setDefaultChartOptions, setExtentEmploymentChartOptions, setIncomeSourceChartOptions]);
+    }, [mode, parentWidth, educationLevels, educationData, employmentExtentData, incomeSourceData, colors, getEducationChartOptions, getGroupedBarChartOptions, setIsWrapped]);
 
+    return (
+        <div ref={parentRef} className="bar-charts">
+            <div ref={chartRef1} style={{ width: "100%", maxWidth: maxWidth, height: "500px", margin: "auto", paddingTop: "24px" }} />
+            <div ref={chartRef2} style={{ width: "100%", maxWidth: maxWidth, height: "500px", margin: "auto", paddingTop: isWrapped ? "12px" : "24px" }} />
 
-  return (
-    <Box
-        sx={{
-            background: "#f4f4f4",
-            padding: 2,
-            borderRadius: 1,
-            boxShadow: 1,
-            marginTop: 3,
-            marginBottom: 3,
-        }}
-    >
-
-        <div className="toggle-container">
-            <ToggleButtonGroup
-            className="residual-income-toggle eductaion-chart-toggle"
-            value={educationChartMode}
-            exclusive
-            onChange={handleToggleModeChange}
-            aria-label="education charts mode selection"
-            >
-            <ToggleButton value="default">
-                <label>Option 1</label>
-            </ToggleButton>
-            <ToggleButton value="extent_empl">
-                <label>Option 2</label>
-            </ToggleButton>
-            <ToggleButton value="income_source">
-                <label>Option 3</label>
-            </ToggleButton>
-            </ToggleButtonGroup>
+            <div ref={legendChartRef} style={{ width: "100%", height: parentWidth > 1261 ? 32 : parentWidth > 640 ? 64 : 106, marginBottom: "6px" }} />
         </div>
-    
-        <div ref={parentRef} className="education-charts" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-            <div ref={chartRef1} style={{ width: "100%", maxWidth: maxWidth, height: "540px", justifyContent: "center", margin: "auto", paddingTop: "24px" }}></div>
-            {educationChartMode !== "default" && 
-                <div ref={chartRef2} style={{ width: "100%", maxWidth: maxWidth, height: "540px", justifyContent: "center", margin: "auto", paddingTop: isWrapped ? "40px" : "24px" }}></div>
-            }
-        </div>
-    </Box>
-  );
-};
-
-
+    );
+};  
 
 export default EducationCharts;
