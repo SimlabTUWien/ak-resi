@@ -53,7 +53,10 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
             formatter: (params) => {
                 const title = `<b>${params[0].name}</b><br/>`;
                 const unit = mode === "absolute" ? "€" : "%";
-                const details = params.map(p => `${p.marker} ${p.seriesName}: <b>${p.value}${unit}</b>`).join('<br/>');
+                const details = params
+                    .filter(p => visibleCategories.has(p.seriesName))
+                    .map(p => `${p.marker} ${p.seriesName}: <b>${p.value}${unit}</b>`)
+                    .join('<br/>');
                 return title + details;
             },
             confine: true,
@@ -161,7 +164,7 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
     }, [mode, parentWidth, colors, selectedDataAll, selectedDataRenter, categories, getChartOptions, setIsWrapped]);
 
     return (
-        <div ref={parentRef} className="quintil-exp-charts">
+        <div ref={parentRef} className="bar-charts">
             <div ref={chartRef1} style={{ width: "100%", maxWidth: maxWidth, height: "500px", justifyContent: "center", margin: "auto", paddingTop: "24px" }} />
             <div ref={chartRef2} style={{ width: "100%", maxWidth: maxWidth, height: "500px", justifyContent: "center", margin: "auto", paddingTop: isWrapped ? "12px" : "24px" }} />
             
