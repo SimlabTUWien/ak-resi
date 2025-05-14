@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const sectionColors = {
   intro: '#bdbdbd',
@@ -11,7 +11,7 @@ const sectionColors = {
 
 function ScrollProgressBar() {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [barColor, setBarColor] = useState('#b3b3b3'); // Default color
+  const [barColor, setBarColor] = useState('#bdbdbd');
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -20,7 +20,7 @@ function ScrollProgressBar() {
     setScrollProgress(progress);
 
     // Detect which section is currently at the top
-    let currentColor = '#b3b3b3'; // Default fallback
+    let currentColor = '#bdbdbd';
     Object.keys(sectionColors).forEach((id) => {
       const section = document.getElementById(id);
       if (section) {
@@ -54,34 +54,3 @@ function ScrollProgressBar() {
 }
 
 export default ScrollProgressBar;
-
-// function ScrollProgressBar() {
-//   const [scrollProgress, setScrollProgress] = useState(0);
-
-//   const handleScroll = () => {
-//     const scrollTop = window.scrollY; // How far the user has scrolled
-//     const docHeight = document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
-//     const progress = (scrollTop / docHeight) * 100; // Percentage scrolled
-//     setScrollProgress(progress);
-//   };
-
-//   useEffect(() => {
-//     window.addEventListener('scroll', handleScroll);
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, []);
-
-//   return (
-//     <div>
-//       <div
-//         style={{
-//           height: '5px',
-//           background: '#F0A898',
-//           width: `${scrollProgress}%`,
-//           transition: 'width 0.2s',
-//         }}
-//       />
-//     </div>
-//   );
-// }
-
-// export default ScrollProgressBar;
