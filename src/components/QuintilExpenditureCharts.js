@@ -104,9 +104,21 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
             legend: {
                 data: categories,
                 type: "plain",
-                orient: parentWidth > 940 ? "horizontal" : "vertical",
+                orient: "vertical",
                 top: 0,
-                textStyle: { fontSize: 14 },
+                textStyle: {
+                    fontSize: 14,
+                    rich: {
+                        customStyle: {
+                            fontSize: 14,
+                            fontWeight: "normal",
+                            padding: [3, 0, 0, 2],
+                        }
+                    }
+                },
+                formatter: function (name) {
+                    return `{customStyle|${name}}`;
+                },
                 selected: categories.reduce((acc, name) => {
                     acc[name] = true;
                     return acc;
@@ -168,7 +180,7 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
             <div ref={chartRef1} style={{ width: "100%", maxWidth: maxWidth, height: "500px", justifyContent: "center", margin: "auto", paddingTop: "24px" }} />
             <div ref={chartRef2} style={{ width: "100%", maxWidth: maxWidth, height: "500px", justifyContent: "center", margin: "auto", paddingTop: isWrapped ? "12px" : "24px" }} />
             
-            <div ref={legendChartRef} style={{ width: "100%", height: parentWidth > 940 ? 32 : parentWidth > 490 ? 64 : 72, marginBottom: "6px" }} />
+            <div ref={legendChartRef} style={{ width: "100%", height: parentWidth > 1261 ? 32 : parentWidth > 490 ? 64 : 155, marginBottom: "6px" }} />
         </div>
     );
 };
