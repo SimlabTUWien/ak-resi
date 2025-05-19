@@ -5,29 +5,65 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
 
-const svgUrl = `${process.env.PUBLIC_URL}/images/Abb4_BL_MapMedian.svg`;
-
 const dataMap = {
-  "v-2500": {
-    residualIncome: "2700",
-    population: "2500"
-  },
-  "v-2501": {
-    residualIncome: "2700",
-    population: "2501"
-  },
-  "v-10001": {
-    residualIncome: "2699",
-    population: "10001"
-  }
+ b : {
+  bl: "Burgenland",
+  klein: { gemgr: "unter 2500 EW", ri: 1821, riCategory: "below2k" },
+  mittel: { gemgr: "bis zu 10.000 EW", ri: 1604, riCategory: "below1800" },
+  groß: { gemgr: "bis zu 100.000 EW", ri: 1901, riCategory: "below2k" }
+ },
+ k : {
+  bl: "Kärnten",
+  klein: { gemgr: "unter 2500 EW", ri: 1390, riCategory: "below1400" },
+  mittel: { gemgr: "bis zu 10.000 EW", ri: 1656, riCategory: "below1800" },
+  groß: { gemgr: "bis zu 100.000 EW", ri: 1820, riCategory: "below2k" },
+  sg: { gemgr: "über 100.000 EW", ri: 1669, riCategory: "below1800" }
+ },
+ noe : {
+  bl: "Niederösterreich",
+  klein: { gemgr: "unter 2500 EW", ri: 2009, riCategory: "over2k" },
+  mittel: { gemgr: "bis zu 10.000 EW", ri: 1941, riCategory: "below2k" },
+  groß: { gemgr: "bis zu 100.000 EW", ri: 2103, riCategory: "over2k" },
+ },
+ ooe : {
+  bl: "Oberösterreich",
+  klein: { gemgr: "unter 2500 EW", ri: 2064, riCategory: "over2k" },
+  mittel: { gemgr: "bis zu 10.000 EW", ri: 2031, riCategory: "over2k" },
+  groß: { gemgr: "bis zu 100.000 EW", ri: 1712, riCategory: "below1800" },
+  sg: { gemgr: "über 100.000 EW", ri: 1459, riCategory: "below1600" }
+ },
+ s : {
+  bl: "Salzburg",
+  klein: { gemgr: "unter 2500 EW", ri: 1665, riCategory: "below1800" },
+  mittel: { gemgr: "bis zu 10.000 EW", ri: 1886, riCategory: "below2k" },
+  groß: { gemgr: "bis zu 100.000 EW", ri: 1526, riCategory: "below1600" },
+  sg: { gemgr: "über 100.000 EW", ri: 1839, riCategory: "below2k" }
+ },
+ st : {
+  bl: "Steiermark",
+  klein: { gemgr: "unter 2500 EW", ri: 1738, riCategory: "below1800" },
+  mittel: { gemgr: "bis zu 10.000 EW", ri: 1868, riCategory: "below2k" },
+  groß: { gemgr: "bis zu 100.000 EW", ri: 1875, riCategory: "below2k" },
+  sg: { gemgr: "über 100.000 EW", ri: 1578, riCategory: "below1600" }
+ },
+ t : {
+  bl: "Tirol",
+  klein: { gemgr: "unter 2500 EW", ri: 1994, riCategory: "below2k" },
+  mittel: { gemgr: "bis zu 10.000 EW", ri: 1838, riCategory: "below2k" },
+  groß: { gemgr: "bis zu 100.000 EW", ri: 1366, riCategory: "below1400" },
+  sg: { gemgr: "über 100.000 EW", ri: 1866, riCategory: "below2k" }
+ },
+ v : {
+  bl: "Vorarlberg",
+  klein: { gemgr: "unter 2500 EW", ri: 2046, riCategory: "over2k" },
+  mittel: { gemgr: "bis zu 10.000 EW", ri: 2141, riCategory: "over2k" },
+  groß: { gemgr: "bis zu 100.000 EW", ri: 1743, riCategory: "below1800" }
+ },
+ w : {
+  bl: "Wien",
+  sg: { gemgr: "über 100.000 EW", ri: 1545, riCategory: "below1600" }
+ }
 }
-
-
-const tooltipMap = {
-    "v-2500": ["Resiualeinkommen (Median) >2700", "Gemeindegrößenklasse <2500"],
-    "v-2501": ["Resiualeinkommen (Median) >2700", "Gemeindegrößenklasse 2501 - 10.000"],
-    "v-10001": ["Resiualeinkommen (Median) 2500 - 2699", "Gemeindegrößenklasse 10.001 - 100.000"],
-};
 
 const textinfoMap = {
   "b": {
@@ -38,11 +74,11 @@ const textinfoMap = {
     title: "Kärnten",
     text: "In Klagenfurt beträgt das mittlere Residualeinkommen rund 1.670 €. Den höchsten Medianwert verzeichnen Gemeinden mit 10.000 bis 100.000 Einwohner:innen mit rund 1.820 €. Die niedrigsten Einkommen finden sich in den kleinsten Gemeinden unter 2.500 Einwohner:innen."
   },
-  "n": {
+  "noe": {
     title: "Niederösterreich",
     text: "Die höchsten Residualeinkommen in Niederösterreich, inklusive St. Pölten, werden in größeren Gemeinden erzielt – mit etwas über 2.100 €. Knapp darunter liegen die kleinsten Gemeinden, während mittlere Gemeinden rund 1.940 € erreichen. Insgesamt zeigen sich hier nur geringe Unterschiede zwischen den Gemeindetypen."
   },
-  "o": {
+  "ooe": {
     title: "Oberösterreich",
     text: "In Linz ist das mittlere Residualeinkommen mit etwa 1.460 € das niedrigste im Bundesland. Deutlich höhere Werte erreichen hingegen kleinere Gemeinden und solche mit 2.501 bis 10.000 Einwohner:innen – jeweils mit über 2.000 €."
   },
@@ -76,7 +112,11 @@ const isTouchDevice = () => {
 };
 
 const MeanMapChart = ( mode ) => {
-  const svgRefMeanMap = useRef(null);
+
+  const svgUrl = `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_all_DE.svg`;
+
+
+  const svgRef = useRef(null);
 
   const initialId = Object.keys(textinfoMap)[0]; // Get first key from textMap
   const [selectedInfo, setSelectedInfo] = useState(textinfoMap[initialId]);
@@ -92,188 +132,179 @@ const MeanMapChart = ( mode ) => {
     setSelectedInfo(textinfoMap[keys[newIndex]]);
   };
 
+
   useEffect(() => {
-    const loadSVG = async () => {
-      if (!svgUrl) return;
-      
-      try {
-        const response = await d3.xml(svgUrl);
-        const svgNode = response.documentElement;
+    d3.xml(svgUrl).then((xml) => {
+      const svgNode = xml.documentElement;
+  
+      const svgContainer = d3.select(svgRef.current);
+      svgContainer.selectAll("*").remove(); // Clear before adding new SVG
+      svgContainer.node().appendChild(svgNode);
 
-        const container = d3.select(svgRefMeanMap.current);
-        container.html(null); // Clear previous content
-        container.node().appendChild(svgNode);
+      const svg = d3.select(svgNode);
+      svg.attr("width", "100%").attr("height", "100%");
+      svg.style("display", "block").style("margin", "auto");
 
-        const svg = d3.select(svgRefMeanMap.current).select("svg");
-        svg.attr("width", "100%").attr("height", "100%");
-        svg.style("display", "block").style("margin", "auto");
+      // === Tooltip ===
+      d3.select("body").selectAll("div.d3-tooltip-mm").remove();
+      const tooltip = d3
+        .select("body")
+        .append("div")
+        .attr("class", "d3-tooltip-mm")
+        .style("position", "absolute")
+        .style("background", "rgba(0, 0, 0, 0.8)")
+        .style("color", "white")
+        .style("padding", "6px 10px")
+        .style("border-radius", "5px")
+        .style("font-size", "16px")
+        .style("font-family", "ivyepic-variable, sans-serif")
+        .style("font-variation-settings", "'wght' 400")
+        .style("pointer-events", "none")
+        .style("visibility", "hidden");
 
-        if (!isTouchDevice()) {
-          // Tooltip setup
-          const tooltip = d3.select("body")
-          .append("div")
-          .style("position", "absolute")
-          .style("background", "rgba(0, 0, 0, 0.80)")
-          .style("color", "white")
-          .style("padding", "5px 10px")
-          .style("border-radius", "5px")
-          .style("visibility", "hidden")
-          .style("font-size", "14px");
-      
-
-          // Mouseover circle behavior
-          svg.selectAll("path")
-            .filter(function () {
-              return d3.select(this).attr("id"); // Only select paths with an id
-            })
-            .style("cursor", "pointer")
-            .on("mouseover", function () {
-              d3.select(this).style("filter", "brightness(0.9)");
-            })
-            .on("mouseout", function () {
-              d3.select(this).style("filter", ""); // Remove filter on mouseout
-            })
-            .on("click", function () {
-              const id = d3.select(this).attr("id");
-              if (textinfoMap[id]) {
-                setSelectedInfo(textinfoMap[id]); // Update selected info
-              }
-            });
-
-          // Mouseover rect behavior
-          svg.selectAll("rect")
-            .filter(function () {
-              const id = d3.select(this).attr("id");
-              return id !== null && id !== "2500" && id !== "2501" && id !== "10001" && id !== "100001";
-            })
-
-            .style("cursor", "pointer")
-
-            .on("mouseover", function (event) {
-              const id = d3.select(this).attr("id");
-          
-              // Highlight the hovered rectangle
-              d3.select(this).style("filter", "brightness(0.9)");
-          
-              // Find corresponding legend element by matching legend box ID with population of hovered element
-              const dataKey = `${id}`;
-              if (dataMap[dataKey]) {
-                const populationValue = dataMap[dataKey].population;
-                const residualIncome = dataMap[dataKey].residualIncome;
-          
-                // Find the matching legend element by population
-                svg.selectAll("rect")
-                  .filter(function () {
-                    const legendId = d3.select(this).attr("id");
-                    return legendId === populationValue.toString(); // Match with population value
-                  })
-                  .style("fill", "#f0d1c7")
-                  .style("stroke", "black")
-                  .style("stroke-width", "2px");
-                  // .style("filter", "brightness(0.92)");
-
-
-                svg.selectAll("text")
-                  .filter(function () {
-                    const textId = d3.select(this).attr("id");
-                    return textId === residualIncome.toString();
-                  })
-                  .style("opacity", "1")
-                  .style("font-weight", "bold");
-
-                // svg.selectAll("text")
-                //   .filter(function () {
-                //     const textId = d3.select(this).attr("id");
-                //     return textId !== null && textId !== residualIncome.toString();
-                //   })
-                //   .style("opacity", "0.75")
-                //   .style("font-weight", "normal");  
-              }
-          
-              // Tooltip display
-              const info = tooltipMap[dataKey] || ["Keine Daten verfügbar", "Keine Daten verfügbar"];
-              tooltip.html(`<strong>${info[0]}</strong><br/>${info[1]}`)
-                .style("visibility", "visible")
-                .style("top", `${event.pageY - 30}px`)
-                .style("left", `${event.pageX + 15}px`);
-            })
-            .on("mousemove", function (event) {
-              tooltip.style("top", `${event.pageY - 30}px`)
-                .style("left", `${event.pageX + 15}px`);
-            })
-            .on("mouseout", function (event) {
-              d3.select(this).style("filter", "");
-
-              svg.selectAll("rect")
-                .style("stroke", "")
-                .style("stroke-width", "")
-                .style("fill", "");
-                // .style("filter", "");
-
-              svg.selectAll("text")
-                .style("font-weight", "normal")
-              // svg.selectAll("text")
-              //   .style("font-weight", "normal")
-              //   .style("opacity", "1");  
-              // if (!event.relatedTarget || event.relatedTarget.tagName !== "rect") {
-              //   svg.selectAll("text")
-              //     .style("font-weight", "normal")
-              //     .style("opacity", "1");
-              // }
-
-              tooltip.style("visibility", "hidden");
-            });
+      // === Circle behavior ===
+      svg.selectAll(".circle")
+      .style("cursor", "pointer")
+      .on("mouseover", function () {
+        d3.select(this).select("circle").style("filter", "brightness(0.9)");
+      })
+      .on("mouseout", function () {
+        d3.select(this).select("circle").style("filter", null);
+      })
+      .on("click", function () {
+        const name = d3.select(this).attr("data-name");
+        if (textinfoMap[name]) {
+          setSelectedInfo(textinfoMap[name]);
         }
-        else {
-          svg.selectAll("path")
-            .filter(function () {
-              return d3.select(this).attr("id"); // Only select paths with an id
-            })
-            .style("cursor", "pointer")
-            .on("mouseover", function () {
-              d3.select(this).style("filter", "brightness(0.9)");
-            })
-            .on("mouseout", function () {
-              d3.select(this).style("filter", ""); // Remove filter on mouseout
-            })
-            .on("click", function () {
-              const id = d3.select(this).attr("id");
-              if (textinfoMap[id]) {
-                setSelectedInfo(textinfoMap[id]); // Update selected info
-              }
-            });
+      });
 
-          svg.selectAll("g")
-            .on("click", function () {
-              const classList = d3.select(this).attr("class");
-              if (classList) {
-                const classes = classList.split(" "); // Convert to array
-                const matchedClass = classes.find(cls => textinfoMap[cls]); // Find the first matching class
-            
-                if (matchedClass) {
-                  setSelectedInfo(textinfoMap[matchedClass]); // Update selected info
+      // === Rect and Polygon Hover Behavior ===
+      svg.selectAll("g").each(function () {
+        const groupId = d3.select(this).attr("id");
+        const group = d3.select(this);
+
+        group.selectAll("rect, polygon").each(function () {
+          const box = d3.select(this);
+          const dataName = box.attr("data-name");
+
+          if (dataName) {
+            box
+              .style("cursor", "pointer")
+              .on("mouseover", function (event) {
+                
+
+                const regionData = dataMap[groupId]?.[dataName];
+                const regionName = dataMap[groupId]?.bl;
+
+                // Highlight corresponding gemgr legend item
+                const gemgrGroup = svg.select(`g#${CSS.escape(dataName)}`);
+                const gemgrRect = gemgrGroup.select("rect");
+                gemgrRect.style("fill", "#e2e2e2");
+
+                // Highlight corresponding riCategory legend item
+                const riCategoryId = regionData?.riCategory || "notexisting";
+                const categoryGroup = svg.select(`g#${CSS.escape(riCategoryId)}`);
+                
+                if (riCategoryId === "notexisting" || riCategoryId === "nodata") {
+                  const baseRect = box.node();
+                  if (baseRect && d3.select(this.parentNode).select("rect.highlight-overlay").empty()) {
+                    const { x, y, width, height } = baseRect.getBBox();
+                
+                    // Add highlight overlay on top of the hovered box
+                    d3.select(this.parentNode)
+                      .insert("rect", ":first-child") // inserts it as the first element in the group
+                      .attr("x", x)
+                      .attr("y", y)
+                      .attr("width", width)
+                      .attr("height", height)
+                      .attr("fill", "#e2e2e2")
+                      .attr("opacity", 1.0)
+                      .attr("pointer-events", "none")
+                      .classed("highlight-overlay", true);
+                  }
+                
+                  // Also add overlay to legend category
+                  const categoryGroup = svg.select(`g#${CSS.escape(riCategoryId)}`);
+                  const catRect = categoryGroup.select("rect").node();
+                  if (catRect && categoryGroup.select("rect.highlight-overlay").empty()) {
+                    const { x, y, width, height } = catRect.getBBox();
+                
+                    categoryGroup
+                      .insert("rect", ":first-child")
+                      .attr("x", x)
+                      .attr("y", y)
+                      .attr("width", width)
+                      .attr("height", height)
+                      .attr("fill", "#e2e2e2")
+                      .attr("opacity", 1.0)
+                      .attr("pointer-events", "none")
+                      .classed("highlight-overlay", true);
+                  }
                 }
-              }
-            });
-        }
+                else if (riCategoryId === "below1k" || riCategoryId === "below1200" || riCategoryId === "below1400") {
+                  box.style("filter", "brightness(0.9)");
+                  categoryGroup.select("rect").style("filter", "brightness(0.9)");
+                } else {
+                  box.style("filter", "brightness(1.2)");
+                  categoryGroup.select("rect").style("filter", "brightness(1.2)");
+                }
 
-    
-      } catch (error) {
-        console.error("Error loading SVG:", error);
-      }
+                const tooltipHTML = regionData
+                  ? `
+                    <div style="font-variation-settings: 'wght' 700">${regionName}</div>
+                    <div>Gemeindegrößenklasse: ${regionData.gemgr}</div>
+                    <div>Residualeinkommen (Median): ${regionData.ri} €</div>
+                  `
+                  : `
+                    <div style="font-variation-settings: 'wght' 700">${regionName}</div>
+                    <div>Gemeindegrößenklasse nicht vorhanden</div>
+                  `;
+
+                tooltip
+                  .html(tooltipHTML)
+                  .style("visibility", "visible")
+                  .style("top", `${event.pageY - 40}px`)
+                  .style("left", `${event.pageX + 20}px`);
+              })
+              .on("mousemove", function (event) {
+                tooltip
+                  .style("left", `${event.pageX + 10}px`)
+                  .style("top", `${event.pageY - 28}px`);
+              })
+              .on("mouseout", function () {
+                box.style("filter", null);
+                tooltip.style("visibility", "hidden");
+
+                const gemgrGroup = svg.select(`g#${CSS.escape(dataName)}`);
+                const gemgrRect = gemgrGroup.select("rect");
+                gemgrRect.style("fill", "#fff");
+
+                const regionData = dataMap[groupId]?.[dataName];
+                const riCategoryId = regionData?.riCategory || "notexisting";
+                svg.select(`g#${CSS.escape(riCategoryId)}`).select("rect").style("filter", null);
+
+                // Remove both overlays
+                d3.select(this.parentNode).select("rect.highlight-overlay").remove();
+
+                const categoryGroup = svg.select(`g#${CSS.escape(riCategoryId)}`);
+                categoryGroup.select("rect.highlight-overlay").remove();
+              });
+          }
+        });
+      });
+    });
+
+    return () => {
+      d3.selectAll(".tooltip").remove();
     };
-
-    loadSVG();
   }, []);
-
+  
   return (
     <div style={{ textAlign: "center" }}>
-    <div className="mean-map-chart-container" ref={svgRefMeanMap} style={{ maxWidth: "100%", overflow: "hidden" }}></div>
+    <div className="mean-map-chart-container" ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }}></div>
     <Box 
         className="infotext-container"
         sx={{
-          // boxShadow: 2,
-          // backgroundColor: "white",
           padding: 2,
           borderRadius: 2,
           minHeight: '140px'
