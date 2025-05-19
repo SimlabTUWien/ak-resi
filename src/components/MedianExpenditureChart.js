@@ -27,9 +27,7 @@ const MedianExpenditureChart = ({ mode }) => {
     useEffect(() => {
         const chartInstance = echarts.init(chartRef.current);
 
-        // const colors = ["#595e5e", "#aa8a91", "#e2674f","#bc3a26", "#eda293", "#f6d5ce"]; // RI, Mobility, Housing, Health, Food, Education
-        const colors = ["#595e5e", "#f6d5ce", "#e2674f","#bc3a26", "#eda293", "#aa8a91"]; // RI, Education, Housing, Health, Food, Mobility
-
+        const colors = ["#595e5e", "#e2674f","#bc3a26", "#eda293", "#f6d5ce", "#aa8a91"]; // Residual Income, Mobility, Housing, Health, Food, Education
 
         const option = {
             tooltip: {
