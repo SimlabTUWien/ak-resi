@@ -43,7 +43,7 @@ const theme = createTheme({
           paddingTop: "18px",
           fontSize: "1.0rem",
           [theme.breakpoints.down("sm")]: {
-            fontSize: "0.9rem",
+            fontSize: "0.925rem",
           },
         }),
         body: ({ theme }) => ({
@@ -51,7 +51,7 @@ const theme = createTheme({
           paddingTop: "18px",
           fontSize: "1.0rem",
           [theme.breakpoints.down("sm")]: {
-            fontSize: "0.9rem",
+            fontSize: "0.925rem",
           },
         }),
       },
