@@ -65,7 +65,6 @@ const FloatingButton = ({ show }) => {
       transition={{ duration: 1.5, ease: "easeInOut" }}
       disabled={!show}
       style={{
-        backgroundColor: 'white',
         borderColor: buttonColor,
         color: buttonColor,
       }}
