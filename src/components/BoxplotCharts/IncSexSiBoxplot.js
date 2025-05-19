@@ -95,7 +95,7 @@ const IncSexSiBoxplot = () => {
     
                   tooltip
                     .html(`
-                      <div>${data.titel}</div>
+                      <div style="font-variation-settings: 'wght' 700">${data.titel}</div>
                       <div>Infrastrukturversorgung: ${data.supply}</div>
                       <div>1. Quintil: ${data.q1}</div>
                       <div>Median: ${data.median}</div>

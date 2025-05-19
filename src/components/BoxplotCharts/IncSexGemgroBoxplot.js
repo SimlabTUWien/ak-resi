@@ -96,7 +96,7 @@ const IncSexGemgroBoxplot = () => {
     
                   tooltip
                     .html(`
-                      <div>${data.titel}</div>
+                      <div style="font-variation-settings: 'wght' 700">${data.titel}</div>
                       <div>Gemeindegrößenklasse: ${data.communitySizeClass}</div>
                       <div>1. Quintil: ${data.q1}</div>
                       <div>Median: ${data.median}</div>

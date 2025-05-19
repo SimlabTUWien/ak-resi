@@ -132,7 +132,7 @@ const IncSexFtptBoxplot = () => {
     
                   tooltip
                     .html(`
-                      <div>${data.titel}</div>
+                      <div style="font-variation-settings: 'wght' 700">${data.titel}</div>
                       <div>${l.extent}: ${data.extend}</div>
                       <div>${l.q1}: ${data.q1}</div>
                       <div>${l.median}: ${data.median}</div>
