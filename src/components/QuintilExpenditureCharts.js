@@ -39,7 +39,7 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
 
     const quintiles = useMemo(() => ["Q1", "Q2", "Q3", "Q4", "Q5"], []);
     const categories = useMemo(() => ["Residualeinkommen", "Mobilität", "Wohnen", "Gesundheit", "Lebensmittel", "Bildung"], []);
-    const colors = ["#595e5e", "#e2674f","#bc3a26", "#eda293", "#f6d5ce", "#aa8a91"]; // Residual Income, Mobility, Housing, Health, Food, Education
+    const colors = useMemo(() => ["#595e5e", "#e2674f","#bc3a26", "#eda293", "#f6d5ce", "#aa8a91"], []); // Residual Income, Mobility, Housing, Health, Food, Education
 
 
 
