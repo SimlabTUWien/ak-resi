@@ -47,26 +47,6 @@ export default function HeaderSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // check overlapping of scroll indicator and titles-container
-  useEffect(() => {
-    const indicator = document.querySelector(".scroll-indicator");
-    const titles = document.querySelector(".titles-container");
-  
-    const observer = new IntersectionObserver(([entry]) => {
-      indicator.style.display = entry.isIntersecting ? "none" : "block";
-    }, {
-      root: null,
-      threshold: 0,
-    });
-  
-    if (indicator && titles) {
-      observer.observe(titles);
-    }
-  
-    return () => observer.disconnect();
-  }, []);
-  
-
   return (
     // <Box  sx={{ height: "calc(var(--vh, 1vh) * 100)" }}>
     <Box sx={{ height: "calc(var(--vh) * 100)" }}>

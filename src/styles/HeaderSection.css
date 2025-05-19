@@ -67,7 +67,7 @@ html {
   align-items: center;
   justify-content: center; 
   text-align: center;
-  padding: 0 8px 4px;
+  padding: 0 8px;
   z-index: 3;
   margin-top: 55vh;
 }
@@ -162,6 +162,12 @@ h1, h2, h3 {
   }
 
   .header-subtitle {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) { 
+  .scroll-indicator {
     display: none;
   }
 }
