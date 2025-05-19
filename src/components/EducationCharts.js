@@ -57,7 +57,7 @@ const EducationCharts = ({ mode, isWrapped, setIsWrapped }) => {
     ], []);
 
 
-    const colors = useMemo(() => ['#FF7F7F', "#66B35A", '#00BCD4', "#C855B9"], []);
+    const colors = useMemo(() => ['#e2674f', "#A78C94", '#511b17', "#bc3a26"], []); // Pflicht, Sek1, Sek2, Tertiär
     const maxWidth = "500px";
 
     const getEducationChartOptions = useCallback((visibleEducationLevels) => {
