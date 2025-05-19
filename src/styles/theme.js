@@ -38,16 +38,22 @@ const theme = createTheme({
   components: {
     MuiTableCell: {
       styleOverrides: {
-        head: {
+        head: ({ theme }) => ({
           fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
           paddingTop: "18px",
-          fontSize: "1.1rem",
-        },
-        body: {
+          fontSize: "1.0rem",
+          [theme.breakpoints.down("sm")]: {
+            fontSize: "0.9rem",
+          },
+        }),
+        body: ({ theme }) => ({
           fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
           paddingTop: "18px",
-          fontSize: "1.1rem",
-        },
+          fontSize: "1.0rem",
+          [theme.breakpoints.down("sm")]: {
+            fontSize: "0.9rem",
+          },
+        }),
       },
     },
     MuiBackdrop: {
