@@ -41,10 +41,12 @@ const theme = createTheme({
         head: {
           fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
           paddingTop: "18px",
+          fontSize: "1.1rem",
         },
         body: {
           fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
           paddingTop: "18px",
+          fontSize: "1.1rem",
         },
       },
     },
