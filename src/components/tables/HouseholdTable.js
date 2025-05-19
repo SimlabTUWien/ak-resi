@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, ToggleButton, ToggleButtonGroup, Box } from "@mui/material";
-import "../styles/HouseholdTable.css";
+import "../../styles/HouseholdTable.css";
 
 
 const allData = [

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, ToggleButton, ToggleButtonGroup } from '@mui/material';
 
 import GlossaryTerm from '../GlossaryTerm';
-import SocialInfrastructureTable from "../SocialInfrastructureTable";
+import SocialInfrastructureTable from "../tables/SocialInfrastructureTable";
 import SIOverallIndicatorMap from "../SocialInfrastructureMaps/SIOverallIndicatorMap";
 import SISubIndicatorMap from "../SocialInfrastructureMaps/SISubIndicatorMap";
 import IndicatorSelect from "../IndicatorSelect";

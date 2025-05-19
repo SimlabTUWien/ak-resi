@@ -5,11 +5,11 @@ import GlossaryTerm from '../GlossaryTerm';
 import ResiDefinitionChart from "../ResiDefinitionChart";
 import MedianExpenditureChart from "../MedianExpenditureChart";
 import QuintilExpenditureCharts from "../QuintilExpenditureCharts";
-import HouseholdTable from "../HouseholdTable";
 import CounterAnimation from "../CounterAnimation";
 import MeanMapChart from "../MeanMapChart";
 import EducationCharts from "../EducationCharts";
-import ExpenditureBundTable from "../ExpenditureBundTable";
+import HouseholdTable from "../tables/HouseholdTable";
+import ExpenditureBundTable from "../tables/ExpenditureBundTable";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
