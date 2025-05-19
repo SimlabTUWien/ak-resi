@@ -159,7 +159,9 @@ const IncSexHhtypeBoxplot = () => {
               .style("color", "white")
               .style("padding", "6px 10px")
               .style("border-radius", "5px")
-              .style("font-size", "14px")
+              .style("font-size", "16px")
+              .style("font-family", "ivyepic-variable, sans-serif")
+              .style("font-variation-settings", "'wght' 400")
               .style("pointer-events", "none")
               .style("visibility", "hidden");
   
