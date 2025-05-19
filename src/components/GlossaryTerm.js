@@ -43,8 +43,11 @@ const GlossaryTerm = ({ className, sectionId, children }) => {
   const tooltipStyles = {
     backgroundColor: "#333",
     color: "white",
-    fontSize: "0.9rem",
+    fontSize: "1.1rem",
+    fontFamily: "ivyepic-variable, sans-serif",
+    fontVariationSettings: "'wght' 400",
     border: "1px solid #444",
+    padding: "6px 10px",
   };
 
   const arrowColor = "#333";
