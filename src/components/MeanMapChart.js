@@ -5,66 +5,201 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
 
-const dataMap = {
- b : {
-  bl: "Burgenland",
-  klein: { gemgr: "unter 2500 EW", ri: 1821, riCategory: "below2k" },
-  mittel: { gemgr: "bis zu 10.000 EW", ri: 1604, riCategory: "below1800" },
-  groß: { gemgr: "bis zu 100.000 EW", ri: 1901, riCategory: "below2k" }
- },
- k : {
-  bl: "Kärnten",
-  klein: { gemgr: "unter 2500 EW", ri: 1390, riCategory: "below1400" },
-  mittel: { gemgr: "bis zu 10.000 EW", ri: 1656, riCategory: "below1800" },
-  groß: { gemgr: "bis zu 100.000 EW", ri: 1820, riCategory: "below2k" },
-  sg: { gemgr: "über 100.000 EW", ri: 1669, riCategory: "below1800" }
- },
- noe : {
-  bl: "Niederösterreich",
-  klein: { gemgr: "unter 2500 EW", ri: 2009, riCategory: "over2k" },
-  mittel: { gemgr: "bis zu 10.000 EW", ri: 1941, riCategory: "below2k" },
-  groß: { gemgr: "bis zu 100.000 EW", ri: 2103, riCategory: "over2k" },
- },
- ooe : {
-  bl: "Oberösterreich",
-  klein: { gemgr: "unter 2500 EW", ri: 2064, riCategory: "over2k" },
-  mittel: { gemgr: "bis zu 10.000 EW", ri: 2031, riCategory: "over2k" },
-  groß: { gemgr: "bis zu 100.000 EW", ri: 1712, riCategory: "below1800" },
-  sg: { gemgr: "über 100.000 EW", ri: 1459, riCategory: "below1600" }
- },
- s : {
-  bl: "Salzburg",
-  klein: { gemgr: "unter 2500 EW", ri: 1665, riCategory: "below1800" },
-  mittel: { gemgr: "bis zu 10.000 EW", ri: 1886, riCategory: "below2k" },
-  groß: { gemgr: "bis zu 100.000 EW", ri: 1526, riCategory: "below1600" },
-  sg: { gemgr: "über 100.000 EW", ri: 1839, riCategory: "below2k" }
- },
- st : {
-  bl: "Steiermark",
-  klein: { gemgr: "unter 2500 EW", ri: 1738, riCategory: "below1800" },
-  mittel: { gemgr: "bis zu 10.000 EW", ri: 1868, riCategory: "below2k" },
-  groß: { gemgr: "bis zu 100.000 EW", ri: 1875, riCategory: "below2k" },
-  sg: { gemgr: "über 100.000 EW", ri: 1578, riCategory: "below1600" }
- },
- t : {
-  bl: "Tirol",
-  klein: { gemgr: "unter 2500 EW", ri: 1994, riCategory: "below2k" },
-  mittel: { gemgr: "bis zu 10.000 EW", ri: 1838, riCategory: "below2k" },
-  groß: { gemgr: "bis zu 100.000 EW", ri: 1366, riCategory: "below1400" },
-  sg: { gemgr: "über 100.000 EW", ri: 1866, riCategory: "below2k" }
- },
- v : {
-  bl: "Vorarlberg",
-  klein: { gemgr: "unter 2500 EW", ri: 2046, riCategory: "over2k" },
-  mittel: { gemgr: "bis zu 10.000 EW", ri: 2141, riCategory: "over2k" },
-  groß: { gemgr: "bis zu 100.000 EW", ri: 1743, riCategory: "below1800" }
- },
- w : {
-  bl: "Wien",
-  sg: { gemgr: "über 100.000 EW", ri: 1545, riCategory: "below1600" }
- }
-}
+// const langMap = {
+//   de: {
+//     klein: { de: "unter 2500 EW"},
+//     mittel: { de: "bis zu 10.000 EW"},
+//     groß: { de: "bis zu 100.000 EW"},
+//     sg: { de: "über 100.000 EW"}
+//   },
+//   en: {
+//     klein: { en: "under 2,500 inhabitants" },
+//     mittel: { en: "up to 10,000 inhabitants" },
+//     groß: { en: "up to 100,000 inhabitants" },
+//     sg: { en: "over 100,000 inhabitants" }
+//   }
+// }
 
+const dataMap = {
+  b : {
+    bl: "Burgenland",
+    klein: { 
+      gemgr: "unter 2500 EW", 
+      all: { ri: 1821, riCategory: "below2k" },
+      renter: { ri: 1273, riCategory: "below1400" },
+    }, 
+    mittel: { 
+      gemgr: "bis zu 10.000 EW",
+      all: { ri: 1604, riCategory: "below1800" },
+      renter: { ri: 1089, riCategory: "below1200" }
+    },
+    groß: { 
+      gemgr: "bis zu 100.000 EW", 
+      all: { ri: 1901, riCategory: "below2k" },
+      renter: { riCategory: "nodata" }
+    }
+  },
+  k : {
+    bl: "Kärnten",
+    klein: { 
+      gemgr: "unter 2500 EW", 
+      all: { ri: 1390, riCategory: "below1400" },
+      renter: { ri: 745, riCategory: "below1k" }
+    },
+    mittel: { 
+      gemgr: "bis zu 10.000 EW",
+      all: { ri: 1656, riCategory: "below1800" },
+      renter: { ri: 1285, riCategory: "below1400" }
+    },
+    groß: { 
+      gemgr: "bis zu 100.000 EW", 
+      all: { ri: 1820, riCategory: "below2k" },
+      renter: { ri: 1148, riCategory: "below1200" }
+    },
+    sg: { 
+      gemgr: "über 100.000 EW", 
+      all: { ri: 1669, riCategory: "below1800" },
+      renter: { ri: 1053, riCategory: "below1200" }
+    },
+  },
+  noe : {
+    bl: "Niederösterreich",
+    klein: { 
+      gemgr: "unter 2500 EW", 
+      all: { ri: 2009, riCategory: "over2k" },
+      renter: { ri: 873, riCategory: "below1k" }
+    },
+    mittel: { 
+      gemgr: "bis zu 10.000 EW", 
+      all: { ri: 1941, riCategory: "below2k" },
+      renter: { ri: 1423, riCategory: "below1600" }
+    },
+    groß: { 
+      gemgr: "bis zu 100.000 EW", 
+      all: { ri: 2103, riCategory: "over2k" },
+      renter: { ri: 1378, riCategory: "below1400" }
+    }
+  },
+  ooe : {
+    bl: "Oberösterreich",
+    klein: { 
+      gemgr: "unter 2500 EW", 
+      all: { ri: 2064, riCategory: "over2k" },
+      renter: { ri: 1389, riCategory: "below1400" }
+    },
+    mittel: { 
+      gemgr: "bis zu 10.000 EW", 
+      all: { ri: 2031, riCategory: "over2k" },
+      renter: { ri: 1317, riCategory: "below1400" }
+    },
+    groß: { 
+      gemgr: "bis zu 100.000 EW", 
+      all: { ri: 1712, riCategory: "below1800" },
+      renter: { ri: 1401, riCategory: "below1600" }
+    },
+    sg: { 
+      gemgr: "über 100.000 EW", 
+      all: { ri: 1459, riCategory: "below1600" },
+      renter: { ri: 1244, riCategory: "below1400" }
+    }
+  },
+  s : {
+    bl: "Salzburg",
+    klein: { 
+      gemgr: "unter 2500 EW", 
+      all: { ri: 1665, riCategory: "below1800" },
+      renter: { riCategory: "nodata" }
+    },
+    mittel: { 
+      gemgr: "bis zu 10.000 EW", 
+      all: { ri: 1886, riCategory: "below2k" },
+      renter: { ri: 1290, riCategory: "below1400" }
+    },
+    groß: { 
+      gemgr: "bis zu 100.000 EW", 
+      all: { ri: 1526, riCategory: "below1600" },
+      renter: { ri: 1095, riCategory: "below1200" }
+    },
+    sg: { 
+      gemgr: "über 100.000 EW", 
+      all: { ri: 1839, riCategory: "below2k" },
+      renter: { ri: 1422, riCategory: "below1600" }
+    }
+  },
+  st : {
+    bl: "Steiermark",
+    klein: { 
+      gemgr: "unter 2500 EW",
+      all: { ri: 1738, riCategory: "below1800" },
+      renter: { ri: 1467, riCategory: "below1600" }
+    },
+    mittel: { 
+      gemgr: "bis zu 10.000 EW",
+      all: { ri: 1868, riCategory: "below2k" },
+      renter: { ri: 1216, riCategory: "below1400" }
+    },
+    groß: { 
+      gemgr: "bis zu 100.000 EW",
+      al: { ri: 1875, riCategory: "below2k" },
+      renter: { ri: 1285, riCategory: "below1400" }
+    },
+    sg: { 
+      gemgr: "über 100.000 EW", 
+      all: { ri: 1578, riCategory: "below1600" },
+      renter: { ri: 1178, riCategory: "below1200" }
+    }
+  },
+  t : {
+    bl: "Tirol",
+    klein: { 
+      gemgr: "unter 2500 EW", 
+      all: { ri: 1994, riCategory: "below2k" },
+      renter: { ri: 1436, riCategory: "below1600" }
+    },
+    mittel: { 
+      gemgr: "bis zu 10.000 EW", 
+      all: { ri: 1838, riCategory: "below2k" },
+      renter: { ri: 1402, riCategory: "below1600" }
+    },
+    groß: { 
+      gemgr: "bis zu 100.000 EW", 
+      all: { ri: 1366, riCategory: "below1400" },
+      renter: { ri: 854, riCategory: "below1k" }
+    },
+    sg: { 
+      gemgr: "über 100.000 EW", 
+      all: { ri: 1866, riCategory: "below2k" },
+      renter: { ri: 1442, riCategory: "below1600" }
+    },
+  },
+  v : {
+    bl: "Vorarlberg",
+    klein: { 
+      gemgr: "unter 2500 EW", 
+      all: { ri: 2046, riCategory: "over2k" },
+      renter: { ri: 1168, riCategory: "below1200" }
+    },
+    mittel: { 
+      gemgr: "bis zu 10.000 EW", 
+      all: { ri: 2141, riCategory: "over2k" },
+      renter: { ri: 1035, riCategory: "below1200" }
+    },
+    groß: { 
+      gemgr: "bis zu 100.000 EW", 
+      all: { ri: 1743, riCategory: "below1800" },
+      renter: { ri: 1133, riCategory: "below1200" }
+    },
+  },
+  w : {
+    bl: "Wien",
+    sg: { 
+      gemgr: "über 100.000 EW", 
+      all: { ri: 1545, riCategory: "below1600" },
+      renter: { ri: 1336, riCategory: "below1400" }
+    }
+  }
+};
+ 
 const textinfoMap = {
   "b": {
     title: "Burgenland",
@@ -104,17 +239,18 @@ const textinfoMap = {
   }
 }
 
-const isTouchDevice = () => {
-  return (
-    "ontouchstart" in window ||
-    (navigator.maxTouchPoints > 0 && !window.matchMedia("(any-hover: hover)").matches)
-  );
-};
+// const isTouchDevice = () => {
+//   return (
+//     "ontouchstart" in window ||
+//     (navigator.maxTouchPoints > 0 && !window.matchMedia("(any-hover: hover)").matches)
+//   );
+// };
 
-const MeanMapChart = ( mode ) => {
+const MeanMapChart = ({ mode }) => {
 
-  const svgUrl = `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_all_DE.svg`;
-
+  const svgUrl = mode === "all"
+    ? `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_all_DE.svg`
+    : `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_onlyRent_DE.svg`;
 
   const svgRef = useRef(null);
 
@@ -134,7 +270,13 @@ const MeanMapChart = ( mode ) => {
 
 
   useEffect(() => {
+
+    let isMounted = true;
+
     d3.xml(svgUrl).then((xml) => {
+
+      if (!isMounted) return;
+
       const svgNode = xml.documentElement;
   
       const svgContainer = d3.select(svgRef.current);
@@ -192,8 +334,9 @@ const MeanMapChart = ( mode ) => {
               .style("cursor", "pointer")
               .on("mouseover", function (event) {
                 
-
-                const regionData = dataMap[groupId]?.[dataName];
+                // const regionData = dataMapAll[groupId]?.[dataName];
+                
+                const regionData = dataMap[groupId]?.[dataName]?.[mode];
                 const regionName = dataMap[groupId]?.bl;
 
                 // Highlight corresponding gemgr legend item
@@ -204,15 +347,15 @@ const MeanMapChart = ( mode ) => {
                 // Highlight corresponding riCategory legend item
                 const riCategoryId = regionData?.riCategory || "notexisting";
                 const categoryGroup = svg.select(`g#${CSS.escape(riCategoryId)}`);
-                
-                if (riCategoryId === "notexisting" || riCategoryId === "nodata") {
+
+                // === Special Overlay for "notexisting"
+                if (riCategoryId === "notexisting") {
                   const baseRect = box.node();
-                  if (baseRect && d3.select(this.parentNode).select("rect.highlight-overlay").empty()) {
+                  if (baseRect && d3.select(this.parentNode).select("rect.highlight-overlay-notexisting").empty()) {
                     const { x, y, width, height } = baseRect.getBBox();
-                
-                    // Add highlight overlay on top of the hovered box
+
                     d3.select(this.parentNode)
-                      .insert("rect", ":first-child") // inserts it as the first element in the group
+                      .insert("rect", ":first-child")
                       .attr("x", x)
                       .attr("y", y)
                       .attr("width", width)
@@ -220,15 +363,13 @@ const MeanMapChart = ( mode ) => {
                       .attr("fill", "#e2e2e2")
                       .attr("opacity", 1.0)
                       .attr("pointer-events", "none")
-                      .classed("highlight-overlay", true);
+                      .classed("highlight-overlay-notexisting", true);
                   }
-                
-                  // Also add overlay to legend category
-                  const categoryGroup = svg.select(`g#${CSS.escape(riCategoryId)}`);
+
                   const catRect = categoryGroup.select("rect").node();
-                  if (catRect && categoryGroup.select("rect.highlight-overlay").empty()) {
+                  if (catRect && categoryGroup.select("rect.highlight-overlay-notexisting").empty()) {
                     const { x, y, width, height } = catRect.getBBox();
-                
+
                     categoryGroup
                       .insert("rect", ":first-child")
                       .attr("x", x)
@@ -238,7 +379,42 @@ const MeanMapChart = ( mode ) => {
                       .attr("fill", "#e2e2e2")
                       .attr("opacity", 1.0)
                       .attr("pointer-events", "none")
-                      .classed("highlight-overlay", true);
+                      .classed("highlight-overlay-notexisting", true);
+                  }
+                }
+
+                // === Special Overlay for "nodata"
+                else if (riCategoryId === "nodata") {
+                  const baseRect = box.node();
+                  if (baseRect && d3.select(this.parentNode).select("rect.highlight-overlay-nodata").empty()) {
+                    const { x, y, width, height } = baseRect.getBBox();
+
+                    d3.select(this.parentNode)
+                      .insert("rect", ":first-child")
+                      .attr("x", x)
+                      .attr("y", y)
+                      .attr("width", width)
+                      .attr("height", height)
+                      .attr("fill", "#e2e2e2")
+                      .attr("opacity", 1.0)
+                      .attr("pointer-events", "none")
+                      .classed("highlight-overlay-nodata", true);
+                  }
+
+                  const catRect = categoryGroup.select("rect").node();
+                  if (catRect && categoryGroup.select("rect.highlight-overlay-nodata").empty()) {
+                    const { x, y, width, height } = catRect.getBBox();
+
+                    categoryGroup
+                      .insert("rect", ":first-child")
+                      .attr("x", x)
+                      .attr("y", y)
+                      .attr("width", width)
+                      .attr("height", height)
+                      .attr("fill", "#e2e2e2")
+                      .attr("opacity", 1.0)
+                      .attr("pointer-events", "none")
+                      .classed("highlight-overlay-nodata", true);
                   }
                 }
                 else if (riCategoryId === "below1k" || riCategoryId === "below1200" || riCategoryId === "below1400") {
@@ -248,17 +424,28 @@ const MeanMapChart = ( mode ) => {
                   box.style("filter", "brightness(1.2)");
                   categoryGroup.select("rect").style("filter", "brightness(1.2)");
                 }
+                
+                const gemgrText = dataMap[groupId]?.[dataName]?.gemgr;
 
-                const tooltipHTML = regionData
-                  ? `
-                    <div style="font-variation-settings: 'wght' 700">${regionName}</div>
-                    <div>Gemeindegrößenklasse: ${regionData.gemgr}</div>
-                    <div>Residualeinkommen (Median): ${regionData.ri} €</div>
-                  `
-                  : `
+                let tooltipHTML;
+
+                if (!regionData) {
+                  tooltipHTML = `
                     <div style="font-variation-settings: 'wght' 700">${regionName}</div>
                     <div>Gemeindegrößenklasse nicht vorhanden</div>
                   `;
+                } else if(regionData.riCategory === "nodata") {
+                  tooltipHTML = `
+                    <div style="font-variation-settings: 'wght' 700">${regionName}</div>
+                    <div>Keine Daten für Gemeindegrößenklasse vorhanden</div>
+                  `;
+                } else {
+                  tooltipHTML = `
+                    <div style="font-variation-settings: 'wght' 700">${regionName}</div>
+                    <div>Gemeindegrößenklasse: ${gemgrText}</div>
+                    <div>Residualeinkommen (Median): ${regionData.ri} €</div>
+                  `;
+                }
 
                 tooltip
                   .html(tooltipHTML)
@@ -275,19 +462,15 @@ const MeanMapChart = ( mode ) => {
                 box.style("filter", null);
                 tooltip.style("visibility", "hidden");
 
-                const gemgrGroup = svg.select(`g#${CSS.escape(dataName)}`);
-                const gemgrRect = gemgrGroup.select("rect");
-                gemgrRect.style("fill", "#fff");
+                // Reset gemgr legend fill
+                svg.select(`g#${CSS.escape(dataName)}`).select("rect").style("fill", "#fff");
 
-                const regionData = dataMap[groupId]?.[dataName];
-                const riCategoryId = regionData?.riCategory || "notexisting";
-                svg.select(`g#${CSS.escape(riCategoryId)}`).select("rect").style("filter", null);
+                // === Remove all highlight overlays
+                svg.selectAll("rect.highlight-overlay-notexisting").remove();
+                svg.selectAll("rect.highlight-overlay-nodata").remove();
 
-                // Remove both overlays
-                d3.select(this.parentNode).select("rect.highlight-overlay").remove();
-
-                const categoryGroup = svg.select(`g#${CSS.escape(riCategoryId)}`);
-                categoryGroup.select("rect.highlight-overlay").remove();
+                // === Reset all filters
+                svg.selectAll("rect").style("filter", null);
               });
           }
         });
@@ -295,9 +478,10 @@ const MeanMapChart = ( mode ) => {
     });
 
     return () => {
-      d3.selectAll(".tooltip").remove();
+      isMounted = false;
+      d3.selectAll(".d3-tooltip-mm").remove();
     };
-  }, []);
+  }, [mode, svgUrl]);
   
   return (
     <div style={{ textAlign: "center" }}>
