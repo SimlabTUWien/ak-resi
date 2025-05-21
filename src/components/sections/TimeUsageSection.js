@@ -70,7 +70,7 @@ const TimeUsageSection = () => {
                     In den nächsten Analysen konzentrieren wir uns daher gezielt auf die Altersgruppe 21 bis 64 Jahre, um die Auswirkungen dieser Verteilung noch genauer zu untersuchen.
                 </p>
 
-                <p style={{margin: '32px 0 0'}}>TODO: Plot Zeitverwendung nach Altersgruppe</p>
+                <p style={{margin: '32px 0 0'}}>TODO: Plot Zeitverwendung nach Altersgruppe - offen ob der rein kommt?</p>
 
 
                 <h2 className="content-header">Zeitverwendung von Männern und Frauen (21-64 Jahre) für Erwerbsarbeit und unbezahlter Arbeit</h2>
