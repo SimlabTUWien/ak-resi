@@ -74,6 +74,22 @@ export default function Glossar() {
           </p>
         </div>
 
+        <div className="glossar-element" id="postsecondaryEducation">
+          <h2>Postsekundäre Ausbildung</h2>
+          <p className="paragraph-glossar">
+             Postsekundäre Ausbildung bezeichnet Bildungsprogramme, die nach Abschluss der Sekundarstufe II (z. B. Matura oder gleichwertiger Abschluss) beginnen, aber nicht zwingend zu einem Hochschulabschluss führen. 
+             Beispiele für die postsekundäre Bildung sind Kollegs oder Meisterschulen.
+          </p>
+        </div>
+
+        <div className="glossar-element" id="tertiaryEducation">
+          <h2>Tertiäre Ausbildung</h2>
+          <p className="paragraph-glossar">
+             Die tertiäre Ausbildung umfasst alle Bildungsprogramme, die nach der Sekundarstufe II (z. B. Matura) beginnen und zu einem akademischen oder hochqualifizierten Berufsabschluss führen. 
+             Diese Ausbildung findet klassischerweise an Universitäten oder Fachhochschulen statt.
+          </p>
+        </div>
+
         <div className="glossar-element" id="quintil">
           <h2>Quintil</h2>
           <p className="paragraph-glossar">
@@ -92,6 +108,17 @@ export default function Glossar() {
           <h2>Soziale Infrastruktur</h2>
           <p className="paragraph-glossar">
             Einrichtungen und Dienstleistungen, die das gesellschaftliche Leben unterstützen, z. B. Bildung, Gesundheit, Pflegeeinrichtungen und andere soziale Einrichtungen.
+          </p>
+        </div>
+
+        <div className="glossar-element" id="spillovers">
+          <h2>Spillovers</h2>
+          <p className="paragraph-glossar">
+            Spillovers im Bereich der sozialen Infrastruktur bedeuten, dass Einrichtungen wie Schulen, Kindergärten und Ärzt:innenpraxen nicht nur den Haushalten in der jeweiligen Gemeinde zugutekommen, 
+            sondern auch von Menschen aus umliegenden Gemeinden genutzt werden können. Das heißt: Der Nutzen „spielt über“ die Gemeindegrenzen hinaus.<br/> 
+            <br/>
+            In unserer Analyse berücksichtigen wir diese Spillover-Effekte, indem wir auch jene Einrichtungen mit einbeziehen, die innerhalb von 30 Minuten Fahrzeit (mit dem Auto oder öffentlichen Verkehrsmitteln) zur jeweiligen Wohngemeinde leben. 
+            So wird deutlich, wie weitreichend die Wirkung einer sozialen Infrastruktur tatsächlich ist – sie wirkt oft regional, nicht nur lokal.
           </p>
         </div>
 
