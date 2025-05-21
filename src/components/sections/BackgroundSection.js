@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import GlossaryTerm from '../GlossaryTerm';
 import BackgroundChart from '../BackgroundChart';
