@@ -239,12 +239,12 @@ const textinfoMap = {
   }
 }
 
-// const isTouchDevice = () => {
-//   return (
-//     "ontouchstart" in window ||
-//     (navigator.maxTouchPoints > 0 && !window.matchMedia("(any-hover: hover)").matches)
-//   );
-// };
+const isTouchDevice = () => {
+  return (
+    "ontouchstart" in window ||
+    (navigator.maxTouchPoints > 0 && !window.matchMedia("(any-hover: hover)").matches)
+  );
+};
 
 const MeanMapChart = ({ mode }) => {
 
@@ -278,7 +278,6 @@ const MeanMapChart = ({ mode }) => {
       if (!isMounted) return;
 
       const svgNode = xml.documentElement;
-  
       const svgContainer = d3.select(svgRef.current);
       svgContainer.selectAll("*").remove(); // Clear before adding new SVG
       svgContainer.node().appendChild(svgNode);
@@ -287,196 +286,219 @@ const MeanMapChart = ({ mode }) => {
       svg.attr("width", "100%").attr("height", "100%");
       svg.style("display", "block").style("margin", "auto");
 
-      // === Tooltip ===
-      d3.select("body").selectAll("div.d3-tooltip-mm").remove();
-      const tooltip = d3
-        .select("body")
-        .append("div")
-        .attr("class", "d3-tooltip-mm")
-        .style("position", "absolute")
-        .style("background", "rgba(0, 0, 0, 0.8)")
-        .style("color", "white")
-        .style("padding", "6px 10px")
-        .style("border-radius", "5px")
-        .style("font-size", "16px")
-        .style("font-family", "ivyepic-variable, sans-serif")
-        .style("font-variation-settings", "'wght' 400")
-        .style("pointer-events", "none")
-        .style("visibility", "hidden");
+      if(!isTouchDevice()) {
+      
+        // === Tooltip ===
+        d3.select("body").selectAll("div.d3-tooltip-mm").remove();
+        const tooltip = d3
+          .select("body")
+          .append("div")
+          .attr("class", "d3-tooltip-mm")
+          .style("position", "absolute")
+          .style("background", "rgba(0, 0, 0, 0.8)")
+          .style("color", "white")
+          .style("padding", "6px 10px")
+          .style("border-radius", "5px")
+          .style("font-size", "16px")
+          .style("font-family", "ivyepic-variable, sans-serif")
+          .style("font-variation-settings", "'wght' 400")
+          .style("pointer-events", "none")
+          .style("visibility", "hidden");
 
-      // === Circle behavior ===
-      svg.selectAll(".circle")
-      .style("cursor", "pointer")
-      .on("mouseover", function () {
-        d3.select(this).select("circle").style("filter", "brightness(0.9)");
-      })
-      .on("mouseout", function () {
-        d3.select(this).select("circle").style("filter", null);
-      })
-      .on("click", function () {
-        const name = d3.select(this).attr("data-name");
-        if (textinfoMap[name]) {
-          setSelectedInfo(textinfoMap[name]);
-        }
-      });
-
-      // === Rect and Polygon Hover Behavior ===
-      svg.selectAll("g").each(function () {
-        const groupId = d3.select(this).attr("id");
-        const group = d3.select(this);
-
-        group.selectAll("rect, polygon").each(function () {
-          const box = d3.select(this);
-          const dataName = box.attr("data-name");
-
-          if (dataName) {
-            box
-              .style("cursor", "pointer")
-              .on("mouseover", function (event) {
-                
-                // const regionData = dataMapAll[groupId]?.[dataName];
-                
-                const regionData = dataMap[groupId]?.[dataName]?.[mode];
-                const regionName = dataMap[groupId]?.bl;
-
-                // Highlight corresponding gemgr legend item
-                const gemgrGroup = svg.select(`g#${CSS.escape(dataName)}`);
-                const gemgrRect = gemgrGroup.select("rect");
-                gemgrRect.style("fill", "#e2e2e2");
-
-                // Highlight corresponding riCategory legend item
-                const riCategoryId = regionData?.riCategory || "notexisting";
-                const categoryGroup = svg.select(`g#${CSS.escape(riCategoryId)}`);
-
-                // === Special Overlay for "notexisting"
-                if (riCategoryId === "notexisting") {
-                  const baseRect = box.node();
-                  if (baseRect && d3.select(this.parentNode).select("rect.highlight-overlay-notexisting").empty()) {
-                    const { x, y, width, height } = baseRect.getBBox();
-
-                    d3.select(this.parentNode)
-                      .insert("rect", ":first-child")
-                      .attr("x", x)
-                      .attr("y", y)
-                      .attr("width", width)
-                      .attr("height", height)
-                      .attr("fill", "#e2e2e2")
-                      .attr("opacity", 1.0)
-                      .attr("pointer-events", "none")
-                      .classed("highlight-overlay-notexisting", true);
-                  }
-
-                  const catRect = categoryGroup.select("rect").node();
-                  if (catRect && categoryGroup.select("rect.highlight-overlay-notexisting").empty()) {
-                    const { x, y, width, height } = catRect.getBBox();
-
-                    categoryGroup
-                      .insert("rect", ":first-child")
-                      .attr("x", x)
-                      .attr("y", y)
-                      .attr("width", width)
-                      .attr("height", height)
-                      .attr("fill", "#e2e2e2")
-                      .attr("opacity", 1.0)
-                      .attr("pointer-events", "none")
-                      .classed("highlight-overlay-notexisting", true);
-                  }
-                }
-
-                // === Special Overlay for "nodata"
-                else if (riCategoryId === "nodata") {
-                  const baseRect = box.node();
-                  if (baseRect && d3.select(this.parentNode).select("rect.highlight-overlay-nodata").empty()) {
-                    const { x, y, width, height } = baseRect.getBBox();
-
-                    d3.select(this.parentNode)
-                      .insert("rect", ":first-child")
-                      .attr("x", x)
-                      .attr("y", y)
-                      .attr("width", width)
-                      .attr("height", height)
-                      .attr("fill", "#e2e2e2")
-                      .attr("opacity", 1.0)
-                      .attr("pointer-events", "none")
-                      .classed("highlight-overlay-nodata", true);
-                  }
-
-                  const catRect = categoryGroup.select("rect").node();
-                  if (catRect && categoryGroup.select("rect.highlight-overlay-nodata").empty()) {
-                    const { x, y, width, height } = catRect.getBBox();
-
-                    categoryGroup
-                      .insert("rect", ":first-child")
-                      .attr("x", x)
-                      .attr("y", y)
-                      .attr("width", width)
-                      .attr("height", height)
-                      .attr("fill", "#e2e2e2")
-                      .attr("opacity", 1.0)
-                      .attr("pointer-events", "none")
-                      .classed("highlight-overlay-nodata", true);
-                  }
-                }
-                else if (riCategoryId === "below1k" || riCategoryId === "below1200" || riCategoryId === "below1400") {
-                  box.style("filter", "brightness(0.9)");
-                  categoryGroup.select("rect").style("filter", "brightness(0.9)");
-                } else {
-                  box.style("filter", "brightness(1.2)");
-                  categoryGroup.select("rect").style("filter", "brightness(1.2)");
-                }
-                
-                const gemgrText = dataMap[groupId]?.[dataName]?.gemgr;
-
-                let tooltipHTML;
-
-                if (!regionData) {
-                  tooltipHTML = `
-                    <div style="font-variation-settings: 'wght' 700">${regionName}</div>
-                    <div>Gemeindegrößenklasse nicht vorhanden</div>
-                  `;
-                } else if(regionData.riCategory === "nodata") {
-                  tooltipHTML = `
-                    <div style="font-variation-settings: 'wght' 700">${regionName}</div>
-                    <div>Keine Daten für Gemeindegrößenklasse vorhanden</div>
-                  `;
-                } else {
-                  tooltipHTML = `
-                    <div style="font-variation-settings: 'wght' 700">${regionName}</div>
-                    <div>Gemeindegrößenklasse: ${gemgrText}</div>
-                    <div>Residualeinkommen (Median): ${regionData.ri} €</div>
-                  `;
-                }
-
-                tooltip
-                  .html(tooltipHTML)
-                  .style("visibility", "visible")
-                  .style("top", `${event.pageY - 40}px`)
-                  .style("left", `${event.pageX + 20}px`);
-              })
-              .on("mousemove", function (event) {
-                tooltip
-                  .style("left", `${event.pageX + 10}px`)
-                  .style("top", `${event.pageY - 28}px`);
-              })
-              .on("mouseout", function () {
-                box.style("filter", null);
-                tooltip.style("visibility", "hidden");
-
-                // Reset gemgr legend fill
-                svg.select(`g#${CSS.escape(dataName)}`).select("rect").style("fill", "#fff");
-
-                // === Remove all highlight overlays
-                svg.selectAll("rect.highlight-overlay-notexisting").remove();
-                svg.selectAll("rect.highlight-overlay-nodata").remove();
-
-                // === Reset all filters
-                svg.selectAll("rect").style("filter", null);
-              });
+        // === Circle behavior ===
+        svg.selectAll(".circle")
+        .style("cursor", "pointer")
+        .on("mouseover", function () {
+          d3.select(this).select("circle").style("filter", "brightness(0.9)");
+        })
+        .on("mouseout", function () {
+          d3.select(this).select("circle").style("filter", null);
+        })
+        .on("click", function () {
+          const name = d3.select(this).attr("data-name");
+          if (textinfoMap[name]) {
+            setSelectedInfo(textinfoMap[name]);
           }
         });
-      });
-    });
 
+        // === Rect and Polygon Hover Behavior ===
+        svg.selectAll("g").each(function () {
+          const groupId = d3.select(this).attr("id");
+          const group = d3.select(this);
+
+          group.selectAll("rect, polygon").each(function () {
+            const box = d3.select(this);
+            const dataName = box.attr("data-name");
+
+            if (dataName) {
+              box
+                .style("cursor", "pointer")
+                .on("mouseover", function (event) {
+                  
+                  // const regionData = dataMapAll[groupId]?.[dataName];
+                  
+                  const regionData = dataMap[groupId]?.[dataName]?.[mode];
+                  const regionName = dataMap[groupId]?.bl;
+
+                  // Highlight corresponding gemgr legend item
+                  const gemgrGroup = svg.select(`g#${CSS.escape(dataName)}`);
+                  const gemgrRect = gemgrGroup.select("rect");
+                  gemgrRect.style("fill", "#e2e2e2");
+
+                  // Highlight corresponding riCategory legend item
+                  const riCategoryId = regionData?.riCategory || "notexisting";
+                  const categoryGroup = svg.select(`g#${CSS.escape(riCategoryId)}`);
+
+                  // === Special Overlay for "notexisting"
+                  if (riCategoryId === "notexisting") {
+                    const baseRect = box.node();
+                    if (baseRect && d3.select(this.parentNode).select("rect.highlight-overlay-notexisting").empty()) {
+                      const { x, y, width, height } = baseRect.getBBox();
+
+                      d3.select(this.parentNode)
+                        .insert("rect", ":first-child")
+                        .attr("x", x)
+                        .attr("y", y)
+                        .attr("width", width)
+                        .attr("height", height)
+                        .attr("fill", "#e2e2e2")
+                        .attr("opacity", 1.0)
+                        .attr("pointer-events", "none")
+                        .classed("highlight-overlay-notexisting", true);
+                    }
+
+                    const catRect = categoryGroup.select("rect").node();
+                    if (catRect && categoryGroup.select("rect.highlight-overlay-notexisting").empty()) {
+                      const { x, y, width, height } = catRect.getBBox();
+
+                      categoryGroup
+                        .insert("rect", ":first-child")
+                        .attr("x", x)
+                        .attr("y", y)
+                        .attr("width", width)
+                        .attr("height", height)
+                        .attr("fill", "#e2e2e2")
+                        .attr("opacity", 1.0)
+                        .attr("pointer-events", "none")
+                        .classed("highlight-overlay-notexisting", true);
+                    }
+                  }
+
+                  // === Special Overlay for "nodata"
+                  else if (riCategoryId === "nodata") {
+                    const baseRect = box.node();
+                    if (baseRect && d3.select(this.parentNode).select("rect.highlight-overlay-nodata").empty()) {
+                      const { x, y, width, height } = baseRect.getBBox();
+
+                      d3.select(this.parentNode)
+                        .insert("rect", ":first-child")
+                        .attr("x", x)
+                        .attr("y", y)
+                        .attr("width", width)
+                        .attr("height", height)
+                        .attr("fill", "#e2e2e2")
+                        .attr("opacity", 1.0)
+                        .attr("pointer-events", "none")
+                        .classed("highlight-overlay-nodata", true);
+                    }
+
+                    const catRect = categoryGroup.select("rect").node();
+                    if (catRect && categoryGroup.select("rect.highlight-overlay-nodata").empty()) {
+                      const { x, y, width, height } = catRect.getBBox();
+
+                      categoryGroup
+                        .insert("rect", ":first-child")
+                        .attr("x", x)
+                        .attr("y", y)
+                        .attr("width", width)
+                        .attr("height", height)
+                        .attr("fill", "#e2e2e2")
+                        .attr("opacity", 1.0)
+                        .attr("pointer-events", "none")
+                        .classed("highlight-overlay-nodata", true);
+                    }
+                  }
+                  else if (riCategoryId === "below1k" || riCategoryId === "below1200" || riCategoryId === "below1400") {
+                    box.style("filter", "brightness(0.9)");
+                    categoryGroup.select("rect").style("filter", "brightness(0.9)");
+                  } else {
+                    box.style("filter", "brightness(1.2)");
+                    categoryGroup.select("rect").style("filter", "brightness(1.2)");
+                  }
+                  
+                  const gemgrText = dataMap[groupId]?.[dataName]?.gemgr;
+
+                  let tooltipHTML;
+
+                  if (!regionData) {
+                    tooltipHTML = `
+                      <div style="font-variation-settings: 'wght' 700">${regionName}</div>
+                      <div>Gemeindegrößenklasse nicht vorhanden</div>
+                    `;
+                  } else if(regionData.riCategory === "nodata") {
+                    tooltipHTML = `
+                      <div style="font-variation-settings: 'wght' 700">${regionName}</div>
+                      <div>Keine Daten für Gemeindegrößenklasse vorhanden</div>
+                    `;
+                  } else {
+                    tooltipHTML = `
+                      <div style="font-variation-settings: 'wght' 700">${regionName}</div>
+                      <div>Gemeindegrößenklasse: ${gemgrText}</div>
+                      <div>Residualeinkommen (Median): ${regionData.ri} €</div>
+                    `;
+                  }
+
+                  tooltip
+                    .html(tooltipHTML)
+                    .style("visibility", "visible")
+                    .style("top", `${event.pageY - 40}px`)
+                    .style("left", `${event.pageX + 20}px`);
+                })
+                .on("mousemove", function (event) {
+                  tooltip
+                    .style("left", `${event.pageX + 10}px`)
+                    .style("top", `${event.pageY - 28}px`);
+                })
+                .on("mouseout", function () {
+                  box.style("filter", null);
+                  tooltip.style("visibility", "hidden");
+
+                  // Reset gemgr legend fill
+                  svg.select(`g#${CSS.escape(dataName)}`).select("rect").style("fill", "#fff");
+
+                  // === Remove all highlight overlays
+                  svg.selectAll("rect.highlight-overlay-notexisting").remove();
+                  svg.selectAll("rect.highlight-overlay-nodata").remove();
+
+                  // === Reset all filters
+                  svg.selectAll("rect").style("filter", null);
+                });
+            }
+          });
+        });
+      }
+      else {
+        // === Touch device behavior ===
+        svg.select("g#bl-boxes")
+          .selectAll("g")
+          .style("cursor", "pointer")
+          .on("click", function () {
+            const id = d3.select(this).attr("id");
+            if (textinfoMap[id]) {
+              setSelectedInfo(textinfoMap[id]);
+            }
+          });
+
+        svg.selectAll(".circle")
+          .style("cursor", "pointer")
+          .on("click", function () {
+            const name = d3.select(this).attr("data-name");
+            if (textinfoMap[name]) {
+              setSelectedInfo(textinfoMap[name]);
+            }
+          }); 
+      }
+    });
     return () => {
       isMounted = false;
       d3.selectAll(".d3-tooltip-mm").remove();
