@@ -248,11 +248,31 @@ const isTouchDevice = () => {
 
 const MeanMapChart = ({ mode }) => {
 
-  const svgUrl = mode === "all"
-    ? `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_all_DE.svg`
-    : `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_onlyRent_DE.svg`;
-
   const svgRef = useRef(null);
+
+  const [parentWidth, setParentWidth] = useState(window.innerWidth);
+  const parentRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new ResizeObserver(entries => {
+      for (let entry of entries) {
+        setParentWidth(entry.contentRect.width);
+      }
+    });
+
+    if (parentRef.current) {
+      observer.observe(parentRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const isMobile = parentWidth < 820;
+
+  const svgUrl = mode === "all"
+    ? `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_${isMobile ? "all_mobile" : "all"}_DE.svg`
+    : `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_${isMobile ? "onlyRent_mobile" : "onlyRent"}_DE.svg`;
+
 
   const initialId = Object.keys(textinfoMap)[0]; // Get first key from textMap
   const [selectedInfo, setSelectedInfo] = useState(textinfoMap[initialId]);
@@ -506,7 +526,7 @@ const MeanMapChart = ({ mode }) => {
   }, [mode, svgUrl]);
   
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center" }} ref={parentRef}>
     <div className="mean-map-chart-container" ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }}></div>
     <Box 
         className="infotext-container"
