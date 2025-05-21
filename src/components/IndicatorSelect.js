@@ -6,12 +6,13 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 const indicatorMap = {
-  1: { de: "Allgemeinmediziner:innen", en: "General Practitioners" },
-  2: { de: "Krankenhäuser", en: "Hospitals" },
-  3: { de: "Pflegeheime", en: "Nursing Homes" },
-  4: { de: "Kindergärten", en: "Kindergartens" },
-  5: { de: "Schulen", en: "Schools" },
-  6: { de: "Andere Solzialeinrichtungen", en: "Other Social Institutions" },
+  1: { de: "Alle Sozialen Infrastrukturen", en: "All Social Infrastructures"},
+  2: { de: "Allgemeinmediziner:innen", en: "General Practitioners" },
+  3: { de: "Krankenhäuser", en: "Hospitals" },
+  4: { de: "Pflegeheime", en: "Nursing Homes" },
+  5: { de: "Kindergärten", en: "Kindergartens" },
+  6: { de: "Schulen", en: "Schools" },
+  7: { de: "Andere Solzialeinrichtungen", en: "Other Social Institutions" },
 };
 
 

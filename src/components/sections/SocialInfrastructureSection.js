@@ -1,27 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box, ToggleButton, ToggleButtonGroup } from '@mui/material';
 
 import GlossaryTerm from '../GlossaryTerm';
 import SocialInfrastructureTable from "../tables/SocialInfrastructureTable";
-import SIOverallIndicatorMap from "../SocialInfrastructureMaps/SIOverallIndicatorMap";
-import SISubIndicatorMap from "../SocialInfrastructureMaps/SISubIndicatorMap";
 import IndicatorSelect from "../IndicatorSelect";
+import SiIndicatorMap from "../SiIndicatorMap";
 
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import TrainIcon from '@mui/icons-material/Train';
 
 const SocialInfrastructureSection = () => {
 
-    const [siMode, setSiMode] = useState("so_cars");
-    const [siSubMode, setSiSubMode] = useState("so_sub");
+    const [spilloverMode, setSpilloverMode] = useState("no_so");
 
-    const handleToggleModeChange = (type, newValue) => {
+    const handleToggleModeChange = (newValue) => {
         if (newValue !== null) {
-            if (type === "si") {
-                setSiMode(newValue);
-            } else if (type === "si-sub") {
-                setSiSubMode(newValue);
-            }
+            setSpilloverMode(newValue);
         }
     };
 
@@ -43,37 +35,7 @@ const SocialInfrastructureSection = () => {
                 Die Karten zeigen die <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialen Infrastrukturen</GlossaryTerm> in Bezug auf den Bedarf in der Gemeinde. Während Ärzt:innen pro Einwohner:in berechnet werden, beziehen sich Kindergartengruppen auf Kinder im Alter von 3 bis 6 Jahren und Plätze in Pflegeheimen auf Menschen über 70. Neben der Verfügbarkeit von Infrastrukturen spielt auch ihre Zugänglichkeit eine Rolle: Kurze Öffnungszeiten oder hohe Kosten können die Nutzung einschränken. Da viele Menschen auch die Infrastrukturen in Nachbargemeinden nutzen, werden diese – mit geringerem Gewicht – in den Infrastrukturindikator einbezogen. In der Karte kann dieser Effekt ein- und ausgeblendet werden. Die obere Karte zeigt die Gesamtsumme aller Infrastrukturen, während in der unteren Karte die verschiedenen Infrastrukturarten einzeln betrachtet werden können. Genauere Informationen zu den einzelnen Infrastrukturen und der Berechnung der Indikatoren lassen sich unten ausklappen.
             </p>
 
-            {/* SI map overall */}
-            <Box
-                sx={{
-                    background: "#f4f4f4",
-                    padding: 2,
-                    borderRadius: 1,
-                    boxShadow: 1,
-                    fontSize: '14px',
-                    marginTop: 3,
-                }}
-            >
-                <div className="toggle-container">
-                    <ToggleButtonGroup
-                        className="si-toggle"
-                        value={siMode}
-                        exclusive
-                        onChange={(_, newValue) => handleToggleModeChange("si", newValue)}
-                        aria-label="mode selection"
-                    >
-                    <ToggleButton value="so_cars"><DirectionsCarIcon/></ToggleButton>
-                    <ToggleButton value="so_miv"><TrainIcon/></ToggleButton>
-                    <ToggleButton value="no_so"><label>No Spillover</label></ToggleButton>
-                    </ToggleButtonGroup>
-                </div>
-        
-                <div className="si-overall-container">
-                    <SIOverallIndicatorMap siMode={siMode} key={siMode} />
-                </div>
-            </Box>
-
-            {/* SI map sub indicators */}
+            {/* SI map*/}
             <Box
                 sx={{
                     background: "#f4f4f4",
@@ -95,19 +57,20 @@ const SocialInfrastructureSection = () => {
                     <div className="toggle-container">
                         <ToggleButtonGroup
                             className="si-toggle"
-                            value={siSubMode}
+                            value={spilloverMode}
                             exclusive
-                            onChange={(_, newValue) => handleToggleModeChange("si-sub", newValue)}
+                            onChange={(_, newValue) => handleToggleModeChange(newValue)}
                             aria-label="mode selection"
                         >
-                            <ToggleButton value="so_sub"><label>Spillover</label></ToggleButton>
-                            <ToggleButton value="no_so_sub"><label>No Spillover</label></ToggleButton>
+                            <ToggleButton value="no_so"><label>Kein<br/>Spillover</label></ToggleButton>
+                            <ToggleButton value="so_miv"><label>Spillover<br/>(MIV)</label></ToggleButton>
+                            <ToggleButton value="so_oev"><label>Spillover<br/>(ÖV)</label></ToggleButton>
                         </ToggleButtonGroup>
                     </div>
                 </div>
                 
-                <div className="si-subindicator-container">
-                    <SISubIndicatorMap siMode={siSubMode} subIndicator={selectedIndicator} key={`${siSubMode}-${selectedIndicator}`} />
+                <div className="si-spillover-container">
+                    <SiIndicatorMap siMode={spilloverMode} subIndicator={selectedIndicator} key={`${spilloverMode}-${selectedIndicator}`} />
                 </div>
             </Box>
 
