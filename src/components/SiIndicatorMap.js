@@ -302,18 +302,6 @@ const SiIndicatorMap = ({ siMode, subIndicator: indicator }) => {
         weight: 0.4
       });
 
-      // Bind popup
-      // layer.on({
-      //   click: () => {
-      //     const indicatorValue = feature.properties[selectedValue?.indicatorValue].toFixed(3);
-          
-      //     layer.bindPopup(`
-      //       <b>${ translations[languageRef.current]?.gkz }:</b> ${feature.properties.GKZ_2}<br>
-      //       <b>${ translations[languageRef.current]?.name }:</b> ${feature.properties.PGName}<br>
-      //       <b>${ translations[languageRef.current]?.title }:</b> ${indicatorValue}<br>
-      //     `).openPopup();
-      //   }
-      // });
       layer.on({
         click: () => {
           const indicatorValue = feature.properties[selectedValue?.indicatorValue].toFixed(3);
