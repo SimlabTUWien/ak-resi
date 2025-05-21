@@ -41,12 +41,13 @@ const GlossaryTerm = ({ className, sectionId, children }) => {
   }, []);
 
   const tooltipStyles = {
-    backgroundColor: "#333",
+    background: "rgba(0, 0, 0, 0.85)",
     color: "white",
     fontSize: "1.1rem",
     fontFamily: "ivyepic-variable, sans-serif",
     fontVariationSettings: "'wght' 400",
     border: "1px solid #444",
+    borderRadius: "8px",
     padding: "6px 10px",
   };
 
