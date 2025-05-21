@@ -527,7 +527,7 @@ const MeanMapChart = ({ mode }) => {
   
   return (
     <div style={{ textAlign: "center" }} ref={parentRef}>
-    <div className="mean-map-chart-container" ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }}></div>
+    <div className="mean-map-chart-container" ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden", marginTop: "24px" }}></div>
     <Box 
         className="infotext-container"
         sx={{
