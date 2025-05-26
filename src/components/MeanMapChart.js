@@ -140,7 +140,7 @@ const dataMap = {
     },
     groß: { 
       gemgr: "bis zu 100.000 EW",
-      al: { ri: 1875, riCategory: "below2k" },
+      all: { ri: 1875, riCategory: "below2k" },
       renter: { ri: 1285, riCategory: "below1400" }
     },
     sg: { 
