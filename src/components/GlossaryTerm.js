@@ -58,7 +58,7 @@ const GlossaryTerm = ({ className, sectionId, children }) => {
     () => ({
       DE: {
         incomeInequality: "Maß für die ungleiche Verteilung von Einkommen innerhalb einer Gesellschaft.",
-        communitySizeClass: "Kategorisierung von Gemeinden nach Einwohnerzahl zur statistischen Analyse.",
+        municipalitySizeClass: "Kategorisierung von Gemeinden nach Einwohnerzahl zur statistischen Analyse.",
         gini: "Kennzahl zur Messung der Einkommensungleichheit; Werte zwischen 0 (völlige Gleichheit) und 1 (maximale Ungleichheit).",
         consumption: "Statistische Erhebung zu den Ausgaben und dem Konsumverhalten von Haushalten.",
         median: "Der mittlere Wert einer geordneten Datenreihe, bei dem 50 % der Werte darüber und 50 % darunter liegen.",
@@ -73,7 +73,7 @@ const GlossaryTerm = ({ className, sectionId, children }) => {
       },
       EN: {
         incomeInequality: "Measure of the unequal distribution of income within a society.",
-        communitySizeClass: "Categorization of municipalities by population size for statistical analysis.",
+        municipalitySizeClass: "Categorization of municipalities by population size for statistical analysis.",
         gini: "Indicator of income inequality; values range from 0 (perfect equality) to 1 (maximum inequality).",
         consumption: "Statistical survey of household spending and consumption behavior.",
         median: "The middle value of a sorted data set, with 50% of values above and 50% below.",

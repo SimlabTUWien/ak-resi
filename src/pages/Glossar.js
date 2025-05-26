@@ -39,7 +39,7 @@ export default function Glossar() {
           </p>
         </div>
 
-        <div className="glossar-element" id="communityClassSize">
+        <div className="glossar-element" id="municipalitySizeClass">
           <h2>Gemeindegrößenklasse</h2>
           <p className="paragraph-glossar">
             Kategorisierung von Gemeinden nach Einwohnerzahl zur statistischen Analyse.
