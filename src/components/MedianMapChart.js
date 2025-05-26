@@ -246,7 +246,7 @@ const isTouchDevice = () => {
   );
 };
 
-const MeanMapChart = ({ mode }) => {
+const MedianMapChart = ({ mode }) => {
 
   const svgRef = useRef(null);
 
@@ -551,4 +551,4 @@ const MeanMapChart = ({ mode }) => {
   )
 };
 
-export default MeanMapChart;
+export default MedianMapChart;
