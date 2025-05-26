@@ -15,7 +15,7 @@ const BackgroundSection = () => {
                     text: (
                     <>
                         Die Ressourcen in unserer Gesellschaft sind nicht nur begrenzt sondern auch ungleich verteilt.
-                        Traditionelle Indikatoren zur Messung dieser Ungleichheit, wie der{' '}
+                        Traditionelle Indikatoren zur Messung dieser Ungleichheit, wie der
                         <GlossaryTerm className="glossary-term gini" sectionId="intro">Gini-Index</GlossaryTerm>,
                         konzentrieren sich vor allem auf Einkommensunterschiede. Doch das Einkommen allein erzählt nicht die ganze Geschichte.
                     </>
@@ -24,12 +24,13 @@ const BackgroundSection = () => {
                 {
                     id: 2,
                     text: (
-                    <>
-                        Unsere Lebensqualität wird auch von anderen Faktoren beeinflusst:
-                        Wie hoch sind die Kosten für Grundbedürfnisse wie Wohnen, Energie oder Mobilität?
-                        Welche Infrastruktur steht uns zur Verfügung, etwa in den Bereichen Bildung oder Gesundheit,
-                        und wie können wir diese erreichen? Wie gehen wir mit der kostbaren Ressource Zeit um,
-                        die oft ungleich verteilt ist - sei es durch berufliche Verpflichtungen, unbezahlte Sorgearbeit oder andere Verantwortlichkeiten?
+                    <>  
+                        Unsere Lebensqualität wird auch von anderen Faktoren beeinflusst: 
+                        Wie hoch sind die Kosten für Grundbedürfnisse wie Wohnen, Energie oder Mobilität? 
+                        Welche Infrastruktur steht uns zur Verfügung, etwa in den Bereichen Bildung oder Gesundheit, 
+                        und wie können wir diese erreichen? Wie gehen wir mit der kostbaren Ressource Zeit um, 
+                        die noch dazu oft ungleich verteilt ist - sei es durch berufliche Verpflichtungen, 
+                        unbezahlte Sorgearbeit oder andere Verantwortlichkeiten?
                     </>
                     ),
                 },
