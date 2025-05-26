@@ -43,6 +43,7 @@ const translations = {
                         <li><span className="boldText">Fünftes Quintil:</span> Die 20 % der Haushalte mit dem höchsten Einkommen</li>
                     </ul>
                     ),
+                    isList: true,
                 },
                                 {
                     id: 6,
@@ -161,14 +162,14 @@ const IncomeSection = () => {
                     <div key={item.id} className="image-container median-hh-income-container">
                         <img src={`${process.env.PUBLIC_URL}/images/00_Median_HH_Income_Personen_DE.png`} alt={`${section.alt}`} />
                     </div>
-                ) : (
-                    typeof item.text === 'string' ? (
-                        <p key={item.id} className={`paragraph ${item.className || ''}`}>{item.text}</p>
-                    ) : (
+                ) : item.isList ? (
                     <div key={item.id} className={`paragraph ${item.className || ''}`}>
                         {item.text}
                     </div>
-                    )
+                ) : (
+                    <p key={item.id} className={`paragraph ${item.className || ''}`}>
+                        {item.text}
+                    </p>
                 )
             )}
         </div>
