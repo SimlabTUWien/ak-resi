@@ -1,14 +1,8 @@
-import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import GlossaryTerm from '../GlossaryTerm';
 
-const IncomeSection = () => {
-
-    const { language } = useLanguage();
-
-    const translations = {
+const translations = {
         DE: {
-            header: 'Einkommen',
             content: [
                 {
                     id: 1,
@@ -73,7 +67,7 @@ const IncomeSection = () => {
                     id: 9,
                     text: (
                     <>  
-                        Das Medianhaushaltseinkommen in Österreich beträgt 2.632€. Dabei zeigt sich eine deutliche Einkommensungleichheit zwischen den verschiedenen Bevölkerungsgruppen. 
+                        Das Medianhaushaltseinkommen in Österreich beträgt 2.632€. Dabei zeigt sich eine deutliche <GlossaryTerm className="glossary-term incomeInequality" sectionId="income">Einkommensungleichheit</GlossaryTerm> zwischen den verschiedenen Bevölkerungsgruppen. 
                         So liegt das mittlere Einkommen des ersten <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintils</GlossaryTerm> – also jenes Fünftels der Haushalte mit den niedrigsten Einkommen – 
                         bei lediglich 1.247€ und damit deutlich unter dem österreichweiten <GlossaryTerm className="glossary-term median" sectionId="income">Median</GlossaryTerm>. 
                         Im Gegensatz dazu verfügt das oberste Quintil, also die einkommensstärksten 20% der Haushalte, über ein mittleres Einkommen von über 4.500€. 
@@ -85,13 +79,73 @@ const IncomeSection = () => {
             alt: "Diagramm mit 5 Balken, die das mittlere Haushaltseinkommen pro Einkommensquintil in Österreich darstellen."
         },
         EN: {
-            header: 'Income',
             content: [
-           
+                {
+                    id: 1,
+                    text: <> How much income do households have? </>,
+                    isContentHeader: true,
+                },
+                {
+                    id: 2,
+                    text: (
+                    <>  
+
+                    </>
+                    ),
+                },
+                {
+                    id: 3,
+                    text: <> What are quintiles? </>,
+                    isContentHeader: true,
+                },
+                {
+                    id: 4,
+                    text: (
+                    <>
+             
+                    </>
+                    ),
+                },
+                {
+                    id: 5,
+                    text: (
+                    <>
+             
+                    </>
+                    ),
+                },
+                                {
+                    id: 6,
+                    text: <> Why do we divide household income into quintiles? </>,
+                    isContentHeader: true,
+                },
+                {
+                    id: 7,
+                    text: (
+                    <>  
+
+                    </>
+                    ),
+                },
+                {
+                    id: 8,
+                    // isChart: true,
+                },
+                                {
+                    id: 9,
+                    text: (
+                    <>  
+                    </>
+                    ),
+                },
             ],
             alt: "Chart with 5 bars illustrating the median household income per income quintile in Austria."
         }
     };
+
+const IncomeSection = () => {
+
+    const { language } = useLanguage();
 
     const section = translations[language] || translations.DE;
 
