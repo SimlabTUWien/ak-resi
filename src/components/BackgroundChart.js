@@ -48,7 +48,8 @@ const textMap = {
       title: "Zeit und Infrastruktur",
       text: "Soziale Infrastrukturen haben großen Einfluss darauf, wie Menschen ihre Zeit verbringen können. Ein gut erreichbarer Kindergarten ermöglicht es Eltern, mehr Zeit für bezahlte Arbeit zu nutzen. Weite Wege zu Schulen oder Gesundheitseinrichtungen hingegen führen zu langen Fahrzeiten oder – im Notfall – zu erhöhten Risiken, wenn Hilfe zu spät eintrifft.",
       color: "#e9dfbe"
-    }
+    },
+    "alt": "Diagramm mit vier überlappenden Kreisen, welche die Themenbereiche dieser Webseite visualisieren."
   },
   EN: {
     "einkommen": {
@@ -90,7 +91,8 @@ const textMap = {
       title: "Time and Infrastructure",
       text: "Social infrastructures have a big impact on how people can spend their time. A conveniently located kindergarten allows parents to spend more time in paid work. Long distances to schools or healthcare facilities, on the other hand, lead to longer commutes or – in emergencies – increased risks when help arrives too late.",
       color: "#e9dfbe"
-    }
+    },
+    "alt": "Diagram with four overlapping circles visualizing the content areas of this website."
   }
  
 };
@@ -180,7 +182,7 @@ const BackgroundChart = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <div ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }}></div>
+      <div ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }} alt={`${localizedDataMap.alt}`}></div>
       <Box 
         className="infotext-container"
         sx={{

@@ -164,39 +164,6 @@ const BackgroundSection = () => {
             )}
         </div>
     );
-
-    // return (
-    //     <div>
-    //         <h2 className="section-header">Hintergrund </h2>
-    //         <p className="paragraph">
-    //             Die Ressourcen in unserer Gesellschaft sind nicht nur begrenzt sondern auch ungleich verteilt. Traditionelle Indikatoren zur Messung dieser Ungleichheit, wie der <GlossaryTerm className="glossary-term gini" sectionId="intro">Gini-Index</GlossaryTerm>, konzentrieren sich vor allem auf Einkommensunterschiede. Doch das Einkommen allein erzählt nicht die ganze Geschichte.
-    //         </p>
-    //         <p className='paragraph'>
-    //             Unsere Lebensqualität wird auch von anderen Faktoren beeinflusst: Wie hoch sind die Kosten für Grundbedürfnisse wie Wohnen, Energie oder Mobilität? Welche Infrastruktur steht uns zur Verfügung, etwa in den Bereichen Bildung oder Gesundheit, und wie können wir diese erreichen? Wie gehen wir mit der kostbaren Ressource Zeit um, die oft ungleich verteilt ist - sei es durch berufliche Verpflichtungen, unbezahlte Sorgearbeit oder andere Verantwortlichkeiten?
-    //         </p>
-    //         <p className='paragraph'>
-    //             Diese Aspekte sind nicht unabhängig voneinander, sondern stehen in enger Wechselwirkung: wenn die Miete einen Großteil des Einkommens beansprucht, bleibt für andere Lebensbereiche weniger übrig: wer weite Wege zurücklegen muss, verliert Zeit für Erholung, Bildung oder soziale Teilhabe. Solche Ungleichheiten wirken sich nicht nur auf das Leben des Einzelnen aus, sondern beeinflussen unsere Gesellschaft als Ganzes: Sie können Polarisierung fördern, gefährden den sozialen Zusammenhalt und verschärfen globale Herausforderungen wie den Klimawandel.
-    //         </p>
-    //         <p className='paragraph'>
-    //             Für eine umfassende Betrachtung der Lebensqualität müssen wir daher über das Einkommen hinausschauen: das Zusammenspiel von Einkommen, Ausgaben, Infrastruktur und Zeitverwendung erlaubt ein vollständigeres Bild der Lebenswirklichkeit zu zeichnen. 
-    //         </p>
-    //         <p className='paragraph'>
-    //             Genau dieses Ziel hatte das <span className="boldText">Re:Si:Ze</span> Projekt, das im Auftrag der Arbeiterkammer Wien an der TU Wien am Institut für Raumplanung durchgeführt wurde. Auf dieser Website findet ihr die Ergebnisse der Untersuchung dieser Ebenen in Österreich.
-    //         </p>
-    //         <p className='paragraph click-information'>
-    //             Klicke auf die Elemente um mehr zu erfahren: 
-    //         </p>
-
-    //         {/* <BackgroundChart/> */}
-    //         <div className='background-chart'>
-    //             <BackgroundChart/>
-    //         </div>
-
-    //         <p className='paragraph content-information'>
-    //             In den weiteren Teilen dieser Website werden nun Einblicke in alle diese Bereiche und deren Schnittstellen gegeben: 
-    //         </p>
-    //     </div>
-    // );
 };
 
 export default BackgroundSection;
