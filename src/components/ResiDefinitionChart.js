@@ -5,7 +5,6 @@ const svgUrl = `${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE_V4.svg`;
 
 const ResiDefinitionChart = () => {
   const svgRef = useRef(null);
-  const containerRef = useRef(null);
 
   useEffect(() => {
     d3.xml(svgUrl).then((data) => {
@@ -58,10 +57,8 @@ const ResiDefinitionChart = () => {
   }, []);
 
   return (
-    <div style={{ textAlign: "center", justifyContent: "center" }}>
-      <div ref={containerRef} className="definition-chart">
-        <div ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }}></div>
-      </div>
+    <div className="definition-chart" style={{ textAlign: "center", justifyContent: "center" }}>
+        <div ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }} alt="Grafik zur Definition des Residualeinkommens und dessen Berechnung mittels Einkommen und notwendigen Ausgaben." />
     </div>
   );
 };
