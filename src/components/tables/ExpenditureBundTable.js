@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, ToggleButton, ToggleButtonGroup, Box } from "@mui/material";
 
 const allData = [
   { Bundesland: "Burgenland", Lebensmittel: 246, Wohnen: 216, Gesundheit: 33, Mobilität: 91, Bildung: 55, Einkommen: 2592, Residualeinkommen: 1777 },
   { Bundesland: "Kärnten", Lebensmittel: 282, Wohnen: 251, Gesundheit: 57, Mobilität: 74, Bildung: 67, Einkommen: 2502, Residualeinkommen: 1613 },
-  { Bundesland: "Oberösterreich", Lebensmittel: 282, Wohnen: 214, Gesundheit: 52, Mobilität: 84, Bildung: 50, Einkommen: 2823, Residualeinkommen: 2010 },
-  { Bundesland: "Niederösterreich", Lebensmittel: 275, Wohnen: 195, Gesundheit: 45, Mobilität: 75, Bildung: 47, Einkommen: 2712, Residualeinkommen: 1953 },
+  { Bundesland: <>Ober&shy;österreich</>, Lebensmittel: 282, Wohnen: 214, Gesundheit: 52, Mobilität: 84, Bildung: 50, Einkommen: 2823, Residualeinkommen: 2010 },
+  { Bundesland: <>Nieder&shy;österreich</>, Lebensmittel: 275, Wohnen: 195, Gesundheit: 45, Mobilität: 75, Bildung: 47, Einkommen: 2712, Residualeinkommen: 1953 },
   { Bundesland: "Salzburg", Lebensmittel: 259, Wohnen: 246, Gesundheit: 46, Mobilität: 72, Bildung: 71, Einkommen: 2691, Residualeinkommen: 1824 },
   { Bundesland: "Steiermark", Lebensmittel: 259, Wohnen: 228, Gesundheit: 41, Mobilität: 74, Bildung: 59, Einkommen: 2564, Residualeinkommen: 1764 },
   { Bundesland: "Tirol", Lebensmittel: 273, Wohnen: 210, Gesundheit: 50, Mobilität: 72, Bildung: 43, Einkommen: 2557, Residualeinkommen: 1802 },

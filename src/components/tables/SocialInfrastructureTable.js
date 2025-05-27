@@ -4,7 +4,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 
 const data = [
     {
-      category: "Allgemeinmediziner:innen",
+      category: <>Allgemein&shy;mediziner:innen</>,
       availability: "Anzahl der Allgemeinmediziner:innen mit Kassenvertrag im Verhältnis zur Wohnbevölkerung der Gemeinde (ohne Kassenvertrag 0,1)",
       accessibility: "Durchschnittliche Öffnungszeiten",
       source: "Docfinder, Handbuch für die medizinischen Berufe in Österreich"
@@ -34,7 +34,7 @@ const data = [
       source: "Bundesministerium für Bildung, Wissenschaft und Forschung"
     },
     {
-      category: "Andere Sozialeinrichtungen",
+      category: <>Andere<br/>Sozialeinrichtungen</>,
       availability: "Anzahl der Einrichtungen im Verhältnis zur Wohnbevölkerung der Gemeinde",
       accessibility: "/",
       source: "Google"
@@ -58,8 +58,8 @@ const SocialInfrastructureTable = () => {
         <TableHead sx={{ backgroundColor: "#a5cdc8",  hyphens: 'none' }}>
           <TableRow>
           <TableCell align="center">Soziale Infrastrukturkategorie</TableCell>
-            <TableCell align="center">Verfügbarkeit (0,5)</TableCell>
-            <TableCell align="center">Zugänglichkeit (0,3)</TableCell>
+            <TableCell align="center">Verfügbarkeit</TableCell>
+            <TableCell align="center">Zugänglichkeit</TableCell>
             <TableCell align="center">Datenquelle</TableCell>
           </TableRow>
         </TableHead>
