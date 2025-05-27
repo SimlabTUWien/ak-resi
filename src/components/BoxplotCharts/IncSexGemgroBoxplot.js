@@ -92,7 +92,12 @@ const IncSexGemgroBoxplot = () => {
                 if (dataMap[outerId] && dataMap[outerId][dataName]) {
                   const data = dataMap[outerId][dataName];
     
-                  box.selectAll("*").style("filter", "brightness(0.85)");
+                  box.selectAll("*").each(function () {
+                    const currentFill = d3.select(this).style("fill");
+                    const darker = d3.color(currentFill)?.darker(0.25);
+                    d3.select(this).attr("data-original-fill", currentFill);
+                    if (darker) d3.select(this).style("fill", darker);
+                  });
     
                   tooltip
                     .html(`
@@ -114,7 +119,12 @@ const IncSexGemgroBoxplot = () => {
                   .style("left", `${event.pageX + 20}px`);
               })
               .on("mouseout", function () {
-                d3.select(this).selectAll("*").style("filter", "");
+                d3.select(this).selectAll("*").each(function () {
+                  const el = d3.select(this);
+                  const original = el.attr("data-original-fill");
+                  if (original) el.style("fill", original);
+                });
+                
                 tooltip.style("visibility", "hidden");
               });
           }

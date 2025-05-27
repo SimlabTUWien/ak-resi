@@ -288,7 +288,6 @@ const MedianMapChart = ({ mode }) => {
     setSelectedInfo(textinfoMap[keys[newIndex]]);
   };
 
-
   useEffect(() => {
 
     let isMounted = true;
@@ -305,6 +304,21 @@ const MedianMapChart = ({ mode }) => {
       const svg = d3.select(svgNode);
       svg.attr("width", "100%").attr("height", "100%");
       svg.style("display", "block").style("margin", "auto");
+
+      const storeOriginalFill = (el) => {
+        if (!el.attr("data-original-fill")) {
+          const currentFill = el.style("fill");
+          el.attr("data-original-fill", currentFill);
+        }
+      };
+
+      const applyColorAdjustment = (el, adjustmentFn) => {
+        storeOriginalFill(el);
+        const currentFill = el.style("fill");
+        const adjusted = adjustmentFn(d3.color(currentFill));
+        if (adjusted) el.style("fill", adjusted);
+      };
+
 
       if(!isTouchDevice()) {
       
@@ -329,10 +343,20 @@ const MedianMapChart = ({ mode }) => {
         svg.selectAll(".circle")
         .style("cursor", "pointer")
         .on("mouseover", function () {
-          d3.select(this).select("circle").style("filter", "brightness(0.9)");
+          d3.select(this).select("circle").each(function () {
+            const el = d3.select(this);
+            const original = el.style("fill");
+            const darker = d3.color(original)?.darker(0.3);
+            el.attr("data-original-fill", original);
+            if (darker) el.style("fill", darker);
+          });
         })
         .on("mouseout", function () {
-          d3.select(this).select("circle").style("filter", null);
+          d3.select(this).select("circle").each(function () {
+            const el = d3.select(this);
+            const original = el.attr("data-original-fill");
+            if (original) el.style("fill", original);
+          });
         })
         .on("click", function () {
           const name = d3.select(this).attr("data-name");
@@ -354,8 +378,6 @@ const MedianMapChart = ({ mode }) => {
               box
                 .style("cursor", "pointer")
                 .on("mouseover", function (event) {
-                  
-                  // const regionData = dataMapAll[groupId]?.[dataName];
                   
                   const regionData = dataMap[groupId]?.[dataName]?.[mode];
                   const regionName = dataMap[groupId]?.bl;
@@ -438,14 +460,20 @@ const MedianMapChart = ({ mode }) => {
                         .classed("highlight-overlay-nodata", true);
                     }
                   }
-                  else if (riCategoryId === "below1k" || riCategoryId === "below1200" || riCategoryId === "below1400") {
-                    box.style("filter", "brightness(0.9)");
-                    categoryGroup.select("rect").style("filter", "brightness(0.9)");
-                  } else {
-                    box.style("filter", "brightness(1.2)");
-                    categoryGroup.select("rect").style("filter", "brightness(1.2)");
-                  }
-                  
+                  if (["below1k", "below1200"].includes(riCategoryId)) {
+                    [box, categoryGroup.select("rect, polygon")].forEach(el => {
+                      applyColorAdjustment(el, c => c?.darker(0.15));
+                    });
+                  } else if(["below1400", "below1600", "below1800"].includes(riCategoryId)) {
+                    [box, categoryGroup.select("rect, polygon")].forEach(el => {
+                      applyColorAdjustment(el, c => c?.brighter(0.3));
+                    });
+                  } else if(["over2k", "below2k"].includes(riCategoryId)) {
+                    [box, categoryGroup.select("rect, polygon")].forEach(el => {
+                      applyColorAdjustment(el, c => c?.brighter(0.45));
+                    });
+                  } 
+
                   const gemgrText = dataMap[groupId]?.[dataName]?.gemgr;
 
                   let tooltipHTML;
@@ -490,8 +518,14 @@ const MedianMapChart = ({ mode }) => {
                   svg.selectAll("rect.highlight-overlay-notexisting").remove();
                   svg.selectAll("rect.highlight-overlay-nodata").remove();
 
-                  // === Reset all filters
-                  svg.selectAll("rect").style("filter", null);
+                  // === Reset all fills
+                  svg.selectAll("rect, polygon").each(function () {
+                    const el = d3.select(this);
+                    const original = el.attr("data-original-fill");
+                    if (original) {
+                      el.style("fill", original);
+                    }
+                  });
                 });
             }
           });

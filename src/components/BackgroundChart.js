@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from '../context/LanguageContext';
 import * as d3 from "d3";
+
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
@@ -158,10 +159,18 @@ const BackgroundChart = () => {
             })
             .style("cursor", "pointer")
             .on("mouseover", function () {
-              d3.select(this).style("filter", "brightness(0.9)");
+              d3.select(this).selectAll("*").each(function () {
+                const currentColor = d3.select(this).style("fill");
+                const darker = d3.color(currentColor)?.darker(0.25); // Darken
+                d3.select(this).attr("data-original-fill", currentColor); // Save original
+                d3.select(this).style("fill", darker);
+              });
             })
             .on("mouseout", function () {
-              d3.select(this).style("filter", "");
+              d3.select(this).selectAll("*").each(function () {
+                const original = d3.select(this).attr("data-original-fill");
+                if (original) d3.select(this).style("fill", original);
+              });
             })
             .on("click", function () {
               const id = d3.select(this).attr("id");
