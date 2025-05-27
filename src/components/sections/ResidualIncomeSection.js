@@ -33,7 +33,8 @@ const translations = {
             {
                 id: 2,
                 isChart: true,
-                itemName: 'definition'
+                itemName: 'definition',
+                alt: ""
             },
             {
                 id: 3,
@@ -77,7 +78,8 @@ const translations = {
                 itemName: "median-expenditure-chart",
                 chartTitle: "Ausgabenkategorien",
                 labelAll: "Alle",
-                labelRent: "Mieter:innen"
+                labelRent: "Mieter:innen",
+                alt: ""
             },
             {
                 id: 7,
@@ -112,6 +114,7 @@ const translations = {
                 id: 11,
                 isTable: true,
                 itemName: 'household-table',
+                alt: ""
             },
             {
                 id: 12,
@@ -162,7 +165,8 @@ const translations = {
             {
                 id: 17,
                 isChart: true,
-                itemName: 'scatter-plot'
+                itemName: 'scatter-plot',
+                alt: ""
             },
             {
                 id: 18,
@@ -174,7 +178,8 @@ const translations = {
                 isEChart: true,
                 itemName: 'expenditure-bar-charts',
                 labelAbs: 'Absolut',
-                labelRel: 'Relativ'
+                labelRel: 'Relativ',
+                alt: ""
             },
             {
                 id: 20,
@@ -235,7 +240,8 @@ const translations = {
             {
                 id: 26,
                 isChart: true,
-                itemName: 'gini'
+                itemName: 'gini',
+                alt: ""
             },
             {
                 id: 27,
@@ -252,9 +258,10 @@ const translations = {
                     "Schritt 3: Wir zeichnen die Lorenz-Kurve: Eine Linie, die zeigt, wie viel Einkommen die unteren Einkommensgruppen zusammen haben.",
                     "Schritt 4: Der Gini-Koeffizient ergibt sich aus der Fläche zwischen der Lorenz-Kurve und der Gleichverteilungslinie (die eine vollkommen gerechte Verteilung darstellen würde). Je größer diese Fläche, desto ungleicher ist die Verteilung. Ein Gini-Koeffizient von 0 bedeutet, dass alle Haushalte exakt das gleiche Einkommen haben. Ein Wert nahe 1 bedeutet, dass fast das gesamte Einkommen von wenigen Haushalten verdient wird."
                 ],
-                image: "/images/Lorenz_Kurven_Gini_AT_DE.png",
+                imagePath: "/images/Lorenz_Kurven_Gini_AT_DE.png",
                 isAccordion: true,
-                itemName: 'gini-accordion'
+                itemName: 'gini-accordion',
+                alt: ""
             },
             {
                 id: 28,
@@ -276,7 +283,8 @@ const translations = {
                 isEChart: true,
                 itemName: 'education-bar-charts',
                 labelExtent: <> Beschäftigungs&shy;art </>,
-                labelSource: <> Einkommens&shy;quelle </> 
+                labelSource: <> Einkommens&shy;quelle </> ,
+                alt: ""
             },
             {
                 id: 31,
@@ -407,7 +415,8 @@ const translations = {
             {
                 id: 42,
                 isTable: true,
-                itemName: 'expenditure-table'
+                itemName: 'expenditure-table',
+                alt: ""
             },
             {
                 id: 43,
@@ -425,7 +434,8 @@ const translations = {
                 isChart: true,
                 itemName: 'median-map',
                 labelAll: "Alle",
-                labelRent: "Mieter:innen"
+                labelRent: "Mieter:innen",
+                alt: ""
             },
             {
                 id: 45,
@@ -506,18 +516,17 @@ const translations = {
                     Mehr als 30% der Österreicher:innen leben in den 641 Gemeinden mit 2.500-10.000 Einwohner:innen und 27% in Klein- und Mittelstädten.
                 </>
                 ),
-                image: "/images/Abb_KarteGemeindegroeßen_DE.png",
+                imagePath: "/images/Abb_KarteGemeindegroeßen_DE.png",
                 itemName: 'municipality-accordion',
-                isAccordion: true
+                isAccordion: true,
+                alt: ""
             }            
-        ],
-        alt: []
+        ]
     },
     EN: {
         header: 'Residual Income',
         content: [
-        ],
-        alt: []
+        ]
     }
 };
 
@@ -592,7 +601,7 @@ const ResidualIncomeSection = () => {
                 case 'scatter-plot':
                     return (
                         <div key={item.id} className="image-container scatter-plot-container">
-                            <img src={`${process.env.PUBLIC_URL}/images/3_SCATTER_PLOT_RESI_INCOME_DE.png`} alt="scatter plot visualizing houshold and resiudal income" />
+                            <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt="scatter plot visualizing houshold and resiudal income" />
                         </div>
                     );
                 case 'gini':
@@ -792,7 +801,7 @@ const ResidualIncomeSection = () => {
                                     <div className="image-container lorenz-curve--container">
                                         <img
                                             className="lorenz-curve"
-                                            src={`${process.env.PUBLIC_URL}${item.image}`}
+                                            src={`${process.env.PUBLIC_URL}${item.imagePath}`}
                                             alt="Lorenz Kurve für Haushalts- und Residualeinkommen"
                                         />
                                     </div>

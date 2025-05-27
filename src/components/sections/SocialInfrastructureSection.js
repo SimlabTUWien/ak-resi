@@ -37,7 +37,8 @@ const translations = {
             {
                 id: 3,
                 isChart: true,
-                itemName: 'si-map'
+                itemName: 'si-map',
+                alt: ""
             },
             {
                 id: 4,
@@ -93,7 +94,8 @@ const translations = {
             {
                 id: 9,
                 isTable: true,
-                itemName: 'si-table'
+                itemName: 'si-table',
+                alt: ""
             },
             {
                 id: 10,
@@ -150,14 +152,12 @@ const translations = {
                 itemName: 'si-scatter',
                 alt: "side-by-side scatter plot displaying a relationship between Infrastructure Provision and income related variables"
             },
-        ],
-        alt: []
+        ]
     },
     EN: {
         header: 'Social Infrastructure',
         content: [
-        ],
-        alt: []
+        ]
     }
 };
 
@@ -233,7 +233,7 @@ const SocialInfrastructureSection = () => {
                     </div>
                 ) : item.isImage ? (
                     <div key={item.id} className="image-container si-scatter-plot-container">
-                        <img src={`${process.env.PUBLIC_URL}/${item.imagePath}`} alt={ item.alt } />
+                        <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt={ item.alt } />
                     </div>
                 ) : (
                     <p key={item.id} className={`paragraph ${item.className || ''}`}>

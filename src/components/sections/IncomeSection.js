@@ -63,6 +63,7 @@ const translations = {
                 {
                     id: 8,
                     isChart: true,
+                    alt: "Diagramm mit 5 Balken, die das mittlere Haushaltseinkommen pro Einkommensquintil in Österreich darstellen."
                 },
                                 {
                     id: 9,
@@ -76,8 +77,7 @@ const translations = {
                     </>
                     ),
                 },
-            ],
-            alt: "Diagramm mit 5 Balken, die das mittlere Haushaltseinkommen pro Einkommensquintil in Österreich darstellen."
+            ]
         },
         EN: {
             content: [
@@ -131,6 +131,7 @@ const translations = {
                 {
                     id: 8,
                     // isChart: true,
+                    alt: "Chart with 5 bars illustrating the median household income per income quintile in Austria."
                 },
                                 {
                     id: 9,
@@ -139,8 +140,7 @@ const translations = {
                     </>
                     ),
                 },
-            ],
-            alt: "Chart with 5 bars illustrating the median household income per income quintile in Austria."
+            ]
         }
     };
 
@@ -160,7 +160,7 @@ const IncomeSection = () => {
                     <h2 key={item.id} className={`content-header ${item.className || ''}`}>{item.text}</h2>
                 ) : item.isChart ? (
                     <div key={item.id} className="image-container median-hh-income-container">
-                        <img src={`${process.env.PUBLIC_URL}/images/00_Median_HH_Income_Personen_DE.png`} alt={`${section.alt}`} />
+                        <img src={`${process.env.PUBLIC_URL}/images/00_Median_HH_Income_Personen_DE.png`} alt={`${item.alt}`} />
                     </div>
                 ) : item.isList ? (
                     <div key={item.id} className={`paragraph ${item.className || ''}`}>
