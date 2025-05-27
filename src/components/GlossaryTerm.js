@@ -8,7 +8,7 @@ const sectionColors = {
   income: "#808080",
   residualIncome: "#d99484", //"#f0ae9f",
   "social-infrastructure": "#72a69f",//"#a5cdc8",
-  "time-usage": "#fcd799",
+  "time-usage": "#fab741", //"#fcd799",
   "what-now": "#808080" //"#b3b3b3",
 };
 
