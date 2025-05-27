@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useMemo, useState } from "react";
+import { useEffect, useRef, useMemo, useState } from "react";
 import * as echarts from "echarts";
 
 const MedianExpenditureChart = ({ mode }) => {
@@ -26,6 +26,7 @@ const MedianExpenditureChart = ({ mode }) => {
 
     useEffect(() => {
         const chartInstance = echarts.init(chartRef.current);
+        const isFirefox = /firefox/i.test(navigator.userAgent);
 
         const colors = ["#595e5e", "#e2674f","#bc3a26", "#eda293", "#f6d5ce", "#aa8a91"]; // Residual Income, Mobility, Housing, Health, Food, Education
 
@@ -48,13 +49,13 @@ const MedianExpenditureChart = ({ mode }) => {
                 textStyle: {
                     rich: {
                         customStyle: {
-                            fontSize: 14,
+                            fontSize: 16,
                             fontWeight: "normal",
-                            padding: [3, 0, 0, 2], // Top, Right, Bottom, Left padding
+                            ...(isFirefox ? { padding: [3, 0, 0, 0] } : { padding: [1, 0, 0, 0] })
                         }
                     }
                 },
-                formatter: (name) => `{customStyle|${name}}`,
+                formatter: (name) => `{customStyle|  ${name}}`,
                 data: (mode === "renter" ? dataRenter : dataAll).map(item => item.name).reverse(),
             },
             series: [

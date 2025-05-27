@@ -100,6 +100,8 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
 
         updateCharts();
 
+        const isFirefox = /firefox/i.test(navigator.userAgent);
+
         // Legend chart setup
         legendInstance.setOption({
             legend: {
@@ -108,12 +110,11 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
                 orient: "vertical",
                 top: 0,
                 textStyle: {
-                    fontSize: 14,
                     rich: {
                         customStyle: {
-                            fontSize: 14,
+                            fontSize: parentWidth > 400 ? 16 : 14,
                             fontWeight: "normal",
-                            padding: [3, 0, 0, 2],
+                            ...(isFirefox ? { padding: [3, 0, 0, 0] } : { padding: [1, 0, 0, 0] })
                         }
                     }
                 },
@@ -180,7 +181,7 @@ const QuintilExpenditureCharts = ({ mode, isWrapped, setIsWrapped }) => {
             <div ref={chartRef1} style={{ width: "100%", maxWidth: maxWidth, height: "500px", justifyContent: "center", margin: "auto", paddingTop: "24px" }} />
             <div ref={chartRef2} style={{ width: "100%", maxWidth: maxWidth, height: "500px", justifyContent: "center", margin: "auto", paddingTop: isWrapped ? "12px" : "24px" }} />
             
-            <div ref={legendChartRef} style={{ width: "100%", height: parentWidth > 1261 ? 32 : parentWidth > 490 ? 64 : 155, marginBottom: "6px" }} />
+            <div ref={legendChartRef} style={{ width: "100%", height: parentWidth > 1261 ? 32 : parentWidth > 490 ? 64 : 160, marginBottom: parentWidth > 490 ? "6px" : "0" }} />
         </div>
     );
 };
