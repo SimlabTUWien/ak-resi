@@ -1,4 +1,6 @@
-import React from 'react';
+import { useLanguage } from '../../context/LanguageContext';
+
+import GlossaryTerm from '../GlossaryTerm';
 import IncSexEduBoxplot from '../BoxplotCharts/IncSexEduBoxplot';
 import IncSexFtptBoxplot from '../BoxplotCharts/IncSexFtptBoxplot';
 import IncSexHhtypeBoxplot from '../BoxplotCharts/IncSexHhtypeBoxplot';
@@ -6,7 +8,244 @@ import IncSexGemgroBoxplot from '../BoxplotCharts/IncSexGemgroBoxplot';
 import IncSexSiBoxplot from '../BoxplotCharts/IncSexSiBoxplot';
 
 
+const translations = {
+    DE: {
+        header: 'Zeitverwendung',
+        content: [
+            {
+                id: 1,
+                text: ( 
+                <> 
+                    In Österreich – wie in vielen anderen Ländern – übernehmen Frauen nach wie vor einen überproportional großen Anteil an unbezahlter Arbeit, 
+                    darunter Haushaltsführung, Kinderbetreuung und die Pflege von Angehörigen. Dies hat weitreichende finanzielle und soziale Konsequenzen.
+                </>
+                ),
+            },
+            {
+                id: 2,
+                text: ( 
+                <> 
+                    Da Frauen mehr Zeit für unbezahlte Arbeit aufwenden, haben sie oft geringere Erwerbsarbeitszeiten, was zu einem niedrigeren Haushaltseinkommen führt. 
+                    Gleichzeitig beeinflusst dies das <GlossaryTerm className="glossary-term residualIncome" sectionId="time-usage">Residualeinkommen</GlossaryTerm>, denn:
+                </>
+                ),
+            },
+            {
+                id: 3,
+                text: (
+                <ul className="custom-list">
+                    <li> Wenn günstige Kinderbetreuung oder Pflegeeinrichtungen fehlen, sind Haushalte gezwungen, private Lösungen zu finanzieren oder eine Person (oft Frauen) bleibt zu Hause – was das verfügbare Einkommen weiter reduziert.</li>
+                    <li> Zeitintensive Care-Arbeit kann dazu führen, dass Frauen weniger in Weiterbildungen oder Karrierechancen investieren können, was langfristig Einkommens- und Vermögensunterschiede verfestigt.</li>
+                    <li> Frauen in Teilzeit oder mit unterbrochenen Erwerbsbiografien haben oft niedrigere Löhne und Sozialleistungen (z. B. Pensionen).</li>
+                </ul>
+                ),
+                isList: true,
+            },
+            {
+                id: 4,
+                text: ( 
+                <> 
+                    Die Verfügbarkeit <GlossaryTerm className="glossary-term si" sectionId="time-usage">sozialer Infrastruktur</GlossaryTerm> wie Kinderbetreuungseinrichtungen, 
+                    Ganztagsschulen und Pflegeangebote hat einen direkten Einfluss darauf, wie Erwerbs- und Care-Arbeit innerhalb von Haushalten aufgeteilt wird. 
+                    In Regionen mit gut ausgebauter Infrastruktur können Frauen häufiger Vollzeit oder in besser bezahlten Positionen arbeiten, 
+                    da die Betreuung von Kindern oder Angehörigen nicht vollständig auf private Ressourcen angewiesen ist.
+                </>
+                ),
+            },
+            {
+                id: 5,
+                text: ( 
+                <> 
+                    Fehlt diese Infrastruktur, werden Haushalte nicht nur durch direkte Kosten (z. B. private Betreuung), 
+                    sondern auch durch indirekte Einbußen belastet – etwa durch entgangenes Einkommen oder verringerte Karrieremöglichkeiten. 
+                    Dies wirkt sich langfristig auf das <GlossaryTerm className="glossary-term residualIncome" sectionId="time-usage">Residualeinkommen</GlossaryTerm> und 
+                    die wirtschaftliche Absicherung von Frauen aus.
+                </>
+                ),
+            },
+            {
+                id: 6,
+                text: <> Fokus Tageszeitnutzung nach Geschlecht und Alter </>,
+                isContentHeader: true,
+            },
+            {
+                id: 7,
+                text: ( 
+                <> 
+Schaut man sich die Zeitverwendung unterschiedlicher Altersklassen an, wird deutlich, dass sich Ungleichheiten bei bezahlter und unbezahlter Arbeit schon früh abzeichnen. Bereits bei den unter 20-Jährigen verrichten Mädchen und junge Frauen täglich rund 30 Minuten mehr unbezahlte Arbeit als Burschen und junge Männer. Diese Unterschiede verstärken sich mit zunehmendem Alter.
+
+                </>
+                ),
+            },
+            {
+                id: 8,
+                text: ( 
+                <> 
+In der Altersgruppe 21 bis 64 Jahre wird der Unterschied besonders deutlich: Frauen investieren täglich 3,75 Stunden in unbezahlte Arbeit, während Männer dafür im Schnitt nur 2 Stunden aufwenden. Dazu zählen Haushaltsaufgaben, Kinderbetreuung und die Pflege von Angehörigen – Tätigkeiten, die essenziell für die Gesellschaft sind, aber in klassischen Wirtschaftsstatistiken oft nicht sichtbar werden.
+
+                </>
+                ),
+            },
+            {
+                id: 9,
+                text: ( 
+                <> 
+Auch bei den über 65-Jährigen bleibt dieser Unterschied bestehen. Während Männer in dieser Altersgruppe ihre unbezahlte Arbeit leicht erhöhen, tragen Frauen weiterhin die Hauptlast der hauswirtschaftlichen und pflegerischen Tätigkeiten.
+
+                </>
+                ),
+            },
+            {
+                id: 10,
+                text: ( 
+                <> 
+Wie bereits erwähnt, zeigt sich bei der Erwerbsarbeit das umgekehrte Bild: Männer arbeiten im Durchschnitt länger und verdienen dadurch mehr. Das hat weitreichende Konsequenzen wie niedrigere Einkommen von Frauen, was ihr Residualeinkommen und ihre finanzielle Sicherheit auch später im Leben beeinträchtigt. Langfristig wirken sich diese Unterschiede auf Pensionen und Altersarmut aus, da Frauen aufgrund ihrer Erwerbshistorie oft geringere Ansprüche haben.
+
+                </>
+                ),
+            },
+            {
+                id: 11,
+                text: ( 
+                <> 
+Diese Dynamik zeigt, dass die ungleiche Verteilung von Zeit für Erwerbs- und unbezahlte Arbeit ein zentraler Faktor für wirtschaftliche Ungleichheit ist. In den nächsten Analysen konzentrieren wir uns daher gezielt auf die Altersgruppe 21 bis 64 Jahre, um die Auswirkungen dieser Verteilung noch genauer zu untersuchen.
+
+                </>
+                ),
+            },
+            {
+                id: 12,
+                text: <> Zeitverwendung von Männern und Frauen (21-64 Jahre) für Erwerbsarbeit und unbezahlter Arbeit </>,
+                isContentHeader: true,
+            },
+            {
+                id: 13,
+                text: <> Bildung: Bildung verändert viel – aber nicht alles </>,
+                isContentSubHeader: true,
+            },
+            {
+                id: 14,
+                text: ( 
+                <> 
+Unabhängig vom Bildungsgrad zeigt sich ein klares Muster: Frauen übernehmen mehr Care-Arbeit als Männer. Egal ob Pflichtschulabschluss, Lehre oder Universitätsabschluss – Frauen verbringen täglich mehr Zeit mit Haushaltsarbeit, Kinderbetreuung und der Pflege von Angehörigen als Männer.
+
+                </>
+                ),
+            },
+            {
+                id: 15,
+                text: ( 
+                <> 
+Während sich die Aufteilung zwischen Erwerbsarbeit und Care-Arbeit bei Männern kaum verändert, wenn man verschiedene Bildungsgruppen betrachtet, zeigt sich bei Frauen eine leichte Verschiebung: Mit zunehmendem Bildungsgrad investieren Frauen etwas weniger Zeit in unbezahlte Arbeit und etwas mehr in Erwerbsarbeit.
+
+                </>
+                ),
+            },
+            {
+                id: 16,
+                text: ( 
+                <> 
+Warum ist das so? Eine mögliche Erklärung liegt in den Arbeitsmarktchancen höher gebildeter Frauen. Frauen mit höherem Bildungsabschluss haben bessere Einkommensperspektiven, was dazu führen kann, dass sie sich stärker in den Arbeitsmarkt einbringen. Zudem besteht in höher gebildeten Haushalten oft eine größere finanzielle Möglichkeit, Dienstleistungen wie Kinderbetreuung oder Haushaltsarbeit auszulagern.
+
+                </>
+                ),
+            },
+            {
+                id: 17,
+                text: ( 
+                <> 
+Trotz dieses Bildungsgradientens bleibt die Grundtendenz bestehen: Auch hochgebildete Frauen übernehmen mehr unbezahlte Arbeit als Männer mit gleichem Bildungsniveau. Dies zeigt, dass traditionelle Rollenverteilungen weiterhin Einfluss darauf haben, wie Erwerbs- und Care-Arbeit innerhalb von Haushalten verteilt wird – unabhängig vom Bildungsgrad.
+
+                </>
+                ),
+            },
+            {
+                id: 18,
+                isChart: true,
+                itemName: 'edu-boxplot',
+                alt: "box plot visualizing income based on sex and education"
+            },
+            {
+                id: 19,
+                text: <> Vollzeit-/Teilzeitarbeit: Teilzeit ist nicht gleich Teilzeit – die doppelte Belastung von Frauen </>,
+                isContentSubHeader: true,
+            },
+        ]
+    },
+    EN: {
+        header: 'Time Usage',
+        content: [
+        ]
+    }
+};
+
+
 const TimeUsageSection = () => {
+
+
+    const { language } = useLanguage();
+    const section = translations[language] || translations.DE;
+    
+    const renderItem = (item) => {
+        switch (true) {
+            case item.isContentHeader:
+            return (
+                <h2 key={item.id} className={`content-header ${item.className || ''}`}>
+                    {item.text}
+                </h2>
+            );
+
+            case item.isContentSubHeader:
+            return (
+                <h3 key={item.id} className={`content-header ${item.className || ''}`}>
+                    {item.text}
+                </h3>
+            );
+
+            case item.isChart:
+            switch (item.itemName) {
+                case 'edu-boxplot':
+                    return (
+                        <IncSexEduBoxplot key={item.id} alt={item.alt}/>
+                    );
+                // case '':
+                //     return (
+   
+                //     );
+                // case '':
+                //     return (
+
+                //     );
+                // default:
+                //     return (
+                       
+                //     );
+            }
+
+            case item.isList:
+                return (
+                    <div key={item.id} className={`paragraph ${item.className || ''}`}>
+                        {item.text}
+                    </div>
+                );
+            
+            default:
+                return (
+                    <p key={item.id} className={`paragraph ${item.className || ''}`}>
+                        {item.text}
+                    </p>
+                );
+        }
+    };
+
+    return (
+        <div>
+            <h2 className="section-header">{section.header}</h2>
+            {section.content.map(renderItem)}
+        </div>
+    );
+
+
     return (
         <div>
             <h2 className="section-header">Zeitverwendung</h2>
