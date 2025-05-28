@@ -15,8 +15,7 @@ const BackgroundSection = () => {
                     text: (
                     <>
                         Die Ressourcen in unserer Gesellschaft sind nicht nur begrenzt sondern auch ungleich verteilt.
-                        Traditionelle Indikatoren zur Messung dieser Ungleichheit, wie der
-                        <GlossaryTerm className="glossary-term gini" sectionId="intro">Gini-Index</GlossaryTerm>,
+                        Traditionelle Indikatoren zur Messung dieser Ungleichheit, wie der <GlossaryTerm className="glossary-term gini" sectionId="intro">Gini-Index</GlossaryTerm>,
                         konzentrieren sich vor allem auf Einkommensunterschiede. Doch das Einkommen allein erzählt nicht die ganze Geschichte.
                     </>
                     ),
