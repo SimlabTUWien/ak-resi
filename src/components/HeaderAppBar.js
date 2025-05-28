@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import { useState, useEffect} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { 
@@ -42,7 +42,7 @@ export default function HeaderAppBar({ show }) {
 
   const translations = {
     DE: {
-      intro: "Einleitung",
+      home: "Re:sI:Ze",
       residualIncome: "Residualeinkommen",
       socialInfrastructure: "Soziale Infrastruktur",
       timeUsage: "Zeitverwendung",
@@ -50,9 +50,10 @@ export default function HeaderAppBar({ show }) {
       imprint: "Impressum",
       team: "Team",
       privacy: "Datenschutzerklärung",
+      alt: "Logo des Re:sI:Ze Projekts",
     },
     EN: {
-      intro: "Introduction",
+      home: "Re:sI:Ze",
       residualIncome: "Residual Income",
       socialInfrastructure: "Social Infrastructure",
       timeUsage: "Time Usage",
@@ -60,19 +61,20 @@ export default function HeaderAppBar({ show }) {
       imprint: "Imprint",
       team: "Team",
       privacy: "Privacy Policy",
+      alt: "Logo of the Re:sI:Ze project",
     }
   };
 
   const t = translations[language] || translations.DE;
 
   const menuItems = [
-    ...(location.pathname !== "/" ? [{ text: t.intro, section: "intro", icon: <HomeIcon /> }] : []),
     { text: t.residualIncome, section: "residualIncome", icon: <PaymentsIcon /> },
     { text: t.socialInfrastructure, section: "social-infrastructure", icon: <RoomIcon /> },
     { text: t.timeUsage, section: "time-usage", icon: <AccessTimeIcon /> },
   ];
   
   const linkItems = [
+    { text: t.home, link: "/", section: "intro", icon: <HomeIcon /> },
     { text: t.glossary, link: "/glossar", icon: <ImportContactsIcon /> },
     { text: t.imprint, link: "/impressum", icon: <DescriptionIcon /> },
     { text: t.team, link: "/team", icon: <Diversity3Icon /> },
@@ -107,7 +109,7 @@ export default function HeaderAppBar({ show }) {
           setTimeout(() => {
             const section = document.getElementById(pendingScrollTarget);
             if (section) {
-              const yOffset = -40; // Adjust if needed
+              const yOffset = -40;
               const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
               window.scrollTo({ top: y, behavior: "smooth" });
               setPendingScrollTarget(null);
@@ -119,7 +121,7 @@ export default function HeaderAppBar({ show }) {
       scrollToTarget();
     }
   }, [location.pathname, pendingScrollTarget]);
-  
+
   const scrollToSection = (id) => {
     if (location.pathname !== "/") {
       setPendingScrollTarget(id); // Store the target section
@@ -137,9 +139,9 @@ export default function HeaderAppBar({ show }) {
   };
 
   const navigateToLink = (link) => {
-    navigate(link);
-    setMobileDrawerOpen(false);
-    setDesktopDrawerOpen(false);
+      navigate(link);
+      setMobileDrawerOpen(false);
+      setDesktopDrawerOpen(false);
   };
 
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -179,7 +181,7 @@ export default function HeaderAppBar({ show }) {
           <Toolbar disableGutters>
 
             {/* Dektop View */}
-            <Box component="img" src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Project Logo"
+            <Box component="img" src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt={t.alt}
               onClick={toggleDesktopDrawer(true)}
               sx={{
                 // display: { xs: 'none', md: 'flex' },  // changed from mid to large
@@ -205,7 +207,15 @@ export default function HeaderAppBar({ show }) {
               <List>
                 {linkItems.map((item, index) => (
                   <ListItem key={index} disablePadding>
-                    <ListItemButton onClick={() => navigateToLink(item.link)}>
+                    <ListItemButton
+                      onClick={() => {
+                        if (item.link === "/" && item.section === "intro") {
+                          scrollToSection("intro");
+                        } else {
+                          navigateToLink(item.link);
+                        }
+                      }}
+                    >
                       <ListItemIcon>{item.icon}</ListItemIcon>
                       <ListItemText 
                         primary={item.text}
@@ -221,7 +231,8 @@ export default function HeaderAppBar({ show }) {
             </Drawer>
 
 
-            <Typography variant="h5" 
+            <Typography variant="h5"
+              onClick={() => scrollToSection("intro")}
               sx={{
                 mr: 2,
                 display: { xs: 'none', lg: 'flex' },
@@ -230,7 +241,12 @@ export default function HeaderAppBar({ show }) {
                 paddingTop: '10px',
                 fontSize: '2.6rem',
                 userSelect: "none",
-                WebkitTapHighlightColor: "transparent"
+                WebkitTapHighlightColor: "transparent",
+                cursor: 'pointer',
+                transition: "0.3s ease-in-out",
+                "&:hover": {
+                  filter: "brightness(0.9)",
+                }
               }}
             >
               Re:sI:Ze
@@ -294,7 +310,15 @@ export default function HeaderAppBar({ show }) {
 
                   {linkItems.map((item, index) => (
                     <ListItem key={index} disablePadding>
-                      <ListItemButton onClick={() => navigateToLink(item.link)}>
+                      <ListItemButton
+                        onClick={() => {
+                          if (item.link === "/" && item.section === "intro") {
+                            scrollToSection("intro");
+                          } else {
+                            navigateToLink(item.link);
+                          }
+                        }}
+                      >
                         <ListItemIcon>{item.icon}</ListItemIcon>
                         <ListItemText
                           primary={item.text}
@@ -317,7 +341,8 @@ export default function HeaderAppBar({ show }) {
                 marginLeft: 1.2
               }} 
             />
-            <Typography variant="h5" 
+            <Typography variant="h5"
+              onClick={() => scrollToSection("intro")} 
               sx={{
                 mr: 2, 
                 display: { xs: 'flex', lg: 'none' }, 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
 import HeaderSection from "../components/sections/HeaderSection";
@@ -46,8 +46,9 @@ export default function HomePage () {
 
     return (
         <>
-
-        <HeaderSection />
+        <div className='hero-wrapper' id="hero">
+            <HeaderSection />   
+        </div>
 
         <div className='title-wrapper'>
             <section className="title-section" id="intro">
