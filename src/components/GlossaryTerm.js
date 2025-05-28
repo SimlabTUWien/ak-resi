@@ -15,8 +15,7 @@ const sectionColors = {
 const getStyledGlossaryTerm = (isMobile) => styled("span")(({ color }) => ({
   cursor: "pointer",
   color: color || "inherit",
-  fontStyle: "italic",
-  fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
+  fontVariationSettings: '"slnt" -10, "wdth" 100, "wght" 500',
   display: isMobile ? "inline" : "inline-block",
   wordBreak: isMobile ? "normal" : "break-word",
   overflowWrap: isMobile ? "normal" : "break-word",
@@ -99,11 +98,12 @@ const GlossaryTerm = ({ className, sectionId, children }) => {
     if (!termKey) return;
     const glossaryUrl = `${window.location.origin}/ak-resi#/glossar#${termKey}`;
     
-    if (isMobile) {
-      window.open(glossaryUrl, "_blank");
-    } else {
-      window.location.href = glossaryUrl;
-    }
+    // if (isMobile) {
+    //   window.open(glossaryUrl, "_blank");
+    // } else {
+    //   window.location.href = glossaryUrl;
+    // }
+    window.open(glossaryUrl, "_blank");
   };
 
   return tooltipContent ? (
