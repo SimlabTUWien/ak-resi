@@ -92,7 +92,7 @@ export default function HeaderAppBar({ show }) {
   //   };
   // }, []);
 
-  const backgroundColor = "rgba(0,0,0,.3)"
+  const backgroundColor = "rgba(0,0,0,.4)"
 
   // const backgroundColor = location.pathname === "/" 
     // ?  scrollY < viewHeight
