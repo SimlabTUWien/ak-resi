@@ -58,53 +58,8 @@ const OutlookSection = () => {
             ]
         },
         EN: {
-            header: 'Was nun?',
+            header: 'Outlook',
             content: [
-                {
-                    id: 1,
-                    text: (
-                    <>
-                        Soziale Ungleichheit lässt sich nicht allein durch Einkommensunterschiede erklären. 
-                        Zwar ist das Einkommen ein zentraler Faktor, der den finanziellen Handlungsspielraum bestimmt – doch ein vollständigeres Bild entsteht erst, 
-                        wenn man weitere Aspekte wie notwendige Ausgaben, den Zugang zu öffentlicher Infrastruktur und die zeitlichen Ressourcen von Menschen berücksichtigt.
-                    </>
-                    ),
-                },
-                {
-                    id: 2,
-                    text: (
-                    <>
-                        Diese Dimensionen wirken nicht isoliert, sondern sind eng miteinander verknüpft: 
-                        Wer wenig verdient, aber zusätzlich hohe Fixkosten trägt oder keinen Zugang zu unterstützenden Angeboten hat, ist stärker belastet – sowohl finanziell als auch organisatorisch. 
-                        Gleichzeitig kann ein eingeschränkter Zugang zu öffentlicher Infrastruktur die Notwendigkeit erhöhen, Zeit und Geld in private Lösungen zu investieren. 
-                        Auch die Verteilung der verfügbaren Zeit – etwa zwischen Erwerbsarbeit, unbezahlter Sorgearbeit und Erholung – ist ungleich verteilt und beeinflusst soziale Teilhabe.
-
-                    </>
-                    ),
-                },
-                {
-                    id: 3,
-                    text: (
-                    <>
-                       Das Zusammenspiel dieser Faktoren macht deutlich: Ungleichheit ist mehrdimensional. 
-                       Sie zeigt sich im Geld, das Menschen zur Verfügung haben, aber auch in ihrer Zeit, in ihrer Belastung durch Alltagsorganisation und in der Frage, wie stark sie auf eigene Ressourcen angewiesen sind. 
-                       Erst durch das Zusammendenken dieser Bereiche wird sichtbar, wie vielfältig Benachteiligungen sein können – und wie sie sich gegenseitig verstärken können.
-                    </>
-                    ),
-                },
-                {
-                    id: 4,
-                    text: (
-                    <>
-                        Ein vertieftes Verständnis sozialer Ungleichheit erfordert daher einen ganzheitlichen Blick auf Lebensrealitäten. 
-                        Nur wenn man diese Zusammenhänge ernst nimmt, können gerechte und wirksame Antworten auf soziale Herausforderungen gefunden werden.
-                    </>
-                    ),
-                },
-                {
-                    id: 5,
-                    isChart: true,
-                }
             ]
         }
     };
