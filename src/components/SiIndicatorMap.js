@@ -23,13 +23,13 @@ const translations = {
 
 const getIndicatorValue = (indicator, siMode) => {
   const propertyMap = {
-    1: { no_so: "GI_Gesamtindikator ohne Spillover",  so_miv: "GI_Gesamtindikator mit Spillover",  so_oev: "GI_Gesamtindikator mit Spillover" },
-    2: { no_so: "EI_Allgemeinmediziner:innen ohne Spillover",  so_miv: "EI_Allgemeinmediziner:innen mit Spillover",  so_oev: "EI_Allgemeinmediziner:innen mit Spillover" },
-    3: { no_so: "EI_Krankenhäuser", so_miv: "EI_Krankenhäuser", so_oev: "EI_Krankenhäuser" },
-    4: { no_so: "EI_Pflegeheime ohne Spillover", so_miv: "EI_Pflegeheime mit Spillover", so_oev: "EI_Pflegeheime mit Spillover" },
-    5: { no_so: "EI_Kinderbetreuung ohne Spillover", so_miv: "EI_Kinderbetreuung mit Spillover", so_oev: "EI_Kinderbetreuung mit Spillover" },
-    6: { no_so: "EI_Schulen ohne Spillover", so_miv: "EI_Schulen mit Spillover", so_oev: "EI_Schulen mit Spillover" },
-    7: { no_so: "EI_Sozialeinrichtungen ohne Spillover", so_miv: "EI_Sozialeinrichtungen mit Spillover", so_oev: "EI_Sozialeinrichtungen mit Spillover" },
+    1: { no_so: "GI_Gesamtindikator ohne Spillover",  so_miv: "GI_Gesamtindikator mit MIV Spillover",  so_oev: "GI_Gesamtindikator mit OEV Spillover" },
+    2: { no_so: "EI_Allgemeinmediziner:innen ohne Spillover",  so_miv: "EI_Allgemeinmediziner:innen mit MIV Spillover",  so_oev: "EI_Allgemeinmediziner:innen mit OEV Spillover" },
+    3: { no_so: "EI_Krankenhäuser", so_miv: "EI_Krankenhäuser", so_oev: "EI_Krankenhäuser mit OEV" },
+    4: { no_so: "EI_Pflegeheime ohne Spillover", so_miv: "EI_Pflegeheime mit MIV Spillover", so_oev: "EI_Pflegeheime mit OEV Spillover" },
+    5: { no_so: "EI_Kinderbetreuung ohne Spillover", so_miv: "EI_Kinderbetreuung mit MIV Spillover", so_oev: "EI_Kinderbetreuung mit OEV Spillover" },
+    6: { no_so: "EI_Schulen ohne Spillover", so_miv: "EI_Schulen mit MIV Spillover", so_oev: "EI_Schulen mit OEV Spillover" },
+    7: { no_so: "EI_Sozialeinrichtungen ohne Spillover", so_miv: "EI_Sozialeinrichtungen mit MIV Spillover", so_oev: "EI_Sozialeinrichtungen mit OEV Spillover" },
   };
 
   return propertyMap[indicator]?.[siMode] || null;
@@ -249,7 +249,7 @@ const SiIndicatorMap = ({ siMode, subIndicator: indicator }) => {
 
   // Fetch the indicator data GeoJSON
   useEffect(() => {
-      const indicatorJsonPath = `${process.env.PUBLIC_URL}/data/pg_gen250_ak_resi_wgs84.geojson`;
+      const indicatorJsonPath = `${process.env.PUBLIC_URL}/data/pg_gen250_ak_resi_wgs84_all_indicators.geojson`;
 
       fetch(indicatorJsonPath)
       .then((response) => response.json())
@@ -304,10 +304,15 @@ const SiIndicatorMap = ({ siMode, subIndicator: indicator }) => {
 
       layer.on({
         click: () => {
-          const indicatorValue = feature.properties[selectedValue?.indicatorValue].toFixed(3);
+          let indicatorValue = feature.properties[selectedValue?.indicatorValue];
+
+          if(indicatorValue !== 0) {
+            indicatorValue = indicatorValue.toFixed(3);
+          }
+
           const content = `
             <div>
-              <b>${translations[languageRef.current]?.gkz}:</b> ${feature.properties.GKZ_2}<br>
+              <b>${translations[languageRef.current]?.gkz}:</b> ${feature.properties.GKZ2}<br>
               <b>${translations[languageRef.current]?.name}:</b> ${feature.properties.PGName}<br>
               <b>${translations[languageRef.current]?.title}:</b> ${indicatorValue}
             </div>
