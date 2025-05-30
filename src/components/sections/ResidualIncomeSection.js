@@ -166,6 +166,7 @@ const translations = {
                 id: 17,
                 isChart: true,
                 itemName: 'scatter-plot',
+                imagePath: "/images/3_Scatter_Plot_Resi_Income_DE.png",
                 alt: ""
             },
             {
@@ -229,8 +230,8 @@ const translations = {
                 id: 25,
                 text: (
                 <>  
-                    Unsere Analyse zeigt, dass der <GlossaryTerm className="glossary-term gini" sectionId="residualIncome">Gini-Koeffizient</GlossaryTerm> für das 
-                    <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> deutlich höher ist als für das Haushaltseinkommen (0,38 versus 0,27). 
+                    Unsere Analyse zeigt, dass der <GlossaryTerm className="glossary-term gini" sectionId="residualIncome">Gini-Koeffizient</GlossaryTerm> für 
+                    das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> deutlich höher ist als für das Haushaltseinkommen (0,38 versus 0,27). 
                     Das liegt daran, dass fixe Grundkosten wie Miete, Lebensmittel oder Gesundheitsausgaben einen viel größeren Anteil des Einkommens in unteren Einkommensgruppen ausmachen. 
                     Dadurch bleibt in diesen Gruppen deutlich weniger finanzielle Flexibilität, während höhere Einkommensgruppen nach den Grundausgaben überproportional mehr Mittel zur Verfügung haben. 
                     Dies verstärkt die wirtschaftliche Ungleichheit und macht deutlich, dass das Haushaltseinkommen allein nicht ausreicht, um die (Un-)Gleichverteilung von Ressourcen abzubilden.
@@ -322,8 +323,7 @@ const translations = {
                 id: 34,
                 text: (
                 <>  
-                    Im Gegensatz dazu zeigt sich bei Haushalten, deren höchste Bildungsabschlüsse eine <GlossaryTerm className="glossary-term postsecondaryEducation" sectionId="residualIncome">postsekundäre</GlossaryTerm> oder 
-                    <GlossaryTerm className="glossary-term tertiaryEducation" sectionId="residualIncome">tertiäre</GlossaryTerm> Ausbildung umfassen, ein deutlich anderes Bild. 
+                    Im Gegensatz dazu zeigt sich bei Haushalten, deren höchste Bildungsabschlüsse eine <GlossaryTerm className="glossary-term postsecondaryEducation" sectionId="residualIncome">postsekundäre</GlossaryTerm> oder  <GlossaryTerm className="glossary-term tertiaryEducation" sectionId="residualIncome">tertiäre</GlossaryTerm> Ausbildung umfassen, ein deutlich anderes Bild. 
                     In diesen Haushalten liegt das Medianeinkommen bei rund 2640 Euro, was fast doppelt so hoch ist. 
                     Der Grund dafür ist oftmals, dass höhere Bildungsabschlüsse Zugang zu besser bezahlten und stabileren Arbeitsplätzen eröffnen. 
                     Menschen mit höherer Bildung können in anspruchsvolleren, qualifizierteren Berufen arbeiten, die nicht nur ein höheres Gehalt bieten, 
@@ -360,10 +360,9 @@ const translations = {
                     die dem Arbeitsmarkt zur Verfügung stehen, Vollzeit arbeiten, liegt das <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm>-
                     <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> bei etwa 1100 Euro. 
                     Trotz Vollzeitarbeit bleibt das freiverfügbare Einkommen in diesen Haushalten relativ niedrig. Ganz anders sieht es in Haushalten aus, 
-                    in denen zumindest ein Familienmitglied eine <GlossaryTerm className="glossary-term postsecondaryEducation" sectionId="residualIncome">postsekundäre</GlossaryTerm> oder 
-                    <GlossaryTerm className="glossary-term tertiaryEducation" sectionId="residualIncome">tertiäre</GlossaryTerm> Ausbildung abgeschlossen hat. 
-                    Auch hier arbeiten alle Mitglieder im erwerbsfähigen Alter Vollzeit, doch das Median-Residualeinkommen liegt mit 2800 Euro fast dreimal so hoch wie in den Haushalten mit Pflichtschulabschluss. Der Unterschied ist auffällig und verdeutlicht, wie stark Bildung den Zugang zu besser bezahlten und stabileren Arbeitsplätzen beeinflusst.
-
+                    in denen zumindest ein Familienmitglied eine <GlossaryTerm className="glossary-term postsecondaryEducation" sectionId="residualIncome">postsekundäre</GlossaryTerm> oder <GlossaryTerm className="glossary-term tertiaryEducation" sectionId="residualIncome">tertiäre</GlossaryTerm> Ausbildung abgeschlossen hat. 
+                    Auch hier arbeiten alle Mitglieder im erwerbsfähigen Alter Vollzeit, doch das Median-Residualeinkommen liegt mit 2800 Euro fast dreimal so hoch wie in den Haushalten mit Pflichtschulabschluss. 
+                    Der Unterschied ist auffällig und verdeutlicht, wie stark Bildung den Zugang zu besser bezahlten und stabileren Arbeitsplätzen beeinflusst.
                 </>
                 ),
             },
@@ -372,10 +371,9 @@ const translations = {
                 text: (
                 <>  
                     Selbst bei Teilzeitbeschäftigung zeigt sich ein ähnlicher Trend. 
-                    In Haushalten mit <GlossaryTerm className="glossary-term tertiaryEducation" sectionId="residualIncome">tertiäre</GlossaryTerm> oder 
-                    <GlossaryTerm className="glossary-term postsecondaryEducation" sectionId="residualIncome">postsekundäre</GlossaryTerm> Ausbildung haben die Familien im 
-                    <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm> etwa 400 Euro mehr 
-                    <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> als Haushalte, deren höchster Bildungsabschluss die Pflichtschule ist. 
+                    In Haushalten mit <GlossaryTerm className="glossary-term tertiaryEducation" sectionId="residualIncome">tertiärer</GlossaryTerm> oder <GlossaryTerm className="glossary-term postsecondaryEducation" sectionId="residualIncome">postsekundärer</GlossaryTerm> Ausbildung 
+                    haben die Familien im <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm> etwa 400 Euro 
+                    mehr <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> als Haushalte, deren höchster Bildungsabschluss die Pflichtschule ist. 
                     Obwohl Teilzeitarbeit in vielen Fällen geringere Arbeitszeiten und damit auch geringere Einnahmen bedeutet, 
                     bleibt der Unterschied zwischen den Haushalten mit unterschiedlichen Bildungsabschlüssen bestehen. 
                     Auch hier wird die Bedeutung der Ausbildung deutlich: Höhere Bildungsabschlüsse ermöglichen Zugang zu besser bezahlten Teilzeitstellen, die sich positiv auf das Residualeinkommen auswirken.
@@ -796,16 +794,14 @@ const ResidualIncomeSection = () => {
                                         ))}
                                     </ul>
                                 )}
-
-                                {item.image && (
-                                    <div className="image-container lorenz-curve--container">
-                                        <img
-                                            className="lorenz-curve"
-                                            src={`${process.env.PUBLIC_URL}${item.imagePath}`}
-                                            alt="Lorenz Kurve für Haushalts- und Residualeinkommen"
-                                        />
-                                    </div>
-                                )}
+         
+                                <div className="image-container lorenz-curve-container">
+                                    <img
+                                        className="lorenz-curve"
+                                        src={`${process.env.PUBLIC_URL}${item.imagePath}`}
+                                        alt="Lorenz Kurve für Haushalts- und Residualeinkommen"
+                                    />
+                                </div>
                                 
                             </AccordionDetails>
                         </Accordion>
@@ -844,7 +840,7 @@ const ResidualIncomeSection = () => {
                                     {item.accordionText}
                                 </Typography>
 
-                                <img className="community-size-map" src={`${process.env.PUBLIC_URL}/images/Abb_KarteGemeindegroeßen_DE.png`} alt="Gemeindegrößeklassen" />
+                                <img className="community-size-map" src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt="Gemeindegrößeklassen" />
                             </AccordionDetails>
                             </Accordion>
                         </div>   
