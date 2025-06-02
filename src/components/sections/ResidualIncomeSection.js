@@ -166,7 +166,7 @@ const translations = {
                 id: 17,
                 isChart: true,
                 itemName: 'scatter-plot',
-                imagePath: "/images/3_SCATTER_PLOT_RESI_INCOME_DE.png",
+                imagePath: "/images/3_SCATTER_PLOT_RESI_INCOME.png",
                 alt: ""
             },
             {
