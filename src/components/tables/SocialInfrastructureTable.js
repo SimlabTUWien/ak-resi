@@ -5,7 +5,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 const data = [
     {
       category: <>Allgemein&shy;mediziner:innen</>,
-      availability: "Anzahl der Allgemeinmediziner:innen mit Kassenvertrag im Verhältnis zur Wohnbevölkerung der Gemeinde (ohne Kassenvertrag 0,1)",
+      availability: "Anzahl der Allgemeinmediziner:innen mit Kassenvertrag im Verhältnis zur Wohnbevölkerung der Gemeinde",
       accessibility: "Durchschnittliche Öffnungszeiten",
       source: "Docfinder, Handbuch für die medizinischen Berufe in Österreich"
     },
