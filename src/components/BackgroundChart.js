@@ -35,8 +35,8 @@ const textMap = {
       text: "Das Residualeinkommen beschreibt das Einkommen, das nach Abzug der notwendigen Ausgaben für Wohnen, Energie, Gesundheit etc. übrig bleibt. Dieses Geld steht dann für unregelmäßige Ausgaben, Freizeitgestaltung oder zum Sparen zur Verfügung und spielt eine wichtige Rolle für die finanzielle Freiheit eines Haushalts.",
       color: "#f0d1c7"
     },
-    "geld_sparen_durch_SI": {
-      title: "Geld sparen durch SI",
+    "notwendige_ausgaben_und_SI": {
+      title: "Notwendige Ausgaben und SI",
       text: "Öffentlich zugängliche und kostengünstige Bildungs- und Gesundheitseinrichtungen entlasten Haushalte finanziell, indem sie notwendige Ausgaben reduzieren. Sind solche Einrichtungen jedoch schwer erreichbar, steigen die Mobilitätskosten, oder Haushalte müssen auf teure private Angebote wie Ärzt:innen ohne Kassenvertrag ausweichen.",
       color: "#d2d5cb"
     },
@@ -78,8 +78,8 @@ const textMap = {
       text: "Residual income describes the money left after deducting necessary expenses for housing, energy, health, etc. This remaining money can be used for irregular expenses, leisure activities, or savings and plays an important role in a household’s financial freedom.",
       color: "#f0d1c7"
     },
-    "geld_sparen_durch_SI": {
-      title: "Saving Money through SI",
+    "notwendige_ausgaben_und_SI": {
+      title: "Necessary Expenses and SI",
       text: "Publicly accessible and affordable educational and health services reduce households’ necessary expenses, thus easing the financial burden. However, if these services are difficult to access, mobility costs rise, or households may have to rely on expensive private options like doctors without insurance coverage.",
       color: "#d2d5cb"
     },
