@@ -118,7 +118,7 @@ const translations = {
             },
             {
                 id: 12,
-                text: <> Residualeinkommen nach Haushaltstyp </>,
+                text: <> Einkommen und Residualeinkommen: </>,
                 isContentHeader: true,
             },
             {
