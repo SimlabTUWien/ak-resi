@@ -1,30 +1,30 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, ToggleButton, ToggleButtonGroup, Box } from "@mui/material";
 import "../../styles/HouseholdTable.css";
 
 
 const allData = [
-  { type: "Alleinlebend", income: 2070, expenses: 555, disposable: 1313 },
-  { type: "Ein Erwachsener mit einem Kind", income: 1712, expenses: 595, disposable: 1066 },
-  { type: "Ein Erwachsener mit mehr als einem Kind", income: 1359, expenses: 578, disposable: 697 },
-  { type: "Zwei Erwachsene", income: 2942, expenses: 460, disposable: 2201 },
-  { type: "Zwei Erwachsene mit einem Kind", income: 2804, expenses: 472, disposable: 2080 },
-  { type: "Zwei Erwachsene mit mehr als einem Kind", income: 2813, expenses: 396, disposable: 2028 },
-  { type: "Drei Erwachsene", income: 3505, expenses: 377, disposable: 2813 },
-  { type: "Drei Erwachsene mit einem Kind", income: 2784, expenses: 406, disposable: 2258 },
-  { type: "Drei Erwachsene mit mehr als einem Kind", income: 2715, expenses: 390, disposable: 1990 },
+  { type: "Alleinlebend", income: 2070, expenses: 814, disposable: 1313 },
+  { type: "Ein Erwachsener mit einem Kind", income: 1712, expenses: 1096, disposable: 1066 },
+  { type: "Ein Erwachsener mit mehr als einem Kind", income: 1359, expenses: 1307, disposable: 697 },
+  { type: "Zwei Erwachsene", income: 2942, expenses: 1089, disposable: 2201 },
+  { type: "Zwei Erwachsene mit einem Kind", income: 2804, expenses: 1237, disposable: 2080 },
+  { type: "Zwei Erwachsene mit mehr als einem Kind", income: 2813, expenses: 1256, disposable: 2028 },
+  { type: "Drei Erwachsene", income: 3505, expenses: 1252, disposable: 2813 },
+  { type: "Drei Erwachsene mit einem Kind", income: 2784, expenses: 1380, disposable: 2258 },
+  { type: "Drei Erwachsene mit mehr als einem Kind", income: 2715, expenses: 1387, disposable: 1990 },
 ];
 
 const rentersData = [
-  { type: "Alleinlebend", income: 1958, expenses: 696, disposable: 1047 },
-  { type: "Ein Erwachsener mit einem Kind", income: 1425, expenses: 709, disposable: 697 },
-  { type: "Ein Erwachsener mit mehr als einem Kind", income: 1215, expenses: 708, disposable: 513 },
-  { type: "Zwei Erwachsene", income: 2824, expenses: 673, disposable: 1839 },
-  { type: "Zwei Erwachsene mit einem Kind", income: 2438, expenses: 676, disposable: 1467 },
-  { type: "Zwei Erwachsene mit mehr als einem Kind", income: 2264, expenses: 635, disposable: 1325 },
-  { type: "Drei Erwachsene", income: 3114, expenses: 625, disposable: 2030 },
-  { type: "Drei Erwachsene mit einem Kind", income: 2568, expenses: 621, disposable: 1664 },
-  { type: "Drei Erwachsene mit mehr als einem Kind", income: 2004, expenses: 517, disposable: 1375 },
+  { type: "Alleinlebend", income: 1958, expenses: 944, disposable: 1047 },
+  { type: "Ein Erwachsener mit einem Kind", income: 1425, expenses: 1184, disposable: 697 },
+  { type: "Ein Erwachsener mit mehr als einem Kind", income: 1215, expenses: 1420, disposable: 513 },
+  { type: "Zwei Erwachsene", income: 2824, expenses: 1336, disposable: 1839 },
+  { type: "Zwei Erwachsene mit einem Kind", income: 2438, expenses: 1546, disposable: 1467 },
+  { type: "Zwei Erwachsene mit mehr als einem Kind", income: 2264, expenses: 1674, disposable: 1325 },
+  { type: "Drei Erwachsene", income: 3114, expenses: 1696, disposable: 2030 },
+  { type: "Drei Erwachsene mit einem Kind", income: 2568, expenses: 1693, disposable: 1664 },
+  { type: "Drei Erwachsene mit mehr als einem Kind", income: 2004, expenses: 1574, disposable: 1375 },
 ];
 
 const HouseholdTable = () => {
@@ -65,28 +65,18 @@ const HouseholdTable = () => {
           <TableHead sx={{ backgroundColor: "#f0ae9f", hyphens: "none" }}>
             <TableRow>
               <TableCell align="center">Haushaltstyp</TableCell>
-              <TableCell align="center">Mittleres Einkommen</TableCell>
-              <TableCell align="center">Notwendige Ausgaben</TableCell>
-              <TableCell align="center">Verfügbares Einkommen</TableCell>
+              <TableCell align="center">Medianeinkommen</TableCell>
+              <TableCell align="center">Medianausgaben</TableCell>
+              <TableCell align="center">Medianresidualeinkommen</TableCell>
             </TableRow>
           </TableHead>
-          {/* <TableBody>
-              {tableData.map((row, index) => (
-                <TableRow key={index}>
-                  <TableCell align="center">{row.type}</TableCell>
-                  <TableCell align="center">{row.income} €</TableCell>
-                  <TableCell align="center">{row.expenses} €</TableCell>
-                  <TableCell align="center">{row.disposable} €</TableCell>
-                </TableRow>
-              ))}
-          </TableBody> */}
           <TableBody>
             {tableData.map((row, index) => (
               <TableRow key={index}>
                 <TableCell align="center" data-label="Haushaltstyp">{row.type}</TableCell>
-                <TableCell align="center" data-label="Mittleres Einkommen">{row.income} €</TableCell>
-                <TableCell align="center" data-label="Notwendige Ausgaben">{row.expenses} €</TableCell>
-                <TableCell align="center" data-label="Verfügbares Einkommen">{row.disposable} €</TableCell>
+                <TableCell align="center" data-label="Medianeinkommen">{row.income} €</TableCell>
+                <TableCell align="center" data-label="Medianausgaben">{row.expenses} €</TableCell>
+                <TableCell align="center" data-label="Medianresidualeinkommen">{row.disposable} €</TableCell>
               </TableRow>
             ))}
           </TableBody>
