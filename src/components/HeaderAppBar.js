@@ -27,6 +27,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import DescriptionIcon from '@mui/icons-material/Description';
+import PrivacyTipIcon from '@mui/icons-material/PrivacyTip';
 import LanguageToggle from "./LanguageToggle";
 
 export default function HeaderAppBar({ show }) {
@@ -50,6 +51,7 @@ export default function HeaderAppBar({ show }) {
       imprint: "Impressum",
       team: "Team",
       privacy: "Datenschutzerklärung",
+      // privacy: "Privacy",
       alt: "Logo des Re:sI:Ze Projekts",
     },
     EN: {
@@ -78,7 +80,8 @@ export default function HeaderAppBar({ show }) {
     { text: t.glossary, link: "/glossar", icon: <ImportContactsIcon /> },
     { text: t.imprint, link: "/impressum", icon: <DescriptionIcon /> },
     { text: t.team, link: "/team", icon: <Diversity3Icon /> },
-    { text: t.privacy, link: "/dataprivacy", icon: <span className="material-symbols-outlined">shield_locked</span> }
+    // { text: t.privacy, link: "/dataprivacy", icon: <span className="material-symbols-outlined">shield_locked</span> }
+    { text: t.privacy, link: "/dataprivacy", icon: <PrivacyTipIcon /> }
   ];
 
   // useEffect(() => {
