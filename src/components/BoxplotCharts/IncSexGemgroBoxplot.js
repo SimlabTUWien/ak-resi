@@ -103,9 +103,9 @@ const IncSexGemgroBoxplot = () => {
                     .html(`
                       <div style="font-variation-settings: 'wght' 700">${data.titel}</div>
                       <div>Gemeindegrößenklasse: ${data.communitySizeClass}</div>
-                      <div>1. Quintil: ${data.q1}</div>
+                      <div>1. Quartil: ${data.q1}</div>
                       <div>Median: ${data.median}</div>
-                      <div>3. Quintil: ${data.q3}</div>
+                      <div>3. Quartil: ${data.q3}</div>
                       <div>Gruppengröße: ${data.n}</div>
                     `)
                     .style("visibility", "visible")

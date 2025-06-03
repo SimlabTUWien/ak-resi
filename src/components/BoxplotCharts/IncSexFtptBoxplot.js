@@ -46,16 +46,16 @@ const dataMap = {
 const labels = {
   DE: {
     extent: "Beschäftigungsausmaß",
-    q1: "1. Quintil",
+    q1: "1. Quartil",
     median: "Median",
-    q3: "3. Quintil",
+    q3: "3. Quartil",
     n: "Gruppengröße"
   },
   EN: {
     extent: "Extent of Employment",
-    q1: "1st Quintile",
+    q1: "1st Quartile",
     median: "Median",
-    q3: "3rd Quintile",
+    q3: "3rd Quartile",
     n: "Group Size"
   }
 };
