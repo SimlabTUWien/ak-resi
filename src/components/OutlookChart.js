@@ -10,7 +10,7 @@ const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_Outlook_D
 const textMap = {
     "einkommen": {
         title: "Einkommen",
-        subtitle: "Mehr als nur Lohn – es geht um echte Verfügbarkeit",
+        subtitle: <>Mehr als nur Lohn – <br/> es geht um echte Verfügbarkeit</>,
         text: [
           "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. Dabei ist der Lohn aus Erwerbstätigkeit zwar oft der größte Posten, doch längst nicht der einzige. Besonders bei Haushalten mit Kindern, Pensionist:innen oder Menschen mit Unterstützungsbedarf spielen staatliche Leistungen und Transfers eine zentrale Rolle.",
           "Ein Blick auf den Gini-Index – ein Maß für Einkommensungleichheit – zeigt, dass die Ungleichverteilung in Österreich mit einem Wert von etwa 0,27 (nach Steuern und Transfers) zwar moderat, aber keineswegs unbedeutend ist. Das heißt: Trotz Umverteilung durch den Staat bestehen weiterhin Einkommensunterschiede zwischen Haushalten. Um Einkommensverhältnisse gerechter zu gestalten, müssen politische Maßnahmen im Bereich (Erwerbs-)Arbeit, Transfers und Besteuerung stärker an den realen Lebensbedingungen ausgerichtet werden."
@@ -85,7 +85,7 @@ const OutlookChart = () => {
         
         if (window.innerWidth > 600) {
             svg.attr("transform", "translate(0, -50)");
-          }
+        }
 
         if (!isTouchDevice()) {
           svg.selectAll("g")
@@ -128,9 +128,9 @@ const OutlookChart = () => {
           boxShadow: 2, // Use shadow from MUI's theme (0-24)
           padding: 2,
           borderRadius: 2,
-          backgroundColor: selectedInfo.color,
-          marginTop: 0
+          backgroundColor: selectedInfo.color
         }}
+        style={{marginTop: 0}}
       >
         <div className="info-navigation">
           <button onClick={() => navigateText(-1)} className="nav-button">
