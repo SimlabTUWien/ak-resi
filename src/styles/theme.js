@@ -45,6 +45,7 @@ const theme = createTheme({
           [theme.breakpoints.down("sm")]: {
             fontSize: "0.925rem",
           },
+          hyphens: "manual"
         }),
         body: ({ theme }) => ({
           fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
@@ -53,6 +54,7 @@ const theme = createTheme({
           [theme.breakpoints.down("sm")]: {
             fontSize: "0.925rem",
           },
+          hyphens: "auto"
         }),
       },
     },
