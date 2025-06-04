@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/SubPage.css";
 
 export default function Team() {
@@ -10,7 +9,7 @@ export default function Team() {
           </section>
       </div>
 
-      <div className="content-wrapper">
+      <div className="text-wrapper">
         <p className="paragraph-team">
           <span className="boldText">Tatjana Neuhuber</span> ist Universitätsassistentin am Forschungsbereich für Finanzwissenschaft und Infrastrukturpolitik am Institut für Raumplanung. Ihr wissenschaftliches Interesse gilt sozialer und räumlicher Ungleichheit sowie der Frage, wie soziale Infrastrukturen positive Veränderungen bewirken können. Im Projekt übernimmt sie eine zentrale Rolle in der Konzeption, Datenanalyse und Interpretation der Ergebnisse. Auch in ihrer Dissertation greift sie diese Themen auf und erforscht, wie soziale Infrastrukturen zur regionalen Resilienz beitragen und welche Faktoren deren Wirkung verstärken. Mit ihrer Arbeit verbindet sie theoretische Ansätze mit praxisnahen Analysen, um greifbare Lösungen für gesellschaftliche Herausforderungen zu entwickeln.
         </p>

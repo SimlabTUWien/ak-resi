@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "../styles/SubPage.css";
 
@@ -30,7 +30,7 @@ export default function Glossar() {
           </section>
       </div>
 
-      <div className="content-wrapper">
+      <div className="text-wrapper">
 
         <div className="glossar-element" id="income">
           <h2>Einkommensungleichheit</h2>

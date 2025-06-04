@@ -1,4 +1,4 @@
-import React from "react";
+import "../styles/SubPage.css";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Impressum() {
@@ -110,7 +110,7 @@ export default function Impressum() {
           </section>
       </div>
 
-      <div className="content-wrapper">
+      <div className="text-wrapper">
         {t.content.map((item) =>
             <p key={item.id} className={`paragraph-impressum ${item.className || ''}`}>
                 {item.text}
