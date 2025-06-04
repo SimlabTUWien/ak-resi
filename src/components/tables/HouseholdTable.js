@@ -65,9 +65,9 @@ const HouseholdTable = () => {
           <TableHead sx={{ backgroundColor: "#f0ae9f", hyphens: "none" }}>
             <TableRow>
               <TableCell align="center">Haushaltstyp</TableCell>
-              <TableCell align="center">Medianeinkommen</TableCell>
-              <TableCell align="center">Medianausgaben</TableCell>
-              <TableCell align="center">Medianresidualeinkommen</TableCell>
+              <TableCell align="center">Median&shy;einkommen</TableCell>
+              <TableCell align="center">Median&shy;ausgaben</TableCell>
+              <TableCell align="center">Medianresidual&shy;einkommen</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
