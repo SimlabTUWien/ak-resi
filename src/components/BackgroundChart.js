@@ -213,7 +213,7 @@ const svgUrl = `${process.env.PUBLIC_URL}/images/1_4Kreise4Overlaps_${language.t
             <ArrowForwardIosIcon />
           </button>
         </div>
-        <p style={{ margin: 0, textAlign:'justify' }}>{selectedInfo.text}</p>
+        <p style={{ margin: "0.6em" }}>{selectedInfo.text}</p>
       </Box>
 
     </div>

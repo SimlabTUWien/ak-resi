@@ -144,7 +144,7 @@ const OutlookChart = () => {
         <h5 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", padding: "3px 0 3px"}}>{selectedInfo.subtitle}</h5>
         <div style={{ marginTop: "1em"}}>
           {selectedInfo.text.map((paragraph, index) => (
-            <p key={index} style={{ margin: 0, marginBottom: "1em", textAlign: 'justify' }}>
+            <p key={index} style={{ margin: "0.6em"}}>
               {paragraph}
             </p>
           ))}
