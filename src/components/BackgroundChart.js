@@ -112,7 +112,9 @@ const BackgroundChart = () => {
   const localizedDataMap = textMap[language];
 
   const svgRef = useRef(null);
-  const svgUrl = `${process.env.PUBLIC_URL}/images/1_4Kreise4Overlaps_${language.toUpperCase()}.svg`;
+  // const svgUrl = `${process.env.PUBLIC_URL}/images/1_4Kreise4Overlaps_${language.toUpperCase()}.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/1_4Kreise4Overlaps_${language.toUpperCase()}_V2.svg`;
+
 
 
 
