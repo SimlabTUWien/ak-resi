@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkakresi=self.webpackChunkakresi||[]).push([[411],{3411:(e,s,n)=>{n.r(s),n.d(s,{default:()=>t});n(5043);var r=n(579);function t(){return(0,r.jsx)(r.Fragment,{children:(0,r.jsx)("div",{className:"title-wrapper",children:(0,r.jsxs)("section",{className:"title-section",children:[(0,r.jsx)("h1",{className:"title",children:"Datenschutz"}),(0,r.jsx)("h3",{children:"Informationen zur Datenschutzerkl\xe4rung"})]})})})}}}]);
+//# sourceMappingURL=411.33f39a85.chunk.js.map
