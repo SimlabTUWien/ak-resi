@@ -26,7 +26,7 @@ const translations = {
                     Das sogenannte <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> – 
                     also das Einkommen nach den Ausgaben für Essen, Wohnen, Bildung, Gesundheit und Mobilität – gibt einen noch genaueren Einblick in die finanzielle Lage der Haushalte. 
                     Es zeigt, wie viel finanzieller Spielraum tatsächlich für individuelle Bedürfnisse, Ersparnisse oder Freizeitaktivitäten zur Verfügung steht. 
-                    Wie man hier sehen kann, lässt sich das Residualeinkommen berechnen, indem man vom Einkommen der Haushalte, notwendige Ausgaben abzieht. 
+                    Wie man hier sehen kann, lässt sich das Residualeinkommen berechnen, indem man vom Einkommen der Haushalte, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendige Ausgaben</GlossaryTerm> abzieht. 
                 </>
                 ),
             },
@@ -105,8 +105,9 @@ const translations = {
             {
                 id: 10,
                 text: (
-                <>  
-                    In der Tabelle sieht man die Medianeinkommen,  <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> und daraus ergebende verfügbare Einkommen für unterschiedliche Haushaltstypen: 
+                <>
+                    In der Tabelle sieht man die Medianeinkommen, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> und 
+                    das daraus ergebende <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> für unterschiedliche Haushaltstypen:
                 </>
                 ),
             },
@@ -273,8 +274,8 @@ const translations = {
                 id: 29,
                 text: (
                 <>  
-                    Da die Einkommen stark vom Bildungsniveau, dem Beschäftigungsgrad und der Art der Erwerbstätigkeit abhängen, notwendigen Ausgaben aber von allen Haushalten getätigt werden müssen, 
-                    spiegeln sich diese wirtschaftlichen Unterschiede noch stärker im verfügbaren Einkommen wider. 
+                    Da die Einkommen stark vom Bildungsniveau, dem Beschäftigungsgrad und der Art der Erwerbstätigkeit abhängen, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> aber 
+                    von allen Haushalten getätigt werden müssen, spiegeln sich diese wirtschaftlichen Unterschiede noch stärker im verfügbaren Einkommen wider. 
                     In der Grafik wird das Residualeinkommen nach höchster abgeschlossener Bildung, Haupteinkommensquelle und Ausmaß der Erwerbstätigkeit differenziert dargestellt (es kann zwischen den Kategorien gewechselt werden):
                 </>
                 ),
@@ -389,7 +390,7 @@ const translations = {
                 id: 40,
                 text: (
                 <>  
-                    Die Tabelle veranschaulicht die Unterschiede in der Höhe der notwendigen Ausgaben sowie im Haushalts- 
+                    Die Tabelle veranschaulicht die Unterschiede in der Höhe der <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> sowie im Haushalts- 
                     und <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> auf Bundeslandebene. 
                     Dabei zeigt sich, dass Haushalte in Wien die mit Abstand höchsten Ausgaben haben, was hauptsächlich auf die hohen Wohnkosten zurückzuführen ist. 
                     Im Vergleich zu anderen Bundesländern ist der Anteil an Personen, die in Wohneigentum leben, in Wien deutlich geringer. 
