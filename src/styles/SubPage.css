@@ -39,3 +39,27 @@
     color: #363636;
     text-align: left;
 }
+
+@media (max-width: 1300px) {
+  .text-wrapper {
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .text-wrapper {
+    width: calc(100% - 20px);
+    padding: 0 8px;
+    margin: 0 auto 20px;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .text-wrapper {
+    width: calc(100% - 20px);
+    padding: 0;
+    margin: 0 auto 20px;
+  }
+}
