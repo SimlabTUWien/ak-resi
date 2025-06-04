@@ -24,8 +24,8 @@ const translations = {
 const getIndicatorValue = (indicator, siMode) => {
   const propertyMap = {
     1: { no_so: "GI_Gesamtindikator ohne Spillover",  so_miv: "GI_Gesamtindikator mit MIV Spillover",  so_oev: "GI_Gesamtindikator mit OEV Spillover" },
-    2: { no_so: "EI_Allgemeinmediziner:innen ohne Spillover",  so_miv: "EI_Allgemeinmediziner:innen mit MIV Spillover",  so_oev: "EI_Allgemeinmediziner:innen mit OEV Spillover" },
-    3: { no_so: "EI_Krankenhäuser", so_miv: "EI_Krankenhäuser", so_oev: "EI_Krankenhäuser mit OEV" },
+    2: { no_so: "EI_Allgemeinmedizinerinnen ohne Spillover",  so_miv: "EI_Allgemeinmedizinerinnen mit MIV Spillover",  so_oev: "EI_Allgemeinmedizinerinnen mit OEV Spillover" },
+    3: { no_so: "EI_Krankenhaeuser", so_miv: "EI_Krankenhaeuser", so_oev: "EI_Krankenhaeuser mit OEV" },
     4: { no_so: "EI_Pflegeheime ohne Spillover", so_miv: "EI_Pflegeheime mit MIV Spillover", so_oev: "EI_Pflegeheime mit OEV Spillover" },
     5: { no_so: "EI_Kinderbetreuung ohne Spillover", so_miv: "EI_Kinderbetreuung mit MIV Spillover", so_oev: "EI_Kinderbetreuung mit OEV Spillover" },
     6: { no_so: "EI_Schulen ohne Spillover", so_miv: "EI_Schulen mit MIV Spillover", so_oev: "EI_Schulen mit OEV Spillover" },
