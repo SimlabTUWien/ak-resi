@@ -11,44 +11,36 @@ const textMap = {
     "einkommen": {
         title: "Einkommen",
         subtitle: "Mehr als nur Lohn – es geht um echte Verfügbarkeit",
-        text: "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. In Österreich liegt das mittlere Haushaltseinkommen bei XXX €, was bedeutet, dass 50 % der Haushalte über und 50 % unter diesem Betrag zur Verfügung haben.",
-        implications: [
-            "Mindestlohn & Sozialtransfers an realen Lebenshaltungskosten ausrichten",
-            "Steuerliche Entlastung für niedrige Einkommen verstärken",
-            "Bessere Absicherung für atypische Beschäftigte und Menschen außerhalb des Arbeitsmarkts"
+        text: [
+          "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. Dabei ist der Lohn aus Erwerbstätigkeit zwar oft der größte Posten, doch längst nicht der einzige. Besonders bei Haushalten mit Kindern, Pensionist:innen oder Menschen mit Unterstützungsbedarf spielen staatliche Leistungen und Transfers eine zentrale Rolle.",
+          "Ein Blick auf den Gini-Index – ein Maß für Einkommensungleichheit – zeigt, dass die Ungleichverteilung in Österreich mit einem Wert von etwa 0,27 (nach Steuern und Transfers) zwar moderat, aber keineswegs unbedeutend ist. Das heißt: Trotz Umverteilung durch den Staat bestehen weiterhin Einkommensunterschiede zwischen Haushalten. Um Einkommensverhältnisse gerechter zu gestalten, müssen politische Maßnahmen im Bereich (Erwerbs-)Arbeit, Transfers und Besteuerung stärker an den realen Lebensbedingungen ausgerichtet werden."
         ],
         color: "#BDBDBD"
     },
     "notwendige_ausgaben": {
         title: "Notwendige Ausgaben",
         subtitle: "Wer mehr ausgeben muss, hat weniger Spielraum",
-        text: "Zur Deckung der Grundbedürfnisse gehören Ausgaben, die sich kaum vermeiden lassen. Dazu zählen Wohnen, Heizen, Energie, Lebensmittel, Mobilität sowie Kosten für Bildung und Gesundheit. Diese notwendigen Ausgaben können jedoch stark variieren, etwa je nach Region, Wohnform oder dem Zugang zu öffentlicher Infrastruktur.",
-        implications: [
-            "Mietpreisbremse & leistbarer Wohnraum als zentrale Stellschrauben",
-            "Zielgerichtete Energie- und Mobilitätszuschüsse",
-            "Ausbau kostengünstiger Alternativen im öffentlichen Sektor"
-        ],
+        text: [
+          "Zur Deckung der Grundbedürfnisse gehören Ausgaben, die sich kaum vermeiden lassen. Dazu zählen Wohnen, Heizen, Energie, Lebensmittel, Mobilität sowie Kosten für Bildung und Gesundheit. Diese notwendigen Ausgaben können jedoch stark variieren, etwa je nach Region, Wohnform oder dem Zugang zu öffentlicher Infrastruktur. Alleinerziehende, Pensionist:innen aber auch Mieter:innen stehen unter erhöhtem finanziellem Druck. Sie haben oft weniger Gestaltungsspielraum als andere Personen mit vergleichbarerem nominellem Einkommen.",
+          "Auch im regionalen Vergleich zeigen sich deutliche Unterschiede: Während Städte wie Salzburg oder Innsbruck höhere durchschnittliche Ausgaben aufweisen, bleibt das sogenannte Residualeinkommen – also das Einkommen nach Abzug der notwendigen Ausgaben – dort teils höher als in Graz, Linz oder Wien. Das verdeutlicht, dass nicht allein die Höhe des Einkommens entscheidend ist, sondern vor allem, wie viel davon real verfügbar bleibt. Maßnahmen sollen also räumliche und strukturelle Unterschiede ernst nehmen und Spielräume schaffen, um auf lokale Gegebenheiten angemessen reagieren zu können."
+        ],        
         color: "#f0ae9f"
     },
     "soziale_infrastrukturen": {
         title: "Soziale Infrastrukturen",
-        subtitle: "Wer auf eigene Mittel angewiesen ist, bleibt zurück",
-        text: "Soziale Infrastrukturen sind genauso essenziell wie technische Netze wie Straßen oder Telefonverbindungen. Zugang zu Kindergärten, Schulen, Ärzt:innen, Krankenhäusern, Pflegeheimen und ähnlichen sozialen Angeboten ist unverzichtbar für das Funktionieren unserer Gesellschaft. Dennoch diese Einrichtungen nicht überall in gleicher Qualität oder Dichte verfügbar, was regionale Unterschiede in der Lebensqualität verstärken kann.",
-        implications: [
-            "Kostenfreie und flächendeckende Kinderbetreuung als Grundpfeiler",
-            "Investitionen in den öffentlichen Gesundheits- und Pflegesektor",
-            "Stärkung ländlicher Infrastruktur, um Stadt-Land-Ungleichheiten zu reduzieren"
+        subtitle: "Wenn soziale Infrastruktur zum Standortvorteil wird",
+        text: [
+          "Soziale Infrastrukturen sind genauso essenziell wie technische Netze wie Straßen oder Telefonverbindungen. Zugang zu Kindergärten, Schulen, Ärzt:innen, Krankenhäusern, Pflegeheimen und ähnlichen sozialen Angeboten ist unverzichtbar für das Funktionieren unserer Gesellschaft. Dennoch diese Einrichtungen nicht überall in gleicher Qualität oder Dichte verfügbar, was regionale Unterschiede in der Lebensqualität verstärken kann. Haushalte in gut ausgestatteten Gemeinden profitieren auf mehreren Ebenen: Sie sparen Wege, Zeit und Kosten, insbesondere für Betreuung, Gesundheit oder Bildung. Das erhöht nicht nur die reale Verfügbarkeit von Einkommen, sondern wirkt sich auch positiv auf Erwerbschancen, Familienorganisation und die Vereinbarkeit von Beruf und Alltag aus.",
+          "Diese Unterschiede verdeutlichen, dass der Ausbau und Erhalt sozialer Infrastruktur ein zentraler Bestandteil jeder nachhaltigen Daseinsvorsorge ist und somit auch ein Hebel zur Reduktion sozialer und regionaler Ungleichheit sein kann."
         ],
         color: "#a5cdc8"
     },
     "zeit_verwendung": {
         title: "Zeitverwendung",
         subtitle: "Armut ist oft auch Zeitmangel",
-        text: "Jeder Mensch hat 24 Stunden pro Tag – doch wie diese Stunden genutzt werden, unterscheidet sich stark. Zeit für bezahlte Arbeit, unbezahlte Tätigkeiten wie Haushalt oder Kinderbetreuung, Freizeit, Wegzeiten und Schlaf ist nicht für alle gleich verteilt. Diese Unterschiede beeinflussen sowohl die Lebensqualität als auch die Möglichkeiten, Einkommen zu erzielen oder soziale Aktivitäten wahrzunehmen.",
-        implications: [
-            "Arbeitszeitverkürzung bei vollem Lohnausgleich für untere Einkommensgruppen",
-            "Faire Verteilung unbezahlter Sorgearbeit durch bessere Anreize",
-            "Stärkung von Teilzeit- und Elternzeitmodellen ohne finanzielle Nachteile"
+        text: [
+          "Jeder Mensch verfügt über dieselben 24 Stunden am Tag – doch wie diese Zeit genutzt wird, variiert stark. Die Verteilung von Zeit für bezahlte Arbeit, unbezahlte Tätigkeiten wie Haushalt und Kinderbetreuung, Freizeit, Wegzeiten sowie Schlaf ist alles andere als gleichmäßig. Diese Differenzen haben tiefgreifende Auswirkungen auf die Lebensqualität und beeinflussen maßgeblich die Möglichkeiten, Einkommen zu erzielen oder soziale Kontakte und Aktivitäten wahrzunehmen.",
+          "Frauen übernehmen deutlich mehr Care-Arbeit als Männer, ein Anteil, der mit steigender Kinderzahl weiter zunimmt. Hinzu kommt, dass mangelnde Verfügbarkeit oder schlechte Erreichbarkeit sozialer Infrastruktur den Zeitaufwand für unbezahlte Sorgearbeit erheblich erhöht. Dadurch entstehen zusätzliche Belastungen, die nicht nur die individuelle Lebensgestaltung einschränken, sondern auch gesellschaftliche Ungleichheiten verstärken. Rahmenbedingungen sollten daher besser darauf ausgerichtet werden, Zeit als wertvolle Ressource anzuerkennen und beispielsweise durch den Ausbau sozialer Infrastruktur dazu beitragen, die ungleiche Verteilung von Arbeits- und Sorgezeiten zu verringern."
         ],
         color: "#fcd799"
     },
@@ -150,14 +142,14 @@ const OutlookChart = () => {
           </button>
         </div>
         <h5 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", padding: "3px 0 3px"}}>{selectedInfo.subtitle}</h5>
-        <p style={{ margin: 0, textAlign:'justify' }}>{selectedInfo.text}</p>
-
-        <p style={{ margin: '12px 0 0', textAlign:'left' }}>Politische Implikationen</p>
-        <ul className="custom-list" style={{ textAlign:'left' }}>
-            {selectedInfo.implications?.map((implication, index) => (
-                <li key={index}>{implication}</li>
-            ))}
-        </ul>
+        <div style={{ marginTop: "1em"}}>
+          {selectedInfo.text.map((paragraph, index) => (
+            <p key={index} style={{ margin: 0, marginBottom: "1em", textAlign: 'justify' }}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
+        
       </Box>
 
     </div>
