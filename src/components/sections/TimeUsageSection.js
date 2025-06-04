@@ -1,5 +1,8 @@
 import { useLanguage } from '../../context/LanguageContext';
 
+import {Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import GlossaryTerm from '../GlossaryTerm';
 import IncSexEduBoxplot from '../BoxplotCharts/IncSexEduBoxplot';
 import IncSexFtptBoxplot from '../BoxplotCharts/IncSexFtptBoxplot';
@@ -16,8 +19,9 @@ const translations = {
                 id: 1,
                 text: ( 
                 <> 
-                    In Österreich – wie in vielen anderen Ländern – übernehmen Frauen nach wie vor einen überproportional großen Anteil an unbezahlter Arbeit, 
-                    darunter Haushaltsführung, Kinderbetreuung und die Pflege von Angehörigen. Dies hat weitreichende finanzielle und soziale Konsequenzen.
+                    Neben dem <GlossaryTerm className="glossary-term residualIncome" sectionId="time-usage">Residualeinkommen</GlossaryTerm> und der Verfügbarkeit und 
+                    Zugänglichkeit <GlossaryTerm className="glossary-term si" sectionId="time-usage">sozialer Infrastruktur</GlossaryTerm> ist die Zeitverwendung eine 
+                    weitere wichtige Dimension, um Ungleichheiten ganzheitlich zu betrachten.
                 </>
                 ),
             },
@@ -25,114 +29,74 @@ const translations = {
                 id: 2,
                 text: ( 
                 <> 
-                    Da Frauen mehr Zeit für unbezahlte Arbeit aufwenden, haben sie oft geringere Erwerbsarbeitszeiten, was zu einem niedrigeren Haushaltseinkommen führt. 
-                    Gleichzeitig beeinflusst dies das <GlossaryTerm className="glossary-term residualIncome" sectionId="time-usage">Residualeinkommen</GlossaryTerm>, denn:
+                    Die Zeitverwendung beschreibt, wie die einzelnen Haushaltsmitglieder ihre 24 Stunden am Tag nutzen, 
+                    etwa für Schlaf, bezahlte Arbeit oder Freizeit. Im Gegensatz zu Analysen, die Haushalte gemeinsam betrachten, 
+                    etwa beim Haushaltseinkommen, zeigen sich bei der Zeitverwendung auch Unterschiede zwischen den einzelnen Haushaltsmitgliedern. 
+                    Diese Unterschiede zeichnen sich oft entlang der Geschlechtsdimension ab. 
+                    Die <GlossaryTerm className="glossary-term timeUsage" sectionId="time-usage">Zeitverwendungserhebung</GlossaryTerm> zeigt, dass in Österreich, 
+                    wie in vielen anderen Ländern auch, Frauen nach wie vor einen überproportional großen Anteil an unbezahlter Arbeit, 
+                    wie Haushaltsführung, Kinderbetreuung und die Pflege von Angehörigen übernehmen. 
+                    Da dadurch Frauen oft geringere Erwerbsarbeitszeiten und ein niedrigeres Einkommen haben, hat dies weitreichende finanzielle und soziale Konsequenzen.
                 </>
                 ),
             },
             {
                 id: 3,
-                text: (
-                <ul className="custom-list">
-                    <li> Wenn günstige Kinderbetreuung oder Pflegeeinrichtungen fehlen, sind Haushalte gezwungen, private Lösungen zu finanzieren oder eine Person (oft Frauen) bleibt zu Hause – was das verfügbare Einkommen weiter reduziert.</li>
-                    <li> Zeitintensive Care-Arbeit kann dazu führen, dass Frauen weniger in Weiterbildungen oder Karrierechancen investieren können, was langfristig Einkommens- und Vermögensunterschiede verfestigt.</li>
-                    <li> Frauen in Teilzeit oder mit unterbrochenen Erwerbsbiografien haben oft niedrigere Löhne und Sozialleistungen (z. B. Pensionen).</li>
-                </ul>
+                accordionHeader: "Wie misst man die Zeit der Österreicher:innen?",
+                accordionText: (
+                <>
+                    Die <GlossaryTerm className="glossary-term timeUsage" sectionId="time-usage">Zeitverwendungserhebung</GlossaryTerm> (ZVE) ist eine statistische Erhebung, die detailliert erfasst, 
+                    wie Menschen in Österreich ihren Tag verbringen. Insgesamt nahmen 4.342 Haushalte in Österreich an der Erhebung teil, 
+                    wobei alle Haushaltsmitglieder ab 10 Jahren an einem Wochentag und einem Wochenendtag ein Zeittagebuch ausfüllten, 
+                    in dem sie ihre Tätigkeiten im 10-Minuten-Takt festhielten. Die Erhebung wurde im Zeitraum von Oktober 2021 bis Dezember 2022 durchgeführt. 
+                    Sie dient dazu, die Zeitaufwendungen für verschiedene Tätigkeiten wie Schlafen, Arbeiten, Lernen, Freizeit, Hausarbeit, Kinderbetreuung oder 
+                    Freiwilligentätigkeiten zu dokumentieren und auswerten zu können. Ziel ist es, Einblicke in Lebensgewohnheiten sowie in die Verteilung von unbezahlter Arbeit und zeitlicher Belastung zu gewinnen.
+                </>
                 ),
-                isList: true,
+                isAccordion: true,
+                itemName: 'measurement-accordion'
+
             },
             {
                 id: 4,
                 text: ( 
                 <> 
-                    Die Verfügbarkeit <GlossaryTerm className="glossary-term si" sectionId="time-usage">sozialer Infrastruktur</GlossaryTerm> wie Kinderbetreuungseinrichtungen, 
-                    Ganztagsschulen und Pflegeangebote hat einen direkten Einfluss darauf, wie Erwerbs- und Care-Arbeit innerhalb von Haushalten aufgeteilt wird. 
-                    In Regionen mit gut ausgebauter Infrastruktur können Frauen häufiger Vollzeit oder in besser bezahlten Positionen arbeiten, 
-                    da die Betreuung von Kindern oder Angehörigen nicht vollständig auf private Ressourcen angewiesen ist.
+                    Die folgenden Analysen zeigen unterschiedliche Dimensionen der Zeitverteilung in österreichischen Haushalten, mit Schwerpunkt auf Geschlechtsunterschieden sowie entlang sozio-ökonomischen und räumlichen Merkmalen. 
                 </>
                 ),
             },
             {
                 id: 5,
-                text: ( 
-                <> 
-                    Fehlt diese Infrastruktur, werden Haushalte nicht nur durch direkte Kosten (z. B. private Betreuung), 
-                    sondern auch durch indirekte Einbußen belastet – etwa durch entgangenes Einkommen oder verringerte Karrieremöglichkeiten. 
-                    Dies wirkt sich langfristig auf das <GlossaryTerm className="glossary-term residualIncome" sectionId="time-usage">Residualeinkommen</GlossaryTerm> und 
-                    die wirtschaftliche Absicherung von Frauen aus.
+                accordionHeader: "Wie liest man einen Boxplot?",
+                accordionText: (
+                <>
+                    Da die Zeit, die Personen für verschiedene Aufgaben aufwenden, von Haushalt zu Haushalt stark schwankt, 
+                    werden die Ergebnisse in den folgenden Analysen nicht als Durchschnittswerte, sondern in Form von Boxplots dargestellt. 
+                    Ein Boxplot zeigt die Verteilung der Daten. Die Box, eines Boxplots, stellt dabei die mittleren 50 % der Werte dar (vom unteren Quartil (25 %) bis zum oberen Quartil (75 %)), 
+                    d. h. 50 % der Personen wenden in diesem Beispiel zwischen 7 und 10 Stunden für die Kategorie auf. 
+                    Die Linie innerhalb der Box stellt den Median, also den mittleren Wert, dar. 
+                    Die Linien (auch „Antennen” genannt) oberhalb und unterhalb der Boxen zeigen an, wie weit die restlichen Werte ungefähr reichen. 
+                    Im Beispiel sind das 4 bis 13 Stunden. Zusätzlich markieren die Punkte Ausreißer, also besonders hohe oder niedrige Werte. 
+                    Im Beispiel sind das Personen, die fast 15 Stunden oder weniger als drei Stunden für die Kategorie aufwenden.
                 </>
                 ),
+                isAccordion: true,
+                itemName: 'boxplot-accordion',
+                imagePath: "/images/boxplotbeispiel.png",
+                alt: "Beispielbild eines Boxplots"
             },
             {
                 id: 6,
-                text: <> Fokus Tageszeitnutzung nach Geschlecht und Alter </>,
-                isContentHeader: true,
-            },
-            {
-                id: 7,
-                text: ( 
-                <> 
-                    Schaut man sich die Zeitverwendung unterschiedlicher Altersklassen an, wird deutlich, 
-                    dass sich Ungleichheiten bei bezahlter und unbezahlter Arbeit schon früh abzeichnen. 
-                    Bereits bei den unter 20-Jährigen verrichten Mädchen und junge Frauen täglich rund 30 Minuten mehr unbezahlte Arbeit als Burschen und junge Männer. 
-                    Diese Unterschiede verstärken sich mit zunehmendem Alter.
-                </>
-                ),
-            },
-            {
-                id: 8,
-                text: ( 
-                <> 
-                    In der Altersgruppe 21 bis 64 Jahre wird der Unterschied besonders deutlich: 
-                    Frauen investieren täglich 3,75 Stunden in unbezahlte Arbeit, während Männer dafür im Schnitt nur 2 Stunden aufwenden. 
-                    Dazu zählen Haushaltsaufgaben, Kinderbetreuung und die Pflege von Angehörigen – Tätigkeiten, die essenziell für die Gesellschaft sind, 
-                    aber in klassischen Wirtschaftsstatistiken oft nicht sichtbar werden.
-                </>
-                ),
-            },
-            {
-                id: 9,
-                text: ( 
-                <> 
-                    Auch bei den über 65-Jährigen bleibt dieser Unterschied bestehen. 
-                    Während Männer in dieser Altersgruppe ihre unbezahlte Arbeit leicht erhöhen, 
-                    tragen Frauen weiterhin die Hauptlast der hauswirtschaftlichen und pflegerischen Tätigkeiten.
-                </>
-                ),
-            },
-            {
-                id: 10,
-                text: ( 
-                <> 
-    	            Wie bereits erwähnt, zeigt sich bei der Erwerbsarbeit das umgekehrte Bild: 
-                    Männer arbeiten im Durchschnitt länger und verdienen dadurch mehr. 
-                    Das hat weitreichende Konsequenzen wie niedrigere Einkommen von Frauen, 
-                    was ihr <GlossaryTerm className="glossary-term residualIncome" sectionId="time-usage">Residualeinkommen</GlossaryTerm> und ihre finanzielle Sicherheit auch später im Leben beeinträchtigt. 
-                    Langfristig wirken sich diese Unterschiede auf Pensionen und Altersarmut aus, da Frauen aufgrund ihrer Erwerbshistorie oft geringere Ansprüche haben.
-                </>
-                ),
-            },
-            {
-                id: 11,
-                text: ( 
-                <> 
-                    Diese Dynamik zeigt, dass die ungleiche Verteilung von Zeit für Erwerbs- und unbezahlte Arbeit ein zentraler Faktor für wirtschaftliche Ungleichheit ist. 
-                    In den nächsten Analysen konzentrieren wir uns daher gezielt auf die Altersgruppe 21 bis 64 Jahre, um die Auswirkungen dieser Verteilung noch genauer zu untersuchen.
-                </>
-                ),
-            },
-            {
-                id: 12,
                 text: <> Zeitverwendung von Männern und Frauen (21-64 Jahre) für Erwerbsarbeit und unbezahlter Arbeit </>,
                 isContentHeader: true,
             },
             {
-                id: 13,
+                id: 7,
                 text: <> Bildung: Bildung verändert viel – aber nicht alles </>,
                 isContentSubHeader: true,
             },
             {
-                id: 14,
+                id: 8,
                 text: ( 
                 <> 
                     Unabhängig vom Bildungsgrad zeigt sich ein klares Muster: Frauen übernehmen mehr Care-Arbeit als Männer. 
@@ -141,7 +105,7 @@ const translations = {
                 ),
             },
             {
-                id: 15,
+                id: 9,
                 text: ( 
                 <> 
                     Während sich die Aufteilung zwischen Erwerbsarbeit und Care-Arbeit bei Männern kaum verändert, 
@@ -151,7 +115,7 @@ const translations = {
                 ),
             },
             {
-                id: 16,
+                id: 10,
                 text: ( 
                 <> 
                     Warum ist das so? Eine mögliche Erklärung liegt in den Arbeitsmarktchancen höher gebildeter Frauen. 
@@ -161,7 +125,7 @@ const translations = {
                 ),
             },
             {
-                id: 17,
+                id: 11,
                 text: ( 
                 <> 
                     Trotz dieses Bildungsgradientens bleibt die Grundtendenz bestehen: 
@@ -172,18 +136,18 @@ const translations = {
                 ),
             },
             {
-                id: 18,
+                id: 12,
                 isChart: true,
                 itemName: 'edu-boxplot',
                 alt: "box plot visualizing income based on sex and education"
             },
             {
-                id: 19,
+                id: 13,
                 text: <> Vollzeit-/Teilzeitarbeit: Teilzeit ist nicht gleich Teilzeit – die doppelte Belastung von Frauen </>,
                 isContentSubHeader: true,
             },
             {
-                id: 20,
+                id: 14,
                 text: ( 
                 <> 
                     Frauen, die Teilzeit arbeiten, übernehmen fast doppelt so viel Care-Arbeit wie Frauen, die Vollzeit arbeiten. 
@@ -193,7 +157,7 @@ const translations = {
                 ),
             },
             {
-                id: 21,
+                id: 15,
                 text: ( 
                 <> 
                     Besonders auffällig ist der Unterschied zwischen teilzeitbeschäftigten Frauen und Männern: 
@@ -204,7 +168,7 @@ const translations = {
                 ),
             },
             {
-                id: 22,
+                id: 16,
                 text: ( 
                 <> 
                     Das hat weitreichende Folgen: Teilzeit verringert das Erwerbseinkommen, die Karrierechancen und langfristig auch die Pensionsansprüche. 
@@ -215,18 +179,18 @@ const translations = {
                 ),
             },
             {
-                id: 23,
+                id: 17,
                 isChart: true,
                 itemName: 'ftpt-boxplot',
                 alt: "box plot visualizing income based on sex and extend of employment"
             },
             {
-                id: 24,
+                id: 18,
                 text: <> Haushaltstyp: Wenn aus einem Haushalt eine Familie wird – wie sich Arbeitsteilung verändert </>,
                 isContentSubHeader: true,
             },
             {
-                id: 25,
+                id: 19,
                 text: ( 
                 <> 
                     Bei Single-Frauen und -Männern gibt es kaum Unterschiede in der Aufteilung zwischen Erwerbsarbeit und unbezahlter Care-Arbeit. 
@@ -237,7 +201,7 @@ const translations = {
                 ),
             },
             {
-                id: 26,
+                id: 20,
                 text: ( 
                 <> 
                     Besonders deutlich wird die Ungleichverteilung, sobald Kinder ins Spiel kommen. 
@@ -248,7 +212,7 @@ const translations = {
                 ),
             },
             {
-                id: 27,
+                id: 21,
                 text: ( 
                 <> 
                     Je mehr Kinder im Haushalt leben, desto mehr verstärkt sich dieses Muster. 
@@ -259,7 +223,7 @@ const translations = {
                 ),
             },
             {
-                id: 28,
+                id: 22,
                 text: ( 
                 <> 
                     Um diese Ungleichheiten zu reduzieren, sind gezielte Maßnahmen erforderlich: 
@@ -269,18 +233,18 @@ const translations = {
                 ),
             },
             {
-                id: 29,
+                id: 23,
                 isChart: true,
                 itemName: 'hhtype-boxplot',
                 alt: "box plot visualizing income based on sex and household type"
             },
             {
-                id: 30,
+                id: 24,
                 text: <> Gemeindegrößenklasse: Stadt oder Land? Wie der Wohnort die Arbeitsteilung beeinflusst </>,
                 isContentSubHeader: true,
             },
             {
-                id: 31,
+                id: 25,
                 text: ( 
                 <> 
                     Schaut man sich die Zeitverwendung in unterschiedlichen Gemeindegrößen an, zeigt sich ein klares Muster: 
@@ -290,7 +254,7 @@ const translations = {
                 ),
             },
             {
-                id: 32,
+                id: 26,
                 text: ( 
                 <> 
                     Bei Männern hingegen bleibt die Verteilung nahezu unverändert – egal, ob sie in einer kleinen Landgemeinde oder in einer Großstadt leben. 
@@ -299,18 +263,18 @@ const translations = {
                 ),
             },
             {
-                id: 33,
+                id: 27,
                 isChart: true,
                 itemName: 'gemgr-boxplot',
                 alt: "box plot visualizing income based on sex and community size"
             },
             {
-                id: 34,
+                id: 29,
                 text: <> Erreichbarkeit von sozialer Infrastruktur: So beeinflusst sie die unbezahlte Arbeit </>,
                 isContentSubHeader: true,
             },
             {
-                id: 35,
+                id: 30,
                 text: ( 
                 <> 
                     Wie stark die Verfügbarkeit und Erreichbarkeit <GlossaryTerm className="glossary-term si" sectionId="time-usage">sozialer Infrastruktur</GlossaryTerm> die Verteilung unbezahlter Arbeit beeinflusst, 
@@ -321,7 +285,7 @@ const translations = {
                 ),
             },
             {
-                id: 36,
+                id: 31,
                 text: ( 
                 <> 
                     Diese Zahlen verdeutlichen, dass in ländlichen oder infrastrukturschwachen Gemeinden viele Betreuungs- und Versorgungsaufgaben – 
@@ -332,7 +296,7 @@ const translations = {
                 ),
             },
             {
-                id: 37,
+                id: 32,
                 isChart: true,
                 itemName: 'si-boxplot',
                 alt: "box plot visualizing income based on sex and social infrastructure supply"
@@ -393,12 +357,55 @@ const TimeUsageSection = () => {
                     );
             }
 
-            case item.isList:
-                return (
-                    <div key={item.id} className={`paragraph ${item.className || ''}`}>
-                        {item.text}
-                    </div>
-                );
+            case item.isAccordion:
+            switch (item.itemName) {    
+                case 'measurement-accordion':
+                    return (
+                        <div key={item.id} style={{ margin: '24px 0' }}>
+                        <Accordion sx={{ background: '#f4f4f4' }}>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography variant="h4" sx={{ fontSize: '1.125rem' }}>
+                                {item.accordionHeader}
+                            </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                            <Typography>{item.accordionText}</Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                        </div>
+                    );
+                case 'boxplot-accordion':
+                    return (
+                        <div key={item.id} style={{ margin: '24px 0' }}>
+                        <Accordion sx={{background: "#f4f4f4"}}>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                <Typography variant="h4" sx={{ fontSize: '1.125rem'}}> {item.accordionHeader} </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    {item.accordionText}
+                                </Typography>
+                                {item.list && (
+                                    <ul className="custom-list infobox-list">
+                                        {item.list.map((step, index) => (
+                                            <li key={index}>{step}</li>
+                                        ))}
+                                    </ul>
+                                )}
+         
+                                <div className="image-container">
+                                    <img
+                                        className="example-boxplot"
+                                        src={`${process.env.PUBLIC_URL}${item.imagePath}`}
+                                        alt={item.alt}
+                                    />
+                                </div>
+                                
+                            </AccordionDetails>
+                        </Accordion>
+                        </div>
+                    );
+                }
             
             default:
                 return (
