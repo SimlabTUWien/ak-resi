@@ -374,7 +374,7 @@ const TimeUsageSection = () => {
                         </Accordion>
                         </div>
                     );
-                case 'boxplot-accordion':
+                default:
                     return (
                         <div key={item.id} style={{ margin: '24px 0' }}>
                         <Accordion sx={{background: "#f4f4f4"}}>
