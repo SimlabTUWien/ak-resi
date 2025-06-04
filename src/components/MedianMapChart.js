@@ -382,14 +382,12 @@ const MedianMapChart = ({ mode }) => {
                   const regionData = dataMap[groupId]?.[dataName]?.[mode];
                   const regionName = dataMap[groupId]?.bl;
 
+                  const riCategoryId = regionData?.riCategory || "notexisting";
+
                   // Highlight corresponding gemgr legend item
                   const gemgrGroup = svg.select(`g#${CSS.escape(dataName)}`);
                   const gemgrRect = gemgrGroup.select("rect");
                   gemgrRect.style("fill", "#e2e2e2");
-
-                  // Highlight corresponding riCategory legend item
-                  const riCategoryId = regionData?.riCategory || "notexisting";
-                  const categoryGroup = svg.select(`g#${CSS.escape(riCategoryId)}`);
 
                   // === Special Overlay for "notexisting"
                   if (riCategoryId === "notexisting") {
@@ -398,22 +396,6 @@ const MedianMapChart = ({ mode }) => {
                       const { x, y, width, height } = baseRect.getBBox();
 
                       d3.select(this.parentNode)
-                        .insert("rect", ":first-child")
-                        .attr("x", x)
-                        .attr("y", y)
-                        .attr("width", width)
-                        .attr("height", height)
-                        .attr("fill", "#e2e2e2")
-                        .attr("opacity", 1.0)
-                        .attr("pointer-events", "none")
-                        .classed("highlight-overlay-notexisting", true);
-                    }
-
-                    const catRect = categoryGroup.select("rect").node();
-                    if (catRect && categoryGroup.select("rect.highlight-overlay-notexisting").empty()) {
-                      const { x, y, width, height } = catRect.getBBox();
-
-                      categoryGroup
                         .insert("rect", ":first-child")
                         .attr("x", x)
                         .attr("y", y)
@@ -443,35 +425,13 @@ const MedianMapChart = ({ mode }) => {
                         .attr("pointer-events", "none")
                         .classed("highlight-overlay-nodata", true);
                     }
-
-                    const catRect = categoryGroup.select("rect").node();
-                    if (catRect && categoryGroup.select("rect.highlight-overlay-nodata").empty()) {
-                      const { x, y, width, height } = catRect.getBBox();
-
-                      categoryGroup
-                        .insert("rect", ":first-child")
-                        .attr("x", x)
-                        .attr("y", y)
-                        .attr("width", width)
-                        .attr("height", height)
-                        .attr("fill", "#e2e2e2")
-                        .attr("opacity", 1.0)
-                        .attr("pointer-events", "none")
-                        .classed("highlight-overlay-nodata", true);
-                    }
                   }
                   if (["below1k", "below1200"].includes(riCategoryId)) {
-                    [box, categoryGroup.select("rect, polygon")].forEach(el => {
-                      applyColorAdjustment(el, c => c?.darker(0.15));
-                    });
+                    applyColorAdjustment(box, c => c?.darker(0.15));
                   } else if(["below1400", "below1600", "below1800"].includes(riCategoryId)) {
-                    [box, categoryGroup.select("rect, polygon")].forEach(el => {
-                      applyColorAdjustment(el, c => c?.brighter(0.3));
-                    });
+                    applyColorAdjustment(box, c => c?.brighter(0.3));
                   } else if(["over2k", "below2k"].includes(riCategoryId)) {
-                    [box, categoryGroup.select("rect, polygon")].forEach(el => {
-                      applyColorAdjustment(el, c => c?.brighter(0.45));
-                    });
+                    applyColorAdjustment(box, c => c?.brighter(0.45));
                   } 
 
                   const gemgrText = dataMap[groupId]?.[dataName]?.gemgr;
