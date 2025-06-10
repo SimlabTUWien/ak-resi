@@ -150,6 +150,16 @@ export default function HeaderAppBar({ show }) {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [desktopDrawerOpen, setDesktopDrawerOpen] = useState(false);
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setDesktopDrawerOpen(true);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
 
   const toggleMobileDrawer = (open) => (event) => {
     if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
@@ -184,8 +194,16 @@ export default function HeaderAppBar({ show }) {
           <Toolbar disableGutters>
 
             {/* Dektop View */}
-            <Box component="img" src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt={t.alt}
+            <Box component="img" 
+              src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} 
+              alt={t.alt}
+              tabIndex={0}
               onClick={toggleDesktopDrawer(true)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  toggleDesktopDrawer(true)(e);
+                }
+              }}
               sx={{
                 // display: { xs: 'none', md: 'flex' },  // changed from mid to large
                 display: { xs: 'none', lg: 'flex' }, 
@@ -363,8 +381,8 @@ export default function HeaderAppBar({ show }) {
             </Typography>
             
             {/* Language Toggle */}
-            <Box sx={{ flexGrow: 0 }}>
-              <LanguageToggle />
+            <Box sx={{ flexGrow: 0 }}   >
+              <LanguageToggle tabIndex={0}/>
             </Box>
           </Toolbar>
         </Container>

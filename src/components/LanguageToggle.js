@@ -24,6 +24,12 @@ const LanguageToggle = () => {
     >
       {/* DE Language */}
       <Typography
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            setLanguage("DE");
+          }
+        }}
         component="span"
         aria-label="German" 
         sx={{
@@ -55,6 +61,12 @@ const LanguageToggle = () => {
 
       {/* EN Language */}
       <Typography
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            setLanguage("EN");
+          }
+        }}
         component="span"
         aria-label="English" 
         sx={{

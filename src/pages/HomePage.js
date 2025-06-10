@@ -95,7 +95,7 @@ export default function HomePage () {
         </div>
 
         <div className="floatingButton-container"> 
-            <FloatingButton show={showFloatingButton} />
+            <FloatingButton show={showFloatingButton} tabIndex={0}/>
         </div>
 
         <div className='progressBar'>
