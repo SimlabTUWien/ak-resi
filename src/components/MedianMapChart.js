@@ -534,7 +534,7 @@ const MedianMapChart = ({ mode }) => {
           <button className="nav-button" onClick={() => navigateText(-1)}>
             <ArrowBackIosNewIcon />
           </button>
-          <h4 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", paddingTop: "3px"}}> {selectedInfo.title} </h4>
+          <h3 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", paddingTop: "4px"}}> {selectedInfo.title} </h3>
           <button className="nav-button" onClick={() => navigateText(1)}>
             <ArrowForwardIosIcon />
           </button>

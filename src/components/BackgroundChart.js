@@ -215,7 +215,7 @@ const BackgroundChart = () => {
           <button onClick={() => navigateText(-1)} className="nav-button">
             <ArrowBackIosNewIcon aria-label="back" />
           </button>
-          <h4 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", paddingTop: "3px"}}>{selectedInfo.title}</h4>
+          <h3 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", paddingTop: "4px"}}>{selectedInfo.title}</h3>
           <button onClick={() => navigateText(1)} className="nav-button">
             <ArrowForwardIosIcon aria-label="forward" />
           </button>

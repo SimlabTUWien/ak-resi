@@ -136,12 +136,12 @@ const OutlookChart = () => {
           <button onClick={() => navigateText(-1)} className="nav-button">
             <ArrowBackIosNewIcon />
           </button>
-          <h4 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", paddingTop: "3px"}}>{selectedInfo.title}</h4>
+          <h3 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", paddingTop: "4px"}}>{selectedInfo.title}</h3>
           <button onClick={() => navigateText(1)} className="nav-button">
             <ArrowForwardIosIcon />
           </button>
         </div>
-        <h5 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", padding: "3px 0 3px"}}>{selectedInfo.subtitle}</h5>
+        <h4 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", padding: "3px 0 3px"}}>{selectedInfo.subtitle}</h4>
         <div style={{ marginTop: "1em"}}>
           {selectedInfo.text.map((paragraph, index) => (
             <p key={index} style={{ margin: "0.6em"}}>
