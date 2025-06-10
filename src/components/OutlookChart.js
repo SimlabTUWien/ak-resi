@@ -133,12 +133,12 @@ const OutlookChart = () => {
         style={{marginTop: 0}}
       >
         <div className="info-navigation">
-          <button onClick={() => navigateText(-1)} className="nav-button">
-            <ArrowBackIosNewIcon aria-label="back" />
+          <button onClick={() => navigateText(-1)} className="nav-button" aria-label="back">
+            <ArrowBackIosNewIcon />
           </button>
           <h3 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", paddingTop: "4px"}}>{selectedInfo.title}</h3>
-          <button onClick={() => navigateText(1)} className="nav-button">
-            <ArrowForwardIosIcon aria-label="forward" />
+          <button onClick={() => navigateText(1)} className="nav-button" aria-label="forward">
+            <ArrowForwardIosIcon />
           </button>
         </div>
         <h4 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", padding: "3px 0 3px"}}>{selectedInfo.subtitle}</h4>

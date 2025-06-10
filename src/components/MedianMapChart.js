@@ -531,12 +531,12 @@ const MedianMapChart = ({ mode }) => {
         }}
       >
         <div className="info-navigation">
-          <button className="nav-button" onClick={() => navigateText(-1)}>
-            <ArrowBackIosNewIcon aria-label="back" />
+          <button className="nav-button" onClick={() => navigateText(-1)} aria-label="back">
+            <ArrowBackIosNewIcon />
           </button>
           <h3 style={{ margin: "0", fontSize: "18px", fontWeight: "bold", paddingTop: "4px"}}> {selectedInfo.title} </h3>
-          <button className="nav-button" onClick={() => navigateText(1)}>
-            <ArrowForwardIosIcon aria-label="forward" />
+          <button className="nav-button" onClick={() => navigateText(1)} aria-label="forward">
+            <ArrowForwardIosIcon />
           </button>
         </div>
         <p style={{ margin: 0, textAlign: isMobile ? 'left' : 'justify'}}>{selectedInfo.text}</p>
