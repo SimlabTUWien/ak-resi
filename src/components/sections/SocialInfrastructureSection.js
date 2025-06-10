@@ -126,7 +126,7 @@ const translations = {
                 id: 13,
                 text: ( 
                 <> 
-                    Über 100 Haushalte, die beim reinen Einkommen über dem Median liegen, rutschen unter den <GlossaryTerm className="glossary-term median" sectionId="social-infrastructure">Median</GlossaryTerm>, 
+                    Über 100 Haushalte, die beim reinen Einkommen über dem <GlossaryTerm className="glossary-term median" sectionId="social-infrastructure">Median</GlossaryTerm> liegen, rutschen unter den Median, 
                     wenn man das <GlossaryTerm className="glossary-term residualIncome" sectionId="social-infrastructure">Residualeinkommen</GlossaryTerm> berücksichtigt. 
                     Das bedeutet: Obwohl diese Haushalte relativ gut verdienen, bleiben ihnen – nach Abzug fixer Ausgaben – unterdurchschnittlich geringe Mittel zur freien Verfügung. 
                     Diese finanzielle Enge kann durch mangelnden Zugang zu unterstützender Infrastruktur noch verstärkt werden.
