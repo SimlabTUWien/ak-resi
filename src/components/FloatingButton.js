@@ -64,12 +64,13 @@ const FloatingButton = ({ show }) => {
       animate={{ opacity: show ? 1 : 0, y: show ? 0 : 20 }}
       transition={{ duration: 1.5, ease: "easeInOut" }}
       disabled={!show}
+      aria-label="navigate upward"
       style={{
         borderColor: buttonColor,
         color: buttonColor,
       }}
     >
-      <ArrowUpwardIcon/>
+      <ArrowUpwardIcon aria-label="upward"/>
     </motion.button>
   );
 };
