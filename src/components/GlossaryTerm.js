@@ -4,12 +4,12 @@ import Tooltip from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 
 const sectionColors = {
-  intro: "#6b6b6b", //"#b3b3b3",
-  income: "#6b6b6b",
+  intro: "#4A4A4A", //"#b3b3b3",
+  income: "#4A4A4A",
   residualIncome: "#d99484", //"#f0ae9f",
   "social-infrastructure": "#72a69f",//"#a5cdc8",
   "time-usage": "#fab741", //"#fcd799",
-  "what-now": "#6b6b6b" //"#b3b3b3",
+  "what-now": "#4A4A4A" //"#b3b3b3",
 };
 
 const getStyledGlossaryTerm = (isMobile) => styled("span")(({ color }) => ({
