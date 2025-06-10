@@ -307,14 +307,16 @@ const SiIndicatorMap = ({ siMode, subIndicator: indicator }) => {
           let indicatorValue = feature.properties[selectedValue?.indicatorValue];
 
           if(indicatorValue !== 0) {
-            indicatorValue = indicatorValue.toFixed(3);
+            indicatorValue = indicatorValue.toFixed(1);
           }
+
+          const displayValue = (indicatorValue + '').replace('.', ',');
 
           const content = `
             <div>
               <b>${translations[languageRef.current]?.gkz}:</b> ${feature.properties.GKZ2}<br>
               <b>${translations[languageRef.current]?.name}:</b> ${feature.properties.PGName}<br>
-              <b>${translations[languageRef.current]?.title}:</b> ${indicatorValue}
+              <b>${translations[languageRef.current]?.title}:</b> ${displayValue}
             </div>
           `;
           layer.bindPopup(content).openPopup();
