@@ -51,6 +51,10 @@
     color: #006699;
     font-variation-settings: "slnt" 0, "wdth" 100, "wght" 500;
     text-decoration: none;
+
+    &:hover {
+      color: #006699CC;
+    }
 }
 
 @media (max-width: 1300px) {
