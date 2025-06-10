@@ -539,7 +539,7 @@ const MedianMapChart = ({ mode }) => {
             <ArrowForwardIosIcon />
           </button>
         </div>
-        <p style={{ margin: 0, textAlign:'justify'}}>{selectedInfo.text}</p>
+        <p style={{ margin: 0, textAlign: isMobile ? 'left' : 'justify'}}>{selectedInfo.text}</p>
       </Box>
   </div>
   )
