@@ -8,34 +8,34 @@ const svgUrl = `${process.env.PUBLIC_URL}/images/9_INC_SEX_EDU_TU_DE.svg`;
 
 const dataMap = {
   fua: {
-    hbah:   { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Postsekunäre oder tertäre Ausbildung", q1: 1.2, median: 2.5, q3: 5.3, n: 877 },
-    hbasmm: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Sekundarstufe II (mit Matura)", q1: 1.2, median: 2.8, q3: 4.7, n: 158 },
-    hbasom: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Sekundarstufe I (ohne Matura)", q1: 1.7, median: 3.3, q3: 5.7, n: 1111 },
-    hbap:   { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Pflichtschule", q1: 1.8, median: 3.8, q3: 6.0, n: 200 },
-    hbau:   { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Unbekannt", q1: 1.3, median: 2.8, q3: 5.5, n: 386 }
+    hbah:   { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Postsekunäre oder tertäre Ausbildung", q1: '1,2', median: '2,5', q3: '5,3', n: 877 },
+    hbasmm: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Sekundarstufe II (mit Matura)", q1: '1,2', median: '2,8', q3: '4,7', n: 158 },
+    hbasom: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Sekundarstufe I (ohne Matura)", q1: '1,7', median: '3,3', q3: '5,7', n: 1111 },
+    hbap:   { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Pflichtschule", q1: '1,8', median: '3,8', q3: '6', n: 200 },
+    hbau:   { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Unbekannt", q1: '1,3', median: '2,8', q3: '5,5', n: 386 }
   },
   fea: {
-      hbah:   { titel: "Frauen - Erwerbsarbeit", education: "Postsekunäre oder tertäre Ausbildung", q1: 5.3, median: 7.5, q3: 8.8, n: 647 },
-      hbasmm: { titel: "Frauen - Erwerbsarbeit", education: "Sekundarstufe II (mit Matura)", q1: 5.5, median: 7.7, q3: 9.0, n: 77 },
-      hbasom: { titel: "Frauen - Erwerbsarbeit", education: "Sekundarstufe I (ohne Matura)", q1: 5.3, median: 7.7, q3: 9.0, n: 653 },
-      hbap:   { titel: "Frauen - Erwerbsarbeit", education: "Pflichtschule" , q1: 4.8, median: 6.9, q3: 8.3, n: 90 },
-      hbau:   { titel: "Frauen - Erwerbsarbeit", education: "Unbekannt", q1: 5.3, median: 7.5, q3: 8.8, n: 267 }
+      hbah:   { titel: "Frauen - Erwerbsarbeit", education: "Postsekunäre oder tertäre Ausbildung", q1: '5,3', median: '7,5', q3: '8,8', n: 647 },
+      hbasmm: { titel: "Frauen - Erwerbsarbeit", education: "Sekundarstufe II (mit Matura)", q1: '5,5', median: '7,7', q3: '9', n: 77 },
+      hbasom: { titel: "Frauen - Erwerbsarbeit", education: "Sekundarstufe I (ohne Matura)", q1: '5,3', median: '7,7', q3: '9', n: 653 },
+      hbap:   { titel: "Frauen - Erwerbsarbeit", education: "Pflichtschule" , q1: '4,8', median: '6,9', q3: '8,3', n: 90 },
+      hbau:   { titel: "Frauen - Erwerbsarbeit", education: "Unbekannt", q1: '5,3', median: '7,5', q3: '8,8', n: 267 }
   },
 
 
   mua: {
-    hbah:   { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Postsekunäre oder tertäre Ausbildung", q1: 0.8, median: 1.5, q3: 2.8, n: 613 },
-    hbasmm: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Sekundarstufe II (mit Matura)", q1: 0.7, median: 1.3, q3: 2.6, n: 111 },
-    hbasom: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Sekundarstufe I (ohne Matura)", q1: 0.8, median: 1.5, q3: 3.0, n: 753 },
-    hbap:   { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Pflichtschule", q1: 1.0, median: 2.2, q3: 3.5, n: 108 },
-    hbau:   { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Unbekannt", q1: 0.7, median: 1.5, q3: 2.7, n: 231 }
+    hbah:   { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Postsekunäre oder tertäre Ausbildung", q1: '0,8', median: '1,5', q3: '2,8', n: 613 },
+    hbasmm: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Sekundarstufe II (mit Matura)", q1: '0,7', median: '1,3', q3: '2,6', n: 111 },
+    hbasom: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Sekundarstufe I (ohne Matura)", q1: '0,8', median: '1,5', q3: '3', n: 753 },
+    hbap:   { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Pflichtschule", q1: '1', median: '2,2', q3: '3,5', n: 108 },
+    hbau:   { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", education: "Unbekannt", q1: '0,7', median: '1,5', q3: '2,7', n: 231 }
   },
   mea: {
-    hbah:   { titel: "Männer - Erwerbsarbeit", education: "Postsekunäre oder tertäre Ausbildung", q1: 7.3, median: 8.5, q3: 9.8, n: 648 },
-    hbasmm: { titel: "Männer - Erwerbsarbeit", education: "Sekundarstufe II (mit Matura)", q1: 7.7, median: 8.5, q3: 9.3, n: 97 },
-    hbasom: { titel: "Männer - Erwerbsarbeit", education: "Sekundarstufe I (ohne Matura)", q1: 7.8, median: 8.8, q3: 10.0, n: 761 },
-    hbap:   { titel: "Männer - Erwerbsarbeit", education: "Pflichtschule", q1: 7.2, median: 8.5, q3: 10.0, n: 101 },
-    hbau:   { titel: "Männer - Erwerbsarbeit", education: "Unbekannt", q1: 7.3, median: 8.8, q3: 9.8, n: 242 }
+    hbah:   { titel: "Männer - Erwerbsarbeit", education: "Postsekunäre oder tertäre Ausbildung", q1: '7,3', median: '8,5', q3: '9,8', n: 648 },
+    hbasmm: { titel: "Männer - Erwerbsarbeit", education: "Sekundarstufe II (mit Matura)", q1: '7,7', median: '8,5', q3: '9,3', n: 97 },
+    hbasom: { titel: "Männer - Erwerbsarbeit", education: "Sekundarstufe I (ohne Matura)", q1: '7,8', median: '8,8', q3: '10', n: 761 },
+    hbap:   { titel: "Männer - Erwerbsarbeit", education: "Pflichtschule", q1: '7,2', median: '8,5', q3: '10', n: 101 },
+    hbau:   { titel: "Männer - Erwerbsarbeit", education: "Unbekannt", q1: '7,3', median: '8,8', q3: '9,8', n: 242 }
   }
 };
 
@@ -109,9 +109,9 @@ const IncSexEduBoxplot = () => {
                     .html(`
                       <div style="font-variation-settings: 'wght' 700">${data.titel}</div>
                       <div>Höchster Bildungsabschluss: ${data.education}</div>
-                      <div>1. Quartil: ${data.q1}</div>
-                      <div>Median: ${data.median}</div>
-                      <div>3. Quartil: ${data.q3}</div>
+                      <div>Unteres Quartil: ${data.q1} Stunden</div>
+                      <div>Median: ${data.median} Stunden</div>
+                      <div>Oberes Quartil: ${data.q3} Stunden</div>
                       <div>Gruppengröße: ${data.n}</div>
                     `)
                     .style("visibility", "visible")

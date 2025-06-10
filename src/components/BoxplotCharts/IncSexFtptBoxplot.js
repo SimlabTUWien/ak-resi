@@ -6,39 +6,39 @@ import { Box } from "@mui/material";
 const dataMap = {
   DE: {
     fua: {
-      bavz: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", extend: "Vollzeit", q1: 1.0, median: 1.8, q3: 3.2, n: 962 },
-      batz: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", extend: "Teilzeit", q1: 1.8, median: 3.7, q3: 6.0, n: 1075 }
+      bavz: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", extend: "Vollzeit", q1: '1', median: '1,8', q3: '3,2', n: 962 },
+      batz: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", extend: "Teilzeit", q1: '1,8', median: '3,7', q3: '6', n: 1075 }
     },
     fea: {
-      bavz: { titel: "Frauen - Erwerbsarbeit", extend: "Vollzeit", q1: 6.8, median: 8.3, q3: 9.2, n: 885 },
-      batz: { titel: "Frauen - Erwerbsarbeit", extend: "Teilzeit", q1: 4.7, median: 6.2, q3: 8.0, n: 728 }
+      bavz: { titel: "Frauen - Erwerbsarbeit", extend: "Vollzeit", q1: '6,8', median: '8,3', q3: '9,2', n: 885 },
+      batz: { titel: "Frauen - Erwerbsarbeit", extend: "Teilzeit", q1: '4,7', median: '6,2', q3: '8', n: 728 }
     },
     mua: {
-      bavz: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", extend: "Vollzeit", q1: 0.7, median: 1.3, q3: 2.7, n: 1312 },
-      batz: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", extend: "Teilzeit", q1: 0.8, median: 1.7, q3: 3.3, n: 182 }
+      bavz: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", extend: "Vollzeit", q1: '0,7', median: '1,3', q3: '2,7', n: 1312 },
+      batz: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", extend: "Teilzeit", q1: '0,8', median: '1,7', q3: '3,3', n: 182 }
     },
     mea: {
-      bavz: { titel: "Männer - Erwerbsarbeit", extend: "Vollzeit", q1: 7.8, median: 8.8, q3: 10.0, n: 1588 },
-      batz: { titel: "Männer - Erwerbsarbeit", extend: "Teilzeit", q1: 5.1, median: 6.7, q3: 8.7, n: 163 }
+      bavz: { titel: "Männer - Erwerbsarbeit", extend: "Vollzeit", q1: '7,8', median: '8,8', q3: '10', n: 1588 },
+      batz: { titel: "Männer - Erwerbsarbeit", extend: "Teilzeit", q1: '5,1', median: '6,7', q3: '8,7', n: 163 }
     }
   },
   EN: {
     fua: {
-      bavz: { titel: "Women - Care Work", extend: "Full Time", q1: 1.0, median: 1.8, q3: 3.2, n: 962 },
-      batz: { titel: "Women - Care Work", extend: "Part Time", q1: 1.8, median: 3.7, q3: 6.0, n: 1075 }
+      bavz: { titel: "Women - Care Work", extend: "Full Time", q1: '1', median: '1,8', q3: '3,2', n: 962 },
+      batz: { titel: "Women - Care Work", extend: "Part Time", q1: '1,8', median: '3,7', q3: '6', n: 1075 }
     },
     fea: {
-      bavz: { titel: "Women - Paid Work", extend: "Full Time", q1: 6.8, median: 8.3, q3: 9.2, n: 885 },
-      batz: { titel: "Women - Paid Work", extend: "Part Time", q1: 4.7, median: 6.2, q3: 8.0, n: 728 }
+      bavz: { titel: "Women - Paid Work", extend: "Full Time", q1: '6,8', median: '8,3', q3: '9.2', n: 885 },
+      batz: { titel: "Women - Paid Work", extend: "Part Time", q1: '4,7', median: '6,2', q3: '8', n: 728 }
     },
   
     mua: {
-      bavz: { titel: "Men - Care Work", extend: "Full Time", q1: 0.7, median: 1.3, q3: 2.7, n: 1312 },
-      batz: { titel: "Men - Care Work", extend: "Part Time", q1: 0.8, median: 1.7, q3: 3.3, n: 182 }
+      bavz: { titel: "Men - Care Work", extend: "Full Time", q1: '0,7', median: '1,3', q3: '2,7', n: 1312 },
+      batz: { titel: "Men - Care Work", extend: "Part Time", q1: '0,8', median: '1,7', q3: '3,3', n: 182 }
     },
     mea: {
-      bavz: { titel: "Men - Paid Work", extend: "Full Time", q1: 7.8, median: 8.8, q3: 10.0, n: 1588 },
-      batz: { titel: "Men - Paid Work", extend: "Part Time", q1: 5.1, median: 6.7, q3: 8.7, n: 163 }
+      bavz: { titel: "Men - Paid Work", extend: "Full Time", q1: '7,8', median: '8,8', q3: '10', n: 1588 },
+      batz: { titel: "Men - Paid Work", extend: "Part Time", q1: '5,1', median: '6,7', q3: '8,7', n: 163 }
     }
   }
 };
@@ -46,16 +46,16 @@ const dataMap = {
 const labels = {
   DE: {
     extent: "Beschäftigungsausmaß",
-    q1: "1. Quartil",
+    q1: "Unteres Quartil",
     median: "Median",
-    q3: "3. Quartil",
+    q3: "Oberes Quartil",
     n: "Gruppengröße"
   },
   EN: {
     extent: "Extent of Employment",
-    q1: "1st Quartile",
+    q1: "Lower Quartile",
     median: "Median",
-    q3: "3rd Quartile",
+    q3: "Upper Quartile",
     n: "Group Size"
   }
 };
@@ -139,9 +139,9 @@ const IncSexFtptBoxplot = () => {
                     .html(`
                       <div style="font-variation-settings: 'wght' 700">${data.titel}</div>
                       <div>${l.extent}: ${data.extend}</div>
-                      <div>${l.q1}: ${data.q1}</div>
-                      <div>${l.median}: ${data.median}</div>
-                      <div>${l.q3}: ${data.q3}</div>
+                      <div>${l.q1}: ${data.q1} Stunden</div>
+                      <div>${l.median}: ${data.median} Stunden</div>
+                      <div>${l.q3}: ${data.q3} Stunden</div>
                       <div>${l.n}: ${data.n}</div>
                     `)
                     .style("visibility", "visible")

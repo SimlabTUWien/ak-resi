@@ -8,28 +8,28 @@ const svgUrl = `${process.env.PUBLIC_URL}/images/12_INC_SEX_GEMGRO_TU_DE.svg`;
 
 const dataMap = {
     fua: {
-        vienna: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "Wien", q1: 1.2, median: 2.3, q3: 4.3, n: 527 },
-        over100k: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "> 100.000 Einwohner:innen", q1: 1.3, median: 2.3, q3: 4.7, n: 311 },
-        till100k: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "10.001 - 100.000 Einwohner:innen", q1: 1.3, median: 2.8, q3: 5.5, n: 454 },
-        under10k: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "bis 10.000 Einwohner:innen", q1: 1.7, median: 3.5, q3: 6.0, n: 1440 }
+        vienna: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "Wien", q1: '1,2', median: '2,3', q3: '4,3', n: 527 },
+        over100k: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "> 100.000 Einwohner:innen", q1: '1,3', median: '2,3', q3: '4,7', n: 311 },
+        till100k: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "10.001 - 100.000 Einwohner:innen", q1: '1,3', median: '2,8', q3: '5,5', n: 454 },
+        under10k: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "bis 10.000 Einwohner:innen", q1: '1,7', median: '3,5', q3: '6', n: 1440 }
     },
     fea: {
-        vienna: { titel: "Frauen - Erwerbsarbeit", communitySizeClass: "Wien", q1: 6.0, median: 7.5, q3: 8.7, n: 355 },
-        over100k: { titel: "Frauen - Erwerbsarbeit", communitySizeClass: "> 100.000 Einwohner:innen", q1: 5.9, median: 8.0, q3: 8.8, n: 211 },
-        till100k: { titel: "Frauen - Erwerbsarbeit", communitySizeClass: "10.001 - 100.000 Einwohner:innen", q1: 5.5, median: 7.6, q3: 9.0, n: 286 },
-        under10k: { titel: "Frauen - Erwerbsarbeit", communitySizeClass: "bis 10.000 Einwohner:innen", q1: 5.0, median: 7.3, q3: 9.0, n: 882 }
+        vienna: { titel: "Frauen - Erwerbsarbeit", communitySizeClass: "Wien", q1: '6', median: '7,5', q3: '8,7', n: 355 },
+        over100k: { titel: "Frauen - Erwerbsarbeit", communitySizeClass: "> 100.000 Einwohner:innen", q1: '5,9', median: '8', q3: '8,8', n: 211 },
+        till100k: { titel: "Frauen - Erwerbsarbeit", communitySizeClass: "10.001 - 100.000 Einwohner:innen", q1: '5,5', median: '7,6', q3: '9', n: 286 },
+        under10k: { titel: "Frauen - Erwerbsarbeit", communitySizeClass: "bis 10.000 Einwohner:innen", q1: '5', median: '7,3', q3: '9', n: 882 }
     },
     mua: {
-        vienna: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "Wien", q1: 0.8, median: 1.5, q3: 2.9, n: 347 },
-        over100k: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "> 100.000 Einwohner:innen", q1: 0.7, median: 1.5, q3: 2.8, n: 207 },
-        till100k: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "10.001 - 100.000 Einwohner:innen", q1: 0.8, median: 1.4, q3: 2.8, n: 306 },
-        under10k: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "bis 10.000 Einwohner:innen", q1: 0.7, median: 1.5, q3: 3.0, n: 956 }
+        vienna: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "Wien", q1: '0,8', median: '1,5', q3: '2,9', n: 347 },
+        over100k: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "> 100.000 Einwohner:innen", q1: '0,7', median: '1,5', q3: '2,8', n: 207 },
+        till100k: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "10.001 - 100.000 Einwohner:innen", q1: '0,8', median: '1,4', q3: '2,8', n: 306 },
+        under10k: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", communitySizeClass: "bis 10.000 Einwohner:innen", q1: '0,7', median: '1,5', q3: '3', n: 956 }
     },
     mea: {
-        vienna: { titel: "Männer - Erwerbsarbeit", communitySizeClass: "Wien", q1: 6.5, median: 8.3, q3: 9.5, n: 335 },
-        over100k: { titel: "Männer - Erwerbsarbeit", communitySizeClass: "> 100.000 Einwohner:innen", q1: 7.7, median: 8.7, q3: 9.7, n: 181 },
-        till100k: { titel: "Männer - Erwerbsarbeit", communitySizeClass: "10.001 - 100.000 Einwohner:innen", q1: 7.5, median: 8.7, q3: 9.7, n: 303 },
-        under10k: { titel: "Männer - Erwerbsarbeit", communitySizeClass: "bis 10.000 Einwohner:innen", q1: 7.7, median: 8.8, q3: 10.0, n: 1030 }
+        vienna: { titel: "Männer - Erwerbsarbeit", communitySizeClass: "Wien", q1: '6,5', median: '8,3', q3: '9,5', n: 335 },
+        over100k: { titel: "Männer - Erwerbsarbeit", communitySizeClass: "> 100.000 Einwohner:innen", q1: '7,7', median: '8,7', q3: '9,7', n: 181 },
+        till100k: { titel: "Männer - Erwerbsarbeit", communitySizeClass: "10.001 - 100.000 Einwohner:innen", q1: '7,5', median: '8,7', q3: '9,7', n: 303 },
+        under10k: { titel: "Männer - Erwerbsarbeit", communitySizeClass: "bis 10.000 Einwohner:innen", q1: '7,7', median: '8,8', q3: '10', n: 1030 }
     }
 };
 
@@ -103,9 +103,9 @@ const IncSexGemgroBoxplot = () => {
                     .html(`
                       <div style="font-variation-settings: 'wght' 700">${data.titel}</div>
                       <div>Gemeindegrößenklasse: ${data.communitySizeClass}</div>
-                      <div>1. Quartil: ${data.q1}</div>
-                      <div>Median: ${data.median}</div>
-                      <div>3. Quartil: ${data.q3}</div>
+                      <div>Unteres Quartil: ${data.q1} Stunden</div>
+                      <div>Median: ${data.median} Stunden</div>
+                      <div>Oberes Quartil: ${data.q3} Stunden</div>
                       <div>Gruppengröße: ${data.n}</div>
                     `)
                     .style("visibility", "visible")
