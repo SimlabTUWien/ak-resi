@@ -1,6 +1,6 @@
 import { useLanguage } from '../../context/LanguageContext';
 import GlossaryTerm from '../GlossaryTerm';
-import {Accordion, AccordionSummary, AccordionDetails, Box, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
+import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 
