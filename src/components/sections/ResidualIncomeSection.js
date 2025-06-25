@@ -47,6 +47,9 @@ const translations = {
                     Während für alle Personen in Österreich mit steuerrelevantem Einkommen Informationen in der AEST vorliegen, 
                     handelt es sich bei der Konsumerhebung um eine repräsentative Stichprobenerhebung, die die detaillierten Ausgaben von 6.873 Haushalte erfasst und kategorisiert. 
                     Das verfügbare Einkommen kann daher nur für diese Haushalte berechnet werden, weshalb die Ergebnisse auf der Ebene von Personengruppen, Regionen und Haushaltstypen ausgewertet werden.
+                    <br/>
+                    <br/>
+                    Hinweis: Kreditrückzahlungen für Wohneigentum können in der Analyse nicht berücksichtigt werden, da sie in der Konsumerhebung 2019/2020 nicht erfasst sind.
                 </>
                 ),
                 isAccordion: true,
@@ -54,11 +57,34 @@ const translations = {
             },
             {
                 id: 4,
+                accordionHeader: "Was sind notwendige Ausgaben?",
+                accordionText: ( 
+                <>  
+                    Im Rahmen des Projekts werden notwendige Ausgaben als jene Aufwendungen definiert, die zur Sicherung grundlegender Lebensbedingungen erforderlich sind. 
+                    Dazu zählen Nahrung, Wohnen, Energie, Bildung und Gesundheit. Diese Bereiche wurden gewählt, weil sie zentrale Voraussetzungen für ein gutes Leben darstellen:
+                </>
+                ),
+                list: (
+                <>
+                    <ul className="custom-list residual-income">
+                        <li><span className="boldText">Nahrung</span> gewährleistet die tägliche Versorgung und das körperliche Wohlbefinden.</li>
+                        <li><span className="boldText">Wohnen</span> bietet Schutz, Stabilität und sozialen Rückzugsraum.</li>
+                        <li><span className="boldText">Energie</span> ist notwendig für Heizung, Stromversorgung und die Nutzung moderner Infrastruktur.</li>
+                        <li><span className="boldText">Bildung</span> schafft Zugang zu Wissen, Qualifikationen und gesellschaftlicher Teilhabe.</li>
+                        <li><span className="boldText">Gesundheit</span> umfasst präventive wie akute medizinische Versorgung und ist Grundlage für ein selbstbestimmtes Leben.</li>
+                    </ul>
+                </>    
+                ),
+                isAccordion: true,
+                itemName: 'expenses-accordion'
+            },
+            {
+                id: 5,
                 text: <> Wofür geben Haushalte Geld aus? </>,
                 isContentHeader: true,
             },
             {
-                id: 5,
+                id: 6,
                 text: (
                 <>  
                     Betrachtet man alle Haushalte gemeinsam, zeigt sich, dass im Durchschnitt etwa 10% des Einkommens für Wohnen aufgewendet werden. 
@@ -73,7 +99,7 @@ const translations = {
                 ),
             },
             {
-                id: 6,
+                id: 7,
                 isEChart: true,
                 itemName: "median-expenditure-chart",
                 chartTitle: "Ausgabenkategorien",
@@ -82,7 +108,7 @@ const translations = {
                 alt: ""
             },
             {
-                id: 7,
+                id: 8,
                 text: <> Residualeinkommen nach Haushaltstyp </>,
                 isContentHeader: true,
             },
@@ -773,6 +799,22 @@ const ResidualIncomeSection = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>{item.accordionText}</Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                        </div>
+                    );
+                case 'expenses-accordion':
+                    return (
+                        <div key={item.id} style={{ margin: '24px 0' }}>
+                        <Accordion sx={{ background: '#f4f4f4' }}>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography variant="h4" sx={{ fontSize: '1.125rem' }}>
+                                {item.accordionHeader}
+                            </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                            <Typography>{item.accordionText}</Typography>
+                            <Typography>{item.list}</Typography>
                             </AccordionDetails>
                         </Accordion>
                         </div>
