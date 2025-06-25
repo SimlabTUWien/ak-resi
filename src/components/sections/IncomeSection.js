@@ -1,5 +1,8 @@
 import { useLanguage } from '../../context/LanguageContext';
 import GlossaryTerm from '../GlossaryTerm';
+import {Accordion, AccordionSummary, AccordionDetails, Box, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 
 const translations = {
         DE: {
@@ -21,37 +24,33 @@ const translations = {
                 },
                 {
                     id: 3,
-                    text: <> Was sind Quintile? </>,
-                    isContentHeader: true,
-                },
-                {
-                    id: 4,
-                    text: (
-                    <>
+                    accordionHeader: "Was sind Quintile?",
+                    accordionText: ( 
+                    <>  
                         Ein <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintil</GlossaryTerm> beschreibt jeweils genau ein Fünftel der Haushalte, geordnet nach ihrem verfügbaren Einkommen. Das bedeutet:
                     </>
                     ),
+                    list: (
+                    <>
+                        <ul className="custom-list background">
+                            <li><span className="boldText">Erstes Quintil:</span> Die 20 % der Haushalte mit dem niedrigsten Einkommen </li>
+                            <li><span className="boldText">Zweites Quintil:</span> Haushalte mit Einkommen zwischen den unteren 20 % und 40 % aller Haushalte </li>
+                            <li><span className="boldText">Drittes Quintil:</span> Die mittleren 20 % der Haushalte in der Einkommensverteilung </li>
+                            <li><span className="boldText">Viertes Quintil:</span> Haushalte mit Einkommen zwischen den oberen 60 % und 80 % aller Haushalte</li>
+                            <li><span className="boldText">Fünftes Quintil:</span> Die 20 % der Haushalte mit dem höchsten Einkommen</li>
+                        </ul>
+                    </>    
+                    ),
+                    isAccordion: true,
+                    itemName: 'quintil-accordion'
                 },
                 {
-                    id: 5,
-                    text: (
-                    <ul className="custom-list background">
-                        <li><span className="boldText">Erstes Quintil:</span> Die 20 % der Haushalte mit dem niedrigsten Einkommen </li>
-                        <li><span className="boldText">Zweites Quintil:</span> Haushalte mit Einkommen zwischen den unteren 20 % und 40 % aller Haushalte </li>
-                        <li><span className="boldText">Drittes Quintil:</span> Die mittleren 20 % der Haushalte in der Einkommensverteilung </li>
-                        <li><span className="boldText">Viertes Quintil:</span> Haushalte mit Einkommen zwischen den oberen 60 % und 80 % aller Haushalte</li>
-                        <li><span className="boldText">Fünftes Quintil:</span> Die 20 % der Haushalte mit dem höchsten Einkommen</li>
-                    </ul>
-                    ),
-                    isList: true,
-                },
-                                {
-                    id: 6,
+                    id: 4,
                     text: <> Warum teilen wir das Haushaltseinkommen in Quintile? </>,
                     isContentHeader: true,
                 },
                 {
-                    id: 7,
+                    id: 5,
                     text: (
                     <>  
                         Die Einteilung in <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintile</GlossaryTerm> hilft, die Einkommensverteilung und wirtschaftliche Ungleichheiten besser sichtbar zu machen. 
@@ -61,12 +60,12 @@ const translations = {
                     ),
                 },
                 {
-                    id: 8,
+                    id: 6,
                     isChart: true,
                     alt: "Diagramm mit 5 Balken, die das mittlere Haushaltseinkommen pro Einkommensquintil in Österreich darstellen."
                 },
                                 {
-                    id: 9,
+                    id: 7,
                     text: (
                     <>  
                         Das Medianhaushaltseinkommen in Österreich beträgt 2.632€. Dabei zeigt sich eine deutliche <GlossaryTerm className="glossary-term incomeInequality" sectionId="income">Einkommensungleichheit</GlossaryTerm> zwischen den verschiedenen Bevölkerungsgruppen. 
@@ -162,9 +161,19 @@ const IncomeSection = () => {
                     <div key={item.id} className="image-container median-hh-income-container">
                         <img src={`${process.env.PUBLIC_URL}/images/00_Median_HH_Income_Personen_DE.png`} alt={`${item.alt}`} />
                     </div>
-                ) : item.isList ? (
-                    <div key={item.id} className={`paragraph ${item.className || ''}`}>
-                        {item.text}
+                ) : item.isAccordion ? (
+                    <div key={item.id} style={{ margin: '24px 0' }}>
+                        <Accordion sx={{ background: '#f4f4f4' }}>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography variant="h4" sx={{ fontSize: '1.125rem' }}>
+                                {item.accordionHeader}
+                            </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                            <Typography>{item.accordionText}</Typography>
+                            <Typography>{item.list}</Typography>
+                            </AccordionDetails>
+                        </Accordion>
                     </div>
                 ) : (
                     <p key={item.id} className={`paragraph ${item.className || ''}`}>
