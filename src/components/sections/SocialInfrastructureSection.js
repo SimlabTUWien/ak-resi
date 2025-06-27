@@ -92,7 +92,7 @@ const translations = {
             },            
             {
                 id: 7,
-                isChart: true,
+                isMapComponent: true,
                 itemName: 'si-map',
                 alt: ""
             },
@@ -131,7 +131,22 @@ const translations = {
             },               
             {
                 id: 11,
-                // TODO: add Chart 2 SI proGem + Example text?
+                isPerMunChart: true,
+                itemName: 'si-mun-chart',
+                imagePathMIV: "/images/16_SI_proGem_MIV.webp",
+                imagePathOEV: "/images/16_SI_proGem_OEV.webp",
+                altMIV: "",
+                altOEV: "",
+                text: ( 
+                <> 
+                    <span className="boldText">Beispiel: </span>
+                    In einer Gemeinde im Zentralraum kann eine Familie ihr Kind beispielsweise zu Fuß in den Kindergarten bringen, zur Ärztin um die Ecke gehen und nachmittags die pflegebedürftige Mutter 
+                    in einer nahegelegenen Einrichtung besuchen. In einer anderen Gemeinde am Rand einer strukturschwachen Region muss dieselbe Familie täglich mehrere Kilometer mit dem Auto fahren, 
+                    um medizinische Versorgung, Bildung oder Betreuung zu erreichen – oder sie muss auf teure, private Alternativen zurückgreifen.<br/><br/>
+                    
+                    Diese Unterschiede führen zu einer doppelten Belastung für Haushalte, besonders für jene mit geringerem Einkommen, vielen Betreuungspflichten oder eingeschränkter Mobilität.<br/><br/>
+                </>
+                ),
             },
             // {   
             //     id: 11,
@@ -263,7 +278,7 @@ const translations = {
             },
             {
                 id: 25,
-                isImage: true,
+                isScatterplot: true,
                 imagePath: "/images/15_INC_RESI_SOCIAL_INFR_DE.png",
                 itemName: 'si-scatter',
                 alt: "side-by-side scatter plot displaying a relationship between Infrastructure Provision and income related variables"
@@ -283,10 +298,16 @@ const SocialInfrastructureSection = () => {
     const section = translations[language] || translations.DE;
 
     const [spilloverMode, setSpilloverMode] = useState("so_miv");
+    const [siChartMode, setSiChartMode] = useState("chart_miv");
 
-    const handleToggleModeChange = (newValue) => {
+    const handleToggleModeChange = (type, newValue) => {
         if (newValue !== null) {
-            setSpilloverMode(newValue);
+            if (type === "map") {
+                setSpilloverMode(newValue);
+
+            } else if (type === "chart") {
+                setSiChartMode(newValue);
+            }
         }
     };
 
@@ -304,7 +325,7 @@ const SocialInfrastructureSection = () => {
                 
                item.isContentHeader ? (
                     <h2 key={item.id} className={`content-header ${item.className || ''}`}>{item.text}</h2>
-                ) : item.isChart ? (
+                ) : item.isMapComponent ? (
                     <Box
                         key={item.id}
                         sx={{
@@ -329,7 +350,7 @@ const SocialInfrastructureSection = () => {
                                     className="si-toggle"
                                     value={spilloverMode}
                                     exclusive
-                                    onChange={(_, newValue) => handleToggleModeChange(newValue)}
+                                    onChange={(_, newValue) => handleToggleModeChange("map", newValue)}
                                     aria-label="mode selection"
                                 >
                                     {/* <ToggleButton value="no_so"><label>Kein<br/>Spillover</label></ToggleButton> */}
@@ -338,20 +359,6 @@ const SocialInfrastructureSection = () => {
 
                                     <ToggleButton value="so_miv"><label style={{ display: 'contents'}}><DirectionsCarIcon /></label></ToggleButton>
                                     <ToggleButton value="so_oev"><label style={{ display: 'contents'}}><DirectionsBusIcon/></label></ToggleButton>
-                                    {/* <ToggleButton value="so_miv">
-                                        <div className="toggle-button-content">
-                                            <label>Spillover</label>
-                                            <DirectionsCarIcon />
-                                        </div>
-                                    </ToggleButton>
-
-                                    <ToggleButton value="so_oev">
-                                        <div className="toggle-button-content">
-                                            <span>Spillover</span>
-                                            <DirectionsBusIcon />
-                                        </div>
-                                    </ToggleButton> */}
-
                                 </ToggleButtonGroup>
                             </div>
                         </div>
@@ -377,7 +384,44 @@ const SocialInfrastructureSection = () => {
                     <div key={item.id} className="si-table-container">
                         <SocialInfrastructureTable/>
                     </div>
-                ) : item.isImage ? (
+                ) : item.isPerMunChart ? (
+                    <Box
+                        key={item.id}
+                        sx={{
+                            background: "#f4f4f4",
+                            padding: 2,
+                            borderRadius: 1,
+                            boxShadow: 1,
+                            fontSize: '14px',
+                            margin: '24px 0 48px',
+                        }}
+                    >
+                        <div className="toggle-container">
+                            <ToggleButtonGroup
+                                className="si-toggle"
+                                value={siChartMode}
+                                exclusive
+                                onChange={(_, newValue) => handleToggleModeChange("chart", newValue)}
+                                aria-label="mode selection"
+                            >
+                                <ToggleButton value="chart_miv"><label style={{ display: 'contents'}}><DirectionsCarIcon /></label></ToggleButton>
+                                <ToggleButton value="chart_oev"><label style={{ display: 'contents'}}><DirectionsBusIcon/></label></ToggleButton>
+                            </ToggleButtonGroup>
+                        </div>
+                        
+                        <div className="image-container si-mun-chart-container" style={{ margin: '1rem auto'}}>
+                            <img
+                                src={`${process.env.PUBLIC_URL}${
+                                    siChartMode === 'chart_miv' ? item.imagePathMIV : item.imagePathOEV
+                                }`}
+                                alt={siChartMode === 'chart_miv' ? item.altMIV : item.altOEV}
+                            />
+                        </div>
+                        
+                        <Typography>{item.text}</Typography>
+
+                    </Box>
+                ) : item.isScatterplot ? (
                     <div key={item.id} className="image-container si-scatter-plot-container">
                         <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt={ item.alt } />
                     </div>
@@ -392,3 +436,4 @@ const SocialInfrastructureSection = () => {
 };
 
 export default SocialInfrastructureSection;
+
