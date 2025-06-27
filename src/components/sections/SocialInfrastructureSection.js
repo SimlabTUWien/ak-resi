@@ -305,7 +305,7 @@ const translations = {
                 alt: "Darstellung der finanzielle nBelastung und Versorgung mit SI nach Haushalten",
                 text: ( 
                 <>
-                    <span className="boldText">Infrastrukturversorgung: </span> Schlecht: ein Indikatorwert &lt; 3, mittel: ein Indikatorwert zwischen 3 und &lt; 5, gut: ein Indikatorwert zwischen 5 und &lt; 7, sehr gut: ein Indikatorwert über 7.
+                    <span className="boldText">Infrastrukturversorgung: </span> Schlecht: ein Indikatorwert &lt; 3, mittel: ein Indikatorwert zwischen 3 und 5, gut: ein Indikatorwert zwischen 5 und 7, sehr gut: ein Indikatorwert über 7.
                     <br/>
                     <span className="boldText">Finanzielle Belastung: </span> Gering: Ausgaben &lt; 25% des Haushaltseinkommens, mittel: Ausgaben zwischen 25% und 45% des Haushaltseinkommens, hoch: Ausgaben zwischen 26% und 55% des Haushaltseinkommens, sehr hoch: Ausgaben mehr als 55% des Haushaltseinkommens.
                 </>

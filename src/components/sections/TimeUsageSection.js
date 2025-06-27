@@ -139,7 +139,8 @@ const translations = {
                 id: 12,
                 isChart: true,
                 itemName: 'edu-boxplot',
-                alt: "box plot visualizing income based on sex and education"
+                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Bildung"
+                // altEN: "box plot visualizing income based on sex and education"
             },
             {
                 id: 13,
@@ -182,7 +183,8 @@ const translations = {
                 id: 17,
                 isChart: true,
                 itemName: 'ftpt-boxplot',
-                alt: "box plot visualizing income based on sex and extend of employment"
+                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Beschäftigungsausmaß"
+                // altEN: "box plot visualizing income based on sex and extend of employment"
             },
             {
                 id: 18,
@@ -236,7 +238,8 @@ const translations = {
                 id: 23,
                 isChart: true,
                 itemName: 'hhtype-boxplot',
-                alt: "box plot visualizing income based on sex and household type"
+                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Haushaltstyp"
+                // altEN: "box plot visualizing income based on sex and household type"
             },
             {
                 id: 24,
@@ -266,7 +269,8 @@ const translations = {
                 id: 27,
                 isChart: true,
                 itemName: 'gemgr-boxplot',
-                alt: "box plot visualizing income based on sex and community size"
+                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Gemeindegröße"
+                // altEN: "box plot visualizing income based on sex and community size"
             },
             {
                 id: 29,
@@ -280,7 +284,7 @@ const translations = {
                     Wie stark die Verfügbarkeit und Erreichbarkeit <GlossaryTerm className="glossary-term si" sectionId="time-usage">sozialer Infrastruktur</GlossaryTerm> die Verteilung unbezahlter Arbeit beeinflusst, 
                     wird besonders deutlich beim Blick auf die Zeitverwendung: In Gemeinden mit schlechter Infrastruktur zeigen sich kaum Unterschiede bei Männern – 
                     ihr Anteil an unbezahlter Arbeit bleibt relativ konstant. Bei Frauen hingegen ist der Effekt deutlich spürbar: 
-                    In unterversorgten Gemeinden leisten sie im Durchschnitt über 1,5 Stunden mehr unbezahlte Arbeit pro Tag als Frauen in gut ausgestatteten Regionen.
+                    In schlecht versorgten Gemeinden leisten sie im Durchschnitt über 1,5 Stunden mehr unbezahlte Arbeit pro Tag als Frauen in gut ausgestatteten Regionen.
                 </>
                 ),
             },
@@ -299,7 +303,12 @@ const translations = {
                 id: 32,
                 isChart: true,
                 itemName: 'si-boxplot',
-                alt: "box plot visualizing income based on sex and social infrastructure supply"
+                alt: "box plot visualizing income based on sex and social infrastructure supply",
+                text: ( 
+                <>
+                    <span className="boldText">Infrastrukturversorgung: </span> Schlecht: ein Indikatorwert &lt; 3, mittel: ein Indikatorwert zwischen 3 und 5, gut: ein Indikatorwert zwischen 5 und 7, sehr gut: ein Indikatorwert über 7.
+                </>
+                )
             },                                 
         ]
     },
@@ -353,7 +362,10 @@ const TimeUsageSection = () => {
                     );
                 default:
                     return (
-                        <IncSexSiBoxplot key={item.id} alt={item.alt}/>
+                        <div key={item.id}>
+                            <IncSexSiBoxplot alt={item.alt}/>
+                            <span style={{fontSize: '0.9rem'}}>{item.text}</span>
+                        </div>
                     );
             }
 
