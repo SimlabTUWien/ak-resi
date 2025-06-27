@@ -28,10 +28,7 @@ const translations = {
                     accordionText: ( 
                     <>  
                         Ein <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintil</GlossaryTerm> beschreibt jeweils genau ein Fünftel der Haushalte, geordnet nach ihrem verfügbaren Einkommen. Das bedeutet:
-                    </>
-                    ),
-                    list: (
-                    <>
+                        
                         <ul className="custom-list background">
                             <li><span className="boldText">Erstes Quintil:</span> Die 20 % der Haushalte mit dem niedrigsten Einkommen </li>
                             <li><span className="boldText">Zweites Quintil:</span> Haushalte mit Einkommen zwischen den unteren 20 % und 40 % aller Haushalte </li>
@@ -39,33 +36,25 @@ const translations = {
                             <li><span className="boldText">Viertes Quintil:</span> Haushalte mit Einkommen zwischen den oberen 60 % und 80 % aller Haushalte</li>
                             <li><span className="boldText">Fünftes Quintil:</span> Die 20 % der Haushalte mit dem höchsten Einkommen</li>
                         </ul>
-                    </>    
+
+                        <p className="accordion-subheader" >Warum teilen wir das Haushaltseinkommen in Quintile?</p>
+
+                        Die Einteilung in <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintile</GlossaryTerm> hilft, die Einkommensverteilung und 
+                        wirtschaftliche Ungleichheiten besser sichtbar zu machen. 
+                        Während Durchschnittswerte oft verzerrt sein können (z. B. durch extreme Einkommen an der Spitze), 
+                        zeigen Quintile deutlicher, wie Einkommen auf verschiedene gesellschaftliche Gruppen verteilt sind.
+                    </>
                     ),
                     isAccordion: true,
                     itemName: 'quintil-accordion'
                 },
                 {
                     id: 4,
-                    text: <> Warum teilen wir das Haushaltseinkommen in Quintile? </>,
-                    isContentHeader: true,
-                },
-                {
-                    id: 5,
-                    text: (
-                    <>  
-                        Die Einteilung in <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintile</GlossaryTerm> hilft, die Einkommensverteilung und wirtschaftliche Ungleichheiten besser sichtbar zu machen. 
-                        Während Durchschnittswerte oft verzerrt sein können (z. B. durch extreme Einkommen an der Spitze), 
-                        zeigen Quintile deutlicher, wie Einkommen auf verschiedene gesellschaftliche Gruppen verteilt sind.
-                    </>
-                    ),
-                },
-                {
-                    id: 6,
                     isChart: true,
                     alt: "Diagramm mit 5 Balken, die das mittlere Haushaltseinkommen pro Einkommensquintil in Österreich darstellen."
                 },
                                 {
-                    id: 7,
+                    id: 5,
                     text: (
                     <>  
                         Das Medianhaushaltseinkommen in Österreich beträgt 2.632€. Dabei zeigt sich eine deutliche <GlossaryTerm className="glossary-term incomeInequality" sectionId="income">Einkommensungleichheit</GlossaryTerm> zwischen den verschiedenen Bevölkerungsgruppen. 
@@ -171,7 +160,6 @@ const IncomeSection = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>{item.accordionText}</Typography>
-                            <Typography>{item.list}</Typography>
                             </AccordionDetails>
                         </Accordion>
                     </div>
