@@ -315,13 +315,13 @@ const translations = {
                 accordionHeader: "Was bedeuten die Variablen?",
                 accordionText: (
                     <>
-                        <span className="boldText">Höchste abgeschlossene Bildung:</span>
+                        <span className="boldText">Höchste abgeschlossene Bildung: </span>
                         Dieser Begriff bezeichnet den höchsten Bildungsabschluss innerhalb eines Haushalts. Maßgeblich ist dabei die Person im Haushalt, die über den höchsten formalen Bildungsgrad verfügt. <br/>
                         <br/>
-                        <span className="boldText">Beschäftigungsausmaß:</span>
+                        <span className="boldText">Beschäftigungsausmaß: </span>
                         Hierbei wird betrachtet, in welchem Umfang die erwerbstätigen Personen eines Haushalts arbeiten – also ob alle ausschließlich in Vollzeit oder Teilzeit beschäftigt sind, oder ob im Haushalt beide Beschäftigungsformen (Vollzeit und Teilzeit) gleichzeitig vertreten sind. <br/>
                         <br/>
-                        <span className="boldText">Haupteinkommensquelle:</span>
+                        <span className="boldText">Haupteinkommensquelle: </span>
                         Damit ist jene Einkommensart gemeint, die den größten Anteil am gesamten Haushaltseinkommen ausmacht – etwa Erwerbseinkommen, Pensionen oder Transferleistungen. <br/><br/>
                     </>
                 ),
@@ -895,7 +895,7 @@ const ResidualIncomeSection = () => {
                                     {item.accordionText}
                                 </Typography>
 
-                                <img className="community-size-map" src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt="Gemeindegrößeklassen" />
+                                <img className="municipality-size-map" src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt="Gemeindegrößeklassen" />
                             </AccordionDetails>
                             </Accordion>
                         </div>   

@@ -39,6 +39,26 @@ label {
   max-width: 768px;
 }
 
+.si-mun-chart-container img {
+  width: 100%;
+  max-width: 1020px;
+}
+
+.si-bl-chart-container img {
+  width: 100%;
+  max-width: 900px;
+}
+
+.si-load-chart-container img {
+  width: 100%;
+  max-width: 820px;
+}
+
+.municipality-size-map {
+  width: 100%;
+  padding: 0 40px 0 30px;
+} 
+
 .definition-chart-container {
   width: 100%;
   align-content: center;
@@ -183,10 +203,6 @@ label {
   }
 }
 
-.community-size-map {
-  width: 100%;
-  padding: 0 40px 0 30px;
-}  
 
 ul.custom-list li {
   text-align: left;
@@ -276,7 +292,7 @@ ul.custom-list li {
     padding: 0 8px;
   } 
 
-  .community-size-map {
+  .municipality-size-map {
     padding: 0;
   }
 }

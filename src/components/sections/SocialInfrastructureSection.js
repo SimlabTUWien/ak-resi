@@ -8,6 +8,7 @@ import IndicatorSelect from "../IndicatorSelect";
 import SiIndicatorMap from "../SiIndicatorMap";
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
+import { m } from "framer-motion";
 
 const translations = {
     DE: {
@@ -234,53 +235,82 @@ const translations = {
             {
                 id: 21,
                 text: ( 
-                <> 
-                    Die nachstehende Grafik vergleicht Haushalte entlang dreier Dimensionen: dem verfügbaren Einkommen (linke Achse), 
-                    dem <GlossaryTerm className="glossary-term residualIncome" sectionId="social-infrastructure">Residualeinkommen</GlossaryTerm> (rechte Achse) – also dem Einkommen nach Abzug fixer Ausgaben wie Wohnen – 
-                    sowie der Erreichbarkeit <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm>. 
-                    Die roten Linien markieren jeweils den <GlossaryTerm className="glossary-term median" sectionId="social-infrastructure">Medianwert</GlossaryTerm> jeder Dimension und dienen als Schwelle zwischen „überdurchschnittlich“ und „unterdurchschnittlich“.
+                <>
+                   Die vorangegangenen Analysen zeigen deutlich, dass Haushalte unterschiedlich stark durch <GlossaryTerm className="glossary-term expenditure" sectionId="social-infrastructure">notwendige Ausgaben</GlossaryTerm> belastet sind. 
+                   Gerade deshalb ist es wichtig, Einkommen nicht isoliert zu betrachten, sondern immer auch die damit verbundenen Ausgaben – etwa für Wohnen, Energie, Mobilität oder Betreuung. 
+                   Diese Belastungen können aus unterschiedlichen Gründen stark variieren: unterschiedliche Mietniveaus, Heizkosten je nach Gebäudezustand, 
+                   hohe Mobilitätskosten in schlecht angebundenen Regionen oder die Erfordernis, private Alternativen zu fehlender öffentlicher Infrastruktur zu nutzen.
                 </>
                 ),
-            }, 
+            },
             {
                 id: 22,
                 text: ( 
-                <> 
-                    Auf den ersten Blick scheinen die Verteilungen ähnlich, doch ein genauerer Blick offenbart signifikante Verschiebungen, 
-                    sobald man <GlossaryTerm className="glossary-term residualIncome" sectionId="social-infrastructure">Residualeinkommen</GlossaryTerm> und Infrastrukturzugang gemeinsam betrachtet:
+                <>
+                    Auch die vorliegenden Daten zur Versorgung mit <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm> zeigen große regionale Unterschiede. 
+                    Dabei fällt auf: Finanziell stark belastete Haushalte sind besonders oft auch infrastrukturbezogen benachteiligt.
                 </>
                 ),
             },
             {
                 id: 23,
+                isList: true,
                 text: ( 
-                <> 
-                    Über 100 Haushalte, die beim reinen Einkommen über dem <GlossaryTerm className="glossary-term median" sectionId="social-infrastructure">Median</GlossaryTerm> liegen, rutschen unter den Median, 
-                    wenn man das <GlossaryTerm className="glossary-term residualIncome" sectionId="social-infrastructure">Residualeinkommen</GlossaryTerm> berücksichtigt. 
-                    Das bedeutet: Obwohl diese Haushalte relativ gut verdienen, bleiben ihnen – nach Abzug fixer Ausgaben – unterdurchschnittlich geringe Mittel zur freien Verfügung. 
-                    Diese finanzielle Enge kann durch mangelnden Zugang zu unterstützender Infrastruktur noch verstärkt werden.
+                <>
+                    Die untenstehende Grafik macht das sichtbar: 
                 </>
                 ),
+                list: [
+                    "10 % der Haushalte mit sehr hoher finanzieller Belastung leben gleichzeitig in Gemeinden mit schlechter sozialer Infrastrukturversorgung. → Das bedeutet: Diese Haushalte haben nicht nur wenig Geld zur Verfügung, sondern auch kaum Zugang zu entlastenden öffentlichen Angeboten wie Kinderbetreuung oder Gesundheitsversorgung – eine doppelte Belastung.",
+                    "Weitere 55 % dieser hoch belasteten Haushalte leben in Gemeinden mit mittlerer Infrastrukturversorgung. → Sie haben ein gewisses öffentliches Angebot zur Verfügung, was private Kosten dämpfen kann, aber oft nicht ausreicht, um die hohe finanzielle Belastung auszugleichen.",
+                    "11 % der stark belasteten Haushalte leben in Gemeinden mit sehr guter Infrastrukturversorgung. → Hier zeigt sich: Gute Infrastruktur könnte soziale Ungleichheit abfedern – auch wenn das Einkommen niedrig ist, ermöglichen öffentliche Angebote Teilhabe und Entlastung im Alltag."
+                ], 
             },
             {
                 id: 24,
+                isList: true,
                 text: ( 
-                <> 
-                    Umgekehrt zeigt sich bei rund 130 Haushalten, dass sie trotz unterdurchschnittlichem Einkommen ein 
-                    überdurchschnittliches <GlossaryTerm className="glossary-term residualIncome" sectionId="social-infrastructure">Residualeinkommen</GlossaryTerm> aufweisen 
-                    – sie verfügen also über vergleichsweise geringe Fixkosten. 
-                    Gleichzeitig haben sie guten Zugang zu <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm>. 
-                    Diese Kombination kann etwa durch leistbaren Wohnraum und gut erreichbare öffentliche Dienstleistungen ermöglicht werden.
+                <>
+                    Dem gegenüber stehen Haushalte mit geringer finanzieller Belastung – also solche, die weniger als 25 % ihres Einkommens für Fixkosten wie Wohnen, Energie oder Mobilität aufwenden:
+                </>
+                ),
+                list: [
+                    "Nur 4 % dieser Haushalte leben in Gemeinden mit schlechter Versorgung.",
+                    "Der Großteil – 52 % – lebt in Regionen mit guter bis sehr guter sozialer Infrastruktur."
+                ], 
+            },
+            {
+                id: 25,
+                text: ( 
+                <>
+                    Es zeigt sich, dass Haushalte mit geringen Einkommen besonders dann benachteiligt sind, wenn sie zusätzlich in Gemeinden mit schwacher Infrastrukturversorgung leben - etwa mit eingeschränktem Zugang zu Kinderbetreuung, 
+                    Gesundheitsleistungen oder Pflegeangeboten. In solchen Fällen entstehen zusätzliche Belastungen im Alltag, etwa durch längere Wege, höhere Kosten oder den Bedarf an Eigenleistungen im Haushalt.
                 </>
                 ),
             },
             {
-                id: 25,
-                isScatterplot: true,
-                imagePath: "/images/15_INC_RESI_SOCIAL_INFR_DE.png",
-                itemName: 'si-scatter',
-                alt: "side-by-side scatter plot displaying a relationship between Infrastructure Provision and income related variables"
+                id: 26,
+                text: ( 
+                <>
+                    Gut ausgebaute Infrastruktur kann diesen Nachteilen entgegenwirken. Sie unterstützt nicht nur einkommensschwache Haushalte, sondern verbessert auch allgemein die Lebensqualität und Teilhabechancen vor Ort. 
+                    Infrastrukturausbau ist daher nicht nur eine Frage der Daseinsvorsorge, sondern auch ein zentrales Element einer fairen regionalen Entwicklung.
+                </>
+                ),
             },
+            {
+                id: 27,
+                isFinLoadChart: true,
+                imagePath: "/images/18_FINANZ_BELASTUNG_SI.webp",
+                itemName: 'si-financial-load',
+                alt: "Darstellung der finanzielle nBelastung und Versorgung mit SI nach Haushalten",
+                text: ( 
+                <>
+                    <span className="boldText">Infrastrukturversorgung: </span> Schlecht: ein Indikatorwert &lt; 3, mittel: ein Indikatorwert zwischen 3 und &lt; 5, gut: ein Indikatorwert zwischen 5 und &lt; 7, sehr gut: ein Indikatorwert über 7.
+                    <br/>
+                    <span className="boldText">Finanzielle Belastung: </span> Gering: Ausgaben &lt; 25% des Haushaltseinkommens, mittel: Ausgaben zwischen 25% und 45% des Haushaltseinkommens, hoch: Ausgaben zwischen 26% und 55% des Haushaltseinkommens, sehr hoch: Ausgaben mehr als 55% des Haushaltseinkommens.
+                </>
+                ),
+            }
         ]
     },
     EN: {
@@ -332,7 +362,7 @@ const SocialInfrastructureSection = () => {
                             borderRadius: 1,
                             boxShadow: 1,
                             fontSize: '14px',
-                            margin: '24px 0 48px',
+                            margin: '24px 0 32px',
                         }}
                     >
                         <div className="control-container">
@@ -379,9 +409,24 @@ const SocialInfrastructureSection = () => {
                         </Accordion>
                     </div>
                 ) : item.isTable ? (
-                    <div key={item.id} className="si-table-container">
+                    <div key={item.id} className="si-table-container" style={{margin: '24px 0 32px'}}>
                         <SocialInfrastructureTable/>
                     </div>
+                ) : item.isList ? (
+                    <div key={item.id} className="list-container" style={{margin: '12px 0 24px'}}>
+                        <span className="paragraph">{item.text}</span>
+                        {item.list && (
+                            <ul className="custom-list residual-income">
+                                {item.list.map((listitem, index) => (
+                                    <li className="paragraph" key={index}>
+                                        {listitem}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+
+                    </div>
+                    
                 ) : item.isPerMunChart ? (
                     <Box
                         key={item.id}
@@ -391,7 +436,7 @@ const SocialInfrastructureSection = () => {
                             borderRadius: 1,
                             boxShadow: 1,
                             fontSize: '14px',
-                            margin: '24px 0 48px',
+                            margin: '24px 0 32px',
                         }}
                     >
                         <div className="toggle-container">
@@ -420,13 +465,17 @@ const SocialInfrastructureSection = () => {
 
                     </Box>
                 ) : item.isSiBlChart ? (
-                    <div key={item.id} className="image-container si-bl-chart-container">
+                    <div key={item.id} className="image-container si-bl-chart-container" style={{margin: '24px 0 32px'}}>
                         <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt={ item.alt } />
                     </div>
-                ): item.isScatterplot ? (
-                    <div key={item.id} className="image-container si-scatter-plot-container">
-                        <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt={ item.alt } />
+                ): item.isFinLoadChart ? (
+                    <div key={item.id}>
+                        <div className="image-container si-load-chart-container" style={{margin: '24px 0 0'}}>
+                            <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt={ item.alt } />
+                        </div>
+                        <span style={{fontSize: '0.9rem'}}>{item.text}</span>
                     </div>
+                    
                 ) : (
                     <p key={item.id} className={`paragraph ${item.className || ''}`}>
                         {item.text}
