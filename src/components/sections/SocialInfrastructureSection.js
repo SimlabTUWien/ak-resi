@@ -94,7 +94,7 @@ const translations = {
                 id: 7,
                 isMapComponent: true,
                 itemName: 'si-map',
-                alt: ""
+                alt: "Karte zur Darstellung der sozialen Indikatoren pro Gemeinde"
             },
             {
                 id: 8,
@@ -135,8 +135,8 @@ const translations = {
                 itemName: 'si-mun-chart',
                 imagePathMIV: "/images/16_SI_proGem_MIV.webp",
                 imagePathOEV: "/images/16_SI_proGem_OEV.webp",
-                altMIV: "",
-                altOEV: "",
+                altMIV: "Anteil der Gemeinden je Versorgungskategorie (MIV)",
+                altOEV: "Anteil der Gemeinden je Versorgungskategorie (OEV)",
                 text: ( 
                 <> 
                     <span className="boldText">Beispiel: </span>
@@ -148,11 +148,6 @@ const translations = {
                 </>
                 ),
             },
-            // {   
-            //     id: 11,
-            //     // TODO: Box with example text?
-            // },    
-
             {
                 id: 12,
                 text: ( 
@@ -169,7 +164,10 @@ const translations = {
             },
             {
                 id: 13,
-                // TODO: chart 4
+                isSiBlChart: true,
+                imagePath: "/images/17_SI_nach_BL.webp",
+                itemName: 'si-bl',
+                alt: "Plot zur Darstellung der Versorgung mit sozialer Infrastruktur je Bundesland"
             },
             {
                 id: 14,
@@ -226,7 +224,7 @@ const translations = {
                 id: 19,
                 isTable: true,
                 itemName: 'si-table',
-                alt: ""
+                ariaLabel: ""
             },
             {
                 id: 20,
@@ -421,7 +419,11 @@ const SocialInfrastructureSection = () => {
                         <Typography>{item.text}</Typography>
 
                     </Box>
-                ) : item.isScatterplot ? (
+                ) : item.isSiBlChart ? (
+                    <div key={item.id} className="image-container si-bl-chart-container">
+                        <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt={ item.alt } />
+                    </div>
+                ): item.isScatterplot ? (
                     <div key={item.id} className="image-container si-scatter-plot-container">
                         <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt={ item.alt } />
                     </div>
