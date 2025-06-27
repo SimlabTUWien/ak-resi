@@ -6,6 +6,8 @@ import GlossaryTerm from '../GlossaryTerm';
 import SocialInfrastructureTable from "../tables/SocialInfrastructureTable";
 import IndicatorSelect from "../IndicatorSelect";
 import SiIndicatorMap from "../SiIndicatorMap";
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
 
 const translations = {
     DE: {
@@ -331,8 +333,25 @@ const SocialInfrastructureSection = () => {
                                     aria-label="mode selection"
                                 >
                                     {/* <ToggleButton value="no_so"><label>Kein<br/>Spillover</label></ToggleButton> */}
-                                    <ToggleButton value="so_miv"><label>Spillover<br/>(MIV)</label></ToggleButton>
-                                    <ToggleButton value="so_oev"><label>Spillover<br/>(ÖV)</label></ToggleButton>
+                                    {/* <ToggleButton value="so_miv"><label>Spillover<br/>(MIV)</label></ToggleButton>
+                                    <ToggleButton value="so_oev"><label>Spillover<br/>(ÖV)</label></ToggleButton> */}
+
+                                    <ToggleButton value="so_miv"><label style={{ display: 'contents'}}><DirectionsCarIcon /></label></ToggleButton>
+                                    <ToggleButton value="so_oev"><label style={{ display: 'contents'}}><DirectionsBusIcon/></label></ToggleButton>
+                                    {/* <ToggleButton value="so_miv">
+                                        <div className="toggle-button-content">
+                                            <label>Spillover</label>
+                                            <DirectionsCarIcon />
+                                        </div>
+                                    </ToggleButton>
+
+                                    <ToggleButton value="so_oev">
+                                        <div className="toggle-button-content">
+                                            <span>Spillover</span>
+                                            <DirectionsBusIcon />
+                                        </div>
+                                    </ToggleButton> */}
+
                                 </ToggleButtonGroup>
                             </div>
                         </div>

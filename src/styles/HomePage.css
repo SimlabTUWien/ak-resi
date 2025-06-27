@@ -83,14 +83,17 @@ label {
 }
   
 .si-toggle {
-  padding-top: 20px;
+  /* padding-top: 20px; */
+  padding-top: 16px;
   display: flex;
-  width: 400px;
+  /* width: 400px; */
+  width: 260px;
   max-width: 100%;
 }
 
 .si-toggle .MuiToggleButton-root {
-  min-height: 48.5px;
+  /* min-height: 48.5px; */
+  min-height: 56px;
   flex: 1;
   background-color: white;
   border: 1px solid #ccc;
