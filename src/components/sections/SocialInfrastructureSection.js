@@ -39,17 +39,18 @@ const translations = {
                     <br/>
                     <br/>
                     Wir beziehen diese Bereiche ein, weil sie die Lebensqualität maßgeblich beeinflussen – und weil fehlende oder schlecht zugängliche Angebote dazu führen können, 
-                    dass Menschen auf teure private Alternativen zurückgreifen müssen oder gar keine Versorgung erhalten. 
+                    dass Menschen auf teure private Alternativen zurückgreifen müssen oder gar keine Versorgung erhalten. <br/>
+                    <br/> 
                 </>
                 ),
                 isAccordion: true,
                 itemName: 'si-description-accordion'
             },
             {
-                id: 2,
+                id: 3,
                 text: ( 
                 <> 
-                    Die untenstehende Karten zeig diese <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialen Infrastrukturen</GlossaryTerm> in Bezug auf den Bedarf in der Gemeinde. 
+                    Die untenstehende Karten zeigt diese <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialen Infrastrukturen</GlossaryTerm> in Bezug auf den Bedarf in der Gemeinde. 
                     Während Ärzt:innen pro Einwohner:in berechnet werden, beziehen sich Kindergartengruppen auf Kinder im Alter von 3 bis 6 Jahren und Plätze in Pflegeheimen auf Menschen über 70. 
                     Neben der Verfügbarkeit von Infrastrukturen spielt auch ihre Zugänglichkeit eine Rolle: Kurze Öffnungszeiten oder hohe Kosten können die Nutzung einschränken. 
                     Da viele Menschen auch die Infrastrukturen in Nachbargemeinden nutzen, werden diese – mit geringerem Gewicht – in den Infrastrukturindikator einbezogen. 
@@ -59,7 +60,7 @@ const translations = {
                 ),
             },
             {
-                id: 3,
+                id: 4,
                 text: ( 
                 <> 
                     Der Infrastrukturindikator reicht von 0 bis 10: Ein Wert von 0 bedeutet, dass eine bestimmte soziale Infrastruktur weder vorhanden noch erreichbar ist. 
@@ -68,7 +69,7 @@ const translations = {
                 ),
             },
             {
-                id: 4,
+                id: 5,
                 text: ( 
                 <> 
                    Viele Gemeinden erreichen bei einzelnen Infrastrukturarten mittlere oder sogar sehr gute Werte – etwa bei Kindergärten oder Schulen. 
@@ -80,7 +81,7 @@ const translations = {
                 ),
             },
             {
-                id: 5,
+                id: 6,
                 text: ( 
                 <> 
                     Genauere Informationen zu den einzelnen Infrastrukturen und der Berechnung der Indikatoren befinden sich in der untenstehenden Tabelle.
@@ -88,13 +89,13 @@ const translations = {
                 ),
             },            
             {
-                id: 6,
+                id: 7,
                 isChart: true,
                 itemName: 'si-map',
                 alt: ""
             },
             {
-                id: 7,
+                id: 8,
                 text: ( 
                 <> 
                     Die untenstehende Grafik zeigt, wie die Versorgung mit verschiedenen Arten <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm> – etwa 
@@ -104,7 +105,7 @@ const translations = {
                 ),
             },      
             {
-                id: 8,
+                id: 9,
                 text: ( 
                 <> 
                     Dabei wird deutlich, dass soziale Einrichtungen insgesamt am schlechtesten erreichbar sind – was jedoch auch daran liegt, 
@@ -118,7 +119,7 @@ const translations = {
                 ),
             },      
             {
-                id: 9,
+                id: 10,
                 text: ( 
                 <> 
                     Diese Ergebnisse deuten bereits darauf hin, dass die Versorgung mit <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm> stark 
@@ -126,21 +127,47 @@ const translations = {
                 </>
                 ),
             },               
-            // TODO: add Chart 2 SI proGem + Example                           
             {
-                id: 10,
+                id: 11,
+                // TODO: add Chart 2 SI proGem + Example text?
+            },
+            // {   
+            //     id: 11,
+            //     // TODO: Box with example text?
+            // },    
+
+            {
+                id: 12,
+                text: ( 
+                <> 
+                    <span className="boldText">Die untenstehende Grafik verdeutlicht dieses Problem: </span>
+                    Sie zeigt, dass die durchschnittliche Versorgung mit <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm> über die Bundesländer 
+                    hinweg – mit Ausnahme von Wien – weitgehend vergleichbar ist. Deutlich größere Unterschiede treten jedoch zwischen Gemeinden unterschiedlicher Größe auf. 
+                    Besonders gering ist die Versorgung in kleinen Gemeinden mit weniger als 2.500 Einwohner:innen. 
+                    Zwar gibt es auch hier Ausnahmen mit guter bis sehr guter Ausstattung, doch insgesamt ist das Niveau deutlich niedriger. 
+                    In Gemeinden mit 2.500 bis 10.000 Einwohner:innen verbessert sich die Versorgung im Durchschnitt, gleichzeitig bestehen aber weiterhin große Unterschiede zwischen einzelnen Orten. 
+                    Besonders hervor sticht Wien, das in allen Bezirken die beste Infrastrukturversorgung aufweist.
+                </>
+                ),
+            },
+            {
+                id: 13,
+                // TODO: chart 4
+            },
+            {
+                id: 14,
                 text: ( 
                 <> 
                     Die Verfügbarkeit <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm> wie Ärzt:innen, Schulen, Kindergärten 
-                    und sozialen Einrichtungen spielt eine entscheidende Rolle für das <GlossaryTerm className="glossary-term residualIncome" sectionId="social-infrastructure">Residualeinkommen</GlossaryTerm> von 
-                    Haushalten. In Regionen, in denen diese Angebote gut ausgebaut sind, profitieren Haushalte von niedrigeren privaten Ausgaben für Bildung, Gesundheit und soziale Dienstleistungen. 
+                    und sozialen Einrichtungen spielt eine entscheidende Rolle für das <GlossaryTerm className="glossary-term residualIncome" sectionId="social-infrastructure">Residualeinkommen</GlossaryTerm> von Haushalten. 
+                    In Regionen, in denen diese Angebote gut ausgebaut sind, profitieren Haushalte von niedrigeren privaten Ausgaben für Bildung, Gesundheit und soziale Dienstleistungen. 
                     Umgekehrt führt ein mangelhafter Zugang zu diesen Angeboten dazu, dass Menschen gezwungen sind, private Alternativen zu finanzieren – 
                     sei es durch längere Anfahrtswege, kostenpflichtige Dienstleistungen oder haushaltsinterne Bereitstellung (wie beispielsweise Kinderbetreuung oder Pflege von Angehörigen).
                 </>
                 ),
             },
             {
-                id: 11,
+                id: 15,
                 text: ( 
                 <> 
                     Dies hat direkte Folgen für das <GlossaryTerm className="glossary-term residualIncome" sectionId="social-infrastructure">Residualeinkommen</GlossaryTerm>: 
@@ -151,7 +178,7 @@ const translations = {
                 ),
             },
             {
-                id: 12,
+                id: 16,
                 text: ( 
                 <> 
                     Langfristig kann sich dies auf soziale Ungleichheit zwischen den Regionen auswirken. 
@@ -162,12 +189,12 @@ const translations = {
                 ),
             },
             {
-                id: 13,
+                id: 17,
                 text: <> Wie werden die einzelnen Infrastrukturindikatoren berechnet? </>,
                 isContentHeader: true,
             },
             {
-                id: 14,
+                id: 18,
                 text: ( 
                 <> 
                     Der Gesamtindikator für <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">soziale Infrastrukturen</GlossaryTerm> setzt 
@@ -179,18 +206,18 @@ const translations = {
                 ),
             },
             {
-                id: 15,
+                id: 19,
                 isTable: true,
                 itemName: 'si-table',
                 alt: ""
             },
             {
-                id: 10,
+                id: 20,
                 text: <> Verknüpfung zwischen Einkommen, Residualeinkommen und sozialer Infrastruktur: </>,
                 isContentHeader: true,
             },
             {
-                id: 11,
+                id: 21,
                 text: ( 
                 <> 
                     Die nachstehende Grafik vergleicht Haushalte entlang dreier Dimensionen: dem verfügbaren Einkommen (linke Achse), 
@@ -201,7 +228,7 @@ const translations = {
                 ),
             }, 
             {
-                id: 12,
+                id: 22,
                 text: ( 
                 <> 
                     Auf den ersten Blick scheinen die Verteilungen ähnlich, doch ein genauerer Blick offenbart signifikante Verschiebungen, 
@@ -210,7 +237,7 @@ const translations = {
                 ),
             },
             {
-                id: 13,
+                id: 23,
                 text: ( 
                 <> 
                     Über 100 Haushalte, die beim reinen Einkommen über dem <GlossaryTerm className="glossary-term median" sectionId="social-infrastructure">Median</GlossaryTerm> liegen, rutschen unter den Median, 
@@ -221,7 +248,7 @@ const translations = {
                 ),
             },
             {
-                id: 14,
+                id: 24,
                 text: ( 
                 <> 
                     Umgekehrt zeigt sich bei rund 130 Haushalten, dass sie trotz unterdurchschnittlichem Einkommen ein 
@@ -233,7 +260,7 @@ const translations = {
                 ),
             },
             {
-                id: 15,
+                id: 25,
                 isImage: true,
                 imagePath: "/images/15_INC_RESI_SOCIAL_INFR_DE.png",
                 itemName: 'si-scatter',

@@ -118,7 +118,7 @@ const theme = createTheme({
         },
         body1: {
           transform: "translateY(2px)",
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
+          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
         },
         h4: {
           transform: "translateY(2px)"

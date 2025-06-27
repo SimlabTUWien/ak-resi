@@ -64,17 +64,13 @@ const translations = {
                     Dazu zählen Nahrung, Wohnen, Energie, Bildung und Gesundheit. Diese Bereiche wurden gewählt, weil sie zentrale Voraussetzungen für ein gutes Leben darstellen:
                 </>
                 ),
-                list: (
-                <>
-                    <ul className="custom-list residual-income">
-                        <li><span className="boldText">Nahrung</span> gewährleistet die tägliche Versorgung und das körperliche Wohlbefinden.</li>
-                        <li><span className="boldText">Wohnen</span> bietet Schutz, Stabilität und sozialen Rückzugsraum.</li>
-                        <li><span className="boldText">Energie</span> ist notwendig für Heizung, Stromversorgung und die Nutzung moderner Infrastruktur.</li>
-                        <li><span className="boldText">Bildung</span> schafft Zugang zu Wissen, Qualifikationen und gesellschaftlicher Teilhabe.</li>
-                        <li><span className="boldText">Gesundheit</span> umfasst präventive wie akute medizinische Versorgung und ist Grundlage für ein selbstbestimmtes Leben.</li>
-                    </ul>
-                </>    
-                ),
+                list: [
+                    { title: 'Nahrung', text: 'gewährleistet die tägliche Versorgung und das körperliche Wohlbefinden.' },
+                    { title: 'Wohnen', text: 'bietet Schutz, Stabilität und sozialen Rückzugsraum.' },
+                    { title: 'Energie', text: 'ist notwendig für Heizung, Stromversorgung und die Nutzung moderner Infrastruktur.' },
+                    { title: 'Bildung', text: 'schafft Zugang zu Wissen, Qualifikationen und gesellschaftlicher Teilhabe.' },
+                    { title: 'Gesundheit', text: 'umfasst präventive wie akute medizinische Versorgung und ist Grundlage für ein selbstbestimmtes Leben.' },
+                ],
                 isAccordion: true,
                 itemName: 'expenses-accordion'
             },
@@ -281,10 +277,10 @@ const translations = {
                 </>
                 ),
                 list: [
-                    "Schritt 1: Wir ordnen alle Haushalte nach Einkommen, von niedrig nach hoch.",
-                    "Schritt 2: Dann berechnen wir, wie viel Prozent des gesamten Einkommens auf die ärmsten 10 %, 20 %, 30 % usw. entfallen.",
-                    "Schritt 3: Wir zeichnen die Lorenz-Kurve: Eine Linie, die zeigt, wie viel Einkommen die unteren Einkommensgruppen zusammen haben.",
-                    "Schritt 4: Der Gini-Index ergibt sich aus der Fläche zwischen der Lorenz-Kurve und der Gleichverteilungslinie (die eine vollkommen gerechte Verteilung darstellen würde). Je größer diese Fläche, desto ungleicher ist die Verteilung. Ein Gini-Index von 0 bedeutet, dass alle Haushalte exakt das gleiche Einkommen haben. Ein Wert nahe 1 bedeutet, dass fast das gesamte Einkommen von wenigen Haushalten verdient wird."
+                    { title: 'Schritt 1: ', text: 'Wir ordnen alle Haushalte nach Einkommen, von niedrig nach hoch.' },
+                    { title: 'Schritt 2: ', text: 'Dann berechnen wir, wie viel Prozent des gesamten Einkommens auf die ärmsten 10 %, 20 %, 30 % usw. entfallen.' },
+                    { title: 'Schritt 3: ', text: 'Wir zeichnen die Lorenz-Kurve: Eine Linie, die zeigt, wie viel Einkommen die unteren Einkommensgruppen zusammen haben.' },
+                    { title: 'Schritt 4: ', text: 'Der Gini-Index ergibt sich aus der Fläche zwischen der Lorenz-Kurve und der Gleichverteilungslinie (die eine vollkommen gerechte Verteilung darstellen würde). Je größer diese Fläche, desto ungleicher ist die Verteilung. Ein Gini-Index von 0 bedeutet, dass alle Haushalte exakt das gleiche Einkommen haben. Ein Wert nahe 1 bedeutet, dass fast das gesamte Einkommen von wenigen Haushalten verdient wird.' }
                 ],
                 imagePath: "/images/Lorenz_Kurven_Gini_AT_DE.png",
                 isAccordion: true,
@@ -317,11 +313,18 @@ const translations = {
             {
                 id: 31,
                 accordionHeader: "Was bedeuten die Variablen?",
-                accordionText: [
-                    "Höchste abgeschlossene Bildung: Dieser Begriff bezeichnet den höchsten Bildungsabschluss innerhalb eines Haushalts. Maßgeblich ist dabei die Person im Haushalt, die über den höchsten formalen Bildungsgrad verfügt.",
-                    "Beschäftigungsausmaß: Hierbei wird betrachtet, in welchem Umfang die erwerbstätigen Personen eines Haushalts arbeiten – also ob alle ausschließlich in Vollzeit oder Teilzeit beschäftigt sind, oder ob im Haushalt beide Beschäftigungsformen (Vollzeit und Teilzeit) gleichzeitig vertreten sind.",
-                    "Haupteinkommensquelle: Damit ist jene Einkommensart gemeint, die den größten Anteil am gesamten Haushaltseinkommen ausmacht – etwa Erwerbseinkommen, Pensionen oder Transferleistungen."
-                ],
+                accordionText: (
+                    <>
+                        <span className="boldText">Höchste abgeschlossene Bildung:</span>
+                        Dieser Begriff bezeichnet den höchsten Bildungsabschluss innerhalb eines Haushalts. Maßgeblich ist dabei die Person im Haushalt, die über den höchsten formalen Bildungsgrad verfügt. <br/>
+                        <br/>
+                        <span className="boldText">Beschäftigungsausmaß:</span>
+                        Hierbei wird betrachtet, in welchem Umfang die erwerbstätigen Personen eines Haushalts arbeiten – also ob alle ausschließlich in Vollzeit oder Teilzeit beschäftigt sind, oder ob im Haushalt beide Beschäftigungsformen (Vollzeit und Teilzeit) gleichzeitig vertreten sind. <br/>
+                        <br/>
+                        <span className="boldText">Haupteinkommensquelle:</span>
+                        Damit ist jene Einkommensart gemeint, die den größten Anteil am gesamten Haushaltseinkommen ausmacht – etwa Erwerbseinkommen, Pensionen oder Transferleistungen. <br/><br/>
+                    </>
+                ),
                 isAccordion: true,
                 itemName: 'education-accordion'
             },
@@ -814,7 +817,17 @@ const ResidualIncomeSection = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>{item.accordionText}</Typography>
-                            <Typography>{item.list}</Typography>
+
+                            {item.list && (
+                                <ul className="custom-list residual-income">
+                                    {item.list.map((step, index) => (
+                                        <li key={index}>
+                                            <span className="boldText">{step.title}</span> {step.text}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+
                             </AccordionDetails>
                         </Accordion>
                         </div>
@@ -830,14 +843,17 @@ const ResidualIncomeSection = () => {
                                 <Typography>
                                     {item.accordionText}
                                 </Typography>
+                                
                                 {item.list && (
-                                    <ul className="custom-list infobox-list">
+                                    <ul className="custom-list residual-income">
                                         {item.list.map((step, index) => (
-                                            <li key={index}>{step}</li>
+                                            <li key={index}>
+                                                <span className="boldText">{step.title}</span> {step.text}
+                                            </li>
                                         ))}
                                     </ul>
                                 )}
-         
+                                
                                 <div className="image-container lorenz-curve-container">
                                     <img
                                         className="lorenz-curve"
@@ -860,13 +876,9 @@ const ResidualIncomeSection = () => {
                             </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-
-                            {item.accordionText.map((paragraph, index) => (
-                                <p key={`paragraph-${index}`} className={`paragraph ${item.className || ''}`}>
-                                    {paragraph}
-                                </p>
-                            ))}
-
+                                <Typography>
+                                    {item.accordionText}
+                                </Typography>
                             </AccordionDetails>
                         </Accordion>
                         </div>

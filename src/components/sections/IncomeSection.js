@@ -25,26 +25,31 @@ const translations = {
                 {
                     id: 3,
                     accordionHeader: "Was sind Quintile?",
-                    accordionText: ( 
+                    accordionFirstText: ( 
                     <>  
                         Ein <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintil</GlossaryTerm> beschreibt jeweils genau ein Fünftel der Haushalte, geordnet nach ihrem verfügbaren Einkommen. Das bedeutet:
-                        
-                        <ul className="custom-list background">
-                            <li><span className="boldText">Erstes Quintil:</span> Die 20 % der Haushalte mit dem niedrigsten Einkommen </li>
-                            <li><span className="boldText">Zweites Quintil:</span> Haushalte mit Einkommen zwischen den unteren 20 % und 40 % aller Haushalte </li>
-                            <li><span className="boldText">Drittes Quintil:</span> Die mittleren 20 % der Haushalte in der Einkommensverteilung </li>
-                            <li><span className="boldText">Viertes Quintil:</span> Haushalte mit Einkommen zwischen den oberen 60 % und 80 % aller Haushalte</li>
-                            <li><span className="boldText">Fünftes Quintil:</span> Die 20 % der Haushalte mit dem höchsten Einkommen</li>
-                        </ul>
-
-                        <p className="accordion-subheader" >Warum teilen wir das Haushaltseinkommen in Quintile?</p>
-
+                    </>
+                    ),
+                    accordionSubheader: (
+                    <>
+                        <span className="accordion-subheader" >Warum teilen wir das Haushaltseinkommen in Quintile?</span>
+                    </>
+                    ),
+                    accordionSecondText: ( 
+                    <>  
                         Die Einteilung in <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintile</GlossaryTerm> hilft, die Einkommensverteilung und 
                         wirtschaftliche Ungleichheiten besser sichtbar zu machen. 
                         Während Durchschnittswerte oft verzerrt sein können (z. B. durch extreme Einkommen an der Spitze), 
-                        zeigen Quintile deutlicher, wie Einkommen auf verschiedene gesellschaftliche Gruppen verteilt sind.
+                        zeigen Quintile deutlicher, wie Einkommen auf verschiedene gesellschaftliche Gruppen verteilt sind.<br/><br/>
                     </>
                     ),
+                    list: [
+                        { title: 'Erstes Quintil: ', text: 'Die 20 % der Haushalte mit dem niedrigsten Einkommen' },
+                        { title: 'Zweites Quintil: ', text: 'Haushalte mit Einkommen zwischen den unteren 20 % und 40 % aller Haushalte' },
+                        { title: 'Drittes Quintil: ', text: 'Die mittleren 20 % der Haushalte in der Einkommensverteilung' },
+                        { title: 'Viertes Quintil: ', text: 'Haushalte mit Einkommen zwischen den oberen 60 % und 80 % aller Haushalte' },
+                        { title: 'Fünftes Quintil: ', text: 'Die 20 % der Haushalte mit dem höchsten Einkommen' },
+                    ],
                     isAccordion: true,
                     itemName: 'quintil-accordion'
                 },
@@ -159,7 +164,19 @@ const IncomeSection = () => {
                             </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                            <Typography>{item.accordionText}</Typography>
+                            <Typography>{item.accordionFirstText}</Typography>
+
+                            {item.list && (
+                                <ul className="custom-list income">
+                                    {item.list.map((step, index) => (
+                                        <li key={index}>
+                                            <span className="boldText">{step.title}</span> {step.text}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                            <Typography style={{ marginBottom: '0.5rem' }}>{item.accordionSubheader}</Typography>
+                            <Typography>{item.accordionSecondText}</Typography>
                             </AccordionDetails>
                         </Accordion>
                     </div>
