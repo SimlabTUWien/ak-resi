@@ -370,6 +370,8 @@ const SiIndicatorMap = ({ siMode, subIndicator: indicator }) => {
         {!isMobile && <DesktopLegend selectedLanguage={language} />}
       </MapContainer>
       {isMobile && <MobileLegend selectedLanguage={language} />}
+
+      <p style={{fontSize: '0.9rem'}}>Im Folgenden betrachten wir regelmäßig die Qualität der Infrastrukturversorgung. Die Indikatorwerte werden hierzu wie folgt kategorisiert: Schlecht: ein Indikatorwert unter 3, mittel: ein Indikatorwert zwischen 3 und &lt; 5, gut: ein Indikatorwert zwischen 5 und &lt; 7, sehr gut: ein Indikatorwert über 7.</p>
     </Box>
   );
 };
