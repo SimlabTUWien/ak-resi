@@ -8,7 +8,6 @@ import IndicatorSelect from "../IndicatorSelect";
 import SiIndicatorMap from "../SiIndicatorMap";
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
-import { m } from "framer-motion";
 
 const translations = {
     DE: {
