@@ -61,7 +61,9 @@ const translations = {
                 id: 4,
                 text: ( 
                 <> 
-                    Die folgenden Analysen zeigen unterschiedliche Dimensionen der Zeitverteilung in österreichischen Haushalten, mit Schwerpunkt auf Geschlechtsunterschieden sowie entlang sozio-ökonomischen und räumlichen Merkmalen. 
+                    Die folgenden Analysen zeigen unterschiedliche Dimensionen der Zeitverteilung in österreichischen Haushalten, mit Schwerpunkt auf Geschlechtsunterschieden<sup style={{fontSize: '0.7rem'}}>1</sup> sowie entlang sozio-ökonomischen und räumlichen Merkmalen. <br/>
+                    <sup style={{fontSize: '0.7rem'}}>1</sup> <span style={{fontSize: '0.9rem'}}>Anmerkung: Aufgrund der geringen Anzahl gleichgeschlechtlicher Haushalte in der Stichprobe sind hierzu keine gesicherten Aussagen möglich.</span>
+
                 </>
                 ),
             },
@@ -306,7 +308,7 @@ const translations = {
                 alt: "box plot visualizing income based on sex and social infrastructure supply",
                 text: ( 
                 <>
-                    <span className="boldText">Infrastrukturversorgung: </span> Schlecht: ein Indikatorwert &lt; 3, mittel: ein Indikatorwert zwischen 3 und 5, gut: ein Indikatorwert zwischen 5 und 7, sehr gut: ein Indikatorwert über 7.
+                    <span className="boldText">Infrastrukturversorgung: </span> Schlecht: ein Indikatorwert unter 3, mittel: ein Indikatorwert zwischen 3 und &lt; 5, gut: ein Indikatorwert zwischen 5 und &lt; 7, sehr gut: ein Indikatorwert über 7.
                 </>
                 )
             },                                 
