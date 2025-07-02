@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
 const svgUrl = `${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE_V4.svg`;
@@ -13,8 +13,7 @@ const ResiDefinitionChart = ({ altText }) => {
         svgRef.current.appendChild(data.documentElement);
 
         const svg = d3.select(svgRef.current).select("svg");
-        svg.attr("alt", altText);
-        svg.attr("width", "100%").attr("height", "100%");
+        svg.attr("width", "100%").attr("height", "100%").attr("alt", altText);
         svg.style("display", "block").style("margin", "auto");
 
         // Initially hide all sub elements
