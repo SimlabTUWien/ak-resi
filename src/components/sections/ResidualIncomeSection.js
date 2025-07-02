@@ -189,7 +189,7 @@ const translations = {
                 id: 17,
                 isChart: true,
                 itemName: 'scatter-plot',
-                imagePath: "/images/3_SCATTER_PLOT_RESI_INCOME.png",
+                imagePath: "/images/3_SCATTER_PLOT_RESI_INCOME.webp",
                 alt: "Scatterplot für Darstellung der Verteilung von Resiudaleinkommen und Haushaltseinkommen"
             },
             {

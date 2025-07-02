@@ -91,6 +91,11 @@ export default function HomePage () {
             <section id="what-now">
                 <OutlookSection />
             </section>
+            
+            <div className="logo-wrapper">
+                <img className="logo-image" src={`${process.env.PUBLIC_URL}/images/IFIP_Logo.png`} alt="Ifip Logo TU Wien" />
+                <img className="logo-image" src={`${process.env.PUBLIC_URL}/images/akwienrot_highres.png`} alt="AK Wien Logo" />
+            </div>
 
         </div>
 

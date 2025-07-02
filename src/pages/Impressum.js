@@ -95,7 +95,7 @@ export default function Impressum() {
               Karlsgasse 11, 1040 Vienna, Austria
             </>
           ),
-        },
+        }
       ]
     }
   };
@@ -116,7 +116,11 @@ export default function Impressum() {
                 {item.text}
             </p>
         )}
+      </div>
 
+      <div className="logo-wrapper">
+        <img className="logo-image" src={`${process.env.PUBLIC_URL}/images/IFIP_Logo.png`} alt="Ifip Logo TU Wien" />
+        <img className="logo-image" src={`${process.env.PUBLIC_URL}/images/akwienrot_highres.png`} alt="AK Wien Logo" />
       </div>
     </>
   );
