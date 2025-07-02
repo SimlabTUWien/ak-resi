@@ -669,7 +669,7 @@ const ResidualIncomeSection = () => {
                                     value={medianMapMode}
                                     exclusive
                                     onChange={(_, newValue) => handleToggleModeChange("median_map", newValue)}
-                                    aria-label="Auswahl des Anzeigemodus für die Karte: links Alle und rechts Mieter:innen"
+                                    aria-label="Map mode selection"
                                 >   
                                     <ToggleButton value="all"><label>{item.labelAll}</label></ToggleButton>
                                     <ToggleButton value="renter"><label>{item.labelRent}</label></ToggleButton>
@@ -701,7 +701,7 @@ const ResidualIncomeSection = () => {
                             value={medianExpenditureMode}
                             exclusive
                             onChange={(_, newValue) => handleToggleModeChange('median_exp', newValue)}
-                            aria-label="Auswahl des Anzeigemodus für das Kreisdiagramm: links Alle und rechts Mieter:innen"
+                            aria-label="Pie chart mode selection"
                             >
                             <ToggleButton value="all">
                                 <label>{item.labelAll}</label>
@@ -736,7 +736,7 @@ const ResidualIncomeSection = () => {
                                     value={quintilExpenditureMode}
                                     exclusive
                                     onChange={(_, newValue) => handleToggleModeChange("quintil_exp", newValue)}
-                                    aria-label="Auswahl des Anzeigemodus für die Balkendiagramme: links Absolut und rechts Relativ"
+                                    aria-label="Barchart mode selection"
                                 >   
                                     <ToggleButton value="absolute"><label>{item.labelAbs}</label></ToggleButton>
                                     <ToggleButton value="relative"><label>{item.labelRel}</label></ToggleButton>
@@ -771,7 +771,7 @@ const ResidualIncomeSection = () => {
                                 value={educationChartMode}
                                 exclusive
                                 onChange={(_, newValue) => handleToggleModeChange("education", newValue)}
-                                aria-label="Auswahl des Anzeigemodus für die Balkendiagramme: links Beschäftigungsart und rechts Einkommensquelle"
+                                aria-label="Barchart mode selection"
                                 >
                                     <ToggleButton value="extent_empl"><label>Beschäftigungs&shy;art</label></ToggleButton>
                                     <ToggleButton value="income_source"><label>Einkommens&shy;quelle</label></ToggleButton>

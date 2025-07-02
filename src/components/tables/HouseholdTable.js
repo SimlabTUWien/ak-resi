@@ -46,7 +46,7 @@ const HouseholdTable = ({ ariaLabel }) => {
           value={tableMode}
           exclusive
           onChange={handleToggleModeChange}
-          aria-label="Auswahl Anzeigemodus Haushalts-Tabelle"
+          aria-label="Householdtype table mode selection"
         >
           <ToggleButton value="all">
             <label>Alle</label>

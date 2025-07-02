@@ -393,14 +393,14 @@ const SocialInfrastructureSection = () => {
                                     value={spilloverMode}
                                     exclusive
                                     onChange={(_, newValue) => handleToggleModeChange("map", newValue)}
-                                    aria-label="mode selection"
+                                    aria-label="Si map mode selection"
                                 >
                                     {/* <ToggleButton value="no_so"><label>Kein<br/>Spillover</label></ToggleButton> */}
                                     {/* <ToggleButton value="so_miv"><label>Spillover<br/>(MIV)</label></ToggleButton>
                                     <ToggleButton value="so_oev"><label>Spillover<br/>(ÖV)</label></ToggleButton> */}
 
-                                    <ToggleButton value="so_miv"><label style={{ display: 'contents'}}><DirectionsCarIcon /></label></ToggleButton>
-                                    <ToggleButton value="so_oev"><label style={{ display: 'contents'}}><DirectionsBusIcon/></label></ToggleButton>
+                                    <ToggleButton value="so_miv" aria-label="Car icon"><label style={{ display: 'contents'}}><DirectionsCarIcon /></label></ToggleButton>
+                                    <ToggleButton value="so_oev" aria-label="Public transport icon"><label style={{ display: 'contents'}}><DirectionsBusIcon/></label></ToggleButton>
                                 </ToggleButtonGroup>
                             </div>
                         </div>
@@ -473,10 +473,10 @@ const SocialInfrastructureSection = () => {
                                 value={siChartMode}
                                 exclusive
                                 onChange={(_, newValue) => handleToggleModeChange("chart", newValue)}
-                                aria-label="mode selection"
+                                aria-label="Chart mode selection"
                             >
-                                <ToggleButton value="chart_miv"><label style={{ display: 'contents'}}><DirectionsCarIcon /></label></ToggleButton>
-                                <ToggleButton value="chart_oev"><label style={{ display: 'contents'}}><DirectionsBusIcon/></label></ToggleButton>
+                                <ToggleButton value="chart_miv" aria-label="Car icon"><label style={{ display: 'contents'}}><DirectionsCarIcon /></label></ToggleButton>
+                                <ToggleButton value="chart_oev" aria-label="Public transport icon"><label style={{ display: 'contents'}}><DirectionsBusIcon/></label></ToggleButton>
                             </ToggleButtonGroup>
                         </div>
                         

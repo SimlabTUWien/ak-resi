@@ -46,7 +46,7 @@ const ExpenditureBundTable = ({ ariaLabel }) => {
           value={tableMode}
           exclusive
           onChange={handleToggleModeChange}
-          aria-label="Auswahl Anzeigemodus Ausgaben-Tabelle"
+          aria-label="Expenditure table mode selection"
         >
           <ToggleButton value="all">
             <label>Alle</label>
