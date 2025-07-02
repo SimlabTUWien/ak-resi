@@ -14,10 +14,12 @@ export default function HeaderSection() {
     DE: {
         title: "Perspektiven auf Ungleichheit in Österreich",
         subTitle: "Residualeinkommen, soziale Infrastruktur und Zeitverwendung",
+        alt: "Headerbild mit Darstellung einer städlichen Umgebung"
     },
     EN: {
         title: "Perspectives on Inequality in Austria",
         subTitle: "Residual Income, Social Infrastructure and Time Usage",
+        alt: "Header image depicting an urban environment"
     }
   };
 
@@ -72,7 +74,7 @@ export default function HeaderSection() {
           </div>
 
          <div className="header-image-wrapper">
-            <img src={`${process.env.PUBLIC_URL}/images/spherical_houses.png`} alt="" className="header-image" />
+            <img src={`${process.env.PUBLIC_URL}/images/spherical_houses.png`} alt={t.alt} className="header-image" />
           </div>
 
           <motion.div
