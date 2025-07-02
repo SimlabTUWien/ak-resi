@@ -205,13 +205,10 @@ const translations = {
             },
             {
                 id: 17,
-                text: <> Wie werden die einzelnen Infrastrukturindikatoren berechnet? </>,
-                isContentHeader: true,
-            },
-            {
-                id: 18,
-                text: ( 
-                <> 
+                isTableAccordion: true,
+                accordionHeader: "Wie werden die einzelnen Infrastrukturindikatoren berechnet?",
+                accordionText: ( 
+                <>  
                     Der Gesamtindikator für <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">soziale Infrastrukturen</GlossaryTerm> setzt 
                     sich aus sechs gleich gewichteten Teilindikatoren zusammen: 
                     Kindergärten, Schulen, Krankenhäuser, Allgemeinmediziner:innen, Pflegeeinrichtungen und andere soziale Einrichtungen. 
@@ -219,20 +216,38 @@ const translations = {
                     (<GlossaryTerm className="glossary-term spillovers" sectionId="social-infrastructure">Spillover-Effekte</GlossaryTerm>) mit 20 % gewichtet, um die unterschiedlichen Aspekte der Infrastruktur umfassend zu berücksichtigen.
                 </>
                 ),
+                ariaLabel: "Tabelle zur Erläuterung der Berechnung der einzelnen Infrastrukturindikatoren"
             },
+            // {
+            //     id: 17,
+            //     text: <> Wie werden die einzelnen Infrastrukturindikatoren berechnet? </>,
+            //     isContentHeader: true,
+            // },
+            // {
+            //     id: 18,
+            //     text: ( 
+            //     <> 
+            //         Der Gesamtindikator für <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">soziale Infrastrukturen</GlossaryTerm> setzt 
+            //         sich aus sechs gleich gewichteten Teilindikatoren zusammen: 
+            //         Kindergärten, Schulen, Krankenhäuser, Allgemeinmediziner:innen, Pflegeeinrichtungen und andere soziale Einrichtungen. 
+            //         Innerhalb der Teilindikatoren wird die Verfügbarkeit mit 50 %, die Zugänglichkeit mit 30 % und die Einflüsse von Nachbargemeinden 
+            //         (<GlossaryTerm className="glossary-term spillovers" sectionId="social-infrastructure">Spillover-Effekte</GlossaryTerm>) mit 20 % gewichtet, um die unterschiedlichen Aspekte der Infrastruktur umfassend zu berücksichtigen.
+            //     </>
+            //     ),
+            // },
+            // {
+            //     id: 19,
+            //     isTable: true,
+            //     itemName: 'si-table',
+            //     ariaLabel: ""
+            // },
             {
-                id: 19,
-                isTable: true,
-                itemName: 'si-table',
-                ariaLabel: ""
-            },
-            {
-                id: 20,
+                id: 18,
                 text: <> Verknüpfung zwischen Einkommen, Residualeinkommen und sozialer Infrastruktur: </>,
                 isContentHeader: true,
             },
             {
-                id: 21,
+                id: 19,
                 text: ( 
                 <>
                    Die vorangegangenen Analysen zeigen deutlich, dass Haushalte unterschiedlich stark durch <GlossaryTerm className="glossary-term expenditure" sectionId="social-infrastructure">notwendige Ausgaben</GlossaryTerm> belastet sind. 
@@ -243,7 +258,7 @@ const translations = {
                 ),
             },
             {
-                id: 22,
+                id: 20,
                 text: ( 
                 <>
                     Auch die vorliegenden Daten zur Versorgung mit <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm> zeigen große regionale Unterschiede. 
@@ -252,7 +267,7 @@ const translations = {
                 ),
             },
             {
-                id: 23,
+                id: 21,
                 isList: true,
                 text: ( 
                 <>
@@ -266,7 +281,7 @@ const translations = {
                 ], 
             },
             {
-                id: 24,
+                id: 22,
                 isList: true,
                 text: ( 
                 <>
@@ -279,7 +294,7 @@ const translations = {
                 ], 
             },
             {
-                id: 25,
+                id: 23,
                 text: ( 
                 <>
                     Es zeigt sich, dass Haushalte mit geringen Einkommen besonders dann benachteiligt sind, wenn sie zusätzlich in Gemeinden mit schwacher Infrastrukturversorgung leben - etwa mit eingeschränktem Zugang zu Kinderbetreuung, 
@@ -288,7 +303,7 @@ const translations = {
                 ),
             },
             {
-                id: 26,
+                id: 24,
                 text: ( 
                 <>
                     Gut ausgebaute Infrastruktur kann diesen Nachteilen entgegenwirken. Sie unterstützt nicht nur einkommensschwache Haushalte, sondern verbessert auch allgemein die Lebensqualität und Teilhabechancen vor Ort. 
@@ -297,11 +312,11 @@ const translations = {
                 ),
             },
             {
-                id: 27,
+                id: 25,
                 isFinLoadChart: true,
                 imagePath: "/images/18_FINANZ_BELASTUNG_SI.webp",
                 itemName: 'si-financial-load',
-                alt: "Darstellung der finanzielle nBelastung und Versorgung mit SI nach Haushalten",
+                alt: "Darstellung der finanziellen Belastung und Versorgung mit SI nach Haushalten",
                 text: ( 
                 <>
                     <span className="boldText">Infrastrukturversorgung: </span> Schlecht: ein Indikatorwert unter 3, mittel: ein Indikatorwert zwischen 3 und &lt; 5, gut: ein Indikatorwert zwischen 5 und &lt; 7, sehr gut: ein Indikatorwert über 7.
@@ -403,14 +418,28 @@ const SocialInfrastructureSection = () => {
                             </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                            <Typography>{item.accordionText}</Typography>
+                                <Typography>{item.accordionText}</Typography>
                             </AccordionDetails>
                         </Accordion>
                     </div>
-                ) : item.isTable ? (
-                    <div key={item.id} className="si-table-container" style={{margin: '24px 0 32px'}}>
-                        <SocialInfrastructureTable/>
+                ) : item.isTableAccordion ? (
+                    <div key={item.id} className="si-table-container" style={{ margin: '24px 0 32px' }}>
+                        <Accordion sx={{ background: '#f4f4f4' }}>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography variant="h4" sx={{ fontSize: '1.125rem' }}>
+                                {item.accordionHeader}
+                            </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>{item.accordionText}</Typography>
+                                <SocialInfrastructureTable ariaLabel={item.ariaLabel}/>
+                            </AccordionDetails>
+                        </Accordion>
                     </div>
+                // ) : item.isTable ? (
+                //     <div key={item.id} className="si-table-container" style={{margin: '24px 0 32px'}}>
+                //         <SocialInfrastructureTable/>
+                //     </div>
                 ) : item.isList ? (
                     <div key={item.id} className="list-container" style={{margin: '12px 0 24px'}}>
                         <span className="paragraph">{item.text}</span>

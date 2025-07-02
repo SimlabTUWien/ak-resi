@@ -41,19 +41,20 @@ const data = [
     }
   ];
 
-const SocialInfrastructureTable = () => {
+const SocialInfrastructureTable = ({ ariaLabel }) => {
   return (
     <TableContainer 
         component={Paper} 
         sx={{
-            background: "#f4f4f4",
+            // background: "#f4f4f4",
+            background: "#f0f0f0",
             overflowX: "auto",
             minWidth: 320,
             maxWidth: "100%", // Ensure it adapts within parent
             marginTop: 3
         }}
       >
-       <Table sx={{ width: "100%", minWidth: 320 }}>
+       <Table sx={{ width: "100%", minWidth: 320 }} aria-label={ariaLabel}>
         {/* <TableHead sx={{ backgroundColor: "#d2d5cb" }}> */}
         <TableHead sx={{ backgroundColor: "#a5cdc8",  hyphens: 'none' }}>
           <TableRow>
