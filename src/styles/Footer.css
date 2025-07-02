@@ -1,7 +1,9 @@
-.logo-wrapper {
+.partners-wrapper {
     max-width: 1300px;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: start;
     gap: 2rem;
     padding: 78px 0 24px;
 }

@@ -32,7 +32,7 @@ const Footer = () => {
   return (
     <footer className="footer-wrapper">
 
-        <div className="logo-wrapper">
+        <div className="partners-wrapper">
             <img className="logo-image" src={`${process.env.PUBLIC_URL}/images/IFIP_Logo.png`} alt="Ifip Logo TU Wien" />
             <img className="logo-image" src={`${process.env.PUBLIC_URL}/images/akwienrot_highres.png`} alt="AK Wien Logo" />
         </div>
