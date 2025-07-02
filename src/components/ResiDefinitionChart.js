@@ -3,7 +3,7 @@ import * as d3 from "d3";
 
 const svgUrl = `${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE_V4.svg`;
 
-const ResiDefinitionChart = () => {
+const ResiDefinitionChart = ({ altText }) => {
   const svgRef = useRef(null);
 
   useEffect(() => {
@@ -13,6 +13,7 @@ const ResiDefinitionChart = () => {
         svgRef.current.appendChild(data.documentElement);
 
         const svg = d3.select(svgRef.current).select("svg");
+        svg.attr("alt", altText);
         svg.attr("width", "100%").attr("height", "100%");
         svg.style("display", "block").style("margin", "auto");
 
@@ -58,7 +59,7 @@ const ResiDefinitionChart = () => {
 
   return (
     <div className="definition-chart" style={{ textAlign: "center", justifyContent: "center" }}>
-        <div ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }} alt="Grafik zur Definition des Residualeinkommens und dessen Berechnung mittels Einkommen und notwendigen Ausgaben." />
+        <div ref={svgRef} style={{ maxWidth: "100%", overflow: "hidden" }} />
     </div>
   );
 };

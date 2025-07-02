@@ -246,7 +246,7 @@ const isTouchDevice = () => {
   );
 };
 
-const MedianMapChart = ({ mode }) => {
+const MedianMapChart = ({ mode, altText }) => {
 
   const svgRef = useRef(null);
 
@@ -302,7 +302,7 @@ const MedianMapChart = ({ mode }) => {
       svgContainer.node().appendChild(svgNode);
 
       const svg = d3.select(svgNode);
-      svg.attr("width", "100%").attr("height", "100%");
+      svg.attr("width", "100%").attr("height", "100%").attr("alt", altText);;
       svg.style("display", "block").style("margin", "auto");
 
       const storeOriginalFill = (el) => {

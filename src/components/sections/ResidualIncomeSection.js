@@ -34,7 +34,7 @@ const translations = {
                 id: 2,
                 isChart: true,
                 itemName: 'definition',
-                alt: ""
+                alt: "Berechnung von Residualeinkommen durch Einkommen abzüglich notwendigen Ausgaben"
             },
             {
                 id: 3,
@@ -101,7 +101,7 @@ const translations = {
                 chartTitle: "Ausgabenkategorien",
                 labelAll: "Alle",
                 labelRent: "Mieter:innen",
-                alt: ""
+                ariaLabel: "Kreisdiagramm mit Ausgabenkategorien"
             },
             {
                 id: 8,
@@ -137,7 +137,7 @@ const translations = {
                 id: 11,
                 isTable: true,
                 itemName: 'household-table',
-                alt: ""
+                ariaLabel: "Tabelle zur Veranschaulichung von Medianeinkommen und notwendigen Ausgaben für Haushaltstypen"
             },
             {
                 id: 12,
@@ -190,7 +190,7 @@ const translations = {
                 isChart: true,
                 itemName: 'scatter-plot',
                 imagePath: "/images/3_SCATTER_PLOT_RESI_INCOME.png",
-                alt: ""
+                alt: "Scatterplot für Darstellung der Verteilung von Resiudaleinkommen und Haushaltseinkommen"
             },
             {
                 id: 18,
@@ -203,7 +203,7 @@ const translations = {
                 itemName: 'expenditure-bar-charts',
                 labelAbs: 'Absolut',
                 labelRel: 'Relativ',
-                alt: ""
+                ariaLabel: "Zwei Balkendiagramme für die Ausgaben nach Einkommenquintilen - Erstes für Alle und zweites für Mieter:innen"
             },
             {
                 id: 20,
@@ -265,7 +265,7 @@ const translations = {
                 id: 26,
                 isChart: true,
                 itemName: 'gini',
-                alt: ""
+                ariaLabel: "Gegenüberstellung des Gini-Index für Haushalts- und Resiudaleinkommen durch 2 große Zahlen"
             },
             {
                 id: 27,
@@ -285,7 +285,7 @@ const translations = {
                 imagePath: "/images/Lorenz_Kurven_Gini_AT_DE.png",
                 isAccordion: true,
                 itemName: 'gini-accordion',
-                alt: ""
+                alt: "Lorenz-Kurve des Gini-Index"
             },
             {
                 id: 28,
@@ -308,7 +308,7 @@ const translations = {
                 itemName: 'education-bar-charts',
                 labelExtent: <> Beschäftigungs&shy;art </>,
                 labelSource: <> Einkommens&shy;quelle </> ,
-                alt: ""
+                ariaLabel: "Zwei Balkendiagramme für die Bildung und Beschäftigung - Erstes zeigt abgeschlossene Bildung; zweites je nach ausgewähltem Modus Beschäftigungsart oder Einkommensquelle"
             },
             {
                 id: 31,
@@ -444,7 +444,7 @@ const translations = {
                 id: 42,
                 isTable: true,
                 itemName: 'expenditure-table',
-                alt: ""
+                ariaLabel: "Aufschlüsselung der Ausgaben nach Bundesland"
             },
             {
                 id: 43,
@@ -463,7 +463,7 @@ const translations = {
                 itemName: 'median-map',
                 labelAll: "Alle",
                 labelRent: "Mieter:innen",
-                alt: ""
+                alt: "Karte zur Visualisierung des Residualeinkommens (Median) nach Gemeindegrößenklassen für Österreich"
             },
             {
                 id: 45,
@@ -547,7 +547,7 @@ const translations = {
                 imagePath: "/images/Abb_KarteGemeindegroeßen_DE.png",
                 itemName: 'municipality-accordion',
                 isAccordion: true,
-                alt: ""
+                alt: "Karte zur Visualisierung der Gemeindegrößenklassen in Österreich"
             }            
         ]
     },
@@ -623,20 +623,20 @@ const ResidualIncomeSection = () => {
                             className="definition-chart-container"
                             sx={{ padding: 0, borderRadius: 1, marginTop: 3, marginBottom: 3 }}
                         >
-                            <ResiDefinitionChart />
+                            <ResiDefinitionChart altText={item.alt} />
                         </Box>
                     );
                 case 'scatter-plot':
                     return (
                         <div key={item.id} className="image-container scatter-plot-container">
-                            <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt="scatter plot visualizing houshold and resiudal income" />
+                            <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt={item.alt} />
                         </div>
                     );
                 case 'gini':
                     return (
                         <div key={item.id}>
                             <h3 className="gini-header">Gini-Index</h3>
-                            <div className="gini-container">
+                            <div className="gini-container" aria-label={item.ariaLabel}>
                                 <div>
                                     <CounterAnimation targetValue={0.27} />
                                     <h3 className="gini-subheader">Haushaltseinkommen</h3>
@@ -669,13 +669,13 @@ const ResidualIncomeSection = () => {
                                     value={medianMapMode}
                                     exclusive
                                     onChange={(_, newValue) => handleToggleModeChange("median_map", newValue)}
-                                    aria-label="median map mode selection"
+                                    aria-label="Auswahl des Anzeigemodus für die Karte: links Alle und rechts Mieter:innen"
                                 >   
                                     <ToggleButton value="all"><label>{item.labelAll}</label></ToggleButton>
                                     <ToggleButton value="renter"><label>{item.labelRent}</label></ToggleButton>
                                 </ToggleButtonGroup>
                             </div>
-                            <MedianMapChart mode={medianMapMode} />
+                            <MedianMapChart mode={medianMapMode} altText={item.alt} />
                         </Box>
                     );
             }
@@ -701,7 +701,7 @@ const ResidualIncomeSection = () => {
                             value={medianExpenditureMode}
                             exclusive
                             onChange={(_, newValue) => handleToggleModeChange('median_exp', newValue)}
-                            aria-label="median expenditure chart mode selection"
+                            aria-label="Auswahl des Anzeigemodus für das Kreisdiagramm: links Alle und rechts Mieter:innen"
                             >
                             <ToggleButton value="all">
                                 <label>{item.labelAll}</label>
@@ -712,7 +712,7 @@ const ResidualIncomeSection = () => {
                             </ToggleButtonGroup>
                         </div>
                         <h3 className="median-exp-chart-title">{item.chartTitle}</h3>
-                        <div className="median-exp-chart-container">
+                        <div className="median-exp-chart-container" aria-label={item.ariaLabel}>
                             <MedianExpenditureChart mode={medianExpenditureMode} />
                         </div>
                         </Box>
@@ -736,14 +736,14 @@ const ResidualIncomeSection = () => {
                                     value={quintilExpenditureMode}
                                     exclusive
                                     onChange={(_, newValue) => handleToggleModeChange("quintil_exp", newValue)}
-                                    aria-label="quintil expenditure chart mode selection"
+                                    aria-label="Auswahl des Anzeigemodus für die Balkendiagramme: links Absolut und rechts Relativ"
                                 >   
                                     <ToggleButton value="absolute"><label>{item.labelAbs}</label></ToggleButton>
                                     <ToggleButton value="relative"><label>{item.labelRel}</label></ToggleButton>
                                 </ToggleButtonGroup>
                             </div>
                     
-                            <div className="quintil-exp-charts-container">
+                            <div className="quintil-exp-charts-container" aria-label={item.ariaLabel}>
                                 <QuintilExpenditureCharts 
                                     mode={quintilExpenditureMode} 
                                     isWrapped={isWrapped}
@@ -771,14 +771,14 @@ const ResidualIncomeSection = () => {
                                 value={educationChartMode}
                                 exclusive
                                 onChange={(_, newValue) => handleToggleModeChange("education", newValue)}
-                                aria-label="education charts mode selection"
+                                aria-label="Auswahl des Anzeigemodus für die Balkendiagramme: links Beschäftigungsart und rechts Einkommensquelle"
                                 >
                                     <ToggleButton value="extent_empl"><label>Beschäftigungs&shy;art</label></ToggleButton>
                                     <ToggleButton value="income_source"><label>Einkommens&shy;quelle</label></ToggleButton>
                                 </ToggleButtonGroup>
                             </div>
 
-                            <div className="education-charts-container">
+                            <div className="education-charts-container" aria-label={item.ariaLabel}>
                                 <EducationCharts
                                     mode={educationChartMode} 
                                     isWrapped={isWrapped}
@@ -895,7 +895,7 @@ const ResidualIncomeSection = () => {
                                     {item.accordionText}
                                 </Typography>
 
-                                <img className="municipality-size-map" src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt="Gemeindegrößeklassen" />
+                                <img className="municipality-size-map" src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt={item.alt} />
                             </AccordionDetails>
                             </Accordion>
                         </div>   
@@ -907,13 +907,13 @@ const ResidualIncomeSection = () => {
                 case 'household-table':
                     return (
                         <div key={item.id} className="houshold-table-container">
-                            <HouseholdTable />
+                            <HouseholdTable ariaLabel={item.ariaLabel} />
                         </div>
                     );
                 default:
                     return (
                         <div key={item.id} className="expenditure-table-container">
-                            <ExpenditureBundTable />
+                            <ExpenditureBundTable ariaLabel={item.ariaLabel}/>
                         </div>
                     );
             }
