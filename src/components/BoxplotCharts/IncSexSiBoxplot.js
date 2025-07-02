@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import { Box } from "@mui/material";
 
@@ -6,26 +6,26 @@ const svgUrl = `${process.env.PUBLIC_URL}/images/14_INC_SEX_SI_TU_DE.svg`;
 
 const dataMap = {
   fua: {
-    1:   { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", supply: "unterversorgt", q1: '1,6', median: '4,3', q3: '6,8', n: 40 },
+    1:   { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", supply: "schlecht", q1: '1,6', median: '4,3', q3: '6,8', n: 40 },
     2: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", supply: "mittel", q1: '1,8', median: '3,8', q3: '6,3', n: 465 },
     3: { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", supply: "gut", q1: '1,7', median: '3,3', q3: '5,7', n: 967 },
     4:   { titel: "Frauen - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", supply: "sehr gut", q1: '1,3', median: '2,7', q3: '5,3', n: 733 },
   },
   fea: {
-      1:   { titel: "Frauen - Erwerbsarbeit", supply: "unterversorgt", q1: '5,7', median: '7,8', q3: '8,6', n: 24 },
+      1:   { titel: "Frauen - Erwerbsarbeit", supply: "schlecht", q1: '5,7', median: '7,8', q3: '8,6', n: 24 },
       2: { titel: "Frauen - Erwerbsarbeit", supply: "mittel", q1: '5,2', median: '7,5', q3: '9', n: 277 },
       3: { titel: "Frauen - Erwerbsarbeit", supply: "gut", q1: '5,2', median: '7,3', q3: '8,8', n: 603 },
       4:   { titel: "Frauen - Erwerbsarbeit", supply: "sehr gut" , q1: '5,5', median: '7,6', q3: '9', n: 475 },
   },
 
   mua: {
-    1:   { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", supply: "unterversorgt", q1: '1,1', median: '2,1', q3: '3,2', n: 28 },
+    1:   { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", supply: "schlecht", q1: '1,1', median: '2,1', q3: '3,2', n: 28 },
     2: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", supply: "mittel", q1: '0,8', median: '1,7', q3: '2,8', n: 323 },
     3: { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", supply: "gut", q1: '0,7', median: '1,5', q3: '2,8', n: 641 },      
     4:   { titel: "Männer - Unbezahlte Arbeit (Haushalt und Kinderbetreuung)", supply: "sehr gut", q1: '0,7', median: '1,5', q3: '2,7', n: 477 },
   },
   mea: {
-    1:   { titel: "Männer - Erwerbsarbeit", supply: "unterversorgt", q1: '8,6', median: '9,3', q3: '10,3', n: 28 },
+    1:   { titel: "Männer - Erwerbsarbeit", supply: "schlecht", q1: '8,6', median: '9,3', q3: '10,3', n: 28 },
     2: { titel: "Männer - Erwerbsarbeit", supply: "mittel", q1: '8', median: '9', q3: '10,5', n: 343 },
     3: { titel: "Männer - Erwerbsarbeit", supply: "gut", q1: '7,7', median: '8,8', q3: '9,9', n: 660 },
     4:   { titel: "Männer - Erwerbsarbeit", supply: "sehr gut", q1: '7,4', median: '8,7', q3: '9,8', n: 483 },
