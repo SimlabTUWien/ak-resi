@@ -305,7 +305,8 @@ const translations = {
                 id: 32,
                 isChart: true,
                 itemName: 'si-boxplot',
-                alt: "box plot visualizing income based on sex and social infrastructure supply",
+                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und sozialer Infrastrukturversorgung",
+                // altEN: "box plot visualizing income based on sex and social infrastructure supply",
                 text: ( 
                 <>
                     <span className="boldText">Infrastrukturversorgung: </span> Schlecht: ein Indikatorwert unter 3, mittel: ein Indikatorwert zwischen 3 und &lt; 5, gut: ein Indikatorwert zwischen 5 und &lt; 7, sehr gut: ein Indikatorwert über 7.
@@ -348,24 +349,24 @@ const TimeUsageSection = () => {
             switch (item.itemName) {
                 case 'edu-boxplot':
                     return (
-                        <IncSexEduBoxplot key={item.id} alt={item.alt}/>
+                        <IncSexEduBoxplot key={item.id} altText={item.alt}/>
                     );
                 case 'ftpt-boxplot':
                     return (
-                        <IncSexFtptBoxplot key={item.id} alt={item.alt}/>
+                        <IncSexFtptBoxplot key={item.id} altText={item.alt}/>
                     );
                 case 'hhtype-boxplot':
                     return (
-                        <IncSexHhtypeBoxplot key={item.id} alt={item.alt}/>
+                        <IncSexHhtypeBoxplot key={item.id} altText={item.alt}/>
                     );
                 case 'gemgr-boxplot':
                     return (
-                        <IncSexGemgroBoxplot key={item.id} alt={item.alt}/>
+                        <IncSexGemgroBoxplot key={item.id} altText={item.alt}/>
                     );
                 default:
                     return (
                         <div key={item.id}>
-                            <IncSexSiBoxplot alt={item.alt}/>
+                            <IncSexSiBoxplot altText={item.alt}/>
                             <span style={{fontSize: '0.9rem'}}>{item.text}</span>
                         </div>
                     );

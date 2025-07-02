@@ -55,7 +55,7 @@ const isTouchDevice = () => {
 };
 
 
-const OutlookChart = () => {
+const OutlookChart = ( {altText} ) => {
   const svgRef = useRef(null);
 
   const initialId = Object.keys(textMap)[0]; // Get first key from textMap
@@ -80,7 +80,7 @@ const OutlookChart = () => {
   
         const svg = d3.select(svgRef.current).select("svg");
   
-        svg.attr("width", "100%").attr("height", "100%");
+        svg.attr("width", "100%").attr("height", "100%").attr("alt", altText);
         svg.style("display", "block").style("margin", "auto");
         
         if (window.innerWidth > 600) {

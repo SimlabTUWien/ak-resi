@@ -69,7 +69,7 @@ const isTouchDevice = () => {
     );
   };
   
-const IncSexFtptBoxplot = () => {
+const IncSexFtptBoxplot = ({ altText }) => {
 
     const { language } = useLanguage();
     const svgUrl = `${process.env.PUBLIC_URL}/images/10_INC_SEX_FTPT_TU_${language.toUpperCase()}.svg`;
@@ -89,7 +89,7 @@ const IncSexFtptBoxplot = () => {
           container.node().appendChild(svgNode);
   
           const svg = d3.select(svgRef.current).select("svg");
-          svg.attr("width", "100%").attr("height", "100%");
+          svg.attr("width", "100%").attr("height", "100%").attr("alt", altText);
           svg.style("display", "block").style("margin", "auto");
   
           if (!isTouchDevice()) {

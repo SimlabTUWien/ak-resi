@@ -42,7 +42,7 @@ const isTouchDevice = () => {
     );
   };
   
-const IncSexGemgroBoxplot = () => {
+const IncSexGemgroBoxplot = ({ altText }) => {
     const svgRef = useRef(null);
   
     useEffect(() => {
@@ -56,7 +56,7 @@ const IncSexGemgroBoxplot = () => {
           container.node().appendChild(svgNode);
   
           const svg = d3.select(svgRef.current).select("svg");
-          svg.attr("width", "100%").attr("height", "100%");
+          svg.attr("width", "100%").attr("height", "100%").attr("alt", altText);
           svg.style("display", "block").style("margin", "auto");
   
           if (!isTouchDevice()) {

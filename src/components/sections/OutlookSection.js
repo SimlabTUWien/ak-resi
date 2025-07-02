@@ -44,6 +44,7 @@ const OutlookSection = () => {
                 {
                     id: 4,
                     isChart: true,
+                    alt: "Diagramm mit vier überlappenden Kreisen, welche die Themenbereiche dieser Webseite visualisieren"
                 }
             ]
         },
@@ -62,7 +63,7 @@ const OutlookSection = () => {
             {section.content.map((item) =>
                 item.isChart ? (
                     <div className='outlook-chart' key={item.id}>
-                    <OutlookChart />
+                    <OutlookChart altText={item.alt} />
                 </div>
                 ) : (
                 <p key={item.id} className={`paragraph ${item.className || ''}`}>

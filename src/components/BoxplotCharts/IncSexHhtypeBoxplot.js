@@ -125,7 +125,7 @@ const isTouchDevice = () => {
     );
   };
   
-const IncSexHhtypeBoxplot = () => {
+const IncSexHhtypeBoxplot = ({ altText }) => {
 
     const { language } = useLanguage();
     const svgUrl = `${process.env.PUBLIC_URL}/images/11_INC_SEX_HHTYPE_TU_${language.toUpperCase()}.svg`;
@@ -145,7 +145,7 @@ const IncSexHhtypeBoxplot = () => {
           container.node().appendChild(svgNode);
   
           const svg = d3.select(svgRef.current).select("svg");
-          svg.attr("width", "100%").attr("height", "100%");
+          svg.attr("width", "100%").attr("height", "100%").attr("alt", altText);
           svg.style("display", "block").style("margin", "auto");
   
           if (!isTouchDevice()) {

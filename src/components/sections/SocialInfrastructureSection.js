@@ -94,7 +94,7 @@ const translations = {
                 id: 7,
                 isMapComponent: true,
                 itemName: 'si-map',
-                alt: "Karte zur Darstellung der sozialen Indikatoren pro Gemeinde"
+                ariaLabel: "Karte zur Darstellung der sozialen Indikatoren pro Gemeinde"
             },
             {
                 id: 8,
@@ -405,7 +405,7 @@ const SocialInfrastructureSection = () => {
                             </div>
                         </div>
                         
-                        <div className="si-spillover-container">
+                        <div className="si-spillover-container" aria-label={item.ariaLabel}>
                             <SiIndicatorMap siMode={spilloverMode} subIndicator={selectedIndicator} key={`${spilloverMode}-${selectedIndicator}`} />
                         </div>
                     </Box>

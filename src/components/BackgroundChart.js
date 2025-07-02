@@ -52,7 +52,7 @@ const textMap = {
           color: "rgb(247, 227, 196)" // "#f0e6d7"
         }
     },
-    alt: "Diagramm mit vier überlappenden Kreisen, welche die Themenbereiche dieser Webseite visualisieren."
+    alt: "Diagramm mit vier überlappenden Kreisen, welche die Themenbereiche dieser Webseite visualisieren"
   },
   EN: {
     elements: {
@@ -97,7 +97,7 @@ const textMap = {
         color: "rgb(247, 227, 196)"
       }
     },
-    alt: "Diagram with four overlapping circles visualizing the content areas of this website."
+    alt: "Diagram with four overlapping circles visualizing the content areas of this website"
   }
  
 };

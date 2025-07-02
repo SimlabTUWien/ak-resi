@@ -41,7 +41,7 @@ const isTouchDevice = () => {
     );
   };
   
-const IncSexSiBoxplot = () => {
+const IncSexSiBoxplot = ({ altText }) => {
     const svgRef = useRef(null);
   
     useEffect(() => {
@@ -55,7 +55,7 @@ const IncSexSiBoxplot = () => {
           container.node().appendChild(svgNode);
   
           const svg = d3.select(svgRef.current).select("svg");
-          svg.attr("width", "100%").attr("height", "100%");
+          svg.attr("width", "100%").attr("height", "100%").attr("alt", altText);
           svg.style("display", "block").style("margin", "auto");
   
           if (!isTouchDevice()) {
