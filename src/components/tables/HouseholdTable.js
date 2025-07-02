@@ -26,7 +26,7 @@ const rentersData = [
   { type: "Drei Erwachsene mit mehr als einem Kind", income: 2004, expenses: 1574, disposable: 1375 },
 ];
 
-const HouseholdTable = () => {
+const HouseholdTable = ({ ariaLabel }) => {
   const [tableMode, setTableMode] = useState("all");
 
   const handleToggleModeChange = (_, newValue) => {
@@ -46,7 +46,7 @@ const HouseholdTable = () => {
           value={tableMode}
           exclusive
           onChange={handleToggleModeChange}
-          aria-label="household table mode selection"
+          aria-label="Auswahl Anzeigemodus Haushalts-Tabelle"
         >
           <ToggleButton value="all">
             <label>Alle</label>
@@ -60,7 +60,7 @@ const HouseholdTable = () => {
       {/* Table with Animation */}
       <TableContainer component={Paper} sx={{ marginTop: 2 }}>
         {/* <Table sx={{ width: "100%", backgroundColor: "#f4f4f4" }}> */}
-        <Table className="responsive-table" sx={{ width: "100%", backgroundColor: "#f4f4f4" }}>
+        <Table className="responsive-table" sx={{ width: "100%", backgroundColor: "#f4f4f4" }} aria-label={ariaLabel}>
           <TableHead sx={{ backgroundColor: "#f0ae9f", hyphens: "none" }}>
             <TableRow>
               <TableCell align="center">Haushaltstyp</TableCell>

@@ -26,7 +26,7 @@ const rentersData = [
 ];
 
 
-const ExpenditureBundTable = () => {
+const ExpenditureBundTable = ({ ariaLabel }) => {
   const [tableMode, setTableMode] = useState("all");
 
   const handleToggleModeChange = (_, newValue) => {
@@ -46,7 +46,7 @@ const ExpenditureBundTable = () => {
           value={tableMode}
           exclusive
           onChange={handleToggleModeChange}
-          aria-label="household table mode selection"
+          aria-label="Auswahl Anzeigemodus Ausgaben-Tabelle"
         >
           <ToggleButton value="all">
             <label>Alle</label>
@@ -59,7 +59,7 @@ const ExpenditureBundTable = () => {
 
       {/* Table*/}
       <TableContainer component={Paper} sx={{ marginTop: 2 }}>
-        <Table sx={{ width: "100%", backgroundColor: "#f4f4f4" }}>
+        <Table sx={{ width: "100%", backgroundColor: "#f4f4f4" }} aria-label={ariaLabel}>
           <TableHead sx={{ backgroundColor: "#f0ae9f", hyphens: "none" }}>
             <TableRow>
               <TableCell align="center">Bundesland</TableCell>
