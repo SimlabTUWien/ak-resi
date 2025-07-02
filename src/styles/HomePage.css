@@ -279,23 +279,6 @@ ul.custom-list li {
   display: none;
 }
 
-.logo-wrapper {
-    /* width: 80%; */
-    max-width: 1300px;
-    /* margin: 0 auto 40px; */
-    padding: 62px 0 24px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.logo-image {
-  max-height: 140px;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
-
 @media (hover: none) {
   .click-information {
     display: none;

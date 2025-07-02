@@ -48,10 +48,9 @@ export default function HeaderAppBar({ show }) {
       socialInfrastructure: "Soziale Infrastruktur",
       timeUsage: "Zeitverwendung",
       glossary: "Glossar",
-      imprint: "Impressum",
       team: "Team",
+      imprint: "Impressum",
       privacy: "Datenschutzerklärung",
-      // privacy: "Privacy",
       alt: "Logo des Re:sI:Ze Projekts",
     },
     EN: {
@@ -60,8 +59,8 @@ export default function HeaderAppBar({ show }) {
       socialInfrastructure: "Social Infrastructure",
       timeUsage: "Time Usage",
       glossary: "Glossary",
-      imprint: "Imprint",
       team: "Team",
+      imprint: "Imprint",
       privacy: "Privacy Policy",
       alt: "Logo of the Re:sI:Ze project",
     }
@@ -78,9 +77,8 @@ export default function HeaderAppBar({ show }) {
   const linkItems = [
     { text: t.home, link: "/", section: "intro", icon: <HomeIcon /> },
     { text: t.glossary, link: "/glossar", icon: <ImportContactsIcon /> },
-    { text: t.imprint, link: "/impressum", icon: <DescriptionIcon /> },
     { text: t.team, link: "/team", icon: <Diversity3Icon /> },
-    // { text: t.privacy, link: "/dataprivacy", icon: <span className="material-symbols-outlined">shield_locked</span> }
+    { text: t.imprint, link: "/impressum", icon: <DescriptionIcon /> },
     { text: t.privacy, link: "/dataprivacy", icon: <PrivacyTipIcon /> }
   ];
 

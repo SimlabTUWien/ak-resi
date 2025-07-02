@@ -9,6 +9,7 @@ import SocialInfrastructureSection from "../components/sections/SocialInfrastruc
 import TimeUsageSection from "../components/sections/TimeUsageSection";
 import OutlookSection from "../components/sections/OutlookSection";
 
+import Footer from "../components/Footer";
 import ScrollProgressBar from '../components/ScrollProgressBar';
 import FloatingButton from "../components/FloatingButton";
 
@@ -91,12 +92,8 @@ export default function HomePage () {
             <section id="what-now">
                 <OutlookSection />
             </section>
-            
-            <div className="logo-wrapper">
-                <img className="logo-image" src={`${process.env.PUBLIC_URL}/images/IFIP_Logo.png`} alt="Ifip Logo TU Wien" />
-                <img className="logo-image" src={`${process.env.PUBLIC_URL}/images/akwienrot_highres.png`} alt="AK Wien Logo" />
-            </div>
 
+            <Footer />     
         </div>
 
         <div className="floatingButton-container"> 

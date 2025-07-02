@@ -1,0 +1,47 @@
+.logo-wrapper {
+    max-width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 78px 0 24px;
+}
+
+.logo-image {
+  max-height: 140px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.links-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-link {
+  background: none;
+  cursor: pointer;
+  font-variation-settings: "slnt" 0, "wdth" 100, "wght" 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  /* color: #d99484; */
+  color: #4A4A4A;
+
+  &:hover {
+  color: #6d6d6d;
+
+  }
+}
+
+.footer-divider {
+  color: #bdbdbd;
+
+}
+
+@media (max-width: 486px) {
+  .links-wrapper {
+    flex-direction: column;
+  }
+}
