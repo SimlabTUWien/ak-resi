@@ -50,7 +50,7 @@ const BackgroundSection = () => {
                     text: (
                     <>
                         Für eine umfassende Betrachtung der Lebensqualität müssen wir daher über das Einkommen hinausschauen:
-                        das Zusammenspiel von Einkommen, Ausgaben, Infrastruktur und Zeitverwendung erlaubt ein vollständigeres Bild der Lebenswirklichkeit zu zeichnen.
+                        das Zusammenspiel von Einkommen, notwendigen Ausgaben, Infrastruktur und Zeitverwendung erlaubt ein vollständigeres Bild der Lebenswirklichkeit zu zeichnen.
                     </>
                     ),
                 },
@@ -75,74 +75,7 @@ const BackgroundSection = () => {
                 }
             ]
         },
-        EN: {
-            header: 'Background',
-            content: [
-            {
-                id: 1,
-                text: (
-                <>
-                    Resources in our society are not only limited but also unequally distributed.
-                    Traditional indicators used to measure this inequality, such as the{' '}
-                    <GlossaryTerm className="glossary-term gini" sectionId="intro">Gini Index</GlossaryTerm>,
-                    primarily focus on income differences. But income alone doesn't tell the full story.
-                </>
-                ),
-            },
-            {
-                id: 2,
-                text: (
-                <>
-                    Our quality of life is also influenced by other factors:
-                    How high are the costs of basic needs such as housing, energy, or mobility?
-                    What kind of infrastructure is available to us — in areas like education or healthcare — and how accessible is it?
-                    How do we manage the precious resource of time, which is often unevenly distributed,
-                    whether due to work obligations, unpaid care work, or other responsibilities?
-                </>
-                ),
-            },
-            {
-                id: 3,
-                text: (
-                <>
-                    These aspects are not independent of one another but are closely interconnected:
-                    If rent consumes a large portion of income, less remains for other areas of life.
-                    If long distances need to be covered, time is lost for rest, education, or social participation.
-                    Such inequalities not only affect individuals but have an impact on society as a whole:
-                    They can foster polarization, undermine social cohesion, and exacerbate global challenges such as climate change.
-                </>
-                ),
-            },
-            {
-                id: 4,
-                text: (
-                <>
-                    To fully assess quality of life, we must look beyond income alone:
-                    The interplay of income, expenses, infrastructure, and time use allows us to form a more complete picture of people’s lived realities.
-                </>
-                ),
-            },
-            {
-                id: 5,
-                text: (
-                <>
-                    This is exactly the aim of the <span className="boldText">Re:sI:Ze</span> project,
-                    which was carried out on behalf of the Vienna Chamber of Labour at the TU Wien’s Institute of Spatial Planning.
-                    On this website, you’ll find the results of the investigation into these dimensions in Austria.
-                </>
-                ),
-            },
-            {
-                id: 6,
-                text: <>Click the elements to learn more:</>,
-                className: 'click-information',
-            },
-            {
-                id: 7,
-                isChart: true,
-            }
-            ]
-        }
+        EN: { }
     };
 
     const section = translations[language] || translations.DE;

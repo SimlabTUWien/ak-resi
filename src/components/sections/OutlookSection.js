@@ -8,7 +8,7 @@ const OutlookSection = () => {
 
     const translations = {
         DE: {
-            header: 'Was nun?',
+            header: 'Fazit',
             content: [
                 {
                     id: 1,
