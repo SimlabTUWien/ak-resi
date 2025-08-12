@@ -66,7 +66,8 @@ export default function HeaderAppBar({ show }) {
     }
   };
 
-  const t = translations[language] || translations.DE;
+  // const t = translations[language] || translations.DE;
+  const t = translations.DE;
 
   const menuItems = [
     { text: t.residualIncome, section: "residualIncome", icon: <PaymentsIcon /> },
@@ -175,53 +176,72 @@ export default function HeaderAppBar({ show }) {
 
   return (
     <Slide direction="down" in={show} mountOnEnter unmountOnExit>
-      {/* <AppBar position="fixed" sx={{ backgroundColor: "#d2d5cb", color: "black" }}> */}
-      {/* <AppBar position="fixed" sx={{ backgroundColor: "#566060", color: "white" }}> */}
       <AppBar 
         position="fixed" 
         sx={{ 
-          // backgroundColor: "rgba(86, 96, 96, 0.6)",
           backgroundColor: backgroundColor,
           backdropFilter: "blur(10px)",
           color: "white", 
-          // color: "black", 
-          // boxShadow: "none"
         }}
       >
         <Container maxWidth="xl" sx={{ maxWidth: "1300px !important" }}>
           <Toolbar disableGutters>
 
             {/* Dektop View */}
-            <Box component="img" 
-              src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} 
-              alt={t.alt}
-              tabIndex={0}
-              onClick={toggleDesktopDrawer(true)}
+            <Box 
+              onClick={() => scrollToSection("intro")}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
-                  toggleDesktopDrawer(true)(e);
+                  e.preventDefault(); // prevents page from scrolling when space is pressed
+                  scrollToSection("intro");
                 }
               }}
+              tabIndex={0}
               sx={{
-                // display: { xs: 'none', md: 'flex' },  // changed from mid to large
+                display: { xs: 'none', lg: 'flex' },
+                alignItems: 'center',
+                mr: 6,
+                height: 42, 
+                cursor: 'pointer',
+                transition: "0.3s ease-in-out",
+                "&:hover": {
+                  filter: "brightness(0.92)",
+                }
+              }} 
+            >
+              <Box component="img" 
+              src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} 
+              alt={t.alt}
+              sx={{
                 display: { xs: 'none', lg: 'flex' }, 
                 mr: 1, 
                 height: 42, 
                 marginRight: 1,
-                cursor: 'pointer',
-                transition: "0.3s ease-in-out",
-                "&:hover": {
-                  filter: "brightness(0.95)",
-                }
               }} 
             />
+
+            <Typography variant="h5"
+              
+              sx={{
+                display: { xs: 'none', lg: 'flex' },
+                paddingTop: '10px',
+                fontSize: '2.6rem',
+                userSelect: "none",
+                WebkitTapHighlightColor: "transparent",
+              }}
+            >
+              Re:sI:Ze
+            </Typography>
+            </Box>
+
+            
 
             {/* Desktop Drawer */}
             <Drawer
               anchor="left"
               open={desktopDrawerOpen}
               onClose={toggleDesktopDrawer(false)}
-              sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ececec", width: 280 } }} // Adjust width if necessary
+              sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ececec", width: 280 } }}
             >
               <List>
                 {linkItems.map((item, index) => (
@@ -250,36 +270,17 @@ export default function HeaderAppBar({ show }) {
             </Drawer>
 
 
-            <Typography variant="h5"
-              onClick={() => scrollToSection("intro")}
-              sx={{
-                mr: 2,
-                display: { xs: 'none', lg: 'flex' },
-                // fontFamily: 'monospace',
-                // fontWeight: 500,
-                paddingTop: '10px',
-                fontSize: '2.6rem',
-                userSelect: "none",
-                WebkitTapHighlightColor: "transparent",
-                cursor: 'pointer',
-                transition: "0.3s ease-in-out",
-                "&:hover": {
-                  filter: "brightness(0.9)",
-                }
-              }}
-            >
-              Re:sI:Ze
-            </Typography>
+
 
             
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', lg: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, gap: 2, display: { xs: 'none', lg: 'flex' } }}>
               {menuItems.map((item, index) => (
                 <Button key={index}
                   onClick={() => scrollToSection(item.section)}
                   sx={{ 
                     my: 2, 
                     color: 'inherit',
-                    fontSize: 'large',
+                    fontSize: 'larger',
                     "&:hover": { backgroundColor: "rgba(0, 0, 0, 0.1)" }
                   }}
                 >
@@ -299,9 +300,7 @@ export default function HeaderAppBar({ show }) {
                 aria-haspopup="true"
                 onClick={toggleMobileDrawer(true)}
                 color="inherit"
-                // color="#566060"
                 sx={{ p: 0 }}
-                // sx={{ p: 0, fontSize: "1.6rem" }}
               >
                 <MenuIcon />
                 {/* <MenuIcon fontSize="inherit" /> */}
@@ -366,8 +365,6 @@ export default function HeaderAppBar({ show }) {
                 mr: 2, 
                 display: { xs: 'flex', lg: 'none' }, 
                 flexGrow: 1,
-                // fontFamily: 'monospace',
-                // fontWeight: 500,
                 paddingTop: '8px',
                 fontSize: '2rem',
                 margin: 0,
@@ -377,11 +374,33 @@ export default function HeaderAppBar({ show }) {
             >
               Re:sI:Ze
             </Typography>
-            
-            {/* Language Toggle */}
-            <Box sx={{ flexGrow: 0 }}   >
-              <LanguageToggle tabIndex={0}/>
+
+            {/* TODO: add Burger Menu here only if desktop */}
+            <Box 
+              sx={{ 
+                flexGrow: 0, 
+                display: { xs: 'none', lg: 'flex' }
+              }}   
+            >
+              <IconButton
+                size="large"
+                aria-label="menu button for toggel navigation items"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={toggleDesktopDrawer(true)}
+                color="inherit"
+                sx={{ p: 0 }}
+              >
+                <MenuIcon />
+              </IconButton>
             </Box>
+
+
+            {/* use this snippet if you want to change the language dynamically */}
+            {/* Language Toggle */}         
+            {/* <Box sx={{ flexGrow: 0 }}   >
+              <LanguageToggle tabIndex={0}/>
+            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
