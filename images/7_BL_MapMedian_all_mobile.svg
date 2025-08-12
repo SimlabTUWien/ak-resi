@@ -497,7 +497,7 @@
         <g id="b">
           <polygon id="sg-5" data-name="sg" points="1285.28 1289.11 1285.28 1138 1351.17 1138 1351.17 1289.11 1285.28 1289.11" style="fill: url(#_10_dpi_20_-4); stroke: #fff; stroke-miterlimit: 10;"/>
           <rect id="groß-5" data-name="groß" x="1176.78" y="1180.61" width="151.11" height="65.89" transform="translate(2465.89 -38.78) rotate(90)" style="fill: #a03b2e; stroke: #fff; stroke-miterlimit: 10;"/>
-          <rect id="mittel-5" data-name="mittel" x="1242.67" y="1029.5" width="151.11" height="65.89" transform="translate(2380.67 -255.78) rotate(90)" style="fill: #a03b2e; stroke: #fff; stroke-miterlimit: 10;"/>
+          <rect id="mittel-5" data-name="mittel" x="1242.67" y="1029.5" width="151.11" height="65.89" transform="translate(2380.67 -255.78) rotate(90)" style="fill: #d9503a; stroke: #fff; stroke-miterlimit: 10;"/>
           <rect id="klein-5" data-name="klein" x="1176.78" y="1029.5" width="151.11" height="65.89" transform="translate(2314.78 -189.89) rotate(90)" style="fill: #a03b2e; stroke: #fff; stroke-miterlimit: 10;"/>
           <polygon points="1285.28 986.89 1219.39 986.89 1219.39 1138 1219.39 1289.11 1285.28 1289.11 1351.17 1289.11 1351.17 1138 1351.17 986.89 1285.28 986.89" style="fill: none; stroke: #12100b; stroke-miterlimit: 10;"/>
         </g>
