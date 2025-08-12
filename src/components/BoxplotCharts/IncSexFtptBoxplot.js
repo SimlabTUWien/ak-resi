@@ -170,7 +170,7 @@ const IncSexFtptBoxplot = ({ altText }) => {
       };
   
       loadSVG();
-    }, [svgUrl, localizedDataMap, language]);
+    }, [svgUrl, localizedDataMap, language, altText]);
   
     return (
       <Box 

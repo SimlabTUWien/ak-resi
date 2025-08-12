@@ -117,7 +117,7 @@ const OutlookChart = ( {altText} ) => {
         }
       }
     });
-  }, []);
+  }, [altText]);
 
   return (
     <div style={{ textAlign: "center" }}>

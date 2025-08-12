@@ -226,7 +226,7 @@ const IncSexHhtypeBoxplot = ({ altText }) => {
       };
   
       loadSVG();
-    }, [svgUrl, localizedDataMap, language]);
+    }, [svgUrl, localizedDataMap, language, altText]);
   
     return (
       <Box sx={{ width: "100%", overflow: "hidden" }}>
