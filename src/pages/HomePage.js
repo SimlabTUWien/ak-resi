@@ -17,22 +17,17 @@ import "../styles/HomePage.css";
 
 export default function HomePage () {
     
-    const { language } = useLanguage();
-
     const translations = {
         DE: {
             title: "Perspektiven auf Ungleichheit in Österreich",
             subTitle: "Residualeinkommen, soziale Infrastruktur und Zeitverwendung",
-            contentInformation: "In den weiteren Teilen dieser Website werden nun Einblicke in alle diese Bereiche und deren Schnittstellen gegeben:"
+            contentInformation: "Die wichtigsten Erkenntnisse des Projekts findest du hier auf einen Blick. In den weiteren Teilen dieser Website werden Einblicke in all diese Bereiche und deren Schnittstellen gegeben:"
         },
-        EN: {
-            title: "Perspectives on Inequality in Austria",
-            subTitle: "Residual Income, Social Infrastructure and Time Usage",
-            contentInformation: "The following sections of this site offer insights into all of these areas and their intersections:"
-        }
+        EN: {}
     };
 
-    const t = translations[language] || translations.DE;
+    const { language } = useLanguage();
+    const t = translations[language];
 
     const [showFloatingButton, setShowFloatingButton] = useState(false);
 
@@ -55,11 +50,6 @@ export default function HomePage () {
             <section className="title-section" id="intro">
 
             <h1 className="title"> {t.title} </h1>
-            {/* <h3> {t.subTitle} </h3>
-
-            <div className='image-container logo-large'>
-                <img style={{width: '240px'}} src={`${process.env.PUBLIC_URL}/images/Logo_project_icons.png`} alt="showing the four core aspects of the project" />
-            </div> */}
             </section>
         </div>
 
@@ -72,6 +62,14 @@ export default function HomePage () {
             </section>
 
             <p className='paragraph content-information'> {t.contentInformation} </p>
+
+            {/* TODO: Dashboard */}
+
+            {/*             
+            <section id="overview">
+                <OverviewSection />
+            </section> 
+            */}
 
             <section id="income">
                 <IncomeSection />

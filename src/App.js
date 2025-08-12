@@ -7,9 +7,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import './styles/App.css';
 import theme from "./styles/theme.js";
 
-import { LanguageProvider } from "./context/LanguageContext.js";
+// import { LanguageProvider } from "./context/LanguageContext.js";
 import HeaderAppBar from "./components/HeaderAppBar";
-// import HomePage from "./pages/HomePage"; 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const Glossar = lazy(() => import("./pages/Glossar"));
 const Impressum = lazy(() => import("./pages/Impressum"));
@@ -20,12 +19,14 @@ const Dataprivacy = lazy(() => import("./pages/Dataprivacy"));
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline /> {/* Ensures consistent MUI styling */}
-      <LanguageProvider>
-        <Router>
-          <AppContent />
-        </Router>
-      </LanguageProvider>
+      {/* Ensures consistent MUI styling */}
+      <CssBaseline />
+        {/* Uncomment the LanguageProvider if you want to use language context */}
+        {/* <LanguageProvider>  */}
+          <Router>
+            <AppContent />
+          </Router>
+        {/* </LanguageProvider> */}
     </ThemeProvider>
   );
 }

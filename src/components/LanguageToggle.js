@@ -1,6 +1,4 @@
-import React from "react";
 import { Box, Typography } from "@mui/material";
-
 import { useLanguage } from "../context/LanguageContext";
 
 const LanguageToggle = () => {
