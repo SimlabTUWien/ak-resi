@@ -14,16 +14,12 @@ export default function HeaderSection() {
     DE: {
         title: "Perspektiven auf Ungleichheit in Österreich",
         subTitle: "Residualeinkommen, soziale Infrastruktur und Zeitverwendung",
-        alt: "Headerbild mit Darstellung einer städlichen Umgebung"
+        alt: "Headerbild mit Illustrierung einer städlichen Umgebung"
     },
-    EN: {
-        title: "Perspectives on Inequality in Austria",
-        subTitle: "Residual Income, Social Infrastructure and Time Usage",
-        alt: "Header image depicting an urban environment"
-    }
+    EN: {}
   };
 
-  const t = translations[language];
+  const t = translations[language] || translations.DE;
   
   const [hideIndicator, setHideIndicator] = useState(false);
 

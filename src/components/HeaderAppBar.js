@@ -28,7 +28,7 @@ import Diversity3Icon from '@mui/icons-material/Diversity3';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import DescriptionIcon from '@mui/icons-material/Description';
 import PrivacyTipIcon from '@mui/icons-material/PrivacyTip';
-import LanguageToggle from "./LanguageToggle";
+// import LanguageToggle from "./LanguageToggle";
 
 export default function HeaderAppBar({ show }) {
 
@@ -66,8 +66,7 @@ export default function HeaderAppBar({ show }) {
     }
   };
 
-  // const t = translations[language] || translations.DE;
-  const t = translations.DE;
+  const t = translations[language] || translations.DE;
 
   const menuItems = [
     { text: t.residualIncome, section: "residualIncome", icon: <PaymentsIcon /> },
@@ -95,14 +94,6 @@ export default function HeaderAppBar({ show }) {
   // }, []);
 
   const backgroundColor = "rgba(0,0,0,.4)"
-
-  // const backgroundColor = location.pathname === "/" 
-    // ?  scrollY < viewHeight
-    //   ? "rgba(0,0,0,.2)"
-    //   : "rgba(0,0,0,.35)"
-    // : "rgba(0,0,0,.35)"; 
-    //  //   : "rgba(0,0,0,.45)"
-    //  // : "rgba(0,0,0,.45)";
 
   useEffect(() => {
     if (pendingScrollTarget && location.pathname === "/") {
