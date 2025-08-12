@@ -72,7 +72,7 @@ const isTouchDevice = () => {
 const IncSexFtptBoxplot = ({ altText }) => {
 
     const { language } = useLanguage();
-    const svgUrl = `${process.env.PUBLIC_URL}/images/10_INC_SEX_FTPT_TU_${language.toUpperCase()}.svg`;
+    const svgUrl = `${process.env.PUBLIC_URL}/images/10_INC_SEX_FTPT_TU.svg`;
 
     const localizedDataMap = dataMap[language];
 

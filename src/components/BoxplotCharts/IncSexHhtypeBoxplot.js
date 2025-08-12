@@ -128,7 +128,7 @@ const isTouchDevice = () => {
 const IncSexHhtypeBoxplot = ({ altText }) => {
 
     const { language } = useLanguage();
-    const svgUrl = `${process.env.PUBLIC_URL}/images/11_INC_SEX_HHTYPE_TU_${language.toUpperCase()}.svg`;
+    const svgUrl = `${process.env.PUBLIC_URL}/images/11_INC_SEX_HHTYPE_TU.svg`;
 
     const localizedDataMap = dataMap[language];
 
