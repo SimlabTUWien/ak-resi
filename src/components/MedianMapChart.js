@@ -5,21 +5,6 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
 
-// const langMap = {
-//   de: {
-//     klein: { de: "unter 2500 EW"},
-//     mittel: { de: "bis zu 10.000 EW"},
-//     groß: { de: "bis zu 100.000 EW"},
-//     sg: { de: "über 100.000 EW"}
-//   },
-//   en: {
-//     klein: { en: "under 2,500 inhabitants" },
-//     mittel: { en: "up to 10,000 inhabitants" },
-//     groß: { en: "up to 100,000 inhabitants" },
-//     sg: { en: "over 100,000 inhabitants" }
-//   }
-// }
-
 const dataMap = {
   b : {
     bl: "Burgenland",
@@ -270,8 +255,8 @@ const MedianMapChart = ({ mode, altText }) => {
   const isMobile = parentWidth < 820;
 
   const svgUrl = mode === "all"
-    ? `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_${isMobile ? "all_mobile" : "all"}_DE.svg`
-    : `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_${isMobile ? "onlyRent_mobile" : "onlyRent"}_DE.svg`;
+    ? `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_${isMobile ? "all_mobile" : "all"}.svg`
+    : `${process.env.PUBLIC_URL}/images/7_BL_MapMedian_${isMobile ? "onlyRent_mobile" : "onlyRent"}.svg`;
 
 
   const initialId = Object.keys(textinfoMap)[0]; // Get first key from textMap
@@ -364,6 +349,17 @@ const MedianMapChart = ({ mode, altText }) => {
             setSelectedInfo(textinfoMap[name]);
           }
         });
+
+        // === BL-Box click behavior ===
+        svg.select("g#bl-boxes")
+          .selectAll("g")
+          .style("cursor", "pointer")
+          .on("click", function () {
+            const id = d3.select(this).attr("id");
+            if (textinfoMap[id]) {
+              setSelectedInfo(textinfoMap[id]);
+            }
+          });
 
         // === Rect and Polygon Hover Behavior ===
         svg.selectAll("g").each(function () {
@@ -517,7 +513,7 @@ const MedianMapChart = ({ mode, altText }) => {
       isMounted = false;
       d3.selectAll(".d3-tooltip-mm").remove();
     };
-  }, [mode, svgUrl]);
+  }, [mode, svgUrl, altText]);
   
   return (
     <div style={{ textAlign: "center" }} ref={parentRef}>
