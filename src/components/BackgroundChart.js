@@ -12,7 +12,7 @@ const textMap = {
     elements: {
        "einkommen": {
           title: "Einkommen",
-          text: "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, selbständiger Arbeit, Pensionen oder Sozialleistungen. In Österreich liegt das mittlere Haushaltseinkommen bei 2.632€, was bedeutet, dass 50 % der Haushalte über und 50 % unter diesem Betrag pro Monat zur Verfügung haben.",
+          text: "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, selbständiger Arbeit, Pensionen oder Sozialleistungen. In Österreich liegt das mittlere Haushaltseinkommen (nach Steuern) bei 2.632€, was bedeutet, dass 50 % der Haushalte über und 50 % unter diesem Betrag pro Monat zur Verfügung haben.",
           // color: "#e2e0e1"
           color: "#BDBDBD"
         },
@@ -38,7 +38,7 @@ const textMap = {
         },
         "notwendige_ausgaben_und_SI": {
           title: "Notwendige Ausgaben und SI",
-          text: "Öffentlich zugängliche und kostengünstige Bildungs- und Gesundheitseinrichtungen entlasten Haushalte finanziell, indem sie notwendige Ausgaben reduzieren. Sind solche Einrichtungen jedoch schwer erreichbar, steigen die Mobilitätskosten, oder Haushalte müssen auf teure private Angebote wie Ärzt:innen ohne Kassenvertrag ausweichen.",
+          text: "Öffentlich zugängliche und kostengünstige Bildungs- und Gesundheitseinrichtungen entlasten Haushalte finanziell, indem sie notwendige Ausgaben reduzieren. Sind solche Einrichtungen jedoch schwer erreichbar, steigen die Mobilitätskosten, oder Haushalte müssen auf teure private Angebote etwa von Ärzt:innen ohne Kassenvertrag ausweichen.",
           color: "#d2d5cb"
         },
         "zeit_und_infrastruktur": {

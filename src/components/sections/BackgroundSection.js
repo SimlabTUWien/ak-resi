@@ -50,7 +50,7 @@ const BackgroundSection = () => {
                     text: (
                     <>
                         Für eine umfassende Betrachtung der Lebensqualität müssen wir daher über das Einkommen hinausschauen:
-                        das Zusammenspiel von Einkommen, notwendigen Ausgaben, Infrastruktur und Zeitverwendung erlaubt ein vollständigeres Bild der Lebenswirklichkeit zu zeichnen.
+                        das Zusammenspiel von Einkommen, <GlossaryTerm className="glossary-term expenditure" sectionId="intro">notwendigen Ausgaben</GlossaryTerm>, Infrastruktur und Zeitverwendung erlaubt ein vollständigeres Bild der Lebenswirklichkeit zu zeichnen.
                     </>
                     ),
                 },
