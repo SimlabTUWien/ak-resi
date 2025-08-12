@@ -69,13 +69,13 @@ export default function HeaderAppBar({ show }) {
   const t = translations[language] || translations.DE;
 
   const menuItems = [
+    { text: t.home, link: "/", section: "intro", icon: <HomeIcon /> },
     { text: t.residualIncome, section: "residualIncome", icon: <PaymentsIcon /> },
     { text: t.socialInfrastructure, section: "social-infrastructure", icon: <RoomIcon /> },
     { text: t.timeUsage, section: "time-usage", icon: <AccessTimeIcon /> },
   ];
   
   const linkItems = [
-    { text: t.home, link: "/", section: "intro", icon: <HomeIcon /> },
     { text: t.glossary, link: "/glossar", icon: <ImportContactsIcon /> },
     { text: t.team, link: "/team", icon: <Diversity3Icon /> },
     { text: t.imprint, link: "/impressum", icon: <DescriptionIcon /> },
@@ -232,32 +232,43 @@ export default function HeaderAppBar({ show }) {
               anchor="left"
               open={desktopDrawerOpen}
               onClose={toggleDesktopDrawer(false)}
-              sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ececec", width: 280 } }}
+              sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ececec", width: 320 } }}
             >
               <List>
-                {linkItems.map((item, index) => (
-                  <ListItem key={index} disablePadding>
-                    <ListItemButton
-                      onClick={() => {
-                        if (item.link === "/" && item.section === "intro") {
-                          scrollToSection("intro");
-                        } else {
-                          navigateToLink(item.link);
-                        }
-                      }}
-                    >
-                      <ListItemIcon>{item.icon}</ListItemIcon>
-                      <ListItemText 
-                        primary={item.text}
-                        sx={{
-                          textAlign: "left",
-                          hyphens: "none"
+                  {menuItems.map((item, index) => (
+                    <ListItem key={index} disablePadding>
+                      <ListItemButton onClick={() => scrollToSection(item.section)}>
+                        <ListItemIcon>{item.icon}</ListItemIcon>
+                        <ListItemText
+                          primary={item.text}
+                          sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
+                        />
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+
+                  <Divider sx={{ my: 1 }} />
+
+                  {linkItems.map((item, index) => (
+                    <ListItem key={index} disablePadding>
+                      <ListItemButton
+                        onClick={() => {
+                          if (item.link === "/" && item.section === "intro") {
+                            scrollToSection("intro");
+                          } else {
+                            navigateToLink(item.link);
+                          }
                         }}
-                      />
-                    </ListItemButton>
-                  </ListItem>
-                ))}
-              </List>
+                      >
+                        <ListItemIcon>{item.icon}</ListItemIcon>
+                        <ListItemText
+                          primary={item.text}
+                          sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
+                        />
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
             </Drawer>
 
 
@@ -265,7 +276,7 @@ export default function HeaderAppBar({ show }) {
 
             
             <Box sx={{ flexGrow: 1, gap: 2, display: { xs: 'none', lg: 'flex' } }}>
-              {menuItems.map((item, index) => (
+              {menuItems.slice(1).map((item, index) => (
                 <Button key={index}
                   onClick={() => scrollToSection(item.section)}
                   sx={{ 
