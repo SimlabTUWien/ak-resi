@@ -109,6 +109,12 @@ img {
   font-variation-settings: "slnt" 0, "wdth" 100, "wght" 500;
 }
 
+.source {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0 auto 10px;
+}
+
 
 @media (max-width: 1200px) {
   .title-wrapper {

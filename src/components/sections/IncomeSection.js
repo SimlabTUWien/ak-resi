@@ -56,7 +56,8 @@ const translations = {
                 {
                     id: 4,
                     isChart: true,
-                    alt: "Diagramm mit 5 Balken, die das mittlere Haushaltseinkommen pro Einkommensquintil in Österreich darstellen."
+                    alt: "Diagramm mit 5 Balken, die das mittlere Haushaltseinkommen pro Einkommensquintil in Österreich darstellen.",
+                    source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria",
                 },
                                 {
                     id: 5,
@@ -94,6 +95,7 @@ const IncomeSection = () => {
                 ) : item.isChart ? (
                     <div key={item.id} className="image-container median-hh-income-container">
                         <img src={`${process.env.PUBLIC_URL}/images/00_Median_HH_Income_Personen_DE.png`} alt={`${item.alt}`} />
+                        <p className='source'>{item.source}</p>
                     </div>
                 ) : item.isAccordion ? (
                     <div key={item.id} style={{ margin: '24px 0' }}>
