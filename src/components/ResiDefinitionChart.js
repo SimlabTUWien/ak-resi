@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-const svgUrl = `${process.env.PUBLIC_URL}/images/Abb2_ResiDefinition_DE_V4.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/2_ResiDefinition.svg`;
 
 const ResiDefinitionChart = ({ altText }) => {
   const svgRef = useRef(null);
@@ -20,7 +20,7 @@ const ResiDefinitionChart = ({ altText }) => {
         svg.selectAll(".income-info, .expenditure-info").style("opacity", 0);
       }
     });
-  }, []);
+  }, [altText]);
 
   useEffect(() => {
     const handleScroll = () => {
