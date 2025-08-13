@@ -115,6 +115,10 @@ img {
   text-align: end;
 }
 
+.hint {
+  font-size: 0.9rem;
+}
+
 @media (max-width: 1300px) {
   .content-wrapper {
     /* width: calc(100% - 40px); Full width minus 20px margins on each side */

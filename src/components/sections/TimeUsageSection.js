@@ -1,6 +1,6 @@
 import { useLanguage } from '../../context/LanguageContext';
 
-import {Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
+import {Accordion, AccordionSummary, AccordionDetails, Box, Typography } from '@mui/material';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import GlossaryTerm from '../GlossaryTerm';
@@ -42,10 +42,10 @@ const translations = {
             },
             {
                 id: 3,
-                accordionHeader: "Wie misst man die Zeit der Österreicher:innen?",
+                accordionHeader: "Wie misst man die Zeit der Menschen in Österreich?",
                 accordionText: (
                 <>
-                    Die <GlossaryTerm className="glossary-term timeUsage" sectionId="time-usage">Zeitverwendungserhebung</GlossaryTerm> (ZVE) ist eine statistische Erhebung, die detailliert erfasst, 
+                    Die <GlossaryTerm className="glossary-term timeUsage" sectionId="time-usage">Zeitverwendungserhebung</GlossaryTerm> 2021/22 (ZVE) ist eine statistische Erhebung der Statistik Austria, die detailliert erfasst, 
                     wie Menschen in Österreich ihren Tag verbringen. Insgesamt nahmen 4.342 Haushalte in Österreich an der Erhebung teil, 
                     wobei alle Haushaltsmitglieder ab 10 Jahren an einem Wochentag und einem Wochenendtag ein Zeittagebuch ausfüllten, 
                     in dem sie ihre Tätigkeiten im 10-Minuten-Takt festhielten. Die Erhebung wurde im Zeitraum von Oktober 2021 bis Dezember 2022 durchgeführt. 
@@ -62,13 +62,25 @@ const translations = {
                 text: ( 
                 <> 
                     Die folgenden Analysen zeigen unterschiedliche Dimensionen der Zeitverteilung in österreichischen Haushalten, mit Schwerpunkt auf Geschlechtsunterschieden<sup style={{fontSize: '0.7rem'}}>1</sup> sowie entlang sozio-ökonomischen und räumlichen Merkmalen. <br/>
-                    <sup style={{fontSize: '0.7rem'}}>1</sup> <span style={{fontSize: '0.9rem'}}>Anmerkung: Aufgrund der geringen Anzahl gleichgeschlechtlicher Haushalte in der Stichprobe sind hierzu keine gesicherten Aussagen möglich.</span>
-
+                    <sup style={{fontSize: '0.7rem'}}>1</sup> <span className="hint">Anmerkung: Aufgrund der geringen Anzahl gleichgeschlechtlicher Haushalte in der Stichprobe sind hierzu keine gesicherten Aussagen möglich.</span>
                 </>
                 ),
             },
             {
                 id: 5,
+                text: ( 
+                <span className="hint"> 
+                    Limitationen: Da die <GlossaryTerm className="glossary-term consumption" sectionId="time-usage">Konsumerhebung</GlossaryTerm> 2019/2020 
+                    und die <GlossaryTerm className="glossary-term timeUsage" sectionId="time-usage">Zeitverwendungserhebung</GlossaryTerm> 2021/22 
+                    auf unterschiedlichen Stichproben basieren, ist kein direktes Matching der Datensätze möglich. Das bedeutet, es lassen sich keine präzisen Aussagen auf Haushaltsebene treffen, 
+                    etwa darüber, wie viel einzelne Haushalte für <GlossaryTerm className="glossary-term expenditure" sectionId="time-usage">notwendige Ausgaben</GlossaryTerm> aufwenden, 
+                    welches <GlossaryTerm className="glossary-term residualIncome" sectionId="time-usage">Residualeinkommen</GlossaryTerm> ihnen bleibt und wie sie ihre Zeit verwenden. 
+                    Trotzdem sind diese Dimensionen – Konsum, verfügbares Einkommen und Zeit – eng miteinander verknüpft. Es ist daher sinnvoll und wichtig, sie zumindest auf aggregierter Ebene gemeinsam zu betrachten, um ein umfassenderes Bild sozialer Lebenslagen zu gewinnen.
+                </span>
+                ),
+            },
+            {
+                id: 6,
                 accordionHeader: "Wie liest man einen Boxplot?",
                 accordionText: (
                 <>
@@ -88,17 +100,17 @@ const translations = {
                 alt: "Beispielbild eines Boxplots"
             },
             {
-                id: 6,
+                id: 7,
                 text: <> Zeitverwendung von Männern und Frauen (21-64 Jahre) für Erwerbsarbeit und unbezahlter Arbeit </>,
                 isContentHeader: true,
             },
             {
-                id: 7,
+                id: 8,
                 text: <> Bildung: Bildung verändert viel – aber nicht alles </>,
                 isContentSubHeader: true,
             },
             {
-                id: 8,
+                id: 9,
                 text: ( 
                 <> 
                     Unabhängig vom Bildungsgrad zeigt sich ein klares Muster: Frauen übernehmen mehr Care-Arbeit als Männer. 
@@ -107,7 +119,7 @@ const translations = {
                 ),
             },
             {
-                id: 9,
+                id: 10,
                 text: ( 
                 <> 
                     Während sich die Aufteilung zwischen Erwerbsarbeit und Care-Arbeit bei Männern kaum verändert, 
@@ -117,7 +129,7 @@ const translations = {
                 ),
             },
             {
-                id: 10,
+                id: 11,
                 text: ( 
                 <> 
                     Warum ist das so? Eine mögliche Erklärung liegt in den Arbeitsmarktchancen höher gebildeter Frauen. 
@@ -127,7 +139,7 @@ const translations = {
                 ),
             },
             {
-                id: 11,
+                id: 12,
                 text: ( 
                 <> 
                     Trotz dieses Bildungsgradientens bleibt die Grundtendenz bestehen: 
@@ -138,19 +150,19 @@ const translations = {
                 ),
             },
             {
-                id: 12,
+                id: 13,
                 isChart: true,
                 itemName: 'edu-boxplot',
-                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Bildung"
-                // altEN: "box plot visualizing income based on sex and education"
+                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Bildung",
+                source: "Datenquelle: Zeitverwendungserhebung 2021/2022, Statistik Austria"
             },
             {
-                id: 13,
+                id: 14,
                 text: <> Vollzeit-/Teilzeitarbeit: Teilzeit ist nicht gleich Teilzeit – die doppelte Belastung von Frauen </>,
                 isContentSubHeader: true,
             },
             {
-                id: 14,
+                id: 15,
                 text: ( 
                 <> 
                     Frauen, die Teilzeit arbeiten, übernehmen fast doppelt so viel Care-Arbeit wie Frauen, die Vollzeit arbeiten. 
@@ -160,7 +172,7 @@ const translations = {
                 ),
             },
             {
-                id: 15,
+                id: 16,
                 text: ( 
                 <> 
                     Besonders auffällig ist der Unterschied zwischen teilzeitbeschäftigten Frauen und Männern: 
@@ -171,7 +183,7 @@ const translations = {
                 ),
             },
             {
-                id: 16,
+                id: 17,
                 text: ( 
                 <> 
                     Das hat weitreichende Folgen: Teilzeit verringert das Erwerbseinkommen, die Karrierechancen und langfristig auch die Pensionsansprüche. 
@@ -182,19 +194,19 @@ const translations = {
                 ),
             },
             {
-                id: 17,
+                id: 18,
                 isChart: true,
                 itemName: 'ftpt-boxplot',
-                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Beschäftigungsausmaß"
-                // altEN: "box plot visualizing income based on sex and extend of employment"
+                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Beschäftigungsausmaß",
+                source: "Datenquelle: Zeitverwendungserhebung 2021/2022, Statistik Austria"
             },
             {
-                id: 18,
+                id: 19,
                 text: <> Haushaltstyp: Wenn aus einem Haushalt eine Familie wird – wie sich Arbeitsteilung verändert </>,
                 isContentSubHeader: true,
             },
             {
-                id: 19,
+                id: 20,
                 text: ( 
                 <> 
                     Bei Single-Frauen und -Männern gibt es kaum Unterschiede in der Aufteilung zwischen Erwerbsarbeit und unbezahlter Care-Arbeit. 
@@ -205,7 +217,7 @@ const translations = {
                 ),
             },
             {
-                id: 20,
+                id: 21,
                 text: ( 
                 <> 
                     Besonders deutlich wird die Ungleichverteilung, sobald Kinder ins Spiel kommen. 
@@ -216,7 +228,7 @@ const translations = {
                 ),
             },
             {
-                id: 21,
+                id: 22,
                 text: ( 
                 <> 
                     Je mehr Kinder im Haushalt leben, desto mehr verstärkt sich dieses Muster. 
@@ -227,7 +239,7 @@ const translations = {
                 ),
             },
             {
-                id: 22,
+                id: 23,
                 text: ( 
                 <> 
                     Um diese Ungleichheiten zu reduzieren, sind gezielte Maßnahmen erforderlich: 
@@ -237,19 +249,29 @@ const translations = {
                 ),
             },
             {
-                id: 23,
+                id: 24,
                 isChart: true,
                 itemName: 'hhtype-boxplot',
-                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Haushaltstyp"
-                // altEN: "box plot visualizing income based on sex and household type"
+                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Haushaltstyp",
+                source: "Datenquelle: Zeitverwendungserhebung 2021/2022, Statistik Austria"
             },
             {
-                id: 24,
+                id: 25,
+                text: 
+                <span className="hint"> 
+                    Hinweis: In der Statistik gelten alle im Haushalt lebenden Personen ab 15 Jahren als Erwachsene. Das erklärt zum Beispiel, 
+                    warum in Haushalten ohne Kinder unter 15 Jahren, aber mit drei oder mehr Erwachsenen, dennoch ein hoher Anteil an Care-Arbeit bei Frauen erfasst wird. 
+                    Ebenso zeigt sich ein Anstieg der Care-Arbeit, wenn ein Kind unter 15 Jahrenund zusätzlich weitere Personen über 15 Jahren im Haushalt leben – etwa ältere Kinder oder pflegebedürftige Angehörige.
+                </span>,
+
+            },
+            {
+                id: 26,
                 text: <> Gemeindegrößenklasse: Stadt oder Land? Wie der Wohnort die Arbeitsteilung beeinflusst </>,
                 isContentSubHeader: true,
             },
             {
-                id: 25,
+                id: 27,
                 text: ( 
                 <> 
                     Schaut man sich die Zeitverwendung in unterschiedlichen Gemeindegrößen an, zeigt sich ein klares Muster: 
@@ -259,7 +281,7 @@ const translations = {
                 ),
             },
             {
-                id: 26,
+                id: 28,
                 text: ( 
                 <> 
                     Bei Männern hingegen bleibt die Verteilung nahezu unverändert – egal, ob sie in einer kleinen Landgemeinde oder in einer Großstadt leben. 
@@ -268,22 +290,22 @@ const translations = {
                 ),
             },
             {
-                id: 27,
+                id: 29,
                 isChart: true,
                 itemName: 'gemgr-boxplot',
-                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Gemeindegröße"
-                // altEN: "box plot visualizing income based on sex and community size"
-            },
-            {
-                id: 29,
-                text: <> Erreichbarkeit von sozialer Infrastruktur: So beeinflusst sie die unbezahlte Arbeit </>,
-                isContentSubHeader: true,
+                alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und Gemeindegröße",
+                source: "Datenquelle: Zeitverwendungserhebung 2021/2022, Statistik Austria"
             },
             {
                 id: 30,
+                text: <> Zugänglichkeit von sozialer Infrastruktur: So beeinflusst sie die unbezahlte Arbeit </>,
+                isContentSubHeader: true,
+            },
+            {
+                id: 31,
                 text: ( 
                 <> 
-                    Wie stark die Verfügbarkeit und Erreichbarkeit <GlossaryTerm className="glossary-term si" sectionId="time-usage">sozialer Infrastruktur</GlossaryTerm> die Verteilung unbezahlter Arbeit beeinflusst, 
+                    Wie stark die Verfügbarkeit und Erreichbarkeit, also ihre Zugänglichkeit, <GlossaryTerm className="glossary-term si" sectionId="time-usage">sozialer Infrastruktur</GlossaryTerm> die Verteilung unbezahlter Arbeit beeinflusst, 
                     wird besonders deutlich beim Blick auf die Zeitverwendung: In Gemeinden mit schlechter Infrastruktur zeigen sich kaum Unterschiede bei Männern – 
                     ihr Anteil an unbezahlter Arbeit bleibt relativ konstant. Bei Frauen hingegen ist der Effekt deutlich spürbar: 
                     In schlecht versorgten Gemeinden leisten sie im Durchschnitt über 1,5 Stunden mehr unbezahlte Arbeit pro Tag als Frauen in gut ausgestatteten Regionen.
@@ -291,7 +313,7 @@ const translations = {
                 ),
             },
             {
-                id: 31,
+                id: 32,
                 text: ( 
                 <> 
                     Diese Zahlen verdeutlichen, dass in ländlichen oder infrastrukturschwachen Gemeinden viele Betreuungs- und Versorgungsaufgaben – 
@@ -302,11 +324,11 @@ const translations = {
                 ),
             },
             {
-                id: 32,
+                id: 33,
                 isChart: true,
                 itemName: 'si-boxplot',
                 alt: "Boxplot zur Darstellung des Einkommens basierend auf Geschlecht und sozialer Infrastrukturversorgung",
-                // altEN: "box plot visualizing income based on sex and social infrastructure supply",
+                source: "Datenquelle: Zeitverwendungserhebung 2021/2022, Statistik Austria",
                 text: ( 
                 <>
                     <span className="boldText">Infrastrukturversorgung: </span> Schlecht: ein Indikatorwert unter 3, mittel: ein Indikatorwert zwischen 3 und &lt; 5, gut: ein Indikatorwert zwischen 5 und &lt; 7, sehr gut: ein Indikatorwert über 7.
@@ -349,26 +371,93 @@ const TimeUsageSection = () => {
             switch (item.itemName) {
                 case 'edu-boxplot':
                     return (
-                        <IncSexEduBoxplot key={item.id} altText={item.alt}/>
+                        <Box 
+                            key={item.id}
+                            sx={{
+                                background: "#f4f4f4",
+                                padding: 2,
+                                borderRadius: 1,
+                                boxShadow: 1,
+                                fontSize: '14px',
+                                marginTop: 3,
+                                marginBottom: 3,
+                            }}
+                        >
+                            <IncSexEduBoxplot  altText={item.alt}/>
+                            <p className='source' style={{margin: "6px auto 0"}}>{item.source}</p>
+                        </Box>
                     );
                 case 'ftpt-boxplot':
                     return (
-                        <IncSexFtptBoxplot key={item.id} altText={item.alt}/>
+                        <Box 
+                            key={item.id}
+                            sx={{
+                                background: "#f4f4f4",
+                                padding: 2,
+                                borderRadius: 1,
+                                boxShadow: 1,
+                                fontSize: '14px',
+                                marginTop: 3,
+                                marginBottom: 3,
+                            }}
+                        >
+                            <IncSexFtptBoxplot altText={item.alt}/>
+                            <p className='source' style={{margin: "6px auto 0"}}>{item.source}</p>
+                        </Box>
                     );
                 case 'hhtype-boxplot':
                     return (
-                        <IncSexHhtypeBoxplot key={item.id} altText={item.alt}/>
+                        <Box 
+                            key={item.id}
+                            sx={{
+                                background: "#f4f4f4",
+                                padding: 2,
+                                borderRadius: 1,
+                                boxShadow: 1,
+                                fontSize: '14px',
+                                marginTop: 3,
+                                marginBottom: 3,
+                            }}
+                        >
+                            <IncSexHhtypeBoxplot altText={item.alt}/>
+                            <p className='source' style={{margin: "16px auto 0"}}>{item.source}</p>
+                        </Box>
                     );
                 case 'gemgr-boxplot':
                     return (
-                        <IncSexGemgroBoxplot key={item.id} altText={item.alt}/>
+                        <Box 
+                            key={item.id}
+                            sx={{
+                                background: "#f4f4f4",
+                                padding: 2,
+                                borderRadius: 1,
+                                boxShadow: 1,
+                                fontSize: '14px',
+                                marginTop: 3,
+                                marginBottom: 3,
+                            }}
+                        >
+                            <IncSexGemgroBoxplot altText={item.alt}/>
+                            <p className='source' style={{margin: "6px auto 0"}}>{item.source}</p>
+                        </Box>
                     );
                 default:
                     return (
-                        <div key={item.id}>
+                        <Box 
+                            key={item.id}
+                            sx={{
+                                background: "#f4f4f4",
+                                padding: 2,
+                                borderRadius: 1,
+                                boxShadow: 1,
+                                fontSize: '14px',
+                                marginTop: 3
+                            }}
+                        >
                             <IncSexSiBoxplot altText={item.alt}/>
+                            <p className='source' style={{margin: "4px auto 24px"}}>{item.source}</p>
                             <span style={{fontSize: '0.9rem'}}>{item.text}</span>
-                        </div>
+                        </Box>
                     );
             }
 

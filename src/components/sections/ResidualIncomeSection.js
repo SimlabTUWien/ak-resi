@@ -49,7 +49,7 @@ const translations = {
                     Das Residualeinkommen kann daher nur für diese Haushalte berechnet werden, weshalb die Ergebnisse auf der Ebene von Personengruppen, Regionen und Haushaltstypen ausgewertet werden.
                     <br/>
                     <br/>
-                    Hinweis: Kreditrückzahlungen für Wohneigentum können in der Analyse nicht berücksichtigt werden, da sie in der Konsumerhebung 2019/2020 nicht erfasst sind.
+                    <span className="hint">Hinweis: Kreditrückzahlungen für Wohneigentum können in der Analyse nicht berücksichtigt werden, da sie in der Konsumerhebung 2019/2020 nicht erfasst sind.</span>
                 </>
                 ),
                 isAccordion: true,
@@ -159,12 +159,12 @@ const translations = {
             {
                 id: 13,
                 text: 
-                <> 
+                <span className="hint"> 
                     Hinweis: Beim Vergleich von Medianeinkommen, Medianausgaben und medianem <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> (wie in der Tabelle berechnet) ist zu beachten, 
                     dass Medianeinkommen – Medianausgaben ≠ Medianresidualeinkommen. Das liegt daran, dass es sich jeweils um getrennt berechnete <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Medianwerte</GlossaryTerm> über 
                     alle Haushalte einer Gruppe handelt. Das Residualeinkommen eines Haushalts ergibt sich zwar rechnerisch aus Einkommen minus Ausgaben, 
                     aber der Median des Residualeinkommens ist nicht identisch mit der Differenz der beiden anderen Mediane, weil es sich um unterschiedliche Verteilungen handelt.
-                </>,
+                </span>,
             },
             {
                 id: 14,
