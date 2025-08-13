@@ -12,7 +12,7 @@ const textMap = {
     elements: {
        "einkommen": {
           title: "Einkommen",
-          text: "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, selbständiger Arbeit, Pensionen oder Sozialleistungen. In Österreich liegt das mittlere Haushaltseinkommen (nach Steuern) bei 2.632€, was bedeutet, dass 50 % der Haushalte über und 50 % unter diesem Betrag pro Monat zur Verfügung haben.",
+          text: "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, selbständiger Arbeit, Pensionen oder Sozialleistungen. In Österreich liegt das mittlere Haushaltseinkommen (nach Steuern) bei 2.632 €, was bedeutet, dass 50 % der Haushalte über und 50 % unter diesem Betrag pro Monat zur Verfügung haben.",
           // color: "#e2e0e1"
           color: "#BDBDBD"
         },

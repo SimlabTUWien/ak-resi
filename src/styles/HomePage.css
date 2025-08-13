@@ -188,7 +188,7 @@ label {
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  margin: 0 0 40px;
+  margin: 0 0 12px;
 
   div {
     flex: 1;

@@ -188,15 +188,15 @@ const dataMap = {
 const textinfoMap = {
   "b": {
     title: "Burgenland",
-    text: "Im Burgenland liegt das mediane Residualeinkommen der Haushalte bei 1.777 €. In Eisenstadt überschreitet es mit knapp über 1.900 € den Landesdurchschnitt. Am niedrigsten ist das Einkommen in Gemeinden mit 2.500 bis 10.000 Einwohner:innen – dort beträgt der Median etwas über 1.600 €. In den kleinsten Gemeinden (unter 2.500 Einwohner:innen) liegt es mit 1.821 € leicht unter dem Wert von Eisenstadt."
+    text: "Im Burgenland liegt das Residualeinkommen der Haushalte bei 1.777 €. In Eisenstadt überschreitet es mit knapp über 1.900 € den Landesdurchschnitt. Am niedrigsten ist das Einkommen in Gemeinden mit 2.500 bis 10.000 Einwohner:innen – dort beträgt der Median etwas über 1.600 €. In den kleinsten Gemeinden (unter 2.500 Einwohner:innen) liegt es mit 1.821 € leicht unter dem Wert von Eisenstadt."
   },
   "k": {
     title: "Kärnten",
-    text: "In Klagenfurt beträgt das mittlere Residualeinkommen rund 1.670 €. Den höchsten Medianwert verzeichnen Gemeinden mit 10.000 bis 100.000 Einwohner:innen mit rund 1.820 €. Die niedrigsten Einkommen finden sich in den kleinsten Gemeinden unter 2.500 Einwohner:innen."
+    text: "In Klagenfurt beträgt das mittlere Residualeinkommen rund 1.670 €. Den höchsten Wert verzeichnen Gemeinden mit 10.000 bis 100.000 Einwohner:innen mit rund 1.820 €. Die niedrigsten Einkommen finden sich in den kleinsten Gemeinden unter 2.500 Einwohner:innen."
   },
   "noe": {
     title: "Niederösterreich",
-    text: "Die höchsten Residualeinkommen in Niederösterreich, inklusive St. Pölten, werden in größeren Gemeinden erzielt – mit etwas über 2.100 €. Knapp darunter liegen die kleinsten Gemeinden, während mittlere Gemeinden rund 1.940 € erreichen. Insgesamt zeigen sich hier nur geringe Unterschiede zwischen den Gemeindetypen."
+    text: "Die höchsten Residualeinkommen in Niederösterreich werden in größeren Gemeinden, inklusive St. Pölten, erzielt – mit etwas über 2.100 €. Knapp darunter liegen die kleinsten Gemeinden, während mittlere Gemeinden rund 1.940 € erreichen. Insgesamt zeigen sich hier nur geringe Unterschiede zwischen den Gemeindetypen."
   },
   "ooe": {
     title: "Oberösterreich",

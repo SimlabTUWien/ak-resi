@@ -42,11 +42,11 @@ const translations = {
                 accordionText: ( 
                 <>  
                     Zur Berechnung der <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> werden die Abgestimmte Lohn- und Einkommensteuerstatistik (AEST) 
-                    2019 und 2020 und die <GlossaryTerm className="glossary-term consumption" sectionId="residualIncome">Konsumerhebung</GlossaryTerm> (2019-2020) verwendet. 
+                    2019 und 2020 und die <GlossaryTerm className="glossary-term consumption" sectionId="residualIncome">Konsumerhebung</GlossaryTerm> (2019-2020) der Statistik Austria verwendet. 
                     Über eine pseudonymisierte ID können beide Erhebungen verknüpft und Personen eindeutig Haushalten zugeordnet werden. 
                     Während für alle Personen in Österreich mit steuerrelevantem Einkommen Informationen in der AEST vorliegen, 
                     handelt es sich bei der Konsumerhebung um eine repräsentative Stichprobenerhebung, die die detaillierten Ausgaben von 6.873 Haushalte erfasst und kategorisiert. 
-                    Das verfügbare Einkommen kann daher nur für diese Haushalte berechnet werden, weshalb die Ergebnisse auf der Ebene von Personengruppen, Regionen und Haushaltstypen ausgewertet werden.
+                    Das Residualeinkommen kann daher nur für diese Haushalte berechnet werden, weshalb die Ergebnisse auf der Ebene von Personengruppen, Regionen und Haushaltstypen ausgewertet werden.
                     <br/>
                     <br/>
                     Hinweis: Kreditrückzahlungen für Wohneigentum können in der Analyse nicht berücksichtigt werden, da sie in der Konsumerhebung 2019/2020 nicht erfasst sind.
@@ -60,7 +60,7 @@ const translations = {
                 accordionHeader: "Was sind notwendige Ausgaben?",
                 accordionText: ( 
                 <>  
-                    Im Rahmen des Projekts werden notwendige Ausgaben als jene Aufwendungen definiert, die zur Sicherung grundlegender Lebensbedingungen erforderlich sind. 
+                    Im Rahmen des Projekts werden <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendige Ausgaben</GlossaryTerm> als jene Aufwendungen definiert, die zur Sicherung grundlegender Lebensbedingungen erforderlich sind. 
                     Dazu zählen Nahrung, Wohnen, Energie, Bildung und Gesundheit. Diese Bereiche wurden gewählt, weil sie zentrale Voraussetzungen für ein gutes Leben darstellen:
                 </>
                 ),
@@ -87,8 +87,9 @@ const translations = {
                     Ein ähnlicher Anteil entfällt auf Ernährung. Doch ein genauerer Blick auf Mieter:innenhaushalte offenbart eine deutliche finanzielle Belastung: 
                     Hier steigt der Anteil der Wohnkosten drastisch auf über 23% des Einkommens. 
                     Diese Differenz wirkt sich auch stark auf das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> aus – 
-                    also das Einkommen, das nach Grundausgaben für Wohnen, Ernährung, Bildung, Gesundheit und Mobilität verbleibt. 
-                    Während der <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm> des Residualeinkommens über alle Haushalte hinweg bei etwa 70% des Haushaltseinkommens liegt, 
+                    also das Einkommen, das nach <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> für Wohnen, Ernährung, Bildung, Gesundheit und Mobilität verbleibt.
+                    Dabei spielt die Versorgung mit <GlossaryTerm className="glossary-term si" sectionId="residualIncome">sozialer Infrastruktur<span style={{fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300', color: "#000", textDecoration: "none"}}>,</span></GlossaryTerm> die im Abschnitt XX näher beleuchtet wird, eine wichtige Rolle.
+                    Während das Residualeinkommen über alle Haushalte hinweg bei etwa 70% des Haushaltseinkommens liegt, 
                     sinkt dieser Wert für Mieter:innenhaushalte auf nur noch ca. 58%. 
                     Das bedeutet, dass Mieter:innen deutlich weniger finanziellen Spielraum für weitere Ausgaben oder Rücklagen haben. 
                 </>
@@ -96,28 +97,43 @@ const translations = {
             },
             {
                 id: 7,
+                accordionHeader: "Warum betrachten wir sowohl alle Haushalte als auch speziell Mieter:innen?",
+                accordionText: ( 
+                <>  
+                    Die Wohnkosten unterscheiden sich je nach Wohnform erheblich. Während Eigentümer:innen oft geringere monatliche Belastungen haben – etwa durch abbezahlte Immobilien – 
+                    tragen Mieter:innen meist deutlich höhere laufende Wohnkosten. Um die soziale und wirtschaftliche Bedeutung der Wohnkosten realistisch abzubilden, 
+                    ist es daher wichtig, nicht nur den Durchschnitt aller Haushalte zu betrachten, sondern auch gezielt auf Mieter:innen zu schauen.
+                </>
+                ),
+                isAccordion: true,
+                itemName: 'distinction-accordion'
+            },
+            {
+                id: 8,
                 isEChart: true,
                 itemName: "median-expenditure-chart",
                 chartTitle: "Ausgabenkategorien",
                 labelAll: "Alle",
                 labelRent: "Mieter:innen",
-                ariaLabel: "Kreisdiagramm mit Ausgabenkategorien"
+                ariaLabel: "Kreisdiagramm mit Ausgabenkategorien",
+                source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria"
             },
             {
-                id: 8,
+                id: 9,
                 text: <> Residualeinkommen nach Haushaltstyp </>,
                 isContentHeader: true,
             },
             {
-                id: 9,
+                id: 10,
                 text: (
                 <>  
                     Wie viel Haushalte einnehmen und ausgeben ist stark von der Haushaltsform abhängig. 
-                    Mehr erwerbstätige Personen im Haushalt bringen erwartungsgemäß ein höheres Einkommen, während weitere Haushaltsmitglieder tendenziell auch höhere Konsumausgaben bedeuten. 
-                    Jedoch zeigt sich, dass insbesondere alleinlebende Personen sowie Erwachsene mit einem oder mehreren Kindern deutlich höhere Kosten tragen als andere Haushaltstypen. 
+                    Mehr erwerbstätige Personen im Haushalt bringen erwartungsgemäß ein höheres Einkommen, während weitere Haushaltsmitglieder tendenziell 
+                    auch höhere <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendige Ausgaben</GlossaryTerm> bedeuten. 
+                    So zeigt sich, dass insbesondere alleinlebende Personen sowie Erwachsene mit einem oder mehreren Kindern deutlich höhere Kosten tragen als andere Haushaltstypen. 
                     Gleichzeitig verfügen sie über ein erheblich geringeres Einkommen und ein entsprechend niedrigeres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>. 
                     Dies verdeutlicht, dass diese Haushaltsgruppen einem erhöhten finanziellen Belastungsrisiko ausgesetzt sind und potenziell größere Schwierigkeiten haben, ihre Lebenshaltungskosten zu decken. 
-                    Deutliche Unterschiede ergeben sich auch, wenn man ausschließlich Mietshaushalte betrachtet. 
+                    Deutliche Unterschiede ergeben sich auch, wenn man ausschließlich Mieter:innenhaushalte betrachtet. 
                     Insbesondere bei größeren Haushalten mit mehr Platzbedarf sinkt das Residualeinkommen erheblich, was darauf hinweist, 
                     dass die Wohnkosten einen maßgeblichen Einfluss auf die finanzielle Belastung dieser Haushalte haben. 
                     Dies zeigt, dass steigende Mietpreise größere Haushalte überproportional belasten und ihre finanzielle Spielräume erheblich einschränken können.
@@ -125,37 +141,48 @@ const translations = {
                 ),
             },
             {
-                id: 10,
+                id: 11,
                 text: (
                 <>
-                    In der Tabelle sieht man die Medianeinkommen, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> und 
-                    das daraus ergebende <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> für unterschiedliche Haushaltstypen:
+                    In der Tabelle sieht man die Einkommen, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> und 
+                    das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> für unterschiedliche Haushaltstypen:
                 </>
                 ),
             },
             {
-                id: 11,
+                id: 12,
                 isTable: true,
                 itemName: 'household-table',
-                ariaLabel: "Tabelle zur Veranschaulichung von Medianeinkommen und notwendigen Ausgaben für Haushaltstypen"
+                ariaLabel: "Tabelle zur Veranschaulichung von Medianeinkommen und notwendigen Ausgaben für Haushaltstypen",
+                source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria"
             },
             {
-                id: 12,
+                id: 13,
+                text: 
+                <> 
+                    Hinweis: Beim Vergleich von Medianeinkommen, Medianausgaben und medianem <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> (wie in der Tabelle berechnet) ist zu beachten, 
+                    dass Medianeinkommen – Medianausgaben ≠ Medianresidualeinkommen. Das liegt daran, dass es sich jeweils um getrennt berechnete <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Medianwerte</GlossaryTerm> über 
+                    alle Haushalte einer Gruppe handelt. Das Residualeinkommen eines Haushalts ergibt sich zwar rechnerisch aus Einkommen minus Ausgaben, 
+                    aber der Median des Residualeinkommens ist nicht identisch mit der Differenz der beiden anderen Mediane, weil es sich um unterschiedliche Verteilungen handelt.
+                </>,
+            },
+            {
+                id: 14,
                 text: <> Einkommen und Residualeinkommen: </>,
                 isContentHeader: true,
             },
             {
-                id: 13,
+                id: 15,
                 text: (
                 <>  
                     Der Scatterplot, der das Haushaltseinkommen und das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> darstellt, zeigt eine starke positive Korrelation: 
                     Haushalte mit höherem Einkommen verfügen in der Regel auch über ein höheres Residualeinkommen. 
-                    Das ist zu erwarten, da höhere Einkommen mehr Spielraum nach Abzug fixer Ausgaben lassen. 
+                    Das ist zu erwarten, da höhere Einkommen mehr Spielraum nach Abzug <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendiger Ausgaben</GlossaryTerm> lassen. 
                 </>
                 ),
             },
             {
-                id: 14,
+                id: 16,
                 text: (
                 <>  
                     Trotz dieser Korrelation ist es wichtig, das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> separat zu betrachten. 
@@ -164,7 +191,7 @@ const translations = {
                 ),
             },
             {
-                id: 15,
+                id: 17,
                 text: (
                 <>  
                     Besonders auffällig sind die Abweichungen von der Korrelation in niedrigen und mittleren Einkommensgruppen. 
@@ -176,7 +203,7 @@ const translations = {
                 ),
             },
             {
-                id: 16,
+                id: 18,
                 text: (
                 <>  
                     Das bedeutet, dass wirtschaftliche Analysen und sozialpolitische Maßnahmen nicht nur auf das Haushaltseinkommen fokussiert sein sollten. 
@@ -186,31 +213,36 @@ const translations = {
                 ),
             },
             {
-                id: 17,
+                id: 19,
                 isChart: true,
                 itemName: 'scatter-plot',
                 imagePath: "/images/3_SCATTER_PLOT_RESI_INCOME.webp",
                 alt: "Scatterplot für Darstellung der Verteilung von Resiudaleinkommen und Haushaltseinkommen"
             },
             {
-                id: 18,
+                id: 20,
                 text: <> Ausgaben nach Einkommensquintilen </>,
                 isContentHeader: true,
             },
             {
-                id: 19,
+                id: 21,
                 isEChart: true,
                 itemName: 'expenditure-bar-charts',
                 labelAbs: 'Absolut',
                 labelRel: 'Relativ',
-                ariaLabel: "Zwei Balkendiagramme für die Ausgaben nach Einkommenquintilen - Erstes für Alle und zweites für Mieter:innen"
+                ariaLabel: "Zwei Balkendiagramme für die Ausgaben nach Einkommenquintilen - Erstes für Alle und zweites für Mieter:innen",
+                source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria"
             },
             {
-                id: 20,
-                text: "Die Grafik zeigt, dass die Arten und die Gesamthöhe der Ausgaben bei Haushalten unterschiedlicher Einkommensgruppen auf den ersten Blick recht ähnlich erscheinen ({left}). Deutliche Unterschiede zeigen sich jedoch im Verhältnis der Ausgaben zum Einkommen ({right})."
+                id: 22,
+                text: 
+                <> 
+                    Die Grafik zeigt, dass die Arten und die Gesamthöhe der <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> bei Haushalten unterschiedlicher Einkommensgruppen 
+                    auf den ersten Blick recht ähnlich erscheinen (absolut). Deutliche Unterschiede zeigen sich jedoch im Verhältnis der Ausgaben zum Einkommen (relativ).
+                </>
             },
             {
-                id: 21,
+                id: 23,
                 text: (
                 <>  
                     Die ärmsten 20% der Haushalte (Q1) geben knapp 60% ihres Einkommens für Wohnen, Lebensmittel, Gesundheit, Mobilität und Bildung aus. 
@@ -223,7 +255,7 @@ const translations = {
                 ),
             },
             {
-                id: 22,
+                id: 24,
                 text: (
                 <>  
                     Die finanzielle Belastung der untersten Einkommensgruppe wird noch deutlicher, wenn man ausschließlich Mietshaushalte betrachtet. 
@@ -235,12 +267,12 @@ const translations = {
                 ),
             },
             {
-                id: 23,
-                text: <> Einkommensungleichheit nach Gesamteinkommen und verfügbaren Einkommen </>,
+                id: 25,
+                text: <> Einkommensungleichheit nach Gesamteinkommen und Residualeinkommen </>,
                 isContentHeader: true,
             },
             {
-                id: 24,
+                id: 26,
                 text: (
                 <>  
                     Ein zentrales Maß zur Erfassung der Einkommensungleichheit ist der <GlossaryTerm className="glossary-term gini" sectionId="residualIncome">Gini-Index</GlossaryTerm>. 
@@ -250,25 +282,27 @@ const translations = {
                 ),
             },
             {
-                id: 25,
+                id: 27,
                 text: (
                 <>  
                     Unsere Analyse zeigt, dass der <GlossaryTerm className="glossary-term gini" sectionId="residualIncome">Gini-Index</GlossaryTerm> für 
                     das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> deutlich höher ist als für das Haushaltseinkommen (0,38 versus 0,27). 
                     Das liegt daran, dass fixe Grundkosten wie Miete, Lebensmittel oder Gesundheitsausgaben einen viel größeren Anteil des Einkommens in unteren Einkommensgruppen ausmachen. 
-                    Dadurch bleibt in diesen Gruppen deutlich weniger finanzielle Flexibilität, während höhere Einkommensgruppen nach den Grundausgaben überproportional mehr Mittel zur Verfügung haben. 
+                    Dadurch bleibt in diesen Gruppen deutlich weniger finanzielle Flexibilität, während höhere Einkommensgruppen 
+                    nach den <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> überproportional mehr Mittel zur Verfügung haben. 
                     Dies verstärkt die wirtschaftliche Ungleichheit und macht deutlich, dass das Haushaltseinkommen allein nicht ausreicht, um die (Un-)Gleichverteilung von Ressourcen abzubilden.
                 </>
                 ),
             },
             {
-                id: 26,
+                id: 28,
                 isChart: true,
                 itemName: 'gini',
-                ariaLabel: "Gegenüberstellung des Gini-Index für Haushalts- und Resiudaleinkommen durch 2 große Zahlen"
+                ariaLabel: "Gegenüberstellung des Gini-Index für Haushalts- und Resiudaleinkommen durch 2 große Zahlen",
+                source: "Datenquelle: Konsumerhebung 2019/2020, Integrierte Einkommens- und Lohnsteuerstatistik 2019/2020, Statistik Austria"
             },
             {
-                id: 27,
+                id: 29,
                 accordionHeader: "Wie wird der Gini-Index berechnet?",
                 accordionText: ( 
                 <>  
@@ -288,30 +322,31 @@ const translations = {
                 alt: "Lorenz-Kurve des Gini-Index"
             },
             {
-                id: 28,
+                id: 30,
                 text: <> Bildung und Beschäftigung und ihr Einfluss auf das Residualeinkommen von Haushalten </>,
                 isContentHeader: true,
             },
             {
-                id: 29,
+                id: 31,
                 text: (
                 <>  
                     Da die Einkommen stark vom Bildungsniveau, dem Beschäftigungsgrad und der Art der Erwerbstätigkeit abhängen, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> aber 
-                    von allen Haushalten getätigt werden müssen, spiegeln sich diese wirtschaftlichen Unterschiede noch stärker im verfügbaren Einkommen wider. 
+                    von allen Haushalten getätigt werden müssen, spiegeln sich diese wirtschaftlichen Unterschiede noch stärker im <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> wider. 
                     In der Grafik wird das Residualeinkommen nach höchster abgeschlossener Bildung, Haupteinkommensquelle und Ausmaß der Erwerbstätigkeit differenziert dargestellt (es kann zwischen den Kategorien gewechselt werden):
                 </>
                 ),
             },
             {
-                id: 30,
+                id: 32,
                 isEChart: true,
                 itemName: 'education-bar-charts',
                 labelExtent: <> Beschäftigungs&shy;art </>,
                 labelSource: <> Einkommens&shy;quelle </> ,
-                ariaLabel: "Zwei Balkendiagramme für die Bildung und Beschäftigung - Erstes zeigt abgeschlossene Bildung; zweites je nach ausgewähltem Modus Beschäftigungsart oder Einkommensquelle"
+                ariaLabel: "Zwei Balkendiagramme für die Bildung und Beschäftigung - Erstes zeigt abgeschlossene Bildung; zweites je nach ausgewähltem Modus Beschäftigungsart oder Einkommensquelle",
+                source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria"
             },
             {
-                id: 31,
+                id: 33,
                 accordionHeader: "Was bedeuten die Variablen?",
                 accordionText: (
                     <>
@@ -329,7 +364,7 @@ const translations = {
                 itemName: 'education-accordion'
             },
             {
-                id: 32,
+                id: 34,
                 text: (
                 <>  
                     Höhere Bildungsabschlüsse und Vollzeiterwerbstätigkeit geben den Haushalten deutlich mehr finanziellen Spielraum. 
@@ -339,30 +374,31 @@ const translations = {
                 ),
             },
             {
-                id: 33,
+                id: 35,
                 text: (
                 <>  
-                    Für Haushalte, in denen alle Mitglieder im erwerbsfähigen Alter sind und auf dem Arbeitsmarkt aktiv, aber lediglich über den höchsten Bildungsabschluss der Pflichtschule verfügen, 
-                    liegt das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> bei nur etwa 1190 Euro im <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm>. 
+                    Für Haushalte, in denen der höchste Bildungsabschluss jener der Pflichtschule ist, 
+                    liegt das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> bei nur 
+                    etwa 1.190 € im <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm>. 
                     Dieser Betrag reicht oft nur für das tägliche Leben und lässt wenig Raum für größere finanzielle Belastungen. 
                     Die Ursache liegt darin, dass geringere Bildungsabschlüsse in der Regel mit niedrigeren Löhnen und weniger flexiblen Arbeitsmöglichkeiten verbunden sind, was die Einkommenspotenziale stark begrenzt.
                 </>
                 ),
             },
             {
-                id: 34,
+                id: 36,
                 text: (
                 <>  
                     Im Gegensatz dazu zeigt sich bei Haushalten, deren höchste Bildungsabschlüsse eine <GlossaryTerm className="glossary-term postsecondaryEducation" sectionId="residualIncome">postsekundäre</GlossaryTerm> oder  <GlossaryTerm className="glossary-term tertiaryEducation" sectionId="residualIncome">tertiäre</GlossaryTerm> Ausbildung umfassen, ein deutlich anderes Bild. 
-                    In diesen Haushalten liegt das Medianeinkommen bei rund 2640 Euro, was fast doppelt so hoch ist. 
+                    In diesen Haushalten liegt das Einkommen bei rund 2.640 €, was fast doppelt so hoch ist. 
                     Der Grund dafür ist oftmals, dass höhere Bildungsabschlüsse Zugang zu besser bezahlten und stabileren Arbeitsplätzen eröffnen. 
-                    Menschen mit höherer Bildung können in anspruchsvolleren, qualifizierteren Berufen arbeiten, die nicht nur ein höheres Gehalt bieten, 
+                    Menschen mit höherer Bildung können in qualifizierteren Berufen arbeiten, die nicht nur ein höheres Gehalt bieten, 
                     sondern auch bessere Aufstiegschancen und eine größere berufliche Sicherheit.
                 </>
                 ),
             },
             {
-                id: 35,
+                id: 37,
                 text: (
                 <>  
                     Die Auswirkungen sind nicht nur individuell spürbar – sie betreffen auch die gesamte Familie. 
@@ -372,37 +408,37 @@ const translations = {
                 ),
             },
             {
-                id: 36,
+                id: 38,
                 text: (
                 <>  
                     Jedoch zeigt die Analyse auch eine dramatische Verschiebung, wenn in einem Haushalt zumindest ein Mitglied pensioniert ist. 
-                    Diese Haushalte haben häufig ein niedrigeres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>, da Renten oft nicht ausreichen, um den Lebensstandard zu halten, 
+                    Diese Haushalte haben häufig ein niedrigeres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>, 
+                    da Pensionen oft nicht ausreichen, um den Lebensstandard zu halten, 
                     besonders wenn sie nicht durch private Ersparnisse oder Zusatzgewinne ergänzt werden. Hier wird der Unterschied zwischen Haushalten mit höherer Bildung und denen ohne noch klarer. 
                 </>
                 ),
             },
             {
-                id: 37,
+                id: 39,
                 text: (
                 <>  
                     Ähnliches zeigt sich, wenn man das Ausmaß der Beschäftigung betrachtet. 
                     In Haushalten, in denen der höchste Bildungsabschluss lediglich die Pflichtschule ist, und in denen alle Haushaltsmitglieder, 
-                    die dem Arbeitsmarkt zur Verfügung stehen, Vollzeit arbeiten, liegt das <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm>-
-                    <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> bei etwa 1100 Euro. 
-                    Trotz Vollzeitarbeit bleibt das freiverfügbare Einkommen in diesen Haushalten relativ niedrig. Ganz anders sieht es in Haushalten aus, 
+                    die dem Arbeitsmarkt zur Verfügung stehen, Vollzeit arbeiten, liegt das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> bei etwa 1.100 €. 
+                    Trotz Vollzeitarbeit bleibt das Residualeinkommen in diesen Haushalten relativ niedrig. Ganz anders sieht es in Haushalten aus, 
                     in denen zumindest ein Familienmitglied eine <GlossaryTerm className="glossary-term postsecondaryEducation" sectionId="residualIncome">postsekundäre</GlossaryTerm> oder <GlossaryTerm className="glossary-term tertiaryEducation" sectionId="residualIncome">tertiäre</GlossaryTerm> Ausbildung abgeschlossen hat. 
-                    Auch hier arbeiten alle Mitglieder im erwerbsfähigen Alter Vollzeit, doch das Median-Residualeinkommen liegt mit 2800 Euro fast dreimal so hoch wie in den Haushalten mit Pflichtschulabschluss. 
+                    Auch hier arbeiten alle Mitglieder im erwerbsfähigen Alter Vollzeit, doch das Residualeinkommen liegt mit 2.800 € fast dreimal so hoch wie in den Haushalten mit Pflichtschulabschluss. 
                     Der Unterschied ist auffällig und verdeutlicht, wie stark Bildung den Zugang zu besser bezahlten und stabileren Arbeitsplätzen beeinflusst.
                 </>
                 ),
             },
             {
-                id: 38,
+                id: 40,
                 text: (
                 <>  
                     Selbst bei Teilzeitbeschäftigung zeigt sich ein ähnlicher Trend. 
                     In Haushalten mit <GlossaryTerm className="glossary-term tertiaryEducation" sectionId="residualIncome">tertiärer</GlossaryTerm> oder <GlossaryTerm className="glossary-term postsecondaryEducation" sectionId="residualIncome">postsekundärer</GlossaryTerm> Ausbildung 
-                    haben die Familien im <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm> etwa 400 Euro 
+                    haben die Familien im <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm> etwa 400 € 
                     mehr <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> als Haushalte, deren höchster Bildungsabschluss die Pflichtschule ist. 
                     Obwohl Teilzeitarbeit in vielen Fällen geringere Arbeitszeiten und damit auch geringere Einnahmen bedeutet, 
                     bleibt der Unterschied zwischen den Haushalten mit unterschiedlichen Bildungsabschlüssen bestehen. 
@@ -411,130 +447,77 @@ const translations = {
                 ),
             },
             {
-                id: 39,
-                text: <> Regionale Unterschiede </>,
-                isContentHeader: true,
-            },
-            {
-                id: 40,
-                text: (
-                <>  
-                    Die Tabelle veranschaulicht die Unterschiede in der Höhe der <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> sowie im Haushalts- 
-                    und <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> auf Bundeslandebene. 
-                    Dabei zeigt sich, dass Haushalte in Wien die mit Abstand höchsten Ausgaben haben, was hauptsächlich auf die hohen Wohnkosten zurückzuführen ist. 
-                    Im Vergleich zu anderen Bundesländern ist der Anteil an Personen, die in Wohneigentum leben, in Wien deutlich geringer. 
-                    Zudem weisen Wiener Haushalte gemeinsam mit Kärnten das niedrigste Haushalts- und Residualeinkommen auf. Das höchste Residualeinkommen hingegen findet sich in Oberösterreich und Niederösterreich.
-                </>
-                ),
-            },
-            {
                 id: 41,
-                text: (
-                <>  
-                    Betrachtet man ausschließlich Mietshaushalte, ergibt sich ein anderes Bild: 
-                    Haushalte in Wien zahlen im Durchschnitt nicht die höchsten Wohnkosten. 
-                    Stattdessen liegen die Mietausgaben in Vorarlberg am höchsten, gefolgt von Salzburg. 
-                    Dies spiegelt sich auch im <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> wider, 
-                    denn Mieter:innen in Wien verfügen über ein höheres Residualeinkommen als jene in Vorarlberg und Salzburg. 
-                    Die niedrigsten Mietkosten tragen hingegen Haushalte im Burgenland und in Kärnten.
-                </>
-                ),
+                text: 
+                <> 
+                    Haushalte, in denen sowohl in Vollzeit als auch in Teilzeit gearbeitet wird, haben zum Teil ein höheres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> als 
+                    Haushalte mit ausschließlich Vollzeiterwerbstätigen. In allen Analysen wird das Residualeinkommen äquivalenzskaliert (also an die Haushaltsgröße und -zusammensetzung angepasst), 
+                    um faire Vergleiche zu ermöglichen. Trotz dieser Anpassung kann das Residualeinkommen in diesen „Mischhaushalten“ höher sein, weil dort oft mehr als eine Person zum Einkommen beiträgt. 
+                    Ein Haushalt mit z. B. einer vollzeit- und einer teilzeiterwerbstätigen Person hat in Summe ein höheres Einkommen als ein Haushalt mit nur einer vollzeittätigen Person und 
+                    selbst nach der Äquivalenzgewichtung kann dadurch mehr finanzieller Spielraum übrig bleiben.
+                </>,
             },
             {
                 id: 42,
-                isTable: true,
-                itemName: 'expenditure-table',
-                ariaLabel: "Aufschlüsselung der Ausgaben nach Bundesland"
+                text: <> Regionale Unterschiede </>,
+                isContentHeader: true,
             },
             {
                 id: 43,
                 text: (
                 <>  
-                    Erhebliche Unterschiede zeigen sich, wenn man das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> nach 
-                    Bundesland und <GlossaryTerm className="glossary-term municipalitySizeClass" sectionId="residualIncome">Gemeindegrößenklasse</GlossaryTerm> betrachtet. 
-                    Diese regionalen Unterschiede im Residualeinkommen sind erheblich und verdeutlichen, wie stark die Einkommensmöglichkeiten und Lebensbedingungen in verschiedenen Teilen des Landes variieren. 
-                    Besonders bemerkenswert ist, dass diese Unterschiede nicht nur auf der Höhe des Einkommens beruhen, sondern auch durch lokale Gegebenheiten wie Lebenshaltungskosten und Immobilienpreise beeinflusst werden.
+                    Die Tabelle veranschaulicht die Unterschiede in der Höhe der <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> sowie im Haushalts- 
+                    und <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> auf Bundeslandebene. 
+                    Dabei zeigt sich, dass Haushalte in Wien die mit Abstand höchsten Ausgaben haben, was aber unter anderem auch darauf zurückzuführen ist, 
+                    dass hier Wohnkosten realistischer abgebildet werden, weil im Vergleich zu anderen Bundesländern der Anteil an Personen, die in Wohneigentum leben, in Wien deutlich geringer ist.
+                    Zudem weisen Wiener Haushalte gemeinsam mit Kärnten das niedrigste Haushalts- und Residualeinkommen auf. 
+                    Wien liegt sogar auf dem letzten Platz beim Residualeinkommen, wenn man alle Haushalte gemeinsam betrachtet.
+                    Das höchste Residualeinkommen hingegen findet sich in Oberösterreich und Niederösterreich.
                 </>
                 ),
             },
             {
                 id: 44,
-                isChart: true,
-                itemName: 'median-map',
-                labelAll: "Alle",
-                labelRent: "Mieter:innen",
-                alt: "Karte zur Visualisierung des Residualeinkommens (Median) nach Gemeindegrößenklassen für Österreich"
+                text: (
+                <>  
+                    Betrachtet man ausschließlich Mietshaushalte, ergibt sich ein anderes Bild: 
+                    Haushalte in Wien zahlen im Durchschnitt nicht die höchsten Wohnkosten.
+                    Dies führt dazu, dass Wien unter den Mieter:innenhaushalten das höchste <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> aufweist.
+                    Stattdessen liegen die Mietausgaben in Vorarlberg am höchsten, gefolgt von Salzburg. 
+                    Dies spiegelt sich auch im Residualeinkommen wider, denn Mieter:innen in Wien verfügen über ein höheres Residualeinkommen als jene in Vorarlberg und Salzburg. 
+                    Die niedrigsten Mietkosten tragen hingegen Haushalte im Burgenland und in Kärnten.
+                </>
+                ),
             },
             {
                 id: 45,
-                text: (
-                <>  
-                    In Wien, der größten Stadt des Landes, liegt das <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm>-
-                    <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> mit rund 1545 Euro am niedrigsten. 
-                    Dies mag auf den ersten Blick überraschen, da man in einer Großstadt höhere Einkommensmöglichkeiten vermuten würde. 
-                    Allerdings spielen die hohen Lebenshaltungskosten in der Hauptstadt, insbesondere die Immobilienpreise und Mieten im privaten Mietmarkt, eine entscheidende Rolle.
-                </>
-                ),
+                isTable: true,
+                itemName: 'expenditure-table',
+                ariaLabel: "Aufschlüsselung der Ausgaben nach Bundesland",
+                source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria"
             },
             {
                 id: 46,
                 text: (
                 <>  
-                    Im Vergleich dazu zeigen die Bundesländer Niederösterreich, Oberösterreich und Vorarlberg ein deutlich höheres <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm>-
-                    <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>. 
-                    Besonders auffällig ist, dass in den kleineren Gemeinden das höchste Residualeinkommen erzielt wird. 
-                    Hier spielt der Eigentumserwerb beim Wohnen eine entscheidende Rolle: In ländlicheren Gebieten ist die Eigentumsrate deutlich höher als in städtischen Zentren.
-                    Dies ermöglicht es den Haushalten, gegeben, dass sie keine Kreditrückzahlungen bedienen müssen, mehr von ihrem Einkommen zu sparen und somit ein höheres Residualeinkommen zu erzielen.
+                    Erhebliche Unterschiede zeigen sich, wenn man das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> nach 
+                    Bundesland und <GlossaryTerm className="glossary-term municipalitySizeClass" sectionId="residualIncome">Gemeindegrößenklasse</GlossaryTerm> betrachtet. 
+                    Diese regionalen Unterschiede im Residualeinkommen verdeutlichen, wie stark die Einkommensmöglichkeiten und Lebensbedingungen in verschiedenen Teilen des Landes variieren. 
+                    Besonders bemerkenswert ist, dass diese Unterschiede nicht nur auf der Höhe des Einkommens beruhen, sondern auch durch lokale Gegebenheiten wie Lebenshaltungskosten und Immobilienpreise beeinflusst werden.
                 </>
                 ),
             },
             {
                 id: 47,
-                text: (
-                <>  
-                    Trotz dieser generellen Tendenzen gibt es auch innerhalb der Bundesländer Unterschiede. 
-                    In Oberösterreich sind es vor allem kleinere Gemeinden, die ein höheres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> aufweisen, 
-                    während im Burgenland vor allem Haushalte in Eisenstadt das höchste Residualeinkommen erzielen.
-                </>
-                ),
+                isChart: true,
+                itemName: 'median-map',
+                labelAll: "Alle",
+                labelRent: "Mieter:innen",
+                alt: "Karte zur Visualisierung des Residualeinkommens (Median) nach Gemeindegrößenklassen für Österreich",
+                source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria"
             },
             {
                 id: 48,
-                text: (
-                <>  
-                    Betrachtet man ausschließlich Mietshaushalte, wird der erhebliche finanzielle Druck durch die Mietkosten besonders deutlich. 
-                    Besonders ausgeprägte Unterschiede zeigen sich in kleineren Gemeinden in Niederösterreich, Vorarlberg und Kärnten. Diese regionalen Unterschiede implizieren, 
-                    dass das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> nicht 
-                    nur von den Einkommen selbst abhängt, sondern auch stark durch die Lebenshaltungskosten in der jeweiligen Region beeinflusst wird.
-                </>
-                ),
-            },
-            {
-                id: 49,
-                text: (
-                <>  
-                    Allerdings reicht der Blick auf das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> allein nicht aus, 
-                    um die Lebensqualität und die tatsächliche Wohlstandssituation von Haushalten zu beurteilen. 
-                    Häufig ist es so, dass in Regionen mit höherem Residualeinkommen die Infrastruktur und öffentlichen Dienstleistungen nicht in gleichem Maße ausgebaut sind wie in städtischen Gebieten. 
-                    Umfassende Infrastruktur und die Verfügbarkeit öffentlicher Dienstleistungen sind ebenfalls entscheidende Faktoren für den Lebensstandard. 
-                    In Regionen mit günstigen Lebenshaltungskosten, aber schlechterer Infrastruktur, könnte das höhere Residualeinkommen zwar finanziellen Spielraum bieten, 
-                    jedoch nicht die gleichen Lebensbedingungen und Möglichkeiten wie in gut erschlossenen urbanen Regionen.
-                </>
-                ),
-            },
-            {
-                id: 50,
-                text: (
-                <>  
-                    Für gewisse Bevölkerungsgruppen ist <GlossaryTerm className="glossary-term si" sectionId="residualIncome">soziale Infrastruktur</GlossaryTerm> besonders wichtig. 
-                    Vor allem für Haushalte mit geringem Einkommen oder großer finanzieller Belastung durch Lebenserhaltungskosten ist diese von großer Bedeutung. 
-                    Diese Gruppen können sich häufig keine teuren privaten Lösungen leisten, weshalb sie öffentliche Angebote wie Gesundheitsversorgung, 
-                    Kinderbetreuung und andere soziale Infrastrukturen deutlich finanziell entlasten können.
-                </>
-                ),
-            },
-            {
-                id: 51,
                 accordionHeader: "Wo wohnt Österreich: Gemeindegrößenklassenerklärung",
                 accordionText: ( 
                 <>  
@@ -548,7 +531,74 @@ const translations = {
                 itemName: 'municipality-accordion',
                 isAccordion: true,
                 alt: "Karte zur Visualisierung der Gemeindegrößenklassen in Österreich"
-            }            
+            },
+            {
+                id: 49,
+                text: (
+                <>  
+                    In Wien, der größten Stadt des Landes, liegt das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> mit rund 1.545 € am niedrigsten. 
+                    Dies mag auf den ersten Blick überraschen, da man in einer Großstadt höhere Einkommensmöglichkeiten vermuten würde.
+                    Allerdings wohnen hier auch mehr Mieter:innenhaushalte, deren Wohnkosten realistischer einbezogen werden.
+                </>
+                ),
+            },
+            {
+                id: 50,
+                text: (
+                <>  
+                    Im Vergleich dazu zeigen die Bundesländer Niederösterreich, Oberösterreich und Vorarlberg ein deutlich höheres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>. 
+                    Besonders auffällig ist, dass in den kleineren Gemeinden das höchste Residualeinkommen erzielt wird. 
+                    Hier spielt der Eigentumserwerb beim Wohnen eine entscheidende Rolle: In ländlicheren Gebieten ist die Eigentumsrate deutlich höher als in städtischen Zentren.
+                    Dies ermöglicht es den Haushalten, gegeben, dass sie keine Kreditrückzahlungen bedienen müssen, mehr von ihrem Einkommen zu sparen und somit ein höheres Residualeinkommen zu erzielen.
+                </>
+                ),
+            },
+            {
+                id: 51,
+                text: (
+                <>  
+                    Trotz dieser generellen Tendenzen gibt es auch innerhalb der Bundesländer Unterschiede. 
+                    In Oberösterreich sind es vor allem kleinere Gemeinden, die ein höheres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> aufweisen, 
+                    während im Burgenland vor allem Haushalte in Eisenstadt das höchste Residualeinkommen erzielen.
+                </>
+                ),
+            },
+            {
+                id: 52,
+                text: (
+                <>  
+                    Betrachtet man ausschließlich Mietshaushalte, wird der erhebliche finanzielle Druck durch die Mietkosten besonders deutlich. 
+                    Besonders ausgeprägte Unterschiede zeigen sich in kleineren Gemeinden in Niederösterreich, Vorarlberg und Kärnten. Diese regionalen Unterschiede implizieren, 
+                    dass das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> nicht 
+                    nur von den Einkommen selbst abhängt, sondern auch stark durch die Lebenshaltungskosten in der jeweiligen Region beeinflusst wird.
+                </>
+                ),
+            },
+            {
+                id: 53,
+                text: (
+                <>  
+                    Allerdings reicht der Blick auf das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> allein nicht aus, 
+                    um die Lebensqualität und die tatsächliche Wohlstandssituation von Haushalten zu beurteilen. 
+                    Häufig ist es so, dass in Regionen mit höherem Residualeinkommen die Infrastruktur und öffentlichen Dienstleistungen nicht in gleichem Maße ausgebaut sind wie in städtischen Gebieten. 
+                    Umfassende Infrastruktur und die Verfügbarkeit öffentlicher Dienstleistungen sind ebenfalls entscheidende Faktoren für den Lebensstandard. 
+                    In Regionen mit günstigen Lebenshaltungskosten, aber schlechterer Infrastruktur, könnte das höhere Residualeinkommen zwar finanziellen Spielraum bieten, 
+                    jedoch nicht die gleichen Lebensbedingungen und Möglichkeiten wie in gut erschlossenen urbanen Regionen.
+                </>
+                ),
+            },
+            {
+                id: 54,
+                text: (
+                <>  
+                    Für gewisse Bevölkerungsgruppen ist <GlossaryTerm className="glossary-term si" sectionId="residualIncome">soziale Infrastruktur</GlossaryTerm> besonders wichtig. 
+                    Vor allem für Haushalte mit geringem Einkommen oder großer finanzieller Belastung durch Lebenserhaltungskosten ist diese von großer Bedeutung. 
+                    Diese Gruppen können sich häufig keine teuren privaten Lösungen leisten, weshalb sie öffentliche Angebote wie Gesundheitsversorgung, 
+                    Kinderbetreuung und andere soziale Infrastrukturen deutlich finanziell entlasten können.
+                </>
+                ),
+            },
+                        
         ]
     },
     EN: {
@@ -569,27 +619,6 @@ const ResidualIncomeSection = () => {
     const [medianMapMode, setMeanMapMode] = useState("all");
     const [quintilExpenditureMode, setQuintilExpenditureMode] = useState("absolute");
     const [educationChartMode, setEducationChartMode] = useState("extent_empl");
-
-    const replacements = {
-        DE: {
-            left: isWrapped ? "oberes Diagramm" : "linke Seite",
-            right: isWrapped ? "unteres Diagramm" : "rechte Seite",
-        },
-        EN: {
-            left: isWrapped ? "upper chart" : "left side",
-            right: isWrapped ? "lower chart" : "right side",
-        }
-    };
-
-    const currentReplacements = replacements[language] || replacements.DE;
-
-    const replacePlaceholders = (text) => {
-        if (typeof text !== "string") return text;
-
-        return text
-            .replace("({left})", `(${currentReplacements.left})`)
-            .replace("({right})", `(${currentReplacements.right})`);
-    };
     
     const handleToggleModeChange = (type, newValue) => {
         if (newValue !== null) {
@@ -646,6 +675,7 @@ const ResidualIncomeSection = () => {
                                     <h3 className="gini-subheader">Residualeinkommen</h3>
                                 </div>
                             </div>
+                            <p className='source' style={{margin: "0px auto 40px"}}>{item.source}</p>
                         </div>
                     );
                 default:
@@ -676,6 +706,7 @@ const ResidualIncomeSection = () => {
                                 </ToggleButtonGroup>
                             </div>
                             <MedianMapChart mode={medianMapMode} altText={item.alt} />
+                            <p className='source' style={{margin: "12px auto 0"}}>{item.source}</p>
                         </Box>
                     );
             }
@@ -715,6 +746,7 @@ const ResidualIncomeSection = () => {
                         <div className="median-exp-chart-container" aria-label={item.ariaLabel}>
                             <MedianExpenditureChart mode={medianExpenditureMode} />
                         </div>
+                        <p className='source' style={{margin: "12px auto 0"}}>{item.source}</p>
                         </Box>
                     );
                 case 'expenditure-bar-charts':
@@ -750,6 +782,7 @@ const ResidualIncomeSection = () => {
                                     setIsWrapped={setIsWrapped}
                                 />
                             </div>
+                            <p className='source' style={{margin: "12px auto 0"}}>{item.source}</p>
                         </Box>
                     );
                 default:
@@ -785,27 +818,13 @@ const ResidualIncomeSection = () => {
                                     setIsWrapped={setIsWrapped}
                                 />
                             </div>
+                            <p className='source' style={{margin: "12px auto 0"}}>{item.source}</p>
                         </Box>
                     );
             }
 
             case item.isAccordion:
             switch (item.itemName) {    
-                case 'data-accordion':
-                    return (
-                        <div key={item.id} style={{ margin: '24px 0' }}>
-                        <Accordion sx={{ background: '#f4f4f4' }}>
-                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography variant="h4" sx={{ fontSize: '1.125rem' }}>
-                                {item.accordionHeader}
-                            </Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                            <Typography>{item.accordionText}</Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        </div>
-                    );
                 case 'expenses-accordion':
                     return (
                         <div key={item.id} style={{ margin: '24px 0' }}>
@@ -866,24 +885,7 @@ const ResidualIncomeSection = () => {
                         </Accordion>
                         </div>
                     );
-                case 'education-accordion':
-                    return (
-                        <div key={item.id} style={{ margin: '24px 0' }}>
-                        <Accordion sx={{ background: '#f4f4f4' }}>
-                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography variant="h4" sx={{ fontSize: '1.125rem' }}>
-                                {item.accordionHeader}
-                            </Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    {item.accordionText}
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
-                        </div>
-                    );
-                default:
+                case 'municipality-accordion':
                     return (
                         <div key={item.id} style={{margin: '24px 0 0'}}>
                             <Accordion sx={{background: "#f4f4f4"}}>
@@ -900,6 +902,21 @@ const ResidualIncomeSection = () => {
                             </Accordion>
                         </div>   
                     );
+                default:
+                    return (
+                        <div key={item.id} style={{margin: '24px 0'}}>
+                            <Accordion sx={{background: "#f4f4f4"}}>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                <Typography variant="h4" sx={{ fontSize: '1.125rem'}}>{item.accordionHeader}</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    {item.accordionText}
+                                </Typography>
+                            </AccordionDetails>
+                            </Accordion>
+                        </div>   
+                    );
             }
 
             case item.isTable:
@@ -908,12 +925,14 @@ const ResidualIncomeSection = () => {
                     return (
                         <div key={item.id} className="houshold-table-container">
                             <HouseholdTable ariaLabel={item.ariaLabel} />
+                            <p className='source' style={{margin: "12px auto 24px"}}>{item.source}</p>
                         </div>
                     );
                 default:
                     return (
                         <div key={item.id} className="expenditure-table-container">
                             <ExpenditureBundTable ariaLabel={item.ariaLabel}/>
+                            <p className='source' style={{margin: "12px auto 24px"}}>{item.source}</p>
                         </div>
                     );
             }
@@ -921,7 +940,7 @@ const ResidualIncomeSection = () => {
             default:
                 return (
                     <p key={item.id} className={`paragraph ${item.className || ''}`}>
-                        {item.id === 20 ? replacePlaceholders(item.text) : item.text}
+                        {item.text}
                     </p>
                 );
         }

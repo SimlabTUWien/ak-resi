@@ -63,11 +63,11 @@ const translations = {
                     id: 5,
                     text: (
                     <>  
-                        Das Haushaltseinkommen in Österreich (nach Steuern) betrug 2019/2020 2.632€. Dabei zeigt sich eine deutliche <GlossaryTerm className="glossary-term incomeInequality" sectionId="income">Einkommensungleichheit</GlossaryTerm> zwischen den verschiedenen Bevölkerungsgruppen. 
+                        Das Haushaltseinkommen in Österreich (nach Steuern) betrug 2019/2020 2.632 €. Dabei zeigt sich eine deutliche <GlossaryTerm className="glossary-term incomeInequality" sectionId="income">Einkommensungleichheit</GlossaryTerm> zwischen den verschiedenen Bevölkerungsgruppen. 
                         So lag das mittlere Einkommen des ersten <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintils</GlossaryTerm>, also jenes Fünftels der Haushalte mit den niedrigsten Einkommen,
-                        bei lediglich 1.247€ und damit deutlich unter dem österreichweiten <GlossaryTerm className="glossary-term median" sectionId="income">Median</GlossaryTerm>. 
-                        Im Gegensatz dazu verfügte das oberste Quintil, also die einkommensstärksten 20% der Haushalte, über ein mittleres Einkommen von über 4.500€. 
-                        Das bedeutet, dass Haushalte im obersten Quintil im Schnitt mehr als 3.000€ monatlich mehr zur Verfügung haben als jene im untersten Quintil.
+                        bei lediglich 1.247 € und damit deutlich unter dem österreichweiten <GlossaryTerm className="glossary-term median" sectionId="income">Median</GlossaryTerm>. 
+                        Im Gegensatz dazu verfügte das oberste Quintil, also die einkommensstärksten 20% der Haushalte, über ein mittleres Einkommen von über 4.500 €. 
+                        Das bedeutet, dass Haushalte im obersten Quintil im Schnitt mehr als 3.000 € monatlich mehr zur Verfügung haben als jene im untersten Quintil.
                     </>
                     ),
                 },

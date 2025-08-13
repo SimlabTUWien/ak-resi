@@ -38,7 +38,7 @@ const ExpenditureBundTable = ({ ariaLabel }) => {
   const tableData = tableMode === "all" ? allData : rentersData;
 
   return (
-    <Box sx={{ marginTop: 3, marginBottom: 4 }}>
+    <Box sx={{ marginTop: 3, marginBottom: 1 }}>
 
       <div className="toggle-container">
         <ToggleButtonGroup

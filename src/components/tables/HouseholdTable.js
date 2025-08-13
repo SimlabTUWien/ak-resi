@@ -38,7 +38,7 @@ const HouseholdTable = ({ ariaLabel }) => {
   const tableData = tableMode === "all" ? allData : rentersData;
 
   return (
-    <Box sx={{ marginTop: 3, marginBottom: 3 }}>
+    <Box sx={{ marginTop: 3, marginBottom: 1 }}>
 
       <div className="toggle-container">
         <ToggleButtonGroup
@@ -64,9 +64,9 @@ const HouseholdTable = ({ ariaLabel }) => {
           <TableHead sx={{ backgroundColor: "#f0ae9f", hyphens: "none" }}>
             <TableRow>
               <TableCell align="center">Haushaltstyp</TableCell>
-              <TableCell align="center">Median&shy;einkommen</TableCell>
-              <TableCell align="center">Median&shy;ausgaben</TableCell>
-              <TableCell align="center">Medianresidual&shy;einkommen</TableCell>
+              <TableCell align="center">Einkommen</TableCell>
+              <TableCell align="center">notwendige Ausgaben</TableCell>
+              <TableCell align="center">Residual&shy;einkommen</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
