@@ -18,8 +18,10 @@ const translations = {
                 text: ( 
                 <> 
                     <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">Soziale Infrastrukturen</GlossaryTerm> wie Kindergärten, Schulen, Gesundheits- und Pflegeeinrichtungen sind essenziell für eine funktionierende Gesellschaft. 
-                    Sie ermöglichen Bildung, Gesundheit und soziale Teilhabe – unabhängig vom Einkommen. Doch ihr Zugang und ihre Qualität sind nicht überall gleich. 
-                    Regionale Unterschiede und fehlende Angebote können Haushalte zusätzlich belasten und Ungleichheiten verstärken. 
+                    Sie ermöglichen Bildung, Gesundheit und soziale Teilhabe – idealerweise unabhängig vom Einkommen. Doch ihr Zugang und ihre Qualität sind nicht überall gleich. 
+                    Regionale Unterschiede und fehlende Angebote können Haushalte zusätzlich belasten und Ungleichheiten verstärken.
+                    Zudem ist zu beachten, dass nicht alle sozialen Infrastrukturen öffentlich oder kostenfrei zugänglich sind. In vielen Bereichen, etwa bei der Kinderbetreuung 
+                    oder in der Gesundheitsversorgung, können private Träger, Zuzahlungen oder Eigenbeteiligungen eine Rolle spielen, was den tatsächlichen Zugang für Haushalte mit geringem Einkommen zusätzlich erschwert.
                 </>
                 ),
             },
@@ -30,19 +32,33 @@ const translations = {
                 <>  
                     In unserer Analyse betrachten wir sechs zentrale Bereiche sozialer Infrastruktur: <br/>
                     Kinderbetreuungseinrichtungen (Krippen und Kindergärten), Allgemeinmediziner:innen, Schulen (Volks-, höhere und weiterführende Schulen), 
-                    Pflegeheime, Krankenhäuser sowie soziale Einrichtungen wie jene von Caritas, Diakonie oder Volkshilfe.
+                    Pflegeeinrichtungen, Krankenhäuser sowie soziale Einrichtungen wie jene von Caritas, Diakonie oder Volkshilfe.
                     <br/>
                     <br/>
                     Diese Auswahl spiegelt jene Angebote wider, die im Alltag für viele Menschen von großer Bedeutung sind: 
                     Kinderbetreuung und Schulen ermöglichen Bildung und Erwerbstätigkeit, insbesondere für Familien mit Kindern. 
                     Allgemeinmediziner:innen und Krankenhäuser sind die Basis der gesundheitlichen Versorgung, besonders im ländlichen Raum oft schwer erreichbar. 
-                    Pflegeheime spielen eine zentrale Rolle für ältere Menschen und ihre Angehörigen. 
+                    Pflegeeinrichtungen spielen eine zentrale Rolle für ältere Menschen und ihre Angehörigen. 
                     Und soziale Einrichtungen unterstützen Menschen in schwierigen Lebenslagen, etwa bei Armut, Wohnungslosigkeit oder Pflegebedarf.
                     <br/>
                     <br/>
                     Wir beziehen diese Bereiche ein, weil sie die Lebensqualität maßgeblich beeinflussen – und weil fehlende oder schlecht zugängliche Angebote dazu führen können, 
-                    dass Menschen auf teure private Alternativen zurückgreifen müssen oder gar keine Versorgung erhalten. <br/>
-                    <br/> 
+                    dass Menschen auf teure private Alternativen zurückgreifen müssen oder gar keine Versorgung erhalten.
+                    <br/>
+                    <br/>
+                    Wo möglich, unterscheiden wir daher zwischen öffentlichen und privaten Angeboten, denn diese Unterscheidung ist zentral für die tatsächliche Zugänglichkeit.
+                    So erhalten bei den Subindikatoren zur Zugänglichkeit ausschließlich Pflegeeinrichtungen in öffentlicher Trägerschaft sowie Allgemeinmediziner:innen mit Kassenvertrag 
+                    eine entsprechende Bewertung, da privat finanzierte Leistungen in diesen Bereichen häufig mit höheren Eigenkosten verbunden sind und nicht allen Bevölkerungsgruppen offenstehen.
+                    <br/>
+                    <br/>
+                    Bei Krankenhäusern beziehen wir ausschließlich öffentliche Einrichtungen ein, da private Spitäler in der Regel nicht flächendeckend versorgen, 
+                    häufig auf bestimmte Leistungen spezialisiert sind oder mit erheblichen Eigenkosten verbunden sein können. Öffentliche Krankenhäuser hingegen stellen 
+                    einen zentralen Baustein der allgemeinen Gesundheitsversorgung dar und sind für die Bevölkerung unabhängig von Einkommen oder Versicherung zugänglich.
+                    <br/>
+                    <br/>
+                    Für Kindergärten hingegen liegen keine systematischen Informationen zur Trägerschaft vor. Hier war daher keine Differenzierung nach öffentlich oder privat möglich.
+                    <br/>
+                    <br/>
                 </>
                 ),
                 isAccordion: true,
@@ -52,12 +68,12 @@ const translations = {
                 id: 3,
                 text: ( 
                 <> 
-                    Die untenstehende Karten zeigt diese <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialen Infrastrukturen</GlossaryTerm> in Bezug auf den Bedarf in der Gemeinde. 
-                    Während Ärzt:innen pro Einwohner:in berechnet werden, beziehen sich Kindergartengruppen auf Kinder im Alter von 3 bis 6 Jahren und Plätze in Pflegeheimen auf Menschen über 70. 
+                    Die untenstehende Karte zeigt diese <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialen Infrastrukturen</GlossaryTerm> in Bezug auf den Bedarf in der Gemeinde. 
+                    Während Ärzt:innen pro Einwohner:in berechnet werden, beziehen sich Kindergartengruppen auf Kinder im Alter von 3 bis 6 Jahren und Plätze in Pflegeeinrichtungen auf Menschen über 70. 
                     Neben der Verfügbarkeit von Infrastrukturen spielt auch ihre Zugänglichkeit eine Rolle: Kurze Öffnungszeiten oder hohe Kosten können die Nutzung einschränken. 
-                    Da viele Menschen auch die Infrastrukturen in Nachbargemeinden nutzen, werden diese – mit geringerem Gewicht – in den Infrastrukturindikator einbezogen. 
-                    In der Karte kann dieser Effekt ein- und ausgeblendet werden. 
-                    Zudem kann man zwischen dem Gesamtindikator (also die gewichtete Summe aller Indikatoren) oder den Einzelindikatoren (für Allgemeinmediziner:innen, Schulen, Kindergärten, etc.) wählen. 
+                    Da viele Menschen soziale Infrastrukturen nicht nur am Wohnort, sondern auch in nahegelegenen Gemeinden nutzen, fließt deren Ausstattung – mit geringerem Gewicht – ebenfalls in den Infrastrukturindikator ein. 
+                    Berücksichtigt werden dabei Infrastrukturen in Nachbargemeinden, die innerhalb von 30 Minuten mit dem Auto oder öffentlichen Verkehrsmitteln erreichbar sind.
+                    In der Karte kann dieser Effekt ein- und ausgeblendet werden. Zudem kann man zwischen dem Gesamtindikator (also die gewichtete Summe aller Indikatoren) oder den Einzelindikatoren (für Allgemeinmediziner:innen, Schulen, Kindergärten, etc.) wählen. 
                 </>
                 ),
             },
@@ -75,7 +91,7 @@ const translations = {
                 text: ( 
                 <> 
                    Viele Gemeinden erreichen bei einzelnen Infrastrukturarten mittlere oder sogar sehr gute Werte – etwa bei Kindergärten oder Schulen. 
-                   Gleichzeitig fehlen aber in manchen Gemeinden bestimmte Angebote völlig – zum Beispiel Pflegeheime oder soziale Einrichtungen. 
+                   Gleichzeitig fehlen aber in manchen Gemeinden bestimmte Angebote völlig – zum Beispiel Pflegeeinrichtungen oder soziale Einrichtungen. 
                    Solche Lücken wirken sich stark auf den Gesamtindikator aus, denn dieser berücksichtigt alle sechs Bereiche gleichermaßen. 
                    Das bedeutet: Fehlende Infrastruktur in nur einem Bereich kann das Gesamtergebnis deutlich nach unten ziehen, auch wenn andere Angebote gut ausgebaut sind. 
                    So wird sichtbar, dass es nicht nur auf einzelne Angebote ankommt, sondern auf ein ausgewogenes Gesamtbild – also darauf, dass alle grundlegenden Versorgungsbereiche zumindest in erreichbarer Nähe vorhanden sind.
@@ -101,7 +117,7 @@ const translations = {
                 text: ( 
                 <> 
                     Die untenstehende Grafik zeigt, wie die Versorgung mit verschiedenen Arten <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm> – etwa 
-                    Kindergärten, Schulen, Pflegeheime oder soziale Einrichtungen – in den Gemeinden verteilt ist. Auf der rechten Seite ist zudem der Gesamtindikator dargestellt, 
+                    Kindergärten, Schulen, Pflegeeinrichtungen oder soziale Einrichtungen – in den Gemeinden verteilt ist. Auf der rechten Seite ist zudem der Gesamtindikator dargestellt, 
                     der die durchschnittliche Versorgung über alle sechs Infrastrukturbereiche hinweg zusammenfasst.
                 </>
                 ),
@@ -110,8 +126,8 @@ const translations = {
                 id: 9,
                 text: ( 
                 <> 
-                    Dabei wird deutlich, dass soziale Einrichtungen insgesamt am schlechtesten erreichbar sind – was jedoch auch daran liegt, 
-                    dass es davon nur vergleichsweise wenige gibt. Bei Pflegeheimen zeigt sich, dass die Mehrheit der Gemeinden nur eine geringe Erreichbarkeit aufweist. 
+                    Dabei wird deutlich, dass soziale Einrichtungen insgesamt am wenigsten verfügbar sind – was jedoch auch daran liegt, 
+                    dass es davon nur vergleichsweise wenige gibt. Bei Pflegeeinrichtungen zeigt sich, dass die Mehrheit der Gemeinden nur eine geringe Versorgung aufweist. 
                     Nur etwa 10 % der Gemeinden verfügen über mittlere, gute oder sehr gute Versorgung in diesem Bereich. 
                     Auffällig ist außerdem, dass keine Gemeinde eine schlechte Versorgung bei Schulen aufweist – ebenso wenig wie bei Kinderbetreuungseinrichtungen, 
                     wenn man die Erreichbarkeit mit dem Auto betrachtet. Anders sieht es jedoch aus, wenn die Erreichbarkeit mit öffentlichen Verkehrsmitteln herangezogen wird: 
@@ -218,29 +234,6 @@ const translations = {
                 ),
                 ariaLabel: "Tabelle zur Erläuterung der Berechnung der einzelnen Infrastrukturindikatoren"
             },
-            // {
-            //     id: 17,
-            //     text: <> Wie werden die einzelnen Infrastrukturindikatoren berechnet? </>,
-            //     isContentHeader: true,
-            // },
-            // {
-            //     id: 18,
-            //     text: ( 
-            //     <> 
-            //         Der Gesamtindikator für <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">soziale Infrastrukturen</GlossaryTerm> setzt 
-            //         sich aus sechs gleich gewichteten Teilindikatoren zusammen: 
-            //         Kindergärten, Schulen, Krankenhäuser, Allgemeinmediziner:innen, Pflegeeinrichtungen und andere soziale Einrichtungen. 
-            //         Innerhalb der Teilindikatoren wird die Verfügbarkeit mit 50 %, die Zugänglichkeit mit 30 % und die Einflüsse von Nachbargemeinden 
-            //         (<GlossaryTerm className="glossary-term spillovers" sectionId="social-infrastructure">Spillover-Effekte</GlossaryTerm>) mit 20 % gewichtet, um die unterschiedlichen Aspekte der Infrastruktur umfassend zu berücksichtigen.
-            //     </>
-            //     ),
-            // },
-            // {
-            //     id: 19,
-            //     isTable: true,
-            //     itemName: 'si-table',
-            //     ariaLabel: ""
-            // },
             {
                 id: 18,
                 text: <> Verknüpfung zwischen Einkommen, Residualeinkommen und sozialer Infrastruktur: </>,
@@ -317,11 +310,12 @@ const translations = {
                 imagePath: "/images/18_FINANZ_BELASTUNG_SI.webp",
                 itemName: 'si-financial-load',
                 alt: "Darstellung der finanziellen Belastung und Versorgung mit SI nach Haushalten",
+                source: "Datenquelle: Konsumerhebung 2019/2020, Kindertagesheimstatistik, Docfinder, Handbuch für die medizinischen Berufe in Österreich, Bundesministerium für Soziales, Gesundheit, Pflege und Konsumentenschutz, Bundesministerium für Soziales, Gesundheit, Pflege und Konsumentenschutz, OpenStreetMaps, data.gv, Bundesministerium für Bildung, Wissenschaft und Forschung, Google",
                 text: ( 
                 <>
                     <span className="boldText">Infrastrukturversorgung: </span> Schlecht: ein Indikatorwert unter 3, mittel: ein Indikatorwert zwischen 3 und &lt; 5, gut: ein Indikatorwert zwischen 5 und &lt; 7, sehr gut: ein Indikatorwert über 7.
                     <br/>
-                    <span className="boldText">Finanzielle Belastung: </span> Gering: Ausgaben &lt; 25% des Haushaltseinkommens, mittel: Ausgaben zwischen 25% und 45% des Haushaltseinkommens, hoch: Ausgaben zwischen 26% und 55% des Haushaltseinkommens, sehr hoch: Ausgaben mehr als 55% des Haushaltseinkommens.
+                    <span className="boldText">Finanzielle Belastung: </span> Gering: notwendige Ausgaben &lt; 25% des Haushaltseinkommens, mittel: notwendige Ausgaben zwischen 25% und 45% des Haushaltseinkommens, hoch: notwendige Ausgaben zwischen 26% und 55% des Haushaltseinkommens, sehr hoch: notwendige Ausgaben mehr als 55% des Haushaltseinkommens.
                 </>
                 ),
             }
@@ -395,10 +389,6 @@ const SocialInfrastructureSection = () => {
                                     onChange={(_, newValue) => handleToggleModeChange("map", newValue)}
                                     aria-label="Si map mode selection"
                                 >
-                                    {/* <ToggleButton value="no_so"><label>Kein<br/>Spillover</label></ToggleButton> */}
-                                    {/* <ToggleButton value="so_miv"><label>Spillover<br/>(MIV)</label></ToggleButton>
-                                    <ToggleButton value="so_oev"><label>Spillover<br/>(ÖV)</label></ToggleButton> */}
-
                                     <ToggleButton value="so_miv" aria-label="Car icon"><label style={{ display: 'contents'}}><DirectionsCarIcon /></label></ToggleButton>
                                     <ToggleButton value="so_oev" aria-label="Public transport icon"><label style={{ display: 'contents'}}><DirectionsBusIcon/></label></ToggleButton>
                                 </ToggleButtonGroup>
@@ -436,10 +426,6 @@ const SocialInfrastructureSection = () => {
                             </AccordionDetails>
                         </Accordion>
                     </div>
-                // ) : item.isTable ? (
-                //     <div key={item.id} className="si-table-container" style={{margin: '24px 0 32px'}}>
-                //         <SocialInfrastructureTable/>
-                //     </div>
                 ) : item.isList ? (
                     <div key={item.id} className="list-container" style={{margin: '12px 0 24px'}}>
                         <span className="paragraph">{item.text}</span>
@@ -452,9 +438,7 @@ const SocialInfrastructureSection = () => {
                                 ))}
                             </ul>
                         )}
-
                     </div>
-                    
                 ) : item.isPerMunChart ? (
                     <Box
                         key={item.id}
@@ -500,6 +484,7 @@ const SocialInfrastructureSection = () => {
                     <div key={item.id}>
                         <div className="image-container si-load-chart-container" style={{margin: '24px 0 0'}}>
                             <img src={`${process.env.PUBLIC_URL}${item.imagePath}`} alt={ item.alt } />
+                            <p className='source' style={{margin: "0 auto 12px"}}>{item.source}</p>
                         </div>
                         <span style={{fontSize: '0.9rem'}}>{item.text}</span>
                     </div>

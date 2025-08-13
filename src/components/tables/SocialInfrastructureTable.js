@@ -5,27 +5,27 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 const data = [
     {
       category: <>Allgemein&shy;mediziner:innen</>,
-      availability: "Anzahl der Allgemeinmediziner:innen mit Kassenvertrag im Verhältnis zur Wohnbevölkerung der Gemeinde",
-      accessibility: "Durchschnittliche Öffnungszeiten",
+      availability: "Anzahl der Allgemeinmediziner:innen mit und ohne Kassenvertrag im Verhältnis zur Wohnbevölkerung der Gemeinde",
+      accessibility: "Durchschnittliche Öffnungszeiten, Anteil der Ärzt:innen mit Kassenvertrag",
       source: "Docfinder, Handbuch für die medizinischen Berufe in Österreich"
     },
     {
       category: "Krankenhäuser",
-      availability: "Anzahl der Krankenhausbetten im Verhältnis zur Bevölkerung von Gemeinden in 30 Minuten Fahrtzeit",
-      accessibility: "/",
+      availability: "Anzahl der Krankenhausbetten in öffentlichen Krankenhäusern im Verhältnis zur Bevölkerung von Gemeinden in 30 Minuten Fahrtzeit",
+      accessibility: "Punkteskala, die angibt, ob die Gemeinde über ein Krankenhaus in einer Entfernung von 15, 30, 45 oder 60 Fahrminuten verfügt",
       source: "Bundesministerium für Soziales, Gesundheit, Pflege und Konsumenten-schutz"
     },
     {
-      category: "Pflegeheime",
-      availability: "Anzahl der Betten in Pflegeheimen und unterstützten Wohneinrichtungen im Verhältnis zur Bevölkerung über 70 Jahre",
+      category: "Pflegeeinrichtungen",
+      availability: "Anzahl der Betten in Pflegeeinrichtungen und unterstützten Wohneinrichtungen im Verhältnis zur Bevölkerung über 70 Jahre",
       accessibility: "Anteil der rein öffentlichen Pflegeeinrichtungen",
       source: "Bundesministerium für Soziales, Gesundheit, Pflege und Konsumenten-schutz, Statistik Austria, OpenStreetMaps, data.gv"
     },
     {
       category: "Kindergärten",
-      availability: "Anzahl der Kindergarten- und Kleinkindgruppen im Verhältnis zur Anzahl der Kinder in der jeweiligen Altersgruppe (3-6 Jahre bzw. unter 3 Jahre) in der Gemeinde vorhanden sind.",
+      availability: "Anzahl der Kindergarten- und Kleinkindgruppen im Verhältnis zur Anzahl der Kinder in der jeweiligen Altersgruppe (3-6 Jahre bzw. unter 3 Jahre)",
       accessibility: "Anteil der Kindergärten mit Nachmittagsbetreuung und durchschnittliche Öffnungszeiten",
-      source: "Statistik Austria"
+      source: "Kindertagesheimstatistik (Statistik Austria)"
     },
     {
       category: "Schulen",
@@ -34,7 +34,7 @@ const data = [
       source: "Bundesministerium für Bildung, Wissenschaft und Forschung"
     },
     {
-      category: <>Andere<br/>Sozialeinrichtungen</>,
+      category: <>Andere Sozialeinrichtungen (z.B. Volkshilfe, Caritas, Diakonie, Hilfswerk, etc.)</>,
       availability: "Anzahl der Einrichtungen im Verhältnis zur Wohnbevölkerung der Gemeinde",
       accessibility: "/",
       source: "Google"
@@ -59,8 +59,8 @@ const SocialInfrastructureTable = ({ ariaLabel }) => {
         <TableHead sx={{ backgroundColor: "#a5cdc8",  hyphens: 'none' }}>
           <TableRow>
           <TableCell align="center">Soziale Infrastrukturkategorie</TableCell>
-            <TableCell align="center">Verfügbarkeit</TableCell>
-            <TableCell align="center">Zugänglichkeit</TableCell>
+            <TableCell align="center">Verfügbarkeit (0,5)</TableCell>
+            <TableCell align="center">Zugänglichkeit (0,3)</TableCell>
             <TableCell align="center">Datenquelle</TableCell>
           </TableRow>
         </TableHead>
