@@ -95,7 +95,7 @@ const IncomeSection = () => {
                 ) : item.isChart ? (
                     <div key={item.id} className="image-container median-hh-income-container">
                         <img src={`${process.env.PUBLIC_URL}/images/00_Median_HH_Income_Personen_DE.png`} alt={`${item.alt}`} />
-                        <p className='source'>{item.source}</p>
+                        <p className='source' style={{margin: "0 auto 12px"}}>{item.source}</p>
                     </div>
                 ) : item.isAccordion ? (
                     <div key={item.id} style={{ margin: '24px 0' }}>

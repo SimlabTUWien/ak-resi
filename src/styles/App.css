@@ -112,20 +112,7 @@ img {
 .source {
   font-size: 0.8rem;
   color: #666;
-  margin: 0 auto 10px;
-}
-
-
-@media (max-width: 1200px) {
-  .title-wrapper {
-    padding: 64px 10px 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .title-wrapper {
-    padding: 56px 10px 0;
-  }
+  text-align: end;
 }
 
 @media (max-width: 1300px) {
@@ -135,8 +122,13 @@ img {
   }
 }
 
+@media (max-width: 1200px) {
+  .title-wrapper {
+    padding: 64px 10px 0;
+  }
+}
+
 @media (max-width: 768px) {
-  
   body, html {
     text-align: left;
     hyphens: none;
@@ -149,6 +141,16 @@ img {
   }
 }
 
+@media (max-width: 600px) {
+  .title-wrapper {
+    padding: 56px 10px 0;
+  }
+
+  .source {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
 
 @media (max-width: 400px) {
   .content-wrapper {
