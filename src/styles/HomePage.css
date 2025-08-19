@@ -248,6 +248,16 @@ ul.custom-list li {
   margin-top: 20px;
 }
 
+.link {
+    color: #006699;
+    font-variation-settings: "slnt" 0, "wdth" 100, "wght" 400;
+    text-decoration: none;
+
+    &:hover {
+      color: #006699CC;
+    }
+}
+
 #indicator-select {
   transform: translateY(2px);
 }

@@ -45,12 +45,22 @@ const translations = {
                 accordionHeader: "Wie misst man die Zeit der Menschen in Österreich?",
                 accordionText: (
                 <>
-                    Die <GlossaryTerm className="glossary-term timeUsage" sectionId="time-usage">Zeitverwendungserhebung</GlossaryTerm> 2021/22 (ZVE) ist eine statistische Erhebung der Statistik Austria, die detailliert erfasst, 
-                    wie Menschen in Österreich ihren Tag verbringen. Insgesamt nahmen 4.342 Haushalte in Österreich an der Erhebung teil, 
+                    Die <a href="https://www.statistik.at/statistiken/bevoelkerung-und-soziales/zeitverwendung" target="_blank" rel="noopener noreferrer" className='link'> Zeitverwendungserhebung 2021/22 (ZVE)</a> ist
+                    eine statistische Erhebung der Statistik Austria, die detailliert erfasst, wie Menschen in Österreich ihren Tag verbringen. Insgesamt nahmen 4.342 Haushalte in Österreich an der Erhebung teil, 
                     wobei alle Haushaltsmitglieder ab 10 Jahren an einem Wochentag und einem Wochenendtag ein Zeittagebuch ausfüllten, 
                     in dem sie ihre Tätigkeiten im 10-Minuten-Takt festhielten. Die Erhebung wurde im Zeitraum von Oktober 2021 bis Dezember 2022 durchgeführt. 
                     Sie dient dazu, die Zeitaufwendungen für verschiedene Tätigkeiten wie Schlafen, Arbeiten, Lernen, Freizeit, Hausarbeit, Kinderbetreuung oder 
                     Freiwilligentätigkeiten zu dokumentieren und auswerten zu können. Ziel ist es, Einblicke in Lebensgewohnheiten sowie in die Verteilung von unbezahlter Arbeit und zeitlicher Belastung zu gewinnen.
+                    <br/>
+                    <br/>
+                    <span className="hint"> 
+                        Limitationen: Da die <GlossaryTerm className="glossary-term consumption" sectionId="time-usage">Konsumerhebung</GlossaryTerm> 2019/2020 
+                        und die <GlossaryTerm className="glossary-term timeUsage" sectionId="time-usage">Zeitverwendungserhebung</GlossaryTerm> 2021/22 
+                        auf unterschiedlichen Stichproben basieren, ist kein direktes Matching der Datensätze möglich. Das bedeutet, es lassen sich keine präzisen Aussagen auf Haushaltsebene treffen, 
+                        etwa darüber, wie viel einzelne Haushalte für <GlossaryTerm className="glossary-term expenditure" sectionId="time-usage">notwendige Ausgaben</GlossaryTerm> aufwenden, 
+                        welches <GlossaryTerm className="glossary-term residualIncome" sectionId="time-usage">Residualeinkommen</GlossaryTerm> ihnen bleibt und wie sie ihre Zeit verwenden. 
+                        Trotzdem sind diese Dimensionen – Konsum, verfügbares Einkommen und Zeit – eng miteinander verknüpft. Es ist daher sinnvoll und wichtig, sie zumindest auf aggregierter Ebene gemeinsam zu betrachten, um ein umfassenderes Bild sozialer Lebenslagen zu gewinnen.
+                    </span>
                 </>
                 ),
                 isAccordion: true,
@@ -62,21 +72,16 @@ const translations = {
                 text: ( 
                 <> 
                     Die folgenden Analysen zeigen unterschiedliche Dimensionen der Zeitverteilung in österreichischen Haushalten, mit Schwerpunkt auf Geschlechtsunterschieden<sup style={{fontSize: '0.7rem'}}>1</sup> sowie entlang sozio-ökonomischen und räumlichen Merkmalen. <br/>
-                    <sup style={{fontSize: '0.7rem'}}>1</sup> <span className="hint">Anmerkung: Aufgrund der geringen Anzahl gleichgeschlechtlicher Haushalte in der Stichprobe sind hierzu keine gesicherten Aussagen möglich.</span>
                 </>
                 ),
             },
             {
                 id: 5,
-                text: ( 
-                <span className="hint"> 
-                    Limitationen: Da die <GlossaryTerm className="glossary-term consumption" sectionId="time-usage">Konsumerhebung</GlossaryTerm> 2019/2020 
-                    und die <GlossaryTerm className="glossary-term timeUsage" sectionId="time-usage">Zeitverwendungserhebung</GlossaryTerm> 2021/22 
-                    auf unterschiedlichen Stichproben basieren, ist kein direktes Matching der Datensätze möglich. Das bedeutet, es lassen sich keine präzisen Aussagen auf Haushaltsebene treffen, 
-                    etwa darüber, wie viel einzelne Haushalte für <GlossaryTerm className="glossary-term expenditure" sectionId="time-usage">notwendige Ausgaben</GlossaryTerm> aufwenden, 
-                    welches <GlossaryTerm className="glossary-term residualIncome" sectionId="time-usage">Residualeinkommen</GlossaryTerm> ihnen bleibt und wie sie ihre Zeit verwenden. 
-                    Trotzdem sind diese Dimensionen – Konsum, verfügbares Einkommen und Zeit – eng miteinander verknüpft. Es ist daher sinnvoll und wichtig, sie zumindest auf aggregierter Ebene gemeinsam zu betrachten, um ein umfassenderes Bild sozialer Lebenslagen zu gewinnen.
-                </span>
+                text: (
+                <>
+                    <sup style={{fontSize: '0.7rem'}}>1</sup>  
+                    <span className="hint">Anmerkung: Aufgrund der geringen Anzahl gleichgeschlechtlicher Haushalte in der Stichprobe sind hierzu keine gesicherten Aussagen möglich.</span>
+                </>
                 ),
             },
             {
