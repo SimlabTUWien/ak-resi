@@ -17,7 +17,7 @@ const translations = {
                     text: (
                     <>  
                         Das Haushaltseinkommen ist ein zentraler Indikator für die Messung des Lebensstandards der Menschen in Österreich und dient oftmals als Basis der Berechnung Ungleichheit im Land. 
-                        Um eine präzisere Analyse der Einkommensverteilung zu ermöglichen, wird das Haushaltseinkommen häufig in sogenannte <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintile</GlossaryTerm> eingeteilt. 
+                        Um eine präzisere Analyse der Einkommensverteilung zu ermöglichen, wird das Haushaltseinkommen häufig in sogenannte <GlossaryTerm className="glossary-term quintil" sectionId="residualIncome">Quintile</GlossaryTerm> eingeteilt. 
                         Aber was bedeutet das genau, und warum ist diese Einteilung sinnvoll?
                     </>
                     ),
@@ -27,7 +27,7 @@ const translations = {
                     accordionHeader: "Was sind Quintile?",
                     accordionFirstText: ( 
                     <>  
-                        Ein <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintil</GlossaryTerm> beschreibt jeweils genau ein Fünftel der Haushalte, geordnet nach ihrem Einkommen. Das bedeutet:
+                        Ein <GlossaryTerm className="glossary-term quintil" sectionId="residualIncome">Quintil</GlossaryTerm> beschreibt jeweils genau ein Fünftel der Haushalte, geordnet nach ihrem Einkommen. Das bedeutet:
                     </>
                     ),
                     accordionSubheader: (
@@ -37,7 +37,7 @@ const translations = {
                     ),
                     accordionSecondText: ( 
                     <>  
-                        Die Einteilung in <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintile</GlossaryTerm> hilft, die Einkommensverteilung und 
+                        Die Einteilung in <GlossaryTerm className="glossary-term quintil" sectionId="residualIncome">Quintile</GlossaryTerm> hilft, die Einkommensverteilung und 
                         wirtschaftliche Ungleichheiten besser sichtbar zu machen. 
                         Während Durchschnittswerte oft verzerrt sein können (z. B. durch extreme Einkommen an der Spitze), 
                         zeigen Quintile deutlicher, wie Einkommen auf verschiedene gesellschaftliche Gruppen verteilt sind.<br/><br/>
@@ -59,13 +59,23 @@ const translations = {
                     alt: "Diagramm mit 5 Balken, die das mittlere Haushaltseinkommen pro Einkommensquintil in Österreich darstellen.",
                     source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria",
                 },
-                                {
+                {
                     id: 5,
                     text: (
                     <>  
-                        Das Haushaltseinkommen in Österreich (nach Steuern) betrug 2019/2020 2.632 €. Dabei zeigt sich eine deutliche <GlossaryTerm className="glossary-term incomeInequality" sectionId="income">Einkommensungleichheit</GlossaryTerm> zwischen den verschiedenen Bevölkerungsgruppen. 
-                        So lag das mittlere Einkommen des ersten <GlossaryTerm className="glossary-term quintil" sectionId="income">Quintils</GlossaryTerm>, also jenes Fünftels der Haushalte mit den niedrigsten Einkommen,
-                        bei lediglich 1.247 € und damit deutlich unter dem österreichweiten <GlossaryTerm className="glossary-term median" sectionId="income">Median</GlossaryTerm>. 
+                        Das Einkommen bildet auch die zentrale Grundlage für die Berechnung des <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommens</GlossaryTerm>, 
+                        jenes Teils des Einkommens, der nach Abzug der <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> verbleibt. 
+                        Deshalb betrachten wir es im Folgenden noch einmal genauer.
+                    </>
+                    ),
+                },
+                {
+                    id: 6,
+                    text: (
+                    <>  
+                        Das Haushaltseinkommen in Österreich (nach Steuern) betrug 2019/2020 2.632 €. Dabei zeigt sich eine deutliche <GlossaryTerm className="glossary-term incomeInequality" sectionId="residualIncome">Einkommensungleichheit</GlossaryTerm> zwischen den verschiedenen Bevölkerungsgruppen. 
+                        So lag das mittlere Einkommen des ersten <GlossaryTerm className="glossary-term quintil" sectionId="residualIncome">Quintils</GlossaryTerm>, also jenes Fünftels der Haushalte mit den niedrigsten Einkommen,
+                        bei lediglich 1.247 € und damit deutlich unter dem österreichweiten <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm>. 
                         Im Gegensatz dazu verfügte das oberste Quintil, also die einkommensstärksten 20% der Haushalte, über ein mittleres Einkommen von über 4.500 €. 
                         Das bedeutet, dass Haushalte im obersten Quintil im Schnitt mehr als 3.000 € monatlich mehr zur Verfügung haben als jene im untersten Quintil.
                     </>

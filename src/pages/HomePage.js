@@ -3,7 +3,6 @@ import { useLanguage } from "../context/LanguageContext";
 
 import HeaderSection from "../components/sections/HeaderSection";
 import BackgroundSection from "../components/sections/BackgroundSection";
-import IncomeSection from "../components/sections/IncomeSection";
 import ResidualIncomeSection from "../components/sections/ResidualIncomeSection";
 import SocialInfrastructureSection from "../components/sections/SocialInfrastructureSection";
 import TimeUsageSection from "../components/sections/TimeUsageSection";
@@ -71,9 +70,9 @@ export default function HomePage () {
             </section> 
             */}
 
-            <section id="income">
+            {/* <section id="income">
                 <IncomeSection />
-            </section>
+            </section> */}
 
             <section id="residualIncome">
                 <ResidualIncomeSection />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from '../../context/LanguageContext';
 import {Accordion, AccordionSummary, AccordionDetails, Box, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import GlossaryTerm from '../GlossaryTerm';
 import ResiDefinitionChart from "../ResiDefinitionChart";
@@ -11,8 +12,8 @@ import MedianMapChart from "../MedianMapChart";
 import EducationCharts from "../EducationCharts";
 import HouseholdTable from "../tables/HouseholdTable";
 import ExpenditureBundTable from "../tables/ExpenditureBundTable";
+import IncomeSection from "../sections/IncomeSection";
 
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const translations = {
     DE: {
@@ -88,7 +89,7 @@ const translations = {
                     Hier steigt der Anteil der Wohnkosten drastisch auf über 23% des Einkommens. 
                     Diese Differenz wirkt sich auch stark auf das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> aus – 
                     also das Einkommen, das nach <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> für Wohnen, Ernährung, Bildung, Gesundheit und Mobilität verbleibt.
-                    Dabei spielt die Versorgung mit <GlossaryTerm className="glossary-term si" sectionId="residualIncome">sozialer Infrastruktur<span style={{fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300', color: "#000", textDecoration: "none"}}>,</span></GlossaryTerm> die im Abschnitt XX näher beleuchtet wird, eine wichtige Rolle.
+                    Dabei spielt die Versorgung mit <GlossaryTerm className="glossary-term si" sectionId="residualIncome">sozialer Infrastruktur<span style={{fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300', color: "#000", textDecoration: "none"}}>,</span></GlossaryTerm> die im nächsten Abschnitt näher beleuchtet wird, eine wichtige Rolle.
                     Während das Residualeinkommen über alle Haushalte hinweg bei etwa 70% des Haushaltseinkommens liegt, 
                     sinkt dieser Wert für Mieter:innenhaushalte auf nur noch ca. 58%. 
                     Das bedeutet, dass Mieter:innen deutlich weniger finanziellen Spielraum für weitere Ausgaben oder Rücklagen haben. 
@@ -130,7 +131,7 @@ const translations = {
                     Wie viel Haushalte einnehmen und ausgeben ist stark von der Haushaltsform abhängig. 
                     Mehr erwerbstätige Personen im Haushalt bringen erwartungsgemäß ein höheres Einkommen, während weitere Haushaltsmitglieder tendenziell 
                     auch höhere <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendige Ausgaben</GlossaryTerm> bedeuten. 
-                    So zeigt sich, dass insbesondere alleinlebende Personen sowie Erwachsene mit einem oder mehreren Kindern deutlich höhere Kosten tragen als andere Haushaltstypen. 
+                    So zeigt sich, dass insbesondere alleinlebende Personen sowie Alleinerziehende mit einem oder mehreren Kindern deutlich höhere Kosten tragen als andere Haushaltstypen. 
                     Gleichzeitig verfügen sie über ein erheblich geringeres Einkommen und ein entsprechend niedrigeres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>. 
                     Dies verdeutlicht, dass diese Haushaltsgruppen einem erhöhten finanziellen Belastungsrisiko ausgesetzt sind und potenziell größere Schwierigkeiten haben, ihre Lebenshaltungskosten zu decken. 
                     Deutliche Unterschiede ergeben sich auch, wenn man ausschließlich Mieter:innenhaushalte betrachtet. 
@@ -160,7 +161,7 @@ const translations = {
                 id: 13,
                 text: 
                 <span className="hint"> 
-                    Hinweis: Beim Vergleich von Medianeinkommen, Medianausgaben und medianem <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> (wie in der Tabelle berechnet) ist zu beachten, 
+                    Hinweis: Alle Werte beziehen sich auf Mediane. Beim Vergleich von Medianeinkommen, Medianausgaben und medianem <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> (wie in der Tabelle berechnet) ist zu beachten, 
                     dass Medianeinkommen – Medianausgaben ≠ Medianresidualeinkommen. Das liegt daran, dass es sich jeweils um getrennt berechnete <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Medianwerte</GlossaryTerm> über 
                     alle Haushalte einer Gruppe handelt. Das Residualeinkommen eines Haushalts ergibt sich zwar rechnerisch aus Einkommen minus Ausgaben, 
                     aber der Median des Residualeinkommens ist nicht identisch mit der Differenz der beiden anderen Mediane, weil es sich um unterschiedliche Verteilungen handelt.
@@ -168,64 +169,32 @@ const translations = {
             },
             {
                 id: 14,
-                text: <> Einkommen und Residualeinkommen: </>,
-                isContentHeader: true,
+                text: (
+                <>  
+                    Während die Zahlen in der oberen Tabelle nicht äquivalisiert, sprich nicht nach Haushaltsgröße angepasst, dargestellt sind, 
+                    wurden die untenstehenden Analysen, Zahlen und Abbildungen nach der OECD-Äquivalenzskala berechnet. Das bedeutet, dass Einkommen und Ausgaben auf die individuelle Konsummöglichkeit 
+                    je Haushaltsmitglied umgerechnet werden. Nach dieser Skala erhält die erste erwachsene Person im Haushalt das Gewicht 1,0, 
+                    jede weitere erwachsene Person das Gewicht 0,5 und jedes Kind unter 14 Jahren das Gewicht 0,3. 
+                    Damit wird berücksichtigt, dass größere Haushalte zwar höhere Gesamtausgaben haben, aber durch gemeinsame Nutzung von Wohnraum, Geräten oder Infrastruktur auch Kostenvorteile erzielen. 
+                    Diese Anpassung macht Haushalte unterschiedlicher Größe und Zusammensetzung besser vergleichbar.
+                </>
+                ),
             },
             {
                 id: 15,
-                text: (
-                <>  
-                    Der Scatterplot, der das Haushaltseinkommen und das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> darstellt, zeigt eine starke positive Korrelation: 
-                    Haushalte mit höherem Einkommen verfügen in der Regel auch über ein höheres Residualeinkommen. 
-                    Das ist zu erwarten, da höhere Einkommen mehr Spielraum nach Abzug <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendiger Ausgaben</GlossaryTerm> lassen. 
-                </>
-                ),
-            },
-            {
-                id: 16,
-                text: (
-                <>  
-                    Trotz dieser Korrelation ist es wichtig, das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> separat zu betrachten. 
-                    Während das Haushaltseinkommen allein oft als Maßstab für Wohlstand verwendet wird, zeigt das Residualeinkommen den tatsächlichen finanziellen Spielraum eines Haushalts. Zwei Haushalte mit gleichem Einkommen können stark unterschiedliche Lebensrealitäten haben – je nach Wohnkosten, Gesundheitsausgaben oder Mobilitätsbedarf.
-                </>
-                ),
-            },
-            {
-                id: 17,
-                text: (
-                <>  
-                    Besonders auffällig sind die Abweichungen von der Korrelation in niedrigen und mittleren Einkommensgruppen. 
-                    Manche Haushalte haben trotz mittlerem Einkommen ein sehr geringes oder sogar negatives <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>, 
-                    wenn ihre Fixkosten ihre Einnahmen übersteigen. 
-                    Das bedeutet, dass sie Schulden machen oder auf Ersparnisse zurückgreifen müssen, um ihren Lebensunterhalt zu bestreiten. 
-                    Umgekehrt gibt es Haushalte mit relativ niedrigem Einkommen, die aufgrund niedriger Fixkosten dennoch über ein stabiles Residualeinkommen verfügen.
-                </>
-                ),
-            },
-            {
-                id: 18,
-                text: (
-                <>  
-                    Das bedeutet, dass wirtschaftliche Analysen und sozialpolitische Maßnahmen nicht nur auf das Haushaltseinkommen fokussiert sein sollten. 
-                    Erst durch die Berücksichtigung des <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommens</GlossaryTerm> lassen 
-                    sich tatsächliche finanzielle Ungleichheiten und die Notwendigkeit gezielter Unterstützung erkennen.
-                </>
-                ),
-            },
-            {
-                id: 19,
-                isChart: true,
-                itemName: 'scatter-plot',
-                imagePath: "/images/3_SCATTER_PLOT_RESI_INCOME.webp",
-                alt: "Scatterplot für Darstellung der Verteilung von Resiudaleinkommen und Haushaltseinkommen"
-            },
-            {
-                id: 20,
                 text: <> Ausgaben nach Einkommensquintilen </>,
                 isContentHeader: true,
             },
             {
-                id: 21,
+                id: 16,
+                text: 
+                <> 
+                    Die Kategorien <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendiger Ausgaben</GlossaryTerm> sind für die meisten Haushalte, 
+                    unabhängig vom Einkommensquintil, grundsätzlich dieselben, da etwa Wohnen oder Nahrungsmittel für jeden Haushalt erforderlich sind. Die Höhe dieser Ausgaben kann jedoch stark variieren.
+                </>
+            },
+            {
+                id: 17,
                 isEChart: true,
                 itemName: 'expenditure-bar-charts',
                 labelAbs: 'Absolut',
@@ -234,7 +203,7 @@ const translations = {
                 source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria"
             },
             {
-                id: 22,
+                id: 18,
                 text: 
                 <> 
                     Die Grafik zeigt, dass die Arten und die Gesamthöhe der <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> bei Haushalten unterschiedlicher Einkommensgruppen 
@@ -242,7 +211,7 @@ const translations = {
                 </>
             },
             {
-                id: 23,
+                id: 19,
                 text: (
                 <>  
                     Die ärmsten 20% der Haushalte (Q1) geben knapp 60% ihres Einkommens für Wohnen, Lebensmittel, Gesundheit, Mobilität und Bildung aus. 
@@ -255,7 +224,7 @@ const translations = {
                 ),
             },
             {
-                id: 24,
+                id: 20,
                 text: (
                 <>  
                     Die finanzielle Belastung der untersten Einkommensgruppe wird noch deutlicher, wenn man ausschließlich Mietshaushalte betrachtet. 
@@ -267,12 +236,12 @@ const translations = {
                 ),
             },
             {
-                id: 25,
+                id: 21,
                 text: <> Einkommensungleichheit nach Gesamteinkommen und Residualeinkommen </>,
                 isContentHeader: true,
             },
             {
-                id: 26,
+                id: 22,
                 text: (
                 <>  
                     Ein zentrales Maß zur Erfassung der Einkommensungleichheit ist der <GlossaryTerm className="glossary-term gini" sectionId="residualIncome">Gini-Index</GlossaryTerm>. 
@@ -282,7 +251,7 @@ const translations = {
                 ),
             },
             {
-                id: 27,
+                id: 23,
                 text: (
                 <>  
                     Unsere Analyse zeigt, dass der <GlossaryTerm className="glossary-term gini" sectionId="residualIncome">Gini-Index</GlossaryTerm> für 
@@ -295,14 +264,14 @@ const translations = {
                 ),
             },
             {
-                id: 28,
+                id: 24,
                 isChart: true,
                 itemName: 'gini',
                 ariaLabel: "Gegenüberstellung des Gini-Index für Haushalts- und Resiudaleinkommen durch 2 große Zahlen",
                 source: "Datenquelle: Konsumerhebung 2019/2020, Integrierte Einkommens- und Lohnsteuerstatistik 2019/2020, Statistik Austria"
             },
             {
-                id: 29,
+                id: 25,
                 accordionHeader: "Wie wird der Gini-Index berechnet?",
                 accordionText: ( 
                 <>  
@@ -322,12 +291,12 @@ const translations = {
                 alt: "Lorenz-Kurve des Gini-Index"
             },
             {
-                id: 30,
+                id: 26,
                 text: <> Bildung und Beschäftigung und ihr Einfluss auf das Residualeinkommen von Haushalten </>,
                 isContentHeader: true,
             },
             {
-                id: 31,
+                id: 27,
                 text: (
                 <>  
                     Da die Einkommen stark vom Bildungsniveau, dem Beschäftigungsgrad und der Art der Erwerbstätigkeit abhängen, <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> aber 
@@ -337,7 +306,7 @@ const translations = {
                 ),
             },
             {
-                id: 32,
+                id: 28,
                 isEChart: true,
                 itemName: 'education-bar-charts',
                 labelExtent: <> Beschäftigungs&shy;art </>,
@@ -346,7 +315,7 @@ const translations = {
                 source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria"
             },
             {
-                id: 33,
+                id: 29,
                 accordionHeader: "Was bedeuten die Variablen?",
                 accordionText: (
                     <>
@@ -364,7 +333,7 @@ const translations = {
                 itemName: 'education-accordion'
             },
             {
-                id: 34,
+                id: 30,
                 text: (
                 <>  
                     Höhere Bildungsabschlüsse und Vollzeiterwerbstätigkeit geben den Haushalten deutlich mehr finanziellen Spielraum. 
@@ -374,10 +343,10 @@ const translations = {
                 ),
             },
             {
-                id: 35,
+                id: 31,
                 text: (
                 <>  
-                    Für Haushalte, in denen der höchste Bildungsabschluss jener der Pflichtschule ist, 
+                    Für Haushalte, in denen der höchste Bildungsabschluss jener der Pflichtschule ist,
                     liegt das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> bei nur 
                     etwa 1.190 € im <GlossaryTerm className="glossary-term median" sectionId="residualIncome">Median</GlossaryTerm>. 
                     Dieser Betrag reicht oft nur für das tägliche Leben und lässt wenig Raum für größere finanzielle Belastungen. 
@@ -386,7 +355,7 @@ const translations = {
                 ),
             },
             {
-                id: 36,
+                id: 32,
                 text: (
                 <>  
                     Im Gegensatz dazu zeigt sich bei Haushalten, deren höchste Bildungsabschlüsse eine <GlossaryTerm className="glossary-term postsecondaryEducation" sectionId="residualIncome">postsekundäre</GlossaryTerm> oder  <GlossaryTerm className="glossary-term tertiaryEducation" sectionId="residualIncome">tertiäre</GlossaryTerm> Ausbildung umfassen, ein deutlich anderes Bild. 
@@ -398,7 +367,7 @@ const translations = {
                 ),
             },
             {
-                id: 37,
+                id: 33,
                 text: (
                 <>  
                     Die Auswirkungen sind nicht nur individuell spürbar – sie betreffen auch die gesamte Familie. 
@@ -408,7 +377,7 @@ const translations = {
                 ),
             },
             {
-                id: 38,
+                id: 34,
                 text: (
                 <>  
                     Jedoch zeigt die Analyse auch eine dramatische Verschiebung, wenn in einem Haushalt zumindest ein Mitglied pensioniert ist. 
@@ -419,7 +388,7 @@ const translations = {
                 ),
             },
             {
-                id: 39,
+                id: 35,
                 text: (
                 <>  
                     Ähnliches zeigt sich, wenn man das Ausmaß der Beschäftigung betrachtet. 
@@ -433,7 +402,7 @@ const translations = {
                 ),
             },
             {
-                id: 40,
+                id: 36,
                 text: (
                 <>  
                     Selbst bei Teilzeitbeschäftigung zeigt sich ein ähnlicher Trend. 
@@ -447,7 +416,7 @@ const translations = {
                 ),
             },
             {
-                id: 41,
+                id: 37,
                 text: 
                 <> 
                     Haushalte, in denen sowohl in Vollzeit als auch in Teilzeit gearbeitet wird, haben zum Teil ein höheres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> als 
@@ -458,12 +427,12 @@ const translations = {
                 </>,
             },
             {
-                id: 42,
+                id: 38,
                 text: <> Regionale Unterschiede </>,
                 isContentHeader: true,
             },
             {
-                id: 43,
+                id: 39,
                 text: (
                 <>  
                     Die Tabelle veranschaulicht die Unterschiede in der Höhe der <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> sowie im Haushalts- 
@@ -477,7 +446,7 @@ const translations = {
                 ),
             },
             {
-                id: 44,
+                id: 40,
                 text: (
                 <>  
                     Betrachtet man ausschließlich Mietshaushalte, ergibt sich ein anderes Bild: 
@@ -490,14 +459,23 @@ const translations = {
                 ),
             },
             {
-                id: 45,
+                id: 41,
                 isTable: true,
                 itemName: 'expenditure-table',
                 ariaLabel: "Aufschlüsselung der Ausgaben nach Bundesland",
                 source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria"
             },
             {
-                id: 46,
+                id: 42,
+                text: 
+                <span className="hint"> 
+                    Hinweis: Auch in dieser Tabelle sind die Zahlen äquivalisiert, also an Haushaltsgröße und -zusammensetzung angepasst. 
+                    Ein Einpersonenhaushalt erhält nach der OECD-Skala das Gewicht 1, ein Zweipersonenhaushalt mit zwei Erwachsenen das Gewicht 1,5 und ein Paarhaushalt mit einem Kind unter 14 Jahren das Gewicht 1,8. 
+                    Somit sind die ausgewiesenen Werte nicht als tatsächlich verfügbare Gesamteinkommen oder -ausgaben der Haushalte zu verstehen, sondern als vergleichbare, auf die individuelle Konsummöglichkeit umgerechnete Größen.
+                </span>,
+            },
+            {
+                id: 43,
                 text: (
                 <>  
                     Erhebliche Unterschiede zeigen sich, wenn man das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> nach 
@@ -508,7 +486,7 @@ const translations = {
                 ),
             },
             {
-                id: 47,
+                id: 44,
                 isChart: true,
                 itemName: 'median-map',
                 labelAll: "Alle",
@@ -517,7 +495,7 @@ const translations = {
                 source: "Datenquelle: Konsumerhebung 2019/2020, Statistik Austria"
             },
             {
-                id: 48,
+                id: 45,
                 accordionHeader: "Wo wohnt Österreich: Gemeindegrößenklassenerklärung",
                 accordionText: ( 
                 <>  
@@ -533,7 +511,7 @@ const translations = {
                 alt: "Karte zur Visualisierung der Gemeindegrößenklassen in Österreich"
             },
             {
-                id: 49,
+                id: 46,
                 text: (
                 <>  
                     In Wien, der größten Stadt des Landes, liegt das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> mit rund 1.545 € am niedrigsten. 
@@ -543,7 +521,7 @@ const translations = {
                 ),
             },
             {
-                id: 50,
+                id: 47,
                 text: (
                 <>  
                     Im Vergleich dazu zeigen die Bundesländer Niederösterreich, Oberösterreich und Vorarlberg ein deutlich höheres <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm>. 
@@ -554,7 +532,7 @@ const translations = {
                 ),
             },
             {
-                id: 51,
+                id: 48,
                 text: (
                 <>  
                     Trotz dieser generellen Tendenzen gibt es auch innerhalb der Bundesländer Unterschiede. 
@@ -564,7 +542,7 @@ const translations = {
                 ),
             },
             {
-                id: 52,
+                id: 49,
                 text: (
                 <>  
                     Betrachtet man ausschließlich Mietshaushalte, wird der erhebliche finanzielle Druck durch die Mietkosten besonders deutlich. 
@@ -575,20 +553,20 @@ const translations = {
                 ),
             },
             {
-                id: 53,
+                id: 50,
                 text: (
                 <>  
                     Allerdings reicht der Blick auf das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> allein nicht aus, 
                     um die Lebensqualität und die tatsächliche Wohlstandssituation von Haushalten zu beurteilen. 
-                    Häufig ist es so, dass in Regionen mit höherem Residualeinkommen die Infrastruktur und öffentlichen Dienstleistungen nicht in gleichem Maße ausgebaut sind wie in städtischen Gebieten. 
-                    Umfassende Infrastruktur und die Verfügbarkeit öffentlicher Dienstleistungen sind ebenfalls entscheidende Faktoren für den Lebensstandard. 
+                    So kann der Lebensstandard trotz höherem Residualeinkommen in ländlichen Regionen geringer ausfallen, 
+                    wenn <GlossaryTerm className="glossary-term si" sectionId="residualIncome">soziale Infrastruktur</GlossaryTerm> und öffentliche Dienstleistungen dort nicht in gleichem Ausmaß vorhanden sind wie in städtischen Gebieten. 
                     In Regionen mit günstigen Lebenshaltungskosten, aber schlechterer Infrastruktur, könnte das höhere Residualeinkommen zwar finanziellen Spielraum bieten, 
                     jedoch nicht die gleichen Lebensbedingungen und Möglichkeiten wie in gut erschlossenen urbanen Regionen.
                 </>
                 ),
             },
             {
-                id: 54,
+                id: 51,
                 text: (
                 <>  
                     Für gewisse Bevölkerungsgruppen ist <GlossaryTerm className="glossary-term si" sectionId="residualIncome">soziale Infrastruktur</GlossaryTerm> besonders wichtig. 
@@ -949,6 +927,9 @@ const ResidualIncomeSection = () => {
     return (
         <div>
             <h2 className="section-header">{section.header}</h2>
+            {/* <section id="income"> */}
+                <IncomeSection />   
+            {/* </section> */}
             {section.content.map(renderItem)}
         </div>
     );
