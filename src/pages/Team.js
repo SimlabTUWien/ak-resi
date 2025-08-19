@@ -21,6 +21,10 @@ export default function Team() {
         <p className="paragraph-team">
         <span className="boldText">Anna-Theresa Renner</span> ist Inhaberin der Laufbahnstelle für „Soziale Infrastruktur Forschung und Planung“ am Forschungsbereich Finanzwissenschaft und Infrastrukturpolitik des Instituts für Raumplanung. In ihrer Forschung beschäftigt sie sich vor allem mit regionalen und räumlichen Variationen im Zugang zur Gesundheitsversorgung, und den Effekten einer ungleichen Verteilung von Gesundheitsdienstleistungen auf die Bevölkerungsgesundheit und die Patientenmobilität. Zu ihren früheren Affiliationen zählen, das Weatherhead Center for International Affairs in Harvard, die Wirtschaftsuniversität Wien und die Gesundheit Österreich GmbH. Im Projekt ist sie vor allem in die inhaltliche Konzeptionierung und strategische Ausrichtung involviert. 
         </p>
+
+        <p className="paragraph-team">
+        <span className="boldText">Lukas Rast</span> ist als Software-Engineer im Raumsimulationslabor des Forschungsbereichs Örtliche Raumplanung am Instituts für Raumplanung tätig. Seine Schwerpunkte liegen in der Implementierung von webbasierten Datenvisualisierungsmethoden sowie in der Entwicklung von ML-basierten Verfahren zur Unterstützung von Forschungsprojekten im Bereich der Raumplanung. Im Rahmen dieses Projekts ist er für die  Implementierung und Aufbereitung der Webseite zuständig.
+        </p>
       </div>
     </>
   );
