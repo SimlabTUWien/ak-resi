@@ -134,7 +134,7 @@ const IncSexGemgroBoxplot = ({ altText }) => {
       };
   
       loadSVG();
-    }, []);
+    }, [altText]);
   
     return (
       <Box sx={{ width: "100%", overflow: "hidden" }}>
