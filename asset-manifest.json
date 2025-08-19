@@ -1,30 +1,30 @@
 {
   "files": {
     "main.css": "/ak-resi/static/css/main.13c15f2a.css",
-    "main.js": "/ak-resi/static/js/main.d88ddd1b.js",
-    "static/css/543.07513c4d.chunk.css": "/ak-resi/static/css/543.07513c4d.chunk.css",
-    "static/js/543.b2dc466a.chunk.js": "/ak-resi/static/js/543.b2dc466a.chunk.js",
+    "main.js": "/ak-resi/static/js/main.8a98a36e.js",
+    "static/css/543.c5558fc3.chunk.css": "/ak-resi/static/css/543.c5558fc3.chunk.css",
+    "static/js/543.54ef3116.chunk.js": "/ak-resi/static/js/543.54ef3116.chunk.js",
     "static/css/262.da8efc4e.chunk.css": "/ak-resi/static/css/262.da8efc4e.chunk.css",
     "static/js/262.9e7a8f8c.chunk.js": "/ak-resi/static/js/262.9e7a8f8c.chunk.js",
     "static/css/348.da8efc4e.chunk.css": "/ak-resi/static/css/348.da8efc4e.chunk.css",
     "static/js/348.99d25bfe.chunk.js": "/ak-resi/static/js/348.99d25bfe.chunk.js",
     "static/css/414.da8efc4e.chunk.css": "/ak-resi/static/css/414.da8efc4e.chunk.css",
-    "static/js/414.8c458189.chunk.js": "/ak-resi/static/js/414.8c458189.chunk.js",
+    "static/js/414.fd77197d.chunk.js": "/ak-resi/static/js/414.fd77197d.chunk.js",
     "static/css/411.da8efc4e.chunk.css": "/ak-resi/static/css/411.da8efc4e.chunk.css",
     "static/js/411.7ed8ab30.chunk.js": "/ak-resi/static/js/411.7ed8ab30.chunk.js",
     "static/js/453.61756ef0.chunk.js": "/ak-resi/static/js/453.61756ef0.chunk.js",
     "static/js/585.ddd67224.chunk.js": "/ak-resi/static/js/585.ddd67224.chunk.js",
     "index.html": "/ak-resi/index.html",
     "main.13c15f2a.css.map": "/ak-resi/static/css/main.13c15f2a.css.map",
-    "main.d88ddd1b.js.map": "/ak-resi/static/js/main.d88ddd1b.js.map",
-    "543.07513c4d.chunk.css.map": "/ak-resi/static/css/543.07513c4d.chunk.css.map",
-    "543.b2dc466a.chunk.js.map": "/ak-resi/static/js/543.b2dc466a.chunk.js.map",
+    "main.8a98a36e.js.map": "/ak-resi/static/js/main.8a98a36e.js.map",
+    "543.c5558fc3.chunk.css.map": "/ak-resi/static/css/543.c5558fc3.chunk.css.map",
+    "543.54ef3116.chunk.js.map": "/ak-resi/static/js/543.54ef3116.chunk.js.map",
     "262.da8efc4e.chunk.css.map": "/ak-resi/static/css/262.da8efc4e.chunk.css.map",
     "262.9e7a8f8c.chunk.js.map": "/ak-resi/static/js/262.9e7a8f8c.chunk.js.map",
     "348.da8efc4e.chunk.css.map": "/ak-resi/static/css/348.da8efc4e.chunk.css.map",
     "348.99d25bfe.chunk.js.map": "/ak-resi/static/js/348.99d25bfe.chunk.js.map",
     "414.da8efc4e.chunk.css.map": "/ak-resi/static/css/414.da8efc4e.chunk.css.map",
-    "414.8c458189.chunk.js.map": "/ak-resi/static/js/414.8c458189.chunk.js.map",
+    "414.fd77197d.chunk.js.map": "/ak-resi/static/js/414.fd77197d.chunk.js.map",
     "411.da8efc4e.chunk.css.map": "/ak-resi/static/css/411.da8efc4e.chunk.css.map",
     "411.7ed8ab30.chunk.js.map": "/ak-resi/static/js/411.7ed8ab30.chunk.js.map",
     "453.61756ef0.chunk.js.map": "/ak-resi/static/js/453.61756ef0.chunk.js.map",
@@ -32,6 +32,6 @@
   },
   "entrypoints": [
     "static/css/main.13c15f2a.css",
-    "static/js/main.d88ddd1b.js"
+    "static/js/main.8a98a36e.js"
   ]
 }
