@@ -102,7 +102,7 @@ const translations = {
                 id: 6,
                 text: ( 
                 <> 
-                    Genauere Informationen zu den einzelnen Infrastrukturen und der Berechnung der Indikatoren befinden sich in der untenstehenden Tabelle.
+                    Genauere Informationen zu den einzelnen Infrastrukturen und der Berechnung der Indikatoren befinden sich in der Tabelle weiter unten.
                 </>
                 ),
             },            
@@ -116,9 +116,9 @@ const translations = {
                 id: 8,
                 text: ( 
                 <> 
-                    Die untenstehende Grafik zeigt, wie die Versorgung mit verschiedenen Arten <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm> – etwa 
-                    Kindergärten, Schulen, Pflegeeinrichtungen oder soziale Einrichtungen – in den Gemeinden verteilt ist. Auf der rechten Seite ist zudem der Gesamtindikator dargestellt, 
-                    der die durchschnittliche Versorgung über alle sechs Infrastrukturbereiche hinweg zusammenfasst.
+                    Dass die Versorgung mit <GlossaryTerm className="glossary-term si" sectionId="social-infrastructure">sozialer Infrastruktur</GlossaryTerm> in Österreich zwischen den Gemeinden unterschiedlich ist, 
+                    unterstreicht auch die untenstehende Grafik. Sie zeigt, in wie vielen Gemeinden die Ausstattung mit verschiedenen Einrichtungen – wie Kindergärten, Schulen, Pflege- oder Sozialeinrichtungen – von 
+                    schlecht bis sehr gut bewertet werden kann. Auf der rechten Seite ist zudem der Gesamtindikator dargestellt, der die durchschnittliche Versorgung über alle sechs Infrastrukturbereiche hinweg zusammenfasst
                 </>
                 ),
             },      
@@ -152,17 +152,7 @@ const translations = {
                 imagePathMIV: "/images/16_SI_proGem_MIV.webp",
                 imagePathOEV: "/images/16_SI_proGem_OEV.webp",
                 altMIV: "Anteil der Gemeinden je Versorgungskategorie (MIV)",
-                altOEV: "Anteil der Gemeinden je Versorgungskategorie (OEV)",
-                text: ( 
-                <> 
-                    <span className="boldText">Beispiel: </span>
-                    In einer Gemeinde im Zentralraum kann eine Familie ihr Kind beispielsweise zu Fuß in den Kindergarten bringen, zur Ärztin um die Ecke gehen und nachmittags die pflegebedürftige Mutter 
-                    in einer nahegelegenen Einrichtung besuchen. In einer anderen Gemeinde am Rand einer strukturschwachen Region muss dieselbe Familie täglich mehrere Kilometer mit dem Auto fahren, 
-                    um medizinische Versorgung, Bildung oder Betreuung zu erreichen – oder sie muss auf teure, private Alternativen zurückgreifen.<br/><br/>
-                    
-                    Diese Unterschiede führen zu einer doppelten Belastung für Haushalte, besonders für jene mit geringerem Einkommen, vielen Betreuungspflichten oder eingeschränkter Mobilität.<br/><br/>
-                </>
-                ),
+                altOEV: "Anteil der Gemeinden je Versorgungskategorie (OEV)"
             },
             {
                 id: 12,
@@ -472,9 +462,6 @@ const SocialInfrastructureSection = () => {
                                 alt={siChartMode === 'chart_miv' ? item.altMIV : item.altOEV}
                             />
                         </div>
-                        
-                        <Typography>{item.text}</Typography>
-
                     </Box>
                 ) : item.isSiBlChart ? (
                     <div key={item.id} className="image-container si-bl-chart-container" style={{margin: '24px 0 32px'}}>
