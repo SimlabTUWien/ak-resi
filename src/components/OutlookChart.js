@@ -8,20 +8,21 @@ import { Box } from "@mui/material";
 const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_Outlook_V3.svg`;
 
 const textMap = {
-    "einkommen": {
-        title: "Einkommen",
-        subtitle: <>Mehr als nur Lohn – <br/> es geht um echte Verfügbarkeit</>,
+    // "einkommen": {
+    //     title: "Einkommen",
+    //     subtitle: <>Mehr als nur Lohn – <br/> es geht um echte Verfügbarkeit</>,
+    //     text: [
+    //       "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. Dabei ist der Lohn aus Erwerbstätigkeit zwar oft der größte Posten, doch längst nicht der einzige. Besonders bei Haushalten mit Kindern, Pensionist:innen oder Menschen mit Unterstützungsbedarf spielen staatliche Leistungen und Transfers eine zentrale Rolle.",
+    //       "Ein Blick auf den Gini-Index – ein Maß für Einkommensungleichheit – zeigt, dass die Ungleichverteilung in Österreich mit einem Wert von etwa 0,27 (nach Steuern und Transfers) zwar moderat, aber keineswegs unbedeutend ist. Das heißt: Trotz Umverteilung durch den Staat bestehen weiterhin Einkommensunterschiede zwischen Haushalten. Um Einkommensverhältnisse gerechter zu gestalten, müssen politische Maßnahmen im Bereich (Erwerbs-)Arbeit, Transfers und Besteuerung stärker an den realen Lebensbedingungen ausgerichtet werden."
+    //     ],
+    //     color: "#BDBDBD"
+    // },
+    "residual_einkommen": {
+        title: "Residualeinkommen",
+        subtitle: "Wer mehr zahlen muss, hat weniger Spielraum",
         text: [
           "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. Dabei ist der Lohn aus Erwerbstätigkeit zwar oft der größte Posten, doch längst nicht der einzige. Besonders bei Haushalten mit Kindern, Pensionist:innen oder Menschen mit Unterstützungsbedarf spielen staatliche Leistungen und Transfers eine zentrale Rolle.",
-          "Ein Blick auf den Gini-Index – ein Maß für Einkommensungleichheit – zeigt, dass die Ungleichverteilung in Österreich mit einem Wert von etwa 0,27 (nach Steuern und Transfers) zwar moderat, aber keineswegs unbedeutend ist. Das heißt: Trotz Umverteilung durch den Staat bestehen weiterhin Einkommensunterschiede zwischen Haushalten. Um Einkommensverhältnisse gerechter zu gestalten, müssen politische Maßnahmen im Bereich (Erwerbs-)Arbeit, Transfers und Besteuerung stärker an den realen Lebensbedingungen ausgerichtet werden."
-        ],
-        color: "#BDBDBD"
-    },
-    "notwendige_ausgaben": {
-        title: "Notwendige Ausgaben",
-        subtitle: "Wer mehr ausgeben muss, hat weniger Spielraum",
-        text: [
-          "Zur Deckung der Grundbedürfnisse gehören Ausgaben, die sich kaum vermeiden lassen. Dazu zählen Wohnen, Heizen, Energie, Lebensmittel, Mobilität sowie Kosten für Bildung und Gesundheit. Diese notwendigen Ausgaben können jedoch stark variieren, etwa je nach Region, Wohnform oder dem Zugang zu öffentlicher Infrastruktur. Alleinerziehende, Pensionist:innen aber auch Mieter:innen stehen unter erhöhtem finanziellem Druck. Sie haben oft weniger Gestaltungsspielraum als andere Personen mit vergleichbarerem nominellem Einkommen.",
+          "Jedoch spielt nicht nur das Einkommen eine Rolle, viel mehr geht es um die Verfügbarkeit nach Abzug notwendiger Ausgaben. Dazu zählen Wohnen, Heizen, Energie, Lebensmittel, Mobilität sowie Kosten für Bildung und Gesundheit. Diese notwendigen Ausgaben können jedoch stark variieren, etwa je nach Region, Wohnform oder dem Zugang zu öffentlicher Infrastruktur. Alleinerziehende, Pensionist:innen aber auch Mieter:innen stehen unter erhöhtem finanziellem Druck. Sie haben oft weniger Gestaltungsspielraum als andere Personen mit vergleichbarerem nominellem Einkommen.",
           "Auch im regionalen Vergleich zeigen sich deutliche Unterschiede: Während Städte wie Salzburg oder Innsbruck höhere durchschnittliche Ausgaben aufweisen, bleibt das sogenannte Residualeinkommen – also das Einkommen nach Abzug der notwendigen Ausgaben – dort teils höher als in Graz, Linz oder Wien. Das verdeutlicht, dass nicht allein die Höhe des Einkommens entscheidend ist, sondern vor allem, wie viel davon real verfügbar bleibt. Maßnahmen sollen also räumliche und strukturelle Unterschiede ernst nehmen und Spielräume schaffen, um auf lokale Gegebenheiten angemessen reagieren zu können."
         ],        
         color: "#f0ae9f"

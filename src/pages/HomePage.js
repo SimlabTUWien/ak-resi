@@ -60,7 +60,7 @@ export default function HomePage () {
                 <BackgroundSection />
             </section>
 
-            <p className='paragraph content-information'> {t.contentInformation} </p>
+            {/* <p className='paragraph content-information'> {t.contentInformation} </p> */}
 
             {/* TODO: Dashboard */}
 
