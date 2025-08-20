@@ -102,7 +102,8 @@ export default function HeaderAppBar({ show }) {
           setTimeout(() => {
             const section = document.getElementById(pendingScrollTarget);
             if (section) {
-              const yOffset = -60;
+              const isIntro = section.id === "intro";
+              const yOffset = isIntro ? -80 : -60;
               const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
               window.scrollTo({ top: y, behavior: "smooth" });
               setPendingScrollTarget(null);
@@ -122,7 +123,8 @@ export default function HeaderAppBar({ show }) {
     } else {
       const section = document.getElementById(id);
       if (section) {
-        const yOffset = -60;
+        const isIntro = section.id === "intro";
+        const yOffset = isIntro ? -80 : -60;
         const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
         window.scrollTo({ top: y, behavior: "smooth" });
       }
