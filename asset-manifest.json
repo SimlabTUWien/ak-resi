@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ak-resi/static/css/main.13c15f2a.css",
-    "main.js": "/ak-resi/static/js/main.1119ce6f.js",
+    "main.js": "/ak-resi/static/js/main.83db2213.js",
     "static/css/543.b43d92af.chunk.css": "/ak-resi/static/css/543.b43d92af.chunk.css",
     "static/js/543.2f437599.chunk.js": "/ak-resi/static/js/543.2f437599.chunk.js",
     "static/css/262.9d9ff758.chunk.css": "/ak-resi/static/css/262.9d9ff758.chunk.css",
@@ -16,7 +16,7 @@
     "static/js/767.321eb3a1.chunk.js": "/ak-resi/static/js/767.321eb3a1.chunk.js",
     "index.html": "/ak-resi/index.html",
     "main.13c15f2a.css.map": "/ak-resi/static/css/main.13c15f2a.css.map",
-    "main.1119ce6f.js.map": "/ak-resi/static/js/main.1119ce6f.js.map",
+    "main.83db2213.js.map": "/ak-resi/static/js/main.83db2213.js.map",
     "543.b43d92af.chunk.css.map": "/ak-resi/static/css/543.b43d92af.chunk.css.map",
     "543.2f437599.chunk.js.map": "/ak-resi/static/js/543.2f437599.chunk.js.map",
     "262.9d9ff758.chunk.css.map": "/ak-resi/static/css/262.9d9ff758.chunk.css.map",
@@ -32,6 +32,6 @@
   },
   "entrypoints": [
     "static/css/main.13c15f2a.css",
-    "static/js/main.1119ce6f.js"
+    "static/js/main.83db2213.js"
   ]
 }
