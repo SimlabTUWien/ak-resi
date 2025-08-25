@@ -23,7 +23,7 @@ const Dashboard = () => {
               <h2 className="boldText" style={{color: "#f0ae9f", fontSize: "1.4rem", marginTop: "0", marginBottom: "2px"}}>Residualeinkommen</h2>
               <span>Nettoeinkommen abzüglich notwendingen Ausgaben zur Erfüllung der Grundbedürfnisse</span>
               <h2 className="boldText" style={{color: "#a5cdc8", fontSize: "1.4rem", marginBottom: "2px"}}>Soziale Infrastruktur</h2>
-              <span>Gute Ausstattung mit sozialer Infrasturktur bringt Sicherheit und spart Wege, Zeit und Geld </span>
+              <span>Unverzichtbare Einrichtungen. Gute Ausstattung mit sozialer Infrasturktur bringt Sicherheit und spart Wege, Zeit und Geld </span>
               <h2 className="boldText" style={{color: "#fcd799", fontSize: "1.4rem", marginBottom: "2px"}}>Zeitverwendung</h2>
               <span>Zeit ist eine wichtige Ressource und wird in Haushalten unterschiedlich eingesetzt und verteilt</span>
             </>
