@@ -13,6 +13,7 @@ import ScrollProgressBar from '../components/ScrollProgressBar';
 import FloatingButton from "../components/FloatingButton";
 
 import "../styles/HomePage.css";
+import Dashboard from "../components/Dashboard";
 
 export default function HomePage () {
     
@@ -55,6 +56,10 @@ export default function HomePage () {
 
         {/* Scrollable Content */}
         <div className="content-wrapper">
+
+            <section className='dashboard'>
+                <Dashboard />
+            </section>
 
             <section className='background' id="background">
                 <BackgroundSection />

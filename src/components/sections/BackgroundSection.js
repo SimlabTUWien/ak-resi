@@ -64,15 +64,15 @@ const BackgroundSection = () => {
                     </>
                     ),
                 },
-                {
-                    id: 6,
-                    text: <>Klicke auf die Elemente um mehr zu erfahren:</>,
-                    className: 'click-information',
-                },
-                {
-                    id: 7,
-                    isChart: true,
-                }
+                // {
+                //     id: 6,
+                //     text: <>Klicke auf die Elemente um mehr zu erfahren:</>,
+                //     className: 'click-information',
+                // },
+                // {
+                //     id: 7,
+                //     isChart: true,
+                // }
             ]
         },
         EN: { }
