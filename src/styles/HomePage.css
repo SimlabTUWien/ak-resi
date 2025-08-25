@@ -13,9 +13,10 @@ label {
 
 .outlook-chart {
   width: 100%;
-  max-width: 620px;
+  display: flex;
+  flex-direction: column;
   min-width: 300px;
-  margin: 12px auto 32px;
+  margin: 12px auto 8px;
   justify-content: center;
   align-items: center;
 }

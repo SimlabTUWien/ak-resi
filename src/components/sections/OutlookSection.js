@@ -1,4 +1,4 @@
-import React from 'react';
+import {Box} from '@mui/material';
 import { useLanguage } from '../../context/LanguageContext';
 import OutlookChart from '../OutlookChart';
 
@@ -62,9 +62,26 @@ const OutlookSection = () => {
             <h2 className="section-header">{section.header}</h2>
             {section.content.map((item) =>
                 item.isChart ? (
-                    <div className='outlook-chart' key={item.id}>
-                    <OutlookChart altText={item.alt} />
-                </div>
+                    <Box 
+                        key={item.id}
+                        sx={{
+                            background: "#f4f4f4",
+                            padding: 2,
+                            borderRadius: 1,
+                            boxShadow: 1,
+                            fontSize: '14px',
+                            marginTop: 3,
+                            marginBottom: 3,
+                            display: 'flex', 
+                            justifyContent: 'center', 
+                            alignItems: 'center',
+                            flexDirection: 'column'
+                        }}
+                    >
+                        <div className='outlook-chart'>
+                            <OutlookChart altText={item.alt} />
+                        </div>
+                    </Box>
                 ) : (
                 <p key={item.id} className={`paragraph ${item.className || ''}`}>
                     {item.text}

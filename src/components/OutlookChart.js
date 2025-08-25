@@ -5,19 +5,11 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
 
 
-const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_Outlook_V3.svg`;
+// const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_Outlook_V3.svg`;
+const svgUrl = `${process.env.PUBLIC_URL}/images/Outlook.svg`;
 
 const textMap = {
-    // "einkommen": {
-    //     title: "Einkommen",
-    //     subtitle: <>Mehr als nur Lohn – <br/> es geht um echte Verfügbarkeit</>,
-    //     text: [
-    //       "Das Haushaltseinkommen setzt sich aus verschiedenen Quellen zusammen, wie etwa Anstellungen, eigenständigem Einkommen, Pensionen oder Sozialleistungen. Dabei ist der Lohn aus Erwerbstätigkeit zwar oft der größte Posten, doch längst nicht der einzige. Besonders bei Haushalten mit Kindern, Pensionist:innen oder Menschen mit Unterstützungsbedarf spielen staatliche Leistungen und Transfers eine zentrale Rolle.",
-    //       "Ein Blick auf den Gini-Index – ein Maß für Einkommensungleichheit – zeigt, dass die Ungleichverteilung in Österreich mit einem Wert von etwa 0,27 (nach Steuern und Transfers) zwar moderat, aber keineswegs unbedeutend ist. Das heißt: Trotz Umverteilung durch den Staat bestehen weiterhin Einkommensunterschiede zwischen Haushalten. Um Einkommensverhältnisse gerechter zu gestalten, müssen politische Maßnahmen im Bereich (Erwerbs-)Arbeit, Transfers und Besteuerung stärker an den realen Lebensbedingungen ausgerichtet werden."
-    //     ],
-    //     color: "#BDBDBD"
-    // },
-    "residual_einkommen": {
+    "residual": {
         title: "Residualeinkommen",
         subtitle: "Wer mehr zahlen muss, hat weniger Spielraum",
         text: [
@@ -27,7 +19,7 @@ const textMap = {
         ],        
         color: "#f0ae9f"
     },
-    "soziale_infrastrukturen": {
+    "soz-infra": {
         title: "Soziale Infrastrukturen",
         subtitle: "Wenn soziale Infrastruktur zum Standortvorteil wird",
         text: [
@@ -36,7 +28,7 @@ const textMap = {
         ],
         color: "#a5cdc8"
     },
-    "zeit_verwendung": {
+    "zeit": {
         title: "Zeitverwendung",
         subtitle: "Armut ist oft auch Zeitmangel",
         text: [
@@ -48,12 +40,12 @@ const textMap = {
 };
 
 
-const isTouchDevice = () => {
-  return (
-    "ontouchstart" in window ||
-    (navigator.maxTouchPoints > 0 && !window.matchMedia("(any-hover: hover)").matches)
-  );
-};
+// const isTouchDevice = () => {
+//   return (
+//     "ontouchstart" in window ||
+//     (navigator.maxTouchPoints > 0 && !window.matchMedia("(any-hover: hover)").matches)
+//   );
+// };
 
 
 const OutlookChart = ( {altText} ) => {
@@ -84,11 +76,7 @@ const OutlookChart = ( {altText} ) => {
         svg.attr("width", "100%").attr("height", "100%").attr("alt", altText);
         svg.style("display", "block").style("margin", "auto");
         
-        if (window.innerWidth > 600) {
-            svg.attr("transform", "translate(0, -50)");
-        }
-
-        if (!isTouchDevice()) {
+        // if (!isTouchDevice()) {
           svg.selectAll("g")
             .filter(function () {
               const id = d3.select(this).attr("id");
@@ -115,14 +103,15 @@ const OutlookChart = ( {altText} ) => {
             
               setSelectedInfo(info);
             });
-        }
+        // }
       }
     });
   }, [altText]);
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <div ref={svgRef} style={{ maxHeight: "520px", maxWidth: "100%", overflow: "hidden" }}></div>
+    <div className="outlook-chart-wrapper">
+      <div ref={svgRef} style={{ width: "100%", maxWidth: "640px", overflow: "hidden", justifyContent: "center" }} />
+
       <Box 
         className="infotext-container"
         sx={{
@@ -131,7 +120,7 @@ const OutlookChart = ( {altText} ) => {
           borderRadius: 2,
           backgroundColor: selectedInfo.color
         }}
-        style={{marginTop: 0}}
+        style={{marginTop: "1rem"}}
       >
         <div className="info-navigation">
           <button onClick={() => navigateText(-1)} className="nav-button" aria-label="back">
@@ -150,9 +139,7 @@ const OutlookChart = ( {altText} ) => {
             </p>
           ))}
         </div>
-        
       </Box>
-
     </div>
   );
 };

@@ -1,6 +1,11 @@
+.outlook-chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .infotext-container {
-    /* border: 1px solid rgba(112, 112, 112, 0.2); */
-    /* border-radius: 4px; */
     padding: 15px;
     margin-top: 24px;
     max-width: 100%;
