@@ -203,7 +203,10 @@ export default function HeaderAppBar({ show }) {
               }} 
             >
               <Box component="img" 
-              src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} 
+              // src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} 
+              // src={`${process.env.PUBLIC_URL}/images/Logo_project_3kreise.webp`}
+              // src={`${process.env.PUBLIC_URL}/images/3kreise_project_logo.webp`}
+              src={`${process.env.PUBLIC_URL}/images/project_logo.webp`}
               alt={t.alt}
               sx={{
                 display: { xs: 'none', lg: 'flex' }, 
@@ -353,14 +356,15 @@ export default function HeaderAppBar({ show }) {
               </Drawer>
             </Box>
 
-            <Box component="img" src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Project Logo" 
+            {/* <Box component="img" src={`${process.env.PUBLIC_URL}/images/Logo_project_small.png`} alt="Project Logo"  */}
+            <Box component="img" src={`${process.env.PUBLIC_URL}/images/project_logo.webp`} alt="Project Logo" 
               onClick={() => scrollToSection("intro")}
               sx={{
                 display: { xs: 'flex', lg: 'none' },
                 mr: 1, 
-                height: 40, 
-                marginRight: 1,
-                marginLeft: 1.2
+                height: 36, 
+                marginRight: '10px',
+                marginLeft: "auto"
               }} 
             />
             <Typography variant="h5"
