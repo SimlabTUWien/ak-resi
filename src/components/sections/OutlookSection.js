@@ -71,7 +71,6 @@ const OutlookSection = () => {
                             boxShadow: 1,
                             fontSize: '14px',
                             marginTop: 3,
-                            marginBottom: 3,
                             display: 'flex', 
                             justifyContent: 'center', 
                             alignItems: 'center',
