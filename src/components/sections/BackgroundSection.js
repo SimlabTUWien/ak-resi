@@ -84,15 +84,15 @@ const BackgroundSection = () => {
         <div>
             <h2 className="section-header">{section.header}</h2>
             {section.content.map((item) =>
-                item.isChart ? (
-                <div className="background-chart" key={item.id}>
-                    <BackgroundChart />
-                </div>
-                ) : (
+                // item.isChart ? (
+                // <div className="background-chart" key={item.id}>
+                //     <BackgroundChart />
+                // </div>
+                // ) : (
                 <p key={item.id} className={`paragraph ${item.className || ''}`}>
                     {item.text}
                 </p>
-                )
+                // )
             )}
         </div>
     );
