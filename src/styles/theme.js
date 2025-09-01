@@ -87,7 +87,7 @@ const theme = createTheme({
     MuiBackdrop: {
       styleOverrides: {
         root: {
-          fontWeight: 500,
+          fontWeight: 400,
           // fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
         },
       },
@@ -154,23 +154,24 @@ const theme = createTheme({
         },
       },
     },
-    // MuiTypography: {
-    //   styleOverrides: {
-    //     root: {
-    //       fontFamily: "ivyepic-variable, sans-serif",
-    //     },
-    //     body1: {
-    //       transform: "translateY(2px)",
-    //       fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
-    //     },
-    //     h4: {
-    //       transform: "translateY(2px)"
-    //     },
-    //     h5: {
-    //       fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
-    //     },
-    //   },
-    // },
+    MuiTypography: {
+      styleOverrides: {
+        // root: {
+        //   fontFamily: "ivyepic-variable, sans-serif",
+        // },
+        // body1: {
+        //   transform: "translateY(2px)",
+        //   fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
+        // },
+        h4: {
+          fontWeight: 500,
+          // transform: "translateY(2px)"
+        },
+        // h5: {
+        //   fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
+        // },
+      },
+    },
   },
 });
 

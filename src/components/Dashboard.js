@@ -113,6 +113,7 @@ const Dashboard = () => {
             alt="Grafik mit wesentlichen Daten & Zahlen zur sozialen Infrastruktur" 
             style={{ 
               display: "block",
+              width: "300px",
               maxWidth: "100%", 
               height: "auto",
             }}  />
@@ -146,6 +147,7 @@ const Dashboard = () => {
             alt="Grafik mit wesentlichen Daten & Zahlen zur Zeitverwendung" 
             style={{ 
               display: "block",
+              width: "300px",
               maxWidth: "100%", 
               height: "auto",
             }}  />

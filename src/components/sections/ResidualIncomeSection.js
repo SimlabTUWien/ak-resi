@@ -495,7 +495,7 @@ const translations = {
             },
             {
                 id: 45,
-                accordionHeader: "Wo wohnt Österreich: Gemeindegrößenklassenerklärung",
+                accordionHeader: <>Wo wohnt Österreich: Gemeindegrößen&shy;klassenerklärung</>,
                 accordionText: ( 
                 <>  
                     In vielen regionalen Statistiken werden die österreichischen Gemeinden in <GlossaryTerm className="glossary-term municipalitySizeClass" sectionId="residualIncome">Gemeindegrößenklassen</GlossaryTerm> eingeteilt. 
