@@ -1,10 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { MapContainer, GeoJSON, TileLayer, useMap } from 'react-leaflet';
+import { MapContainer, GeoJSON, useMap } from 'react-leaflet';
+import { createTileLayerComponent } from "@react-leaflet/core";
 import 'leaflet/dist/leaflet.css';
-import 'leaflet-splitmap';
 import 'leaflet-defaulticon-compatibility';
 import L from 'leaflet';
+import "@maplibre/maplibre-gl-leaflet";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 import { Box, Typography } from '@mui/material';
 
@@ -207,7 +209,21 @@ const DesktopLegend = ({ selectedLanguage }) => {
   return null;
 };
 
+const MapLibreTileLayer = createTileLayerComponent(
+  ({ styleUrl, attribution, ...options }, context) => {
+    const layer = L.maplibreGL({
+      style: styleUrl,
+      attribution,
+      ...options,
+    });
+
+    return { instance: layer, context };
+  }
+);
+
 const SiIndicatorMap = ({ siMode, subIndicator: indicator }) => {
+
+  const apiKey = '8rdMnv0vmULfy9rf4w3v'; 
   
   const { language } = useLanguage();
   const languageRef = useRef(language);
@@ -363,12 +379,16 @@ const SiIndicatorMap = ({ siMode, subIndicator: indicator }) => {
             interactive: false,
             }}
         />
-        )}   
-         
-        <TileLayer
+        )}
+
+        <MapLibreTileLayer
+          styleUrl={`https://api.maptiler.com/maps/01990540-e89d-739e-9765-efded136dc8a/style.json?key=${apiKey}`}
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a>'
+        />
+        {/* <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
-        />
+        /> */}
         <ChangeZoomPosition />
         {!isMobile && <DesktopLegend selectedLanguage={language} />}
       </MapContainer>
