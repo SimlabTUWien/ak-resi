@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/ak-resi/static/css/main.76a0a66f.css",
-    "main.js": "/ak-resi/static/js/main.74002a70.js",
+    "main.js": "/ak-resi/static/js/main.98c07893.js",
     "static/css/322.de53eae3.chunk.css": "/ak-resi/static/css/322.de53eae3.chunk.css",
-    "static/js/322.8d08df9d.chunk.js": "/ak-resi/static/js/322.8d08df9d.chunk.js",
+    "static/js/322.c083f6d6.chunk.js": "/ak-resi/static/js/322.c083f6d6.chunk.js",
     "static/css/262.21275dd9.chunk.css": "/ak-resi/static/css/262.21275dd9.chunk.css",
     "static/js/262.9e7a8f8c.chunk.js": "/ak-resi/static/js/262.9e7a8f8c.chunk.js",
     "static/css/348.21275dd9.chunk.css": "/ak-resi/static/css/348.21275dd9.chunk.css",
@@ -19,9 +19,9 @@
     "static/media/Montserrat-VariableFont_wght.ttf": "/ak-resi/static/media/Montserrat-VariableFont_wght.4df14eb5e72bf55c4497.ttf",
     "index.html": "/ak-resi/index.html",
     "main.76a0a66f.css.map": "/ak-resi/static/css/main.76a0a66f.css.map",
-    "main.74002a70.js.map": "/ak-resi/static/js/main.74002a70.js.map",
+    "main.98c07893.js.map": "/ak-resi/static/js/main.98c07893.js.map",
     "322.de53eae3.chunk.css.map": "/ak-resi/static/css/322.de53eae3.chunk.css.map",
-    "322.8d08df9d.chunk.js.map": "/ak-resi/static/js/322.8d08df9d.chunk.js.map",
+    "322.c083f6d6.chunk.js.map": "/ak-resi/static/js/322.c083f6d6.chunk.js.map",
     "262.21275dd9.chunk.css.map": "/ak-resi/static/css/262.21275dd9.chunk.css.map",
     "262.9e7a8f8c.chunk.js.map": "/ak-resi/static/js/262.9e7a8f8c.chunk.js.map",
     "348.21275dd9.chunk.css.map": "/ak-resi/static/css/348.21275dd9.chunk.css.map",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.76a0a66f.css",
-    "static/js/main.74002a70.js"
+    "static/js/main.98c07893.js"
   ]
 }
