@@ -92,7 +92,8 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
     <span ref={ref} style={{ fontSize, fontWeight: 500 , color: getColor(targetValue) }}>
 
       {/* {count} */}
-      {count.toFixed(2)}
+      {/* {count.toFixed(2)} */}
+      {count.toFixed(2).replace('.', ',')}
     </span>
   );
 };
