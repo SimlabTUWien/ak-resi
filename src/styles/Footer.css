@@ -25,7 +25,8 @@
 .footer-link {
   background: none;
   cursor: pointer;
-  font-variation-settings: "slnt" 0, "wdth" 100, "wght" 600;
+  /* font-variation-settings: "slnt" 0, "wdth" 100, "wght" 600; */
+  font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
   /* color: #d99484; */

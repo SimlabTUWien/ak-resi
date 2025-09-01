@@ -11,35 +11,60 @@ const theme = createTheme({
       /* primary: "#fff" */
     },
   },
+  // typography: {
+  //   fontFamily: "ivyepic-variable, sans-serif",
+  //   allVariants: {
+  //     fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300', // Default for all text
+  //   },
+  //   h1: {
+  //     fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+  //   },
+  //   h2: {
+  //     fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+  //   },
+  //   h3: {
+  //     fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+  //   },
+  //   h4: {
+  //     fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+  //   },
+  //   h5: {
+  //     fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+  //   },
+  //   h6: {
+  //     fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+  //   },
+  // },
   typography: {
-    fontFamily: "ivyepic-variable, sans-serif",
+    fontFamily: '"Montserrat", sans-serif',
     allVariants: {
-      fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300', // Default for all text
+      fontWeight: 300, // default
     },
-    h1: {
-      fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
-    },
-    h2: {
-      fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
-    },
-    h3: {
-      fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
-    },
-    h4: {
-      fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
-    },
-    h5: {
-      fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
-    },
-    h6: {
-      fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
-    },
+    h1: { fontWeight: 600 },
+    h2: { fontWeight: 600 },
+    h3: { fontWeight: 600 },
+    h4: { fontWeight: 600 },
+    h5: { fontWeight: 600 },
+    h6: { fontWeight: 600 },
   },
+  // typography: {
+  //   fontFamily: '"M PLUS Rounded 1c", sans-serif',
+  //   allVariants: {
+  //     fontWeight: 400
+  //   },
+  //   h1: { fontWeight: 600 },
+  //   h2: { fontWeight: 600 },
+  //   h3: { fontWeight: 600 },
+  //   h4: { fontWeight: 600 },
+  //   h5: { fontWeight: 600 },
+  //   h6: { fontWeight: 600 },
+  // },
   components: {
     MuiTableCell: {
       styleOverrides: {
         head: ({ theme }) => ({
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+          fontWeight: 600,
+          // fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
           paddingTop: "18px",
           fontSize: "1.0rem",
           [theme.breakpoints.down("sm")]: {
@@ -48,7 +73,8 @@ const theme = createTheme({
           hyphens: "manual"
         }),
         body: ({ theme }) => ({
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
+          fontWeight: 400,
+          // fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
           paddingTop: "18px",
           fontSize: "1.0rem",
           [theme.breakpoints.down("sm")]: {
@@ -61,14 +87,16 @@ const theme = createTheme({
     MuiBackdrop: {
       styleOverrides: {
         root: {
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
+          fontWeight: 500,
+          // fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
         },
       },
     },
     MuiSelect: {
       styleOverrides: {
           root: {
-            fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
+            fontWeight: 400,
+            // fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
             "& > svg": {
             display: "inline-block",
             transform: "translateY(1px)",
@@ -82,11 +110,13 @@ const theme = createTheme({
           "& > label": {
             display: "inline-block",
             hyphens: "manual",
-            transform: "translateY(2px)",
-            fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
+            // transform: "translateY(2px)",
+            // fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500',
+            fontWeight: 500,
           },
           "&.Mui-selected > label": {
-            fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+            // fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 600',
+            fontWeight: 600,
           }
         },
       },
@@ -95,10 +125,11 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
+            fontWeight: 400,
+          // fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
           "& > label": {
             display: "inline-block",
-            transform: "translateY(3px)",
+            // transform: "translateY(3px)",
           },
         },
       },
@@ -106,28 +137,40 @@ const theme = createTheme({
     MuiToolbar: {
       styleOverrides: {
         button: {
-          fontFamily: "ivyepic-variable, sans-serif",
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
+          // fontFamily: '"M PLUS Rounded 1c", sans-serif',
+          fontWeight: 400,
+          
+          // fontFamily: "ivyepic-variable, sans-serif",
+          // fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 400',
         },
       },
     },
-    MuiTypography: {
+    MuiListItemText: {
       styleOverrides: {
-        root: {
-          fontFamily: "ivyepic-variable, sans-serif",
-        },
-        body1: {
-          transform: "translateY(2px)",
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
-        },
-        h4: {
-          transform: "translateY(2px)"
-        },
-        h5: {
-          fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
+        primary: {
+          fontSize: "1.08rem",
+          fontWeight: 400,
+          color: "#333",
         },
       },
     },
+    // MuiTypography: {
+    //   styleOverrides: {
+    //     root: {
+    //       fontFamily: "ivyepic-variable, sans-serif",
+    //     },
+    //     body1: {
+    //       transform: "translateY(2px)",
+    //       fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
+    //     },
+    //     h4: {
+    //       transform: "translateY(2px)"
+    //     },
+    //     h5: {
+    //       fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300',
+    //     },
+    //   },
+    // },
   },
 });
 

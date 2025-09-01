@@ -319,8 +319,10 @@ const MedianMapChart = ({ mode, altText }) => {
           .style("padding", "6px 10px")
           .style("border-radius", "5px")
           .style("font-size", "16px")
-          .style("font-family", "ivyepic-variable, sans-serif")
-          .style("font-variation-settings", "'wght' 400")
+          // .style("font-family", "ivyepic-variable, sans-serif")
+          // .style("font-variation-settings", "'wght' 400")
+          .style("font-family", '"Montserrat", sans-serif')
+          .style("font-weight", 400)
           .style("pointer-events", "none")
           .style("visibility", "hidden");
 
@@ -436,17 +438,17 @@ const MedianMapChart = ({ mode, altText }) => {
 
                   if (!regionData) {
                     tooltipHTML = `
-                      <div style="font-variation-settings: 'wght' 700">${regionName}</div>
+                      <div style="font-weight: 500">${regionName}</div>
                       <div>Gemeindegrößenklasse nicht vorhanden</div>
                     `;
                   } else if(regionData.riCategory === "nodata") {
                     tooltipHTML = `
-                      <div style="font-variation-settings: 'wght' 700">${regionName}</div>
+                      <div style="font-weight: 700">${regionName}</div>
                       <div>Keine Daten für Gemeindegrößenklasse vorhanden</div>
                     `;
                   } else {
                     tooltipHTML = `
-                      <div style="font-variation-settings: 'wght' 700">${regionName}</div>
+                      <div style="font-weight: 700">${regionName}</div>
                       <div>Gemeindegrößenklasse: ${gemgrText}</div>
                       <div>Residualeinkommen (Median): ${regionData.ri} €</div>
                     `;

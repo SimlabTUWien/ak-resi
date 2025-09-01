@@ -88,10 +88,9 @@ const translations = {
                     Ein ähnlicher Anteil entfällt auf Ernährung. Doch ein genauerer Blick auf Mieter:innenhaushalte offenbart eine deutliche finanzielle Belastung: 
                     Hier steigt der Anteil der Wohnkosten drastisch auf über 23% des Einkommens. 
                     Diese Differenz wirkt sich auch stark auf das <GlossaryTerm className="glossary-term residualIncome" sectionId="residualIncome">Residualeinkommen</GlossaryTerm> aus – 
-                    also das Einkommen, das nach <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> für Wohnen, Ernährung, Bildung, Gesundheit und Mobilität verbleibt.
-                    Dabei spielt die Versorgung mit <GlossaryTerm className="glossary-term si" sectionId="residualIncome">sozialer Infrastruktur<span style={{fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 300', color: "#000", textDecoration: "none"}}>,</span></GlossaryTerm> die im nächsten Abschnitt näher beleuchtet wird, eine wichtige Rolle.
-                    Während das Residualeinkommen über alle Haushalte hinweg bei etwa 70% des Haushaltseinkommens liegt, 
-                    sinkt dieser Wert für Mieter:innenhaushalte auf nur noch ca. 58%. 
+                    also das Einkommen, das nach <GlossaryTerm className="glossary-term expenditure" sectionId="residualIncome">notwendigen Ausgaben</GlossaryTerm> für Wohnen, Ernährung, Bildung, Gesundheit und Mobilität verbleibt.s
+                    Dabei spielt die Versorgung mit <GlossaryTerm className="glossary-term si" sectionId="residualIncome">sozialer Infrastruktur<span style={{fontWeight: 300, color: "#000", textDecoration: "none"}}>,</span></GlossaryTerm> die im nächsten Abschnitt näher beleuchtet wird, eine wichtige Rolle.
+                    Während das Residualeinkommen über alle Haushalte hinweg bei etwa 70% des Haushaltseinkommens liegt, sinkt dieser Wert für Mieter:innenhaushalte auf nur noch ca. 58%. 
                     Das bedeutet, dass Mieter:innen deutlich weniger finanziellen Spielraum für weitere Ausgaben oder Rücklagen haben. 
                 </>
                 ),

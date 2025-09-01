@@ -121,8 +121,10 @@ const MobileLegend = ({ selectedLanguage }) => {
         sx={{
           fontSize: '18px',
           fontWeight: 'bold',
-          fontFamily: 'ivyepic-variable, sans-serif',
-          fontVariationSettings: "'wght' 600",
+          fontFamily: '"Montserrat", sans-serif',
+          // fontWeight: 600
+          // fontFamily: 'ivyepic-variable, sans-serif',
+          // fontVariationSettings: "'wght' 600",
         }}
       >
         {translations[selectedLanguage].title}
@@ -169,7 +171,7 @@ const DesktopLegend = ({ selectedLanguage }) => {
           box-shadow: 0px 0px 4px rgba(0,0,0,0.3); 
           font-size: 18px;"
         >
-          <span style="font-variation-settings: 'wght' 600;">${translations[selectedLanguage].title}</span>
+          <span style="font-weight: 600">${translations[selectedLanguage].title}</span>
           <div style="display: flex; align-items: center; margin-top: 2px;">
             <div style="width: 22px; height: 22px; background: #fde7f3; margin-right: 12px;"></div>
             <span style="padding-top: 4px">0</span>
@@ -342,7 +344,8 @@ const SiIndicatorMap = ({ siMode, subIndicator: indicator }) => {
         maxBounds={[[45.5, 9.0], [49.5, 17.5]]}
         maxBoundsViscosity={1.0}
         attributionControl={false}
-        style={{ height: '480px', width: '100%', background: '#f2f0f0', borderRadius: '8px', overflow: 'hidden', color: 'black', fontFamily: 'ivyepic-variable, sans-serif', fontVariationSettings: "'wght' 400"}}
+        // style={{ height: '480px', width: '100%', background: '#f2f0f0', borderRadius: '8px', overflow: 'hidden', color: 'black', fontFamily: 'ivyepic-variable, sans-serif', fontVariationSettings: "'wght' 400"}}
+        style={{ height: '480px', width: '100%', background: '#f2f0f0', borderRadius: '8px', overflow: 'hidden', color: 'black', fontFamily: '"Montserrat", sans-serif', fontWeight: 400}}
         ref={mapRef}
       >
         {indicatorDataGeoJson && (

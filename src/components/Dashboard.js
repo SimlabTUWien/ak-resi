@@ -79,7 +79,7 @@ const Dashboard = () => {
             alt="Grafik mit wesentlichen Daten & Zahlen zum Residualeinkommen" 
             style={{ 
               display: "block",
-              width: "100%",      // 🔥 instead of maxWidth
+              width: "300px",
               height: "auto",
               objectFit: "contain"
             }}   />

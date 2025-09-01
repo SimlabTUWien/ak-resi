@@ -85,13 +85,15 @@ h1, h2, h3 {
   font-size: 4rem;
   color: #000000;
   margin-bottom: 0;
+  font-weight: 500;
 }
 
 .header-title {
   font-size: 1.8rem;
   color: #1b1b1b;
   margin-top: 8px;
-  font-variation-settings: "slnt" 0, "wdth" 100, "wght" 600;
+  /* font-variation-settings: "slnt" 0, "wdth" 100, "wght" 600; */
+  font-weight: 400;
 }
     
 .header-subtitle {

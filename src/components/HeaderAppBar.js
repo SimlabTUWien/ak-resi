@@ -217,8 +217,9 @@ export default function HeaderAppBar({ show }) {
               
               sx={{
                 display: { xs: 'none', lg: 'flex' },
-                paddingTop: '10px',
+                // paddingTop: '10px',
                 fontSize: '2.6rem',
+                fontWeight: 500,
                 userSelect: "none",
                 WebkitTapHighlightColor: "transparent",
               }}
@@ -243,7 +244,7 @@ export default function HeaderAppBar({ show }) {
                         <ListItemIcon>{item.icon}</ListItemIcon>
                         <ListItemText
                           primary={item.text}
-                          sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
+                          // sx={{ fontSize: "1.1rem", fontWeight: 500, color: "#333" }}
                         />
                       </ListItemButton>
                     </ListItem>
@@ -265,7 +266,7 @@ export default function HeaderAppBar({ show }) {
                         <ListItemIcon>{item.icon}</ListItemIcon>
                         <ListItemText
                           primary={item.text}
-                          sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
+                          // sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
                         />
                       </ListItemButton>
                     </ListItem>
@@ -322,7 +323,7 @@ export default function HeaderAppBar({ show }) {
                         <ListItemIcon>{item.icon}</ListItemIcon>
                         <ListItemText
                           primary={item.text}
-                          sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
+                          // sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
                         />
                       </ListItemButton>
                     </ListItem>
@@ -344,7 +345,7 @@ export default function HeaderAppBar({ show }) {
                         <ListItemIcon>{item.icon}</ListItemIcon>
                         <ListItemText
                           primary={item.text}
-                          sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
+                          // sx={{ fontSize: "1.1rem", fontWeight: "bold", color: "#333" }}
                         />
                       </ListItemButton>
                     </ListItem>
@@ -369,7 +370,7 @@ export default function HeaderAppBar({ show }) {
                 mr: 2, 
                 display: { xs: 'flex', lg: 'none' }, 
                 flexGrow: 1,
-                paddingTop: '8px',
+                paddingTop: '2px', //'8px',
                 fontSize: '2rem',
                 margin: 0,
                 userSelect: "none",

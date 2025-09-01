@@ -104,8 +104,10 @@ const IncSexFtptBoxplot = ({ altText }) => {
               .style("padding", "6px 10px")
               .style("border-radius", "5px")
               .style("font-size", "16px")
-              .style("font-family", "ivyepic-variable, sans-serif")
-              .style("font-variation-settings", "'wght' 400")
+              // .style("font-family", "ivyepic-variable, sans-serif")
+              // .style("font-variation-settings", "'wght' 400")
+              .style("font-family", '"Montserrat", sans-serif')
+              .style("font-weight", 400)
               .style("pointer-events", "none")
               .style("visibility", "hidden");
   
@@ -137,7 +139,7 @@ const IncSexFtptBoxplot = ({ altText }) => {
     
                   tooltip
                     .html(`
-                      <div style="font-variation-settings: 'wght' 700">${data.titel}</div>
+                      <div style="font-weight: 700">${data.titel}</div>
                       <div>${l.extent}: ${data.extend}</div>
                       <div>${l.q1}: ${data.q1} Stunden</div>
                       <div>${l.median}: ${data.median} Stunden</div>

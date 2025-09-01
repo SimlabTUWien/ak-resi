@@ -88,7 +88,9 @@ const CounterAnimation = ({ targetValue, duration = 2000 }) => {
   }, [targetValue, duration]);
 
   return (
-    <span ref={ref} style={{ fontSize, fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500', color: getColor(targetValue) }}>
+    // <span ref={ref} style={{ fontSize, fontVariationSettings: '"slnt" 0, "wdth" 100, "wght" 500', color: getColor(targetValue) }}>
+    <span ref={ref} style={{ fontSize, fontWeight: 500 , color: getColor(targetValue) }}>
+
       {/* {count} */}
       {count.toFixed(2)}
     </span>

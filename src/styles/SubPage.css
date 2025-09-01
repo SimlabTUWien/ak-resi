@@ -98,7 +98,8 @@
 
 .privacy-link {
     color: #006699;
-    font-variation-settings: "slnt" 0, "wdth" 100, "wght" 500;
+    /* font-variation-settings: "slnt" 0, "wdth" 100, "wght" 500; */
+    font-weight: 500;
     text-decoration: none;
 
     &:hover {
