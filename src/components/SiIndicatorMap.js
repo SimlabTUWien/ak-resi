@@ -111,7 +111,8 @@ const MobileLegend = ({ selectedLanguage }) => {
     <Box
       sx={{
         background: 'white',
-        padding: 2,
+        paddingX: 2,
+        paddingY: 1,
         borderRadius: 1,
         boxShadow: 1,
         fontSize: '14px',

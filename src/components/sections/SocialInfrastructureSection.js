@@ -356,7 +356,7 @@ const SocialInfrastructureSection = () => {
                         key={item.id}
                         sx={{
                             background: "#f4f4f4",
-                            padding: 2,
+                            padding: { xs: 1, sm: 2 },
                             borderRadius: 1,
                             boxShadow: 1,
                             fontSize: '14px',
@@ -434,7 +434,7 @@ const SocialInfrastructureSection = () => {
                         key={item.id}
                         sx={{
                             background: "#f4f4f4",
-                            padding: 2,
+                            padding: { xs: 1, sm: 2 },
                             borderRadius: 1,
                             boxShadow: 1,
                             fontSize: '14px',
