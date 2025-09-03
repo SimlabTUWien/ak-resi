@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ak-resi/static/css/main.76a0a66f.css",
+    "main.css": "/ak-resi/static/css/main.30a4ec8c.css",
     "main.js": "/ak-resi/static/js/main.98c07893.js",
     "static/css/322.de53eae3.chunk.css": "/ak-resi/static/css/322.de53eae3.chunk.css",
     "static/js/322.c083f6d6.chunk.js": "/ak-resi/static/js/322.c083f6d6.chunk.js",
@@ -18,7 +18,7 @@
     "static/media/Montserrat-Italic-VariableFont_wght.ttf": "/ak-resi/static/media/Montserrat-Italic-VariableFont_wght.e8f632769d4c298b0319.ttf",
     "static/media/Montserrat-VariableFont_wght.ttf": "/ak-resi/static/media/Montserrat-VariableFont_wght.4df14eb5e72bf55c4497.ttf",
     "index.html": "/ak-resi/index.html",
-    "main.76a0a66f.css.map": "/ak-resi/static/css/main.76a0a66f.css.map",
+    "main.30a4ec8c.css.map": "/ak-resi/static/css/main.30a4ec8c.css.map",
     "main.98c07893.js.map": "/ak-resi/static/js/main.98c07893.js.map",
     "322.de53eae3.chunk.css.map": "/ak-resi/static/css/322.de53eae3.chunk.css.map",
     "322.c083f6d6.chunk.js.map": "/ak-resi/static/js/322.c083f6d6.chunk.js.map",
@@ -35,7 +35,7 @@
     "826.e0e19ec2.chunk.js.map": "/ak-resi/static/js/826.e0e19ec2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.76a0a66f.css",
+    "static/css/main.30a4ec8c.css",
     "static/js/main.98c07893.js"
   ]
 }
