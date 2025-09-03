@@ -45,6 +45,12 @@ h2 {
 
 .content-header {
   text-align: left;
+  font-size: 1.5rem;
+}
+
+.content-sub-header {
+  text-align: left;
+  font-size: 1.3rem;
 }
 
 
@@ -159,6 +165,19 @@ img {
 }
 
 @media (max-width: 400px) {
+
+  .section-header {
+    font-size: 1.75rem;
+  }
+
+  .content-header {
+    font-size: 1.3rem;
+  }
+
+  .content-sub-header {
+    font-size: 1.2rem;
+  }
+
   .content-wrapper {
     width: calc(100% - 20px);
     padding: 0;

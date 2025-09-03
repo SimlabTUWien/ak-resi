@@ -360,16 +360,16 @@ const TimeUsageSection = () => {
         switch (true) {
             case item.isContentHeader:
             return (
-                <h2 key={item.id} className={`content-header ${item.className || ''}`}>
+                <h3 key={item.id} className={`content-header ${item.className || ''}`}>
                     {item.text}
-                </h2>
+                </h3>
             );
 
             case item.isContentSubHeader:
             return (
-                <h3 key={item.id} className={`content-header ${item.className || ''}`}>
+                <h4 key={item.id} className={`content-sub-header ${item.className || ''}`}>
                     {item.text}
-                </h3>
+                </h4>
             );
 
             case item.isChart:

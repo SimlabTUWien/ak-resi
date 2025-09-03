@@ -350,7 +350,7 @@ const SocialInfrastructureSection = () => {
             {section.content.map((item) =>
                 
                item.isContentHeader ? (
-                    <h2 key={item.id} className={`content-header ${item.className || ''}`}>{item.text}</h2>
+                    <h3 key={item.id} className={`content-header ${item.className || ''}`}>{item.text}</h3>
                 ) : item.isMapComponent ? (
                     <Box
                         key={item.id}

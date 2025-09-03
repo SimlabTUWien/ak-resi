@@ -190,7 +190,7 @@ const Dashboard = () => {
     <Box
       sx={{
         mx: 'auto',
-        padding: { xs: '24px 0', sm: '32px 12px' }, // mobile: 24/4, desktop: 32/12
+        padding: { xs: '16px 0', sm: '32px 12px' }, // mobile: 24/4, desktop: 32/12
         bgcolor: '#f4f4f4',
         borderRadius: 1,
         boxShadow: 1,

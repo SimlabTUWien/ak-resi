@@ -101,7 +101,7 @@ const IncomeSection = () => {
             {section.content.map((item) =>
                 
                item.isContentHeader ? (
-                    <h2 key={item.id} className={`content-header ${item.className || ''}`}>{item.text}</h2>
+                    <h3 key={item.id} className={`content-header ${item.className || ''}`}>{item.text}</h3>
                 ) : item.isChart ? (
                     <div key={item.id} className="image-container median-hh-income-container">
                         <img src={`${process.env.PUBLIC_URL}/images/00_Median_HH_Income_Personen_DE.png`} alt={`${item.alt}`} />

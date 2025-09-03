@@ -67,8 +67,6 @@ export default function HomePage () {
 
             {/* <p className='paragraph content-information'> {t.contentInformation} </p> */}
 
-            {/* TODO: Dashboard */}
-
             {/*             
             <section id="overview">
                 <OverviewSection />
