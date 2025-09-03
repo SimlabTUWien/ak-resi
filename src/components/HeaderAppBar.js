@@ -354,31 +354,45 @@ export default function HeaderAppBar({ show }) {
               </Drawer>
             </Box>
 
-            <Box component="img" src={`${process.env.PUBLIC_URL}/images/project_logo.webp`} alt="Project Logo" 
+            <Box 
               onClick={() => scrollToSection("intro")}
               sx={{
-                display: { xs: 'flex', lg: 'none' },
-                mr: 1, 
-                height: 36, 
-                marginRight: '10px',
-                marginLeft: "auto"
-              }} 
-            />
-            <Typography variant="h5"
-              onClick={() => scrollToSection("intro")} 
-              sx={{
-                mr: 2, 
-                display: { xs: 'flex', lg: 'none' }, 
-                flexGrow: 1,
-                paddingTop: '2px', //'8px',
-                fontSize: '2rem',
-                margin: 0,
-                userSelect: "none",
-                WebkitTapHighlightColor: "transparent"
+                display: { xs: "flex", lg: "none" },
+                alignItems: "center",
+                justifyContent: "center",
+                position: "absolute",
+                left: "50%",
+                transform: "translateX(-50%)",
+                cursor: "pointer",
               }}
-            >
-              Re:sI:Ze
-            </Typography>
+              >
+              <Box component="img" src={`${process.env.PUBLIC_URL}/images/project_logo.webp`} alt="Project Logo" 
+                
+                sx={{
+                  display: { xs: 'flex', lg: 'none' },
+                  mr: 1, 
+                  height: 36, 
+                  marginRight: '10px',
+                  marginLeft: "auto"
+                }} 
+              />
+              <Typography variant="h5"
+                onClick={() => scrollToSection("intro")} 
+                sx={{
+                  mr: 2, 
+                  display: { xs: 'flex', lg: 'none' }, 
+                  flexGrow: 1,
+                  paddingTop: '2px', //'8px',
+                  fontSize: '2rem',
+                  margin: 0,
+                  userSelect: "none",
+                  WebkitTapHighlightColor: "transparent"
+                }}
+              >
+                Re:sI:Ze
+              </Typography>
+            </Box>
+           
 
             {/* Desktop Version Burger Menu */}
             <Box 
