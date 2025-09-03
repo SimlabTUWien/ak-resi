@@ -523,7 +523,7 @@ const MedianMapChart = ({ mode, altText }) => {
     <Box 
         className="infotext-container"
         sx={{
-          padding: 2,
+          padding: { xs: 1, sm: 2 },
           borderRadius: 2,
           minHeight: '140px'
         }}
