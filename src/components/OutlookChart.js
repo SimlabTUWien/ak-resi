@@ -116,7 +116,8 @@ const OutlookChart = ( {altText} ) => {
         className="infotext-container"
         sx={{
           boxShadow: 2, // Use shadow from MUI's theme (0-24)
-          padding: 2,
+          padding: { xs: 1, sm: 2 },
+          pt: { xs: 2, sm: 2 },
           borderRadius: 2,
           backgroundColor: selectedInfo.color
         }}
