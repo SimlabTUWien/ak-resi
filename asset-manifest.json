@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/ak-resi/static/css/main.d76229df.css",
-    "main.js": "/ak-resi/static/js/main.a69f6d6a.js",
+    "main.css": "/ak-resi/static/css/main.76a0a66f.css",
+    "main.js": "/ak-resi/static/js/main.6edc8272.js",
     "static/css/322.de53eae3.chunk.css": "/ak-resi/static/css/322.de53eae3.chunk.css",
-    "static/js/322.0084fa38.chunk.js": "/ak-resi/static/js/322.0084fa38.chunk.js",
+    "static/js/322.19fe52a8.chunk.js": "/ak-resi/static/js/322.19fe52a8.chunk.js",
     "static/css/262.21275dd9.chunk.css": "/ak-resi/static/css/262.21275dd9.chunk.css",
     "static/js/262.9e7a8f8c.chunk.js": "/ak-resi/static/js/262.9e7a8f8c.chunk.js",
     "static/css/348.21275dd9.chunk.css": "/ak-resi/static/css/348.21275dd9.chunk.css",
@@ -18,10 +18,10 @@
     "static/media/Montserrat-Italic-VariableFont_wght.ttf": "/ak-resi/static/media/Montserrat-Italic-VariableFont_wght.e8f632769d4c298b0319.ttf",
     "static/media/Montserrat-VariableFont_wght.ttf": "/ak-resi/static/media/Montserrat-VariableFont_wght.4df14eb5e72bf55c4497.ttf",
     "index.html": "/ak-resi/index.html",
-    "main.d76229df.css.map": "/ak-resi/static/css/main.d76229df.css.map",
-    "main.a69f6d6a.js.map": "/ak-resi/static/js/main.a69f6d6a.js.map",
+    "main.76a0a66f.css.map": "/ak-resi/static/css/main.76a0a66f.css.map",
+    "main.6edc8272.js.map": "/ak-resi/static/js/main.6edc8272.js.map",
     "322.de53eae3.chunk.css.map": "/ak-resi/static/css/322.de53eae3.chunk.css.map",
-    "322.0084fa38.chunk.js.map": "/ak-resi/static/js/322.0084fa38.chunk.js.map",
+    "322.19fe52a8.chunk.js.map": "/ak-resi/static/js/322.19fe52a8.chunk.js.map",
     "262.21275dd9.chunk.css.map": "/ak-resi/static/css/262.21275dd9.chunk.css.map",
     "262.9e7a8f8c.chunk.js.map": "/ak-resi/static/js/262.9e7a8f8c.chunk.js.map",
     "348.21275dd9.chunk.css.map": "/ak-resi/static/css/348.21275dd9.chunk.css.map",
@@ -35,7 +35,7 @@
     "95.9c8e56de.chunk.js.map": "/ak-resi/static/js/95.9c8e56de.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d76229df.css",
-    "static/js/main.a69f6d6a.js"
+    "static/css/main.76a0a66f.css",
+    "static/js/main.6edc8272.js"
   ]
 }
