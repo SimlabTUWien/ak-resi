@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/ak-resi/static/css/main.30a4ec8c.css",
-    "main.js": "/ak-resi/static/js/main.98c07893.js",
+    "main.css": "/ak-resi/static/css/main.d76229df.css",
+    "main.js": "/ak-resi/static/js/main.a69f6d6a.js",
     "static/css/322.de53eae3.chunk.css": "/ak-resi/static/css/322.de53eae3.chunk.css",
-    "static/js/322.c083f6d6.chunk.js": "/ak-resi/static/js/322.c083f6d6.chunk.js",
+    "static/js/322.0084fa38.chunk.js": "/ak-resi/static/js/322.0084fa38.chunk.js",
     "static/css/262.21275dd9.chunk.css": "/ak-resi/static/css/262.21275dd9.chunk.css",
     "static/js/262.9e7a8f8c.chunk.js": "/ak-resi/static/js/262.9e7a8f8c.chunk.js",
     "static/css/348.21275dd9.chunk.css": "/ak-resi/static/css/348.21275dd9.chunk.css",
@@ -13,15 +13,15 @@
     "static/css/411.21275dd9.chunk.css": "/ak-resi/static/css/411.21275dd9.chunk.css",
     "static/js/411.7ed8ab30.chunk.js": "/ak-resi/static/js/411.7ed8ab30.chunk.js",
     "static/js/453.61756ef0.chunk.js": "/ak-resi/static/js/453.61756ef0.chunk.js",
-    "static/css/826.23e70a51.chunk.css": "/ak-resi/static/css/826.23e70a51.chunk.css",
-    "static/js/826.e0e19ec2.chunk.js": "/ak-resi/static/js/826.e0e19ec2.chunk.js",
+    "static/css/95.60f0bcbc.chunk.css": "/ak-resi/static/css/95.60f0bcbc.chunk.css",
+    "static/js/95.9c8e56de.chunk.js": "/ak-resi/static/js/95.9c8e56de.chunk.js",
     "static/media/Montserrat-Italic-VariableFont_wght.ttf": "/ak-resi/static/media/Montserrat-Italic-VariableFont_wght.e8f632769d4c298b0319.ttf",
     "static/media/Montserrat-VariableFont_wght.ttf": "/ak-resi/static/media/Montserrat-VariableFont_wght.4df14eb5e72bf55c4497.ttf",
     "index.html": "/ak-resi/index.html",
-    "main.30a4ec8c.css.map": "/ak-resi/static/css/main.30a4ec8c.css.map",
-    "main.98c07893.js.map": "/ak-resi/static/js/main.98c07893.js.map",
+    "main.d76229df.css.map": "/ak-resi/static/css/main.d76229df.css.map",
+    "main.a69f6d6a.js.map": "/ak-resi/static/js/main.a69f6d6a.js.map",
     "322.de53eae3.chunk.css.map": "/ak-resi/static/css/322.de53eae3.chunk.css.map",
-    "322.c083f6d6.chunk.js.map": "/ak-resi/static/js/322.c083f6d6.chunk.js.map",
+    "322.0084fa38.chunk.js.map": "/ak-resi/static/js/322.0084fa38.chunk.js.map",
     "262.21275dd9.chunk.css.map": "/ak-resi/static/css/262.21275dd9.chunk.css.map",
     "262.9e7a8f8c.chunk.js.map": "/ak-resi/static/js/262.9e7a8f8c.chunk.js.map",
     "348.21275dd9.chunk.css.map": "/ak-resi/static/css/348.21275dd9.chunk.css.map",
@@ -31,11 +31,11 @@
     "411.21275dd9.chunk.css.map": "/ak-resi/static/css/411.21275dd9.chunk.css.map",
     "411.7ed8ab30.chunk.js.map": "/ak-resi/static/js/411.7ed8ab30.chunk.js.map",
     "453.61756ef0.chunk.js.map": "/ak-resi/static/js/453.61756ef0.chunk.js.map",
-    "826.23e70a51.chunk.css.map": "/ak-resi/static/css/826.23e70a51.chunk.css.map",
-    "826.e0e19ec2.chunk.js.map": "/ak-resi/static/js/826.e0e19ec2.chunk.js.map"
+    "95.60f0bcbc.chunk.css.map": "/ak-resi/static/css/95.60f0bcbc.chunk.css.map",
+    "95.9c8e56de.chunk.js.map": "/ak-resi/static/js/95.9c8e56de.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.30a4ec8c.css",
-    "static/js/main.98c07893.js"
+    "static/css/main.d76229df.css",
+    "static/js/main.a69f6d6a.js"
   ]
 }
