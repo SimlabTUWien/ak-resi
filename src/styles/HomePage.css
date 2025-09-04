@@ -5,7 +5,6 @@ label {
 .background-chart {
     width: 100%;
     max-width: 620px;
-    min-width: 300px;
     margin: 24px auto 40px;
     justify-content: center;
     align-items: center;

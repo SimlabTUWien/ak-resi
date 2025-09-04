@@ -57,9 +57,9 @@ export default function HomePage () {
         {/* Scrollable Content */}
         <div className="content-wrapper">
 
-            {/* <section className='dashboard'>
+            <section className='dashboard'>
                 <Dashboard />
-            </section> */}
+            </section>
 
             <section className='background' id="background">
                 <BackgroundSection />
@@ -70,9 +70,9 @@ export default function HomePage () {
                 <OverviewSection />
             </section>  */}
 
-            {/* <section id="residualIncome">
+            <section id="residualIncome">
                 <ResidualIncomeSection />
-            </section> */}
+            </section>
 
             <section id="social-infrastructure">
                 <SocialInfrastructureSection />

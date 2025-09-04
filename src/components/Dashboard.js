@@ -32,11 +32,11 @@ const Dashboard = () => {
         type: "text",
         content: (
           <>
-            <h2 className="boldText" style={{color: "#f0ae9f", fontSize: "1.4rem", marginTop: "0", marginBottom: "2px"}}>Residualeinkommen</h2>
+            <h2 className="boldText" style={{color: "#f0ae9f", fontSize: "1.3rem", marginTop: "0", marginBottom: "2px"}}>Residualeinkommen</h2>
             <span>Nettoeinkommen abzüglich notwendingen Ausgaben zur Erfüllung der Grundbedürfnisse</span>
-            <h2 className="boldText" style={{color: "#a5cdc8", fontSize: "1.4rem", marginBottom: "2px"}}>Soziale Infrastruktur</h2>
+            <h2 className="boldText" style={{color: "#a5cdc8", fontSize: "1.3rem", marginBottom: "2px"}}>Soziale Infrastruktur</h2>
             <span>Unverzichtbare Einrichtungen. Gute Ausstattung mit sozialer Infrastruktur bringt Sicherheit und spart Wege, Zeit und Geld </span>
-            <h2 className="boldText" style={{color: "#fcd799", fontSize: "1.4rem", marginBottom: "2px"}}>Zeitverwendung</h2>
+            <h2 className="boldText" style={{color: "#fcd799", fontSize: "1.3rem", marginBottom: "2px"}}>Zeitverwendung</h2>
             <span>Zeit ist eine wichtige Ressource und wird in Haushalten unterschiedlich eingesetzt und verteilt</span>
           </>
         ),
@@ -212,7 +212,6 @@ const Dashboard = () => {
         justifyContent="space-between" 
       >
         {gridContent.map((item) => {
-          // 🔥 dynamic styles based on item type
           let boxStyles = {
             borderRadius: 2,
             padding: 2,
@@ -224,7 +223,7 @@ const Dashboard = () => {
           if (item.type === "text" || item.type === "image") {
             boxStyles = {
               ...boxStyles,
-              maxWidth: { lg: 512 }, // 🔥 limit on large screens
+              maxWidth: { lg: 512 },
               flexGrow: 1,
               bgcolor: '#fff',
               boxShadow: 3,
@@ -238,7 +237,7 @@ const Dashboard = () => {
               flexGrow: 2,
               width: "100%",
               minWidth: 0,
-              maxWidth: { xs: "100%", lg: "100%" }, // 🔥 no hard 512px cap
+              maxWidth: { xs: "100%", lg: "100%" },
               flex: 1,
               display: "flex",
             };
