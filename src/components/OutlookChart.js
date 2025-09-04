@@ -4,8 +4,6 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Box } from "@mui/material";
 
-
-// const svgUrl = `${process.env.PUBLIC_URL}/images/Abb1_4Kreise4Overlaps_Outlook_V3.svg`;
 const svgUrl = `${process.env.PUBLIC_URL}/images/Outlook.svg`;
 
 const textMap = {
@@ -38,15 +36,6 @@ const textMap = {
         color: "#fcd799"
     },
 };
-
-
-// const isTouchDevice = () => {
-//   return (
-//     "ontouchstart" in window ||
-//     (navigator.maxTouchPoints > 0 && !window.matchMedia("(any-hover: hover)").matches)
-//   );
-// };
-
 
 const OutlookChart = ( {altText} ) => {
   const svgRef = useRef(null);

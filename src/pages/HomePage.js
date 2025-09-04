@@ -57,29 +57,22 @@ export default function HomePage () {
         {/* Scrollable Content */}
         <div className="content-wrapper">
 
-            <section className='dashboard'>
+            {/* <section className='dashboard'>
                 <Dashboard />
-            </section>
+            </section> */}
 
             <section className='background' id="background">
                 <BackgroundSection />
             </section>
 
-            {/* <p className='paragraph content-information'> {t.contentInformation} </p> */}
-
-            {/*             
+            {/* <p className='paragraph content-information'> {t.contentInformation} </p> 
             <section id="overview">
                 <OverviewSection />
-            </section> 
-            */}
+            </section>  */}
 
-            {/* <section id="income">
-                <IncomeSection />
-            </section> */}
-
-            <section id="residualIncome">
+            {/* <section id="residualIncome">
                 <ResidualIncomeSection />
-            </section>
+            </section> */}
 
             <section id="social-infrastructure">
                 <SocialInfrastructureSection />
